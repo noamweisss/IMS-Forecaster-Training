@@ -109,3 +109,33 @@ time. Picking light-mode hex (`#FFFFFF` for `--bg`, `#1A1917` for `--text`)
 guarantees readability on most Moodle themes. If we ever need dark-mode
 SVGs we'd switch to CSS-driven recoloring via `currentColor` + class-based
 overrides — out of scope for the pilot.
+
+---
+
+## 2026-05-19 — Scope lesson CSS to `.ims-lesson`
+
+**Context.** The design system CSS used unscoped selectors (`h1`, `p`,
+`.callout`, …). In standalone HTML that's fine — the styles only apply
+within the document. But when the body fragment is embedded in a Moodle
+Page, Moodle's *own* theme is also styling those elements. Without
+scoping we either lose typography (Moodle wins) or pollute Moodle UI
+(we win, but we override site nav, etc.).
+
+**Decision.** Move every rule under a `.ims-lesson` class selector. Every
+lesson body is wrapped in `<div class="ims-lesson">…</div>`. The
+`:root` CSS variables move to `.ims-lesson` too, which means callouts and
+tables still resolve their colors but only within our wrapper.
+
+The `_html_page()` helper now emits `<div class="ims-lesson">` inside
+`<body>` and adds a tiny `body { margin: 0; background: #fff; }` reset so
+the preview still looks right. The lesson generation prompt is also
+updated to forbid `<html>`, `<head>`, `<body>`, `<!DOCTYPE>`, and
+`<style>` tags in the model's output — preventing the model from undoing
+the scoping.
+
+**Trade-off.** The `prefers-color-scheme: dark` media query still flips
+the CSS variables, but only inside `.ims-lesson`. Moodle's own dark theme
+(if installed) won't recolor the lesson because Moodle uses its own
+mechanism, not the OS preference. We accept this — lessons will read
+fine on light Moodle themes, and on dark themes the lesson will be a
+light island. Better than dim text on the host's dark background.

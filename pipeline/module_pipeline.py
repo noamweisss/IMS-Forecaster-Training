@@ -384,6 +384,10 @@ inside SVG attributes — only literal hex colors):
     any page background.
 
 HTML CONTENT RULES:
+  - Return body content only. NO <html>, <head>, <body>, <!DOCTYPE>, or
+    <style> tags. The pipeline wraps your output in the surrounding
+    document and applies the design system CSS automatically (every rule
+    is scoped to the `.ims-lesson` wrapper).
   - Use semantic elements: <section>, <figure>, <figcaption>, <table>
   - Prose paragraphs: 2–4 sentences max
   - Use the callout classes: <div class="callout callout-note">, callout-warning, callout-key
@@ -603,18 +607,26 @@ def _get_page_css() -> str:
 
 
 def _html_page(title: str, breadcrumb: str, content: str) -> str:
+    """Standalone preview HTML. Body content is wrapped in
+    `<div class="ims-lesson">` so the CSS (scoped to that class) applies."""
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{title}</title>
-<style>{_get_page_css()}</style>
+<style>
+body {{ margin: 0; background: #fff; }}
+@media (prefers-color-scheme: dark) {{ body {{ background: #1a1917; }} }}
+{_get_page_css()}
+</style>
 </head>
 <body>
+<div class="ims-lesson">
 <p class="breadcrumb">{breadcrumb}</p>
 <h1>{title}</h1>
 {content}
+</div>
 </body>
 </html>"""
 

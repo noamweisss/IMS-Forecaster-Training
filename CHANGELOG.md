@@ -23,6 +23,11 @@ future course-to-mbz Claude skill) should read both.
   pass that scrubs any leftover var() references using
   `CSS_VAR_HEX_FALLBACKS`. Fixes invisible/colorless diagrams when lessons
   are pasted into Moodle.
+- **Design system:** Every rule in `config/design_system.css` is now scoped
+  to a `.ims-lesson` wrapper class, including the CSS custom properties.
+  Standalone lesson HTML now emits `<body><div class="ims-lesson">…</div>`.
+  Lesson generation prompt forbids `<html>/<head>/<body>/<!DOCTYPE>/<style>`
+  in model output so the scoping isn't bypassed.
 
 ### Pipeline status
 - Module 1 (Aviation Weather Fundamentals & Regulations) — generated and
