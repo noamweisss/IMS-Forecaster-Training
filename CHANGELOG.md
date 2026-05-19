@@ -11,7 +11,8 @@ future course-to-mbz Claude skill) should read both.
 ## [Unreleased]
 
 ### Added
-- **Skill:** New `.ai/skills/generate-module/` — packages the
+- **Skill:** New `.claude/skills/generate-module/` (mirrored to
+  `.agents/skills/generate-module/`) — packages the
   three-phase course-to-Moodle pipeline as a reusable Claude skill.
   Contains `SKILL.md` (the agent entry point with workflow and
   constraints), `references/lesson_template.html` (worked-example
