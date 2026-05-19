@@ -24,18 +24,29 @@ later reversed, add a new entry rather than editing the old one.
 ---
 
 <!-- New entries appended below -->
-## 2026-05-20 — Skill-packaging the pipeline: `.ai/skills/generate-module/`
+## 2026-05-20 — Skill-packaging the pipeline: `.claude/skills/generate-module/`
 
-**Context.** AGENTS.md has long promised that `.ai/skills/` would be the
-home of "the course-conversion skill that this repo will seed", and
+**Context.** AGENTS.md has long promised that an in-repo skills folder would
+hold "the course-conversion skill that this repo will seed", and
 `docs/architecture.md` mapped the three-phase pipeline directly onto a
 skill's anatomy (tools → instructions → worked example). The
 agent-driven pivot from 2026-05-19 was made specifically to enable this
 packaging. With Module 1 stable and the spec doc settled, this is the
 moment.
 
-**Decision.** Created `.ai/skills/generate-module/`:
-.ai/skills/generate-module/
+**Path correction.** The original AGENTS.md placeholder pointed at
+`.ai/skills/`, which is not what either tool we use actually reads —
+Claude Code looks in `.claude/skills/`, Antigravity looks in
+`.agents/skills/`. The placeholder was a guess made before the real
+conventions were verified, and the first version of this entry inherited
+the wrong path. Lesson worth recording: search for the real convention
+(or test it) before deferring to documented intent, especially when the
+documentation predates the tools it's trying to describe. The skill now
+lives at `.claude/skills/generate-module/` as the canonical home, with
+an identical mirror at `.agents/skills/generate-module/`.
+
+**Decision.** Created `.claude/skills/generate-module/`:
+.claude/skills/generate-module/
 ├── SKILL.md                       entry point, ~188 lines
 └── references/
 ├── lesson_template.html       worked-example lesson body fragment

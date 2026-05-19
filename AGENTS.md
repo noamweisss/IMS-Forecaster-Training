@@ -66,9 +66,24 @@ courses/             → Course content (source files + generated output)
   aviation-weather/        The pilot course
 config/              → Shared CSS design system (.ims-lesson scoped)
 admin/               → Moodle setup notes, Docker config
-.ai/skills/          → AI agent skill files (future home of the
-                       course-conversion skill that this repo will seed)
+.claude/skills/      → Agent skill files (canonical home). Holds
+                       `generate-module/`, the course-conversion skill
+                       that packages this pipeline.
+.agents/skills/      → Synced mirror of `.claude/skills/` for
+                       Antigravity. Keep the two in lockstep.
 ```
+
+### Skill location convention
+
+The canonical home for agent skills is `.claude/skills/<name>/`, and an
+identical copy is kept at `.agents/skills/<name>/`. Both folders exist
+because the two tools we use look in different places: Claude Code reads
+`.claude/skills/`, while Antigravity reads `.agents/skills/`. The project
+owner uses both products roughly equally, so a skill that only lived in
+one location would silently fail to load in the other. When editing a
+skill, change `.claude/skills/<name>/` and then copy the result over to
+`.agents/skills/<name>/` (or vice versa) in the same commit so the mirror
+never drifts.
 
 ## Tech Stack
 
