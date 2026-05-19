@@ -10,6 +10,12 @@ future course-to-mbz Claude skill) should read both.
 
 ## [Unreleased]
 
+### Added
+- **Docs:** New `prompts/` folder containing copy-paste handoff prompts:
+  three module-generation prompts (one each for Modules 2, 3, 4) and
+  one Moodle upload walkthrough. Each is self-contained so a fresh
+  agent with no prior conversation context can execute it.
+
 ### Changed
 - **AGENTS.md** rewritten for the agent-driven workflow. Points new
   agents at the runbook, spec doc, and journal.
