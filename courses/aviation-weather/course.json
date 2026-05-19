@@ -1,0 +1,28 @@
+{
+  "course_id": "aviation-weather",
+  "title": "Aviation Weather Forecasting Certification",
+  "target_audience": "Professional meteorologists seeking Aviation Forecaster certification (IMS)",
+  "modules": [
+    {
+      "number": 1,
+      "title": "Aviation Weather Fundamentals & Regulations",
+      "folder": "module-1",
+      "status": "Complete"
+    },
+    {
+      "number": 2,
+      "title": "In-flight Aviation Hazards",
+      "status": "Planned"
+    },
+    {
+      "number": 3,
+      "title": "Terminal Area Hazards & Visibility",
+      "status": "Planned"
+    },
+    {
+      "number": 4,
+      "title": "Aviation Forecast Products & Warnings",
+      "status": "Planned"
+    }
+  ]
+}
