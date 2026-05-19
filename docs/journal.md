@@ -172,3 +172,48 @@ work even with the harshest KSES filter, but the HTML balloons in size,
 loses semantic readability, and makes manual edits painful for Evgeny's
 later review pass. A `<style>` block is the right level of abstraction
 for the audience.
+
+---
+
+## 2026-05-19 — Sidestep the image-upload problem with base64 data URIs
+
+**Context.** Module 1 referenced four sourced photographs as
+`<img src="images/foo.png">`. In Moodle this produced broken-image icons
+because Moodle serves files via `pluginfile.php` URL placeholders, not
+relative paths.
+
+**Decision.** New script `pipeline/embed_images.py` walks every
+`*_moodle.html` in a module folder and rewrites each `<img src="...">`
+that resolves to a local file into a base64 `data:image/...;base64,...`
+URI. The HTML becomes self-contained — no separate upload step.
+
+The script is idempotent: already-embedded data: URIs are left alone,
+external URLs (http/https/protocol-relative) are left alone, unresolved
+relative paths are reported but not modified.
+
+**Why a separate script and not inside `module_pipeline.py`.** Image
+sourcing is a *human* step in the middle of the pipeline. The model
+emits `<div class="image-needed">` placeholders, the human reviews
+`IMAGES_TO_SOURCE.md`, fetches appropriate photographs, drops them into
+`lessons/Images/`, and only then can embedding happen. Putting embedding
+in `module_pipeline.py` would force the pipeline to either rerun
+end-to-end after manual sourcing or skip images entirely. A separate
+script lets the human run it whenever they have new images.
+
+**Workflow per module.**
+
+1. Run the pipeline → get `*_moodle.html` with `image-needed` placeholders
+   and an `IMAGES_TO_SOURCE.md` list.
+2. Human sources images, saves to `lessons/Images/<filename>`, and edits
+   the matching placeholder div into an `<img src="images/Images/...">`
+   tag. (Or `replace_images.py` does this for known names — see
+   Module 1 pattern.)
+3. Run `python pipeline/embed_images.py --module <dir>` →
+   relative `<img>` sources become base64 data URIs in place.
+4. Run the `.mbz` builder (next commit set) → ship to Moodle.
+
+**Page size impact.** A 200 KB JPEG embeds to ~270 KB of base64 text.
+A module with 4 images grows the HTML by ~1 MB total. Moodle's content
+field is `LONGTEXT` (4 GB cap); 1 MB is fine. Loading is actually
+*faster* than separate file requests because there's no second round
+trip.

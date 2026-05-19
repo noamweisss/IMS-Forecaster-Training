@@ -35,6 +35,10 @@ future course-to-mbz Claude skill) should read both.
   fragment for Moodle upload. The fragment has no document wrappers and
   carries a single inline `<style>` block scoped to `.ims-lesson`. The
   module overview is also dual-emitted as `00_module_overview_moodle.html`.
+- **Tooling:** New `pipeline/embed_images.py` script. Walks a module's
+  `*_moodle.html` files and rewrites every resolvable `<img src="...">`
+  into a base64 `data:` URI so the HTML is self-contained for Moodle.
+  Idempotent — safe to re-run after sourcing more images.
 
 ### Pipeline status
 - Module 1 (Aviation Weather Fundamentals & Regulations) — generated and
