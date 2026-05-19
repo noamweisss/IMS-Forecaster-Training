@@ -1,0 +1,159 @@
+<style>
+.ims-lesson {
+  --bg: #ffffff;
+  --surface: #f6f5f0;
+  --border: #e2dfd6;
+  --text: #1a1917;
+  --muted: #6b6a65;
+  --accent: #185fa5;
+  --accent-light: #e6f1fb;
+  --note-bg: #e1f5ee;
+  --note-border: #0F6E56;
+  --warn-bg: #faeeda;
+  --warn-border: #BA7517;
+  --key-bg: #EEEDFE;
+  --key-border: #534AB7;
+  --danger-bg: #fcebeb;
+  --danger-border: #A32D2D;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .ims-lesson {
+    --bg: #1a1917;
+    --surface: #242320;
+    --border: #3a3835;
+    --text: #e8e6df;
+    --muted: #9a9890;
+    --accent-light: #042c53;
+    --note-bg: #04342c;
+    --warn-bg: #412402;
+    --key-bg: #26215c;
+  }
+}
+
+.ims-lesson h1 { font-size: 1.8rem; font-weight: 600; margin-bottom: 0.2rem; line-height: 1.2; color: var(--text); }
+.ims-lesson h2 { font-size: 1.25rem; font-weight: 600; margin-top: 2.5rem; padding-bottom: 0.4rem;
+  border-bottom: 1.5px solid var(--border); color: var(--text); }
+.ims-lesson h3 { font-size: 1.05rem; font-weight: 600; margin-top: 1.75rem; color: var(--text); }
+.ims-lesson p { margin: 0.7rem 0; max-width: 72ch; }
+.ims-lesson figure { margin: 2rem 0; }
+.ims-lesson figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 0.6rem;
+  font-style: italic; text-align: center; }
+.ims-lesson svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+.ims-lesson img { max-width: 100%; height: auto; }
+.ims-lesson table { border-collapse: collapse; width: 100%; margin: 1.5rem 0; font-size: 0.9rem; }
+.ims-lesson th { background: var(--accent); color: #fff; padding: 0.55rem 0.9rem; text-align: left; }
+.ims-lesson td { padding: 0.5rem 0.9rem; border-bottom: 1px solid var(--border); }
+.ims-lesson tr:nth-child(even) td { background: var(--surface); }
+.ims-lesson .callout { border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+.ims-lesson .callout-note    { background: var(--note-bg);   border-left: 4px solid var(--note-border); }
+.ims-lesson .callout-warning { background: var(--warn-bg);   border-left: 4px solid var(--warn-border); }
+.ims-lesson .callout-key     { background: var(--key-bg);    border-left: 4px solid var(--key-border); }
+.ims-lesson .callout-danger  { background: var(--danger-bg); border-left: 4px solid var(--danger-border); }
+.ims-lesson .callout-label { font-weight: 700; font-size: 0.78rem; text-transform: uppercase;
+  letter-spacing: 0.06em; margin-bottom: 0.35rem; }
+.ims-lesson .objectives { background: var(--surface); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+.ims-lesson .objectives ul { margin: 0.5rem 0 0; padding-left: 1.4rem; }
+.ims-lesson .lesson-summary { background: var(--accent-light); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 2.5rem 0 1rem; }
+.ims-lesson .lesson-summary h3 { margin-top: 0; color: var(--accent); font-size: 1rem; }
+.ims-lesson .image-needed { border: 2px dashed var(--border); border-radius: 8px;
+  padding: 1.5rem; margin: 1.5rem 0; text-align: center;
+  color: var(--muted); font-size: 0.9rem; background: var(--surface); }
+.ims-lesson .meta { color: var(--muted); font-size: 0.88rem; margin-bottom: 1.75rem; }
+.ims-lesson .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.5rem; }
+</style>
+<div class="ims-lesson">
+<p class="breadcrumb">Module 2 / Lesson 5</p>
+<h1>Cloud Base and Top Forecasting</h1>
+
+<div class="objectives">
+  <strong>By the end of this lesson you will be able to:</strong>
+  <ul>
+    <li>Estimate cloud base heights using temperature and dew point depressions</li>
+    <li>Determine cloud top altitudes from satellite imagery and sounding data</li>
+    <li>Forecast cloud coverage and layer thickness for aviation planning</li>
+    <li>Apply local topographical knowledge to sub-grid cloud formation</li>
+  </ul>
+</div>
+
+<h2>Determining Cloud Base Height (CBH)</h2>
+<p>Cloud base height is a critical parameter for terminal operations and flight planning. The mechanism for determining CBH differs between convective and stratiform (layered) clouds.</p>
+
+<h3>Convective Clouds (Cumulus/TCU/CB)</h3>
+<p>For clouds triggered by surface heating, the base is located at the <strong>Lifting Condensation Level (LCL)</strong>. A simple rule of thumb for estimation is based on the surface temperature (T) and dew point (Td) in Celsius:</p>
+
+<div class="callout callout-key">
+  <div class="callout-label">Formula</div>
+  <strong>Base (ft) ≈ (T - Td) / 2.5 * 1000</strong> <br>
+  <em>Note: Some models use 3°C per 1,000ft for dry adiabatic cooling of the T-Td spread.</em>
+</div>
+
+<h3>Stratiform Clouds (Stratus/Altostratus)</h3>
+<p>Layered clouds are typically driven by moisture advection or large-scale lifting (e.g., warm fronts). Their base is determined by the level at which a moist layer becomes saturated. In coastal regions like Israel, the base of the <strong>marine inversion</strong> often acts as a trap for moisture, defining the Stratus base.</p>
+
+<figure>
+  <svg viewBox="0 0 680 220" role="img">
+    <title>Cloud Base Determination on a Sounding</title>
+    <!-- Grid -->
+    <path d="M 50 200 L 650 200 M 50 200 L 50 20" fill="none" stroke="#E2DFD6" stroke-width="1" />
+    <!-- T line (red) -->
+    <path d="M 400 200 L 300 100 L 250 20" fill="none" stroke="#993C1D" stroke-width="2" />
+    <!-- Td line (blue) -->
+    <path d="M 300 200 L 280 100 L 250 20" fill="none" stroke="#185FA5" stroke-width="2" />
+    <!-- Saturation point -->
+    <circle cx="280" cy="100" r="5" fill="#0F6E56" />
+    <!-- Labels -->
+    <text x="350" y="215" font-family="sans-serif" font-size="12" fill="#993C1D">Temp (T)</text>
+    <text x="250" y="215" font-family="sans-serif" font-size="12" fill="#185FA5">Dewpoint (Td)</text>
+    <text x="290" y="95" font-family="sans-serif" font-size="12" fill="#0F6E56">Cloud Base (Saturation)</text>
+    <text x="10" y="110" font-family="sans-serif" font-size="12" fill="#6B6A65" transform="rotate(-90 10 110)">Altitude</text>
+  </svg>
+  <figcaption>Figure 5.1: Conceptual sounding showing cloud base at the level where T and Td converge.</figcaption>
+</figure>
+
+<h2>Determining Cloud Top Height</h2>
+<p>Knowing the vertical extent of a cloud layer allows pilots to determine if they can fly "over the top" or if they will remain in IMC (Instrument Meteorological Conditions) throughout a climb or descent.</p>
+
+<h3>Satellite IR Estimation</h3>
+<p>Infrared (IR) satellite sensors measure the <strong>brightness temperature</strong> of the cloud top. Since temperature typically decreases with height in the troposphere, we can map this temperature back to a specific altitude using a recent sounding (tephigram).</p>
+
+<div class="callout callout-warning">
+  <div class="callout-label">IR Limitations</div>
+  <ul>
+    <li><strong>Thin Cirrus:</strong> Higher-level thin clouds allow radiation from warmer layers below to pass through, causing the IR sensor to underestimate the cloud top height.</li>
+    <li><strong>Partial Coverage:</strong> If a pixel is only partially covered by cloud, the resulting temperature is an average of the cloud top and the ground.</li>
+  </ul>
+</div>
+
+<h3>Radar Echo Tops</h3>
+<p>Weather radar provides a more direct measurement of the vertical extent of precipitation-bearing clouds. The "Echo Top" product indicates the highest altitude at which a specific reflectivity threshold (usually 18 dBZ) is detected.</p>
+
+<h2>Local Effects in Israel</h2>
+<p>Topography plays a major role in local cloud forecasting:</p>
+<ul>
+  <li><strong>Orographic Lifting:</strong> Westerly winds hitting the Judean or Galilean hills can force air to its LCL, creating low cloud bases and "mountain fog" even when coastal bases are higher.</li>
+  <li><strong>Marine Inversion:</strong> During summer, a strong subsidence inversion traps moisture in a shallow layer. The height of this inversion directly controls whether the coastal plain experiences clear skies or a dense deck of Stratus.</li>
+</ul>
+
+<div class="lesson-summary">
+  <h3>Key Takeaways</h3>
+  <ul>
+    <li>Convective cloud bases can be estimated using surface T and Td spreads.</li>
+    <li>Stratiform bases are often tied to inversion heights or moisture advection layers.</li>
+    <li>Cloud tops are estimated via satellite IR brightness temperature or radar echo tops.</li>
+    <li>Satellite IR can be misleading for thin cirrus or sub-pixel cloud features.</li>
+    <li>Local topography significantly modifies cloud bases via orographic lifting.</li>
+  </ul>
+</div>
+</div>

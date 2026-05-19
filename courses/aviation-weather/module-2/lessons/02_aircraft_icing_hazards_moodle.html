@@ -1,0 +1,216 @@
+<style>
+.ims-lesson {
+  --bg: #ffffff;
+  --surface: #f6f5f0;
+  --border: #e2dfd6;
+  --text: #1a1917;
+  --muted: #6b6a65;
+  --accent: #185fa5;
+  --accent-light: #e6f1fb;
+  --note-bg: #e1f5ee;
+  --note-border: #0F6E56;
+  --warn-bg: #faeeda;
+  --warn-border: #BA7517;
+  --key-bg: #EEEDFE;
+  --key-border: #534AB7;
+  --danger-bg: #fcebeb;
+  --danger-border: #A32D2D;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .ims-lesson {
+    --bg: #1a1917;
+    --surface: #242320;
+    --border: #3a3835;
+    --text: #e8e6df;
+    --muted: #9a9890;
+    --accent-light: #042c53;
+    --note-bg: #04342c;
+    --warn-bg: #412402;
+    --key-bg: #26215c;
+  }
+}
+
+.ims-lesson h1 { font-size: 1.8rem; font-weight: 600; margin-bottom: 0.2rem; line-height: 1.2; color: var(--text); }
+.ims-lesson h2 { font-size: 1.25rem; font-weight: 600; margin-top: 2.5rem; padding-bottom: 0.4rem;
+  border-bottom: 1.5px solid var(--border); color: var(--text); }
+.ims-lesson h3 { font-size: 1.05rem; font-weight: 600; margin-top: 1.75rem; color: var(--text); }
+.ims-lesson p { margin: 0.7rem 0; max-width: 72ch; }
+.ims-lesson figure { margin: 2rem 0; }
+.ims-lesson figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 0.6rem;
+  font-style: italic; text-align: center; }
+.ims-lesson svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+.ims-lesson img { max-width: 100%; height: auto; }
+.ims-lesson table { border-collapse: collapse; width: 100%; margin: 1.5rem 0; font-size: 0.9rem; }
+.ims-lesson th { background: var(--accent); color: #fff; padding: 0.55rem 0.9rem; text-align: left; }
+.ims-lesson td { padding: 0.5rem 0.9rem; border-bottom: 1px solid var(--border); }
+.ims-lesson tr:nth-child(even) td { background: var(--surface); }
+.ims-lesson .callout { border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+.ims-lesson .callout-note    { background: var(--note-bg);   border-left: 4px solid var(--note-border); }
+.ims-lesson .callout-warning { background: var(--warn-bg);   border-left: 4px solid var(--warn-border); }
+.ims-lesson .callout-key     { background: var(--key-bg);    border-left: 4px solid var(--key-border); }
+.ims-lesson .callout-danger  { background: var(--danger-bg); border-left: 4px solid var(--danger-border); }
+.ims-lesson .callout-label { font-weight: 700; font-size: 0.78rem; text-transform: uppercase;
+  letter-spacing: 0.06em; margin-bottom: 0.35rem; }
+.ims-lesson .objectives { background: var(--surface); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+.ims-lesson .objectives ul { margin: 0.5rem 0 0; padding-left: 1.4rem; }
+.ims-lesson .lesson-summary { background: var(--accent-light); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 2.5rem 0 1rem; }
+.ims-lesson .lesson-summary h3 { margin-top: 0; color: var(--accent); font-size: 1rem; }
+.ims-lesson .image-needed { border: 2px dashed var(--border); border-radius: 8px;
+  padding: 1.5rem; margin: 1.5rem 0; text-align: center;
+  color: var(--muted); font-size: 0.9rem; background: var(--surface); }
+.ims-lesson .meta { color: var(--muted); font-size: 0.88rem; margin-bottom: 1.75rem; }
+.ims-lesson .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.5rem; }
+</style>
+<div class="ims-lesson">
+<p class="breadcrumb">Module 2 / Lesson 2</p>
+<h1>Aircraft Icing Hazards</h1>
+
+<div class="objectives">
+  <strong>By the end of this lesson you will be able to:</strong>
+  <ul>
+    <li>Explain the physics of supercooled large droplets (SLD) in icing formation</li>
+    <li>Differentiate between rime, glaze, and mixed icing based on temperature and drop size</li>
+    <li>Analyze tephigrams to identify layers of critical icing potential</li>
+    <li>Interpret WAFS icing potential products for flight path safety assessment</li>
+  </ul>
+</div>
+
+<h2>The Physics of In-flight Icing</h2>
+<p>Aircraft icing occurs when supercooled liquid water (SLW) droplets—water that remains in liquid form despite being below 0°C—impact the leading edges of an aircraft. These droplets freeze upon contact, disrupting the aerodynamic profile, increasing weight, and potentially causing engine failure or instrument malfunction.</p>
+
+<div class="callout callout-key">
+  <div class="callout-label">Key Concept: SLW</div>
+  Supercooled Liquid Water is most common in the temperature range <strong>0°C to -15°C</strong>. Below -20°C, droplets are more likely to freeze into ice crystals spontaneously, reducing the icing risk.
+</div>
+
+<h2>Types of Structural Icing</h2>
+<p>The type of ice that forms depends on the droplet size, the liquid water content (LWC) of the cloud, and the temperature of both the air and the aircraft skin.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ice Type</th>
+      <th>Appearance</th>
+      <th>Formation Conditions</th>
+      <th>Aviation Hazard</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Rime Ice</strong></td>
+      <td>Milky, opaque, brittle</td>
+      <td>Small drops, low LWC, temperatures below -10°C</td>
+      <td>Disrupts airflow; easier to remove with boots.</td>
+    </tr>
+    <tr>
+      <td><strong>Glaze (Clear) Ice</strong></td>
+      <td>Transparent, hard, glassy</td>
+      <td>Large drops (SLD), high LWC, temperatures 0°C to -10°C</td>
+      <td>Heavy and difficult to remove; spreads aft of protected areas.</td>
+    </tr>
+    <tr>
+      <td><strong>Mixed Ice</strong></td>
+      <td>Irregular, rough</td>
+      <td>Varied drop sizes and fluctuating temperatures</td>
+      <td>Combines weight and aerodynamic penalties.</td>
+    </tr>
+  </tbody>
+</table>
+
+<figure>
+  <svg viewBox="0 0 680 200" role="img">
+    <title>Icing Profiles on a Wing</title>
+    <desc>Comparison of Rime and Glaze ice accumulation on an airfoil.</desc>
+    <!-- Wing Profile -->
+    <path d="M 100 100 Q 150 40 400 70 Q 500 100 400 130 Q 150 160 100 100 Z" fill="#F6F5F0" stroke="#E2DFD6" stroke-width="2" />
+    <!-- Rime Ice (Frontal) -->
+    <path d="M 100 100 L 70 80 L 60 100 L 70 120 Z" fill="#E2DFD6" stroke="#6B6A65" stroke-width="1" />
+    <!-- Glaze Ice (Spread aft) -->
+    <path d="M 100 65 Q 80 80 80 100 Q 80 120 100 135 L 140 145 Q 110 120 110 100 Q 110 80 140 55 Z" fill="#E6F1FB" stroke="#185FA5" stroke-width="1.5" opacity="0.6" />
+    <!-- Labels -->
+    <text x="50" y="140" font-family="sans-serif" font-size="12" fill="#6B6A65">Rime (Frontal)</text>
+    <text x="130" y="40" font-family="sans-serif" font-size="12" fill="#185FA5">Glaze (Spreading Aft)</text>
+  </svg>
+  <figcaption>Figure 2.1: Accumulation patterns of Rime vs. Glaze (Clear) ice on an airfoil leading edge.</figcaption>
+</figure>
+
+<h2>Freezing Rain: The SLD Threat</h2>
+<p>Freezing rain (FZRA) represents one of the most severe icing hazards. It typically occurs in warm frontal structures where snow falls through a "warm nose" (temperature > 0°C), melts into rain, and then falls back into a sub-freezing layer near the surface.</p>
+
+<div class="callout callout-danger">
+  <div class="callout-label">Severe Hazard</div>
+  Freezing rain consists of <strong>Supercooled Large Droplets (SLD)</strong>. Because of their mass, they do not freeze instantly upon impact but run back along the wing before freezing, creating a thick layer of clear ice in areas not protected by de-icing equipment.
+</div>
+
+<figure>
+  <svg viewBox="0 0 680 220" role="img">
+    <title>Freezing Rain Formation</title>
+    <!-- Warm Front Slope -->
+    <path d="M 0 200 L 600 50" fill="none" stroke="#6B6A65" stroke-width="1" stroke-dasharray="4 4" />
+    <!-- Layers -->
+    <rect x="0" y="0" width="680" height="50" fill="#E1F5EE" opacity="0.3" /> <!-- Snow -->
+    <rect x="0" y="50" width="680" height="60" fill="#FAEEDA" opacity="0.3" /> <!-- Rain (Warm) -->
+    <rect x="0" y="110" width="680" height="110" fill="#E6F1FB" opacity="0.3" /> <!-- Freezing Rain (Cold) -->
+    <!-- Arrows -->
+    <path d="M 340 20 L 340 40" fill="none" stroke="#1A1917" stroke-width="2" marker-end="url(#arrow)" />
+    <path d="M 340 70 L 340 90" fill="none" stroke="#185FA5" stroke-width="2" marker-end="url(#arrow)" />
+    <path d="M 340 130 L 340 150" fill="none" stroke="#993C1D" stroke-width="2" marker-end="url(#arrow)" />
+    <!-- Labels -->
+    <text x="10" y="30" font-family="sans-serif" font-size="12" fill="#0F6E56">Snow (T < 0°C)</text>
+    <text x="10" y="80" font-family="sans-serif" font-size="12" fill="#BA7517">Melting Layer (T > 0°C)</text>
+    <text x="10" y="150" font-family="sans-serif" font-size="12" fill="#185FA5">Supercooled Rain (T < 0°C)</text>
+    <text x="10" y="210" font-family="sans-serif" font-size="14" font-weight="bold" fill="#993C1D">GROUND: FREEZING RAIN</text>
+    <defs>
+      <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="context-fill" />
+      </marker>
+    </defs>
+  </svg>
+  <figcaption>Figure 2.2: Thermodynamic structure resulting in Freezing Rain (FZRA).</figcaption>
+</figure>
+
+<h2>Operational Diagnosis</h2>
+
+<h3>Tephigram Analysis</h3>
+<p>To identify icing potential from a vertical sounding (Tephigram or Skew-T), forecasters use the following criteria:</p>
+<ol>
+  <li><strong>Identify the Temperature Range:</strong> Focus on layers between 0°C and -20°C.</li>
+  <li><strong>Check Saturation:</strong> Look for a dew point depression of &lt; 5°C (indicating high humidity/cloud).</li>
+  <li><strong>Assess Stability:</strong> Convective clouds (unstable) typically contain higher liquid water content and thus present a higher risk of moderate to severe icing.</li>
+</ol>
+
+<div class="image-needed" data-description="Annotated tephigram or Skew-T diagram highlighting a saturated layer (small dewpoint depression) within the 0 to -20 degree Celsius temperature range, indicating high icing potential.">
+  <span>📷 Image needed: Annotated tephigram showing icing 'critical layer'</span>
+</div>
+
+<h3>WAFS Icing Products</h3>
+<p>World Area Forecast System (WAFS) products provide global grids of icing potential. These are calculated based on fractional cloud cover and temperature. The fields are produced for five main flight levels (FL100, FL140, FL180, FL240, FL300).</p>
+
+<div class="callout callout-warning">
+  <div class="callout-label">Product Limitation</div>
+  WAFS icing products represent <strong>potential</strong> based on large-scale model fields. They may miss localized severe icing in small-scale convective cells or complex terrain. Always cross-reference with PIREPs (Pilot Reports).
+</div>
+
+<div class="lesson-summary">
+  <h3>Key Takeaways</h3>
+  <ul>
+    <li>Icing is caused by Supercooled Liquid Water (SLW) impacting aircraft surfaces.</li>
+    <li>Glaze ice is the most hazardous structural type, often associated with SLD and high LWC.</li>
+    <li>Freezing rain (FZRA) occurs when rain falls into a sub-freezing layer near the ground.</li>
+    <li>Sounding analysis focuses on saturated layers (dewpoint depression &lt; 5°C) between 0°C and -20°C.</li>
+    <li>WAFS products provide a global baseline for icing risk but require local refinement.</li>
+  </ul>
+</div>
+</div>

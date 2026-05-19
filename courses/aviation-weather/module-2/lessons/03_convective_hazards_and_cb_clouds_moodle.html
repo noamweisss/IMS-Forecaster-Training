@@ -1,0 +1,196 @@
+<style>
+.ims-lesson {
+  --bg: #ffffff;
+  --surface: #f6f5f0;
+  --border: #e2dfd6;
+  --text: #1a1917;
+  --muted: #6b6a65;
+  --accent: #185fa5;
+  --accent-light: #e6f1fb;
+  --note-bg: #e1f5ee;
+  --note-border: #0F6E56;
+  --warn-bg: #faeeda;
+  --warn-border: #BA7517;
+  --key-bg: #EEEDFE;
+  --key-border: #534AB7;
+  --danger-bg: #fcebeb;
+  --danger-border: #A32D2D;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .ims-lesson {
+    --bg: #1a1917;
+    --surface: #242320;
+    --border: #3a3835;
+    --text: #e8e6df;
+    --muted: #9a9890;
+    --accent-light: #042c53;
+    --note-bg: #04342c;
+    --warn-bg: #412402;
+    --key-bg: #26215c;
+  }
+}
+
+.ims-lesson h1 { font-size: 1.8rem; font-weight: 600; margin-bottom: 0.2rem; line-height: 1.2; color: var(--text); }
+.ims-lesson h2 { font-size: 1.25rem; font-weight: 600; margin-top: 2.5rem; padding-bottom: 0.4rem;
+  border-bottom: 1.5px solid var(--border); color: var(--text); }
+.ims-lesson h3 { font-size: 1.05rem; font-weight: 600; margin-top: 1.75rem; color: var(--text); }
+.ims-lesson p { margin: 0.7rem 0; max-width: 72ch; }
+.ims-lesson figure { margin: 2rem 0; }
+.ims-lesson figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 0.6rem;
+  font-style: italic; text-align: center; }
+.ims-lesson svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+.ims-lesson img { max-width: 100%; height: auto; }
+.ims-lesson table { border-collapse: collapse; width: 100%; margin: 1.5rem 0; font-size: 0.9rem; }
+.ims-lesson th { background: var(--accent); color: #fff; padding: 0.55rem 0.9rem; text-align: left; }
+.ims-lesson td { padding: 0.5rem 0.9rem; border-bottom: 1px solid var(--border); }
+.ims-lesson tr:nth-child(even) td { background: var(--surface); }
+.ims-lesson .callout { border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+.ims-lesson .callout-note    { background: var(--note-bg);   border-left: 4px solid var(--note-border); }
+.ims-lesson .callout-warning { background: var(--warn-bg);   border-left: 4px solid var(--warn-border); }
+.ims-lesson .callout-key     { background: var(--key-bg);    border-left: 4px solid var(--key-border); }
+.ims-lesson .callout-danger  { background: var(--danger-bg); border-left: 4px solid var(--danger-border); }
+.ims-lesson .callout-label { font-weight: 700; font-size: 0.78rem; text-transform: uppercase;
+  letter-spacing: 0.06em; margin-bottom: 0.35rem; }
+.ims-lesson .objectives { background: var(--surface); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+.ims-lesson .objectives ul { margin: 0.5rem 0 0; padding-left: 1.4rem; }
+.ims-lesson .lesson-summary { background: var(--accent-light); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 2.5rem 0 1rem; }
+.ims-lesson .lesson-summary h3 { margin-top: 0; color: var(--accent); font-size: 1rem; }
+.ims-lesson .image-needed { border: 2px dashed var(--border); border-radius: 8px;
+  padding: 1.5rem; margin: 1.5rem 0; text-align: center;
+  color: var(--muted); font-size: 0.9rem; background: var(--surface); }
+.ims-lesson .meta { color: var(--muted); font-size: 0.88rem; margin-bottom: 1.75rem; }
+.ims-lesson .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.5rem; }
+</style>
+<div class="ims-lesson">
+<p class="breadcrumb">Module 2 / Lesson 3</p>
+<h1>Convective Hazards and CB Clouds</h1>
+
+<div class="objectives">
+  <strong>By the end of this lesson you will be able to:</strong>
+  <ul>
+    <li>Identify the life cycle stages of a Cumulonimbus (CB) cell</li>
+    <li>Describe the internal dynamics of severe convective updrafts and downdrafts</li>
+    <li>Predict secondary hazards such as lightning, hail, and squall lines</li>
+    <li>Evaluate convective potential using stability indices</li>
+  </ul>
+</div>
+
+<h2>The Cumulonimbus (CB) Life Cycle</h2>
+<p>Cumulonimbus clouds are the most visually dramatic and operationally dangerous cloud type. A single convective cell typically progresses through three distinct stages over a 30 to 60-minute period.</p>
+
+<figure>
+  <svg viewBox="0 0 680 250" role="img">
+    <title>CB Cloud Life Cycle</title>
+    <desc>Diagram showing the Developing, Mature, and Dissipating stages of a thunderstorm cell.</desc>
+    <!-- Developing -->
+    <path d="M 50 220 Q 100 80 150 220" fill="#F6F5F0" stroke="#6B6A65" stroke-width="1.5" />
+    <path d="M 100 200 L 100 120" fill="none" stroke="#185FA5" stroke-width="2" marker-end="url(#arrow-blue)" />
+    <!-- Mature -->
+    <path d="M 250 220 Q 300 20 450 60 Q 350 20 250 220" fill="#F6F5F0" stroke="#1A1917" stroke-width="2" />
+    <path d="M 300 200 L 300 100" fill="none" stroke="#185FA5" stroke-width="2" marker-end="url(#arrow-blue)" />
+    <path d="M 380 100 L 380 200" fill="none" stroke="#993C1D" stroke-width="2" marker-end="url(#arrow-red)" />
+    <!-- Dissipating -->
+    <path d="M 500 220 Q 550 150 650 150 Q 550 150 500 220" fill="#F6F5F0" stroke="#E2DFD6" stroke-width="1" />
+    <path d="M 570 160 L 570 200" fill="none" stroke="#993C1D" stroke-width="2" marker-end="url(#arrow-red)" />
+    <!-- Labels -->
+    <text x="70" y="240" font-family="sans-serif" font-size="12" fill="#1A1917">Developing (Updrafts)</text>
+    <text x="290" y="240" font-family="sans-serif" font-size="12" fill="#1A1917">Mature (Up & Down)</text>
+    <text x="520" y="240" font-family="sans-serif" font-size="12" fill="#1A1917">Dissipating (Downdrafts)</text>
+    <defs>
+      <marker id="arrow-blue" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#185FA5" />
+      </marker>
+      <marker id="arrow-red" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#993C1D" />
+      </marker>
+    </defs>
+  </svg>
+  <figcaption>Figure 3.1: Life cycle of a single-cell thunderstorm.</figcaption>
+</figure>
+
+<h3>1. Developing (Cumulus) Stage</h3>
+<p>Characterized exclusively by <strong>updrafts</strong>. Continuous rising air increases the cloud's vertical extent and internal turbulence. No precipitation or lightning occurs at this stage.</p>
+
+<h3>2. Mature Stage</h3>
+<p>The most dangerous phase. Precipitation begins to fall, dragging cold air down and creating <strong>downdrafts</strong> alongside the continuing updrafts. This stage features the highest turbulence, heavy rain, hail, and lightning.</p>
+
+<h3>3. Dissipating Stage</h3>
+<p>Downdrafts dominate the cell, "cutting off" the supply of warm, moist updrafts. The cloud begins to evaporate or flatten into an <strong>anvil</strong> (incus) at the tropopause. Precipitation weakens and eventually stops.</p>
+
+<div class="image-needed" data-description="Wide-angle photograph of a mature cumulonimbus cloud with a clearly defined anvil top (incus) and a dark precipitation shaft underneath.">
+  <span>📷 Image needed: Mature CB cloud with anvil top</span>
+</div>
+
+<h2>Hazards Associated with Convection</h2>
+<p>While lightning and heavy rain are common, several secondary hazards pose extreme risks to flight operations.</p>
+
+<ul>
+  <li><strong>Hail:</strong> Formed in intense updrafts that cycle water droplets above the freezing level multiple times. Hail can cause catastrophic structural damage to engines and windshields.</li>
+  <li><strong>Lightning:</strong> Results from charge separation between ice crystals and water droplets. Can disrupt electronics and blind pilots temporarily.</li>
+  <li><strong>Gust Fronts:</strong> The leading edge of cold downdrafts spreading out at the surface. They cause sharp wind shifts and can trigger new convective cells.</li>
+  <li><strong>Squall Lines:</strong> Linear arrangements of CB cells that act as a formidable barrier to air traffic.</li>
+</ul>
+
+<div class="callout callout-warning">
+  <div class="callout-label">Forecaster Note</div>
+  In Israel, squall lines are particularly common ahead of active cold fronts. They are notoriously difficult to navigate and often require complete avoidance by pilots.
+</div>
+
+<h2>Stability Indices and Prediction</h2>
+<p>Forecasters use several thermodynamic indices derived from soundings to evaluate convective potential. No single index is definitive; they must be used in combination.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Index</th>
+      <th>Meaning</th>
+      <th>Threshold for Severe Wx</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>CAPE</strong></td>
+      <td>Convective Available Potential Energy (buoyancy)</td>
+      <td>> 1000 J/kg</td>
+    </tr>
+    <tr>
+      <td><strong>LI</strong></td>
+      <td>Lifted Index (T_environment - T_parcel at 500hPa)</td>
+      <td>< -4</td>
+    </tr>
+    <tr>
+      <td><strong>CIN</strong></td>
+      <td>Convective Inhibition (energy needed to trigger)</td>
+      <td>High values prevent storm onset</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="callout callout-key">
+  <div class="callout-label">Thermodynamic Forcing</div>
+  Convection requires three ingredients: <strong>Moisture</strong>, <strong>Instability</strong>, and a <strong>Lifting Mechanism</strong> (e.g., a front, topography, or surface convergence).
+</div>
+
+<div class="lesson-summary">
+  <h3>Key Takeaways</h3>
+  <ul>
+    <li>The CB life cycle consists of the Developing, Mature, and Dissipating stages.</li>
+    <li>The Mature stage is the peak hazard period, featuring simultaneous updrafts and downdrafts.</li>
+    <li>Secondary hazards like hail and gust fronts can extend several miles from the cloud core.</li>
+    <li>A Squall Line is a organized line of storms that typically requires avoidance.</li>
+    <li>Forecasting relies on stability indices (CAPE, LI) and identifying lifting mechanisms.</li>
+  </ul>
+</div>
+</div>

@@ -61,7 +61,7 @@ def extract_pptx(filepath: Path) -> dict:
         for shape in slide.shapes:
             if shape.shape_type == MSO_SHAPE_TYPE.PICTURE:
                 sd["has_images"] = True
-            if hasattr(shape, "chart"):
+            if getattr(shape, "has_chart", False):
                 sd["has_charts"] = True
             if not shape.has_text_frame:
                 continue
@@ -73,8 +73,7 @@ def extract_pptx(filepath: Path) -> dict:
             is_title = (
                 shape.name == "Title"
                 or (
-                    hasattr(shape, "placeholder_format")
-                    and shape.placeholder_format
+                    getattr(shape, "is_placeholder", False)
                     and shape.placeholder_format.idx == 0
                 )
             )

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <question type="multichoice">
+    <name><text>L2-Q01 — SLW Temperature Range</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>In which temperature range is the occurrence of Supercooled Liquid Water (SLW) MOST frequent and significant for structural icing?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Rationale:</strong> SLW is most prevalent between 0°C and -15°C. Below -20°C, the probability of spontaneous freezing into ice crystals increases significantly, reducing the available liquid water for icing.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>0°C to -15°C</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>+10°C to 0°C</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>-25°C to -40°C</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Exclusively at exactly 0°C</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L2-Q02 — Glaze Ice Hazards</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Why is Glaze (Clear) ice considered more hazardous than Rime ice for aircraft operations?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Rationale:</strong> Glaze ice is hard, transparent, and heavy. Because it forms from larger droplets or high liquid water content, it often "runs back" and freezes on surfaces behind the leading edge that are not protected by de-icing boots or heaters.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>It is heavier and can spread to unprotected areas aft of the leading edge.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>It is more brittle and breaks off into the engines.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>It only forms in clear air where it cannot be seen.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>It creates more drag than weight penalty.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L2-Q03 — Freezing Rain Formation</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Which thermodynamic structure is required for the formation of Freezing Rain (FZRA) at the surface?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Rationale:</strong> FZRA requires a melting layer (T > 0°C) above a sub-freezing layer (T < 0°C) near the surface. Snow melts in the warm layer and becomes supercooled rain in the cold layer below.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>A warm layer above 0°C overlying a sub-freezing layer near the ground.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A constant lapse rate of 6.5°C per km from the surface upward.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>An absolute instability from the surface to the tropopause.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A deep isothermal layer at exactly -5°C.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L2-Q04 — Sounding Diagnosis</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>When analyzing a sounding for icing potential, which combination of parameters indicates the HIGHEST risk?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Rationale:</strong> High icing risk is associated with saturated layers (dewpoint depression &lt; 5°C) within the critical temperature range (0°C to -15°C), especially if the layer is unstable (convective), which implies higher liquid water content.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Temperature -8°C, Dewpoint Depression 2°C, and Unstable Lapse Rate.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Temperature -25°C, Dewpoint Depression 1°C, and Stable Lapse Rate.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Temperature +5°C, Dewpoint Depression 4°C, and Neutral Stability.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Temperature -10°C, Dewpoint Depression 12°C, and Inversion Layer.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+</quiz>
