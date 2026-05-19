@@ -11,10 +11,42 @@ future course-to-mbz Claude skill) should read both.
 ## [Unreleased]
 
 ### Added
+- **Hebrew translation pipeline (scaffolding).** Second, parallel
+  pipeline that runs *after* the existing English pipeline finalizes a
+  module. Designed specifically for Google Antigravity's multi-agent
+  Manager view:
+  - `.agents/skills/hebrew-translation/translator/SKILL.md` — Layer 1
+    Claude translator agent. Mirrors `module-N/` to `module-N-he/`,
+    applies `dir="rtl" lang="he"`, preserves all structure/CSS/hex/SVG/
+    CDATA/quiz markers byte-for-byte, writes
+    `_translation_manifest.json`.
+  - `.agents/skills/hebrew-translation/editor/SKILL.md` — Layer 2 Gemini
+    review-only agent. Runs 12 validation checks; writes `review.json`;
+    never modifies Hebrew files.
+  - `.agents/skills/hebrew-translation/README.md` — overview + how the
+    pair feeds into `finalize_module.py`.
+  - `docs/hebrew_translation_spec.md` — the contract both skills read.
+    Translate/don't-translate lists, manifest + review.json schemas,
+    severity/category rubric, RTL conventions, quiz and SVG rules,
+    known v1 limitations.
+  - `docs/hebrew_glossary.md` — bilingual aviation/meteorology terms
+    (~60 entries, v0.1, pending SME review by Evgeny).
+  - `prompts/translate-to-hebrew.md` — Antigravity-flavored handoff
+    prompt with a Claude-Code fallback paragraph.
+  - `pipeline/validate_translation.py` — pure-Python preflight that
+    runs the deterministic checks (structural parity, hex preservation,
+    CSS class preservation, CDATA integrity, RTL markers, no var() in
+    SVG, file presence) before the Gemini editor runs. Augments
+    `review.json` with `produced_by: "python"` entries.
 - **Docs:** New `prompts/` folder containing copy-paste handoff prompts:
   three module-generation prompts (one each for Modules 2, 3, 4) and
   one Moodle upload walkthrough. Each is self-contained so a fresh
   agent with no prior conversation context can execute it.
+
+### Changed
+- `.ai/skills/translate-to-hebrew.md` rewritten from a placeholder into
+  a pointer at the new dual-agent SKILL.md files under
+  `.agents/skills/hebrew-translation/`.
 
 ### Changed
 - **AGENTS.md** rewritten for the agent-driven workflow. Points new

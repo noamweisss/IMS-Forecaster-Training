@@ -400,3 +400,100 @@ Claude Code agent or skill reads to know what to produce.
 
 Both deleted files remain in `git log` if anyone ever needs to
 reference the original prompt phrasing.
+
+---
+
+## 2026-05-19 — Hebrew translation pipeline: infrastructure + dual-agent design
+
+**Context.** Module 1 is live in Moodle in English; modules 2–4 are
+queued. The course is being delivered to forecasters at the Israeli
+Meteorological Service, so a Hebrew version is needed once each module
+is finalized in English. This is a *second pipeline* that runs after
+the existing English pipeline, not a replacement.
+
+**Decision.** Build a two-agent translation pipeline targeted at
+**Google Antigravity** (Google's agent IDE, public preview since Nov
+2025). Antigravity's Manager view runs multiple model-specific agents
+side by side, which suits a dual-layer translate-then-review flow:
+
+1. **Translator agent (Claude).** Reads the English `module-N/` folder.
+   Writes a Hebrew mirror at `module-N-he/` (sibling folder, English
+   slugs retained file-for-file). Applies the only structural change
+   required: `dir="rtl" lang="he"` on every `.ims-lesson` wrapper. Emits
+   `_translation_manifest.json` declaring what it did.
+2. **Editor agent (Gemini).** Reads both trees + the manifest. Runs 12
+   validation checks (structural parity, hex preservation, RTL markers,
+   residual English, glossary consistency, hallucination, quiz answer
+   correctness, SVG content, fluency, file presence). Writes one
+   `review.json`. **Review-only — never modifies Hebrew files.**
+
+Splitting translation and review into separate agents keeps each
+audit-able and lets each pick the strongest model for its job. It also
+maps cleanly onto two packaged Antigravity skills later — the SKILL.md
+files in this commit are already in the packaged format.
+
+**Decisions locked in with the owner before scaffolding:**
+
+- Output goes to a **sibling** `module-N-he/` folder, not a subfolder
+  or a suffix-renamed lesson. `finalize_module.py --module module-N-he`
+  works unchanged.
+- Editor is **review-only**. It writes `review.json`; the human (or a
+  translator re-run) addresses findings. Auto-fix was rejected to keep
+  the two-skill boundary clean.
+- **English slugs are preserved** in both trees. One-to-one filename
+  mapping makes diffing trivial.
+- **Learner-facing translation only.** Body fragments, callouts,
+  figcaptions, quiz CDATA text, overview body. Teacher scaffolding
+  (`README.md`, `module_structure.json`, `_extraction.json`,
+  `IMAGES_TO_SOURCE.md`) stays English — the teacher is the same person
+  every time and reads English fluently.
+
+**RTL approach.** The entire RTL contract for v1 is a single
+`dir="rtl" lang="he"` on each `.ims-lesson` wrapper. The shared
+`config/design_system.css` is **not modified**. Two minor cosmetic
+quirks under RTL are accepted as v1 known limitations: (a) the
+callout's left-accent stripe ends up on the right edge, which is
+actually correct for Hebrew; (b) the module-overview's inline-styled
+lesson cards have `padding-left:1.4rem` on their `<ul>` elements, so
+bullets sit on the wrong side. Both are documented in the spec under
+"Known limitations".
+
+**SVG approach.** Translate `<text>`, `<title>`, and `<desc>` content.
+Do not mirror layouts. A four-step English flowchart with Hebrew labels
+reads "stage 4 → stage 1" to a Hebrew reader who follows visual flow —
+acceptable for a professional audience that reads the caption first.
+Fix in v2 with either re-numbered SVGs or per-language mirrored copies.
+
+**Quiz answer correctness is the dominant failure mode.** Moodle's
+`<shuffleanswers>true</shuffleanswers>` makes positional checks
+useless; only the *text* of the `fraction="100"` answer matters, and
+only semantically. The Python validator can confirm exactly one
+`fraction="100"` exists per question, but only the LLM editor can
+verify the Hebrew text of that answer is the translation of the
+English correct answer. That's the single most important `error`
+category in `review.json`.
+
+**Why a Python preflight validator anyway.** The deterministic
+checks (element counts, hex preservation, CSS class preservation,
+CDATA integrity, RTL markers, no-var()-in-SVG) don't need an LLM. Doing
+them in Python before Gemini runs saves tokens and surfaces mechanical
+failures faster. `validate_translation.py` writes/augments
+`review.json` with `produced_by: "python"`; the editor agent appends
+its findings to the same file. Pure stdlib, regex-based, mirrors the
+style of `pipeline/build_combined_page.py`.
+
+**Antigravity research notes.** Skills live at
+`.agents/skills/<name>/SKILL.md` with YAML frontmatter (`name`,
+`description`, optional `metadata`). The folder name must equal the
+`name:` field. The format is **interoperable with Claude Code's skill
+loader**, so the same files work in either IDE — no migration needed
+when packaging globally. Multi-agent handoff in Antigravity's Manager
+view is **manual** (the user clicks/pastes between agents); the
+handoff prompt at `prompts/translate-to-hebrew.md` documents the
+click sequence.
+
+**Scope of this commit batch.** Scaffolding only — no Hebrew has been
+produced yet. The first real translation run (Module 1 → Module 1-he)
+will be the next session, with the smoke-test sequence in the spec's
+verification plan: translate one lesson + its quiz first, validate
+structural parity, edit-review, then scale to the full module.
