@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Worked example: Moodle XML question bank format.
+  One file per lesson, named NN_<slug>_quiz.xml under the module's lessons/ folder.
+  pipeline/finalize_module.py combines per-lesson XMLs into module_quiz_all_questions.xml.
+
+  Conventions enforced by docs/lesson_spec.md:
+
+    - 4-8 questions per lesson (roughly one per 4 minutes of lesson content).
+    - Exactly 4 answer options per question. All four plausible — distractors
+      reflect real misconceptions, not obvious filler.
+    - fraction="100" on the correct answer; fraction="0" on the rest.
+    - <generalfeedback> always filled in — this is the rationale the
+      student sees after answering, and is where the actual learning
+      happens. Explain why the correct answer is right and (briefly)
+      why the most tempting distractor is wrong.
+    - All HTML inside <text> elements is wrapped in CDATA so XML doesn't
+      choke on angle brackets.
+    - Application-level, scenario-based questions. Recall questions
+      ("What does ICAO stand for?") are wrong for this audience.
+    - <name> uses the format "L<lesson_id>-Q<NN> — short title" so the
+      question is recognizable in Moodle's Question Bank.
+-->
+<quiz>
+
+  <!-- Pattern 1: Diagnose-the-classification.
+       Give a concrete scenario, ask which classification applies.
+       Distractors are adjacent classifications a forecaster might confuse. -->
+  <question type="multichoice">
+    <name>
+      <text>L1-Q01 — Diagnosing absolute instability from a sounding</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>A 12:00 UTC sounding over an inland station shows the temperature decreasing at 11&nbsp;&deg;C/km through the lowest 2&nbsp;km, with the parcel unsaturated throughout that layer. Which best describes the stability of this layer?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> The environmental lapse rate (11&nbsp;&deg;C/km) exceeds the dry adiabatic lapse rate (9.8&nbsp;&deg;C/km), so an unsaturated parcel displaced upward becomes warmer than its surroundings and continues to rise. This is the definition of absolute instability. Conditional instability requires the environmental lapse rate to fall between the dry and saturated adiabatic rates (DALR&nbsp;&gt;&nbsp;ELR&nbsp;&gt;&nbsp;SALR) — not the case here, where the ELR exceeds even the DALR.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Absolutely unstable.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Conditionally unstable.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Absolutely stable.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Neutrally stable.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <!-- Pattern 2: Forecast-decision from a multi-input scenario.
+       More than one observation feeds the question, and the student must
+       weigh them together. Distractors are realistic over- and under-calls
+       a real forecaster might make. -->
+  <question type="multichoice">
+    <name>
+      <text>L1-Q02 — Forecasting afternoon convection from a morning sounding</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>A morning sounding shows a conditionally unstable layer between 850 and 500&nbsp;hPa, with a shallow surface-based inversion below 950&nbsp;hPa and a lifted condensation level near 870&nbsp;hPa. Surface heating is expected to add 6&nbsp;&deg;C through the afternoon. No significant moisture advection is forecast. What is the most operationally appropriate afternoon forecast?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> Six degrees of surface heating will erode the shallow morning inversion, allowing surface parcels to reach the LCL near 870&nbsp;hPa and tap into the conditionally unstable layer above. Conditional instability means that <em>once saturated</em>, a parcel continues to rise — so convection initiation is favored. Forecasting "no convection" because the morning is stable misreads the diurnal evolution. Forecasting "widespread severe weather" overstates what conditional instability alone supports without additional information about shear or moisture depth.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Isolated to scattered convection developing after the morning inversion erodes.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>No convection — the morning inversion will suppress vertical motion all day.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Widespread severe thunderstorms with large hail.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A stratocumulus deck capped at the LCL with no precipitation.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+</quiz>
