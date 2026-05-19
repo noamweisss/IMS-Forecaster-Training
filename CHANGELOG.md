@@ -10,6 +10,17 @@ future course-to-mbz Claude skill) should read both.
 
 ## [Unreleased]
 
+### Changed
+- **AGENTS.md** rewritten for the agent-driven workflow. Points new
+  agents at the runbook, spec doc, and journal.
+- **docs/architecture.md** updated to describe the three-phase
+  pipeline (Python extract → agent authoring → Python finalize) and
+  the constraints that drove the design.
+- **courses/aviation-weather/course.json** now records each module's
+  source-file grouping (per Evgeny's plan) and a generation status
+  field.
+
+
 ### Added
 - `CHANGELOG.md` (this file) and `docs/journal.md` for ongoing documentation.
 - Journal entry recording the three rendering bugs found during the Module 1
@@ -89,6 +100,10 @@ future course-to-mbz Claude skill) should read both.
   new spec doc + runbook.
 
 ### Added
+- **Docs:** New `docs/runbook.md` — the step-by-step procedure for
+  generating a module end-to-end. Designed to be readable by both
+  humans and AI agents; will seed the future Claude skill's quick
+  start.
 - **Docs:** New `docs/lesson_spec.md` — the contract between the
   Python pipeline tools and whoever (agent or human) authors the
   lessons. Covers audience and tone, the module structure JSON,
