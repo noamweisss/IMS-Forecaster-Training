@@ -55,6 +55,17 @@ future course-to-mbz Claude skill) should read both.
   anchor links. This is the file the user pastes into a single Moodle
   Page activity per module. Replaces the deleted Module-1-specific
   `build_preview.py`.
+- **Pipeline:** `embed_images.py` now optimizes images on the fly when
+  Pillow is available — downscale to max 1200 px wide, JPEG quality 82.
+  Cuts the Module 1 combined page from 12.8 MB to 1.05 MB. Falls back
+  to raw bytes when Pillow is missing or the optimizer would produce a
+  larger file than the original.
+- Added `Pillow` to `requirements.txt`.
+
+### Changed
+- **Module 1:** Regenerated all `*_moodle.html` fragments and the new
+  `module_combined_moodle.html` with optimized image payloads. The
+  original `lessons/Images/*.png` files are left at full resolution.
 
 ### Removed
 - Pre-Moodle dev scripts that became dead weight after the pivot:

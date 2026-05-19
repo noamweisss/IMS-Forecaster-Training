@@ -27,9 +27,16 @@ Why a separate script and not part of module_pipeline.py:
 
 import argparse
 import base64
+import io
 import mimetypes
 import re
 from pathlib import Path
+
+try:
+    from PIL import Image
+    HAS_PILLOW = True
+except ImportError:
+    HAS_PILLOW = False
 
 
 IMG_TAG_RE = re.compile(
@@ -37,13 +44,54 @@ IMG_TAG_RE = re.compile(
     re.IGNORECASE,
 )
 
+# Lesson body max-width is 840 px (see config/design_system.css). Going beyond
+# ~1.5x of the rendered size is wasted bytes for nearly invisible quality gain.
+WEB_MAX_WIDTH    = 1200
+JPEG_QUALITY     = 82
+
+
+def _optimized_bytes(image_path: Path) -> tuple[bytes, str]:
+    """Return (bytes, mime_type) for an image, downscaled and recompressed
+    for web display. Falls back to the raw file bytes if Pillow is missing
+    or the file is already small (< 200 KB) and not unreasonably wide.
+
+    PNG and JPEG sources both come out as JPEG to keep size down. Caller is
+    responsible for getting a transparent variant if it ever matters; for
+    lesson photos it does not.
+    """
+    raw = image_path.read_bytes()
+
+    if not HAS_PILLOW:
+        mime, _ = mimetypes.guess_type(str(image_path))
+        return raw, mime or "application/octet-stream"
+
+    try:
+        with Image.open(image_path) as img:
+            # Convert palette / RGBA to flat RGB so JPEG encoding doesn't error.
+            if img.mode not in ("RGB", "L"):
+                img = img.convert("RGB")
+            if img.width > WEB_MAX_WIDTH:
+                new_h = round(img.height * WEB_MAX_WIDTH / img.width)
+                img = img.resize((WEB_MAX_WIDTH, new_h), Image.LANCZOS)
+            buf = io.BytesIO()
+            img.save(buf, format="JPEG", quality=JPEG_QUALITY, optimize=True)
+            out = buf.getvalue()
+    except Exception:
+        # Anything goes wrong — fall back to the original bytes.
+        mime, _ = mimetypes.guess_type(str(image_path))
+        return raw, mime or "application/octet-stream"
+
+    # If optimization made the file larger (very small originals can), keep raw.
+    if len(out) >= len(raw):
+        mime, _ = mimetypes.guess_type(str(image_path))
+        return raw, mime or "application/octet-stream"
+
+    return out, "image/jpeg"
+
 
 def _data_uri(image_path: Path) -> str:
-    mime, _ = mimetypes.guess_type(str(image_path))
-    if not mime:
-        # Reasonable default for the file types we use (png / jpg / webp).
-        mime = "application/octet-stream"
-    encoded = base64.b64encode(image_path.read_bytes()).decode("ascii")
+    data, mime = _optimized_bytes(image_path)
+    encoded = base64.b64encode(data).decode("ascii")
     return f"data:{mime};base64,{encoded}"
 
 

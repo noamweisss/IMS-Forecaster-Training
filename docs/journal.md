@@ -304,3 +304,36 @@ new fragment-based output:
 All deleted in this cleanup commit. None of them are referenced from
 the live pipeline. Anyone digging through `git log` can recover them if
 ever needed.
+
+---
+
+## 2026-05-19 — Image optimization on embed: 13 MB → 1 MB combined page
+
+**Context.** First run of `build_combined_page.py` on Module 1 produced
+a 12.8 MB HTML file. The four sourced PNGs are ~2.5 MB each at full
+resolution (multi-megapixel), but the on-screen render is capped at
+840 px wide. Embedding them at native size is pure waste, and pasting
+13 MB into a Moodle HTML editor is going to either freeze the browser
+or hit PHP's `post_max_size` limit.
+
+**Decision.** Add an optimization step inside `embed_images.py`. When
+Pillow is available, every image is downscaled to a max width of
+1200 px (1.5× the lesson container width — leaves headroom for retina
+displays) and re-encoded as JPEG quality 82. The original PNG files in
+`lessons/Images/` are left untouched — only the embedded data URIs are
+optimized. This way the standalone HTML preview and any future re-runs
+still have the originals.
+
+**Result.** Module 1 combined page: 12.8 MB → 1.05 MB. Per-lesson
+fragments: 3.3 MB → 280 KB. Visual quality of the embedded photos is
+indistinguishable from the originals at the rendered size.
+
+**Why Pillow specifically.** Already familiar dependency in
+data/image-processing Python projects. Added to `requirements.txt`. The
+embed script falls back gracefully to raw bytes if Pillow is missing —
+the user just gets a bigger but still valid file.
+
+**Fallback rule.** If optimization ever produces a larger output than
+the original (small images with a lot of high-frequency detail can
+sometimes do this), the script keeps the original bytes. Belt-and-
+suspenders against pathological cases.
