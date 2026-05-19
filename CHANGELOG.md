@@ -78,6 +78,17 @@ future course-to-mbz Claude skill) should read both.
   original `lessons/Images/*.png` files are left at full resolution.
 
 ### Removed
+- `pipeline/module_pipeline.py` — the original API-key-dependent
+  orchestrator. Its extraction logic now lives in
+  `pipeline/extract_sources.py`; its assembly logic now lives in
+  `pipeline/finalize_module.py`; its LLM prompts will be reborn in
+  `docs/lesson_spec.md`. The agent-driven workflow does not need an
+  Anthropic API key.
+- `prompts/module_generation.md` — legacy single-shot prompt that
+  matched the old script's standalone-HTML output. Superseded by the
+  new spec doc + runbook.
+
+### Removed
 - Pre-Moodle dev scripts that became dead weight after the pivot:
   `pipeline/extract_content.py` (duplicated by `module_pipeline.py`),
   `pipeline/combine_xml.py` (assembly stage handles this),

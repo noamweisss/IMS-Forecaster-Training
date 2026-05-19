@@ -378,3 +378,25 @@ instructions; the runbook becomes the skill's worked example.
 
 Designing the pipeline this way now means lifting it into a skill later
 is mostly a copy-paste job.
+
+---
+
+## 2026-05-19 — Retire `module_pipeline.py` and the legacy prompt file
+
+**Context.** With extraction split into `extract_sources.py` and
+assembly into `finalize_module.py`, the original `module_pipeline.py`
+has nothing left to do that isn't either duplicated or unused. Its
+`anthropic.Anthropic()` calls were never the user's actual workflow.
+
+**Decision.** Delete `pipeline/module_pipeline.py` and the legacy
+`prompts/module_generation.md` (which referenced the old
+`./module_output/` paths and the obsolete standalone-HTML output).
+
+The valuable knowledge these files carried — the BLUEPRINT_SYSTEM /
+LESSON_SYSTEM prompts, the quiz XML shape, the SVG color palette and
+callout class conventions — will be reconstructed into the new
+`docs/lesson_spec.md` (next commit). The spec doc is what a future
+Claude Code agent or skill reads to know what to produce.
+
+Both deleted files remain in `git log` if anyone ever needs to
+reference the original prompt phrasing.
