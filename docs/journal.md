@@ -259,3 +259,48 @@ the same way. Keeping it in the tree.
   block. Zero inside `<svg>` elements (sampled with regex).
 - All four sourced images are base64-embedded.
 - Fragment sizes 3.2–3.5 MB; module overview is 6.5 KB (no images).
+
+---
+
+## 2026-05-19 — Pivot away from .mbz builder; clean up pre-Moodle scripts
+
+**Context.** The original plan included building a `.mbz` (Moodle backup)
+generator so the user could upload one file per course. Investigating
+the actual schema revealed it's a 1–2 day engineering project — many
+XML files, strict cross-reference IDs, version-specific differences, no
+forgiveness on errors. With the Moodle version unknown and a same-day
+deadline, the risk/reward was bad.
+
+**Decision.** Drop the .mbz path. Replace with a much simpler workflow:
+
+- **One combined HTML page per module** (overview + all lessons stacked,
+  with an in-page table of contents). User pastes it as a single Moodle
+  Page activity per module. 4 pastes total.
+- **Existing quiz XML import.** The pipeline already produces
+  `module_quiz_all_questions.xml` per module. User imports it into the
+  Question Bank → creates one Quiz activity per module.
+
+Two clicks per module, eight clicks total for the course. Standard
+Moodle workflows that IT and Evgeny already know. Re-tryable on any
+Moodle version.
+
+**Cleanup that fell out of the pivot.** Several scripts in `pipeline/`
+were pre-Moodle dev tools that became dead weight once we adopted the
+new fragment-based output:
+
+- `extract_content.py` — earlier standalone extractor. Now duplicated by
+  the `extract_*` functions inside `module_pipeline.py`.
+- `combine_xml.py` — combined per-lesson quiz XMLs. Replaced by the
+  pipeline's assembly stage, which writes `module_quiz_all_questions.xml`
+  directly.
+- `replace_images.py` — Module-1-only hardcoded image swaps. Superseded
+  by `embed_images.py`, which is generic.
+- `build_preview.py` — Module-1-only sidebar-navigation preview. Will be
+  superseded by the combined-page generator (next commit).
+- `module-1/preview/` — output of `build_preview.py`.
+- End-of-pipeline `.zip` packaging — was for ZIP-bundle distribution
+  back when there was no Moodle to upload to.
+
+All deleted in this cleanup commit. None of them are referenced from
+the live pipeline. Anyone digging through `git log` can recover them if
+ever needed.

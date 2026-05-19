@@ -48,6 +48,19 @@ future course-to-mbz Claude skill) should read both.
   companion `*_moodle.html` body fragment with images embedded as base64
   and SVG colors inlined. Original standalone HTML left unchanged.
 
+### Removed
+- Pre-Moodle dev scripts that became dead weight after the pivot:
+  `pipeline/extract_content.py` (duplicated by `module_pipeline.py`),
+  `pipeline/combine_xml.py` (assembly stage handles this),
+  `pipeline/replace_images.py` (Module-1-only; superseded by
+  `embed_images.py`), and `pipeline/build_preview.py` (Module-1-only;
+  to be replaced by the upcoming combined-page generator).
+- `courses/aviation-weather/module-1/preview/` — output of the deleted
+  `build_preview.py`.
+- End-of-pipeline `.zip` packaging step in `module_pipeline.py`. Was for
+  bundling output for distribution; obsolete now that Moodle is the
+  delivery target.
+
 ### Pipeline status
 - Module 1 (Aviation Weather Fundamentals & Regulations) — generated and
   manually uploaded to Moodle during the pilot phase. Known issues with

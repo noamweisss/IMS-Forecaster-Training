@@ -50,10 +50,8 @@ python pipeline/module_pipeline.py \
 ```
 ├── pipeline/                Python pipeline scripts
 │   ├── module_pipeline.py   Main pipeline (extract → blueprint → generate → assemble)
-│   ├── build_preview.py     Builds single-page preview HTML
-│   ├── extract_content.py   Standalone content extractor
-│   ├── combine_xml.py       Combines per-lesson quiz XMLs
-│   └── replace_images.py    Replaces placeholder image markers with real <img> tags
+│   ├── embed_images.py      Inlines sourced photos as base64 data URIs in Moodle fragments
+│   └── retrofit_to_moodle.py  Converts legacy module HTML to the Moodle-ready format
 │
 ├── prompts/                 Prompt templates for Claude API
 ├── courses/                 Course content (sources + outputs)
