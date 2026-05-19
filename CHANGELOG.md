@@ -88,6 +88,15 @@ future course-to-mbz Claude skill) should read both.
   matched the old script's standalone-HTML output. Superseded by the
   new spec doc + runbook.
 
+### Added
+- **Docs:** New `docs/lesson_spec.md` — the contract between the
+  Python pipeline tools and whoever (agent or human) authors the
+  lessons. Covers audience and tone, the module structure JSON,
+  body-fragment HTML shape, design-system classes, SVG color palette,
+  quiz XML schema, file naming, the module overview template, and
+  common mistakes. This is the file a fresh Claude Code agent reads
+  before starting any course generation work.
+
 ### Removed
 - Pre-Moodle dev scripts that became dead weight after the pivot:
   `pipeline/extract_content.py` (duplicated by `module_pipeline.py`),
