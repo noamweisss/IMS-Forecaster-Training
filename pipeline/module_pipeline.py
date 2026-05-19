@@ -362,14 +362,26 @@ Every abstract concept must have a visual anchor. You will generate:
   - Styled callout boxes (note, warning, key formula) for important items
   - A visual element is required every 200–300 words of prose
 
-SVG RULES (critical — these SVGs embed directly in HTML):
+SVG RULES (critical — these SVGs embed directly in HTML and will be rendered
+inside Moodle, which strips our CSS variables. NEVER reference var(--anything)
+inside SVG attributes — only literal hex colors):
   - viewBox="0 0 680 H" where H fits the content
-  - Flat colors only (no gradients), dark-mode safe
+  - Flat colors only (no gradients)
   - Font: sans-serif, 14px labels, 12px subtitles
   - Include role="img" with <title> and <desc>
-  - Color palette: blue #185fa5, teal #0F6E56, amber #BA7517, coral #993C1D, gray #5F5E5A
-  - Backgrounds: use very light fills (#E6F1FB, #E1F5EE, #FAEEDA) — never white or black fills
-  - All text must be readable on light AND dark page backgrounds (use dark hex colors for text)
+  - ALL fill, stroke, and color attributes MUST be literal hex (#RRGGBB).
+    Never `fill="var(--bg)"`, never `stroke="var(--text)"`. The page's CSS
+    custom properties do not exist inside Moodle pages.
+  - Color palette (use these literals):
+      accent blue   #185FA5      text dark      #1A1917
+      teal          #0F6E56      muted gray     #6B6A65
+      amber         #BA7517      border gray    #E2DFD6
+      coral         #993C1D      surface cream  #F6F5F0
+      key purple    #534AB7
+  - Light background fills (for boxes inside SVGs): #E6F1FB, #E1F5EE,
+    #FAEEDA, #EEEDFE. Never use pure white or black as a fill.
+  - All text inside SVGs uses dark hex (#1A1917 or similar) so it reads on
+    any page background.
 
 HTML CONTENT RULES:
   - Use semantic elements: <section>, <figure>, <figcaption>, <table>
@@ -448,6 +460,44 @@ def _gather_source_content(lesson: dict, extracted: list[dict], max_chars: int =
     return combined[:max_chars]
 
 
+# Light-mode hex values for every CSS custom property declared in
+# config/design_system.css. Used to scrub `var(--xxx)` references out of
+# SVG attributes before the HTML is uploaded to Moodle, which does not
+# preserve our CSS variable scope (see docs/journal.md 2026-05-19).
+CSS_VAR_HEX_FALLBACKS = {
+    "--bg":            "#FFFFFF",
+    "--surface":       "#F6F5F0",
+    "--border":        "#E2DFD6",
+    "--text":          "#1A1917",
+    "--muted":         "#6B6A65",
+    "--accent":        "#185FA5",
+    "--accent-light":  "#E6F1FB",
+    "--note-bg":       "#E1F5EE",
+    "--note-border":   "#0F6E56",
+    "--warn-bg":       "#FAEEDA",
+    "--warn-border":   "#BA7517",
+    "--key-bg":        "#EEEDFE",
+    "--key-border":    "#534AB7",
+}
+
+
+def _inline_css_vars_in_svgs(html: str) -> str:
+    """Replace `var(--name)` references inside <svg>...</svg> blocks with
+    literal hex from CSS_VAR_HEX_FALLBACKS. Leaves var() references outside
+    SVGs untouched — those live in real CSS rules and resolve normally."""
+
+    var_pattern = re.compile(r"var\(\s*(--[A-Za-z0-9_-]+)\s*(?:,[^)]*)?\)")
+
+    def scrub(match: re.Match) -> str:
+        svg_block = match.group(0)
+        def replace_var(v: re.Match) -> str:
+            name = v.group(1)
+            return CSS_VAR_HEX_FALLBACKS.get(name, v.group(0))
+        return var_pattern.sub(replace_var, svg_block)
+
+    return re.sub(r"<svg\b.*?</svg>", scrub, html, flags=re.DOTALL | re.IGNORECASE)
+
+
 async def generate_lesson_content(lesson: dict, extracted: list[dict],
                                    blueprint: dict, course_context: str,
                                    audience: str) -> dict:
@@ -488,20 +538,31 @@ async def generate_lesson_content(lesson: dict, extracted: list[dict],
     text = _strip_fences(resp.content[0].text)
 
     try:
-        return json.loads(text)
+        parsed = json.loads(text)
     except json.JSONDecodeError:
         # Salvage: find outermost JSON object
         m = re.search(r'\{.*\}', text, re.DOTALL)
         if m:
             try:
-                return json.loads(m.group())
+                parsed = json.loads(m.group())
             except Exception:
-                pass
-        return {
-            "lesson_title": lesson["lesson_title"],
-            "error":        "JSON parse failed",
-            "raw_response": text[:800],
-        }
+                return {
+                    "lesson_title": lesson["lesson_title"],
+                    "error":        "JSON parse failed",
+                    "raw_response": text[:800],
+                }
+        else:
+            return {
+                "lesson_title": lesson["lesson_title"],
+                "error":        "JSON parse failed",
+                "raw_response": text[:800],
+            }
+
+    # Post-process: scrub any var(--xxx) the model slipped into SVG attributes.
+    if isinstance(parsed.get("html_content"), str):
+        parsed["html_content"] = _inline_css_vars_in_svgs(parsed["html_content"])
+
+    return parsed
 
 
 async def generate_all_lessons(blueprint: dict, extracted: list[dict],

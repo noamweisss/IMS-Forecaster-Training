@@ -16,6 +16,14 @@ future course-to-mbz Claude skill) should read both.
   Moodle upload (CSS variables in SVG, relative image paths, full HTML
   document wrappers). These motivate the next several pipeline changes.
 
+### Changed
+- **Pipeline:** SVG diagrams now use literal hex colors only — `var(--xxx)`
+  references are forbidden inside SVG attributes. Strengthened the lesson
+  generation prompt and added a `_inline_css_vars_in_svgs` post-processing
+  pass that scrubs any leftover var() references using
+  `CSS_VAR_HEX_FALLBACKS`. Fixes invisible/colorless diagrams when lessons
+  are pasted into Moodle.
+
 ### Pipeline status
 - Module 1 (Aviation Weather Fundamentals & Regulations) — generated and
   manually uploaded to Moodle during the pilot phase. Known issues with

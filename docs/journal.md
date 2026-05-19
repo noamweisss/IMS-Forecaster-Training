@@ -79,3 +79,33 @@ entirely.
 - *Use Moodle "Book" resource instead of "Page".* Same paste-stripping
   behavior; doesn't help.
 - *Rewrite SVGs to use literal colors only.* This is what we're doing.
+
+---
+
+## 2026-05-19 — Belt-and-suspenders SVG color scrubbing
+
+**Context.** The lesson generation prompt now forbids `var(--xxx)` inside
+SVG attributes (see previous entry). But we should not rely on the model
+following the rule 100% of the time — past output has shown it slips back
+into `fill="var(--accent)"` even when the prompt says otherwise.
+
+**Decision.** Add `_inline_css_vars_in_svgs(html)` in
+[module_pipeline.py](../pipeline/module_pipeline.py). It walks every
+`<svg>...</svg>` block in the model's `html_content` output and substitutes
+any `var(--name)` reference with a hex value from the
+`CSS_VAR_HEX_FALLBACKS` table. References outside SVGs are left alone — they
+live in real CSS rules and resolve normally. Unknown variable names are
+left visible (`var(--unknown)`) so the bug is loud rather than silent.
+
+**Why a fallback map and not just a token-by-token color replacement.** The
+map is a single source of truth that mirrors
+[design_system.css](../config/design_system.css). When we change a token in
+the design system, the SVG fallback follows automatically (well — when we
+remember to update the map; that's the trade-off).
+
+**Why light-mode values only.** Inline SVGs can't switch colors based on
+`prefers-color-scheme` because the SVG attributes are static at render
+time. Picking light-mode hex (`#FFFFFF` for `--bg`, `#1A1917` for `--text`)
+guarantees readability on most Moodle themes. If we ever need dark-mode
+SVGs we'd switch to CSS-driven recoloring via `currentColor` + class-based
+overrides — out of scope for the pilot.
