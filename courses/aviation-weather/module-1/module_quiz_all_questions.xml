@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <quiz><question type="multichoice">
     <name><text>L1-Q01 — Non-compliance with ICAO Standards</text></name>
     <questiontext format="html"><text>&lt;p&gt;A National Meteorological Service determines that it cannot meet the exact grid resolution specified in a newly updated ICAO Annex 3 Standard due to legacy computing limitations. What is the appropriate operational response?&lt;/p&gt;</text></questiontext>

@@ -65,6 +65,12 @@ future course-to-mbz Claude skill) should read both.
   of PPTX/PDF/DOCX content into a JSON dump. No LLM, no API key
   required. First half of the refactor that removes API-key dependence
   from the pipeline; see journal entry "Pivot to agent-driven pipeline".
+- **Tooling:** New `pipeline/finalize_module.py`. Pure-Python "post-LLM"
+  step: combines per-lesson quiz XMLs, embeds local images as base64,
+  builds the combined Moodle page, regenerates `IMAGES_TO_SOURCE.md`
+  from any remaining placeholders, and writes a standard `README.md`
+  for the module. Idempotent — safe to re-run after sourcing more
+  images or after the agent regenerates a lesson.
 
 ### Changed
 - **Module 1:** Regenerated all `*_moodle.html` fragments and the new
