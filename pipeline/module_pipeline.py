@@ -606,6 +606,28 @@ def _get_page_css() -> str:
     return ""
 
 
+def _html_fragment(title: str, breadcrumb: str, content: str) -> str:
+    """Body-fragment HTML for embedding in a Moodle Page or .mbz backup.
+
+    No <!DOCTYPE>, <html>, <head>, or <body> tags. All CSS is inlined in a
+    `<style>` block at the top of the fragment, scoped to .ims-lesson so it
+    cannot leak onto the host page's chrome.
+
+    Why a fragment file and not just the standalone: Moodle's HTML editor
+    strips full-document wrappers but preserves a <style> tag inside body
+    content for trusted user roles. The fragment is the format the .mbz
+    builder consumes and the format a human would paste manually.
+    """
+    return f"""<style>
+{_get_page_css()}
+</style>
+<div class="ims-lesson">
+<p class="breadcrumb">{breadcrumb}</p>
+<h1>{title}</h1>
+{content}
+</div>"""
+
+
 def _html_page(title: str, breadcrumb: str, content: str) -> str:
     """Standalone preview HTML. Body content is wrapped in
     `<div class="ims-lesson">` so the CSS (scoped to that class) applies."""
@@ -669,7 +691,9 @@ def _quiz_xml(questions: list[dict], category_name: str) -> str:
     return "\n".join(parts)
 
 
-def assemble_overview(blueprint: dict, module_number: int) -> str:
+def assemble_overview_body(blueprint: dict, module_number: int) -> str:
+    """Return just the inner body of the overview page (no wrappers).
+    Used by both the standalone HTML and the Moodle fragment."""
     lessons      = blueprint.get("lessons", [])
     competencies = blueprint.get("competencies", [])
 
@@ -679,16 +703,18 @@ def assemble_overview(blueprint: dict, module_number: int) -> str:
     lessons_html = ""
     for i, l in enumerate(lessons, 1):
         objs = "".join(f"<li>{o}</li>" for o in l.get("learning_objectives", []))
+        # Inline styles use hex literals (not var(--xxx)) so the overview also
+        # renders correctly when pasted into Moodle without our <style> block.
         lessons_html += f"""
-<div style="border:1px solid var(--border); border-radius:8px; padding:1rem 1.25rem; margin:0.75rem 0;">
+<div style="border:1px solid #E2DFD6; border-radius:8px; padding:1rem 1.25rem; margin:0.75rem 0;">
   <div style="display:flex; justify-content:space-between; align-items:baseline;">
     <strong>Lesson {i}: {l.get('lesson_title','')}</strong>
-    <span style="color:var(--muted); font-size:0.85rem;">~{l.get('estimated_duration_minutes',20)} min</span>
+    <span style="color:#6B6A65; font-size:0.85rem;">~{l.get('estimated_duration_minutes',20)} min</span>
   </div>
   <ul style="margin:0.5rem 0 0; padding-left:1.4rem; font-size:0.9rem;">{objs}</ul>
 </div>"""
 
-    body = f"""
+    return f"""
 <p class="meta">
   Estimated duration: ~{blueprint.get('estimated_duration_minutes', 90)} min &nbsp;|&nbsp;
   {len(lessons)} lessons &nbsp;|&nbsp;
@@ -707,11 +733,13 @@ def assemble_overview(blueprint: dict, module_number: int) -> str:
 {lessons_html}
 """
 
-    return _html_page(
-        blueprint.get("module_title", f"Module {module_number}"),
-        f"Module {module_number} overview",
-        body,
-    )
+
+def assemble_overview(blueprint: dict, module_number: int) -> tuple[str, str]:
+    """Return (standalone_html, moodle_fragment) for the module overview."""
+    title = blueprint.get("module_title", f"Module {module_number}")
+    crumb = f"Module {module_number} overview"
+    body  = assemble_overview_body(blueprint, module_number)
+    return _html_page(title, crumb, body), _html_fragment(title, crumb, body)
 
 
 def _safe_slug(title: str) -> str:
@@ -761,10 +789,11 @@ async def run_pipeline(args: argparse.Namespace) -> None:
     # ── Stage 4: Assembly ─────────────────────────────────────────────────────
     _header("Stage 4 / Assembly")
 
-    # Module overview
-    overview_html = assemble_overview(blueprint, args.number)
-    _write(output_dir / "00_module_overview.html", overview_html)
-    print("  00_module_overview.html")
+    # Module overview — standalone preview + Moodle body fragment.
+    overview_html, overview_fragment = assemble_overview(blueprint, args.number)
+    _write(output_dir / "00_module_overview.html",        overview_html)
+    _write(output_dir / "00_module_overview_moodle.html", overview_fragment)
+    print("  00_module_overview.html  +  00_module_overview_moodle.html")
 
     all_questions  = []
     image_requests = []  # Collect image-needed markers for the summary
@@ -790,13 +819,15 @@ async def run_pipeline(args: argparse.Namespace) -> None:
 </div>
 {content.get('html_content', '<p>Content generation failed.</p>')}
 """
-        lesson_page = _html_page(
-            content.get("lesson_title", lesson_def["lesson_title"]),
-            f"Module {args.number} / Lesson {i}",
-            body,
-        )
-        lesson_filename = f"{i:02d}_{slug}.html"
-        _write(lessons_dir / lesson_filename, lesson_page)
+        lesson_title    = content.get("lesson_title", lesson_def["lesson_title"])
+        lesson_crumb    = f"Module {args.number} / Lesson {i}"
+        lesson_page     = _html_page(lesson_title, lesson_crumb, body)
+        lesson_fragment = _html_fragment(lesson_title, lesson_crumb, body)
+
+        lesson_filename   = f"{i:02d}_{slug}.html"
+        fragment_filename = f"{i:02d}_{slug}_moodle.html"
+        _write(lessons_dir / lesson_filename,   lesson_page)
+        _write(lessons_dir / fragment_filename, lesson_fragment)
 
         # Quiz XML
         questions = content.get("quiz_questions", [])

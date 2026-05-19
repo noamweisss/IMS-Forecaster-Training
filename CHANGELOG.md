@@ -29,6 +29,13 @@ future course-to-mbz Claude skill) should read both.
   Lesson generation prompt forbids `<html>/<head>/<body>/<!DOCTYPE>/<style>`
   in model output so the scoping isn't bypassed.
 
+### Added
+- **Pipeline:** Each lesson now produces two HTML files — the existing
+  standalone `NN_<slug>.html` plus a new `NN_<slug>_moodle.html` body
+  fragment for Moodle upload. The fragment has no document wrappers and
+  carries a single inline `<style>` block scoped to `.ims-lesson`. The
+  module overview is also dual-emitted as `00_module_overview_moodle.html`.
+
 ### Pipeline status
 - Module 1 (Aviation Weather Fundamentals & Regulations) — generated and
   manually uploaded to Moodle during the pilot phase. Known issues with

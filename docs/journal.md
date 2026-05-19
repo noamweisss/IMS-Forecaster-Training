@@ -139,3 +139,36 @@ the CSS variables, but only inside `.ims-lesson`. Moodle's own dark theme
 mechanism, not the OS preference. We accept this — lessons will read
 fine on light Moodle themes, and on dark themes the lesson will be a
 light island. Better than dim text on the host's dark background.
+
+---
+
+## 2026-05-19 — Two output flavors: standalone + Moodle fragment
+
+**Context.** A single HTML output served both browser-preview and
+Moodle-upload duties. That worked accidentally in the pilot only because
+both happened to render the styles. With Moodle in the loop properly,
+we need two distinct outputs.
+
+**Decision.** Every lesson now produces two files:
+
+- `NN_<slug>.html` — full standalone HTML for browser review. Has
+  `<!DOCTYPE>`, `<html>`, etc.
+- `NN_<slug>_moodle.html` — body fragment for upload. No document
+  wrappers. Contains a single inline `<style>` block at the top
+  (scoped to `.ims-lesson`) followed by the `<div class="ims-lesson">`
+  wrapper. This is what the `.mbz` builder will consume.
+
+Same dual output for `00_module_overview.html` / `_moodle.html`.
+
+The fragment includes its own scoped `<style>` block. Moodle's HTML
+filter for trusted user roles (teacher, manager) preserves inline
+`<style>` tags. If KSES strips them on a stricter host, the lesson will
+still render — typography falls back to Moodle's theme — but callouts
+and tables will lose their colors. We'll learn whether that's an issue
+once the Module 1 restore happens.
+
+**Why not inline-style every element instead.** Inline styles would
+work even with the harshest KSES filter, but the HTML balloons in size,
+loses semantic readability, and makes manual edits painful for Evgeny's
+later review pass. A `<style>` block is the right level of abstraction
+for the audience.
