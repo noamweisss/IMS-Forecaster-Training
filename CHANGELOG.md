@@ -61,6 +61,10 @@ future course-to-mbz Claude skill) should read both.
   to raw bytes when Pillow is missing or the optimizer would produce a
   larger file than the original.
 - Added `Pillow` to `requirements.txt`.
+- **Tooling:** New `pipeline/extract_sources.py`. Pure-Python extraction
+  of PPTX/PDF/DOCX content into a JSON dump. No LLM, no API key
+  required. First half of the refactor that removes API-key dependence
+  from the pipeline; see journal entry "Pivot to agent-driven pipeline".
 
 ### Changed
 - **Module 1:** Regenerated all `*_moodle.html` fragments and the new
