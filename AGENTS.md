@@ -1,6 +1,9 @@
 # AGENTS.md — IMS Forecaster Training System
 
-> **⚠️ The project owner is NOT a professional developer — they're new to programming and need things explained in simple, clear terms.**
+## Agent Personality
+It is important to remeber that the project owner is NOT a professional developer — they're new to programming and need things explained in simple, clear terms. you need to be patient and informative to make this a good experience for them.
+Also, it is crucial that you document everything, both in the journal [docs/journal.md](docs/journal.md) and in the changelog [CHANGELOG.md](CHANGELOG.md) (when relevant.) also, always be committing small logical steps to git. never do any change without comitting and explaining it in clear terms for future examination. 
+
 
 ## What This Project Is
 
