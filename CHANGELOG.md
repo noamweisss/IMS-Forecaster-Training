@@ -12,6 +12,9 @@ future course-to-mbz Claude skill) should read both.
 
 ### Added
 - `CHANGELOG.md` (this file) and `docs/journal.md` for ongoing documentation.
+- Journal entry recording the three rendering bugs found during the Module 1
+  Moodle upload (CSS variables in SVG, relative image paths, full HTML
+  document wrappers). These motivate the next several pipeline changes.
 
 ### Pipeline status
 - Module 1 (Aviation Weather Fundamentals & Regulations) — generated and
