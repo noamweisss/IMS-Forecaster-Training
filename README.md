@@ -24,12 +24,14 @@ The pipeline reads your source material, uses AI to design a lesson structure, g
 pip install -r requirements.txt
 ```
 
+<!--
 ### 2. Set up your API key
 
 ```bash
 cp .env.example .env
 # Edit .env and paste your Anthropic API key
 ```
+-->
 
 ### 3. Run the pipeline
 
