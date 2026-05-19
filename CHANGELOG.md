@@ -11,6 +11,16 @@ future course-to-mbz Claude skill) should read both.
 ## [Unreleased]
 
 ### Added
+- **Skill:** New `.ai/skills/generate-module/` — packages the
+  three-phase course-to-Moodle pipeline as a reusable Claude skill.
+  Contains `SKILL.md` (the agent entry point with workflow and
+  constraints), `references/lesson_template.html` (worked-example
+  lesson body fragment), and `references/quiz_template.xml`
+  (worked-example quiz with two application-level questions). The
+  skill references (does not duplicate) `docs/lesson_spec.md`,
+  `docs/runbook.md`, and `config/design_system.css` so it stays in
+  lockstep with the repo's single source of truth. Realizes the
+  "skill-ready" architecture goal noted in `docs/architecture.md`.
 - **Docs:** New `prompts/` folder containing copy-paste handoff prompts:
   three module-generation prompts (one each for Modules 2, 3, 4) and
   one Moodle upload walkthrough. Each is self-contained so a fresh
