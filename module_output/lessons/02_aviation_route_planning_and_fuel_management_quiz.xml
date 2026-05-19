@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <question type="multichoice">
+    <name><text>L2-Q01 — Impact of Headwinds</text></name>
+    <questiontext format="html"><text><![CDATA[<p>A long-haul flight is planned with a true airspeed (TAS) of 480 knots. The en-route forecast indicates an unexpected 60-knot headwind component across a significant portion of the route. As a forecaster, how should you expect this to impact the dispatcher's fuel planning?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>A headwind reduces ground speed (in this case to 420 knots), which increases the total flight time to cover the same distance. This directly results in a higher trip fuel requirement. It does not affect the true airspeed, which is a function of aircraft performance and air density.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>The ground speed will decrease, increasing flight time and requiring a higher trip fuel calculation.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>The true airspeed will drop to 420 knots, decreasing engine efficiency but requiring the same amount of fuel.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>The aircraft will compensate by increasing TAS to 540 knots, keeping fuel burn identical to the original plan.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>The headwind will primarily require an increase in final reserve fuel due to holding pattern requirements.</p>]]></text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L2-Q02 — High Surface Temperatures</text></name>
+    <questiontext format="html"><text><![CDATA[<p>During the summer months, an aerodrome experiences unusually high surface temperatures coupled with low atmospheric pressure. How does this specific meteorological condition impact departing commercial aircraft?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>High temperatures and low pressure increase density altitude, meaning the air is less dense. Less dense air provides less lift and reduces engine thrust. As a result, aircraft require a longer takeoff roll and may need to reduce their takeoff weight (payload or fuel) to depart safely.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>It increases density altitude, leading to longer takeoff rolls and potential reductions in maximum allowable takeoff weight.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>It decreases density altitude, allowing aircraft to climb faster and carry additional contingency fuel.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>It creates strong low-level wind shear, requiring aircraft to maintain a higher true airspeed during the initial climb.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>It primarily impacts the en-route cruise phase, causing the aircraft to burn fuel faster at high altitudes.</p>]]></text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L2-Q03 — Terminal Forecasts and Alternate Fuel</text></name>
+    <questiontext format="html"><text><![CDATA[<p>You issue a TAF for a major hub airport indicating a TEMPO group for heavy thunderstorms and low visibility precisely during an airline's scheduled arrival time. What is the immediate regulatory consequence of this forecast on the airline's flight plan?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>If a destination TAF forecasts conditions below specific minimums (like heavy thunderstorms), regulations require the dispatcher to plan for a suitable alternate airport. This means they must load extra fuel to fly from the destination to the alternate, plus reserve fuel, potentially displacing passenger or cargo weight.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>The dispatcher will be legally required to name an alternate airport and load sufficient fuel to reach it.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>The flight will automatically be canceled as commercial aircraft cannot legally dispatch into a TEMPO thunderstorm forecast.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>The pilot will be forced to change to a higher cruising altitude to conserve fuel for potential holding.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>The airline must request an exemption from ICAO to land below established minimums.</p>]]></text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L2-Q04 — Optimal Cruising Levels</text></name>
+    <questiontext format="html"><text><![CDATA[<p>An aircraft is scheduled to fly eastbound. The upper-air forecast shows a strong jet stream (tailwind) at FL350, but the temperature at that level is significantly warmer than the International Standard Atmosphere (ISA). Why might the dispatcher choose to file the flight plan at FL310 instead?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Warmer than standard temperatures at altitude decrease engine performance and lift. If an aircraft is heavily loaded, the decreased air density may physically prevent the aircraft from climbing to or maintaining FL350, forcing them to fly lower where the air is denser, even if it means missing the strongest tailwinds.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>The warmer temperatures decrease air density, meaning the heavily loaded aircraft may lack the performance to climb to or maintain FL350.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Warmer temperatures inside a jet stream always indicate severe clear air turbulence (CAT), which must be avoided.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>A tailwind combined with warm temperatures will cause the aircraft to exceed its maximum Mach number over the ground.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Eastbound flights are restricted by ICAO rules from flying above FL330 when temperatures exceed ISA+10.</p>]]></text></answer>
+  </question>
+
+</quiz>

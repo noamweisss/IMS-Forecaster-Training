@@ -1,0 +1,44 @@
+
+services:
+  mariadb:
+    image: bitnamilegacy/mariadb:latest
+    environment:
+      - ALLOW_EMPTY_PASSWORD=no
+      - MARIADB_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
+      - MARIADB_USER=moodle
+      - MARIADB_PASSWORD=${DB_PASSWORD}
+      - MARIADB_DATABASE=moodle
+    volumes:
+      - mariadb_data:/bitnami/mariadb
+    networks:
+      - moodle_network
+    restart: always
+
+  moodle:
+    image: bitnamilegacy/moodle:latest
+    ports:
+      - "80:8080"
+      - "443:8443"
+    environment:
+      - MOODLE_DATABASE_HOST=mariadb
+      - MOODLE_DATABASE_PORT_NUMBER=3306
+      - MOODLE_DATABASE_USER=moodle
+      - MOODLE_DATABASE_PASSWORD=${DB_PASSWORD}
+      - MOODLE_DATABASE_NAME=moodle
+    volumes:
+      - moodle_data:/bitnami/moodle
+      - moodle_moodledata:/bitnami/moodledata
+    networks:
+      - moodle_network
+    depends_on:
+      - mariadb
+    restart: always
+
+volumes:
+  mariadb_data:
+  moodle_data:
+  moodle_moodledata:
+
+networks:
+  moodle_network:
+    driver: bridge

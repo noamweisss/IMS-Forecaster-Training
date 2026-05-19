@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <question type="multichoice">
+    <name><text>L3-Q01 — VFR in Class G Airspace</text></name>
+    <questiontext format="html"><text><![CDATA[<p>A general aviation pilot is planning a VFR cross-country flight entirely within Class G airspace. The morning TAF indicates marginal VFR conditions (scattered clouds at 800 feet and 4km visibility). Why is accurate forecasting of these low-level conditions particularly critical for this pilot compared to a commercial airliner?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Class G is uncontrolled airspace where flights are often conducted under Visual Flight Rules (VFR). VFR pilots rely entirely on visual reference to the ground and must stay out of clouds. Commercial airliners operate under Instrument Flight Rules (IFR), usually in Class A controlled airspace, and are not bound by the same visual minimums.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>Class G relies heavily on VFR operations, which strictly require pilots to maintain visual reference to the ground and remain clear of clouds to avoid terrain.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Class G airspace prohibits the use of altimeters, so pilots must use cloud bases to estimate their height above ground level.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Air Traffic Control in Class G will actively vector the pilot around low clouds, increasing the controller's workload significantly.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Commercial airliners are structurally reinforced against low-level turbulence, whereas general aviation aircraft are not.</p>]]></text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L3-Q02 — Meteorological Watch Office Responsibility</text></name>
+    <questiontext format="html"><text><![CDATA[<p>A fast-moving squall line crosses the boundary from FIR ALPHA into FIR BRAVO. Which Meteorological Watch Office (MWO) is responsible for issuing the SIGMET for the portion of the squall line that has entered FIR BRAVO?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Airspace is divided into geographically distinct Flight Information Regions (FIRs). Each FIR is monitored by a designated MWO. Once a weather phenomenon crosses into a new FIR, the MWO responsible for that new FIR assumes responsibility for issuing the appropriate warnings (SIGMETs) for their airspace.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>The MWO responsible for FIR BRAVO.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>The MWO responsible for FIR ALPHA, since the squall line originated there.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Both MWOs must issue a joint SIGMET to cover the entire squall line seamlessly.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>The WMO regional center, as phenomena crossing FIR boundaries escalate to international jurisdiction.</p>]]></text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L3-Q03 — Class A Airspace Operations</text></name>
+    <questiontext format="html"><text><![CDATA[<p>An airline dispatcher is reviewing weather hazards for a flight operating entirely within Class A airspace at FL350. Which of the following meteorological phenomena would be the most critical operational concern for this specific portion of the flight?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Class A is strictly controlled, high-altitude en-route airspace used primarily by IFR commercial traffic. At FL350, low-level phenomena like radiation fog or mechanical turbulence are irrelevant. The primary hazards are Clear Air Turbulence (CAT), deep convection (embedded CBs), and volcanic ash.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>Clear Air Turbulence (CAT) associated with a strong upper-level jet stream.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Radiation fog reducing visibility to below 500 meters.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Low-level wind shear occurring 500 feet above ground level.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>A broken cloud ceiling at 2,000 feet affecting VFR minimums.</p>]]></text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L3-Q04 — Special Use Airspace</text></name>
+    <questiontext format="html"><text><![CDATA[<p>A line of severe thunderstorms is blocking an active airway. The only safe deviation path takes the aircraft directly through an active Restricted Area used for military firing. As a forecaster communicating with air traffic control, what is the underlying operational conflict here?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Special Use Airspace (like Restricted or Danger Areas) is segregated for hazardous activities. While meteorology doesn't dictate these boundaries, weather often forces aircraft off their planned routes. Deviating into restricted airspace to avoid weather presents a severe safety and coordination conflict for ATC and the pilot.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>Circumnavigating the weather hazard forces the aircraft into an airspace designed to protect them from non-meteorological hazards, requiring emergency ATC coordination.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Restricted Areas are automatically deactivated by ICAO when severe weather is present, but ATC must still manually clear the airspace.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Thunderstorms inside Restricted Areas generate stronger updrafts due to the military activities, worsening the turbulence.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Aircraft are legally required to fly through the thunderstorm rather than violate a Restricted Area under any circumstances.</p>]]></text></answer>
+  </question>
+
+</quiz>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 2: Aviation Route Planning & Fuel Management</title>
+<style>
+:root { --bg:#fff; --surface:#f6f5f0; --border:#e2dfd6; --text:#1a1917;
+  --muted:#6b6a65; --accent:#185fa5; --accent-light:#e6f1fb;
+  --note-bg:#e1f5ee; --note-border:#0F6E56; --warn-bg:#faeeda;
+  --warn-border:#BA7517; --key-bg:#EEEDFE; --key-border:#534AB7; }
+@media (prefers-color-scheme:dark) { :root { --bg:#1a1917; --surface:#242320;
+  --border:#3a3835; --text:#e8e6df; --muted:#9a9890;
+  --accent-light:#042c53; --note-bg:#04342c; --warn-bg:#412402; --key-bg:#26215c; } }
+body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  max-width:840px; margin:0 auto; padding:2rem 1.5rem;
+  background:var(--bg); color:var(--text); line-height:1.75; font-size:16px; }
+h1 { font-size:1.8rem; font-weight:600; }
+h2 { font-size:1.25rem; font-weight:600; margin-top:2.5rem;
+  padding-bottom:0.4rem; border-bottom:1.5px solid var(--border); }
+h3 { font-size:1.05rem; font-weight:600; margin-top:1.75rem; }
+p { margin:0.7rem 0; max-width:72ch; }
+figure { margin:2rem 0; }
+figcaption { font-size:0.85rem; color:var(--muted); margin-top:0.6rem;
+  font-style:italic; text-align:center; }
+svg { max-width:100%; height:auto; display:block; margin:0 auto; }
+table { border-collapse:collapse; width:100%; margin:1.5rem 0; font-size:0.9rem; }
+th { background:var(--accent); color:#fff; padding:0.55rem 0.9rem; text-align:left; }
+td { padding:0.5rem 0.9rem; border-bottom:1px solid var(--border); }
+tr:nth-child(even) td { background:var(--surface); }
+.callout { border-radius:8px; padding:1rem 1.25rem; margin:1.5rem 0; }
+.callout-note    { background:var(--note-bg);  border-left:4px solid var(--note-border); }
+.callout-warning { background:var(--warn-bg);  border-left:4px solid var(--warn-border); }
+.callout-key     { background:var(--key-bg);   border-left:4px solid var(--key-border); }
+.objectives { background:var(--surface); border-radius:8px; padding:1.25rem 1.5rem; margin:1.5rem 0; }
+.lesson-summary { background:var(--accent-light); border-radius:8px;
+  padding:1.25rem 1.5rem; margin:2.5rem 0 1rem; }
+.image-needed { border:2px dashed var(--border); border-radius:8px; padding:1.5rem;
+  margin:1.5rem 0; text-align:center; color:var(--muted); background:var(--surface); }
+</style>
+</head>
+<body>
+
+<h1>Lesson 2: Aviation Route Planning & Fuel Management</h1>
+
+<div class="objectives">
+  <h3>By the end of this lesson you will be able to:</h3>
+  <ul>
+    <li>Evaluate the impact of meteorological conditions (e.g., headwinds, temperatures) on route selection.</li>
+    <li>Calculate the meteorological effects on fuel consumption during various flight phases.</li>
+    <li>Recommend optimal flight levels based on upper-air forecasts.</li>
+  </ul>
+</div>
+
+<p>Meteorology is the single most significant variable in flight planning. Accurately forecasting winds and temperatures aloft is essential for airlines to optimize routes, ensuring safe arrival while minimizing fuel consumption. A forecast error of just a few knots or degrees can cost airlines significantly in excess fuel or payload restrictions.</p>
+
+<p>A route is rarely a straight line. Dispatchers calculate multiple horizontal and vertical paths, searching for the "Minimum Time Track" or "Minimum Cost Track." Forecasters provide the critical data grid (GRIB files of upper winds and temperatures) that feeds into these automated flight planning systems.</p>
+
+<figure>
+    <img src="images/dispatcher_console.png" alt="Airline dispatcher console with weather data" style="width:100%; border-radius:8px;">
+  </figure>
+
+<h2>Impact of En-route Winds</h2>
+
+<p>Headwinds decrease ground speed, extending flight time and increasing fuel burn. Conversely, tailwinds (such as jet streams) decrease flight time and conserve fuel. The core objective of upper-air forecasting is to accurately locate the position, altitude, and intensity of these wind fields.</p>
+
+<figure>
+  <svg viewBox="0 0 680 280" xmlns="http://www.w3.org/2000/svg">
+    <rect width="680" height="280" fill="var(--bg)"/>
+    
+    <!-- Aircraft -->
+    <path d="M120,140 L160,130 L180,140 L160,150 Z" fill="var(--accent)"/>
+    <text x="150" y="120" fill="var(--text)" font-family="sans-serif" font-size="12" text-anchor="middle">True Airspeed (TAS): 450kt</text>
+    
+    <!-- Tailwind Scenario -->
+    <rect x="220" y="50" width="380" height="80" rx="8" fill="var(--note-bg)" stroke="var(--note-border)" stroke-width="2"/>
+    <text x="240" y="75" fill="var(--text)" font-family="sans-serif" font-weight="bold" font-size="14">Tailwind Scenario</text>
+    <line x1="240" y1="95" x2="320" y2="95" stroke="var(--accent)" stroke-width="3" marker-end="url(#arrow-blue)"/>
+    <text x="330" y="100" fill="var(--text)" font-family="sans-serif" font-size="12">Wind: +50kt</text>
+    <text x="440" y="95" fill="var(--text)" font-family="sans-serif" font-weight="bold" font-size="14">Ground Speed: 500kt</text>
+    <text x="440" y="115" fill="var(--muted)" font-family="sans-serif" font-size="12">Lower flight time, less fuel burn</text>
+
+    <!-- Headwind Scenario -->
+    <rect x="220" y="150" width="380" height="80" rx="8" fill="var(--warn-bg)" stroke="var(--warn-border)" stroke-width="2"/>
+    <text x="240" y="175" fill="var(--text)" font-family="sans-serif" font-weight="bold" font-size="14">Headwind Scenario</text>
+    <line x1="320" y1="195" x2="240" y2="195" stroke="#BA7517" stroke-width="3" marker-end="url(#arrow-orange)"/>
+    <text x="330" y="200" fill="var(--text)" font-family="sans-serif" font-size="12">Wind: -50kt</text>
+    <text x="440" y="195" fill="var(--text)" font-family="sans-serif" font-weight="bold" font-size="14">Ground Speed: 400kt</text>
+    <text x="440" y="215" fill="var(--muted)" font-family="sans-serif" font-size="12">Higher flight time, more fuel burn</text>
+
+    <defs>
+      <marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="var(--accent)"/>
+      </marker>
+      <marker id="arrow-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#BA7517"/>
+      </marker>
+    </defs>
+  </svg>
+  <figcaption>Figure 1: The relationship between True Airspeed (TAS), wind components, and Ground Speed.</figcaption>
+</figure>
+
+<h2>Temperature and Aircraft Performance</h2>
+
+<p>Upper-air temperature directly impacts engine thrust and aerodynamic lift. Warmer than standard temperatures decrease air density. This degrades engine performance and requires higher fuel burn to maintain a specific mach number. It may also prevent an aircraft from reaching its optimal cruising altitude.</p>
+
+<div class="callout callout-warning">
+  <strong>Takeoff Limitations</strong><br>
+  High surface temperatures (often paired with low pressure) increase Density Altitude. This significantly extends the required takeoff roll and reduces the maximum allowable takeoff weight (MTOW), directly impacting an airline's revenue payload.
+</div>
+
+<h2>The Fuel Planning System</h2>
+
+<p>Flight dispatchers calculate a total fuel load comprised of several components. Unpredicted weather phenomena directly impact these contingency margins. If a forecaster expects significant thunderstorms at the destination, the dispatcher must load extra holding fuel or plan for a more distant alternate aerodrome.</p>
+
+<figure>
+  <svg viewBox="0 0 680 240" xmlns="http://www.w3.org/2000/svg">
+    <rect width="680" height="240" fill="var(--bg)"/>
+    
+    <!-- Fuel Tank representation -->
+    <rect x="100" y="40" width="480" height="40" fill="var(--surface)" stroke="var(--border)" stroke-width="2"/>
+    
+    <!-- Trip Fuel -->
+    <rect x="100" y="40" width="240" height="40" fill="var(--accent)"/>
+    <text x="220" y="65" fill="#fff" font-family="sans-serif" font-size="13" text-anchor="middle">Trip Fuel</text>
+    
+    <!-- Contingency -->
+    <rect x="340" y="40" width="80" height="40" fill="var(--key-bg)" stroke="var(--key-border)" stroke-width="1"/>
+    <text x="380" y="65" fill="var(--text)" font-family="sans-serif" font-size="11" text-anchor="middle">Contingency</text>
+    
+    <!-- Alternate -->
+    <rect x="420" y="40" width="80" height="40" fill="var(--note-bg)" stroke="var(--note-border)" stroke-width="1"/>
+    <text x="460" y="65" fill="var(--text)" font-family="sans-serif" font-size="11" text-anchor="middle">Alternate</text>
+
+    <!-- Final Reserve -->
+    <rect x="500" y="40" width="80" height="40" fill="var(--warn-bg)" stroke="var(--warn-border)" stroke-width="1"/>
+    <text x="540" y="65" fill="var(--text)" font-family="sans-serif" font-size="11" text-anchor="middle">Reserve</text>
+
+    <!-- Pointers and explanations -->
+    <line x1="220" y1="80" x2="220" y2="120" stroke="var(--muted)" stroke-width="1"/>
+    <text x="220" y="140" fill="var(--text)" font-family="sans-serif" font-size="12" text-anchor="middle">Base route calculation.</text>
+    <text x="220" y="158" fill="var(--text)" font-family="sans-serif" font-size="12" text-anchor="middle">Highly dependent on</text>
+    <text x="220" y="176" fill="var(--text)" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle">en-route winds.</text>
+
+    <line x1="380" y1="80" x2="380" y2="100" stroke="var(--muted)" stroke-width="1"/>
+    <text x="380" y="120" fill="var(--text)" font-family="sans-serif" font-size="12" text-anchor="middle">Margin for</text>
+    <text x="380" y="138" fill="var(--text)" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle">forecast error.</text>
+
+    <line x1="460" y1="80" x2="460" y2="120" stroke="var(--muted)" stroke-width="1"/>
+    <text x="460" y="140" fill="var(--text)" font-family="sans-serif" font-size="12" text-anchor="middle">Fuel to reach</text>
+    <text x="460" y="158" fill="var(--text)" font-family="sans-serif" font-size="12" text-anchor="middle">alternate airport if</text>
+    <text x="460" y="176" fill="var(--text)" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle">TAF goes below minimums.</text>
+    
+  </svg>
+  <figcaption>Figure 2: Components of dispatch fuel and their relationship to meteorological forecasts.</figcaption>
+</figure>
+
+<table>
+  <thead>
+    <tr>
+      <th>Meteorological Factor</th>
+      <th>Primary Impact Phase</th>
+      <th>Operational Consequence</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>High Surface Temperature</td>
+      <td>Takeoff / Climb</td>
+      <td>Reduced payload capacity; lower initial cruise altitude.</td>
+    </tr>
+    <tr>
+      <td>Unexpected Headwind</td>
+      <td>Cruise</td>
+      <td>Increased trip fuel consumption; potential diversion if reserves are eaten.</td>
+    </tr>
+    <tr>
+      <td>Terminal Thunderstorms</td>
+      <td>Approach / Landing</td>
+      <td>Requirement for distant alternate airport; heavy holding fuel penalty.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="lesson-summary">
+  <h3>Key Takeaways</h3>
+  <ul>
+    <li>Wind speed and direction directly dictate aircraft ground speed, thus determining trip time and fuel burn.</li>
+    <li>Non-standard warmer temperatures decrease engine performance, limiting payloads and optimal cruising levels.</li>
+    <li>Accurate en-route wind and temperature grid forecasts are the lifeblood of computerized flight planning.</li>
+    <li>Terminal weather forecasts (TAFs) dictate the legal requirement for carrying extra "alternate" fuel.</li>
+  </ul>
+</div>
+
+</body>
+</html>

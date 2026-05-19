@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <question type="multichoice">
+    <name><text>L1-Q01 — Non-compliance with ICAO Standards</text></name>
+    <questiontext format="html"><text><![CDATA[<p>A National Meteorological Service determines that it cannot meet the exact grid resolution specified in a newly updated ICAO Annex 3 Standard due to legacy computing limitations. What is the appropriate operational response?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>When a State cannot comply with a mandatory ICAO Standard, it is legally required to file a "Difference" with ICAO. This signals to operators globally that the local procedures deviate from international norms, allowing them to adjust their flight planning accordingly. Waiting for the next cycle or just treating it as a recommended practice is a safety and compliance violation.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>The State must formally file a "Difference" with ICAO so that international operators are aware of the discrepancy during flight planning.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>The service should reclassify the Standard as a "Recommended Practice" internally until computing resources can be upgraded.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>The State must halt the issuance of the specific forecast product entirely until full compliance with Annex 3 can be achieved.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>The service should issue the forecast using the old resolution but add a general disclaimer text to the remarks section of all METARs.</p>]]></text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L1-Q02 — Roles of WMO vs. ICAO</text></name>
+    <questiontext format="html"><text><![CDATA[<p>The aviation industry identifies a need for a new type of volcanic ash forecast product to support high-density airspace operations. According to the international regulatory framework, which organization is primarily responsible for developing the underlying meteorological science and observation standards for this product?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>ICAO determines the operational requirement (what is needed by aviation), while the WMO provides the scientific and technical foundation (how to observe, measure, and format the data). Therefore, the WMO is responsible for the R&D and scientific methodology.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>The World Meteorological Organization (WMO)</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>The International Civil Aviation Organization (ICAO)</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>The International Air Transport Association (IATA)</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>The National Meteorological and Hydrological Services (NMHS) of the affected state</p>]]></text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L1-Q03 — Standards vs. Recommended Practices</text></name>
+    <questiontext format="html"><text><![CDATA[<p>During an audit, it is noted that a Meteorological Watch Office (MWO) has fully implemented an ICAO "Standard" regarding SIGMET issuance, but has chosen not to implement a related "Recommended Practice." Does this affect the MWO's compliance status for international air navigation?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>A "Standard" is mandatory for the safety and regularity of international air navigation, while a "Recommended Practice" is recognized as desirable but not mandatory. Non-implementation of a recommended practice does not constitute a compliance failure or require filing a formal difference.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>No. Compliance with a Recommended Practice is desirable but not mandatory; the MWO remains fully compliant by adhering to the Standard.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Yes. Both Standards and Recommended Practices must be strictly adhered to in order to maintain international certification.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>No, provided the MWO has filed a formal "Difference" with ICAO regarding the omitted Recommended Practice.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Yes, because omitting a Recommended Practice forces the local Civil Aviation Authority to downgrade the airspace classification.</p>]]></text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L1-Q04 — WMO Information System (WIS)</text></name>
+    <questiontext format="html"><text><![CDATA[<p>A forecaster at the IMS notices that METARs from a neighboring country have stopped arriving via the global network, impacting local TAF preparation. This data exchange disruption is primarily a failure within the purview of which organization's framework?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>The standardization and technical exchange of meteorological data globally is governed by the WMO, specifically through the WMO Information System (WIS). While ICAO requires the data for aviation, the actual technical exchange network falls under WMO.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>The World Meteorological Organization (WMO) Information System</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>ICAO Annex 3 communications protocols</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>The local Civil Aviation Authority's air traffic control network</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>The International Telecommunication Union (ITU) aeronautical band</p>]]></text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L1-Q05 — Regulatory Source Documents</text></name>
+    <questiontext format="html"><text><![CDATA[<p>A forecaster needs to verify the definitive legal format and criteria for issuing a terminal aerodrome forecast (TAF) to international aviation operators. Which document serves as the ultimate regulatory authority for this specific aviation product?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>ICAO Annex 3 (Meteorological Service for International Air Navigation) is the definitive regulatory document dictating the exact formats, criteria, and operational requirements for aviation products like TAFs and METARs.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>ICAO Annex 3 (Meteorological Service for International Air Navigation)</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>WMO-No. 49, Volume I (General Meteorological Standards)</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>The national aeronautical information publication (AIP) general section</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>ICAO Global Air Navigation Plan (GANP)</p>]]></text></answer>
+  </question>
+</quiz>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz><question type="multichoice">
+    <name><text>L1-Q01 — Non-compliance with ICAO Standards</text></name>
+    <questiontext format="html"><text>&lt;p&gt;A National Meteorological Service determines that it cannot meet the exact grid resolution specified in a newly updated ICAO Annex 3 Standard due to legacy computing limitations. What is the appropriate operational response?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;When a State cannot comply with a mandatory ICAO Standard, it is legally required to file a "Difference" with ICAO. This signals to operators globally that the local procedures deviate from international norms, allowing them to adjust their flight planning accordingly. Waiting for the next cycle or just treating it as a recommended practice is a safety and compliance violation.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;The State must formally file a "Difference" with ICAO so that international operators are aware of the discrepancy during flight planning.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;The service should reclassify the Standard as a "Recommended Practice" internally until computing resources can be upgraded.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;The State must halt the issuance of the specific forecast product entirely until full compliance with Annex 3 can be achieved.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;The service should issue the forecast using the old resolution but add a general disclaimer text to the remarks section of all METARs.&lt;/p&gt;</text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L1-Q02 — Roles of WMO vs. ICAO</text></name>
+    <questiontext format="html"><text>&lt;p&gt;The aviation industry identifies a need for a new type of volcanic ash forecast product to support high-density airspace operations. According to the international regulatory framework, which organization is primarily responsible for developing the underlying meteorological science and observation standards for this product?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;ICAO determines the operational requirement (what is needed by aviation), while the WMO provides the scientific and technical foundation (how to observe, measure, and format the data). Therefore, the WMO is responsible for the R&amp;D and scientific methodology.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;The World Meteorological Organization (WMO)&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;The International Civil Aviation Organization (ICAO)&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;The International Air Transport Association (IATA)&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;The National Meteorological and Hydrological Services (NMHS) of the affected state&lt;/p&gt;</text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L1-Q03 — Standards vs. Recommended Practices</text></name>
+    <questiontext format="html"><text>&lt;p&gt;During an audit, it is noted that a Meteorological Watch Office (MWO) has fully implemented an ICAO "Standard" regarding SIGMET issuance, but has chosen not to implement a related "Recommended Practice." Does this affect the MWO's compliance status for international air navigation?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;A "Standard" is mandatory for the safety and regularity of international air navigation, while a "Recommended Practice" is recognized as desirable but not mandatory. Non-implementation of a recommended practice does not constitute a compliance failure or require filing a formal difference.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;No. Compliance with a Recommended Practice is desirable but not mandatory; the MWO remains fully compliant by adhering to the Standard.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Yes. Both Standards and Recommended Practices must be strictly adhered to in order to maintain international certification.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;No, provided the MWO has filed a formal "Difference" with ICAO regarding the omitted Recommended Practice.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Yes, because omitting a Recommended Practice forces the local Civil Aviation Authority to downgrade the airspace classification.&lt;/p&gt;</text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L1-Q04 — WMO Information System (WIS)</text></name>
+    <questiontext format="html"><text>&lt;p&gt;A forecaster at the IMS notices that METARs from a neighboring country have stopped arriving via the global network, impacting local TAF preparation. This data exchange disruption is primarily a failure within the purview of which organization's framework?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;The standardization and technical exchange of meteorological data globally is governed by the WMO, specifically through the WMO Information System (WIS). While ICAO requires the data for aviation, the actual technical exchange network falls under WMO.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;The World Meteorological Organization (WMO) Information System&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;ICAO Annex 3 communications protocols&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;The local Civil Aviation Authority's air traffic control network&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;The International Telecommunication Union (ITU) aeronautical band&lt;/p&gt;</text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L1-Q05 — Regulatory Source Documents</text></name>
+    <questiontext format="html"><text>&lt;p&gt;A forecaster needs to verify the definitive legal format and criteria for issuing a terminal aerodrome forecast (TAF) to international aviation operators. Which document serves as the ultimate regulatory authority for this specific aviation product?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;ICAO Annex 3 (Meteorological Service for International Air Navigation) is the definitive regulatory document dictating the exact formats, criteria, and operational requirements for aviation products like TAFs and METARs.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;ICAO Annex 3 (Meteorological Service for International Air Navigation)&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;WMO-No. 49, Volume I (General Meteorological Standards)&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;The national aeronautical information publication (AIP) general section&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;ICAO Global Air Navigation Plan (GANP)&lt;/p&gt;</text></answer>
+  </question>
+<question type="multichoice">
+    <name><text>L2-Q01 — Impact of Headwinds</text></name>
+    <questiontext format="html"><text>&lt;p&gt;A long-haul flight is planned with a true airspeed (TAS) of 480 knots. The en-route forecast indicates an unexpected 60-knot headwind component across a significant portion of the route. As a forecaster, how should you expect this to impact the dispatcher's fuel planning?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;A headwind reduces ground speed (in this case to 420 knots), which increases the total flight time to cover the same distance. This directly results in a higher trip fuel requirement. It does not affect the true airspeed, which is a function of aircraft performance and air density.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;The ground speed will decrease, increasing flight time and requiring a higher trip fuel calculation.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;The true airspeed will drop to 420 knots, decreasing engine efficiency but requiring the same amount of fuel.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;The aircraft will compensate by increasing TAS to 540 knots, keeping fuel burn identical to the original plan.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;The headwind will primarily require an increase in final reserve fuel due to holding pattern requirements.&lt;/p&gt;</text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L2-Q02 — High Surface Temperatures</text></name>
+    <questiontext format="html"><text>&lt;p&gt;During the summer months, an aerodrome experiences unusually high surface temperatures coupled with low atmospheric pressure. How does this specific meteorological condition impact departing commercial aircraft?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;High temperatures and low pressure increase density altitude, meaning the air is less dense. Less dense air provides less lift and reduces engine thrust. As a result, aircraft require a longer takeoff roll and may need to reduce their takeoff weight (payload or fuel) to depart safely.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;It increases density altitude, leading to longer takeoff rolls and potential reductions in maximum allowable takeoff weight.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;It decreases density altitude, allowing aircraft to climb faster and carry additional contingency fuel.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;It creates strong low-level wind shear, requiring aircraft to maintain a higher true airspeed during the initial climb.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;It primarily impacts the en-route cruise phase, causing the aircraft to burn fuel faster at high altitudes.&lt;/p&gt;</text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L2-Q03 — Terminal Forecasts and Alternate Fuel</text></name>
+    <questiontext format="html"><text>&lt;p&gt;You issue a TAF for a major hub airport indicating a TEMPO group for heavy thunderstorms and low visibility precisely during an airline's scheduled arrival time. What is the immediate regulatory consequence of this forecast on the airline's flight plan?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;If a destination TAF forecasts conditions below specific minimums (like heavy thunderstorms), regulations require the dispatcher to plan for a suitable alternate airport. This means they must load extra fuel to fly from the destination to the alternate, plus reserve fuel, potentially displacing passenger or cargo weight.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;The dispatcher will be legally required to name an alternate airport and load sufficient fuel to reach it.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;The flight will automatically be canceled as commercial aircraft cannot legally dispatch into a TEMPO thunderstorm forecast.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;The pilot will be forced to change to a higher cruising altitude to conserve fuel for potential holding.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;The airline must request an exemption from ICAO to land below established minimums.&lt;/p&gt;</text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L2-Q04 — Optimal Cruising Levels</text></name>
+    <questiontext format="html"><text>&lt;p&gt;An aircraft is scheduled to fly eastbound. The upper-air forecast shows a strong jet stream (tailwind) at FL350, but the temperature at that level is significantly warmer than the International Standard Atmosphere (ISA). Why might the dispatcher choose to file the flight plan at FL310 instead?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;Warmer than standard temperatures at altitude decrease engine performance and lift. If an aircraft is heavily loaded, the decreased air density may physically prevent the aircraft from climbing to or maintaining FL350, forcing them to fly lower where the air is denser, even if it means missing the strongest tailwinds.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;The warmer temperatures decrease air density, meaning the heavily loaded aircraft may lack the performance to climb to or maintain FL350.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Warmer temperatures inside a jet stream always indicate severe clear air turbulence (CAT), which must be avoided.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;A tailwind combined with warm temperatures will cause the aircraft to exceed its maximum Mach number over the ground.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Eastbound flights are restricted by ICAO rules from flying above FL330 when temperatures exceed ISA+10.&lt;/p&gt;</text></answer>
+  </question>
+
+<question type="multichoice">
+    <name><text>L3-Q01 — VFR in Class G Airspace</text></name>
+    <questiontext format="html"><text>&lt;p&gt;A general aviation pilot is planning a VFR cross-country flight entirely within Class G airspace. The morning TAF indicates marginal VFR conditions (scattered clouds at 800 feet and 4km visibility). Why is accurate forecasting of these low-level conditions particularly critical for this pilot compared to a commercial airliner?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;Class G is uncontrolled airspace where flights are often conducted under Visual Flight Rules (VFR). VFR pilots rely entirely on visual reference to the ground and must stay out of clouds. Commercial airliners operate under Instrument Flight Rules (IFR), usually in Class A controlled airspace, and are not bound by the same visual minimums.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;Class G relies heavily on VFR operations, which strictly require pilots to maintain visual reference to the ground and remain clear of clouds to avoid terrain.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Class G airspace prohibits the use of altimeters, so pilots must use cloud bases to estimate their height above ground level.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Air Traffic Control in Class G will actively vector the pilot around low clouds, increasing the controller's workload significantly.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Commercial airliners are structurally reinforced against low-level turbulence, whereas general aviation aircraft are not.&lt;/p&gt;</text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L3-Q02 — Meteorological Watch Office Responsibility</text></name>
+    <questiontext format="html"><text>&lt;p&gt;A fast-moving squall line crosses the boundary from FIR ALPHA into FIR BRAVO. Which Meteorological Watch Office (MWO) is responsible for issuing the SIGMET for the portion of the squall line that has entered FIR BRAVO?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;Airspace is divided into geographically distinct Flight Information Regions (FIRs). Each FIR is monitored by a designated MWO. Once a weather phenomenon crosses into a new FIR, the MWO responsible for that new FIR assumes responsibility for issuing the appropriate warnings (SIGMETs) for their airspace.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;The MWO responsible for FIR BRAVO.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;The MWO responsible for FIR ALPHA, since the squall line originated there.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Both MWOs must issue a joint SIGMET to cover the entire squall line seamlessly.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;The WMO regional center, as phenomena crossing FIR boundaries escalate to international jurisdiction.&lt;/p&gt;</text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L3-Q03 — Class A Airspace Operations</text></name>
+    <questiontext format="html"><text>&lt;p&gt;An airline dispatcher is reviewing weather hazards for a flight operating entirely within Class A airspace at FL350. Which of the following meteorological phenomena would be the most critical operational concern for this specific portion of the flight?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;Class A is strictly controlled, high-altitude en-route airspace used primarily by IFR commercial traffic. At FL350, low-level phenomena like radiation fog or mechanical turbulence are irrelevant. The primary hazards are Clear Air Turbulence (CAT), deep convection (embedded CBs), and volcanic ash.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;Clear Air Turbulence (CAT) associated with a strong upper-level jet stream.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Radiation fog reducing visibility to below 500 meters.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Low-level wind shear occurring 500 feet above ground level.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;A broken cloud ceiling at 2,000 feet affecting VFR minimums.&lt;/p&gt;</text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L3-Q04 — Special Use Airspace</text></name>
+    <questiontext format="html"><text>&lt;p&gt;A line of severe thunderstorms is blocking an active airway. The only safe deviation path takes the aircraft directly through an active Restricted Area used for military firing. As a forecaster communicating with air traffic control, what is the underlying operational conflict here?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;Special Use Airspace (like Restricted or Danger Areas) is segregated for hazardous activities. While meteorology doesn't dictate these boundaries, weather often forces aircraft off their planned routes. Deviating into restricted airspace to avoid weather presents a severe safety and coordination conflict for ATC and the pilot.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;Circumnavigating the weather hazard forces the aircraft into an airspace designed to protect them from non-meteorological hazards, requiring emergency ATC coordination.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Restricted Areas are automatically deactivated by ICAO when severe weather is present, but ATC must still manually clear the airspace.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Thunderstorms inside Restricted Areas generate stronger updrafts due to the military activities, worsening the turbulence.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Aircraft are legally required to fly through the thunderstorm rather than violate a Restricted Area under any circumstances.&lt;/p&gt;</text></answer>
+  </question>
+
+<question type="multichoice">
+    <name><text>L4-Q01 — Cold Weather Altimetry Error</text></name>
+    <questiontext format="html"><text>&lt;p&gt;An aircraft is conducting an instrument approach in extreme cold weather conditions (ISA -30°C). The pilot's altimeter, set to the correct local QNH, indicates they are exactly at the published minimum descent altitude (MDA) of 1,500 feet. What is the actual physical state of the aircraft relative to the terrain?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;Altimeters are calibrated for standard temperatures. When the air is significantly colder than standard, the air column compresses. The altimeter will over-read the altitude ("From high to low, look out below"). Therefore, the aircraft is physically lower than the 1,500 feet indicated on the altimeter, dangerously reducing terrain clearance.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;The aircraft is actually lower than 1,500 feet, significantly reducing the margin for terrain clearance.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;The aircraft is exactly at 1,500 feet, because setting the local QNH automatically corrects for temperature anomalies.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;The aircraft is actually higher than 1,500 feet, meaning the pilot will overshoot the runway threshold.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;The aircraft's true airspeed will decrease, but the physical altitude will remain exactly at 1,500 feet.&lt;/p&gt;</text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L4-Q02 — Transition Altitude vs Level</text></name>
+    <questiontext format="html"><text>&lt;p&gt;An aircraft has just taken off and is climbing through 10,000 feet, which is the published Transition Altitude for the aerodrome. What specific action must the pilot take regarding their altimeter at this point?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;During climb, when passing the Transition Altitude, pilots must change their altimeter setting from the local QNH to the Standard Pressure setting (1013.25 hPa). This ensures that all aircraft in the upper en-route airspace are operating on the same pressure datum (Flight Levels) for vertical separation.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;Change the altimeter setting from the local QNH to the Standard Pressure setting (1013.25 hPa).&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Change the altimeter setting from the Standard Pressure setting to the local QNH provided by ATC.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Change the altimeter setting from QFE to QNH to begin reading mean sea level altitude.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Maintain the current QNH setting until the aircraft reaches the top of climb (TOC).&lt;/p&gt;</text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L4-Q03 — QFE Application</text></name>
+    <questiontext format="html"><text>&lt;p&gt;A military pilot requests the QFE setting from the tower during final approach. If the pilot correctly inputs this setting, what will the altimeter read the exact moment the aircraft's wheels touch the runway?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;QFE is the pressure measured at the airfield elevation. When an altimeter is set to QFE, it displays the height of the aircraft above that specific runway. Therefore, upon touchdown, the altimeter will read zero.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;Zero&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;The airfield's elevation above Mean Sea Level (MSL)&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;The transition altitude of the aerodrome&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Standard pressure altitude (density altitude)&lt;/p&gt;</text></answer>
+  </question>
+
+</quiz>

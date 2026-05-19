@@ -1,0 +1,104 @@
+{
+  "module_title": "Module 1: Aviation Weather Fundamentals & Regulations",
+  "module_competencies": [
+    "Navigate and apply WMO and ICAO regulatory frameworks governing aeronautical meteorology.",
+    "Assess airspace classifications and route structures to support aviation planning.",
+    "Calculate and apply correct altimetry settings for safe flight operations.",
+    "Integrate meteorological factors into fuel consumption and route optimization strategies."
+  ],
+  "end_of_module_quiz_plan": {
+    "total_questions": 15,
+    "pass_rate_requirement": "75%",
+    "format": "Multiple choice questions testing application, judgment, and interpretation, rather than simple recall."
+  },
+  "lessons": [
+    {
+      "lesson_number": 1,
+      "title": "International Regulatory Frameworks (WMO & ICAO)",
+      "source_files": [
+        "01. wmo and ICAO.pdf"
+      ],
+      "learning_objectives": [
+        "Outline the roles and responsibilities of the WMO and ICAO in global aviation meteorology.",
+        "Interpret key standards and recommended practices (SARPs) relevant to aviation weather forecasting.",
+        "Explain the flow of meteorological information between international bodies and local authorities."
+      ],
+      "key_concepts": [
+        "WMO Structure and Aviation Integration",
+        "ICAO Annex 3",
+        "Standards and Recommended Practices (SARPs)",
+        "Global Aviation Navigation Plan"
+      ],
+      "diagrams_needed": [
+        "Organizational hierarchy showing the relationship between WMO, ICAO, and National Meteorological Services.",
+        "Process flow of how a meteorological standard becomes an operational requirement."
+      ]
+    },
+    {
+      "lesson_number": 2,
+      "title": "Aviation Route Planning & Fuel Management",
+      "source_files": [
+        "02. Routes and Fuel.pdf"
+      ],
+      "learning_objectives": [
+        "Evaluate the impact of meteorological conditions (e.g., headwinds, temperatures) on route selection.",
+        "Calculate the meteorological effects on fuel consumption during various flight phases.",
+        "Recommend optimal flight levels based on upper-air forecasts."
+      ],
+      "key_concepts": [
+        "Flight Planning Considerations",
+        "En-route Winds and Temperatures",
+        "Fuel Burn Rates and Contingency Fuel",
+        "Meteorological Impact on Aircraft Performance"
+      ],
+      "diagrams_needed": [
+        "System diagram showing inputs for flight planning (weather, aircraft type, route) and resulting fuel calculations.",
+        "Annotated cross-section of a flight path showing wind components affecting fuel efficiency."
+      ]
+    },
+    {
+      "lesson_number": 3,
+      "title": "Airspace Structure & Classification",
+      "source_files": [
+        "03. Airspace.pdf"
+      ],
+      "learning_objectives": [
+        "Differentiate between various classes of airspace and their operational requirements.",
+        "Relate airspace structures to the provision of meteorological services.",
+        "Identify controlled, uncontrolled, and special use airspaces."
+      ],
+      "key_concepts": [
+        "Flight Information Regions (FIR)",
+        "Airspace Classes (A-G)",
+        "Controlled vs. Uncontrolled Airspace",
+        "Restricted and Danger Areas"
+      ],
+      "diagrams_needed": [
+        "Visual representation of airspace classes (A to G) showing altitude limits and VFR/IFR rules.",
+        "Map schematic illustrating the division of a geographic area into Flight Information Regions (FIRs)."
+      ]
+    },
+    {
+      "lesson_number": 4,
+      "title": "Principles of Aviation Altimetry",
+      "source_files": [
+        "04. Altimetry.pdf"
+      ],
+      "learning_objectives": [
+        "Define and differentiate between QNH, QFE, and Standard Altimeter Settings.",
+        "Determine the appropriate transition altitude and transition level for flight operations.",
+        "Calculate true altitude based on non-standard temperature and pressure variations."
+      ],
+      "key_concepts": [
+        "Altimeter Settings (QNH, QFE, QNE)",
+        "Transition Altitude, Level, and Layer",
+        "Temperature and Pressure Error Corrections",
+        "Flight Levels (FL)"
+      ],
+      "diagrams_needed": [
+        "Vertical profile diagram comparing QNH, QFE, and Standard Pressure reference planes.",
+        "Decision tree for altimeter setting changes during climb (Transition Altitude) and descent (Transition Level)."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <question type="multichoice">
+    <name><text>L4-Q01 — Cold Weather Altimetry Error</text></name>
+    <questiontext format="html"><text><![CDATA[<p>An aircraft is conducting an instrument approach in extreme cold weather conditions (ISA -30°C). The pilot's altimeter, set to the correct local QNH, indicates they are exactly at the published minimum descent altitude (MDA) of 1,500 feet. What is the actual physical state of the aircraft relative to the terrain?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Altimeters are calibrated for standard temperatures. When the air is significantly colder than standard, the air column compresses. The altimeter will over-read the altitude ("From high to low, look out below"). Therefore, the aircraft is physically lower than the 1,500 feet indicated on the altimeter, dangerously reducing terrain clearance.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>The aircraft is actually lower than 1,500 feet, significantly reducing the margin for terrain clearance.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>The aircraft is exactly at 1,500 feet, because setting the local QNH automatically corrects for temperature anomalies.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>The aircraft is actually higher than 1,500 feet, meaning the pilot will overshoot the runway threshold.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>The aircraft's true airspeed will decrease, but the physical altitude will remain exactly at 1,500 feet.</p>]]></text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L4-Q02 — Transition Altitude vs Level</text></name>
+    <questiontext format="html"><text><![CDATA[<p>An aircraft has just taken off and is climbing through 10,000 feet, which is the published Transition Altitude for the aerodrome. What specific action must the pilot take regarding their altimeter at this point?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>During climb, when passing the Transition Altitude, pilots must change their altimeter setting from the local QNH to the Standard Pressure setting (1013.25 hPa). This ensures that all aircraft in the upper en-route airspace are operating on the same pressure datum (Flight Levels) for vertical separation.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>Change the altimeter setting from the local QNH to the Standard Pressure setting (1013.25 hPa).</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Change the altimeter setting from the Standard Pressure setting to the local QNH provided by ATC.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Change the altimeter setting from QFE to QNH to begin reading mean sea level altitude.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Maintain the current QNH setting until the aircraft reaches the top of climb (TOC).</p>]]></text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L4-Q03 — QFE Application</text></name>
+    <questiontext format="html"><text><![CDATA[<p>A military pilot requests the QFE setting from the tower during final approach. If the pilot correctly inputs this setting, what will the altimeter read the exact moment the aircraft's wheels touch the runway?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>QFE is the pressure measured at the airfield elevation. When an altimeter is set to QFE, it displays the height of the aircraft above that specific runway. Therefore, upon touchdown, the altimeter will read zero.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>Zero</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>The airfield's elevation above Mean Sea Level (MSL)</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>The transition altitude of the aerodrome</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Standard pressure altitude (density altitude)</p>]]></text></answer>
+  </question>
+
+</quiz>

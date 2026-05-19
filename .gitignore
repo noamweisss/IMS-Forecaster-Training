@@ -1,0 +1,23 @@
+# ── Environment & secrets ──
+.env
+
+# ── Python ──
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+venv/
+.venv/
+
+# ── Windows / Google Drive ──
+desktop.ini
+Thumbs.db
+
+# ── IDE ──
+.vscode/
+.idea/
+
+# ── OS ──
+.DS_Store

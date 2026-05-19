@@ -1,0 +1,20 @@
+File Name Mapping (Hebrew to English)
+----------------------------------------
+01. wmo and ICAO.pdf -> 01. wmo and ICAO.pdf
+02. נתיבים ודלק.pdf -> 02. Routes and Fuel.pdf
+03. המרחב האווירי.pdf -> 03. Airspace.pdf
+04. אלטימטריה.pdf -> 04. Altimetry.pdf
+05. חיתחותים.pptx -> 05. Turbulence.pptx
+06. התקרחות.pptx -> 06. Icing.pptx
+07. ענני CB.pptx -> 07. CB Clouds.pptx
+08. ערפל.pptx -> 08. Fog.pptx
+09. עוד על חיזוי ערפל.docx -> 09. More on Fog Forecasting.docx
+10. אובך.pptx -> 10. Haze.pptx
+11. גזירת רוח.pptx -> 11. Wind Shear.pptx
+12. חיזוי בסיס ופסגת הענן.pptx -> 12. Cloud Base and Top Forecasting.pptx
+13. אזהרות למרחבים.pptx -> 13. Area Warnings.pptx
+14. אזהרות לשדות התעופה.pptx -> 14. Aerodrome Warnings.pptx
+15. כתיבת TAF.pptx -> 15. TAF Writing.pptx
+16. סופות טרופיות.pptx -> 16. Tropical Storms.pptx
+17. אפר וולקני.pptx -> 17. Volcanic Ash.pptx
+18. מפות WAFC.pptx -> 18. WAFC Maps.pptx

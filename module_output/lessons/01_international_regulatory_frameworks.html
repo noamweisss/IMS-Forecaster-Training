@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 1: International Regulatory Frameworks (WMO & ICAO)</title>
+  <style>
+    :root {
+      --bg: #fff;
+      --surface: #f6f5f0;
+      --border: #e2dfd6;
+      --text: #1a1917;
+      --muted: #6b6a65;
+      --accent: #185fa5;
+      --accent-light: #e6f1fb;
+      --note-bg: #e1f5ee;
+      --note-border: #0F6E56;
+      --warn-bg: #faeeda;
+      --warn-border: #BA7517;
+      --key-bg: #EEEDFE;
+      --key-border: #534AB7;
+    }
+
+    @media (prefers-color-scheme:dark) {
+      :root {
+        --bg: #1a1917;
+        --surface: #242320;
+        --border: #3a3835;
+        --text: #e8e6df;
+        --muted: #9a9890;
+        --accent-light: #042c53;
+        --note-bg: #04342c;
+        --warn-bg: #412402;
+        --key-bg: #26215c;
+      }
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      max-width: 840px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: 2.5rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1.5px solid var(--border);
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-top: 1.75rem;
+    }
+
+    p {
+      margin: 0.7rem 0;
+      max-width: 72ch;
+    }
+
+    figure {
+      margin: 2rem 0;
+    }
+
+    figcaption {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.6rem;
+      font-style: italic;
+      text-align: center;
+    }
+
+    svg {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 1.5rem 0;
+      font-size: 0.9rem;
+    }
+
+    th {
+      background: var(--accent);
+      color: #fff;
+      padding: 0.55rem 0.9rem;
+      text-align: left;
+    }
+
+    td {
+      padding: 0.5rem 0.9rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    tr:nth-child(even) td {
+      background: var(--surface);
+    }
+
+    .callout {
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+    }
+
+    .callout-note {
+      background: var(--note-bg);
+      border-left: 4px solid var(--note-border);
+    }
+
+    .callout-warning {
+      background: var(--warn-bg);
+      border-left: 4px solid var(--warn-border);
+    }
+
+    .callout-key {
+      background: var(--key-bg);
+      border-left: 4px solid var(--key-border);
+    }
+
+    .objectives {
+      background: var(--surface);
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .lesson-summary {
+      background: var(--accent-light);
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+      margin: 2.5rem 0 1rem;
+    }
+
+    .image-needed {
+      border: 2px dashed var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      text-align: center;
+      color: var(--muted);
+      background: var(--surface);
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Lesson 1: International Regulatory Frameworks (WMO & ICAO)</h1>
+
+  <div class="objectives">
+    <h3>By the end of this lesson you will be able to:</h3>
+    <ul>
+      <li>Outline the roles and responsibilities of the WMO and ICAO in global aviation meteorology.</li>
+      <li>Interpret key standards and recommended practices (SARPs) relevant to aviation weather forecasting.</li>
+      <li>Explain the flow of meteorological information between international bodies and local authorities.</li>
+    </ul>
+  </div>
+
+  <p>Global aviation relies on standardized, accurate, and timely meteorological information to operate safely and
+    efficiently. Two primary international organizations, the World Meteorological Organization (WMO) and the
+    International Civil Aviation Organization (ICAO), govern this ecosystem.</p>
+
+  <p>While the WMO focuses on the scientific advancement and global standardization of meteorological practices, ICAO
+    translates these capabilities into operational requirements for the aviation industry. Understanding how these
+    organizations interact is critical for aviation forecasters who must comply with international standards.</p>
+
+  <figure>
+    <img src="images/wmo_icao_assembly.png" alt="WMO and ICAO assembly" style="width:100%; border-radius:8px;">
+  </figure>
+
+  <h2>Organizational Interaction</h2>
+
+  <p>The WMO and ICAO operate in tandem. The WMO sets the technical standards for observing, reporting, and forecasting
+    weather. It ensures that meteorological instruments across the globe are calibrated to the same standards and that
+    data is exchanged seamlessly via the WMO Information System (WIS).</p>
+
+  <p>Conversely, ICAO defines *what* meteorological information is required by pilots, air traffic controllers, and
+    dispatchers. These requirements are codified in ICAO Annex 3 to the Convention on International Civil Aviation.
+    National Meteorological and Hydrological Services (NMHS) act as the bridge, providing the required services to local
+    aviation authorities.</p>
+
+  <figure>
+    <svg viewBox="0 0 680 320" xmlns="http://www.w3.org/2000/svg">
+      <rect width="680" height="320" fill="var(--bg)" />
+
+      <!-- WMO Path -->
+      <rect x="40" y="40" width="160" height="60" rx="8" fill="var(--accent)" stroke="none" />
+      <text x="120" y="70" fill="#ffffff" font-family="sans-serif" font-weight="bold" font-size="16"
+        text-anchor="middle">WMO</text>
+      <text x="120" y="88" fill="#ffffff" font-family="sans-serif" font-size="12" text-anchor="middle">Technical
+        Standards</text>
+
+      <!-- ICAO Path -->
+      <rect x="480" y="40" width="160" height="60" rx="8" fill="var(--accent)" stroke="none" />
+      <text x="560" y="70" fill="#ffffff" font-family="sans-serif" font-weight="bold" font-size="16"
+        text-anchor="middle">ICAO</text>
+      <text x="560" y="88" fill="#ffffff" font-family="sans-serif" font-size="12" text-anchor="middle">Operational
+        Reqs.</text>
+
+      <!-- NMHS Node -->
+      <rect x="260" y="140" width="160" height="60" rx="8" fill="var(--surface)" stroke="var(--accent)"
+        stroke-width="2" />
+      <text x="340" y="170" fill="var(--text)" font-family="sans-serif" font-weight="bold" font-size="14"
+        text-anchor="middle">National Met Service</text>
+      <text x="340" y="188" fill="var(--text)" font-family="sans-serif" font-size="12" text-anchor="middle">(IMS)</text>
+
+      <!-- End Users -->
+      <rect x="260" y="240" width="160" height="60" rx="8" fill="var(--key-bg)" stroke="var(--key-border)"
+        stroke-width="2" />
+      <text x="340" y="270" fill="var(--text)" font-family="sans-serif" font-weight="bold" font-size="14"
+        text-anchor="middle">Aviation Users</text>
+      <text x="340" y="288" fill="var(--text)" font-family="sans-serif" font-size="12" text-anchor="middle">(ATC,
+        Pilots, Airlines)</text>
+
+      <!-- Arrows -->
+      <!-- WMO to NMHS -->
+      <line x1="120" y1="100" x2="260" y2="155" stroke="var(--text)" stroke-width="2" marker-end="url(#arrowhead)" />
+      <!-- ICAO to NMHS -->
+      <line x1="560" y1="100" x2="420" y2="155" stroke="var(--text)" stroke-width="2" marker-end="url(#arrowhead)" />
+      <!-- NMHS to End Users -->
+      <line x1="340" y1="200" x2="340" y2="230" stroke="var(--text)" stroke-width="2" marker-end="url(#arrowhead)" />
+
+      <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0, 10 3.5, 0 7" fill="var(--text)" />
+        </marker>
+      </defs>
+    </svg>
+    <figcaption>Figure 1: Flow of meteorological standards and operational requirements to end users.</figcaption>
+  </figure>
+
+  <h2>Key Publications and SARPs</h2>
+
+  <p>The foundation of international aviation meteorology lies in Standards and Recommended Practices (SARPs). A
+    "Standard" is a specification recognized as necessary for the safety or regularity of international air navigation,
+    meaning compliance is mandatory. A "Recommended Practice" is recognized as desirable, but not mandatory.</p>
+
+  <div class="callout callout-key">
+    <strong>Key Document: ICAO Annex 3</strong><br>
+    Meteorological Service for International Air Navigation. This is the definitive document outlining what services
+    must be provided, including formats for METARs, TAFs, and SIGMETs.
+  </div>
+
+  <p>The WMO parallel to Annex 3 is the Technical Regulations (WMO-No. 49), Volume II. These two documents are
+    maintained in close coordination to ensure that the meteorological science supported by WMO directly answers the
+    operational needs defined by ICAO.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Organization</th>
+        <th>Primary Focus</th>
+        <th>Key Publication</th>
+        <th>Output Target</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>WMO</td>
+        <td>Meteorological science, observation standardization, and data exchange.</td>
+        <td>WMO-No. 49, Volume II</td>
+        <td>Global Meteorological Community</td>
+      </tr>
+      <tr>
+        <td>ICAO</td>
+        <td>Safety, regularity, and efficiency of international air navigation.</td>
+        <td>Annex 3</td>
+        <td>Aviation Authorities &amp; Operators</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>From Concept to Operation</h2>
+
+  <p>When the aviation industry requires new meteorological support (e.g., Space Weather advisories), ICAO defines the
+    operational requirement. The WMO then develops the scientific methodology, observation standards, and coding formats
+    to fulfill that requirement.</p>
+
+  <p>Once developed, both organizations adopt the new standards through their respective governance structures. National
+    Meteorological Services are then obligated to implement these new standards, ensuring global uniformity.</p>
+
+  <figure>
+    <svg viewBox="0 0 680 180" xmlns="http://www.w3.org/2000/svg">
+      <rect width="680" height="180" fill="var(--bg)" />
+
+      <!-- Steps -->
+      <rect x="20" y="60" width="130" height="60" rx="4" fill="var(--surface)" stroke="var(--border)"
+        stroke-width="2" />
+      <text x="85" y="90" fill="var(--text)" font-family="sans-serif" font-size="13" font-weight="bold"
+        text-anchor="middle">1. ICAO Needs</text>
+      <text x="85" y="108" fill="var(--muted)" font-family="sans-serif" font-size="11" text-anchor="middle">Defines
+        requirement</text>
+
+      <rect x="190" y="60" width="130" height="60" rx="4" fill="var(--surface)" stroke="var(--border)"
+        stroke-width="2" />
+      <text x="255" y="90" fill="var(--text)" font-family="sans-serif" font-size="13" font-weight="bold"
+        text-anchor="middle">2. WMO R&amp;D</text>
+      <text x="255" y="108" fill="var(--muted)" font-family="sans-serif" font-size="11" text-anchor="middle">Develops
+        science</text>
+
+      <rect x="360" y="60" width="130" height="60" rx="4" fill="var(--surface)" stroke="var(--border)"
+        stroke-width="2" />
+      <text x="425" y="90" fill="var(--text)" font-family="sans-serif" font-size="13" font-weight="bold"
+        text-anchor="middle">3. SARPs Update</text>
+      <text x="425" y="108" fill="var(--muted)" font-family="sans-serif" font-size="11" text-anchor="middle">Annex 3
+        updated</text>
+
+      <rect x="530" y="60" width="130" height="60" rx="4" fill="var(--surface)" stroke="var(--border)"
+        stroke-width="2" />
+      <text x="595" y="90" fill="var(--text)" font-family="sans-serif" font-size="13" font-weight="bold"
+        text-anchor="middle">4. NMHS Action</text>
+      <text x="595" y="108" fill="var(--muted)" font-family="sans-serif" font-size="11" text-anchor="middle">Local
+        implementation</text>
+
+      <!-- Arrows -->
+      <line x1="155" y1="90" x2="185" y2="90" stroke="var(--text)" stroke-width="2" marker-end="url(#arrow)" />
+      <line x1="325" y1="90" x2="355" y2="90" stroke="var(--text)" stroke-width="2" marker-end="url(#arrow)" />
+      <line x1="495" y1="90" x2="525" y2="90" stroke="var(--text)" stroke-width="2" marker-end="url(#arrow)" />
+
+      <defs>
+        <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0, 10 3.5, 0 7" fill="var(--text)" />
+        </marker>
+      </defs>
+    </svg>
+    <figcaption>Figure 2: The lifecycle of an international aviation meteorological standard.</figcaption>
+  </figure>
+
+  <div class="callout callout-warning">
+    <strong>Compliance Warning</strong><br>
+    Failure to comply with an ICAO Standard requires a State to file a "Difference" with ICAO. These differences are
+    published globally, signaling to operators that local procedures deviate from international norms, potentially
+    impacting flight planning and safety.
+  </div>
+
+  <div class="lesson-summary">
+    <h3>Key Takeaways</h3>
+    <ul>
+      <li>The WMO provides the scientific and technical foundation for global meteorology.</li>
+      <li>ICAO determines the operational meteorological requirements for safe air navigation.</li>
+      <li>ICAO Annex 3 (and WMO-No. 49, Vol II) are the definitive regulatory documents for aviation weather services.
+      </li>
+      <li>National Meteorological Services (like the IMS) are responsible for implementing these international standards
+        at the state level.</li>
+      <li>Mandatory "Standards" must be followed, whereas "Recommended Practices" are desirable goals.</li>
+    </ul>
+  </div>
+
+</body>
+
+</html>

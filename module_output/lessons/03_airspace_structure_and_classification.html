@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 3: Airspace Structure & Classification</title>
+<style>
+:root { --bg:#fff; --surface:#f6f5f0; --border:#e2dfd6; --text:#1a1917;
+  --muted:#6b6a65; --accent:#185fa5; --accent-light:#e6f1fb;
+  --note-bg:#e1f5ee; --note-border:#0F6E56; --warn-bg:#faeeda;
+  --warn-border:#BA7517; --key-bg:#EEEDFE; --key-border:#534AB7; }
+@media (prefers-color-scheme:dark) { :root { --bg:#1a1917; --surface:#242320;
+  --border:#3a3835; --text:#e8e6df; --muted:#9a9890;
+  --accent-light:#042c53; --note-bg:#04342c; --warn-bg:#412402; --key-bg:#26215c; } }
+body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  max-width:840px; margin:0 auto; padding:2rem 1.5rem;
+  background:var(--bg); color:var(--text); line-height:1.75; font-size:16px; }
+h1 { font-size:1.8rem; font-weight:600; }
+h2 { font-size:1.25rem; font-weight:600; margin-top:2.5rem;
+  padding-bottom:0.4rem; border-bottom:1.5px solid var(--border); }
+h3 { font-size:1.05rem; font-weight:600; margin-top:1.75rem; }
+p { margin:0.7rem 0; max-width:72ch; }
+figure { margin:2rem 0; }
+figcaption { font-size:0.85rem; color:var(--muted); margin-top:0.6rem;
+  font-style:italic; text-align:center; }
+svg { max-width:100%; height:auto; display:block; margin:0 auto; }
+table { border-collapse:collapse; width:100%; margin:1.5rem 0; font-size:0.9rem; }
+th { background:var(--accent); color:#fff; padding:0.55rem 0.9rem; text-align:left; }
+td { padding:0.5rem 0.9rem; border-bottom:1px solid var(--border); }
+tr:nth-child(even) td { background:var(--surface); }
+.callout { border-radius:8px; padding:1rem 1.25rem; margin:1.5rem 0; }
+.callout-note    { background:var(--note-bg);  border-left:4px solid var(--note-border); }
+.callout-warning { background:var(--warn-bg);  border-left:4px solid var(--warn-border); }
+.callout-key     { background:var(--key-bg);   border-left:4px solid var(--key-border); }
+.objectives { background:var(--surface); border-radius:8px; padding:1.25rem 1.5rem; margin:1.5rem 0; }
+.lesson-summary { background:var(--accent-light); border-radius:8px;
+  padding:1.25rem 1.5rem; margin:2.5rem 0 1rem; }
+.image-needed { border:2px dashed var(--border); border-radius:8px; padding:1.5rem;
+  margin:1.5rem 0; text-align:center; color:var(--muted); background:var(--surface); }
+</style>
+</head>
+<body>
+
+<h1>Lesson 3: Airspace Structure & Classification</h1>
+
+<div class="objectives">
+  <h3>By the end of this lesson you will be able to:</h3>
+  <ul>
+    <li>Differentiate between various classes of airspace and their operational requirements.</li>
+    <li>Relate airspace structures to the provision of meteorological services.</li>
+    <li>Identify controlled, uncontrolled, and special use airspaces.</li>
+  </ul>
+</div>
+
+<p>The sky is not empty space; it is a highly regulated, three-dimensional highway system. To manage air traffic safely, the world's airspace is divided into Flight Information Regions (FIRs), which are further subdivided into specific classes of airspace. Each class has distinct rules regarding flight visibility and weather minimums.</p>
+
+<p>For a meteorological forecaster, understanding airspace is crucial. Forecast products like SIGMETs are issued specifically for an FIR. Furthermore, Visual Flight Rules (VFR) operations in lower airspace are highly sensitive to cloud base and visibility, making accurate terminal forecasting essential for these operators.</p>
+
+<figure>
+    <img src="images/airspace_wedding_cake.png" alt="3D inverted wedding cake airspace structure" style="width:100%; border-radius:8px;">
+  </figure>
+
+<h2>Flight Information Regions (FIR)</h2>
+
+<p>Every portion of the Earth's atmosphere is assigned to a specific FIR. A single country may have one or several FIRs. The designated Meteorological Watch Office (MWO) for an FIR is responsible for maintaining a continuous watch over meteorological conditions affecting flight operations within its boundaries.</p>
+
+<figure>
+  <svg viewBox="0 0 680 300" xmlns="http://www.w3.org/2000/svg">
+    <rect width="680" height="300" fill="var(--bg)"/>
+    
+    <!-- Map Base -->
+    <path d="M100,50 C150,20 250,40 300,80 C350,120 450,100 500,60 C550,20 620,80 600,150 C580,220 500,280 400,260 C300,240 200,280 150,230 C100,180 50,150 100,50 Z" fill="var(--surface)" stroke="var(--border)" stroke-width="2"/>
+    
+    <!-- FIR Boundaries -->
+    <path d="M300,80 L350,180 L200,280" fill="none" stroke="var(--accent)" stroke-width="3" stroke-dasharray="8,4"/>
+    <path d="M350,180 L600,150" fill="none" stroke="var(--accent)" stroke-width="3" stroke-dasharray="8,4"/>
+    
+    <!-- FIR Labels -->
+    <text x="200" y="140" fill="var(--text)" font-family="sans-serif" font-weight="bold" font-size="16">FIR ALPHA</text>
+    <text x="200" y="160" fill="var(--muted)" font-family="sans-serif" font-size="12">MWO: Station A</text>
+    
+    <text x="450" y="110" fill="var(--text)" font-family="sans-serif" font-weight="bold" font-size="16">FIR BRAVO</text>
+    <text x="450" y="130" fill="var(--muted)" font-family="sans-serif" font-size="12">MWO: Station B</text>
+
+    <text x="380" y="220" fill="var(--text)" font-family="sans-serif" font-weight="bold" font-size="16">FIR CHARLIE</text>
+    <text x="380" y="240" fill="var(--muted)" font-family="sans-serif" font-size="12">MWO: Station C</text>
+    
+    <!-- SIGMET Box -->
+    <rect x="250" y="170" width="80" height="40" fill="var(--warn-bg)" stroke="var(--warn-border)" stroke-width="1" rx="4"/>
+    <text x="290" y="195" fill="var(--text)" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle">TS SIGMET</text>
+    
+  </svg>
+  <figcaption>Figure 1: Schematic of geographically divided Flight Information Regions (FIRs) and MWO responsibility.</figcaption>
+</figure>
+
+<h2>Airspace Classification (A to G)</h2>
+
+<p>ICAO classifies airspace into seven categories, denoted by the letters A through G. Class A is the most strictly controlled, while Class G is completely uncontrolled. The class of airspace dictates the services provided by Air Traffic Control (ATC) and the meteorological minimums required for flight.</p>
+
+<div class="callout callout-note">
+  <strong>VFR vs. IFR Weather Minimums</strong><br>
+  Instrument Flight Rules (IFR) flights can operate in clouds and poor visibility, relying on instruments. Visual Flight Rules (VFR) flights require clear visual reference to the ground and must stay out of clouds. Lower airspace classes have strict VFR meteorological minimums (e.g., 5km visibility, clear of clouds).
+</div>
+
+<figure>
+  <svg viewBox="0 0 680 340" xmlns="http://www.w3.org/2000/svg">
+    <rect width="680" height="340" fill="var(--bg)"/>
+    
+    <!-- Y-axis (Altitude) -->
+    <line x1="100" y1="300" x2="100" y2="40" stroke="var(--text)" stroke-width="2"/>
+    <text x="90" y="50" fill="var(--text)" font-family="sans-serif" font-size="12" text-anchor="end">FL600</text>
+    <text x="90" y="150" fill="var(--text)" font-family="sans-serif" font-size="12" text-anchor="end">FL180</text>
+    <text x="90" y="240" fill="var(--text)" font-family="sans-serif" font-size="12" text-anchor="end">10,000 ft</text>
+    <text x="90" y="300" fill="var(--text)" font-family="sans-serif" font-size="12" text-anchor="end">SFC</text>
+
+    <!-- Class A -->
+    <rect x="100" y="50" width="480" height="100" fill="var(--key-bg)" opacity="0.8" stroke="var(--border)" stroke-width="1"/>
+    <text x="340" y="105" fill="var(--text)" font-family="sans-serif" font-weight="bold" font-size="20" text-anchor="middle">Class A (IFR Only)</text>
+    <text x="340" y="125" fill="var(--text)" font-family="sans-serif" font-size="12" text-anchor="middle">En-route High Altitude (Commercial Jets)</text>
+    
+    <!-- Class E -->
+    <rect x="100" y="150" width="480" height="90" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+    <text x="340" y="195" fill="var(--text)" font-family="sans-serif" font-weight="bold" font-size="16" text-anchor="middle">Class E (Controlled)</text>
+    <text x="340" y="215" fill="var(--text)" font-family="sans-serif" font-size="12" text-anchor="middle">IFR &amp; VFR Permitted. VFR requires strict weather minimums.</text>
+
+    <!-- Class G -->
+    <rect x="100" y="240" width="480" height="60" fill="#e8e6df" stroke="var(--border)" stroke-width="1"/>
+    <text x="340" y="270" fill="var(--text)" font-family="sans-serif" font-weight="bold" font-size="16" text-anchor="middle">Class G (Uncontrolled)</text>
+    <text x="340" y="290" fill="var(--text)" font-family="sans-serif" font-size="12" text-anchor="middle">VFR heavily dependent on local weather (fog, low ceiling).</text>
+
+    <!-- Terminal Airspace (Class B/C/D) -->
+    <path d="M260,300 L260,200 L420,200 L420,300 Z" fill="var(--note-bg)" opacity="0.9" stroke="var(--note-border)" stroke-width="2"/>
+    <text x="340" y="245" fill="var(--text)" font-family="sans-serif" font-weight="bold" font-size="14" text-anchor="middle">Class C/D</text>
+    <text x="340" y="260" fill="var(--text)" font-family="sans-serif" font-size="10" text-anchor="middle">(Terminal Area)</text>
+
+  </svg>
+  <figcaption>Figure 2: Simplified vertical profile of airspace classes showing controlled vs. uncontrolled areas.</figcaption>
+</figure>
+
+<table>
+  <thead>
+    <tr>
+      <th>Airspace Class</th>
+      <th>Control Status</th>
+      <th>Permitted Flights</th>
+      <th>Meteorological Dependency</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>A</td>
+      <td>Controlled</td>
+      <td>IFR Only</td>
+      <td>Focus on upper winds, CAT, deep convection.</td>
+    </tr>
+    <tr>
+      <td>C / D</td>
+      <td>Controlled</td>
+      <td>IFR and VFR</td>
+      <td>Terminal forecasts (TAF) are critical for approach and landing operations.</td>
+    </tr>
+    <tr>
+      <td>G</td>
+      <td>Uncontrolled</td>
+      <td>IFR and VFR</td>
+      <td>General aviation heavily reliant on accurate low-level cloud and visibility reports.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Special Use Airspace</h2>
+
+<p>In addition to standard classes, airspace can be designated for special use. Danger Areas, Restricted Areas, and Prohibited Areas are established to protect aircraft from hazards (e.g., military firing ranges) or to protect ground facilities. While meteorology doesn't dictate these boundaries, forecasters must be aware of them, as weather deviations (e.g., circumnavigating a thunderstorm) into restricted airspace can cause significant operational issues.</p>
+
+<div class="lesson-summary">
+  <h3>Key Takeaways</h3>
+  <ul>
+    <li>Airspace is divided geographically into Flight Information Regions (FIRs), each monitored by a Meteorological Watch Office (MWO).</li>
+    <li>Airspace is structured vertically and horizontally into classes (A-G), determining the rules of flight.</li>
+    <li>Class A is strictly controlled and IFR only, typically used by commercial airliners en-route.</li>
+    <li>Lower airspace classes (like G) allow VFR flight, making them highly sensitive to low cloud bases and poor visibility.</li>
+  </ul>
+</div>
+
+</body>
+</html>
