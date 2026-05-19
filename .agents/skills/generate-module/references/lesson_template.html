@@ -1,0 +1,157 @@
+<!--
+  Worked example: a Moodle-ready lesson body fragment.
+
+  Copy this file as a starting point for each lesson, then:
+    1. Replace the comment in the <style> block with the FULL CONTENTS of
+       config/design_system.css (verbatim — do not edit selectors).
+    2. Update the breadcrumb to "Module N / Lesson K".
+    3. Replace the <h1> with the lesson title from module_structure.json.
+    4. Replace the .objectives bullets with the lesson's learning_objectives.
+    5. Replace the body content (everything between objectives and summary)
+       with your authored prose, tables, SVG diagrams, and callouts.
+    6. Replace the summary bullets with 4-6 takeaways.
+
+  Reminders:
+    - Body fragment only. No <!DOCTYPE>, <html>, <head>, <body>.
+    - Every SVG attribute uses a LITERAL hex code from the palette in
+      docs/lesson_spec.md. Never var(--anything) inside an SVG.
+    - Aim for one visual (table, SVG, image-needed) per 200-300 words.
+    - Audience is professional meteorologists — skip filler, no condescension.
+-->
+<style>
+/*
+  REPLACE THIS COMMENT WITH THE FULL CONTENTS OF config/design_system.css.
+
+  The CSS must be present verbatim in every lesson fragment. Without it
+  the lesson loses its typography, callouts, and table styling when
+  pasted into Moodle. The CSS is already scoped to .ims-lesson — leave
+  the scoping alone.
+*/
+</style>
+<div class="ims-lesson">
+<p class="breadcrumb">Module N / Lesson K</p>
+<h1>Lesson Title Goes Here</h1>
+
+<div class="objectives">
+  <strong>By the end of this lesson you will be able to:</strong>
+  <ul>
+    <li>First testable, verb-led objective from module_structure.json.</li>
+    <li>Second objective.</li>
+    <li>Third objective.</li>
+  </ul>
+</div>
+
+<h2>First major section</h2>
+
+<p>Short prose paragraph introducing the concept. Two to four sentences. The audience is technically literate so skip any "in this section we will…" framing. Open with the substantive claim.</p>
+
+<p>Second paragraph if needed. Note that callouts and tables inherit their colors from the leading style block via class names. Inline SVG diagrams, on the other hand, must use literal hex codes for every attribute — Moodle does not preserve CSS variable resolution inside SVG attributes.</p>
+
+<div class="callout callout-note">
+  <div class="callout-label">Definition</div>
+  Atmospheric stability describes a parcel's tendency to return to its original altitude after a small vertical displacement. A stable parcel resists displacement; an unstable parcel accelerates away from its starting point. The diagnostic compares the parcel's adiabatic cooling to the surrounding environmental lapse rate.
+</div>
+
+<h2>Comparison table</h2>
+
+<p>The design system styles tables automatically — write semantic HTML with <code>&lt;thead&gt;</code> and <code>&lt;tbody&gt;</code>. The blue header row, alternating cream rows, and border styling all come from the design system.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Lapse rate type</th>
+      <th>Value</th>
+      <th>Applies when</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Dry adiabatic (DALR)</td>
+      <td>9.8 &deg;C/km</td>
+      <td>Unsaturated parcel</td>
+    </tr>
+    <tr>
+      <td>Saturated adiabatic (SALR)</td>
+      <td>~6 &deg;C/km</td>
+      <td>Saturated parcel; varies with temperature</td>
+    </tr>
+    <tr>
+      <td>Environmental (ELR)</td>
+      <td>Variable</td>
+      <td>Actual sounding profile from observations</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Inline SVG diagram</h2>
+
+<p>Use diagrams to show relationships, comparisons, and sequences that prose carries poorly. Every fill, stroke, and text color is a literal hex from the palette in lesson_spec.md. ViewBox width is 680 (the lesson's effective content width); height fits the content.</p>
+
+<figure>
+  <svg viewBox="0 0 680 360" role="img" xmlns="http://www.w3.org/2000/svg">
+    <title>Parcel temperature vs. environmental temperature</title>
+    <desc>A vertical profile comparing a rising parcel's dry adiabatic cooling to a steeper environmental lapse rate, illustrating an unstable layer.</desc>
+
+    <!-- Axes -->
+    <line x1="80" y1="40"  x2="80"  y2="320" stroke="#1A1917" stroke-width="2"/>
+    <line x1="80" y1="320" x2="640" y2="320" stroke="#1A1917" stroke-width="2"/>
+
+    <!-- Axis labels -->
+    <text x="36"  y="180" font-family="sans-serif" font-size="14" fill="#1A1917" transform="rotate(-90 36 180)">Altitude</text>
+    <text x="320" y="350" font-family="sans-serif" font-size="14" fill="#1A1917">Temperature &rarr;</text>
+
+    <!-- Environmental lapse rate: amber, solid -->
+    <line x1="540" y1="320" x2="200" y2="40" stroke="#BA7517" stroke-width="3"/>
+    <text x="170" y="34"  font-family="sans-serif" font-size="14" fill="#BA7517">Environmental lapse</text>
+
+    <!-- Parcel adiabatic cool: accent blue, dashed -->
+    <line x1="540" y1="320" x2="340" y2="40" stroke="#185FA5" stroke-width="3" stroke-dasharray="6 4"/>
+    <text x="320" y="34"  font-family="sans-serif" font-size="14" fill="#185FA5">Parcel (dry adiabatic)</text>
+
+    <!-- Surface marker -->
+    <circle cx="540" cy="320" r="6" fill="#1A1917"/>
+    <text   x="500" y="345" font-family="sans-serif" font-size="12" fill="#6B6A65">Surface parcel</text>
+
+    <!-- Caption text inside the figure (also use figcaption below) -->
+    <text x="80" y="20" font-family="sans-serif" font-size="12" fill="#6B6A65">Unstable layer — parcel stays warmer than environment</text>
+  </svg>
+  <figcaption>When the environmental profile (amber) cools faster than the rising parcel (blue, dashed), the parcel stays warmer than its surroundings and continues to rise — an unstable layer.</figcaption>
+</figure>
+
+<h2>Image-needed placeholder</h2>
+
+<p>For visuals that cannot be inline SVG — real photographs, satellite imagery, instrument close-ups — emit a placeholder. The Python finalize step extracts the <code>data-description</code> into <code>IMAGES_TO_SOURCE.md</code> so the user knows what to find.</p>
+
+<div class="image-needed" data-description="Cumulus congestus cloud photographed from below, showing strong vertical extent and a hard, cauliflower-like crown — a visible signal of an unstable atmosphere supporting deep convection.">
+  &#128247; Image needed: cumulus congestus cloud showing strong vertical development.
+</div>
+
+<h2>Other callout styles</h2>
+
+<p>Four callout classes are available. Use them sparingly — one or two per lesson is plenty.</p>
+
+<div class="callout callout-warning">
+  <div class="callout-label">Operational caveat</div>
+  Stability assessment from a single sounding is one snapshot in time and space. Diurnal heating, mesoscale boundaries, and frontal passages all modify the profile within hours. Always cross-check the model forecast and the next sounding.
+</div>
+
+<div class="callout callout-key">
+  <div class="callout-label">Key relation</div>
+  Parcel cooler than environment &rarr; stable. Parcel warmer than environment &rarr; unstable. The crossing point on the diagram is the level of free convection (LFC).
+</div>
+
+<div class="callout callout-danger">
+  <div class="callout-label">Danger condition</div>
+  When ELR exceeds DALR through a deep layer with surface moisture &gt; 12 g/kg, expect explosive convective development. Issue a SIGMET well before initiation, not after.
+</div>
+
+<div class="lesson-summary">
+  <h3>Key Takeaways</h3>
+  <ul>
+    <li>Stability is the parcel's <em>response</em> to vertical displacement, not a property of the air itself.</li>
+    <li>Three lapse rates matter operationally: DALR (9.8 &deg;C/km), SALR (~6 &deg;C/km), and the measured ELR.</li>
+    <li>When ELR &gt; DALR through a layer, that layer is absolutely unstable — convection will develop given any trigger.</li>
+    <li>Conditional instability (DALR &gt; ELR &gt; SALR) is the most common case in convective forecasting; outcomes depend on whether parcels reach the LCL.</li>
+  </ul>
+</div>
+</div>
