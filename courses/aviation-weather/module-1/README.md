@@ -1,46 +1,42 @@
-# Moodle Import Instructions
+# Module 1 — Moodle Upload Instructions
 
-This directory contains the fully structured **Aviation Weather Forecasting Certification - Module 1**. Follow these steps to import the content and quiz into your Moodle environment.
+Two clicks. Five minutes. No image upload, no per-lesson pasting.
 
-## 1. Import the Lesson Content (HTML)
+## Files in this folder
 
-Because the lessons are visual-forward and use custom CSS, they are best imported as "Page" resources in Moodle.
+| File | What it is |
+|------|------------|
+| `module_combined_moodle.html` | **Paste this into one Moodle Page activity.** All lessons + overview + table of contents in a single self-contained HTML file (~1 MB, images base64-embedded). |
+| `module_quiz_all_questions.xml` | **Import this into the Question Bank.** Moodle XML format; contains every quiz question for the module. |
+| `00_module_overview.html` and `lessons/*.html` | Standalone preview HTML for browser review. Not used for upload. |
+| `00_module_overview_moodle.html` and `lessons/*_moodle.html` | Per-lesson body fragments. Fallback path if the combined page is too large for your Moodle instance. |
+| `module_structure.json` / `_extraction.json` | Pipeline by-products kept for re-runs and debugging. |
+| `IMAGES_TO_SOURCE.md` | List of photographs the AI flagged as needing human sourcing (already done for Module 1). |
 
-1. Go to your Moodle course and click **Turn editing on**.
-2. In the desired section (e.g., "Module 1"), click **Add an activity or resource** and select **Page**.
-3. Name the page according to the lesson (e.g., *Lesson 1: International Regulatory Frameworks*).
-4. In the **Content** section, click the **Show more buttons** icon (the down arrow) in the text editor, then click the **HTML `</>`** button to switch to code view.
-5. Open the corresponding `.html` file from `./module_output/lessons/` in a text editor (e.g., Notepad or VS Code). Copy the entire content and paste it into the Moodle HTML view.
-6. Click **Save and return to course**.
-7. Repeat this process for `00_module_overview.html` and the 4 lesson HTML files.
+## Step 1 — Create the lesson Page (~1 minute)
 
-## 2. Upload the Images
+1. In Moodle, **Turn editing on** in the target course.
+2. In the Module 1 section: **Add an activity or resource → Page**.
+3. Name it `Module 1: Aviation Weather Fundamentals & Regulations`.
+4. In the **Content** field, click the toolbar's HTML source button (`</>` or "Show more buttons → HTML"). This switches the editor to plain HTML mode.
+5. Open `module_combined_moodle.html` in a text editor, **Ctrl+A → Ctrl+C** to copy the whole file, then paste into Moodle's HTML view.
+6. **Save and return to course**.
 
-Moodle will need the images referenced in the HTML files.
+The page contains a table of contents at the top — students can click any lesson to jump to it.
 
-1. Ensure you have sourced the images listed in `IMAGES_TO_SOURCE.md` and saved them.
-2. In Moodle, you can upload these images directly to the course files or host them externally. 
-3. If uploading to Moodle: go back into the Page settings for each lesson, click the **Image** button in the text editor toolbar, upload the specific image, and insert it to replace the `<figure>` placeholder block if necessary. *(Alternatively, if hosting externally, simply update the `src=""` attribute in the HTML code to point to your hosted URL).*
+## Step 2 — Import the quizzes (~1 minute)
 
-## 3. Import the Quiz Questions (XML)
+1. From the course, open the **gear icon → More → Question bank → Import**.
+2. **File format:** Moodle XML format.
+3. **Import category:** create or pick `Module 1 Questions`.
+4. Drag `module_quiz_all_questions.xml` into the upload box → **Import** → **Continue**.
+5. Add a **Quiz** activity to the Module 1 section, name it `Module 1 Certification Quiz`, and under **Edit quiz → Add → from question bank**, select all the imported questions.
+6. Set the **Grade to pass** to 75% in the quiz settings.
 
-The quiz questions have been prepared in Moodle XML format, which allows for bulk importing of questions, correct answers, and feedback rationales.
+That's it. The module is live.
 
-1. In your Moodle course, click the **Settings (gear) icon** and select **More...**
-2. Scroll down to the **Question bank** section and click **Import**.
-3. For the **File format**, select **Moodle XML format**.
-4. In the **General** section, you may choose to import them into a specific category (e.g., "Module 1 Questions").
-5. Drag and drop the `./module_output/module_quiz_all_questions.xml` file into the upload box (or use the file picker).
-6. Click **Import**. Moodle will display a preview of the imported questions. Click **Continue**.
+## Troubleshooting
 
-## 4. Create the Final Quiz Activity
-
-1. Return to your course page and click **Add an activity or resource**, then select **Quiz**.
-2. Name it "Module 1 Certification Quiz".
-3. Under **Grade**, set the **Grade to pass** to reflect the 75% requirement (e.g., 7.5 out of 10, or 12 out of 16 depending on your total point scaling).
-4. Save the quiz settings.
-5. Click on the newly created quiz and select **Edit quiz**.
-6. Click **Add** -> **from question bank** and select all the imported questions from the "Module 1 Questions" category.
-7. Set the **Maximum grade** to match your course structure and click **Save**.
-
-Your Module 1 is now fully integrated and ready for students!
+- **Combined page paste hangs or errors out.** Your Moodle's `post_max_size` may be lower than ~2 MB. Fallback: use the per-lesson `*_moodle.html` files — one Page activity per lesson, five pastes instead of one.
+- **Diagrams render without colors.** Means Moodle is stripping the `<style>` block from the pasted HTML. Check your user role has trusted-content / "Allow extended characters in HTML" enabled (admin → Site administration → Security → HTML settings).
+- **Images broken after paste.** Should not happen — images are base64-embedded. If it does, you pasted the wrong file (probably `lessons/01_*.html` instead of `lessons/01_*_moodle.html`, or the standalone `00_module_overview.html` instead of `module_combined_moodle.html`).
