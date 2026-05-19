@@ -48,6 +48,14 @@ future course-to-mbz Claude skill) should read both.
   companion `*_moodle.html` body fragment with images embedded as base64
   and SVG colors inlined. Original standalone HTML left unchanged.
 
+### Added
+- **Tooling:** New `pipeline/build_combined_page.py`. Concatenates a
+  module's overview + per-lesson `*_moodle.html` fragments into a single
+  `module_combined_moodle.html` file with a sticky table of contents and
+  anchor links. This is the file the user pastes into a single Moodle
+  Page activity per module. Replaces the deleted Module-1-specific
+  `build_preview.py`.
+
 ### Removed
 - Pre-Moodle dev scripts that became dead weight after the pivot:
   `pipeline/extract_content.py` (duplicated by `module_pipeline.py`),
