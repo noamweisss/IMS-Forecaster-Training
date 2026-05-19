@@ -1,0 +1,148 @@
+<style>
+/*
+ * IMS Course Factory — Lesson Design System
+ *
+ * All rules are scoped to `.ims-lesson` so the styles can be injected into
+ * a host page (Moodle, in particular) without leaking onto the host's chrome
+ * and without the host's theme overriding lesson typography.
+ *
+ * Standalone lesson HTML wraps the entire body in <div class="ims-lesson">.
+ * Moodle body-fragment HTML does the same. The single rule below keeps the
+ * standalone preview's <body> background consistent without leaking into
+ * Moodle pages.
+ */
+
+.ims-lesson {
+  --bg: #ffffff;
+  --surface: #f6f5f0;
+  --border: #e2dfd6;
+  --text: #1a1917;
+  --muted: #6b6a65;
+  --accent: #185fa5;
+  --accent-light: #e6f1fb;
+  --note-bg: #e1f5ee;
+  --note-border: #0F6E56;
+  --warn-bg: #faeeda;
+  --warn-border: #BA7517;
+  --key-bg: #EEEDFE;
+  --key-border: #534AB7;
+  --danger-bg: #fcebeb;
+  --danger-border: #A32D2D;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .ims-lesson {
+    --bg: #1a1917;
+    --surface: #242320;
+    --border: #3a3835;
+    --text: #e8e6df;
+    --muted: #9a9890;
+    --accent-light: #042c53;
+    --note-bg: #04342c;
+    --warn-bg: #412402;
+    --key-bg: #26215c;
+  }
+}
+
+.ims-lesson h1 { font-size: 1.8rem; font-weight: 600; margin-bottom: 0.2rem; line-height: 1.2; color: var(--text); }
+.ims-lesson h2 { font-size: 1.25rem; font-weight: 600; margin-top: 2.5rem; padding-bottom: 0.4rem;
+  border-bottom: 1.5px solid var(--border); color: var(--text); }
+.ims-lesson h3 { font-size: 1.05rem; font-weight: 600; margin-top: 1.75rem; color: var(--text); }
+.ims-lesson p { margin: 0.7rem 0; max-width: 72ch; }
+.ims-lesson figure { margin: 2rem 0; }
+.ims-lesson figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 0.6rem;
+  font-style: italic; text-align: center; }
+.ims-lesson svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+.ims-lesson img { max-width: 100%; height: auto; }
+.ims-lesson table { border-collapse: collapse; width: 100%; margin: 1.5rem 0; font-size: 0.9rem; }
+.ims-lesson th { background: var(--accent); color: #fff; padding: 0.55rem 0.9rem; text-align: left; }
+.ims-lesson td { padding: 0.5rem 0.9rem; border-bottom: 1px solid var(--border); }
+.ims-lesson tr:nth-child(even) td { background: var(--surface); }
+.ims-lesson .callout { border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+.ims-lesson .callout-note    { background: var(--note-bg);   border-left: 4px solid var(--note-border); }
+.ims-lesson .callout-warning { background: var(--warn-bg);   border-left: 4px solid var(--warn-border); }
+.ims-lesson .callout-key     { background: var(--key-bg);    border-left: 4px solid var(--key-border); }
+.ims-lesson .callout-danger  { background: var(--danger-bg); border-left: 4px solid var(--danger-border); }
+.ims-lesson .callout-label { font-weight: 700; font-size: 0.78rem; text-transform: uppercase;
+  letter-spacing: 0.06em; margin-bottom: 0.35rem; }
+.ims-lesson .objectives { background: var(--surface); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+.ims-lesson .objectives ul { margin: 0.5rem 0 0; padding-left: 1.4rem; }
+.ims-lesson .lesson-summary { background: var(--accent-light); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 2.5rem 0 1rem; }
+.ims-lesson .lesson-summary h3 { margin-top: 0; color: var(--accent); font-size: 1rem; }
+.ims-lesson .image-needed { border: 2px dashed var(--border); border-radius: 8px;
+  padding: 1.5rem; margin: 1.5rem 0; text-align: center;
+  color: var(--muted); font-size: 0.9rem; background: var(--surface); }
+.ims-lesson .meta { color: var(--muted); font-size: 0.88rem; margin-bottom: 1.75rem; }
+.ims-lesson .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.5rem; }
+
+</style>
+<div class="ims-lesson">
+<p class="breadcrumb">Module 1 overview</p>
+<h1>Module 1: Aviation Weather Fundamentals & Regulations</h1>
+<div class="callout callout-note">
+  <strong>Welcome to Module 1</strong><br>
+  This module forms the foundation of the Aviation Weather Forecasting Certification. It is designed to familiarize professional meteorologists with the international regulatory framework, operational flight planning considerations, airspace structures, and the critical principles of altimetry.
+</div>
+
+<h2>Module Competencies</h2>
+<p>Upon completion of this module, you will be certified to:</p>
+<ul>
+  <li>Navigate and apply WMO and ICAO regulatory frameworks governing aeronautical meteorology.</li>
+  <li>Integrate meteorological factors into fuel consumption and route optimization strategies.</li>
+  <li>Assess airspace classifications and route structures to support aviation planning.</li>
+  <li>Calculate and apply correct altimetry settings for safe flight operations.</li>
+</ul>
+
+<h2>Curriculum Structure</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Lesson</th>
+      <th>Estimated Duration</th>
+      <th>Key Focus Areas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>1. International Regulatory Frameworks</strong></td>
+      <td>25 mins</td>
+      <td>WMO vs ICAO roles, Annex 3 compliance, Standards and Recommended Practices (SARPs).</td>
+    </tr>
+    <tr>
+      <td><strong>2. Aviation Route Planning & Fuel Management</strong></td>
+      <td>30 mins</td>
+      <td>Headwinds/Tailwinds impact, temperature effects on performance, fuel contingency planning.</td>
+    </tr>
+    <tr>
+      <td><strong>3. Airspace Structure & Classification</strong></td>
+      <td>20 mins</td>
+      <td>Flight Information Regions (FIRs), Class A-G airspace minimums, Special Use Airspace.</td>
+    </tr>
+    <tr>
+      <td><strong>4. Principles of Aviation Altimetry</strong></td>
+      <td>25 mins</td>
+      <td>QNH, QFE, QNE, Transition Altitudes/Levels, cold weather error calculations.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Module Assessment</h2>
+<div class="callout callout-key">
+  <strong>Certification Quiz Requirements</strong><br>
+  To pass this module, you must complete the final assessment with a score of <strong>75% or higher</strong>.
+  <br><br>
+  The quiz consists of 16 application-level multiple-choice questions. It is designed to test your operational judgment and ability to apply concepts to real-world aviation scenarios, not just rote recall.
+</div>
+</div>

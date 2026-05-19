@@ -217,3 +217,45 @@ A module with 4 images grows the HTML by ~1 MB total. Moodle's content
 field is `LONGTEXT` (4 GB cap); 1 MB is fine. Loading is actually
 *faster* than separate file requests because there's no second round
 trip.
+
+**Module 1 footnote.** The sourced PNGs for Module 1 are ~2.5 MB each
+at full resolution, producing ~3.3 MB fragments after base64. Still
+fine for Moodle, but a future improvement would be to add a small
+image-optimization step (resize to max 1200 px wide, JPEG quality 80)
+in the embed script. Out of scope for the pilot; flagged for the
+runbook.
+
+---
+
+## 2026-05-19 — Module 1 retrofit (no re-run, no LLM cost)
+
+**Context.** Module 1 was generated weeks ago by the older pipeline. Its
+lesson HTML uses the obsolete output shape (full document wrapper,
+unscoped CSS, `var(--xxx)` in SVG attributes). Re-running the pipeline
+would cost API budget and produce slightly different prose due to LLM
+non-determinism.
+
+**Decision.** New script `pipeline/retrofit_to_moodle.py` rewrites
+existing standalone HTML into the new fragment format without calling
+any model. For each lesson it:
+
+1. Extracts the inside of `<body>...</body>`.
+2. Strips the pre-existing inline `<style>` block.
+3. Runs the SVG var-scrubber from commit 3.
+4. Wraps in `<div class="ims-lesson">` and prepends the shared design
+   system CSS.
+5. Writes `lessons/NN_<slug>_moodle.html` alongside the original.
+
+Then `pipeline/embed_images.py` runs on the output and inlines the four
+sourced photographs as base64. Result: zero API calls, content
+preserved verbatim, Module 1 ready for the upcoming `.mbz` builder.
+
+**The retrofit script's continuing value.** Anyone reviving an old
+module (or a course generated with an even older fork) can reuse it
+the same way. Keeping it in the tree.
+
+**Verified after retrofit:**
+- All `var(--xxx)` references now live only inside the leading `<style>`
+  block. Zero inside `<svg>` elements (sampled with regex).
+- All four sourced images are base64-embedded.
+- Fragment sizes 3.2–3.5 MB; module overview is 6.5 KB (no images).
