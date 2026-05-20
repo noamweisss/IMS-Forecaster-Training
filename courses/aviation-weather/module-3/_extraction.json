@@ -1,0 +1,1184 @@
+[
+  {
+    "filename": "13. Area Warnings.pptx",
+    "format": "pptx",
+    "slide_count": 25,
+    "slides": [
+      {
+        "slide_number": 1,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "AIRMET/SIGMET"
+          },
+          {
+            "level": 0,
+            "text": "review"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 2,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "World Region"
+          },
+          {
+            "level": 0,
+            "text": "World Area Forecast Center (WAFC)"
+          },
+          {
+            "level": 0,
+            "text": "FIR"
+          },
+          {
+            "level": 0,
+            "text": "Aerodrome Forecast Office (AFO)"
+          },
+          {
+            "level": 0,
+            "text": "Airport"
+          },
+          {
+            "level": 0,
+            "text": "Meteorological Watch Office (MWO)"
+          },
+          {
+            "level": 0,
+            "text": "SIGWX> FL100, W+T Charts,  Advisories"
+          },
+          {
+            "level": 0,
+            "text": "SIGWX< FL100 / GAMET"
+          },
+          {
+            "level": 0,
+            "text": "SIGMET, AIRMET"
+          },
+          {
+            "level": 0,
+            "text": "TAF, TREND, Warnings"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 3,
+        "title": "SIGMET/AIRMET Advisories",
+        "body": [
+          {
+            "level": 0,
+            "text": "The primary purpose of SIGMET and AIRMET is for in-flight service, which requires timely transmission of the SIGMET and, where available, AIRMET messages to pilots by the ATS units and/or through VOLMET and D-VOLMET"
+          },
+          {
+            "level": 0,
+            "text": "Airlines are the main users of the SIGMET and AIRMET information"
+          },
+          {
+            "level": 0,
+            "text": "SIGMET and AIRMET is also used for the flight planning"
+          },
+          {
+            "level": 0,
+            "text": "SIGMET and AIRMET information is issued by the MWO in order to provide timely warning for the occurrence or expected occurrence of specified en-route weather phenomena, affecting the safety of the flight operations in the MWO’s area of responsibility. SIGMET and AIRMET provides information concerning the location, extent, intensity and expected evolution of the specified phenomena"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 4,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "SIGMET Provision – Definition"
+          },
+          {
+            "level": 0,
+            "text": "SIGMET"
+          },
+          {
+            "level": 0,
+            "text": "Defined in ICAO Annex 3;"
+          },
+          {
+            "level": 0,
+            "text": "Information concerning the occurrence, or expected occurrence, of specified en-route weather phenomena which may affect the safety of aircraft operations;"
+          },
+          {
+            "level": 0,
+            "text": "Issued by the Meteorological Watch Office (MWO);"
+          },
+          {
+            "level": 0,
+            "text": "Phenomena include:"
+          },
+          {
+            "level": 1,
+            "text": "Thunderstorm with/without hail (obscured, embedded, frequent, squall);"
+          },
+          {
+            "level": 1,
+            "text": "Tropical cyclone;"
+          },
+          {
+            "level": 1,
+            "text": "Turbulence (severe);"
+          },
+          {
+            "level": 1,
+            "text": "Icing (severe and severe due to freezing rain);"
+          },
+          {
+            "level": 1,
+            "text": "Mountain wave (severe);"
+          },
+          {
+            "level": 1,
+            "text": "Duststorm or sandstorm (heavy);"
+          },
+          {
+            "level": 1,
+            "text": "Volcanic ash;"
+          },
+          {
+            "level": 1,
+            "text": "Radioactive cloud."
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 5,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "Types of SIGMET"
+          },
+          {
+            "level": 0,
+            "text": "SIGMET for en-route weather phenomena other than volcanic ash or tropical cyclones (WS SIGMET )"
+          },
+          {
+            "level": 0,
+            "text": "SIGMET for volcanic ash (VA SIGMET) (to be referred also as WV SIGMET)"
+          },
+          {
+            "level": 0,
+            "text": "SIGMET for tropical cyclones (TC SIGMET)"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 6,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "A SIGMET message consists of:"
+          },
+          {
+            "level": 0,
+            "text": "WMO heading – all SIGMETs are preceded by an appropriate WMO heading;"
+          },
+          {
+            "level": 0,
+            "text": "First line, containing location indicators of the relevant ATS unit and MWO, sequential number and period of validity;"
+          },
+          {
+            "level": 0,
+            "text": "Meteorological part, containing meteorological information concerning the phenomenon for which the SIGMET is issued;"
+          },
+          {
+            "level": 0,
+            "text": "Structure of the SIGMET message"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 7,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "WMO Header : T1T2A1A2ii CCCC YYGGgg"
+          },
+          {
+            "level": 0,
+            "text": "The group T1T2A1A2ii is the bulletin identification for the SIGMET message. It is constructed in the following way:"
+          },
+          {
+            "level": 0,
+            "text": "T1T2 \tData type designator"
+          },
+          {
+            "level": 0,
+            "text": "WA – for AIRMET"
+          },
+          {
+            "level": 0,
+            "text": "WS – for SIGMET"
+          },
+          {
+            "level": 0,
+            "text": "WC – for SIGMET for tropical cyclone (not required in the EUR Region)"
+          },
+          {
+            "level": 0,
+            "text": "WV – for SIGMET for volcanic ash"
+          },
+          {
+            "level": 0,
+            "text": "A1A2 \tCountry or territory designators"
+          },
+          {
+            "level": 0,
+            "text": "ii \tBulletin number Assigned on national level"
+          },
+          {
+            "level": 0,
+            "text": "CCCC is the ICAO location indicator of the communication centre disseminating the message (could be the same as the MWO)."
+          },
+          {
+            "level": 0,
+            "text": "YYGGgg is the date/time group, where YY is the date and GGgg is the time in hours and minutes UTC, of the transmission of the SIGMET"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 8,
+        "title": "",
+        "body": [],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 9,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "Format of the meteorological part of SIGMET messages for weather phenomena other than VA"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 10,
+        "title": "SIGMET (WS)",
+        "body": [
+          {
+            "level": 0,
+            "text": "SIGMET shall be issued only:"
+          },
+          {
+            "level": 0,
+            "text": "thunderstorms – if they are OBSC, EMBD, FRQ or SQL with or without hail;"
+          },
+          {
+            "level": 0,
+            "text": "turbulence – only SEV"
+          },
+          {
+            "level": 0,
+            "text": "icing – only SEV with or without FZRA"
+          },
+          {
+            "level": 0,
+            "text": "mountain waves – only SEV"
+          },
+          {
+            "level": 0,
+            "text": "dust storm – only HVY"
+          },
+          {
+            "level": 0,
+            "text": "sand storm – only HVY"
+          },
+          {
+            "level": 0,
+            "text": "radioactive cloud – RDOACT CLD"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 11,
+        "title": "",
+        "body": [],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 12,
+        "title": "",
+        "body": [],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 13,
+        "title": "SIGMET (WS)",
+        "body": [
+          {
+            "level": 0,
+            "text": "Significant Weather Potentially Hazardous To All Aircraft"
+          },
+          {
+            "level": 0,
+            "text": "Max Forecast Period Is 4 Hours"
+          },
+          {
+            "level": 0,
+            "text": "Time of issuance of the SIGMET should be not more than 4 hours before the expected time of occurrence of the phenomenon"
+          },
+          {
+            "level": 0,
+            "text": "Only one WX  phenomena per SIGMET massage"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 14,
+        "title": "Cancellation of SIGMET",
+        "body": [
+          {
+            "level": 0,
+            "text": "If, during the validity period of a SIGMET, the phenomenon for which the SIGMET had been issued is no longer occurring or no longer expected, this SIGMET should be cancelled by the issuing MWO."
+          },
+          {
+            "level": 0,
+            "text": "The cancellation is done by issuing the same type of SIGMET with the following structure:"
+          },
+          {
+            "level": 0,
+            "text": "WMO heading with the same data type designator;"
+          },
+          {
+            "level": 0,
+            "text": "First line, including the next sequence number followed by a new validity period, and"
+          },
+          {
+            "level": 0,
+            "text": "Second line, which contains the location indicator and name of the FIR or CTA, the combination CNL SIGMET, followed by the sequential number of the original SIGMET and its validity period."
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 15,
+        "title": "Cancellation of SIGMET",
+        "body": [
+          {
+            "level": 0,
+            "text": "Examples:"
+          },
+          {
+            "level": 0,
+            "text": "Cancellation of a SIGWX SIGMET with the following first line"
+          },
+          {
+            "level": 0,
+            "text": "WSXY31 YUSO 101200"
+          },
+          {
+            "level": 0,
+            "text": "YUDD SIGMET 5 VALID 101200/101600 YUSO-"
+          },
+          {
+            "level": 0,
+            "text": "YUDD SHANLON FIR …"
+          },
+          {
+            "level": 0,
+            "text": "Cancellation SIGMET:"
+          },
+          {
+            "level": 0,
+            "text": "WSXY31 YUSO 101430"
+          },
+          {
+            "level": 0,
+            "text": "YUDD SIGMET 6 VALID 101430/101600 YUSO-"
+          },
+          {
+            "level": 0,
+            "text": "YUDD SHANLON FIR CNL SIGMET 5 101200/101600="
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 16,
+        "title": "AIRMET Provision – Definition",
+        "body": [
+          {
+            "level": 0,
+            "text": "Information issued by a meteorological watch office concerning the occurrence or expected occurrence of specified en-route weather phenomena which may affect the safety of low-level aircraft operations and which was not already included in the forecast issued for low-level flights (below flight level 100) in the flight information region concerned or sub-area thereof."
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 17,
+        "title": "Structure of the AIRMET message",
+        "body": [
+          {
+            "level": 0,
+            "text": "The structure of AIRMET is the same as SIGMET see link… just instead of word SIGMET use word AIRMET."
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 18,
+        "title": "Airmet",
+        "body": [
+          {
+            "level": 0,
+            "text": "AIRMET is issued for a flight information region (FIR); where necessary, the FIR should be divided in sub-areas and separate AIRMET issued for each sub-area."
+          },
+          {
+            "level": 0,
+            "text": "AIRMET messages should be kept short and clear, without additional descriptive text other than that prescribed in Annex 3."
+          },
+          {
+            "level": 0,
+            "text": "After issuing an AIRMET, the MWO should maintain watch over the evolution of the phenomenon for which the AIRMET has been issued and issue a new updated AIRMET when necessary"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 19,
+        "title": "Airmet",
+        "body": [
+          {
+            "level": 0,
+            "text": "Significant Weather Phenomena With Lower Intensities"
+          },
+          {
+            "level": 0,
+            "text": "Only one WX  phenomena per AIRMET massage:"
+          },
+          {
+            "level": 0,
+            "text": "ISOL or OCNL TS"
+          },
+          {
+            "level": 0,
+            "text": "Moderate Icing"
+          },
+          {
+            "level": 0,
+            "text": "Moderate Turbulence or Mountain Waves"
+          },
+          {
+            "level": 0,
+            "text": "Sustained Surface Winds => 30Kts"
+          },
+          {
+            "level": 0,
+            "text": "Ceilings <1000ft"
+          },
+          {
+            "level": 0,
+            "text": "Visibility <5 kM"
+          },
+          {
+            "level": 0,
+            "text": "Extensive Mountain Obscuration"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 20,
+        "title": "Airmet (validity)",
+        "body": [
+          {
+            "level": 0,
+            "text": "the period of validity of AIRMET shall not exceed 4 hours;"
+          },
+          {
+            "level": 0,
+            "text": "when the AIRMET is issued for an expected phenomenon:"
+          },
+          {
+            "level": 0,
+            "text": "the beginning of validity period should be the time of expected commencement (occurrence) of the phenomenon;"
+          },
+          {
+            "level": 0,
+            "text": "the time of issuance of the AIRMET should be not more than 4 hours before the start of expected time of occurrence of the phenomenon"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 21,
+        "title": "Abbreviations used in SIGMET",
+        "body": [
+          {
+            "level": 0,
+            "text": "Obscured (OBSC) indicates that the TS is obscured by haze or smoke or cannot be readily seen due to darkness"
+          },
+          {
+            "level": 0,
+            "text": "Embedded (EMBD) – indicates that the TS is embedded within cloud layers and cannot be readily recognized"
+          },
+          {
+            "level": 0,
+            "text": "Frequent (FRQ) indicates an area of TS within which there is little or no separation between adjacent TS with a maximum spatial coverage greater than 75% of the area affected, or forecasts to be affected, by the phenomenon (at a fixed time or during the period of validity)"
+          },
+          {
+            "level": 0,
+            "text": "Squall line (SQL) indicates TS along a line with little or no space between individual clouds"
+          },
+          {
+            "level": 0,
+            "text": "Severe (SEV) turbulence (TURB) refers only to:"
+          },
+          {
+            "level": 0,
+            "text": "- low-level turbulence associated with strong surface winds;"
+          },
+          {
+            "level": 0,
+            "text": "- rotor streaming;"
+          },
+          {
+            "level": 0,
+            "text": "- turbulence whether in cloud or not in cloud (CAT) near to jet streams."
+          },
+          {
+            "level": 0,
+            "text": "A mountain wave (MTW) is considered:"
+          },
+          {
+            "level": 0,
+            "text": "- severe – whenever an accompanying downdraft of 3.0 m/s or more and/or severe turbulence is observed or forecasted."
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 22,
+        "title": "Abbreviations used in AIRMET",
+        "body": [
+          {
+            "level": 0,
+            "text": "Isolated (ISOL) indicates that an area of TS, or CB, or TCU, consists of individual features which affect, or are forecast to affect, an area with a maximum spatial coverage less than 50 % of the area concerned (at a fixed time or during the period of validity)"
+          },
+          {
+            "level": 0,
+            "text": "Occasional (OCNL) indicates that an area of TS, or CB, or TCU which affect, or are forecast to affect, an area with a maximum spatial coverage between 50%- 75 % of the area concerned (at a fixed time or during the period of validity)"
+          },
+          {
+            "level": 0,
+            "text": "Frequent (FRQ) indicates an area of CB, or TCU, within which there is little or no separation between adjacent CB or TCU clouds, with a maximum spatial coverage greater than 75% of the area affected, or forecasts to be affected, by the phenomenon (at a fixed time or during the period of validity)"
+          },
+          {
+            "level": 0,
+            "text": "Moderate (MOD) icing (ICE) should refer to icing in other than convective clouds"
+          },
+          {
+            "level": 0,
+            "text": "Moderate (MOD) turbulence (TURB) refers only to:"
+          },
+          {
+            "level": 0,
+            "text": "- low-level turbulence associated with strong surface winds;"
+          },
+          {
+            "level": 0,
+            "text": "- rotor streaming;"
+          },
+          {
+            "level": 0,
+            "text": "- turbulence whether in cloud or not in cloud (CAT);"
+          },
+          {
+            "level": 0,
+            "text": "A mountain wave (MTW) is considered moderate (MOD) whenever an accompanying downdraft of 1.75–3.0 m/s and/or moderate turbulence is observed or forecast"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 23,
+        "title": "AIRMET SIGMET \u000bphenomena",
+        "body": [],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 24,
+        "title": "Guidelines for reporting geographical coordinates in SIGMET and AIRMET",
+        "body": [
+          {
+            "level": 0,
+            "text": "1. Each point is represented by latitude/longitude coordinates in whole degrees or degrees and minutes in the form:"
+          },
+          {
+            "level": 0,
+            "text": "N(S)nn[nn] W(E)nnn[nn]"
+          },
+          {
+            "level": 0,
+            "text": "Examples: N3623 W04515"
+          },
+          {
+            "level": 0,
+            "text": "S1530 E12500"
+          },
+          {
+            "level": 0,
+            "text": "N42 E023"
+          },
+          {
+            "level": 0,
+            "text": "2. In describing lines or polygons, the latitude, longitude coordinates of the respective points are separated by the combination space-hyphen-space,"
+          },
+          {
+            "level": 0,
+            "text": "as in the following examples:"
+          },
+          {
+            "level": 0,
+            "text": "S0530 E09300 – N0100 E09530 – N1215 E11045 – S0820 E10330"
+          },
+          {
+            "level": 0,
+            "text": "S05 E093 – N01 E095 – N12 E110 – S08 E103"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 25,
+        "title": "חשוב לזכור",
+        "body": [
+          {
+            "level": 0,
+            "text": "כשמוציאים  AD WARNINGיש בד\"כ להוציא גם SIGMET  או AIRMET : אזהרות AD יצאו בכל מקרה שצפוי מזג אוויר משמעותי בשדה התעופה. במקביל, יש להוציא AIRMET או SIGMET – בהתאם לחומרה/היקף."
+          },
+          {
+            "level": 0,
+            "text": "כשמוציאים Wind Shear WARNING לשדה התעופה עקב זרם סילון נמוך, אין צורך להוציא AIRMET או SIGMET."
+          },
+          {
+            "level": 0,
+            "text": "כאשר מזג האוויר המסוכן צפוי להשפיע על המרחב האווירי אבל לאו דווקא על שדה התעופה, יש להוציא SIGMET  או AIRMET (בהתאם לחומרה/היקף) אבל אולי אין צורך להוציא AD WARN (לדוגמא: ערפל במישור החוף שאולי לא יגיע לנתב\"ג/שדה דב, עננים קונווקטיבים מפותחים על ההרים וכ\"ו)."
+          },
+          {
+            "level": 0,
+            "text": "SIGMET/AIRMET מופצים בינלאומית גם ב AFTN וגם בשידורי ה VOLMET. תפוצת AD WARN היא מקומית בלבד."
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      }
+    ]
+  },
+  {
+    "filename": "14. Aerodrome Warnings.pptx",
+    "format": "pptx",
+    "slide_count": 16,
+    "slides": [
+      {
+        "slide_number": 1,
+        "title": "אזהרות לשדה התעופה",
+        "body": [],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 2,
+        "title": "אזהרות מז\"א ואזהרות גזירת רוח",
+        "body": [
+          {
+            "level": 0,
+            "text": "אזהרה לשדה תעופה תופק כאשר תופעת מזג אוויר מסוכנת להמראות ונחיתות בשדה, ו/או העלולה לסכן מטוסים על הקרקע (כולל מטוסים חונים), ו/או לשבש את התפעול השוטף בשדה חזויה להתחיל במהלך 4 השעות הקרובות, או מתרחשת כעת."
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 3,
+        "title": "אזהרות מז\"א ואזהרות גזירת רוח",
+        "body": [
+          {
+            "level": 0,
+            "text": "TS/CB"
+          },
+          {
+            "level": 0,
+            "text": "הגבלת ראות"
+          },
+          {
+            "level": 0,
+            "text": "בסיס ענן נמוך"
+          },
+          {
+            "level": 0,
+            "text": "רוחות חזקות"
+          },
+          {
+            "level": 0,
+            "text": "גזירת רוח"
+          },
+          {
+            "level": 0,
+            "text": "אפר וולקני  (Volcanic Ash Deposition) – שקיעה והערמות אפר וולקני על הקרקע."
+          },
+          {
+            "level": 0,
+            "text": "ענן רדיואקטיבי או ענן כימי – אם בסיס הענן במפלס SFC"
+          },
+          {
+            "level": 0,
+            "text": "שלג SN – שלג נערם או צפוי להערם על הקרקע."
+          },
+          {
+            "level": 0,
+            "text": "כפור (Frost) – טמפרטורה (בסוכה המטאורולוגית, בגובה 2 מטר מעפ\"ש) מתחת ל 0 מעלות צלזיוס."
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 4,
+        "title": "פורמט אזהרות",
+        "body": [
+          {
+            "level": 0,
+            "text": "LLBG AD WRNG 1 VALID 110130/110500"
+          },
+          {
+            "level": 0,
+            "text": "BKN ST CLDS BASE 1500FT TEMPO 1000FT FCST OVER LLBG AP="
+          },
+          {
+            "level": 0,
+            "text": "Location indicator of the aerodrome"
+          },
+          {
+            "level": 0,
+            "text": "Identification of the type of message"
+          },
+          {
+            "level": 0,
+            "text": "Validity period"
+          },
+          {
+            "level": 0,
+            "text": "Phenomenon"
+          },
+          {
+            "level": 0,
+            "text": "Observed or forecast phenomenon"
+          },
+          {
+            "level": 0,
+            "text": "Changes in intensity"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 5,
+        "title": "Phenomenon\u000bלאזהרות רגילות",
+        "body": [
+          {
+            "level": 0,
+            "text": "TS or [HVY] TS"
+          },
+          {
+            "level": 0,
+            "text": "GR or [HVY] SN [nnCM]"
+          },
+          {
+            "level": 0,
+            "text": "[HVY] FZRA or [HVY] FZDZ"
+          },
+          {
+            "level": 0,
+            "text": "[HVY] SS or [HVY] DS or SA or DU"
+          },
+          {
+            "level": 0,
+            "text": "SFC WSPD nn[n]KMH MAX nn[n] (SFC WSPD nn[n]KT MAX nn[n])"
+          },
+          {
+            "level": 0,
+            "text": "SQ or FROST"
+          },
+          {
+            "level": 0,
+            "text": "TSUNAMI or VA or"
+          },
+          {
+            "level": 0,
+            "text": "Free text up to 32 characters"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 6,
+        "title": "פורמט אזהרות על גזירת רוח",
+        "body": [
+          {
+            "level": 0,
+            "text": "Location indicator of the aerodrome"
+          },
+          {
+            "level": 0,
+            "text": "Identification of the type of message"
+          },
+          {
+            "level": 0,
+            "text": "Time of origin and validity period"
+          },
+          {
+            "level": 0,
+            "text": "Phenomenon"
+          },
+          {
+            "level": 0,
+            "text": "Observed, reported or forecast"
+          },
+          {
+            "level": 0,
+            "text": "Details of the phenomenon"
+          },
+          {
+            "level": 0,
+            "text": "LLBG WS WRNG NO 1 021930Z VALID 022100/030400"
+          },
+          {
+            "level": 0,
+            "text": "WS ALL RWY FCST OVER LLBG SFC WIND 150/05KT"
+          },
+          {
+            "level": 0,
+            "text": "900FT-WIND: 160/30KT ="
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 7,
+        "title": "גזירת רוח",
+        "body": [
+          {
+            "level": 0,
+            "text": "הוצאת אזהרה עשויה להתבסס על הערכת החזאי- FCST"
+          },
+          {
+            "level": 0,
+            "text": "על סמך הנתונים המטאורולוגים שבידו-OBS  זיהוי מובהק של התופעה בדיווחי AMDAR, סונדה או פיילוט"
+          },
+          {
+            "level": 0,
+            "text": "על בסיס דיווח מטוס - REP AT"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 8,
+        "title": "אזהרות על זרם סילון נמוך",
+        "body": [
+          {
+            "level": 0,
+            "text": "זרם סילון נמוך עליו יש להוציא אזהרה הוא זרם סילון אשר שיאו יהיה לפחות 30 קשר וגובהו מתחת ל 2000' מעפ\"ש."
+          },
+          {
+            "level": 1,
+            "text": "מומלץ להוציא אזהרה כאשר ישנו הפרש של 30 קשר בין רוח הקרקע לרוח הגיאוסטרופית."
+          },
+          {
+            "level": 0,
+            "text": "במידה וישנו הפרש של יותר מ 15 קשר בין הרוח בקרקע לבין הרוח בגובה 500 מטר (לדוגמא: רוח 5 קשר בקרקע ורוח 20 קשר ב 500 מטר) ניתן להתייחס לכך כאינדיקציה מספקת להוצאת אזהרה על גזירת רוח במידה והמצב הסינופטי מתאים"
+          },
+          {
+            "level": 0,
+            "text": "כאשר רוח הקרקע חלשה חשוב שהחזאי יידע את המגדל על עוצמת וכיוון רוחות משמעותיות בגבהים 1000'-2000' מעל המסלול, גם במידה והן לא צפויות להגיע ל 30 קשר"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 9,
+        "title": "Phenomenon\u000bלאזהרות על גזירת רוח",
+        "body": [
+          {
+            "level": 0,
+            "text": "[MOD] or [SEV] WS IN APCH"
+          },
+          {
+            "level": 0,
+            "text": "or"
+          },
+          {
+            "level": 0,
+            "text": "[MOD] or [SEV] WS [APCH] RWYnnn"
+          },
+          {
+            "level": 0,
+            "text": "or"
+          },
+          {
+            "level": 0,
+            "text": "[MOD] or [SEV] WS IN CLIMB-OUT"
+          },
+          {
+            "level": 0,
+            "text": "or"
+          },
+          {
+            "level": 0,
+            "text": "[MOD] or [SEV] WS CLIMB-OUT RWYnnn"
+          },
+          {
+            "level": 0,
+            "text": "or"
+          },
+          {
+            "level": 0,
+            "text": "MBST IN APCH or"
+          },
+          {
+            "level": 0,
+            "text": "MBST [APCH] RWYnnn"
+          },
+          {
+            "level": 0,
+            "text": "or"
+          },
+          {
+            "level": 0,
+            "text": "MBST IN CLIMB-OUT or"
+          },
+          {
+            "level": 0,
+            "text": "MBST CLIMB-OUT RWYnnn"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 10,
+        "title": "מעקב שוטף, עדכון ותיקון אזהרות",
+        "body": [
+          {
+            "level": 0,
+            "text": "במידה והחזאי מעריך כי במשך שעתיים או יותר מפרק הזמן הנכלל בטווח התוקף של האזהרה ישרור מזג אוויר שונה באופן משמעותי לתעופה ממזג האוויר שתואר באזהרה, עליו להוציא עדכון לאזהרה."
+          },
+          {
+            "level": 1,
+            "text": "העדכון יכול לכלול הקלה או החמרה של מזג האוויר המתואר באזהרה."
+          },
+          {
+            "level": 1,
+            "text": "העדכון יכול לגרוע או להוסיף אלמנטים מסוכנים במזג האוויר המתואר באזהרה."
+          },
+          {
+            "level": 1,
+            "text": "העדכון יכול לשנות את מועד תחילת או/ו את מועד הסיום של תוקף האזהרה."
+          },
+          {
+            "level": 0,
+            "text": "במידה ותופעת מזג האוויר המסוכנת חלפה ולא צפויה להתחדש בטווח של שעתיים, יש לבטל את האזהרה."
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 11,
+        "title": "ביטול אזהרה",
+        "body": [
+          {
+            "level": 0,
+            "text": "Cancellation of aerodrome warning or"
+          },
+          {
+            "level": 0,
+            "text": "ws warning referring to its identification"
+          },
+          {
+            "level": 0,
+            "text": "LLBG AD[WS] WRNG 2 VALID 110330/110500"
+          },
+          {
+            "level": 0,
+            "text": "CNL AD[WS] WRNG 1 110130/110500"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 12,
+        "title": "חשוב לזכור",
+        "body": [
+          {
+            "level": 0,
+            "text": "כשמוציאים  AD WARNINGיש בד\"כ להוציא גם SIGMET  או AIRMET : אזהרות AD יצאו בכל מקרה שצפוי מזג אוויר משמעותי בשדה התעופה. במקביל, יש להוציא AIRMET או SIGMET – בהתאם לחומרה/היקף."
+          },
+          {
+            "level": 0,
+            "text": "כשמוציאים Wind Shear WARNING לשדה התעופה עקב זרם סילון נמוך, אין צורך להוציא AIRMET או SIGMET."
+          },
+          {
+            "level": 0,
+            "text": "כאשר מזג האוויר המסוכן צפוי להשפיע על המרחב האווירי אבל לאו דווקא על שדה התעופה, יש להוציא SIGMET  או AIRMET (בהתאם לחומרה/היקף) אבל אולי אין צורך להוציא AD WARN (לדוגמא: ערפל במישור החוף שאולי לא יגיע לנתב\"ג/שדה דב, עננים קונווקטיבים מפותחים על ההרים וכ\"ו)."
+          },
+          {
+            "level": 0,
+            "text": "SIGMET/AIRMET מופצים בינלאומית גם ב AFTN וגם בשידורי ה VOLMET. תפוצת AD WARN היא מקומית בלבד."
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 13,
+        "title": "אזהרות על רוחות",
+        "body": [
+          {
+            "level": 0,
+            "text": "רוח קרקע ממוצעת (ממוצע 10 דקתי) מעל 20 קשר"
+          },
+          {
+            "level": 0,
+            "text": "ו/או משבי רוח (3 השניות הגבוהות ביותר ב 10 דקות) מעל 30 קשר."
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 14,
+        "title": "TS/ CB",
+        "body": [
+          {
+            "level": 3,
+            "text": "סופות רעמים – ענני CB בטווח של פחות מ 16 ק\"מ ממרכז מערך המסלולים."
+          },
+          {
+            "level": 0,
+            "text": "ברד כבד (Severe Hail)  – ברד שקוטרו 2 ס\"מ או יותר."
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 15,
+        "title": "הגבלת ראות",
+        "body": [
+          {
+            "level": 3,
+            "text": "הגבלות ראות מתחת ל  5000 מטר בשל אד, ערפל, אובך, אבק או סופת חול."
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 16,
+        "title": "בסיס ענן נמוך",
+        "body": [
+          {
+            "level": 0,
+            "text": "עננות נמוכה - 5/8 ומעלה (BKN, OVC) של עננים אשר בסיסם בגובה 1500' מעפ\"ש או נמוך יותר"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      }
+    ]
+  }
+]

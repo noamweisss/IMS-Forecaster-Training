@@ -1,0 +1,90 @@
+{
+  "module_title": "Aviation Warnings: SIGMET, AIRMET & Aerodrome",
+  "module_description": "How the IMS issues the three statutory aviation warning products: SIGMET and AIRMET for en-route hazards across the FIR, and AD WRNG / WS WRNG for hazards at the aerodrome. Focuses on ICAO Annex 3 thresholds, the IMS operational criteria layered on top of them, and the message syntax — what to write, when to write it, and when to coordinate one product with another.",
+  "estimated_duration_minutes": 95,
+  "competencies": [
+    "Distinguish SIGMET, AIRMET, and aerodrome warnings by phenomenon, intensity threshold, and area of responsibility",
+    "Construct a syntactically valid SIGMET or AIRMET message including WMO header, validity, meteorological part, and lat/lon coordinates",
+    "Apply ICAO Annex 3 validity, lead-time, and cancellation rules to SIGMET and AIRMET issuance",
+    "Apply IMS-specific AD WRNG criteria for thunderstorms, low visibility, low cloud base, strong winds, and frost",
+    "Issue a wind-shear warning based on forecast, observation, or pilot report, including low-level jet conditions",
+    "Coordinate AD WRNG with SIGMET / AIRMET so the FIR-wide and aerodrome-local products stay consistent"
+  ],
+  "lessons": [
+    {
+      "lesson_id": "L1",
+      "lesson_title": "The Aviation Warning Framework & SIGMET Phenomena",
+      "learning_objectives": [
+        "Place SIGMET, AIRMET, and aerodrome warnings within the ICAO Annex 3 service hierarchy (MWO vs AFO; FIR vs aerodrome)",
+        "List the SIGMET phenomena and the severity qualifier required to trigger each (OBSC/EMBD/FRQ/SQL TS, SEV TURB, SEV ICE, SEV MTW, HVY DS/SS, VA, RDOACT)",
+        "Distinguish the three SIGMET subtypes (WS, WV, WC) and the data-type designator that identifies each",
+        "Decide whether a given observation/forecast triggers a SIGMET or stays below threshold"
+      ],
+      "source_files": ["13. Area Warnings.pptx"],
+      "key_concepts": ["MWO", "AFO", "SIGMET", "WS/WV/WC subtypes", "OBSC/EMBD/FRQ/SQL", "SEV intensity threshold"],
+      "visual_elements_needed": [
+        "Hierarchy diagram: WAFC → MWO (SIGMET/AIRMET) → AFO (TAF/AD WRNG), with the product issued at each tier",
+        "Decision-tree-style diagram mapping each SIGMET phenomenon to the qualifier required to trigger the message"
+      ],
+      "estimated_duration_minutes": 20
+    },
+    {
+      "lesson_id": "L2",
+      "lesson_title": "SIGMET Message Structure, Coordinates & Cancellation",
+      "learning_objectives": [
+        "Decode every field of a SIGMET WMO header (T1T2A1A2ii CCCC YYGGgg)",
+        "Construct the first line of a SIGMET (FIR/MWO indicators, sequential number, validity period)",
+        "Write lat/lon coordinates in the ICAO Annex 3 format including the space-hyphen-space polygon convention",
+        "Issue a SIGMET cancellation message with the correct sequential numbering and validity reference",
+        "Apply the 4-hour validity ceiling, the 4-hour pre-occurrence lead-time limit, and the one-phenomenon-per-message rule"
+      ],
+      "source_files": ["13. Area Warnings.pptx"],
+      "key_concepts": ["WMO header", "Validity period YYGGgg/YYGGgg", "CNL SIGMET", "Polygon lat/lon syntax", "Sequential number"],
+      "visual_elements_needed": [
+        "Annotated SIGMET message with each field of the WMO header and first line called out by colour",
+        "Worked example showing an original SIGMET and its cancellation message side-by-side"
+      ],
+      "estimated_duration_minutes": 25
+    },
+    {
+      "lesson_id": "L3",
+      "lesson_title": "AIRMET — Low-Level Warnings",
+      "learning_objectives": [
+        "Apply the AIRMET scope rule (below FL100, en-route, not already covered by an existing low-level forecast)",
+        "Identify the AIRMET phenomenon list (ISOL/OCNL TS, MOD ICE, MOD TURB/MTW, sustained SFC wind ≥30 kt, ceiling <1000 ft, vis <5 km, extensive mountain obscuration)",
+        "Differentiate the spatial-coverage qualifiers ISOL (<50%), OCNL (50–75%), and FRQ (>75%)",
+        "Choose between issuing a SIGMET, an AIRMET, or no message at all given a forecast scenario near threshold"
+      ],
+      "source_files": ["13. Area Warnings.pptx"],
+      "key_concepts": ["AIRMET", "Below FL100", "ISOL/OCNL/FRQ spatial coverage", "MOD intensity threshold", "Already-in-forecast exemption"],
+      "visual_elements_needed": [
+        "Side-by-side table of AIRMET vs SIGMET thresholds for each shared phenomenon",
+        "Spatial-coverage diagram showing the ISOL/OCNL/FRQ percentage bands over a FIR outline"
+      ],
+      "estimated_duration_minutes": 20
+    },
+    {
+      "lesson_id": "L4",
+      "lesson_title": "Aerodrome (AD) & Wind-Shear (WS) Warnings",
+      "learning_objectives": [
+        "Apply the IMS AD WRNG thresholds for TS/CB (within 16 km of runway centre), visibility (<5000 m), ceiling (BKN/OVC ≤1500 ft), surface wind (>20 kt mean / >30 kt gust), and severe hail (≥2 cm)",
+        "Construct a valid AD WRNG message and the equivalent WS WRNG message, including the phenomenon code (TS, GR, HVY SN, FZRA, SFC WSPD, SQ, FROST, TSUNAMI, VA, free text)",
+        "Issue a WS WRNG based on forecaster judgement (FCST), observation (OBS — AMDAR/sonde/pilot), or aircraft report (REP AT), including the low-level-jet criterion (peak ≥30 kt below 2000 ft AGL)",
+        "Coordinate AD WRNG issuance with SIGMET / AIRMET so the FIR-wide and aerodrome-local products stay consistent — and recognise the cases where coordination is not required (e.g. WS WRNG for LLJ)"
+      ],
+      "source_files": ["14. Aerodrome Warnings.pptx"],
+      "key_concepts": ["AD WRNG", "WS WRNG", "MBST", "LLJ", "REP AT", "AD/AIRMET coordination", "IMS thresholds"],
+      "visual_elements_needed": [
+        "Annotated AD WRNG and WS WRNG messages with each field called out",
+        "Coordination decision matrix: phenomenon at aerodrome vs FIR-wide → which products to issue",
+        "Cross-section diagram of a low-level jet over the runway, showing surface vs 500 m and the 15 kt / 30 kt shear thresholds"
+      ],
+      "estimated_duration_minutes": 25
+    }
+  ],
+  "module_quiz": {
+    "description": "End-of-module summative assessment covering SIGMET, AIRMET, and aerodrome/wind-shear warning issuance against ICAO Annex 3 and IMS operational criteria.",
+    "question_count": 24,
+    "passing_score_percent": 75
+  }
+}
