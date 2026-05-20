@@ -24,6 +24,54 @@ later reversed, add a new entry rather than editing the old one.
 ---
 
 <!-- New entries appended below -->
+## 2026-05-20 — Git LFS 502 inside Claude Code remote-execution sandboxes
+
+**Context.** Started generating Module 3 in a Claude Code on-the-web
+session. The source PPTX files (`13. Area Warnings.pptx`,
+`14. Aerodrome Warnings.pptx`) materialised as 130-byte git-LFS pointer
+stubs instead of the real binaries, so `pipeline/extract_sources.py`
+produced an empty extraction. Every `git lfs pull` attempt failed with
+`HTTP 502` against `http://local_proxy@127.0.0.1:42061/.../info/lfs`.
+
+**Finding.** The sandbox's git remote points at a Claude-managed local
+proxy (`local_proxy@127.0.0.1:42061`) that forwards normal git
+pack-protocol traffic but **does not implement the LFS batch API**. By
+default `lfs.url` resolves to `<remote>/info/lfs`, so every LFS request
+went to the proxy and was rejected. Plain HTTPS to `github.com` works
+fine from the same sandbox (verified with `curl`), so the breakage is
+specifically a proxy gap, not general network restriction.
+
+**Decision.** Point `lfs.url` at GitHub's real LFS endpoint, bypassing
+the proxy for LFS objects only:
+
+```bash
+apt-get install -y git-lfs               # not preinstalled in the sandbox image
+git lfs install --skip-repo
+git config lfs.url https://github.com/<owner>/<repo>.git/info/lfs
+git lfs pull
+```
+
+The `lfs.url` setting is repo-local (`.git/config`) and does **not**
+travel with commits — every fresh sandbox checkout will hit the same 502
+until the workaround is re-applied.
+
+**Why this and not something else.** Considered (a) committing the
+PPTX files un-LFS'd — rejected, they're 2 MB+ binaries and the repo's
+`.gitattributes` deliberately routes them through LFS; (b) re-pointing
+the entire git remote at github.com — rejected, breaks the proxy for
+normal fetch/push which DO work through it; (c) asking the user to
+upload the files manually each session — rejected, the workaround is
+trivial and one-shot. The right long-term fix is for Claude Code's
+remote-execution image to either (i) forward `/info/lfs/*` through the
+proxy or (ii) set a default `lfs.url` in the per-session git config so
+LFS-tracked repos Just Work. Until then, the runbook lists this as a
+session prerequisite.
+
+**Documented in:** `docs/runbook.md` (Prerequisites + Troubleshooting)
+and `AGENTS.md` (Setup section).
+
+---
+
 ## 2026-05-20 — Skill-packaging the pipeline: `.claude/skills/generate-module/`
 
 **Context.** AGENTS.md has long promised that an in-repo skills folder would

@@ -21,6 +21,34 @@ API key is required at any point — the LLM stage runs inside your IDE.
 `anthropic` is also in `requirements.txt` for historical reasons; it
 isn't used by any current script.
 
+### Git LFS (required — source files are tracked through LFS)
+
+Every PPTX/PDF/DOCX/PNG in this repo is stored via Git LFS (see
+`.gitattributes`). A normal `git clone` will hand you 130-byte pointer
+stubs, not the real files. Install LFS and pull the binaries before
+running any pipeline command:
+
+```bash
+git lfs install
+git lfs pull
+```
+
+**Claude Code on-the-web (and other proxied sandboxes).** The sandbox's
+git remote routes through a local proxy that does not forward the LFS
+batch API — `git lfs pull` returns `HTTP 502`. Bypass the proxy by
+pointing `lfs.url` at GitHub directly:
+
+```bash
+apt-get install -y git-lfs               # not preinstalled in the default image
+git lfs install --skip-repo
+git config lfs.url https://github.com/<owner>/<repo>.git/info/lfs
+git lfs pull
+```
+
+This setting lives in `.git/config` and is per-checkout — re-apply it in
+every new sandbox session. See `docs/journal.md` (2026-05-20 entry on
+the LFS 502) for the full root-cause analysis.
+
 ---
 
 ## Inputs you need before starting a module
@@ -183,6 +211,7 @@ Five minutes per module if your hands are warm.
 | Images broken after paste | Wrong file pasted | Paste `module_combined_moodle.html`, not `module_combined.html` (no such file) or the standalone lessons. |
 | Quiz import fails | Malformed XML | Open `module_quiz_all_questions.xml`, look for unbalanced CDATA or missing `<answer>` blocks. Most often caused by the agent emitting HTML that wasn't CDATA-wrapped. |
 | `finalize_module.py` errors with "no lesson fragments found" | Agent didn't write to the expected path | Check the `lessons/` subfolder. Files must end in `_moodle.html`. |
+| `extract_sources.py` reports "0 slides" / writes a tiny JSON | Source files are LFS pointer stubs, not real binaries | Run `git lfs pull`. In Claude Code's sandbox, first set `git config lfs.url https://github.com/<owner>/<repo>.git/info/lfs` to bypass the proxy (HTTP 502). See `docs/journal.md` 2026-05-20. |
 
 ---
 
