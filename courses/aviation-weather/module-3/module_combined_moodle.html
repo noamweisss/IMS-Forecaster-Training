@@ -1,0 +1,1405 @@
+<style>
+/*
+ * IMS Course Factory — Lesson Design System
+ *
+ * All rules are scoped to `.ims-lesson` so the styles can be injected into
+ * a host page (Moodle, in particular) without leaking onto the host's chrome
+ * and without the host's theme overriding lesson typography.
+ *
+ * Standalone lesson HTML wraps the entire body in <div class="ims-lesson">.
+ * Moodle body-fragment HTML does the same. The single rule below keeps the
+ * standalone preview's <body> background consistent without leaking into
+ * Moodle pages.
+ */
+
+.ims-lesson {
+  --bg: #ffffff;
+  --surface: #f6f5f0;
+  --border: #e2dfd6;
+  --text: #1a1917;
+  --muted: #6b6a65;
+  --accent: #185fa5;
+  --accent-light: #e6f1fb;
+  --note-bg: #e1f5ee;
+  --note-border: #0F6E56;
+  --warn-bg: #faeeda;
+  --warn-border: #BA7517;
+  --key-bg: #EEEDFE;
+  --key-border: #534AB7;
+  --danger-bg: #fcebeb;
+  --danger-border: #A32D2D;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .ims-lesson {
+    --bg: #1a1917;
+    --surface: #242320;
+    --border: #3a3835;
+    --text: #e8e6df;
+    --muted: #9a9890;
+    --accent-light: #042c53;
+    --note-bg: #04342c;
+    --warn-bg: #412402;
+    --key-bg: #26215c;
+  }
+}
+
+.ims-lesson h1 { font-size: 1.8rem; font-weight: 600; margin-bottom: 0.2rem; line-height: 1.2; color: var(--text); }
+.ims-lesson h2 { font-size: 1.25rem; font-weight: 600; margin-top: 2.5rem; padding-bottom: 0.4rem;
+  border-bottom: 1.5px solid var(--border); color: var(--text); }
+.ims-lesson h3 { font-size: 1.05rem; font-weight: 600; margin-top: 1.75rem; color: var(--text); }
+.ims-lesson p { margin: 0.7rem 0; max-width: 72ch; }
+.ims-lesson figure { margin: 2rem 0; }
+.ims-lesson figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 0.6rem;
+  font-style: italic; text-align: center; }
+.ims-lesson svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+.ims-lesson img { max-width: 100%; height: auto; }
+.ims-lesson table { border-collapse: collapse; width: 100%; margin: 1.5rem 0; font-size: 0.9rem; }
+.ims-lesson th { background: var(--accent); color: #fff; padding: 0.55rem 0.9rem; text-align: left; }
+.ims-lesson td { padding: 0.5rem 0.9rem; border-bottom: 1px solid var(--border); }
+.ims-lesson tr:nth-child(even) td { background: var(--surface); }
+.ims-lesson .callout { border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+.ims-lesson .callout-note    { background: var(--note-bg);   border-left: 4px solid var(--note-border); }
+.ims-lesson .callout-warning { background: var(--warn-bg);   border-left: 4px solid var(--warn-border); }
+.ims-lesson .callout-key     { background: var(--key-bg);    border-left: 4px solid var(--key-border); }
+.ims-lesson .callout-danger  { background: var(--danger-bg); border-left: 4px solid var(--danger-border); }
+.ims-lesson .callout-label { font-weight: 700; font-size: 0.78rem; text-transform: uppercase;
+  letter-spacing: 0.06em; margin-bottom: 0.35rem; }
+.ims-lesson .objectives { background: var(--surface); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+.ims-lesson .objectives ul { margin: 0.5rem 0 0; padding-left: 1.4rem; }
+.ims-lesson .lesson-summary { background: var(--accent-light); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 2.5rem 0 1rem; }
+.ims-lesson .lesson-summary h3 { margin-top: 0; color: var(--accent); font-size: 1rem; }
+.ims-lesson .image-needed { border: 2px dashed var(--border); border-radius: 8px;
+  padding: 1.5rem; margin: 1.5rem 0; text-align: center;
+  color: var(--muted); font-size: 0.9rem; background: var(--surface); }
+.ims-lesson .meta { color: var(--muted); font-size: 0.88rem; margin-bottom: 1.75rem; }
+.ims-lesson .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.5rem; }
+
+.ims-lesson .ims-toc { background: var(--surface); border: 1px solid var(--border);
+  border-radius: 8px; padding: 1rem 1.5rem; margin: 1rem 0 2rem; }
+.ims-lesson .ims-toc strong { display: block; margin-bottom: 0.5rem;
+  font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;
+  color: var(--muted); }
+.ims-lesson .ims-toc ol { margin: 0; padding-left: 1.4rem; }
+.ims-lesson .ims-toc a { color: var(--accent); text-decoration: none; }
+.ims-lesson .ims-toc a:hover { text-decoration: underline; }
+.ims-lesson .ims-lesson-sep { border: 0; border-top: 2px solid var(--border);
+  margin: 4rem 0 2rem; }
+.ims-lesson .ims-lesson-section { scroll-margin-top: 1rem; }
+</style>
+<div class="ims-lesson">
+<section id="module-overview">
+<h1>Aviation Warnings: SIGMET, AIRMET &amp; Aerodrome</h1>
+
+<p class="meta">
+  Estimated duration: ~95 min &nbsp;|&nbsp;
+  4 lessons &nbsp;|&nbsp;
+  Module quiz: 24 questions, pass at 75%
+</p>
+
+<p>How the IMS issues the three statutory aviation warning products: SIGMET and AIRMET for en-route hazards across the FIR, and AD WRNG / WS WRNG for hazards at the aerodrome. The module focuses on ICAO Annex 3 thresholds, the IMS operational criteria layered on top of them, and the message syntax &mdash; what to write, when to write it, and when to coordinate one product with another.</p>
+
+<div class="objectives">
+  <strong>By completing this module you will be certified to:</strong>
+  <ul>
+    <li>Distinguish SIGMET, AIRMET, and aerodrome warnings by phenomenon, intensity threshold, and area of responsibility.</li>
+    <li>Construct a syntactically valid SIGMET or AIRMET message including WMO header, validity, meteorological part, and lat/lon coordinates.</li>
+    <li>Apply ICAO Annex 3 validity, lead-time, and cancellation rules to SIGMET and AIRMET issuance.</li>
+    <li>Apply IMS-specific AD WRNG criteria for thunderstorms, low visibility, low cloud base, strong winds, and frost.</li>
+    <li>Issue a wind-shear warning based on forecast, observation, or pilot report, including low-level jet conditions.</li>
+    <li>Coordinate AD WRNG with SIGMET / AIRMET so the FIR-wide and aerodrome-local products stay consistent.</li>
+  </ul>
+</div>
+
+<h2>Lessons</h2>
+
+<div style="border:1px solid #E2DFD6; border-radius:8px; padding:1rem 1.25rem; margin:0.75rem 0;">
+  <div style="display:flex; justify-content:space-between; align-items:baseline;">
+    <strong>Lesson 1: The Aviation Warning Framework &amp; SIGMET Phenomena</strong>
+    <span style="color:#6B6A65; font-size:0.85rem;">~20 min</span>
+  </div>
+  <ul style="margin:0.5rem 0 0; padding-left:1.4rem; font-size:0.9rem;">
+    <li>Place SIGMET, AIRMET, and aerodrome warnings within the ICAO Annex 3 service hierarchy (MWO vs AFO; FIR vs aerodrome).</li>
+    <li>List the SIGMET phenomena and the severity qualifier required to trigger each (OBSC/EMBD/FRQ/SQL TS, SEV TURB, SEV ICE, SEV MTW, HVY DS/SS, VA, RDOACT).</li>
+    <li>Distinguish the three SIGMET subtypes (WS, WV, WC) and the data-type designator that identifies each.</li>
+    <li>Decide whether a given observation/forecast triggers a SIGMET or stays below threshold.</li>
+  </ul>
+</div>
+
+<div style="border:1px solid #E2DFD6; border-radius:8px; padding:1rem 1.25rem; margin:0.75rem 0;">
+  <div style="display:flex; justify-content:space-between; align-items:baseline;">
+    <strong>Lesson 2: SIGMET Message Structure, Coordinates &amp; Cancellation</strong>
+    <span style="color:#6B6A65; font-size:0.85rem;">~25 min</span>
+  </div>
+  <ul style="margin:0.5rem 0 0; padding-left:1.4rem; font-size:0.9rem;">
+    <li>Decode every field of a SIGMET WMO header (T1T2A1A2ii CCCC YYGGgg).</li>
+    <li>Construct the first line of a SIGMET (FIR/MWO indicators, sequential number, validity period).</li>
+    <li>Write lat/lon coordinates in the ICAO Annex 3 format including the space-hyphen-space polygon convention.</li>
+    <li>Issue a SIGMET cancellation message with the correct sequential numbering and validity reference.</li>
+    <li>Apply the 4-hour validity ceiling, the 4-hour pre-occurrence lead-time limit, and the one-phenomenon-per-message rule.</li>
+  </ul>
+</div>
+
+<div style="border:1px solid #E2DFD6; border-radius:8px; padding:1rem 1.25rem; margin:0.75rem 0;">
+  <div style="display:flex; justify-content:space-between; align-items:baseline;">
+    <strong>Lesson 3: AIRMET &mdash; Low-Level Warnings</strong>
+    <span style="color:#6B6A65; font-size:0.85rem;">~20 min</span>
+  </div>
+  <ul style="margin:0.5rem 0 0; padding-left:1.4rem; font-size:0.9rem;">
+    <li>Apply the AIRMET scope rule (below FL100, en-route, not already covered by an existing low-level forecast).</li>
+    <li>Identify the AIRMET phenomenon list (ISOL/OCNL TS, MOD ICE, MOD TURB/MTW, sustained SFC wind &ge; 30 kt, ceiling &lt; 1000 ft, vis &lt; 5 km, extensive mountain obscuration).</li>
+    <li>Differentiate the spatial-coverage qualifiers ISOL (&lt; 50%), OCNL (50&ndash;75%), and FRQ (&gt; 75%).</li>
+    <li>Choose between issuing a SIGMET, an AIRMET, or no message at all given a forecast scenario near threshold.</li>
+  </ul>
+</div>
+
+<div style="border:1px solid #E2DFD6; border-radius:8px; padding:1rem 1.25rem; margin:0.75rem 0;">
+  <div style="display:flex; justify-content:space-between; align-items:baseline;">
+    <strong>Lesson 4: Aerodrome (AD) &amp; Wind-Shear (WS) Warnings</strong>
+    <span style="color:#6B6A65; font-size:0.85rem;">~25 min</span>
+  </div>
+  <ul style="margin:0.5rem 0 0; padding-left:1.4rem; font-size:0.9rem;">
+    <li>Apply the IMS AD WRNG thresholds for TS/CB (within 16 km of runway centre), visibility (&lt; 5000 m), ceiling (BKN/OVC &le; 1500 ft), surface wind (&gt; 20 kt mean / &gt; 30 kt gust), and severe hail (&ge; 2 cm).</li>
+    <li>Construct a valid AD WRNG message and the equivalent WS WRNG message, including the phenomenon code (TS, GR, HVY SN, FZRA, SFC WSPD, SQ, FROST, TSUNAMI, VA, free text).</li>
+    <li>Issue a WS WRNG based on forecaster judgement (FCST), observation (OBS &mdash; AMDAR/sonde/pilot), or aircraft report (REP AT), including the low-level-jet criterion (peak &ge; 30 kt below 2000 ft AGL).</li>
+    <li>Coordinate AD WRNG issuance with SIGMET / AIRMET so the FIR-wide and aerodrome-local products stay consistent &mdash; and recognise the cases where coordination is not required (e.g. WS WRNG for LLJ).</li>
+  </ul>
+</div>
+</section>
+<nav class="ims-toc" aria-label="Module contents">
+  <strong>In this module:</strong>
+  <ol>
+    <li><a href="#module-overview">Module overview</a></li>
+    <li><a href="#lesson-1">Lesson 1: The Aviation Warning Framework &amp; SIGMET Phenomena</a></li>
+    <li><a href="#lesson-2">Lesson 2: SIGMET Message Structure, Coordinates &amp; Cancellation</a></li>
+    <li><a href="#lesson-3">Lesson 3: AIRMET &mdash; Low-Level Warnings</a></li>
+    <li><a href="#lesson-4">Lesson 4: Aerodrome (AD) &amp; Wind-Shear (WS) Warnings</a></li>
+  </ol>
+</nav>
+<hr class="ims-lesson-sep">
+<section id="lesson-1" class="ims-lesson-section" data-lesson-slug="aviation_warning_framework_and_sigmet_phenomena">
+<h1>The Aviation Warning Framework &amp; SIGMET Phenomena</h1>
+
+<div class="objectives">
+  <strong>By the end of this lesson you will be able to:</strong>
+  <ul>
+    <li>Place SIGMET, AIRMET, and aerodrome warnings within the ICAO Annex 3 service hierarchy (MWO vs AFO; FIR vs aerodrome).</li>
+    <li>List the SIGMET phenomena and the severity qualifier required to trigger each.</li>
+    <li>Distinguish the three SIGMET subtypes (WS, WV, WC) and the data-type designator that identifies each.</li>
+    <li>Decide whether a given observation or forecast triggers a SIGMET or stays below threshold.</li>
+  </ul>
+</div>
+
+<h2>Who issues what, where</h2>
+
+<p>ICAO Annex 3 splits the aviation meteorological service into two operational roles, each with its own products and its own area of responsibility. The Meteorological Watch Office (MWO) is responsible for hazards across a Flight Information Region (FIR) — anything en route. The Aerodrome Forecast Office (AFO) is responsible for the airport itself — its METARs, TAFs, and aerodrome warnings.</p>
+
+<p>SIGMET and AIRMET are the MWO's warning products. They describe FIR-wide hazards that affect aircraft in flight. AD WRNG and WS WRNG are the AFO's products; they describe hazards at a specific aerodrome that affect take-off, landing, parked aircraft, or surface operations. The same phenomenon (a thunderstorm crossing the FIR towards Ben Gurion, say) frequently needs both products — that coordination is the subject of Lesson 4.</p>
+
+<figure>
+  <svg viewBox="0 0 680 320" role="img" xmlns="http://www.w3.org/2000/svg">
+    <title>ICAO Annex 3 aviation forecast service hierarchy</title>
+    <desc>A three-tier hierarchy. World Area Forecast Centre at the top issues SIGWX charts and advisories for FL100 and above. The Meteorological Watch Office in the middle covers the Flight Information Region and issues SIGMET and AIRMET. The Aerodrome Forecast Office at the bottom covers a single airport and issues TAF, TREND, and AD/WS warnings.</desc>
+
+    <!-- Tier 1: WAFC -->
+    <rect x="220" y="20" width="240" height="60" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="2"/>
+    <text x="340" y="44" font-family="sans-serif" font-size="14" font-weight="600" fill="#1A1917" text-anchor="middle">World Area Forecast Centre (WAFC)</text>
+    <text x="340" y="64" font-family="sans-serif" font-size="12" fill="#6B6A65" text-anchor="middle">Global SIGWX &gt; FL100, wind/temp charts, advisories</text>
+
+    <!-- Tier 2: MWO -->
+    <rect x="60" y="130" width="280" height="80" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="2"/>
+    <text x="200" y="156" font-family="sans-serif" font-size="14" font-weight="600" fill="#1A1917" text-anchor="middle">Meteorological Watch Office (MWO)</text>
+    <text x="200" y="176" font-family="sans-serif" font-size="12" fill="#6B6A65" text-anchor="middle">Area of responsibility: the FIR</text>
+    <text x="200" y="196" font-family="sans-serif" font-size="13" font-weight="600" fill="#0F6E56" text-anchor="middle">SIGMET &middot; AIRMET &middot; (GAMET)</text>
+
+    <!-- Tier 2 right: AFO -->
+    <rect x="380" y="130" width="240" height="80" rx="8" fill="#FAEEDA" stroke="#BA7517" stroke-width="2"/>
+    <text x="500" y="156" font-family="sans-serif" font-size="14" font-weight="600" fill="#1A1917" text-anchor="middle">Aerodrome Forecast Office (AFO)</text>
+    <text x="500" y="176" font-family="sans-serif" font-size="12" fill="#6B6A65" text-anchor="middle">Area of responsibility: one airport</text>
+    <text x="500" y="196" font-family="sans-serif" font-size="13" font-weight="600" fill="#BA7517" text-anchor="middle">TAF &middot; TREND &middot; AD WRNG &middot; WS WRNG</text>
+
+    <!-- Tier 3: aircraft / consumers -->
+    <rect x="180" y="250" width="320" height="50" rx="8" fill="#F6F5F0" stroke="#E2DFD6" stroke-width="2"/>
+    <text x="340" y="272" font-family="sans-serif" font-size="13" font-weight="600" fill="#1A1917" text-anchor="middle">Consumers: airlines, ATS units, VOLMET / D-VOLMET</text>
+    <text x="340" y="290" font-family="sans-serif" font-size="12" fill="#6B6A65" text-anchor="middle">Flight planning + in-flight service</text>
+
+    <!-- Connectors -->
+    <line x1="340" y1="80" x2="200" y2="130" stroke="#1A1917" stroke-width="1.5"/>
+    <line x1="340" y1="80" x2="500" y2="130" stroke="#1A1917" stroke-width="1.5"/>
+    <line x1="200" y1="210" x2="300" y2="250" stroke="#1A1917" stroke-width="1.5"/>
+    <line x1="500" y1="210" x2="400" y2="250" stroke="#1A1917" stroke-width="1.5"/>
+  </svg>
+  <figcaption>Figure 1.1 &mdash; the three-tier ICAO Annex 3 service hierarchy. MWO products cover en-route hazards across the FIR; AFO products cover a single aerodrome.</figcaption>
+</figure>
+
+<h2>What a SIGMET is — and is not</h2>
+
+<p>Annex 3 defines a SIGMET as information concerning the occurrence or expected occurrence of specified en-route weather phenomena which may affect the safety of aircraft operations. Three things matter in that sentence.</p>
+
+<p>First, "en-route" — SIGMET is for aircraft in flight, not on the ground. Second, "specified phenomena" — only the phenomena on the Annex 3 list trigger a SIGMET; anything else, no matter how unusual, does not. Third, "occurrence or expected occurrence" — you can issue a SIGMET ahead of the phenomenon, but only with a defined lead time (covered in Lesson 2).</p>
+
+<div class="callout callout-note">
+  <div class="callout-label">Definition</div>
+  A SIGMET is issued by the MWO for hazards across the FIR. It is not a forecast in the sense a TAF is — it is a <em>warning of significant weather</em> against a fixed list of phenomena. If the phenomenon is not on the list, or is below the severity threshold, no SIGMET is issued, regardless of how operationally inconvenient the weather is.
+</div>
+
+<h2>The three subtypes of SIGMET</h2>
+
+<p>SIGMETs are categorised by the phenomenon they cover. The data-type designator in the WMO header (the <code>T1T2</code> letters — covered in detail in Lesson 2) tells the recipient which type to expect.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Subtype</th>
+      <th><code>T1T2</code></th>
+      <th>Phenomena</th>
+      <th>Typical max validity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>WS &mdash; Standard SIGMET</td>
+      <td><code>WS</code></td>
+      <td>Thunderstorms with qualifier, severe turbulence, severe icing, severe mountain waves, heavy duststorm/sandstorm, radioactive cloud</td>
+      <td>4 hours</td>
+    </tr>
+    <tr>
+      <td>WV &mdash; Volcanic Ash SIGMET</td>
+      <td><code>WV</code></td>
+      <td>Volcanic ash cloud</td>
+      <td>6 hours (longer because ash plumes evolve more slowly than convection)</td>
+    </tr>
+    <tr>
+      <td>WC &mdash; Tropical Cyclone SIGMET</td>
+      <td><code>WC</code></td>
+      <td>Tropical cyclone (not required in the EUR region)</td>
+      <td>6 hours</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The IMS, as part of the EUR region, is not required to issue WC SIGMETs — tropical cyclones in our area of responsibility are essentially never. WV is rare but operationally critical when it occurs: ash detection comes from VAACs (Volcanic Ash Advisory Centres) and triggers a WV SIGMET that follows a different message structure than WS, covered in Module 4 alongside the source deck.</p>
+
+<h2>Phenomena and the severity gate</h2>
+
+<p>The critical rule for a working forecaster: <strong>each phenomenon on the SIGMET list has a severity qualifier that must be met</strong>. A thunderstorm by itself does not trigger a SIGMET. A turbulence report does not trigger a SIGMET. The phenomenon must reach the qualified intensity.</p>
+
+<figure>
+  <svg viewBox="0 0 680 380" role="img" xmlns="http://www.w3.org/2000/svg">
+    <title>SIGMET phenomena and the severity qualifier required to trigger each</title>
+    <desc>Eight horizontal bars, one per phenomenon. The left half of each bar shows the phenomenon name; the right half lists the qualifier required to make it SIGMET-worthy. Phenomena that need an intensity qualifier are coloured amber; phenomena that need no qualifier are coloured blue.</desc>
+
+    <!-- Title -->
+    <text x="340" y="20" font-family="sans-serif" font-size="13" font-weight="600" fill="#1A1917" text-anchor="middle">SIGMET trigger gate &mdash; phenomenon plus qualifier</text>
+
+    <!-- Bars: y0=40, gap=40 -->
+    <!-- Thunderstorms -->
+    <rect x="40" y="40"  width="180" height="30" fill="#F6F5F0" stroke="#1A1917"/>
+    <text x="50" y="60"  font-family="sans-serif" font-size="13" fill="#1A1917">Thunderstorm (TS)</text>
+    <rect x="220" y="40" width="400" height="30" fill="#FAEEDA" stroke="#BA7517"/>
+    <text x="230" y="60" font-family="sans-serif" font-size="12" fill="#1A1917">must be OBSC, EMBD, FRQ, or SQL &mdash; with or without hail</text>
+
+    <!-- Severe turbulence -->
+    <rect x="40" y="80"  width="180" height="30" fill="#F6F5F0" stroke="#1A1917"/>
+    <text x="50" y="100" font-family="sans-serif" font-size="13" fill="#1A1917">Turbulence (TURB)</text>
+    <rect x="220" y="80" width="400" height="30" fill="#FAEEDA" stroke="#BA7517"/>
+    <text x="230" y="100" font-family="sans-serif" font-size="12" fill="#1A1917">SEV only (low-level w/ strong sfc winds, rotor, or near jet stream)</text>
+
+    <!-- Severe icing -->
+    <rect x="40" y="120" width="180" height="30" fill="#F6F5F0" stroke="#1A1917"/>
+    <text x="50" y="140" font-family="sans-serif" font-size="13" fill="#1A1917">Icing (ICE)</text>
+    <rect x="220" y="120" width="400" height="30" fill="#FAEEDA" stroke="#BA7517"/>
+    <text x="230" y="140" font-family="sans-serif" font-size="12" fill="#1A1917">SEV only &mdash; with or without freezing rain (FZRA)</text>
+
+    <!-- Severe mountain wave -->
+    <rect x="40" y="160" width="180" height="30" fill="#F6F5F0" stroke="#1A1917"/>
+    <text x="50" y="180" font-family="sans-serif" font-size="13" fill="#1A1917">Mountain wave (MTW)</text>
+    <rect x="220" y="160" width="400" height="30" fill="#FAEEDA" stroke="#BA7517"/>
+    <text x="230" y="180" font-family="sans-serif" font-size="12" fill="#1A1917">SEV only &mdash; downdraft &ge; 3.0 m/s or SEV turbulence</text>
+
+    <!-- Heavy DS/SS -->
+    <rect x="40" y="200" width="180" height="30" fill="#F6F5F0" stroke="#1A1917"/>
+    <text x="50" y="220" font-family="sans-serif" font-size="13" fill="#1A1917">Duststorm / Sandstorm</text>
+    <rect x="220" y="200" width="400" height="30" fill="#FAEEDA" stroke="#BA7517"/>
+    <text x="230" y="220" font-family="sans-serif" font-size="12" fill="#1A1917">HVY only</text>
+
+    <!-- Volcanic ash (no qualifier) -->
+    <rect x="40" y="240" width="180" height="30" fill="#F6F5F0" stroke="#1A1917"/>
+    <text x="50" y="260" font-family="sans-serif" font-size="13" fill="#1A1917">Volcanic ash (VA)</text>
+    <rect x="220" y="240" width="400" height="30" fill="#E6F1FB" stroke="#185FA5"/>
+    <text x="230" y="260" font-family="sans-serif" font-size="12" fill="#1A1917">any detection &mdash; no severity threshold</text>
+
+    <!-- Tropical cyclone (no qualifier; not in EUR) -->
+    <rect x="40" y="280" width="180" height="30" fill="#F6F5F0" stroke="#1A1917"/>
+    <text x="50" y="300" font-family="sans-serif" font-size="13" fill="#1A1917">Tropical cyclone (TC)</text>
+    <rect x="220" y="280" width="400" height="30" fill="#E6F1FB" stroke="#185FA5"/>
+    <text x="230" y="300" font-family="sans-serif" font-size="12" fill="#1A1917">any &mdash; not required in EUR region</text>
+
+    <!-- Radioactive cloud -->
+    <rect x="40" y="320" width="180" height="30" fill="#F6F5F0" stroke="#1A1917"/>
+    <text x="50" y="340" font-family="sans-serif" font-size="13" fill="#1A1917">Radioactive cloud</text>
+    <rect x="220" y="320" width="400" height="30" fill="#E6F1FB" stroke="#185FA5"/>
+    <text x="230" y="340" font-family="sans-serif" font-size="12" fill="#1A1917">RDOACT CLD &mdash; any detection</text>
+
+    <!-- Legend -->
+    <rect x="40" y="365" width="14" height="10" fill="#FAEEDA" stroke="#BA7517"/>
+    <text x="60" y="374" font-family="sans-serif" font-size="11" fill="#6B6A65">qualifier required</text>
+    <rect x="200" y="365" width="14" height="10" fill="#E6F1FB" stroke="#185FA5"/>
+    <text x="220" y="374" font-family="sans-serif" font-size="11" fill="#6B6A65">any detection triggers</text>
+  </svg>
+  <figcaption>Figure 1.2 &mdash; SIGMET phenomena. Amber rows require a severity qualifier; blue rows trigger on any detection.</figcaption>
+</figure>
+
+<h3>The TS qualifiers — OBSC, EMBD, FRQ, SQL</h3>
+
+<p>Thunderstorms get four distinct qualifiers because the operational risk depends on whether the pilot can see the cell, not on the cell's reflectivity alone.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Qualifier</th>
+      <th>Meaning</th>
+      <th>Why it matters</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>OBSC</strong> &mdash; Obscured</td>
+      <td>The TS is obscured by haze, smoke, or darkness and cannot be readily seen.</td>
+      <td>Pilots cannot visually deviate around what they cannot see; radar is the only tool.</td>
+    </tr>
+    <tr>
+      <td><strong>EMBD</strong> &mdash; Embedded</td>
+      <td>The TS is embedded within a wider cloud layer and cannot be readily recognised.</td>
+      <td>The surrounding stratiform cloud hides the cell from both eye and (sometimes) onboard radar.</td>
+    </tr>
+    <tr>
+      <td><strong>FRQ</strong> &mdash; Frequent</td>
+      <td>Spatial coverage of TS &gt; 75% of the affected area, with little or no separation between cells.</td>
+      <td>No safe corridor through &mdash; deviation is not an option.</td>
+    </tr>
+    <tr>
+      <td><strong>SQL</strong> &mdash; Squall line</td>
+      <td>TS along a line with little or no space between individual clouds.</td>
+      <td>Line orientation forces the deviation to be perpendicular and long.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>An isolated cumulonimbus that the pilot can see and route around does not get a SIGMET — it gets reported in the SIGWX product but not warned against. The qualifier is what flags the case where pilot deviation alone is insufficient.</p>
+
+<h3>The severity qualifiers — SEV and HVY</h3>
+
+<p>For turbulence, icing, and mountain waves, SIGMET requires <strong>SEV</strong> — moderate intensity is reserved for AIRMET (next lesson). The Annex 3 wording for severe turbulence is specific: low-level turbulence associated with strong surface winds, rotor streaming, or turbulence (in cloud or clear-air CAT) near a jet stream. For severe mountain wave, the criterion is an accompanying downdraft of 3.0 m/s or more, or accompanying severe turbulence.</p>
+
+<p>For duststorm and sandstorm, SIGMET requires <strong>HVY</strong> &mdash; heavy. Lower intensities fall through to AIRMET or are simply reported in the routine forecast.</p>
+
+<div class="callout callout-warning">
+  <div class="callout-label">Common error</div>
+  Forecasters new to the role often issue a SIGMET for "moderate icing in cloud" or "isolated thunderstorms over the central mountains". Neither meets the threshold. Moderate icing is an AIRMET phenomenon. Isolated thunderstorms (ISOL, no OBSC/EMBD/FRQ/SQL qualifier) are an AIRMET phenomenon. The SIGMET threshold is deliberately high &mdash; an over-issued SIGMET dilutes the credibility of every other SIGMET in the bulletin stream.
+</div>
+
+<h2>Reading the threshold backwards</h2>
+
+<p>The fastest way to apply this in operations is to ask the question in reverse. Instead of "is this a SIGMET phenomenon?", ask "what about this observation crosses the SIGMET threshold?". If the answer is "nothing — there's no qualifier", the answer to the original question is no.</p>
+
+<div class="callout callout-key">
+  <div class="callout-label">Operational heuristic</div>
+  Three quick filters in this order:
+  <ol>
+    <li><strong>Phenomenon on the list?</strong> If no &rarr; no SIGMET.</li>
+    <li><strong>Qualifier or threshold met?</strong> (OBSC/EMBD/FRQ/SQL for TS; SEV for TURB/ICE/MTW; HVY for DS/SS; any for VA/RDOACT.) If no &rarr; consider AIRMET, not SIGMET.</li>
+    <li><strong>En-route, not just aerodrome?</strong> If only the aerodrome is affected &rarr; AD WRNG, not SIGMET.</li>
+  </ol>
+</div>
+
+<h2>Where this lesson ends and the next begins</h2>
+
+<p>You can now decide <em>whether</em> a SIGMET is warranted. Lesson 2 covers <em>how to write it</em>: the WMO header, the first-line fields (FIR indicator, sequential number, validity period), the meteorological part, geographic coordinates, and the cancellation message. Lesson 3 then drops the threshold to AIRMET, which captures the moderate-intensity and low-altitude cases that fall through this lesson's filter.</p>
+
+<div class="lesson-summary">
+  <h3>Key Takeaways</h3>
+  <ul>
+    <li>SIGMET and AIRMET are MWO products covering the FIR; AD WRNG and WS WRNG are AFO products covering a single aerodrome. The same phenomenon often needs both.</li>
+    <li>A SIGMET is a warning, not a forecast. It is issued only for the specified phenomena, and only when the phenomenon meets its severity qualifier.</li>
+    <li>Three SIGMET subtypes: WS (general), WV (volcanic ash), WC (tropical cyclone &mdash; not required in EUR). The <code>T1T2</code> letters in the WMO header identify which is which.</li>
+    <li>Thunderstorms must be OBSC, EMBD, FRQ, or SQL to trigger a SIGMET. Plain "isolated TS" is an AIRMET phenomenon, not a SIGMET phenomenon.</li>
+    <li>TURB, ICE, and MTW require SEV; DS and SS require HVY. Moderate intensities fall to AIRMET. VA and RDOACT CLD have no severity threshold &mdash; any detection triggers.</li>
+    <li>If the answer to "phenomenon, qualifier, en-route" is anything other than yes/yes/yes, the product is not a SIGMET.</li>
+  </ul>
+</div>
+</section>
+<hr class="ims-lesson-sep">
+<section id="lesson-2" class="ims-lesson-section" data-lesson-slug="sigmet_message_structure_coordinates_cancellation">
+<h1>SIGMET Message Structure, Coordinates &amp; Cancellation</h1>
+
+<div class="objectives">
+  <strong>By the end of this lesson you will be able to:</strong>
+  <ul>
+    <li>Decode every field of a SIGMET WMO header (<code>T1T2A1A2ii CCCC YYGGgg</code>).</li>
+    <li>Construct the first line of a SIGMET (FIR/MWO indicators, sequential number, validity period).</li>
+    <li>Write latitude/longitude coordinates in the Annex 3 format, including the space-hyphen-space polygon convention.</li>
+    <li>Issue a SIGMET cancellation message with the correct sequential numbering and validity reference.</li>
+    <li>Apply the 4-hour validity ceiling, the 4-hour pre-occurrence lead-time limit, and the one-phenomenon-per-message rule.</li>
+  </ul>
+</div>
+
+<h2>The anatomy of a SIGMET</h2>
+
+<p>Every SIGMET has three parts in fixed order: the WMO bulletin header, the first (administrative) line, and the meteorological part. Each part has rigid syntax. A SIGMET that fails the syntax will be rejected by the AFTN parser, will not reach the airlines, and is therefore operationally invisible — no matter how correct the weather assessment behind it.</p>
+
+<p>The Annex 3 wording for the message components:</p>
+
+<ul>
+  <li><strong>WMO heading</strong> &mdash; the AFTN/WMO bulletin identifier; tells the network what kind of message this is.</li>
+  <li><strong>First line</strong> &mdash; the FIR or CTA identifier, the issuing MWO, the sequential number, and the validity period.</li>
+  <li><strong>Meteorological part</strong> &mdash; the phenomenon, its location and extent (lat/lon polygon), intensity, vertical extent, and forecast movement.</li>
+</ul>
+
+<h2>The WMO header, field by field</h2>
+
+<p>The header has the form <code>T1T2A1A2ii CCCC YYGGgg</code>. Every character has a role.</p>
+
+<figure>
+  <svg viewBox="0 0 680 280" role="img" xmlns="http://www.w3.org/2000/svg">
+    <title>Decoded WMO header for a SIGMET message</title>
+    <desc>The header WSXY31 LLBD 121400 is shown in large monospace text with each field labelled below: WS is the data-type designator, XY the country designator, 31 the bulletin number, LLBD the issuing communication centre, 12 the day, and 1400 the time in UTC.</desc>
+
+    <!-- Header text -->
+    <rect x="60" y="40" width="560" height="60" fill="#F6F5F0" stroke="#E2DFD6" stroke-width="1.5"/>
+    <text x="100" y="80" font-family="monospace" font-size="28" fill="#1A1917">WS</text>
+    <text x="160" y="80" font-family="monospace" font-size="28" fill="#1A1917">XY</text>
+    <text x="220" y="80" font-family="monospace" font-size="28" fill="#1A1917">31</text>
+    <text x="330" y="80" font-family="monospace" font-size="28" fill="#1A1917">LLBD</text>
+    <text x="470" y="80" font-family="monospace" font-size="28" fill="#1A1917">12</text>
+    <text x="540" y="80" font-family="monospace" font-size="28" fill="#1A1917">1400</text>
+
+    <!-- Field labels with colour-coded callouts -->
+    <!-- T1T2 -->
+    <rect x="80" y="130" width="80" height="30" rx="4" fill="#185FA5"/>
+    <text x="120" y="150" font-family="sans-serif" font-size="12" fill="#ffffff" text-anchor="middle">T1T2</text>
+    <text x="120" y="180" font-family="sans-serif" font-size="11" fill="#185FA5" text-anchor="middle">Data type</text>
+    <text x="120" y="195" font-family="sans-serif" font-size="11" fill="#6B6A65" text-anchor="middle">WS = SIGMET</text>
+    <line x1="120" y1="100" x2="120" y2="130" stroke="#185FA5" stroke-width="1.5"/>
+
+    <!-- A1A2 -->
+    <rect x="170" y="130" width="80" height="30" rx="4" fill="#0F6E56"/>
+    <text x="210" y="150" font-family="sans-serif" font-size="12" fill="#ffffff" text-anchor="middle">A1A2</text>
+    <text x="210" y="180" font-family="sans-serif" font-size="11" fill="#0F6E56" text-anchor="middle">Country</text>
+    <text x="210" y="195" font-family="sans-serif" font-size="11" fill="#6B6A65" text-anchor="middle">XY (example)</text>
+    <line x1="210" y1="100" x2="210" y2="130" stroke="#0F6E56" stroke-width="1.5"/>
+
+    <!-- ii -->
+    <rect x="260" y="130" width="80" height="30" rx="4" fill="#BA7517"/>
+    <text x="300" y="150" font-family="sans-serif" font-size="12" fill="#ffffff" text-anchor="middle">ii</text>
+    <text x="300" y="180" font-family="sans-serif" font-size="11" fill="#BA7517" text-anchor="middle">Bulletin no.</text>
+    <text x="300" y="195" font-family="sans-serif" font-size="11" fill="#6B6A65" text-anchor="middle">Assigned nationally</text>
+    <line x1="300" y1="100" x2="300" y2="130" stroke="#BA7517" stroke-width="1.5"/>
+
+    <!-- CCCC -->
+    <rect x="350" y="130" width="120" height="30" rx="4" fill="#534AB7"/>
+    <text x="410" y="150" font-family="sans-serif" font-size="12" fill="#ffffff" text-anchor="middle">CCCC</text>
+    <text x="410" y="180" font-family="sans-serif" font-size="11" fill="#534AB7" text-anchor="middle">Communication centre</text>
+    <text x="410" y="195" font-family="sans-serif" font-size="11" fill="#6B6A65" text-anchor="middle">ICAO indicator (often = MWO)</text>
+    <line x1="410" y1="100" x2="410" y2="130" stroke="#534AB7" stroke-width="1.5"/>
+
+    <!-- YY -->
+    <rect x="480" y="130" width="50" height="30" rx="4" fill="#993C1D"/>
+    <text x="505" y="150" font-family="sans-serif" font-size="12" fill="#ffffff" text-anchor="middle">YY</text>
+    <text x="505" y="180" font-family="sans-serif" font-size="11" fill="#993C1D" text-anchor="middle">Day</text>
+    <text x="505" y="195" font-family="sans-serif" font-size="11" fill="#6B6A65" text-anchor="middle">Of month</text>
+    <line x1="505" y1="100" x2="505" y2="130" stroke="#993C1D" stroke-width="1.5"/>
+
+    <!-- GGgg -->
+    <rect x="540" y="130" width="80" height="30" rx="4" fill="#1A1917"/>
+    <text x="580" y="150" font-family="sans-serif" font-size="12" fill="#ffffff" text-anchor="middle">GGgg</text>
+    <text x="580" y="180" font-family="sans-serif" font-size="11" fill="#1A1917" text-anchor="middle">Time UTC</text>
+    <text x="580" y="195" font-family="sans-serif" font-size="11" fill="#6B6A65" text-anchor="middle">Hours/minutes</text>
+    <line x1="580" y1="100" x2="580" y2="130" stroke="#1A1917" stroke-width="1.5"/>
+
+    <!-- Note -->
+    <text x="340" y="240" font-family="sans-serif" font-size="12" fill="#6B6A65" text-anchor="middle" font-style="italic">"A standard SIGMET, country XY, bulletin number 31,</text>
+    <text x="340" y="258" font-family="sans-serif" font-size="12" fill="#6B6A65" text-anchor="middle" font-style="italic">disseminated by LLBD on day 12 at 14:00 UTC."</text>
+  </svg>
+  <figcaption>Figure 2.1 &mdash; a SIGMET WMO header decoded field by field. The data-type designator <code>T1T2</code> is what distinguishes WS, WA, WV, and WC bulletins on the wire.</figcaption>
+</figure>
+
+<p>The data-type designator <code>T1T2</code> is the most operationally important field; it tells every downstream consumer what kind of message has arrived and how to route it. <code>WS</code> for standard SIGMET, <code>WA</code> for AIRMET, <code>WV</code> for volcanic-ash SIGMET, <code>WC</code> for tropical-cyclone SIGMET.</p>
+
+<h2>The first line — administrative metadata</h2>
+
+<p>The first line identifies the FIR and the MWO, gives the message its sequence number, and stamps the validity window. The general form is:</p>
+
+<div class="callout callout-key">
+  <div class="callout-label">First-line skeleton</div>
+  <code>&lt;FIR_ICAO&gt; SIGMET &lt;n&gt; VALID YYGGgg/YYGGgg &lt;MWO_ICAO&gt;-</code><br/>
+  <code>&lt;FIR_ICAO&gt; &lt;FIR name&gt; FIR ...</code>
+</div>
+
+<p>Worked example, taken directly from the source deck:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Header / first line</th>
+      <th>What each field is</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>WSXY31 YUSO 101200</code></td>
+      <td>WMO header &mdash; standard SIGMET (WS), country XY, bulletin 31, issued from YUSO on day 10 at 12:00 UTC</td>
+    </tr>
+    <tr>
+      <td><code>YUDD SIGMET 5 VALID 101200/101600 YUSO-</code></td>
+      <td>FIR <code>YUDD</code>, this is the fifth SIGMET of the day, validity 10 Dec 12:00&ndash;16:00 UTC, issued by MWO <code>YUSO</code></td>
+    </tr>
+    <tr>
+      <td><code>YUDD SHANLON FIR ...</code></td>
+      <td>FIR name spelled out; the meteorological part follows on this line</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The sequential number <code>n</code> resets daily and is allocated by the MWO. The <code>VALID</code> period uses the same <code>YYGGgg/YYGGgg</code> format — day, hours, minutes for the start, then the end. A trailing hyphen after the MWO indicator separates the first line from the meteorological part; the second line continues with the FIR name.</p>
+
+<h2>Validity, lead time, and the one-phenomenon rule</h2>
+
+<p>Three rules govern when and for how long a SIGMET can be in force.</p>
+
+<div class="callout callout-warning">
+  <div class="callout-label">The three timing rules</div>
+  <ol>
+    <li><strong>Maximum validity is 4 hours.</strong> A SIGMET cannot be valid for longer than 4 hours from its <code>VALID</code> start time. If the phenomenon is expected to persist beyond that, a new SIGMET with the next sequential number must be issued.</li>
+    <li><strong>Lead time is also 4 hours.</strong> The time of issuance shall not precede the expected start of the phenomenon by more than 4 hours. SIGMETs do not get to "warn 12 hours ahead".</li>
+    <li><strong>One phenomenon per message.</strong> A given SIGMET addresses exactly one phenomenon (e.g., SEV TURB <em>or</em> EMBD TS &mdash; not both). If two SIGMET-worthy phenomena coexist, issue two SIGMETs.</li>
+  </ol>
+</div>
+
+<p>The 4-hour validity ceiling exists because the meteorological part of a SIGMET contains a specific polygon and a single forecast position; beyond 4 hours, the polygon stops being useful. The one-phenomenon rule exists because consumers (airlines, dispatchers, ATC) parse the meteorological part as a single weather object — a message that mixes two phenomena is operationally ambiguous.</p>
+
+<p>WV (volcanic ash) and WC (tropical cyclone) SIGMETs are exceptions to the 4-hour ceiling because ash plumes and tropical cyclones evolve on longer timescales; their typical max validity is 6 hours.</p>
+
+<h2>Geographic coordinates in SIGMET</h2>
+
+<p>The phenomenon's location is described as a lat/lon polygon. Annex 3 prescribes a specific syntax that the AFTN parser will validate strictly.</p>
+
+<h3>Coordinate format</h3>
+
+<p>Each point is written as latitude followed by longitude, in whole degrees or degrees-and-minutes:</p>
+
+<div class="callout callout-key">
+  <div class="callout-label">Coordinate format</div>
+  <code>N(S)nn[nn] W(E)nnn[nn]</code>
+  <br/>
+  Examples: <code>N3623 W04515</code>, <code>S1530 E12500</code>, <code>N42 E023</code>.
+</div>
+
+<p>The hemisphere letter (<code>N</code>/<code>S</code> for latitude, <code>E</code>/<code>W</code> for longitude) comes first, followed by the magnitude in two or four digits for latitude and three or five digits for longitude. Optionally, the minutes pair is appended (no separator, no degree sign — the parser keys off the digit count).</p>
+
+<h3>Polygon syntax</h3>
+
+<p>When the phenomenon occupies an area, the polygon's vertices are listed in order, with the literal pattern <code>&nbsp;-&nbsp;</code> (space, hyphen, space) between adjacent points:</p>
+
+<div class="callout callout-key">
+  <div class="callout-label">Polygon example (Annex 3)</div>
+  <code>S0530 E09300 - N0100 E09530 - N1215 E11045 - S0820 E10330</code>
+  <br/><br/>
+  Coarser-resolution variant of the same area:<br/>
+  <code>S05 E093 - N01 E095 - N12 E110 - S08 E103</code>
+</div>
+
+<p>The polygon must be closed implicitly — the last vertex is connected back to the first by the consumer. Do not repeat the first vertex at the end. Do not use commas, semicolons, or degree symbols; the AFTN parser will reject the message.</p>
+
+<div class="callout callout-warning">
+  <div class="callout-label">Common syntax errors</div>
+  <ul>
+    <li><strong>Decimal degrees</strong> (<code>N36.4 E034.7</code>) &mdash; not accepted. Use degrees+minutes or whole degrees only.</li>
+    <li><strong>Missing hemisphere letter</strong> at the start &mdash; the parser will treat the first digit as the start of the magnitude and mis-locate the point by an order of magnitude.</li>
+    <li><strong>Mixed separators</strong> &mdash; the dash must be space-hyphen-space, never <code>&middot;</code>, comma, or arrow.</li>
+    <li><strong>Closing the polygon explicitly</strong> &mdash; do not repeat the first vertex; the consumer closes it.</li>
+  </ul>
+</div>
+
+<h2>Cancelling a SIGMET</h2>
+
+<p>If the phenomenon for which a SIGMET was issued is no longer occurring and is no longer expected during the original validity period, the issuing MWO cancels the SIGMET. Cancellation is itself a SIGMET message — same data-type designator, next sequential number, new validity period.</p>
+
+<p>The structure of the cancellation:</p>
+
+<ul>
+  <li>WMO heading with the same <code>T1T2</code> data-type designator as the original.</li>
+  <li>First line, including the <em>next</em> sequential number followed by a new validity period (typically running from "now" until the original SIGMET's end-time).</li>
+  <li>Second line containing the FIR location indicator and name, then the literal <code>CNL SIGMET &lt;n&gt; YYGGgg/YYGGgg</code> referencing the sequential number and validity period of the SIGMET being cancelled.</li>
+</ul>
+
+<h3>Worked example — original and its cancellation</h3>
+
+<figure>
+  <svg viewBox="0 0 680 360" role="img" xmlns="http://www.w3.org/2000/svg">
+    <title>SIGMET and its cancellation, side by side</title>
+    <desc>Two stacked panels. The top panel is the original SIGMET number 5 issued at 12:00 UTC and valid 12:00-16:00. The bottom panel is the cancellation, issued at 14:30, numbered 6, valid 14:30-16:00, containing CNL SIGMET 5 1200/1600.</desc>
+
+    <!-- Original SIGMET -->
+    <rect x="40" y="30" width="600" height="130" rx="6" fill="#F6F5F0" stroke="#185FA5" stroke-width="2"/>
+    <text x="60" y="55" font-family="sans-serif" font-size="12" font-weight="600" fill="#185FA5">ORIGINAL SIGMET</text>
+    <text x="60" y="85" font-family="monospace" font-size="14" fill="#1A1917">WSXY31 YUSO 101200</text>
+    <text x="60" y="108" font-family="monospace" font-size="14" fill="#1A1917">YUDD SIGMET 5 VALID 101200/101600 YUSO-</text>
+    <text x="60" y="131" font-family="monospace" font-size="14" fill="#1A1917">YUDD SHANLON FIR EMBD TS FCST WI ...</text>
+    <text x="60" y="152" font-family="sans-serif" font-size="11" fill="#6B6A65" font-style="italic">Sequential number 5, valid 12:00&ndash;16:00 UTC on day 10</text>
+
+    <!-- Arrow -->
+    <path d="M 340 175 L 340 210" stroke="#BA7517" stroke-width="2" marker-end="url(#dnArrow)"/>
+    <text x="350" y="195" font-family="sans-serif" font-size="11" fill="#BA7517" font-style="italic">phenomenon ceases at ~14:20 UTC</text>
+
+    <!-- Cancellation -->
+    <rect x="40" y="220" width="600" height="130" rx="6" fill="#FAEEDA" stroke="#BA7517" stroke-width="2"/>
+    <text x="60" y="245" font-family="sans-serif" font-size="12" font-weight="600" fill="#BA7517">CANCELLATION</text>
+    <text x="60" y="275" font-family="monospace" font-size="14" fill="#1A1917">WSXY31 YUSO 101430</text>
+    <text x="60" y="298" font-family="monospace" font-size="14" fill="#1A1917">YUDD SIGMET 6 VALID 101430/101600 YUSO-</text>
+    <text x="60" y="321" font-family="monospace" font-size="14" fill="#1A1917">YUDD SHANLON FIR CNL SIGMET 5 101200/101600=</text>
+    <text x="60" y="342" font-family="sans-serif" font-size="11" fill="#6B6A65" font-style="italic">Next sequential number 6; CNL refers back to the original by number AND original validity</text>
+
+    <defs>
+      <marker id="dnArrow" viewBox="0 0 10 10" refX="5" refY="9" markerWidth="6" markerHeight="6" orient="auto">
+        <path d="M 0 0 L 10 0 L 5 9 Z" fill="#BA7517"/>
+      </marker>
+    </defs>
+  </svg>
+  <figcaption>Figure 2.2 &mdash; the cancellation is itself a SIGMET. Note the next sequence number (6), the new validity (14:30&ndash;16:00 covering the remainder of the original window), and the back-reference <code>CNL SIGMET 5 101200/101600</code>.</figcaption>
+</figure>
+
+<div class="callout callout-note">
+  <div class="callout-label">Why both number AND validity in the CNL line</div>
+  The sequential number alone could be ambiguous if a SIGMET was re-numbered or re-issued during the day. Including the original validity period (<code>101200/101600</code>) makes the back-reference unambiguous &mdash; the consumer knows exactly which earlier SIGMET is being cancelled, even if their AFTN cache is incomplete.
+</div>
+
+<h2>When NOT to cancel</h2>
+
+<p>If the phenomenon is still occurring at the SIGMET's expiry time, you do not cancel — you issue a new SIGMET with the next sequential number and a new validity window. Cancellation is reserved for the case where the phenomenon has ended before the original validity expires. The two cases are operationally different: cancellation says "false alarm" or "phenomenon dissipated"; re-issuance says "still here, here is the updated forecast".</p>
+
+<div class="callout callout-danger">
+  <div class="callout-label">Pitfall</div>
+  Cancelling a still-active SIGMET because the original validity is about to expire is a serious error &mdash; the airlines and ATS units will believe the hazard has passed when it has not. If the phenomenon persists, the correct action is a new SIGMET, not a CNL.
+</div>
+
+<div class="lesson-summary">
+  <h3>Key Takeaways</h3>
+  <ul>
+    <li>The WMO header decodes as <code>T1T2 A1A2 ii CCCC YYGGgg</code>. <code>T1T2</code> identifies the subtype (WS/WA/WV/WC); <code>CCCC</code> is the disseminating centre; <code>YYGGgg</code> is day plus time in UTC.</li>
+    <li>The first line carries the FIR ICAO indicator, the literal <code>SIGMET</code>, the sequential number, the validity period <code>YYGGgg/YYGGgg</code>, and the MWO indicator with a trailing hyphen.</li>
+    <li>Maximum validity is 4 hours for WS SIGMETs. Issuance precedes the expected phenomenon by no more than 4 hours. One phenomenon per message.</li>
+    <li>Coordinates use <code>N(S)nn[nn] W(E)nnn[nn]</code> in whole degrees or degrees-and-minutes only. Polygons separate vertices with space-hyphen-space and are not closed explicitly.</li>
+    <li>Cancellation is a new SIGMET message: next sequential number, new validity, second line containing <code>CNL SIGMET &lt;n&gt; YYGGgg/YYGGgg</code> referring back to the original.</li>
+    <li>If the phenomenon outlasts the original validity, issue a new SIGMET &mdash; do not cancel.</li>
+  </ul>
+</div>
+</section>
+<hr class="ims-lesson-sep">
+<section id="lesson-3" class="ims-lesson-section" data-lesson-slug="airmet_low_level_warnings">
+<h1>AIRMET &mdash; Low-Level Warnings</h1>
+
+<div class="objectives">
+  <strong>By the end of this lesson you will be able to:</strong>
+  <ul>
+    <li>Apply the AIRMET scope rule (below FL100, en-route, not already covered by an existing low-level forecast).</li>
+    <li>Identify the AIRMET phenomenon list and the intensity qualifier required for each.</li>
+    <li>Differentiate the spatial-coverage qualifiers ISOL (&lt;50%), OCNL (50&ndash;75%), and FRQ (&gt;75%).</li>
+    <li>Choose between issuing a SIGMET, an AIRMET, or no message at all given a forecast scenario near threshold.</li>
+  </ul>
+</div>
+
+<h2>What an AIRMET is for</h2>
+
+<p>AIRMET catches the en-route hazards that SIGMET deliberately leaves on the table: moderate intensities, low-level features below FL100, and phenomena that primarily affect general aviation and rotorcraft. The Annex 3 wording is precise:</p>
+
+<div class="callout callout-note">
+  <div class="callout-label">Annex 3 definition (paraphrased)</div>
+  An AIRMET is information issued by an MWO concerning the occurrence or expected occurrence of specified en-route weather phenomena which may affect the safety of <strong>low-level</strong> aircraft operations (below flight level 100) and <strong>which was not already included in the forecast</strong> issued for low-level flights in the FIR or sub-area thereof.
+</div>
+
+<p>Three components of that definition matter operationally.</p>
+
+<p><strong>Low-level</strong> means below FL100. If the phenomenon is entirely above FL100, AIRMET is not the right product — consider the SIGMET threshold or the SIGWX chart. If it straddles FL100, AIRMET covers the portion below.</p>
+
+<p><strong>Not already included in the forecast</strong> is the most-confused clause in the definition. It does not mean "don't issue an AIRMET if there's a TAF". It means: if the routine low-level area forecast (the GAMET in regions that issue one, or the low-level SIGWX) already shows the phenomenon at AIRMET intensity, the AIRMET is redundant and is not issued. In Israel, where no GAMET is produced, this exemption almost never applies and AIRMETs are issued whenever the phenomenon and intensity criteria are met.</p>
+
+<p><strong>Specified phenomena</strong> &mdash; the AIRMET list is fixed. Inconvenient weather that isn't on the list does not become an AIRMET no matter how operationally relevant it feels.</p>
+
+<h2>The AIRMET phenomenon list</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Phenomenon</th>
+      <th>Code</th>
+      <th>Threshold</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Thunderstorms</td>
+      <td><code>ISOL TS</code> / <code>OCNL TS</code></td>
+      <td>Isolated or occasional thunderstorms (no qualifier &gt; 75% coverage)</td>
+    </tr>
+    <tr>
+      <td>Icing</td>
+      <td><code>MOD ICE</code></td>
+      <td>Moderate icing (other than in convective cloud)</td>
+    </tr>
+    <tr>
+      <td>Turbulence</td>
+      <td><code>MOD TURB</code></td>
+      <td>Moderate turbulence (low-level w/ strong sfc winds, rotor, or CAT)</td>
+    </tr>
+    <tr>
+      <td>Mountain waves</td>
+      <td><code>MOD MTW</code></td>
+      <td>Downdraft 1.75&ndash;3.0 m/s or accompanying moderate turbulence</td>
+    </tr>
+    <tr>
+      <td>Surface wind</td>
+      <td><code>SFC WSPD &ge;30KT</code></td>
+      <td>Sustained surface winds at or above 30 kt</td>
+    </tr>
+    <tr>
+      <td>Ceiling</td>
+      <td><code>BKN/OVC &lt;1000FT</code></td>
+      <td>Cloud ceiling below 1000 ft over a defined area</td>
+    </tr>
+    <tr>
+      <td>Visibility</td>
+      <td><code>VIS &lt;5KM</code></td>
+      <td>Visibility below 5 km over a defined area</td>
+    </tr>
+    <tr>
+      <td>Mountain obscuration</td>
+      <td><code>MT OBSC</code></td>
+      <td>Extensive obscuration of mountainous terrain</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Notice that thunderstorms, icing, turbulence, and mountain waves appear on both the SIGMET and AIRMET lists &mdash; the difference is the intensity qualifier. The remaining four phenomena (surface wind, ceiling, visibility, mountain obscuration) are AIRMET-only: there is no SIGMET equivalent because they are inherently low-level and affect general aviation and rotorcraft rather than airliners.</p>
+
+<h2>Spatial-coverage qualifiers — ISOL, OCNL, FRQ</h2>
+
+<p>For thunderstorm phenomena, AIRMET uses three spatial-coverage descriptors that quantify what fraction of the affected area is occupied by the cells. The fractions are defined at a fixed time or during the period of validity.</p>
+
+<figure>
+  <svg viewBox="0 0 680 240" role="img" xmlns="http://www.w3.org/2000/svg">
+    <title>Spatial-coverage descriptors ISOL, OCNL, and FRQ</title>
+    <desc>Three rectangles each representing the same FIR area, with progressively more thunderstorm cells. The first shows scattered isolated cells covering less than 50 percent of the area. The second shows roughly two-thirds coverage. The third shows densely packed cells covering more than 75 percent of the area, essentially with no separation between them.</desc>
+
+    <!-- ISOL panel -->
+    <rect x="40" y="40" width="180" height="140" fill="#F6F5F0" stroke="#E2DFD6" stroke-width="1.5"/>
+    <text x="130" y="30" font-family="sans-serif" font-size="14" font-weight="600" fill="#185FA5" text-anchor="middle">ISOL &mdash; &lt; 50%</text>
+    <!-- A few scattered cells -->
+    <circle cx="70" cy="75" r="10" fill="#185FA5"/>
+    <circle cx="130" cy="100" r="9" fill="#185FA5"/>
+    <circle cx="180" cy="130" r="11" fill="#185FA5"/>
+    <circle cx="90" cy="155" r="8" fill="#185FA5"/>
+    <text x="130" y="200" font-family="sans-serif" font-size="11" fill="#6B6A65" text-anchor="middle">Individual cells</text>
+    <text x="130" y="215" font-family="sans-serif" font-size="11" fill="#6B6A65" text-anchor="middle">Wide gaps for deviation</text>
+
+    <!-- OCNL panel -->
+    <rect x="250" y="40" width="180" height="140" fill="#F6F5F0" stroke="#E2DFD6" stroke-width="1.5"/>
+    <text x="340" y="30" font-family="sans-serif" font-size="14" font-weight="600" fill="#BA7517" text-anchor="middle">OCNL &mdash; 50&ndash;75%</text>
+    <!-- Moderately filled cells -->
+    <circle cx="275" cy="65" r="12" fill="#BA7517"/>
+    <circle cx="310" cy="95" r="14" fill="#BA7517"/>
+    <circle cx="360" cy="80" r="11" fill="#BA7517"/>
+    <circle cx="395" cy="115" r="13" fill="#BA7517"/>
+    <circle cx="290" cy="140" r="12" fill="#BA7517"/>
+    <circle cx="345" cy="155" r="11" fill="#BA7517"/>
+    <circle cx="395" cy="155" r="10" fill="#BA7517"/>
+    <text x="340" y="200" font-family="sans-serif" font-size="11" fill="#6B6A65" text-anchor="middle">Many cells, some gaps</text>
+    <text x="340" y="215" font-family="sans-serif" font-size="11" fill="#6B6A65" text-anchor="middle">Deviation still possible</text>
+
+    <!-- FRQ panel -->
+    <rect x="460" y="40" width="180" height="140" fill="#F6F5F0" stroke="#E2DFD6" stroke-width="1.5"/>
+    <text x="550" y="30" font-family="sans-serif" font-size="14" font-weight="600" fill="#993C1D" text-anchor="middle">FRQ &mdash; &gt; 75%</text>
+    <!-- Densely packed cells -->
+    <circle cx="482" cy="62" r="16" fill="#993C1D"/>
+    <circle cx="515" cy="80" r="17" fill="#993C1D"/>
+    <circle cx="548" cy="64" r="14" fill="#993C1D"/>
+    <circle cx="582" cy="80" r="16" fill="#993C1D"/>
+    <circle cx="615" cy="62" r="13" fill="#993C1D"/>
+    <circle cx="492" cy="110" r="15" fill="#993C1D"/>
+    <circle cx="525" cy="125" r="17" fill="#993C1D"/>
+    <circle cx="565" cy="110" r="15" fill="#993C1D"/>
+    <circle cx="600" cy="125" r="14" fill="#993C1D"/>
+    <circle cx="500" cy="155" r="16" fill="#993C1D"/>
+    <circle cx="540" cy="160" r="14" fill="#993C1D"/>
+    <circle cx="585" cy="150" r="16" fill="#993C1D"/>
+    <circle cx="620" cy="160" r="12" fill="#993C1D"/>
+    <text x="550" y="200" font-family="sans-serif" font-size="11" fill="#6B6A65" text-anchor="middle">Little or no separation</text>
+    <text x="550" y="215" font-family="sans-serif" font-size="11" fill="#6B6A65" text-anchor="middle">No safe corridor</text>
+  </svg>
+  <figcaption>Figure 3.1 &mdash; spatial-coverage descriptors. ISOL and OCNL are AIRMET qualifiers; FRQ promotes the message to a SIGMET (alongside OBSC, EMBD, and SQL).</figcaption>
+</figure>
+
+<div class="callout callout-key">
+  <div class="callout-label">The boundary that matters operationally</div>
+  ISOL (&lt;50%) and OCNL (50&ndash;75%) live in AIRMET territory. FRQ (&gt;75%) crosses into SIGMET. The choice between AIRMET and SIGMET for an area of thunderstorms is therefore driven directly by the coverage fraction &mdash; not by cell intensity, lightning rate, or radar reflectivity.
+</div>
+
+<h2>AIRMET vs SIGMET, phenomenon by phenomenon</h2>
+
+<p>For the four phenomena that appear on both lists, the threshold table is the most useful artefact to have at hand during a shift.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Phenomenon</th>
+      <th>AIRMET threshold</th>
+      <th>SIGMET threshold</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Thunderstorms</td>
+      <td><code>ISOL</code> or <code>OCNL</code> (coverage &lt; 75%)</td>
+      <td><code>OBSC</code>, <code>EMBD</code>, <code>FRQ</code> (&gt; 75%), or <code>SQL</code></td>
+    </tr>
+    <tr>
+      <td>Icing</td>
+      <td><code>MOD ICE</code></td>
+      <td><code>SEV ICE</code> (with or without FZRA)</td>
+    </tr>
+    <tr>
+      <td>Turbulence</td>
+      <td><code>MOD TURB</code></td>
+      <td><code>SEV TURB</code></td>
+    </tr>
+    <tr>
+      <td>Mountain wave</td>
+      <td><code>MOD MTW</code> (downdraft 1.75&ndash;3.0 m/s or MOD turb)</td>
+      <td><code>SEV MTW</code> (downdraft &ge; 3.0 m/s or SEV turb)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Convective icing (icing in cumuliform cloud) is explicitly excluded from MOD ICE in AIRMET &mdash; that case is captured by the thunderstorm AIRMET itself, since the icing risk is inseparable from the convection.</p>
+
+<h2>The AIRMET-only phenomena</h2>
+
+<p>Four AIRMET phenomena have no SIGMET equivalent. They are all properties of the low-level environment.</p>
+
+<h3>Sustained surface winds &ge; 30 kt</h3>
+
+<p>If the sustained (10-minute mean) surface wind over a defined sub-area of the FIR is forecast to reach or exceed 30 kt, an AIRMET is issued. This is distinct from gust-driven aerodrome warnings (Lesson 4) &mdash; the AIRMET addresses the en-route effect on general aviation over open terrain, not the aerodrome-specific risk to take-off and landing.</p>
+
+<h3>Ceilings below 1000 ft</h3>
+
+<p>When extensive cloud is forecast with a base below 1000 ft AGL covering enough of the FIR that VFR low-level traffic is impaired, an AIRMET is issued. This is a coverage criterion as much as an altitude one &mdash; isolated low cloud over a specific point is reported in the TAF/METAR, not in an AIRMET.</p>
+
+<h3>Visibility below 5 km</h3>
+
+<p>For visibility, the AIRMET threshold is 5 km over an extensive area below FL100. Cause matters less than effect: fog, mist, haze, smoke, blowing dust, and falling precipitation all qualify if they bring visibility into this band.</p>
+
+<h3>Extensive mountain obscuration</h3>
+
+<p>When a significant fraction of mountainous terrain in the FIR is obscured by cloud or precipitation, an AIRMET (<code>MT OBSC</code>) is issued. This catches the case where the mountains themselves are flyable in principle but the visibility on the lee or upslope side makes terrain awareness impossible &mdash; a major risk for rotorcraft and general aviation.</p>
+
+<h2>Validity, lead time, and structure</h2>
+
+<p>The structural rules carry over almost verbatim from SIGMET:</p>
+
+<div class="callout callout-warning">
+  <div class="callout-label">AIRMET structural rules</div>
+  <ul>
+    <li>Maximum validity is <strong>4 hours</strong>, same as a WS SIGMET.</li>
+    <li>Issuance precedes the expected start of the phenomenon by <strong>no more than 4 hours</strong>.</li>
+    <li><strong>One phenomenon per message</strong>; if two AIRMET-worthy phenomena coexist, issue two AIRMETs.</li>
+    <li>WMO header uses <code>WA</code> as the data-type designator (vs <code>WS</code>/<code>WV</code>/<code>WC</code> for SIGMET subtypes).</li>
+    <li>First-line and meteorological-part syntax are <strong>identical to SIGMET</strong>, with the word <code>AIRMET</code> substituted for <code>SIGMET</code>.</li>
+    <li>Cancellation follows the same pattern: next sequential number, new validity, second line <code>CNL AIRMET &lt;n&gt; YYGGgg/YYGGgg</code>.</li>
+  </ul>
+</div>
+
+<p>Because the AIRMET inherits the SIGMET message structure, Lesson 2's coverage of the WMO header, validity period, lat/lon polygons, and cancellation applies unchanged. The only thing that differs is the data-type designator and the word that appears on the first line of the body.</p>
+
+<p>AIRMETs are issued for one FIR. Where necessary, an FIR can be divided into sub-areas, with separate AIRMETs issued for each sub-area &mdash; useful when the same phenomenon affects, say, the northern coast and not the southern interior. Each sub-area's AIRMET carries its own sequential number.</p>
+
+<div class="callout callout-note">
+  <div class="callout-label">After issuance</div>
+  Annex 3 obliges the MWO to "maintain watch" over the phenomenon and issue an updated AIRMET when necessary. In practice this means: if the forecast becomes meaningfully different from what the active AIRMET describes (intensity changes, area shifts, timing changes by &gt; 2 hours), issue an update. If the phenomenon ends earlier than expected, cancel.
+</div>
+
+<h2>The decision in operations</h2>
+
+<p>The most common operational error in this space is over- or under-promotion: issuing a SIGMET for something that should be an AIRMET, or vice versa. The clean way to decide is sequential:</p>
+
+<ol>
+  <li>Is the phenomenon on either list at all? If no, no message.</li>
+  <li>Is the SIGMET threshold met (severity qualifier or coverage &gt; 75%)? If yes, SIGMET.</li>
+  <li>Is the AIRMET threshold met (moderate intensity, ISOL/OCNL coverage, &lt;5 km vis, &lt;1000 ft ceiling, &ge;30 kt sfc wind, MT OBSC)? If yes, AIRMET.</li>
+  <li>Otherwise: report in the routine forecast; no SIGMET, no AIRMET.</li>
+</ol>
+
+<div class="callout callout-danger">
+  <div class="callout-label">Common pitfall</div>
+  Forecasters under pressure sometimes "round up" a borderline case to SIGMET because the consequences of under-warning feel worse than over-warning. This is incorrect. Over-issuing SIGMETs trains airlines and dispatchers to discount them, which costs lives when a real SIGMET-grade event arrives. The threshold structure exists for a reason &mdash; respect it.
+</div>
+
+<div class="lesson-summary">
+  <h3>Key Takeaways</h3>
+  <ul>
+    <li>AIRMET catches en-route hazards below FL100 at moderate intensities &mdash; the cases that fall through the SIGMET filter.</li>
+    <li>Eight phenomena: TS (ISOL/OCNL), MOD ICE, MOD TURB, MOD MTW, sustained surface wind &ge; 30 kt, ceilings &lt; 1000 ft, visibility &lt; 5 km, and mountain obscuration.</li>
+    <li>Spatial coverage qualifiers: ISOL &lt; 50%, OCNL 50&ndash;75%, FRQ &gt; 75%. FRQ promotes the message to a SIGMET.</li>
+    <li>Surface wind, ceiling, visibility, and mountain obscuration are AIRMET-only &mdash; they have no SIGMET equivalent.</li>
+    <li>Structural rules are identical to SIGMET: 4-hour max validity, 4-hour lead time, one phenomenon per message. Header uses <code>WA</code>.</li>
+    <li>The "not already in the forecast" clause exempts AIRMETs only where a GAMET or low-level area forecast already shows the phenomenon at AIRMET intensity. In Israel this exemption rarely applies.</li>
+  </ul>
+</div>
+</section>
+<hr class="ims-lesson-sep">
+<section id="lesson-4" class="ims-lesson-section" data-lesson-slug="aerodrome_and_wind_shear_warnings">
+<h1>Aerodrome (AD) &amp; Wind-Shear (WS) Warnings</h1>
+
+<div class="objectives">
+  <strong>By the end of this lesson you will be able to:</strong>
+  <ul>
+    <li>Apply the IMS AD WRNG thresholds for TS/CB, visibility, ceiling, surface wind, and severe hail.</li>
+    <li>Construct a valid AD WRNG message and the equivalent WS WRNG message.</li>
+    <li>Issue a WS WRNG based on forecaster judgement (FCST), observation (OBS), or pilot report (REP AT), including the low-level-jet criterion.</li>
+    <li>Coordinate AD WRNG issuance with SIGMET / AIRMET so that the FIR-wide and aerodrome-local products stay consistent.</li>
+  </ul>
+</div>
+
+<h2>What an AD WRNG is for</h2>
+
+<p>An aerodrome warning is issued when hazardous weather is occurring at, or is expected within the next 4 hours at, a specific aerodrome &mdash; not the FIR. It is the AFO's product, not the MWO's. It addresses three operational concerns: hazards to aircraft taking off or landing, hazards to aircraft on the ground (including parked aircraft), and disruptions to the normal flow of operations at the airport.</p>
+
+<p>The wind-shear warning (WS WRNG) is a sibling product, narrower in scope: it addresses wind shear on the approach or climb-out path of a specific runway. AD and WS warnings share a structure and a 4-hour validity window but have separate phenomenon lists, separate cancellation messages, and separate distribution patterns.</p>
+
+<div class="callout callout-note">
+  <div class="callout-label">Scope at a glance</div>
+  <strong>AD WRNG &mdash;</strong> hazards at the aerodrome that affect take-off, landing, ground operations, or parked aircraft. Issued by the AFO. Validity up to 4 hours.<br/>
+  <strong>WS WRNG &mdash;</strong> wind shear on approach or climb-out for a specific runway, including microburst and low-level jet. Issued by the AFO. Validity up to 4 hours.
+</div>
+
+<h2>IMS AD WRNG phenomena and thresholds</h2>
+
+<p>Annex 3 lists the categories of phenomenon that an AD WRNG can address. The numerical thresholds that decide when each category triggers are set nationally, by the IMS. The combinations below are the operative IMS thresholds for Ben Gurion and other Israeli aerodromes.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Phenomenon</th>
+      <th>IMS threshold</th>
+      <th>Code in message</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Thunderstorms / cumulonimbus</td>
+      <td>CB within <strong>16 km</strong> of the runway-pattern centre</td>
+      <td><code>TS</code> or <code>HVY TS</code></td>
+    </tr>
+    <tr>
+      <td>Severe hail</td>
+      <td>Hail diameter <strong>&ge; 2 cm</strong></td>
+      <td><code>GR</code></td>
+    </tr>
+    <tr>
+      <td>Visibility</td>
+      <td>Visibility <strong>&lt; 5000 m</strong> due to fog, mist, haze, dust, or sandstorm</td>
+      <td><code>FG</code> / <code>BR</code> / <code>HZ</code> / <code>DU</code> / <code>SA</code> / <code>SS</code> / <code>DS</code></td>
+    </tr>
+    <tr>
+      <td>Low cloud base</td>
+      <td>Coverage <strong>BKN/OVC</strong> (&ge; 5/8) at <strong>&le; 1500 ft AGL</strong></td>
+      <td>Free text describing cloud and base</td>
+    </tr>
+    <tr>
+      <td>Strong surface wind</td>
+      <td>10-min mean &gt; <strong>20 kt</strong> <em>and/or</em> gusts (3 sec / 10 min) &gt; <strong>30 kt</strong></td>
+      <td><code>SFC WSPD nnKT MAX nnKT</code></td>
+    </tr>
+    <tr>
+      <td>Freezing precipitation</td>
+      <td>Any freezing rain or freezing drizzle</td>
+      <td><code>FZRA</code> / <code>FZDZ</code> (with <code>HVY</code> if applicable)</td>
+    </tr>
+    <tr>
+      <td>Snow on the ground</td>
+      <td>Snow accumulating or expected to accumulate</td>
+      <td><code>SN [nnCM]</code> (with <code>HVY</code> if applicable)</td>
+    </tr>
+    <tr>
+      <td>Frost</td>
+      <td>Temperature &lt; <strong>0&nbsp;&deg;C</strong> at 2 m in the Stevenson screen</td>
+      <td><code>FROST</code></td>
+    </tr>
+    <tr>
+      <td>Volcanic ash deposition</td>
+      <td>Ash accumulating on the ground</td>
+      <td><code>VA</code></td>
+    </tr>
+    <tr>
+      <td>Radioactive / chemical cloud</td>
+      <td>Cloud base at surface level</td>
+      <td>Free text</td>
+    </tr>
+    <tr>
+      <td>Squall</td>
+      <td>Sudden, short-duration strong wind</td>
+      <td><code>SQ</code></td>
+    </tr>
+    <tr>
+      <td>Tsunami</td>
+      <td>Tsunami warning affecting the aerodrome</td>
+      <td><code>TSUNAMI</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Two of these thresholds deserve emphasis because they are routinely misremembered. The thunderstorm criterion is <strong>distance to the runway centre, not whether a TS exists</strong>: a CB at 25 km from LLBG does not trigger an AD WRNG even if it is severe. The wind criterion has <strong>two independent triggers</strong> joined by "and/or": either a sustained mean above 20 kt or gusts above 30 kt is sufficient.</p>
+
+<h2>AD WRNG message structure</h2>
+
+<p>The AD WRNG body has six elements in fixed order:</p>
+
+<ol>
+  <li>Location indicator of the aerodrome (e.g., <code>LLBG</code>).</li>
+  <li>Identification of the message type (<code>AD WRNG</code>).</li>
+  <li>Sequential number (resets daily).</li>
+  <li>Validity period in <code>YYGGgg/YYGGgg</code> format.</li>
+  <li>Phenomenon code(s) and any modifier (<code>HVY</code>, <code>TEMPO</code>, intensity, expected change).</li>
+  <li>Whether the phenomenon is observed (<code>FCST</code> / <code>OBS</code>) and any change in intensity over the validity period.</li>
+</ol>
+
+<figure>
+  <svg viewBox="0 0 680 240" role="img" xmlns="http://www.w3.org/2000/svg">
+    <title>Annotated AD WRNG example</title>
+    <desc>An AD WRNG message annotated field by field. LLBG is the aerodrome, AD WRNG is the message type, 1 is the sequential number, the validity period runs from day 11 at 0130 to day 11 at 0500, and the body says broken stratus clouds with a base of 1500 feet temporarily 1000 feet forecast over Ben Gurion airport.</desc>
+
+    <!-- Message body -->
+    <rect x="40" y="30" width="600" height="60" rx="6" fill="#F6F5F0" stroke="#185FA5" stroke-width="2"/>
+    <text x="60" y="60" font-family="monospace" font-size="14" fill="#1A1917">LLBG AD WRNG 1 VALID 110130/110500</text>
+    <text x="60" y="80" font-family="monospace" font-size="14" fill="#1A1917">BKN ST CLDS BASE 1500FT TEMPO 1000FT FCST OVER LLBG AP=</text>
+
+    <!-- Annotation pointers -->
+    <line x1="65" y1="90" x2="85" y2="125" stroke="#185FA5" stroke-width="1.5"/>
+    <text x="55" y="142" font-family="sans-serif" font-size="11" fill="#185FA5">Aerodrome</text>
+
+    <line x1="130" y1="90" x2="160" y2="125" stroke="#0F6E56" stroke-width="1.5"/>
+    <text x="125" y="142" font-family="sans-serif" font-size="11" fill="#0F6E56">Message type</text>
+
+    <line x1="220" y1="90" x2="240" y2="125" stroke="#BA7517" stroke-width="1.5"/>
+    <text x="218" y="142" font-family="sans-serif" font-size="11" fill="#BA7517">Seq. number</text>
+
+    <line x1="330" y1="90" x2="360" y2="125" stroke="#534AB7" stroke-width="1.5"/>
+    <text x="320" y="142" font-family="sans-serif" font-size="11" fill="#534AB7">Validity</text>
+
+    <line x1="200" y1="90" x2="160" y2="175" stroke="#993C1D" stroke-width="1.5"/>
+    <text x="80" y="190" font-family="sans-serif" font-size="11" fill="#993C1D">Phenomenon &amp; intensity</text>
+
+    <line x1="400" y1="90" x2="430" y2="175" stroke="#1A1917" stroke-width="1.5"/>
+    <text x="395" y="190" font-family="sans-serif" font-size="11" fill="#1A1917">Change descriptor (TEMPO)</text>
+
+    <line x1="540" y1="90" x2="560" y2="175" stroke="#6B6A65" stroke-width="1.5"/>
+    <text x="535" y="190" font-family="sans-serif" font-size="11" fill="#6B6A65">FCST or OBS</text>
+
+    <!-- Footer note -->
+    <text x="340" y="225" font-family="sans-serif" font-size="11" fill="#6B6A65" text-anchor="middle" font-style="italic">"Sequential number 1 issued for LLBG, valid 11 day from 01:30 to 05:00 UTC,</text>
+  </svg>
+  <figcaption>Figure 4.1 &mdash; AD WRNG message decoded. The Phenomenon &amp; intensity field accepts a fixed list of codes plus modifiers; free text up to 32 characters is permitted where no code captures the hazard.</figcaption>
+</figure>
+
+<h3>The standard AD WRNG phenomenon-code set</h3>
+
+<p>The phenomenon-code field follows a strict vocabulary. The acceptable values, with optional modifiers in brackets:</p>
+
+<div class="callout callout-key">
+  <div class="callout-label">AD WRNG phenomenon codes</div>
+  <ul>
+    <li><code>TS</code> or <code>[HVY] TS</code></li>
+    <li><code>GR</code> or <code>[HVY] SN [nnCM]</code></li>
+    <li><code>[HVY] FZRA</code> or <code>[HVY] FZDZ</code></li>
+    <li><code>[HVY] SS</code> or <code>[HVY] DS</code> or <code>SA</code> or <code>DU</code></li>
+    <li><code>SFC WSPD nn[n]KMH MAX nn[n]</code> &mdash; (or <code>SFC WSPD nn[n]KT MAX nn[n]</code>)</li>
+    <li><code>SQ</code> or <code>FROST</code></li>
+    <li><code>TSUNAMI</code> or <code>VA</code></li>
+    <li>Free text, up to 32 characters, for phenomena not covered above</li>
+  </ul>
+</div>
+
+<p>Free text exists precisely so that an exotic but operationally significant hazard can be communicated without inventing a non-standard code. Use it sparingly; downstream automation cannot parse arbitrary text.</p>
+
+<h2>Wind-shear warnings &mdash; FCST, OBS, or REP AT</h2>
+
+<p>A WS WRNG is issued whenever wind shear is detected or expected on the approach or climb-out of a specific runway. The Annex 3 wording allows three different bases for issuance, and the basis appears explicitly in the message body.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Basis</th>
+      <th>Indicator</th>
+      <th>Triggering evidence</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Forecaster's judgement</td>
+      <td><code>FCST</code></td>
+      <td>Synoptic situation, model output, or any indication that does not yet meet OBS thresholds</td>
+    </tr>
+    <tr>
+      <td>Observation</td>
+      <td><code>OBS</code></td>
+      <td>Clear identification in AMDAR, radiosonde, pilot balloon, or wind-profiler data</td>
+    </tr>
+    <tr>
+      <td>Pilot report</td>
+      <td><code>REP AT</code></td>
+      <td>A pilot has reported wind shear during approach or climb-out (followed by time)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The distinction matters operationally: a <code>FCST</code> WS WRNG places more responsibility on the forecaster to monitor and amend; an <code>OBS</code> or <code>REP AT</code> warning has external confirmation. Aircraft dispatchers and air traffic controllers treat the three slightly differently, so getting the indicator right is not cosmetic.</p>
+
+<h2>WS WRNG message structure</h2>
+
+<p>The WS WRNG body has the same skeleton as AD WRNG, with the message type changed and phenomenon codes drawn from a different vocabulary.</p>
+
+<figure>
+  <svg viewBox="0 0 680 220" role="img" xmlns="http://www.w3.org/2000/svg">
+    <title>Annotated WS WRNG example with low-level jet</title>
+    <desc>An example WS WRNG message annotated to highlight the runway specification, the forecaster-issuance indicator FCST, the surface wind, and the 900-foot jet wind.</desc>
+
+    <rect x="40" y="30" width="600" height="80" rx="6" fill="#F6F5F0" stroke="#534AB7" stroke-width="2"/>
+    <text x="60" y="60" font-family="monospace" font-size="14" fill="#1A1917">LLBG WS WRNG NO 1 021930Z VALID 022100/030400</text>
+    <text x="60" y="80" font-family="monospace" font-size="14" fill="#1A1917">WS ALL RWY FCST OVER LLBG SFC WIND 150/05KT</text>
+    <text x="60" y="100" font-family="monospace" font-size="14" fill="#1A1917">900FT-WIND: 160/30KT =</text>
+
+    <line x1="160" y1="110" x2="180" y2="145" stroke="#534AB7" stroke-width="1.5"/>
+    <text x="115" y="160" font-family="sans-serif" font-size="11" fill="#534AB7">Message type (WS WRNG NO)</text>
+
+    <line x1="160" y1="110" x2="160" y2="175" stroke="#0F6E56" stroke-width="1.5"/>
+    <text x="80" y="190" font-family="sans-serif" font-size="11" fill="#0F6E56">Issuance time (Z) and validity</text>
+
+    <line x1="220" y1="110" x2="290" y2="145" stroke="#185FA5" stroke-width="1.5"/>
+    <text x="245" y="160" font-family="sans-serif" font-size="11" fill="#185FA5">Runway (ALL RWY)</text>
+
+    <line x1="330" y1="110" x2="350" y2="175" stroke="#BA7517" stroke-width="1.5"/>
+    <text x="320" y="190" font-family="sans-serif" font-size="11" fill="#BA7517">FCST &mdash; forecaster's judgement</text>
+
+    <line x1="540" y1="110" x2="560" y2="160" stroke="#993C1D" stroke-width="1.5"/>
+    <text x="500" y="175" font-family="sans-serif" font-size="11" fill="#993C1D">Surface vs 900 ft wind contrast</text>
+  </svg>
+  <figcaption>Figure 4.2 &mdash; a WS WRNG describing a forecast low-level jet over LLBG. The 5 kt surface wind contrasts with a 30 kt wind at 900 ft AGL &mdash; a textbook shear signature.</figcaption>
+</figure>
+
+<h3>WS WRNG phenomenon codes</h3>
+
+<p>WS WRNG uses a specific vocabulary for the phenomenon field, distinguishing wind shear from microburst and specifying where on the runway the hazard occurs.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>[MOD] [SEV] WS IN APCH</code></td>
+      <td>Wind shear in the approach phase &mdash; runway unspecified</td>
+    </tr>
+    <tr>
+      <td><code>[MOD] [SEV] WS [APCH] RWYnnn</code></td>
+      <td>Wind shear on the approach to a specific runway (e.g., <code>RWY26</code>)</td>
+    </tr>
+    <tr>
+      <td><code>[MOD] [SEV] WS IN CLIMB-OUT</code></td>
+      <td>Wind shear in the climb-out phase &mdash; runway unspecified</td>
+    </tr>
+    <tr>
+      <td><code>[MOD] [SEV] WS CLIMB-OUT RWYnnn</code></td>
+      <td>Wind shear in the climb-out from a specific runway</td>
+    </tr>
+    <tr>
+      <td><code>MBST IN APCH</code></td>
+      <td>Microburst in the approach phase</td>
+    </tr>
+    <tr>
+      <td><code>MBST [APCH] RWYnnn</code></td>
+      <td>Microburst on the approach to a specific runway</td>
+    </tr>
+    <tr>
+      <td><code>MBST IN CLIMB-OUT</code></td>
+      <td>Microburst in the climb-out phase</td>
+    </tr>
+    <tr>
+      <td><code>MBST CLIMB-OUT RWYnnn</code></td>
+      <td>Microburst in the climb-out from a specific runway</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Low-level jet &mdash; when to issue a WS WRNG</h2>
+
+<p>A low-level jet (LLJ) over the aerodrome is one of the most common WS WRNG triggers in Israel, particularly during winter inversions and overnight under clear, calm conditions. The IMS criteria are explicit.</p>
+
+<div class="callout callout-key">
+  <div class="callout-label">IMS LLJ criteria for a WS WRNG</div>
+  <strong>Primary trigger.</strong> A low-level jet with peak wind &ge; 30 kt, with the jet axis below <strong>2000 ft AGL</strong>.<br/><br/>
+  <strong>Supporting indicators (issue when the synoptic situation supports):</strong>
+  <ul>
+    <li>Difference of &ge; 30 kt between the surface wind and the geostrophic wind.</li>
+    <li>Difference of &gt; 15 kt between the surface wind and the 500 m wind. Example: 5 kt at the surface, 20 kt at 500 m &mdash; sufficient to issue, given a matching synoptic pattern.</li>
+  </ul>
+  When surface wind is light, brief the tower on significant winds at 1000&ndash;2000 ft AGL <em>even if they do not yet reach 30 kt</em>.
+</div>
+
+<figure>
+  <svg viewBox="0 0 680 320" role="img" xmlns="http://www.w3.org/2000/svg">
+    <title>Cross-section of a low-level jet over a runway</title>
+    <desc>A vertical cross section showing the runway at ground level with a thin marker showing 5 knot surface wind blowing from the southeast, and a much stronger 30 knot wind blowing from a slightly different direction at 900 feet AGL. A dashed horizontal line marks the 2000 foot threshold above which the jet is no longer a WS WRNG trigger.</desc>
+
+    <!-- Ground / runway -->
+    <line x1="40" y1="280" x2="640" y2="280" stroke="#1A1917" stroke-width="2"/>
+    <rect x="200" y="276" width="280" height="6" fill="#534AB7"/>
+    <text x="340" y="305" font-family="sans-serif" font-size="12" fill="#1A1917" text-anchor="middle">Runway</text>
+
+    <!-- Altitude scale -->
+    <line x1="60" y1="40" x2="60" y2="280" stroke="#6B6A65" stroke-width="1.5"/>
+    <text x="50" y="285" font-family="sans-serif" font-size="11" fill="#6B6A65" text-anchor="end">0</text>
+    <text x="50" y="225" font-family="sans-serif" font-size="11" fill="#6B6A65" text-anchor="end">500 ft</text>
+    <text x="50" y="170" font-family="sans-serif" font-size="11" fill="#6B6A65" text-anchor="end">900 ft</text>
+    <text x="50" y="115" font-family="sans-serif" font-size="11" fill="#6B6A65" text-anchor="end">1500 ft</text>
+    <text x="50" y="60" font-family="sans-serif" font-size="11" fill="#6B6A65" text-anchor="end">2000 ft</text>
+
+    <!-- 2000 ft dashed limit -->
+    <line x1="60" y1="55" x2="640" y2="55" stroke="#993C1D" stroke-width="1.5" stroke-dasharray="6 4"/>
+    <text x="640" y="49" font-family="sans-serif" font-size="11" fill="#993C1D" text-anchor="end">WS WRNG ceiling: jet axis must be below this</text>
+
+    <!-- Surface wind arrow (5 kt, short, southeast) -->
+    <path d="M 250 270 L 290 268" stroke="#185FA5" stroke-width="2" fill="none" marker-end="url(#sfArrow)"/>
+    <text x="265" y="262" font-family="sans-serif" font-size="11" fill="#185FA5">5 kt @ sfc</text>
+
+    <!-- 900 ft jet (30 kt, long, slightly different direction) -->
+    <path d="M 150 170 L 410 168" stroke="#993C1D" stroke-width="3" fill="none" marker-end="url(#jtArrow)"/>
+    <text x="240" y="155" font-family="sans-serif" font-size="13" font-weight="600" fill="#993C1D">30 kt @ 900 ft &mdash; LLJ axis</text>
+
+    <!-- 500 m (~1640 ft) reference wind for the >15 kt rule -->
+    <path d="M 200 100 L 330 99" stroke="#BA7517" stroke-width="2" fill="none" marker-end="url(#midArrow)"/>
+    <text x="260" y="90" font-family="sans-serif" font-size="11" fill="#BA7517">500 m wind (cross-check &gt; 15 kt diff)</text>
+
+    <!-- Aircraft on approach -->
+    <text x="540" y="160" font-family="sans-serif" font-size="14" fill="#1A1917">&#9992;</text>
+    <text x="500" y="180" font-family="sans-serif" font-size="11" fill="#1A1917" font-style="italic">Aircraft on final</text>
+    <text x="500" y="194" font-family="sans-serif" font-size="11" fill="#1A1917" font-style="italic">descends through the jet</text>
+
+    <defs>
+      <marker id="sfArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#185FA5"/></marker>
+      <marker id="jtArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#993C1D"/></marker>
+      <marker id="midArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#BA7517"/></marker>
+    </defs>
+  </svg>
+  <figcaption>Figure 4.3 &mdash; a low-level jet over the aerodrome. Light surface wind beneath a strong jet at 900 ft is the textbook shear case &mdash; the aircraft loses headwind suddenly as it descends through the jet axis.</figcaption>
+</figure>
+
+<h2>Updates, amendments, and cancellation</h2>
+
+<p>An AD WRNG or WS WRNG that is in force must be updated if the forecaster judges that, for a stretch of 2 hours or more within the remaining validity, the weather will differ significantly from what the warning describes. The update can change intensity (up or down), add or remove hazardous elements, or shift the start or end times.</p>
+
+<p>If the phenomenon ends and is not expected to redevelop within the next 2 hours, the warning is cancelled. As with SIGMET, cancellation is itself a warning message, with the next sequential number and a new validity period running until the original end-time. The body contains <code>CNL AD WRNG &lt;n&gt; YYGGgg/YYGGgg</code> or <code>CNL WS WRNG &lt;n&gt; YYGGgg/YYGGgg</code> referring back to the original.</p>
+
+<div class="callout callout-key">
+  <div class="callout-label">Cancellation example</div>
+  <code>LLBG AD WRNG 2 VALID 110330/110500</code><br/>
+  <code>CNL AD WRNG 1 110130/110500=</code>
+</div>
+
+<h2>Coordinating AD WRNG with SIGMET and AIRMET</h2>
+
+<p>The same physical phenomenon often warrants multiple warning products because it affects both the FIR and the aerodrome. The IMS operational rules for that coordination &mdash; lifted from the bilingual "important to remember" slide that closes both source decks &mdash; are below.</p>
+
+<div class="callout callout-warning">
+  <div class="callout-label">IMS coordination rules (deck 13 slide 25 / deck 14 slide 12)</div>
+  <ol>
+    <li>When an AD WRNG is issued, you normally also issue a SIGMET or AIRMET. AD warnings go out whenever significant weather is expected at the aerodrome. In parallel, issue an AIRMET or SIGMET according to severity and area extent.</li>
+    <li>When a WS WRNG is issued for the aerodrome because of a low-level jet, you do <strong>not</strong> need to issue an AIRMET or SIGMET. The LLJ is an aerodrome-scale phenomenon.</li>
+    <li>When the hazardous weather is expected to affect the FIR airspace but not necessarily the aerodrome, issue a SIGMET or AIRMET (according to severity), but you may not need an AD WRNG. Examples: fog over the coastal plain that may not reach LLBG/SDV; convective cloud developed over the mountains.</li>
+    <li>SIGMET and AIRMET are distributed internationally via AFTN and broadcast in VOLMET. AD WRNG distribution is local only.</li>
+  </ol>
+</div>
+
+<p>The fourth rule has a quiet operational consequence: an aerodrome-only warning never reaches a flight planning office abroad. If the same hazard matters to a flight on en-route phase, the SIGMET or AIRMET is the only product that will be seen by an international dispatcher.</p>
+
+<h3>Coordination matrix in operations</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Scenario</th>
+      <th>Products to issue</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SEV TURB across the FIR, no specific aerodrome impact</td>
+      <td>SIGMET only</td>
+    </tr>
+    <tr>
+      <td>OCNL TS in the northern sub-area of the FIR, not over LLBG</td>
+      <td>AIRMET only</td>
+    </tr>
+    <tr>
+      <td>CB approaching to within 16 km of LLBG runway centre, FRQ over the FIR</td>
+      <td>AD WRNG (TS) + SIGMET (FRQ TS)</td>
+    </tr>
+    <tr>
+      <td>Visibility &lt; 5000 m at LLBG due to fog; FIR-wide vis &gt; 5 km elsewhere</td>
+      <td>AD WRNG only (no AIRMET threshold met across FIR)</td>
+    </tr>
+    <tr>
+      <td>Visibility &lt; 5000 m at LLBG and &lt; 5 km across the coastal sub-area of the FIR</td>
+      <td>AD WRNG + AIRMET (<code>VIS &lt;5KM</code>)</td>
+    </tr>
+    <tr>
+      <td>LLJ over LLBG at 900 ft, 30 kt; surface 5 kt</td>
+      <td>WS WRNG only (no AIRMET or SIGMET needed)</td>
+    </tr>
+    <tr>
+      <td>Sustained surface wind 32 kt sub-area, plus gusts &gt; 30 kt at LLBG</td>
+      <td>AD WRNG (<code>SFC WSPD</code>) + AIRMET (<code>SFC WSPD &ge;30KT</code>)</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="callout callout-danger">
+  <div class="callout-label">The most common mistake</div>
+  Issuing an AD WRNG without the matching SIGMET or AIRMET when the phenomenon is also affecting the FIR. The aerodrome warning is local-only distribution &mdash; airliners on approach from abroad never see it. If the hazard is FIR-wide, the SIGMET/AIRMET is what reaches them.
+</div>
+
+<div class="lesson-summary">
+  <h3>Key Takeaways</h3>
+  <ul>
+    <li>AD WRNG is the AFO's product for hazards at the aerodrome; WS WRNG is its sibling for wind shear on approach or climb-out of a specific runway. Both have 4-hour validity.</li>
+    <li>IMS thresholds: CB within 16 km of runway centre, hail &ge; 2 cm, vis &lt; 5000 m, ceiling BKN/OVC &le; 1500 ft, surface wind mean &gt; 20 kt or gusts &gt; 30 kt, frost &lt; 0 &deg;C at 2 m.</li>
+    <li>WS WRNG basis indicator is one of <code>FCST</code>, <code>OBS</code>, or <code>REP AT</code>. The basis appears explicitly in the message and informs how downstream consumers act on it.</li>
+    <li>Low-level jet WS WRNG: peak &ge; 30 kt with the axis below 2000 ft AGL. Supporting indicators are &gt; 30 kt sfc-vs-geostrophic difference, or &gt; 15 kt sfc-vs-500-m difference with matching synoptic.</li>
+    <li>Coordination rule of thumb: AD WRNG almost always pairs with a SIGMET or AIRMET unless the hazard is purely aerodrome-scale (LLJ-only WS WRNG, fog confined to the aerodrome). FIR-wide hazards always pair with the en-route product.</li>
+    <li>AD WRNG distribution is local only; SIGMET and AIRMET go out internationally via AFTN and VOLMET. If a foreign dispatcher needs to know, the SIGMET/AIRMET is the only product that will reach them.</li>
+  </ul>
+</div>
+</section>
+</div>

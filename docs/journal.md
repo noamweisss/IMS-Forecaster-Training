@@ -24,6 +24,55 @@ later reversed, add a new entry rather than editing the old one.
 ---
 
 <!-- New entries appended below -->
+## 2026-05-20 — Module 3 title change &amp; 4-lesson split
+
+**Context.** Module 3 was scheduled in `course.json` as
+"Terminal Area Hazards &amp; Visibility", with sources 13&ndash;14
+(Area Warnings &amp; Aerodrome Warnings). On reading the extracted slide
+content, both decks turned out to be about issuing *warning products*
+(SIGMET, AIRMET, AD WRNG, WS WRNG) &mdash; not about hazards as
+phenomena. Module 2 already covered the hazards themselves (turbulence,
+icing, fog, etc.) at the phenomenological level.
+
+**Decision.** Renamed the module to
+"Aviation Warnings: SIGMET, AIRMET &amp; Aerodrome" in `course.json`
+and the overview, and split the content into four lessons:
+
+1. The aviation warning framework &amp; SIGMET phenomena (deck 13 slides
+   1&ndash;5, 10, 21) &mdash; sets up the MWO/AFO/FIR hierarchy and the
+   SIGMET severity gate.
+2. SIGMET message structure, coordinates &amp; cancellation (deck 13
+   slides 6&ndash;9, 13&ndash;15, 24) &mdash; the WMO header, first-line
+   syntax, polygon coordinates, and CNL messages.
+3. AIRMET &mdash; low-level warnings (deck 13 slides 16&ndash;23) &mdash;
+   the eight AIRMET phenomena, the ISOL/OCNL/FRQ coverage qualifiers,
+   and the AIRMET-vs-SIGMET decision.
+4. Aerodrome (AD) and wind-shear (WS) warnings (entire deck 14, plus
+   deck 13 slide 25 coordination notes) &mdash; the IMS-specific
+   thresholds, AD/WS message syntax, low-level-jet criteria, and the
+   coordination matrix between AD WRNG and SIGMET/AIRMET.
+
+**Why.** The original course-config title would have mis-set student
+expectations and risked re-covering ground from Module 2. The decks
+are operationally cohesive around warning products, which is also
+what the IMS certification examines on this material. The 4-lesson
+split was preferred over the natural 3-lesson SIGMET/AIRMET/AD split
+because the SIGMET message-syntax content (header decoding, lat/lon
+polygons, cancellation rules) is procedurally dense enough to deserve
+its own lesson &mdash; otherwise it dominates a combined "SIGMET"
+lesson and crowds out the phenomena/threshold material.
+
+**Hebrew slides.** Decks 13 and 14 each contain Hebrew slides covering
+IMS-specific operational rules (CB within 16 km of the runway centre,
+visibility &lt; 5000 m, ceiling &le; 1500 ft, the AD/SIGMET
+coordination policy). These were translated and integrated into the
+lesson prose, with the IMS-specific thresholds noted as such so they
+remain distinguishable from generic Annex 3 content. Skipping them was
+considered and rejected &mdash; these are exactly what the IMS
+certification tests.
+
+---
+
 ## 2026-05-20 — Git LFS 502 inside Claude Code remote-execution sandboxes
 
 **Context.** Started generating Module 3 in a Claude Code on-the-web

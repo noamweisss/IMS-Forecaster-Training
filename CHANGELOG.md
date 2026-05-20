@@ -11,6 +11,18 @@ future course-to-mbz Claude skill) should read both.
 ## [Unreleased]
 
 ### Added
+- **Module 3 generated:** "Aviation Warnings: SIGMET, AIRMET &
+  Aerodrome" — 4 lessons (24-question end-of-module quiz) covering the
+  three statutory IMS warning products. Title changed from the
+  original "Terminal Area Hazards & Visibility" in `course.json`
+  because the source decks (13: Area Warnings, 14: Aerodrome Warnings)
+  are about warning products, not hazards-as-phenomena.
+- **Docs:** Git-LFS workaround for Claude Code on-the-web sandboxes
+  (set `lfs.url` to GitHub directly to bypass the local proxy's 502 on
+  the LFS batch API). Documented in `AGENTS.md` Setup,
+  `docs/runbook.md` Prerequisites + Troubleshooting, and
+  `docs/journal.md` with full root-cause analysis.
+
 - **Skill:** New `.claude/skills/generate-module/` (mirrored to
   `.agents/skills/generate-module/`) — packages the
   three-phase course-to-Moodle pipeline as a reusable Claude skill.

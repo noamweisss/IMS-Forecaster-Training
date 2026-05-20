@@ -1,0 +1,902 @@
+<?xml version='1.0' encoding='utf-8'?>
+<quiz><question type="multichoice">
+    <name>
+      <text>L1-Q01 — MWO vs AFO responsibility</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        &lt;p&gt;A line of thunderstorms is forecast to develop along the eastern boundary of the FIR over the next three hours. Cells are expected to be embedded within a stratiform cloud deck. Ben Gurion lies near the western boundary of the FIR and is not expected to be directly affected. Which office issues which products?&lt;/p&gt;
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>
+        &lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; The phenomenon is en-route within the FIR &amp;mdash; that is the MWO's responsibility, and the EMBD qualifier on TS meets the SIGMET threshold. Because LLBG is not affected at the aerodrome, no AD WRNG is required. AFOs do not issue SIGMETs; MWOs do not issue AD WRNGs. Both products at once is the right answer only when the phenomenon affects both the FIR and the aerodrome &amp;mdash; not the case here.&lt;/p&gt;
+      </text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;The MWO issues a SIGMET; no AD WRNG is required because the aerodrome is not affected.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;The AFO issues a SIGMET because Ben Gurion is the reference aerodrome.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Both the MWO and the AFO must issue an AD WRNG, since the FIR and the aerodrome share the same area of responsibility.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;No product is required &amp;mdash; embedded thunderstorms over an empty part of the FIR are not a SIGMET phenomenon.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L1-Q02 — SIGMET threshold for thunderstorms</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        &lt;p&gt;A nowcast and the latest radar show two isolated thunderstorm cells over the central highlands, well separated and clearly visible from the satellite. Both cells are vertically developed and producing lightning, but neither is embedded in cloud, obscured by haze, frequent, or part of a line. Which warning, if any, is appropriate?&lt;/p&gt;
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>
+        &lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; Thunderstorms require a qualifier &amp;mdash; OBSC, EMBD, FRQ, or SQL &amp;mdash; to trigger a SIGMET. Isolated cells that pilots can see and route around do not meet that threshold. ISOL/OCNL TS is explicitly an AIRMET phenomenon, not a SIGMET phenomenon. Issuing a SIGMET here would over-issue and dilute the credibility of future SIGMETs.&lt;/p&gt;
+      </text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;An AIRMET, because the cells are ISOL TS &amp;mdash; below the SIGMET qualifier threshold.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;A SIGMET, because any thunderstorm with lightning meets the SIGMET threshold.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Nothing &amp;mdash; isolated cells do not warrant any warning product.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;A WV SIGMET, because the cells are convective and vertically developed.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L1-Q03 — Severity threshold for icing</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        &lt;p&gt;A pilot report and the model's icing-potential field both agree that moderate clear icing is occurring in stratus between 4,000 and 7,000 ft over the northern FIR. Freezing rain is not present. What warning is appropriate?&lt;/p&gt;
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>
+        &lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; The SIGMET icing threshold is SEV (with or without FZRA). Moderate icing is explicitly an AIRMET phenomenon (MOD ICE), regardless of the synoptic situation. The fact that freezing rain is absent makes no difference here &amp;mdash; FZRA is an aggravating qualifier on a SEV icing case, not a stand-alone trigger. A WV SIGMET is for volcanic ash only.&lt;/p&gt;
+      </text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;An AIRMET for MOD ICE &amp;mdash; moderate icing is below the SIGMET severity threshold.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;A SIGMET for SEV ICE, because clear icing on its own is always severe.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;A SIGMET, because icing in stratus over an FIR is by definition en-route and therefore SIGMET-worthy.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;A WV SIGMET, because freezing rain is absent.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L1-Q04 — Identifying SIGMET subtype from the header</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        &lt;p&gt;An incoming bulletin begins with the WMO header &lt;code&gt;WVXY31 LLBD 121400&lt;/code&gt;. Without reading any further, what subtype of message can you expect?&lt;/p&gt;
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>
+        &lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; The &lt;code&gt;T1T2&lt;/code&gt; data-type designator is the first two letters: &lt;code&gt;WV&lt;/code&gt; means a SIGMET for volcanic ash. The remaining letters are the country/territory designator (&lt;code&gt;XY&lt;/code&gt;), the bulletin number (&lt;code&gt;31&lt;/code&gt;), and the location indicator and date/time. &lt;code&gt;WS&lt;/code&gt; would be a standard SIGMET, &lt;code&gt;WA&lt;/code&gt; an AIRMET, and &lt;code&gt;WC&lt;/code&gt; a tropical-cyclone SIGMET.&lt;/p&gt;
+      </text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;A SIGMET for volcanic ash (WV).&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;A standard SIGMET (WS).&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;An AIRMET (WA).&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;A SIGMET for tropical cyclone (WC).&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L1-Q05 — Mountain wave severity threshold</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        &lt;p&gt;Forecast output suggests mountain-wave activity east of the central ridge. The model's vertical-velocity field shows downdrafts peaking near 2.2 m/s, and no accompanying severe-turbulence signature is forecast. Which warning is appropriate?&lt;/p&gt;
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>
+        &lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; A mountain wave is considered SEV only when accompanied by a downdraft of 3.0 m/s or more, or severe turbulence. Downdrafts of 1.75&amp;ndash;3.0 m/s (or accompanying moderate turbulence) fall into MOD MTW, which is an AIRMET phenomenon. A 2.2 m/s downdraft is comfortably inside the MOD band, so AIRMET is correct &amp;mdash; no SIGMET. "No warning at all" misses the operational risk to general aviation below FL100.&lt;/p&gt;
+      </text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;An AIRMET for MOD MTW &amp;mdash; 2.2 m/s is below the 3.0 m/s SEV threshold.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;A SIGMET for SEV MTW &amp;mdash; any forecast mountain wave with a measurable downdraft warrants SEV.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;No warning is required because the downdraft is below 3.0 m/s.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;A SIGMET, because forecast mountain waves over the central ridge are always SIGMET-worthy in the IMS.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L1-Q06 — Volcanic ash detection</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        &lt;p&gt;A VAAC advisory reports a thin volcanic ash layer drifting through the FIR at FL250. The ash concentration is described as "low" with patchy coverage. Is a SIGMET required?&lt;/p&gt;
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>
+        &lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; Volcanic ash has no severity threshold under Annex 3 &amp;mdash; &lt;em&gt;any&lt;/em&gt; detection within the FIR triggers a WV SIGMET. The reasoning is operational: even thin or "low concentration" ash can damage turbine engines and aircraft control surfaces, so the MWO does not get to decide whether the ash is "bad enough". Concentration and altitude bands belong in the message body, not at the issuance gate.&lt;/p&gt;
+      </text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Yes &amp;mdash; a WV SIGMET is required for any detection of volcanic ash in the FIR, regardless of concentration.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;No &amp;mdash; low-concentration ash is below the SIGMET threshold.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Yes, but only as an AIRMET &amp;mdash; thin ash at FL250 is "low-level" in the AIRMET sense.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;No &amp;mdash; ash advisories are the VAAC's responsibility; the MWO does not issue ash SIGMETs.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+<question type="multichoice">
+    <name>
+      <text>L2-Q01 — Decoding T1T2 in an arriving bulletin</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        &lt;p&gt;An AFTN bulletin arrives with the WMO heading &lt;code&gt;WAXY12 LLBD 080900&lt;/code&gt;. Which two facts about this message can you state with certainty before parsing any further?&lt;/p&gt;
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>
+        &lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; The first two letters of the WMO header are the data-type designator &lt;code&gt;T1T2&lt;/code&gt;. &lt;code&gt;WA&lt;/code&gt; identifies the message as an AIRMET. The &lt;code&gt;CCCC&lt;/code&gt; field (positions 8&amp;ndash;11) is the disseminating communication centre &amp;mdash; here &lt;code&gt;LLBD&lt;/code&gt; &amp;mdash; not the FIR. The FIR identifier appears on the first line of the message body, not in the WMO header. The sequential number &lt;code&gt;12&lt;/code&gt; in &lt;code&gt;ii&lt;/code&gt; is a bulletin number, not the SIGMET/AIRMET sequence number.&lt;/p&gt;
+      </text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;It is an AIRMET (WA), and the disseminating communication centre is LLBD.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;It is a standard SIGMET (WS), and the FIR identifier is LLBD.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;It is a SIGMET for volcanic ash (WV), bulletin number 12.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;It is a tropical cyclone advisory (WC), valid on day 8 at 09:00 UTC.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L2-Q02 — Validity period limit</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        &lt;p&gt;It is 09:00 UTC on day 14. The model strongly suggests that severe icing will affect a layer over the central FIR from approximately 10:00 UTC through 19:00 UTC the same day. Which is the correct issuance strategy?&lt;/p&gt;
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>
+        &lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; Two timing constraints apply. First, the maximum validity of a WS SIGMET is 4 hours. A single SIGMET cannot span 10:00&amp;ndash;19:00 (that is 9 hours). Second, issuance must not precede the expected start of the phenomenon by more than 4 hours; 09:00 UTC is within 4 hours of the 10:00 expected start, so the first SIGMET can be issued now. The right operational approach is to issue the first SIGMET with a 4-hour window starting at 10:00, then re-issue with the next sequential number when that window ends and the phenomenon is still active &amp;mdash; not "wait until later" and not "extend the validity".&lt;/p&gt;
+      </text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Issue SIGMET 1 valid 141000/141400 now; re-issue with the next sequential number as each 4-hour window expires while the phenomenon persists.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Issue a single SIGMET valid 141000/141900 now &amp;mdash; one message covering the whole expected episode.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Wait until 06:00 UTC the next day before issuing &amp;mdash; the lead-time rule forbids issuing this far ahead.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Issue two SIGMETs at the same time: one for 1000&amp;ndash;1400 and one for 1400&amp;ndash;1800, each with its own sequential number.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L2-Q03 — Coordinate format validity</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        &lt;p&gt;Which of the following polygons is correctly formatted according to Annex 3 for use in a SIGMET meteorological part?&lt;/p&gt;
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>
+        &lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; Annex 3 requires lat/lon in whole degrees or degrees-and-minutes (no decimal degrees), each point starting with the hemisphere letter (N/S/E/W), and vertices separated by space-hyphen-space. The correct option uses &lt;code&gt;N3623 W04515&lt;/code&gt;-style points (degrees+minutes, no separator) with the prescribed separator. Decimal degrees (&lt;code&gt;N36.4&lt;/code&gt;) are not accepted. Commas as separators are not accepted. Missing the hemisphere letter at the start of a coordinate is also not accepted &amp;mdash; the parser keys off the leading N/S or E/W.&lt;/p&gt;
+      </text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;&lt;code&gt;N3623 W04515 - N3700 W04400 - N3645 W04300 - N3530 W04400&lt;/code&gt;&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;&lt;code&gt;N36.4 E034.7, N37.0 E035.0, N36.7 E035.3, N35.5 E034.5&lt;/code&gt;&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;&lt;code&gt;3623N 04515W - 3700N 04400W - 3645N 04300W - 3530N 04400W&lt;/code&gt;&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;&lt;code&gt;N3623 W04515 / N3700 W04400 / N3645 W04300 / N3530 W04400 / N3623 W04515&lt;/code&gt;&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L2-Q04 — Constructing a cancellation message</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        &lt;p&gt;SIGMET number 4 was issued at 06:00 UTC on day 22 with validity &lt;code&gt;220600/221000&lt;/code&gt; for EMBD TS over the LLBG FIR. By 08:15 UTC the convection has dissipated and is no longer forecast to redevelop within the original validity window. Which is the correct cancellation message body (after the WMO header)?&lt;/p&gt;
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>
+        &lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; A SIGMET cancellation is itself a SIGMET, with the &lt;em&gt;next&lt;/em&gt; sequential number (5), a &lt;em&gt;new&lt;/em&gt; validity period running from the issuance time to the end of the original window (220815/221000), and a second line that references the cancelled SIGMET by both its sequential number AND its original validity (&lt;code&gt;CNL SIGMET 4 220600/221000&lt;/code&gt;). Re-using the original validity (220600/221000) on the cancellation's first line would imply the cancellation is retroactive to 06:00. Using the same sequential number (4) would not be a valid new bulletin. Omitting the original validity from the CNL line leaves the back-reference ambiguous.&lt;/p&gt;
+      </text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;&lt;code&gt;LLBG SIGMET 5 VALID 220815/221000 LLBD- LLBG TEL-AVIV FIR CNL SIGMET 4 220600/221000=&lt;/code&gt;&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;&lt;code&gt;LLBG SIGMET 4 VALID 220600/221000 LLBD- LLBG TEL-AVIV FIR CNL SIGMET 4=&lt;/code&gt;&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;&lt;code&gt;LLBG SIGMET 5 VALID 220600/221000 LLBD- LLBG TEL-AVIV FIR CNL SIGMET 4=&lt;/code&gt;&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;&lt;code&gt;LLBG SIGMET 5 VALID 220815/221000 LLBD- LLBG TEL-AVIV FIR CNL ALL SIGMETS=&lt;/code&gt;&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L2-Q05 — One phenomenon per message</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        &lt;p&gt;The afternoon analysis shows two distinct SIGMET-worthy phenomena over the same FIR: severe icing in stratiform cloud at 4,000&amp;ndash;8,000 ft, and embedded thunderstorms expected to develop over the eastern boundary. Both are within the next 4 hours. What is the correct issuance pattern?&lt;/p&gt;
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>
+        &lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; Annex 3 prescribes one phenomenon per SIGMET. Two SIGMET-worthy phenomena means two SIGMETs &amp;mdash; each with its own sequential number, its own polygon, and its own forecast movement. Combining them into a single message creates an ambiguous weather object that downstream parsers cannot interpret. Choosing only the "more severe" of the two leaves the other un-warned. Issuing a single SIGMET for "general adverse weather" is not a defined product.&lt;/p&gt;
+      </text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Two SIGMETs &amp;mdash; one for SEV ICE and one for EMBD TS, each with its own sequential number.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;One SIGMET listing both SEV ICE and EMBD TS in the meteorological part.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;One SIGMET for the more severe phenomenon; the other is captured in the routine forecast.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;A single combined SIGMET with the literal phenomenon code &lt;code&gt;MULT&lt;/code&gt; and a free-text description of both.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L2-Q06 — Cancellation vs re-issuance</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        &lt;p&gt;SIGMET 7 for severe turbulence over the LLBG FIR is valid 1200/1600. At 15:45 UTC the turbulence is still being reported and is forecast to persist for another 2&amp;ndash;3 hours. What action should the MWO take just before the SIGMET expires?&lt;/p&gt;
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>
+        &lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; Cancellation is reserved for the case where the phenomenon has ended (or is no longer expected) within the original validity. If the phenomenon outlasts the SIGMET's validity, the correct action is to issue a new SIGMET &amp;mdash; same phenomenon, next sequential number (8), new 4-hour validity window starting at 1600. Issuing a CNL while the phenomenon is still active would mislead consumers into thinking the hazard has passed. Extending the original SIGMET past its validity violates the 4-hour ceiling. Doing nothing leaves the hazard un-warned after 1600.&lt;/p&gt;
+      </text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Issue a new SIGMET 8 with a fresh 4-hour validity (e.g., 1600/2000); do not cancel SIGMET 7.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Issue a CNL SIGMET 7 message so consumers know the existing SIGMET is "rolling over".&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Amend SIGMET 7's validity in place to &lt;code&gt;1200/1900&lt;/code&gt;.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Take no action &amp;mdash; the validity will expire at 1600 and the hazard is then communicated through pilot reports.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+<question type="multichoice">
+    <name>
+      <text>L3-Q01 — Distinguishing OCNL from FRQ</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        &lt;p&gt;Radar shows a developing line of thunderstorm cells over the northern sub-area of the FIR. Visual inspection and reflectivity coverage suggest the cells occupy roughly 60% of the sub-area, with discernible gaps between adjacent cells. Intensity is moderate. What message should the MWO issue?&lt;/p&gt;
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>
+        &lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; Coverage between 50% and 75% with discernible separation between cells is OCNL TS &amp;mdash; an AIRMET phenomenon. FRQ requires coverage greater than 75% with little or no separation. The cells do not need to be embedded, obscured, or in a squall line to fall under AIRMET, so a SIGMET is not warranted. "No message" misses the operational hazard to low-level traffic crossing the area.&lt;/p&gt;
+      </text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;An AIRMET for OCNL TS over the affected sub-area.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;A SIGMET for FRQ TS &amp;mdash; once coverage exceeds 50%, FRQ applies.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;A SIGMET for EMBD TS, on the basis of the line structure.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;No message &amp;mdash; moderate-intensity cells with gaps do not trigger any product.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L3-Q02 — AIRMET-only phenomena</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        &lt;p&gt;Which of the following phenomena triggers an AIRMET but has &lt;em&gt;no&lt;/em&gt; SIGMET equivalent at any intensity?&lt;/p&gt;
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>
+        &lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; Cloud ceilings below 1000 ft, sustained surface winds &amp;ge; 30 kt, visibility below 5 km, and extensive mountain obscuration are AIRMET-only phenomena &amp;mdash; they describe the low-level environment and have no SIGMET counterpart. Severe icing and embedded thunderstorms are SIGMET phenomena (with AIRMET counterparts at lower intensity, MOD ICE and ISOL/OCNL TS). Volcanic ash is exclusively a SIGMET (WV) phenomenon.&lt;/p&gt;
+      </text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Cloud ceilings below 1000 ft over an extensive area.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Severe icing with freezing rain.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Embedded thunderstorms over the FIR.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Volcanic ash drifting through the FIR.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L3-Q03 — Borderline icing scenario</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        &lt;p&gt;The model's icing-potential field is moderate-to-strong over a stratus layer between 5,000 and 8,500 ft. A pilot report at 7,000 ft describes the icing as "moderate" with no reference to freezing rain. The synoptic situation supports persistent moderate icing for the next three hours. Which message should the MWO issue?&lt;/p&gt;
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>
+        &lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; Both model output and the PIREP describe the icing as moderate, and the cloud is stratiform (not convective), so MOD ICE is the correct AIRMET phenomenon. SEV ICE would require a severe PIREP or unambiguous model indication of severe icing &amp;mdash; not present here. The presence or absence of FZRA is a qualifier on a severe case, not a standalone trigger. Doing nothing leaves a known low-level hazard un-warned.&lt;/p&gt;
+      </text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;An AIRMET for MOD ICE.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;A SIGMET for SEV ICE, because stratus icing should always be promoted to severe in winter.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;A SIGMET for SEV ICE FZRA, because freezing rain is a winter default assumption.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;No message &amp;mdash; pilot reports of moderate icing are not actionable on their own.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L3-Q04 — Surface wind threshold</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        &lt;p&gt;A strong synoptic pressure gradient is forecast to drive sustained 10-minute mean surface winds of 32 kt across a broad sub-area of the FIR for the next 4 hours. Gusts will be higher. Which product covers the en-route hazard to general aviation across the affected area?&lt;/p&gt;
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>
+        &lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; Sustained surface winds &amp;ge; 30 kt over an extensive area is an AIRMET phenomenon (&lt;code&gt;SFC WSPD &amp;ge;30KT&lt;/code&gt;) and has no SIGMET equivalent. The aerodrome warning is a separate product, scoped to the airport itself, and is covered in Lesson 4 &amp;mdash; an AD WRNG does not warn the en-route GA pilot crossing the FIR. A WS WRNG addresses runway-specific wind shear, not large-scale surface winds.&lt;/p&gt;
+      </text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;An AIRMET for &lt;code&gt;SFC WSPD &amp;ge;30KT&lt;/code&gt; over the affected sub-area.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;A SIGMET for severe surface winds, since 32 kt is well above 30 kt.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;An AD WRNG, because surface winds primarily affect aerodromes.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;A WS WRNG, because the winds are likely to cause runway-shear conditions.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L3-Q05 — AIRMET vs SIGMET in a borderline case</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        &lt;p&gt;A mountain-wave forecast shows downdrafts peaking at exactly 3.0 m/s along the lee slopes, with accompanying severe turbulence forecast in patches. Which warning is appropriate?&lt;/p&gt;
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>
+        &lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; The SEV MTW threshold is downdraft &amp;ge; 3.0 m/s &lt;em&gt;or&lt;/em&gt; accompanying severe turbulence. Both conditions are present here, so SIGMET is the correct call &amp;mdash; the boundary is inclusive, not exclusive. Issuing an AIRMET for MOD MTW would under-warn the hazard. Issuing both an AIRMET and a SIGMET for the same phenomenon over the same area violates the one-phenomenon-one-message principle.&lt;/p&gt;
+      </text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;A SIGMET for SEV MTW &amp;mdash; the 3.0 m/s threshold is inclusive and the accompanying SEV turbulence also qualifies on its own.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;An AIRMET for MOD MTW &amp;mdash; 3.0 m/s is the upper bound of the MOD band.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Both an AIRMET (for the wave) and a SIGMET (for the turbulence) over the same area.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;No warning &amp;mdash; the model is at the boundary, so the case should be left to the routine SIGWX chart.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L3-Q06 — "Not already in the forecast"</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        &lt;p&gt;An MWO trainee asks why the IMS issues an AIRMET for visibility &amp;lt;5 km in haze even though the TAFs for the affected aerodromes already mention reduced visibility. What is the correct explanation?&lt;/p&gt;
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>
+        &lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; The "not already in the forecast" exemption refers specifically to a low-level area forecast covering the same FIR or sub-area at AIRMET intensity &amp;mdash; typically a GAMET. TAFs are aerodrome forecasts, not low-level area forecasts; they do not exempt the MWO from issuing an AIRMET for an en-route visibility hazard. Israel does not produce a GAMET, so the exemption almost never applies and the AIRMET is issued whenever the phenomenon and intensity criteria are met. The exemption is not a "discretionary" or "tradition" clause &amp;mdash; it is a specific carve-out tied to the existence of a covering area forecast.&lt;/p&gt;
+      </text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;The exemption applies only when a low-level area forecast (e.g., GAMET) covers the FIR at AIRMET intensity; TAFs are aerodrome forecasts and do not satisfy the exemption.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;The exemption is purely discretionary &amp;mdash; the MWO can choose to issue the AIRMET or rely on the TAFs.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;The exemption never applies to visibility, only to ceiling and surface wind AIRMETs.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;The exemption is an IMS-only tradition; in other countries the TAFs would be sufficient.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+<question type="multichoice">
+    <name>
+      <text>L4-Q01 — Thunderstorm AD WRNG distance threshold</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        &lt;p&gt;A severe thunderstorm cell is observed on radar 22 km south-east of the LLBG runway pattern centre, moving slowly west. The cell is producing 4 cm hail. The cell is expected to come no closer than 18 km to the runway centre over the next 2 hours. Which AD WRNG action is correct?&lt;/p&gt;
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>
+        &lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; The IMS AD WRNG threshold for TS/CB is "CB within 16 km of the runway-pattern centre". A cell that is forecast to come no closer than 18 km does not meet that threshold, so no AD WRNG for TS is required &amp;mdash; even though the cell is severe and producing hail. The hail-size threshold (&amp;ge; 2 cm) is a property of CB cells &lt;em&gt;at the aerodrome&lt;/em&gt;; it does not by itself extend the 16 km TS distance criterion. Issuing an AD WRNG anyway would over-warn and waste credibility; the en-route hazard is captured separately by SIGMET/AIRMET.&lt;/p&gt;
+      </text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;No AD WRNG for TS &amp;mdash; the cell stays outside the 16 km IMS threshold. Consider SIGMET/AIRMET for the en-route hazard.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Issue an AD WRNG immediately because 4 cm hail is well above the 2 cm severe-hail threshold.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Issue an AD WRNG for "approaching CB" because the cell's distance is decreasing.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Issue an AD WRNG with a 24 km distance threshold, the larger IMS courtesy radius.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L4-Q02 — Wind threshold: mean vs gust</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        &lt;p&gt;At LLBG the 10-minute mean surface wind is 17 kt, but the highest 3-second gust within the latest 10 minutes is 33 kt. Conditions are forecast to persist for the next 4 hours. Which is correct?&lt;/p&gt;
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>
+        &lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; The IMS wind criterion has two independent triggers joined by "and/or": 10-minute mean &amp;gt; 20 kt OR gusts &amp;gt; 30 kt. The gust (33 kt) is above its threshold, so AD WRNG issuance is required regardless of the mean. The 17 kt mean is below 20 kt and would not have triggered on its own. Waiting for the mean to also exceed 20 kt would mean withholding the warning during the very conditions it exists to flag.&lt;/p&gt;
+      </text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Issue an AD WRNG &amp;mdash; the gust threshold (&amp;gt; 30 kt) is met regardless of the mean.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Do not issue &amp;mdash; the 10-minute mean must exceed 20 kt for the wind criterion to be met.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Issue a WS WRNG instead, because gusts above 30 kt are wind shear by definition.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Issue only an AIRMET, because surface winds are an en-route phenomenon.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L4-Q03 — WS WRNG basis indicator</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        &lt;p&gt;A flight crew on departure from RWY26 at LLBG calls TWR at 0512Z to report moderate wind shear at 700 ft on climb-out. The forecaster confirms a synoptic situation that supports continued shear. Which is the correct basis indicator in the resulting WS WRNG, and what is the meaning?&lt;/p&gt;
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>
+        &lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; The WS WRNG vocabulary distinguishes &lt;code&gt;FCST&lt;/code&gt; (forecaster's judgement), &lt;code&gt;OBS&lt;/code&gt; (clear identification in MET data such as AMDAR, sonde, profiler), and &lt;code&gt;REP AT&lt;/code&gt; (pilot report, followed by the time). The crew's call is a pilot report, so the warning should be issued with &lt;code&gt;REP AT 0512Z&lt;/code&gt;. &lt;code&gt;FCST&lt;/code&gt; would be appropriate if there was no pilot observation. &lt;code&gt;OBS&lt;/code&gt; would be appropriate if the trigger were instrumented data (e.g., AMDAR), not a crew voice report. Combining FCST and OBS is not a defined option.&lt;/p&gt;
+      </text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;&lt;code&gt;REP AT 0512Z&lt;/code&gt; &amp;mdash; the warning is based on a pilot report.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;&lt;code&gt;FCST&lt;/code&gt; &amp;mdash; the forecaster's judgement that conditions support continued shear is what triggers the warning.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;&lt;code&gt;OBS&lt;/code&gt; &amp;mdash; the pilot's call is a meteorological observation.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Combined &lt;code&gt;FCST OBS&lt;/code&gt; &amp;mdash; both forecaster judgement and an observation apply.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L4-Q04 — Low-level jet criterion</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        &lt;p&gt;An overnight sonde at LLBG shows a surface wind of 4 kt and a jet of 22 kt at 1100 ft AGL. The synoptic situation supports a stable nocturnal inversion. Which is the correct IMS action?&lt;/p&gt;
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>
+        &lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; The primary IMS WS WRNG LLJ trigger is peak &amp;ge; 30 kt with axis below 2000 ft. 22 kt does not meet the primary trigger. However, the difference between surface (4 kt) and 500 m (&amp;approx; 1640 ft &amp;mdash; close to the 1100 ft jet level) wind is 18 kt, which exceeds the 15 kt supporting indicator. With a matching synoptic, the IMS guidance says this &lt;em&gt;can&lt;/em&gt; be treated as sufficient to issue a WS WRNG for the LLJ. Doing nothing under-warns; issuing an AIRMET miscategorises an aerodrome-scale phenomenon as en-route; issuing an AD WRNG for surface wind misses the shear nature of the hazard.&lt;/p&gt;
+      </text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Issue a WS WRNG &amp;mdash; the &amp;gt; 15 kt surface-to-500 m wind difference with supporting synoptic is sufficient under IMS guidance.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Do not issue &amp;mdash; the jet peak is below the 30 kt primary threshold.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Issue an AIRMET for MOD TURB &amp;mdash; the LLJ is an en-route phenomenon.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Issue an AD WRNG for surface wind, even though the surface speed is only 4 kt.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L4-Q05 — Coordination with SIGMET / AIRMET</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        &lt;p&gt;Convective cells over the central highlands are producing OCNL TS across that sub-area of the FIR, and one cell is forecast to track to within 12 km of the LLBG runway centre over the next 90 minutes. Which products should the IMS issue?&lt;/p&gt;
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>
+        &lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; Two distinct hazards are in play. OCNL TS across the sub-area is an AIRMET phenomenon (50&amp;ndash;75% coverage falls into OCNL, which is below the SIGMET FRQ threshold). The cell tracking to within 12 km of the runway centre meets the IMS AD WRNG threshold (&amp;lt; 16 km). Both products are required: AD WRNG so the AFO communicates to airfield ops, AIRMET so en-route GA crossing the area receives the warning via VOLMET/AFTN. Issuing only the AD WRNG would leave foreign and en-route consumers blind; issuing only the AIRMET would leave the airfield without local-distribution coverage.&lt;/p&gt;
+      </text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;AD WRNG (TS, &amp;lt; 16 km from LLBG) plus AIRMET (OCNL TS for the sub-area).&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;AD WRNG only &amp;mdash; the cell is the airfield's problem.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;AIRMET only &amp;mdash; the AD WRNG threshold is not yet met until the cell crosses the runway.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;AD WRNG plus SIGMET (FRQ TS) &amp;mdash; any cell within 12 km of an aerodrome promotes the OCNL coverage to FRQ.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L4-Q06 — Distribution scope</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        &lt;p&gt;An international dispatcher in Frankfurt is planning a flight to LLBG. Which IMS warning products will be available to her in the standard AFTN / VOLMET stream, and which will not?&lt;/p&gt;
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>
+        &lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; SIGMET and AIRMET are distributed internationally over AFTN and broadcast in VOLMET / D-VOLMET. AD WRNG and WS WRNG distribution is local only &amp;mdash; they reach airfield operations, tower, and local ATS, but not foreign flight planning offices. This is exactly why coordination matters: an aerodrome hazard that also affects the en-route phase must be reflected in a SIGMET or AIRMET, otherwise the international consumer never learns of it.&lt;/p&gt;
+      </text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;SIGMET and AIRMET reach Frankfurt via AFTN/VOLMET; AD WRNG and WS WRNG are local-distribution only.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;All four products are distributed internationally over AFTN.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Only AD WRNG and WS WRNG reach Frankfurt &amp;mdash; they are the aerodrome-specific products that flight planning needs.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;None of the products are available outside Israel; foreign dispatchers rely on the TAF only.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L4-Q07 — When NOT to pair WS WRNG with an AIRMET</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        &lt;p&gt;The IMS issues a WS WRNG for LLBG because of a low-level jet (32 kt at 900 ft AGL, 5 kt at the surface). The FIR is otherwise quiet. Which is the correct accompanying action?&lt;/p&gt;
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>
+        &lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; The IMS coordination rule explicitly says that when a WS WRNG is issued for an aerodrome because of a low-level jet, no AIRMET or SIGMET is required. The LLJ is an aerodrome-scale phenomenon &amp;mdash; it shears the approach and climb-out paths but does not, by itself, constitute a FIR-wide en-route hazard. Issuing an AIRMET would over-warn; issuing an AD WRNG would describe a different (surface-wind) hazard that does not apply here.&lt;/p&gt;
+      </text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;No AIRMET or SIGMET is required &amp;mdash; the LLJ is an aerodrome-scale phenomenon and the WS WRNG alone suffices.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Also issue an AIRMET for &lt;code&gt;SFC WSPD &amp;ge;30KT&lt;/code&gt; because the jet is 32 kt.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Also issue an AD WRNG for surface wind, since a strong jet implies strong surface wind.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Also issue a SIGMET for SEV TURB, on the assumption that any LLJ produces severe turbulence.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+</quiz>
