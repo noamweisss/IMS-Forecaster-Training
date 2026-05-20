@@ -77,6 +77,7 @@ Fill the body with:
 - **Inline SVG diagrams** for relationships, hierarchies, sequences, and comparisons that prose can't carry. Aim for roughly one visual per 200–300 words.
 - **Callouts** for definitions, warnings, key formulas, danger cases. Four classes: `callout-note`, `callout-warning`, `callout-key`, `callout-danger`.
 - **`<div class="image-needed" data-description="...">`** for real photographs to be sourced later. The `data-description` text becomes the entry in `IMAGES_TO_SOURCE.md`, so be specific about what the photo should show.
+- **Source-extracted images** — `_extraction.json` lists images embedded in the source PPTX/PDF under each slide/page's `images: [{path, width, height, format, hash}]` array. Reference one directly with `<img src="../extracted_images/<source>/<file>" alt="...">` when it's a clear fit: a labeled diagram the slide is built around, a satellite snapshot, a forecast chart, a recognisable instrument photo. **Skip** decorative backgrounds, logos, slide chrome, low-resolution thumbnails, and anything you'd struggle to caption in one sentence. When in doubt, emit the `image-needed` placeholder so the human curator decides. `finalize_module.py` inlines extracted images the same way it inlines `lessons/Images/` files.
 - **Summary** at the bottom: 4–6 takeaway bullets.
 
 The non-negotiable constraints (the rest are in `lesson_spec.md`):
