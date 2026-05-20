@@ -35,8 +35,8 @@ git lfs pull
 
 **Claude Code on-the-web (and other proxied sandboxes).** The sandbox's
 git remote routes through a local proxy that does not forward the LFS
-batch API — `git lfs pull` returns `HTTP 502`. Bypass the proxy by
-pointing `lfs.url` at GitHub directly:
+batch API — `git lfs pull` returns `HTTP 502`. Bypass the proxy for
+download only:
 
 ```bash
 apt-get install -y git-lfs               # not preinstalled in the default image
@@ -45,9 +45,24 @@ git config lfs.url https://github.com/<owner>/<repo>.git/info/lfs
 git lfs pull
 ```
 
-This setting lives in `.git/config` and is per-checkout — re-apply it in
-every new sandbox session. See `docs/journal.md` (2026-05-20 entry on
-the LFS 502) for the full root-cause analysis.
+**Before pushing**, unset that override so the push uses the proxy
+again (the proxy handles normal git pack protocol fine, and pointing
+`lfs.url` at GitHub at push-time requires credentials the sandbox does
+not have):
+
+```bash
+git config --unset lfs.url
+git config lfs.locksverify false   # silences a one-off warning on the first push
+git push -u origin <branch-name>
+```
+
+Per-module source PPTXs duplicated from `courses/<course>/source_files/`
+into `courses/<course>/source_files/module-N/` share OIDs with the
+originals, so no new LFS objects need uploading on push.
+
+These settings live in `.git/config` and are per-checkout — re-apply
+them in every new sandbox session. See `docs/journal.md` (2026-05-20
+entry on the LFS 502) for the full root-cause analysis.
 
 ---
 

@@ -90,19 +90,30 @@ went to the proxy and was rejected. Plain HTTPS to `github.com` works
 fine from the same sandbox (verified with `curl`), so the breakage is
 specifically a proxy gap, not general network restriction.
 
-**Decision.** Point `lfs.url` at GitHub's real LFS endpoint, bypassing
-the proxy for LFS objects only:
+**Decision.** Point `lfs.url` at GitHub's real LFS endpoint for the
+download side, then undo it before pushing (the sandbox has no GitHub
+push credentials, so push must go back through the proxy &mdash; which
+works fine for the normal git pack protocol):
 
 ```bash
+# Session start
 apt-get install -y git-lfs               # not preinstalled in the sandbox image
 git lfs install --skip-repo
 git config lfs.url https://github.com/<owner>/<repo>.git/info/lfs
 git lfs pull
+
+# Before pushing
+git config --unset lfs.url
+git config lfs.locksverify false
+git push -u origin <branch>
 ```
 
 The `lfs.url` setting is repo-local (`.git/config`) and does **not**
-travel with commits — every fresh sandbox checkout will hit the same 502
-until the workaround is re-applied.
+travel with commits &mdash; every fresh sandbox checkout will hit the
+same 502 until the workaround is re-applied. The push side only works
+without auth because per-module source files duplicated from
+`source_files/` share OIDs with already-pushed LFS objects, so nothing
+new needs uploading.
 
 **Why this and not something else.** Considered (a) committing the
 PPTX files un-LFS'd — rejected, they're 2 MB+ binaries and the repo's

@@ -122,12 +122,15 @@ That's it. No `.env`. No API key. Run `python pipeline/extract_sources.py --help
 to confirm everything is wired up.
 
 > **Claude Code on-the-web sessions:** the sandbox's git proxy doesn't
-> serve LFS, so `git lfs pull` will fail with `HTTP 502` until you
-> bypass it: `apt-get install -y git-lfs && git lfs install --skip-repo
-> && git config lfs.url https://github.com/<owner>/<repo>.git/info/lfs
-> && git lfs pull`. If the source PPTX/PDFs in `courses/<course>/source_files/`
-> are ~130 bytes each, that's the symptom. See `docs/runbook.md`
-> (Prerequisites) and `docs/journal.md` (2026-05-20) for details.
+> serve LFS, so `git lfs pull` fails with `HTTP 502` until you bypass
+> it: `apt-get install -y git-lfs && git lfs install --skip-repo &&
+> git config lfs.url https://github.com/<owner>/<repo>.git/info/lfs &&
+> git lfs pull`. **Before pushing**, undo the override (`git config
+> --unset lfs.url && git config lfs.locksverify false`) so push uses
+> the proxy. If the source PPTX/PDFs in
+> `courses/<course>/source_files/` are ~130 bytes each, that's the
+> download-side symptom. See `docs/runbook.md` (Prerequisites) and
+> `docs/journal.md` (2026-05-20) for details.
 
 ## When the Owner Says "Generate Module N"
 
