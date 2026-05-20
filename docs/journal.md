@@ -24,6 +24,65 @@ later reversed, add a new entry rather than editing the old one.
 ---
 
 <!-- New entries appended below -->
+## 2026-05-20 — Module 3: extracting source-deck images post-hoc
+
+**Context.** Module 3 was initially authored with zero external
+imagery &mdash; every visual was inline SVG. The user flagged that
+this broke the established Module 1 / Module 2 pattern of pairing
+agent-drawn diagrams with real photographs or source-deck images,
+and asked whether I should have asked them first. Answer: yes,
+absolutely &mdash; the lesson-spec phase 2b explicitly says
+"Show the blueprint to the user before writing any lessons" and
+the blueprint shape includes an `external_imagery_needed` field
+I should have populated and asked about.
+
+**Decision.** Rather than synthesise photo placeholders for the
+user to source later, extract the relevant images directly from
+the IMS source decks (13 &amp; 14) using `python-pptx`. The
+extraction script (`pipeline/extract_sources.py`) currently does
+NOT extract images &mdash; it only flags `has_images: true` on
+each slide. So I wrote a small inline `python-pptx` script in the
+shell, walking each slide's shapes and saving any
+`MSO_SHAPE_TYPE.PICTURE` shape to `lessons/Images/`.
+
+**What turned up.** Deck 13 had 9 picture shapes across slides
+8, 9, 11, 12 (with several being duplicates of the same large
+1.1 MB corkboard-of-examples image reused for layout). Deck 14
+had no embedded picture shapes &mdash; its content is text and
+hand-drawn arrows that python-pptx doesn't surface as PICTUREs.
+After de-duplication and pedagogy-driven filtering (skipped the
+1.1 MB corkboard image and the Hong Kong Observatory logo), four
+unique images were worth keeping:
+
+| File | Slide | Content |
+|------|-------|---------|
+| `annex3_first_line_spec.png` | 13/8 | Annex 3 §3.4.2 first-line field-definition table |
+| `annex3_first_line_examples.png` | 13/8 | Two concrete first-line examples |
+| `annex3_met_part_spec.png` | 13/9 | Annex 3 §3.4.3.1 met-part 8-element table |
+| `sigmet_parts_key.png` | 13/11 | Colour-coded key showing every SIGMET part |
+
+All four were inserted into Lesson 2 (SIGMET Message Structure)
+because that is the lesson the Annex 3 reference tables map onto.
+Figure numbering in L2 went from two figures (2.1, 2.2) to six
+(2.1&ndash;2.6), with the source images interleaved between the
+agent-drawn SVGs so each section has both a synthesised diagram
+and a canonical reference.
+
+**Considered: making image extraction a first-class pipeline
+feature.** `pipeline/extract_sources.py` could grow an
+`--extract-images` flag that walks PICTUREs and saves them under
+`<module>/_extracted_images/<deck>/slide_NN_shape_M.png`. Decided
+against doing it in this commit so the change stays scoped to
+"author module 3"; opened it as a follow-up for the next
+pipeline change.
+
+**Lesson.** Whenever the blueprint stage proposes "all visuals as
+inline SVG", flag that explicitly to the user. The default for
+this course is mixed media; an all-SVG module is a deviation that
+needs sign-off, not a default I get to make silently.
+
+---
+
 ## 2026-05-20 — Module 3 title change &amp; 4-lesson split
 
 **Context.** Module 3 was scheduled in `course.json` as
