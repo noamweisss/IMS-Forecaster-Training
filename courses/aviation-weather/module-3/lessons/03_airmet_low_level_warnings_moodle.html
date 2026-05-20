@@ -1,0 +1,348 @@
+<style>
+/*
+ * IMS Course Factory — Lesson Design System
+ *
+ * All rules are scoped to `.ims-lesson` so the styles can be injected into
+ * a host page (Moodle, in particular) without leaking onto the host's chrome
+ * and without the host's theme overriding lesson typography.
+ *
+ * Standalone lesson HTML wraps the entire body in <div class="ims-lesson">.
+ * Moodle body-fragment HTML does the same. The single rule below keeps the
+ * standalone preview's <body> background consistent without leaking into
+ * Moodle pages.
+ */
+
+.ims-lesson {
+  --bg: #ffffff;
+  --surface: #f6f5f0;
+  --border: #e2dfd6;
+  --text: #1a1917;
+  --muted: #6b6a65;
+  --accent: #185fa5;
+  --accent-light: #e6f1fb;
+  --note-bg: #e1f5ee;
+  --note-border: #0F6E56;
+  --warn-bg: #faeeda;
+  --warn-border: #BA7517;
+  --key-bg: #EEEDFE;
+  --key-border: #534AB7;
+  --danger-bg: #fcebeb;
+  --danger-border: #A32D2D;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .ims-lesson {
+    --bg: #1a1917;
+    --surface: #242320;
+    --border: #3a3835;
+    --text: #e8e6df;
+    --muted: #9a9890;
+    --accent-light: #042c53;
+    --note-bg: #04342c;
+    --warn-bg: #412402;
+    --key-bg: #26215c;
+  }
+}
+
+.ims-lesson h1 { font-size: 1.8rem; font-weight: 600; margin-bottom: 0.2rem; line-height: 1.2; color: var(--text); }
+.ims-lesson h2 { font-size: 1.25rem; font-weight: 600; margin-top: 2.5rem; padding-bottom: 0.4rem;
+  border-bottom: 1.5px solid var(--border); color: var(--text); }
+.ims-lesson h3 { font-size: 1.05rem; font-weight: 600; margin-top: 1.75rem; color: var(--text); }
+.ims-lesson p { margin: 0.7rem 0; max-width: 72ch; }
+.ims-lesson figure { margin: 2rem 0; }
+.ims-lesson figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 0.6rem;
+  font-style: italic; text-align: center; }
+.ims-lesson svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+.ims-lesson img { max-width: 100%; height: auto; }
+.ims-lesson table { border-collapse: collapse; width: 100%; margin: 1.5rem 0; font-size: 0.9rem; }
+.ims-lesson th { background: var(--accent); color: #fff; padding: 0.55rem 0.9rem; text-align: left; }
+.ims-lesson td { padding: 0.5rem 0.9rem; border-bottom: 1px solid var(--border); }
+.ims-lesson tr:nth-child(even) td { background: var(--surface); }
+.ims-lesson .callout { border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+.ims-lesson .callout-note    { background: var(--note-bg);   border-left: 4px solid var(--note-border); }
+.ims-lesson .callout-warning { background: var(--warn-bg);   border-left: 4px solid var(--warn-border); }
+.ims-lesson .callout-key     { background: var(--key-bg);    border-left: 4px solid var(--key-border); }
+.ims-lesson .callout-danger  { background: var(--danger-bg); border-left: 4px solid var(--danger-border); }
+.ims-lesson .callout-label { font-weight: 700; font-size: 0.78rem; text-transform: uppercase;
+  letter-spacing: 0.06em; margin-bottom: 0.35rem; }
+.ims-lesson .objectives { background: var(--surface); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+.ims-lesson .objectives ul { margin: 0.5rem 0 0; padding-left: 1.4rem; }
+.ims-lesson .lesson-summary { background: var(--accent-light); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 2.5rem 0 1rem; }
+.ims-lesson .lesson-summary h3 { margin-top: 0; color: var(--accent); font-size: 1rem; }
+.ims-lesson .image-needed { border: 2px dashed var(--border); border-radius: 8px;
+  padding: 1.5rem; margin: 1.5rem 0; text-align: center;
+  color: var(--muted); font-size: 0.9rem; background: var(--surface); }
+.ims-lesson .meta { color: var(--muted); font-size: 0.88rem; margin-bottom: 1.75rem; }
+.ims-lesson .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.5rem; }
+</style>
+<div class="ims-lesson">
+<p class="breadcrumb">Module 3 / Lesson 3</p>
+<h1>AIRMET &mdash; Low-Level Warnings</h1>
+
+<div class="objectives">
+  <strong>By the end of this lesson you will be able to:</strong>
+  <ul>
+    <li>Apply the AIRMET scope rule (below FL100, en-route, not already covered by an existing low-level forecast).</li>
+    <li>Identify the AIRMET phenomenon list and the intensity qualifier required for each.</li>
+    <li>Differentiate the spatial-coverage qualifiers ISOL (&lt;50%), OCNL (50&ndash;75%), and FRQ (&gt;75%).</li>
+    <li>Choose between issuing a SIGMET, an AIRMET, or no message at all given a forecast scenario near threshold.</li>
+  </ul>
+</div>
+
+<h2>What an AIRMET is for</h2>
+
+<p>AIRMET catches the en-route hazards that SIGMET deliberately leaves on the table: moderate intensities, low-level features below FL100, and phenomena that primarily affect general aviation and rotorcraft. The Annex 3 wording is precise:</p>
+
+<div class="callout callout-note">
+  <div class="callout-label">Annex 3 definition (paraphrased)</div>
+  An AIRMET is information issued by an MWO concerning the occurrence or expected occurrence of specified en-route weather phenomena which may affect the safety of <strong>low-level</strong> aircraft operations (below flight level 100) and <strong>which was not already included in the forecast</strong> issued for low-level flights in the FIR or sub-area thereof.
+</div>
+
+<p>Three components of that definition matter operationally.</p>
+
+<p><strong>Low-level</strong> means below FL100. If the phenomenon is entirely above FL100, AIRMET is not the right product — consider the SIGMET threshold or the SIGWX chart. If it straddles FL100, AIRMET covers the portion below.</p>
+
+<p><strong>Not already included in the forecast</strong> is the most-confused clause in the definition. It does not mean "don't issue an AIRMET if there's a TAF". It means: if the routine low-level area forecast (the GAMET in regions that issue one, or the low-level SIGWX) already shows the phenomenon at AIRMET intensity, the AIRMET is redundant and is not issued. In Israel, where no GAMET is produced, this exemption almost never applies and AIRMETs are issued whenever the phenomenon and intensity criteria are met.</p>
+
+<p><strong>Specified phenomena</strong> &mdash; the AIRMET list is fixed. Inconvenient weather that isn't on the list does not become an AIRMET no matter how operationally relevant it feels.</p>
+
+<h2>The AIRMET phenomenon list</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Phenomenon</th>
+      <th>Code</th>
+      <th>Threshold</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Thunderstorms</td>
+      <td><code>ISOL TS</code> / <code>OCNL TS</code></td>
+      <td>Isolated or occasional thunderstorms (no qualifier &gt; 75% coverage)</td>
+    </tr>
+    <tr>
+      <td>Icing</td>
+      <td><code>MOD ICE</code></td>
+      <td>Moderate icing (other than in convective cloud)</td>
+    </tr>
+    <tr>
+      <td>Turbulence</td>
+      <td><code>MOD TURB</code></td>
+      <td>Moderate turbulence (low-level w/ strong sfc winds, rotor, or CAT)</td>
+    </tr>
+    <tr>
+      <td>Mountain waves</td>
+      <td><code>MOD MTW</code></td>
+      <td>Downdraft 1.75&ndash;3.0 m/s or accompanying moderate turbulence</td>
+    </tr>
+    <tr>
+      <td>Surface wind</td>
+      <td><code>SFC WSPD &ge;30KT</code></td>
+      <td>Sustained surface winds at or above 30 kt</td>
+    </tr>
+    <tr>
+      <td>Ceiling</td>
+      <td><code>BKN/OVC &lt;1000FT</code></td>
+      <td>Cloud ceiling below 1000 ft over a defined area</td>
+    </tr>
+    <tr>
+      <td>Visibility</td>
+      <td><code>VIS &lt;5KM</code></td>
+      <td>Visibility below 5 km over a defined area</td>
+    </tr>
+    <tr>
+      <td>Mountain obscuration</td>
+      <td><code>MT OBSC</code></td>
+      <td>Extensive obscuration of mountainous terrain</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Notice that thunderstorms, icing, turbulence, and mountain waves appear on both the SIGMET and AIRMET lists &mdash; the difference is the intensity qualifier. The remaining four phenomena (surface wind, ceiling, visibility, mountain obscuration) are AIRMET-only: there is no SIGMET equivalent because they are inherently low-level and affect general aviation and rotorcraft rather than airliners.</p>
+
+<h2>Spatial-coverage qualifiers — ISOL, OCNL, FRQ</h2>
+
+<p>For thunderstorm phenomena, AIRMET uses three spatial-coverage descriptors that quantify what fraction of the affected area is occupied by the cells. The fractions are defined at a fixed time or during the period of validity.</p>
+
+<figure>
+  <svg viewBox="0 0 680 240" role="img" xmlns="http://www.w3.org/2000/svg">
+    <title>Spatial-coverage descriptors ISOL, OCNL, and FRQ</title>
+    <desc>Three rectangles each representing the same FIR area, with progressively more thunderstorm cells. The first shows scattered isolated cells covering less than 50 percent of the area. The second shows roughly two-thirds coverage. The third shows densely packed cells covering more than 75 percent of the area, essentially with no separation between them.</desc>
+
+    <!-- ISOL panel -->
+    <rect x="40" y="40" width="180" height="140" fill="#F6F5F0" stroke="#E2DFD6" stroke-width="1.5"/>
+    <text x="130" y="30" font-family="sans-serif" font-size="14" font-weight="600" fill="#185FA5" text-anchor="middle">ISOL &mdash; &lt; 50%</text>
+    <!-- A few scattered cells -->
+    <circle cx="70" cy="75" r="10" fill="#185FA5"/>
+    <circle cx="130" cy="100" r="9" fill="#185FA5"/>
+    <circle cx="180" cy="130" r="11" fill="#185FA5"/>
+    <circle cx="90" cy="155" r="8" fill="#185FA5"/>
+    <text x="130" y="200" font-family="sans-serif" font-size="11" fill="#6B6A65" text-anchor="middle">Individual cells</text>
+    <text x="130" y="215" font-family="sans-serif" font-size="11" fill="#6B6A65" text-anchor="middle">Wide gaps for deviation</text>
+
+    <!-- OCNL panel -->
+    <rect x="250" y="40" width="180" height="140" fill="#F6F5F0" stroke="#E2DFD6" stroke-width="1.5"/>
+    <text x="340" y="30" font-family="sans-serif" font-size="14" font-weight="600" fill="#BA7517" text-anchor="middle">OCNL &mdash; 50&ndash;75%</text>
+    <!-- Moderately filled cells -->
+    <circle cx="275" cy="65" r="12" fill="#BA7517"/>
+    <circle cx="310" cy="95" r="14" fill="#BA7517"/>
+    <circle cx="360" cy="80" r="11" fill="#BA7517"/>
+    <circle cx="395" cy="115" r="13" fill="#BA7517"/>
+    <circle cx="290" cy="140" r="12" fill="#BA7517"/>
+    <circle cx="345" cy="155" r="11" fill="#BA7517"/>
+    <circle cx="395" cy="155" r="10" fill="#BA7517"/>
+    <text x="340" y="200" font-family="sans-serif" font-size="11" fill="#6B6A65" text-anchor="middle">Many cells, some gaps</text>
+    <text x="340" y="215" font-family="sans-serif" font-size="11" fill="#6B6A65" text-anchor="middle">Deviation still possible</text>
+
+    <!-- FRQ panel -->
+    <rect x="460" y="40" width="180" height="140" fill="#F6F5F0" stroke="#E2DFD6" stroke-width="1.5"/>
+    <text x="550" y="30" font-family="sans-serif" font-size="14" font-weight="600" fill="#993C1D" text-anchor="middle">FRQ &mdash; &gt; 75%</text>
+    <!-- Densely packed cells -->
+    <circle cx="482" cy="62" r="16" fill="#993C1D"/>
+    <circle cx="515" cy="80" r="17" fill="#993C1D"/>
+    <circle cx="548" cy="64" r="14" fill="#993C1D"/>
+    <circle cx="582" cy="80" r="16" fill="#993C1D"/>
+    <circle cx="615" cy="62" r="13" fill="#993C1D"/>
+    <circle cx="492" cy="110" r="15" fill="#993C1D"/>
+    <circle cx="525" cy="125" r="17" fill="#993C1D"/>
+    <circle cx="565" cy="110" r="15" fill="#993C1D"/>
+    <circle cx="600" cy="125" r="14" fill="#993C1D"/>
+    <circle cx="500" cy="155" r="16" fill="#993C1D"/>
+    <circle cx="540" cy="160" r="14" fill="#993C1D"/>
+    <circle cx="585" cy="150" r="16" fill="#993C1D"/>
+    <circle cx="620" cy="160" r="12" fill="#993C1D"/>
+    <text x="550" y="200" font-family="sans-serif" font-size="11" fill="#6B6A65" text-anchor="middle">Little or no separation</text>
+    <text x="550" y="215" font-family="sans-serif" font-size="11" fill="#6B6A65" text-anchor="middle">No safe corridor</text>
+  </svg>
+  <figcaption>Figure 3.1 &mdash; spatial-coverage descriptors. ISOL and OCNL are AIRMET qualifiers; FRQ promotes the message to a SIGMET (alongside OBSC, EMBD, and SQL).</figcaption>
+</figure>
+
+<div class="callout callout-key">
+  <div class="callout-label">The boundary that matters operationally</div>
+  ISOL (&lt;50%) and OCNL (50&ndash;75%) live in AIRMET territory. FRQ (&gt;75%) crosses into SIGMET. The choice between AIRMET and SIGMET for an area of thunderstorms is therefore driven directly by the coverage fraction &mdash; not by cell intensity, lightning rate, or radar reflectivity.
+</div>
+
+<h2>AIRMET vs SIGMET, phenomenon by phenomenon</h2>
+
+<p>For the four phenomena that appear on both lists, the threshold table is the most useful artefact to have at hand during a shift.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Phenomenon</th>
+      <th>AIRMET threshold</th>
+      <th>SIGMET threshold</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Thunderstorms</td>
+      <td><code>ISOL</code> or <code>OCNL</code> (coverage &lt; 75%)</td>
+      <td><code>OBSC</code>, <code>EMBD</code>, <code>FRQ</code> (&gt; 75%), or <code>SQL</code></td>
+    </tr>
+    <tr>
+      <td>Icing</td>
+      <td><code>MOD ICE</code></td>
+      <td><code>SEV ICE</code> (with or without FZRA)</td>
+    </tr>
+    <tr>
+      <td>Turbulence</td>
+      <td><code>MOD TURB</code></td>
+      <td><code>SEV TURB</code></td>
+    </tr>
+    <tr>
+      <td>Mountain wave</td>
+      <td><code>MOD MTW</code> (downdraft 1.75&ndash;3.0 m/s or MOD turb)</td>
+      <td><code>SEV MTW</code> (downdraft &ge; 3.0 m/s or SEV turb)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Convective icing (icing in cumuliform cloud) is explicitly excluded from MOD ICE in AIRMET &mdash; that case is captured by the thunderstorm AIRMET itself, since the icing risk is inseparable from the convection.</p>
+
+<h2>The AIRMET-only phenomena</h2>
+
+<p>Four AIRMET phenomena have no SIGMET equivalent. They are all properties of the low-level environment.</p>
+
+<h3>Sustained surface winds &ge; 30 kt</h3>
+
+<p>If the sustained (10-minute mean) surface wind over a defined sub-area of the FIR is forecast to reach or exceed 30 kt, an AIRMET is issued. This is distinct from gust-driven aerodrome warnings (Lesson 4) &mdash; the AIRMET addresses the en-route effect on general aviation over open terrain, not the aerodrome-specific risk to take-off and landing.</p>
+
+<h3>Ceilings below 1000 ft</h3>
+
+<p>When extensive cloud is forecast with a base below 1000 ft AGL covering enough of the FIR that VFR low-level traffic is impaired, an AIRMET is issued. This is a coverage criterion as much as an altitude one &mdash; isolated low cloud over a specific point is reported in the TAF/METAR, not in an AIRMET.</p>
+
+<h3>Visibility below 5 km</h3>
+
+<p>For visibility, the AIRMET threshold is 5 km over an extensive area below FL100. Cause matters less than effect: fog, mist, haze, smoke, blowing dust, and falling precipitation all qualify if they bring visibility into this band.</p>
+
+<h3>Extensive mountain obscuration</h3>
+
+<p>When a significant fraction of mountainous terrain in the FIR is obscured by cloud or precipitation, an AIRMET (<code>MT OBSC</code>) is issued. This catches the case where the mountains themselves are flyable in principle but the visibility on the lee or upslope side makes terrain awareness impossible &mdash; a major risk for rotorcraft and general aviation.</p>
+
+<h2>Validity, lead time, and structure</h2>
+
+<p>The structural rules carry over almost verbatim from SIGMET:</p>
+
+<div class="callout callout-warning">
+  <div class="callout-label">AIRMET structural rules</div>
+  <ul>
+    <li>Maximum validity is <strong>4 hours</strong>, same as a WS SIGMET.</li>
+    <li>Issuance precedes the expected start of the phenomenon by <strong>no more than 4 hours</strong>.</li>
+    <li><strong>One phenomenon per message</strong>; if two AIRMET-worthy phenomena coexist, issue two AIRMETs.</li>
+    <li>WMO header uses <code>WA</code> as the data-type designator (vs <code>WS</code>/<code>WV</code>/<code>WC</code> for SIGMET subtypes).</li>
+    <li>First-line and meteorological-part syntax are <strong>identical to SIGMET</strong>, with the word <code>AIRMET</code> substituted for <code>SIGMET</code>.</li>
+    <li>Cancellation follows the same pattern: next sequential number, new validity, second line <code>CNL AIRMET &lt;n&gt; YYGGgg/YYGGgg</code>.</li>
+  </ul>
+</div>
+
+<p>Because the AIRMET inherits the SIGMET message structure, Lesson 2's coverage of the WMO header, validity period, lat/lon polygons, and cancellation applies unchanged. The only thing that differs is the data-type designator and the word that appears on the first line of the body.</p>
+
+<p>AIRMETs are issued for one FIR. Where necessary, an FIR can be divided into sub-areas, with separate AIRMETs issued for each sub-area &mdash; useful when the same phenomenon affects, say, the northern coast and not the southern interior. Each sub-area's AIRMET carries its own sequential number.</p>
+
+<div class="callout callout-note">
+  <div class="callout-label">After issuance</div>
+  Annex 3 obliges the MWO to "maintain watch" over the phenomenon and issue an updated AIRMET when necessary. In practice this means: if the forecast becomes meaningfully different from what the active AIRMET describes (intensity changes, area shifts, timing changes by &gt; 2 hours), issue an update. If the phenomenon ends earlier than expected, cancel.
+</div>
+
+<h2>The decision in operations</h2>
+
+<p>The most common operational error in this space is over- or under-promotion: issuing a SIGMET for something that should be an AIRMET, or vice versa. The clean way to decide is sequential:</p>
+
+<ol>
+  <li>Is the phenomenon on either list at all? If no, no message.</li>
+  <li>Is the SIGMET threshold met (severity qualifier or coverage &gt; 75%)? If yes, SIGMET.</li>
+  <li>Is the AIRMET threshold met (moderate intensity, ISOL/OCNL coverage, &lt;5 km vis, &lt;1000 ft ceiling, &ge;30 kt sfc wind, MT OBSC)? If yes, AIRMET.</li>
+  <li>Otherwise: report in the routine forecast; no SIGMET, no AIRMET.</li>
+</ol>
+
+<div class="callout callout-danger">
+  <div class="callout-label">Common pitfall</div>
+  Forecasters under pressure sometimes "round up" a borderline case to SIGMET because the consequences of under-warning feel worse than over-warning. This is incorrect. Over-issuing SIGMETs trains airlines and dispatchers to discount them, which costs lives when a real SIGMET-grade event arrives. The threshold structure exists for a reason &mdash; respect it.
+</div>
+
+<div class="lesson-summary">
+  <h3>Key Takeaways</h3>
+  <ul>
+    <li>AIRMET catches en-route hazards below FL100 at moderate intensities &mdash; the cases that fall through the SIGMET filter.</li>
+    <li>Eight phenomena: TS (ISOL/OCNL), MOD ICE, MOD TURB, MOD MTW, sustained surface wind &ge; 30 kt, ceilings &lt; 1000 ft, visibility &lt; 5 km, and mountain obscuration.</li>
+    <li>Spatial coverage qualifiers: ISOL &lt; 50%, OCNL 50&ndash;75%, FRQ &gt; 75%. FRQ promotes the message to a SIGMET.</li>
+    <li>Surface wind, ceiling, visibility, and mountain obscuration are AIRMET-only &mdash; they have no SIGMET equivalent.</li>
+    <li>Structural rules are identical to SIGMET: 4-hour max validity, 4-hour lead time, one phenomenon per message. Header uses <code>WA</code>.</li>
+    <li>The "not already in the forecast" clause exempts AIRMETs only where a GAMET or low-level area forecast already shows the phenomenon at AIRMET intensity. In Israel this exemption rarely applies.</li>
+  </ul>
+</div>
+</div>

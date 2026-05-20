@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+  <question type="multichoice">
+    <name>
+      <text>L4-Q01 — Thunderstorm AD WRNG distance threshold</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>A severe thunderstorm cell is observed on radar 22 km south-east of the LLBG runway pattern centre, moving slowly west. The cell is producing 4 cm hail. The cell is expected to come no closer than 18 km to the runway centre over the next 2 hours. Which AD WRNG action is correct?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> The IMS AD WRNG threshold for TS/CB is "CB within 16 km of the runway-pattern centre". A cell that is forecast to come no closer than 18 km does not meet that threshold, so no AD WRNG for TS is required &mdash; even though the cell is severe and producing hail. The hail-size threshold (&ge; 2 cm) is a property of CB cells <em>at the aerodrome</em>; it does not by itself extend the 16 km TS distance criterion. Issuing an AD WRNG anyway would over-warn and waste credibility; the en-route hazard is captured separately by SIGMET/AIRMET.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>No AD WRNG for TS &mdash; the cell stays outside the 16 km IMS threshold. Consider SIGMET/AIRMET for the en-route hazard.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Issue an AD WRNG immediately because 4 cm hail is well above the 2 cm severe-hail threshold.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Issue an AD WRNG for "approaching CB" because the cell's distance is decreasing.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Issue an AD WRNG with a 24 km distance threshold, the larger IMS courtesy radius.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L4-Q02 — Wind threshold: mean vs gust</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>At LLBG the 10-minute mean surface wind is 17 kt, but the highest 3-second gust within the latest 10 minutes is 33 kt. Conditions are forecast to persist for the next 4 hours. Which is correct?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> The IMS wind criterion has two independent triggers joined by "and/or": 10-minute mean &gt; 20 kt OR gusts &gt; 30 kt. The gust (33 kt) is above its threshold, so AD WRNG issuance is required regardless of the mean. The 17 kt mean is below 20 kt and would not have triggered on its own. Waiting for the mean to also exceed 20 kt would mean withholding the warning during the very conditions it exists to flag.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Issue an AD WRNG &mdash; the gust threshold (&gt; 30 kt) is met regardless of the mean.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Do not issue &mdash; the 10-minute mean must exceed 20 kt for the wind criterion to be met.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Issue a WS WRNG instead, because gusts above 30 kt are wind shear by definition.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Issue only an AIRMET, because surface winds are an en-route phenomenon.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L4-Q03 — WS WRNG basis indicator</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>A flight crew on departure from RWY26 at LLBG calls TWR at 0512Z to report moderate wind shear at 700 ft on climb-out. The forecaster confirms a synoptic situation that supports continued shear. Which is the correct basis indicator in the resulting WS WRNG, and what is the meaning?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> The WS WRNG vocabulary distinguishes <code>FCST</code> (forecaster's judgement), <code>OBS</code> (clear identification in MET data such as AMDAR, sonde, profiler), and <code>REP AT</code> (pilot report, followed by the time). The crew's call is a pilot report, so the warning should be issued with <code>REP AT 0512Z</code>. <code>FCST</code> would be appropriate if there was no pilot observation. <code>OBS</code> would be appropriate if the trigger were instrumented data (e.g., AMDAR), not a crew voice report. Combining FCST and OBS is not a defined option.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p><code>REP AT 0512Z</code> &mdash; the warning is based on a pilot report.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p><code>FCST</code> &mdash; the forecaster's judgement that conditions support continued shear is what triggers the warning.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p><code>OBS</code> &mdash; the pilot's call is a meteorological observation.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Combined <code>FCST OBS</code> &mdash; both forecaster judgement and an observation apply.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L4-Q04 — Low-level jet criterion</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>An overnight sonde at LLBG shows a surface wind of 4 kt and a jet of 22 kt at 1100 ft AGL. The synoptic situation supports a stable nocturnal inversion. Which is the correct IMS action?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> The primary IMS WS WRNG LLJ trigger is peak &ge; 30 kt with axis below 2000 ft. 22 kt does not meet the primary trigger. However, the difference between surface (4 kt) and 500 m (&approx; 1640 ft &mdash; close to the 1100 ft jet level) wind is 18 kt, which exceeds the 15 kt supporting indicator. With a matching synoptic, the IMS guidance says this <em>can</em> be treated as sufficient to issue a WS WRNG for the LLJ. Doing nothing under-warns; issuing an AIRMET miscategorises an aerodrome-scale phenomenon as en-route; issuing an AD WRNG for surface wind misses the shear nature of the hazard.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Issue a WS WRNG &mdash; the &gt; 15 kt surface-to-500 m wind difference with supporting synoptic is sufficient under IMS guidance.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Do not issue &mdash; the jet peak is below the 30 kt primary threshold.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Issue an AIRMET for MOD TURB &mdash; the LLJ is an en-route phenomenon.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Issue an AD WRNG for surface wind, even though the surface speed is only 4 kt.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L4-Q05 — Coordination with SIGMET / AIRMET</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>Convective cells over the central highlands are producing OCNL TS across that sub-area of the FIR, and one cell is forecast to track to within 12 km of the LLBG runway centre over the next 90 minutes. Which products should the IMS issue?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> Two distinct hazards are in play. OCNL TS across the sub-area is an AIRMET phenomenon (50&ndash;75% coverage falls into OCNL, which is below the SIGMET FRQ threshold). The cell tracking to within 12 km of the runway centre meets the IMS AD WRNG threshold (&lt; 16 km). Both products are required: AD WRNG so the AFO communicates to airfield ops, AIRMET so en-route GA crossing the area receives the warning via VOLMET/AFTN. Issuing only the AD WRNG would leave foreign and en-route consumers blind; issuing only the AIRMET would leave the airfield without local-distribution coverage.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>AD WRNG (TS, &lt; 16 km from LLBG) plus AIRMET (OCNL TS for the sub-area).</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>AD WRNG only &mdash; the cell is the airfield's problem.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>AIRMET only &mdash; the AD WRNG threshold is not yet met until the cell crosses the runway.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>AD WRNG plus SIGMET (FRQ TS) &mdash; any cell within 12 km of an aerodrome promotes the OCNL coverage to FRQ.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L4-Q06 — Distribution scope</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>An international dispatcher in Frankfurt is planning a flight to LLBG. Which IMS warning products will be available to her in the standard AFTN / VOLMET stream, and which will not?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> SIGMET and AIRMET are distributed internationally over AFTN and broadcast in VOLMET / D-VOLMET. AD WRNG and WS WRNG distribution is local only &mdash; they reach airfield operations, tower, and local ATS, but not foreign flight planning offices. This is exactly why coordination matters: an aerodrome hazard that also affects the en-route phase must be reflected in a SIGMET or AIRMET, otherwise the international consumer never learns of it.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>SIGMET and AIRMET reach Frankfurt via AFTN/VOLMET; AD WRNG and WS WRNG are local-distribution only.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>All four products are distributed internationally over AFTN.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Only AD WRNG and WS WRNG reach Frankfurt &mdash; they are the aerodrome-specific products that flight planning needs.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>None of the products are available outside Israel; foreign dispatchers rely on the TAF only.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L4-Q07 — When NOT to pair WS WRNG with an AIRMET</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>The IMS issues a WS WRNG for LLBG because of a low-level jet (32 kt at 900 ft AGL, 5 kt at the surface). The FIR is otherwise quiet. Which is the correct accompanying action?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> The IMS coordination rule explicitly says that when a WS WRNG is issued for an aerodrome because of a low-level jet, no AIRMET or SIGMET is required. The LLJ is an aerodrome-scale phenomenon &mdash; it shears the approach and climb-out paths but does not, by itself, constitute a FIR-wide en-route hazard. Issuing an AIRMET would over-warn; issuing an AD WRNG would describe a different (surface-wind) hazard that does not apply here.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>No AIRMET or SIGMET is required &mdash; the LLJ is an aerodrome-scale phenomenon and the WS WRNG alone suffices.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Also issue an AIRMET for <code>SFC WSPD &ge;30KT</code> because the jet is 32 kt.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Also issue an AD WRNG for surface wind, since a strong jet implies strong surface wind.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Also issue a SIGMET for SEV TURB, on the assumption that any LLJ produces severe turbulence.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+</quiz>

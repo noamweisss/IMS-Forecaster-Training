@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+  <question type="multichoice">
+    <name>
+      <text>L3-Q01 — Distinguishing OCNL from FRQ</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>Radar shows a developing line of thunderstorm cells over the northern sub-area of the FIR. Visual inspection and reflectivity coverage suggest the cells occupy roughly 60% of the sub-area, with discernible gaps between adjacent cells. Intensity is moderate. What message should the MWO issue?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> Coverage between 50% and 75% with discernible separation between cells is OCNL TS &mdash; an AIRMET phenomenon. FRQ requires coverage greater than 75% with little or no separation. The cells do not need to be embedded, obscured, or in a squall line to fall under AIRMET, so a SIGMET is not warranted. "No message" misses the operational hazard to low-level traffic crossing the area.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>An AIRMET for OCNL TS over the affected sub-area.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A SIGMET for FRQ TS &mdash; once coverage exceeds 50%, FRQ applies.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A SIGMET for EMBD TS, on the basis of the line structure.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>No message &mdash; moderate-intensity cells with gaps do not trigger any product.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L3-Q02 — AIRMET-only phenomena</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>Which of the following phenomena triggers an AIRMET but has <em>no</em> SIGMET equivalent at any intensity?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> Cloud ceilings below 1000 ft, sustained surface winds &ge; 30 kt, visibility below 5 km, and extensive mountain obscuration are AIRMET-only phenomena &mdash; they describe the low-level environment and have no SIGMET counterpart. Severe icing and embedded thunderstorms are SIGMET phenomena (with AIRMET counterparts at lower intensity, MOD ICE and ISOL/OCNL TS). Volcanic ash is exclusively a SIGMET (WV) phenomenon.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Cloud ceilings below 1000 ft over an extensive area.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Severe icing with freezing rain.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Embedded thunderstorms over the FIR.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Volcanic ash drifting through the FIR.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L3-Q03 — Borderline icing scenario</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>The model's icing-potential field is moderate-to-strong over a stratus layer between 5,000 and 8,500 ft. A pilot report at 7,000 ft describes the icing as "moderate" with no reference to freezing rain. The synoptic situation supports persistent moderate icing for the next three hours. Which message should the MWO issue?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> Both model output and the PIREP describe the icing as moderate, and the cloud is stratiform (not convective), so MOD ICE is the correct AIRMET phenomenon. SEV ICE would require a severe PIREP or unambiguous model indication of severe icing &mdash; not present here. The presence or absence of FZRA is a qualifier on a severe case, not a standalone trigger. Doing nothing leaves a known low-level hazard un-warned.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>An AIRMET for MOD ICE.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A SIGMET for SEV ICE, because stratus icing should always be promoted to severe in winter.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A SIGMET for SEV ICE FZRA, because freezing rain is a winter default assumption.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>No message &mdash; pilot reports of moderate icing are not actionable on their own.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L3-Q04 — Surface wind threshold</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>A strong synoptic pressure gradient is forecast to drive sustained 10-minute mean surface winds of 32 kt across a broad sub-area of the FIR for the next 4 hours. Gusts will be higher. Which product covers the en-route hazard to general aviation across the affected area?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> Sustained surface winds &ge; 30 kt over an extensive area is an AIRMET phenomenon (<code>SFC WSPD &ge;30KT</code>) and has no SIGMET equivalent. The aerodrome warning is a separate product, scoped to the airport itself, and is covered in Lesson 4 &mdash; an AD WRNG does not warn the en-route GA pilot crossing the FIR. A WS WRNG addresses runway-specific wind shear, not large-scale surface winds.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>An AIRMET for <code>SFC WSPD &ge;30KT</code> over the affected sub-area.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A SIGMET for severe surface winds, since 32 kt is well above 30 kt.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>An AD WRNG, because surface winds primarily affect aerodromes.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A WS WRNG, because the winds are likely to cause runway-shear conditions.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L3-Q05 — AIRMET vs SIGMET in a borderline case</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>A mountain-wave forecast shows downdrafts peaking at exactly 3.0 m/s along the lee slopes, with accompanying severe turbulence forecast in patches. Which warning is appropriate?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> The SEV MTW threshold is downdraft &ge; 3.0 m/s <em>or</em> accompanying severe turbulence. Both conditions are present here, so SIGMET is the correct call &mdash; the boundary is inclusive, not exclusive. Issuing an AIRMET for MOD MTW would under-warn the hazard. Issuing both an AIRMET and a SIGMET for the same phenomenon over the same area violates the one-phenomenon-one-message principle.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>A SIGMET for SEV MTW &mdash; the 3.0 m/s threshold is inclusive and the accompanying SEV turbulence also qualifies on its own.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>An AIRMET for MOD MTW &mdash; 3.0 m/s is the upper bound of the MOD band.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Both an AIRMET (for the wave) and a SIGMET (for the turbulence) over the same area.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>No warning &mdash; the model is at the boundary, so the case should be left to the routine SIGWX chart.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L3-Q06 — "Not already in the forecast"</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>An MWO trainee asks why the IMS issues an AIRMET for visibility &lt;5 km in haze even though the TAFs for the affected aerodromes already mention reduced visibility. What is the correct explanation?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> The "not already in the forecast" exemption refers specifically to a low-level area forecast covering the same FIR or sub-area at AIRMET intensity &mdash; typically a GAMET. TAFs are aerodrome forecasts, not low-level area forecasts; they do not exempt the MWO from issuing an AIRMET for an en-route visibility hazard. Israel does not produce a GAMET, so the exemption almost never applies and the AIRMET is issued whenever the phenomenon and intensity criteria are met. The exemption is not a "discretionary" or "tradition" clause &mdash; it is a specific carve-out tied to the existence of a covering area forecast.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>The exemption applies only when a low-level area forecast (e.g., GAMET) covers the FIR at AIRMET intensity; TAFs are aerodrome forecasts and do not satisfy the exemption.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>The exemption is purely discretionary &mdash; the MWO can choose to issue the AIRMET or rely on the TAFs.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>The exemption never applies to visibility, only to ceiling and surface wind AIRMETs.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>The exemption is an IMS-only tradition; in other countries the TAFs would be sufficient.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+</quiz>

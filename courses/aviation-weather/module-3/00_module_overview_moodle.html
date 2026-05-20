@@ -1,0 +1,167 @@
+<style>
+/*
+ * IMS Course Factory — Lesson Design System
+ *
+ * All rules are scoped to `.ims-lesson` so the styles can be injected into
+ * a host page (Moodle, in particular) without leaking onto the host's chrome
+ * and without the host's theme overriding lesson typography.
+ *
+ * Standalone lesson HTML wraps the entire body in <div class="ims-lesson">.
+ * Moodle body-fragment HTML does the same. The single rule below keeps the
+ * standalone preview's <body> background consistent without leaking into
+ * Moodle pages.
+ */
+
+.ims-lesson {
+  --bg: #ffffff;
+  --surface: #f6f5f0;
+  --border: #e2dfd6;
+  --text: #1a1917;
+  --muted: #6b6a65;
+  --accent: #185fa5;
+  --accent-light: #e6f1fb;
+  --note-bg: #e1f5ee;
+  --note-border: #0F6E56;
+  --warn-bg: #faeeda;
+  --warn-border: #BA7517;
+  --key-bg: #EEEDFE;
+  --key-border: #534AB7;
+  --danger-bg: #fcebeb;
+  --danger-border: #A32D2D;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .ims-lesson {
+    --bg: #1a1917;
+    --surface: #242320;
+    --border: #3a3835;
+    --text: #e8e6df;
+    --muted: #9a9890;
+    --accent-light: #042c53;
+    --note-bg: #04342c;
+    --warn-bg: #412402;
+    --key-bg: #26215c;
+  }
+}
+
+.ims-lesson h1 { font-size: 1.8rem; font-weight: 600; margin-bottom: 0.2rem; line-height: 1.2; color: var(--text); }
+.ims-lesson h2 { font-size: 1.25rem; font-weight: 600; margin-top: 2.5rem; padding-bottom: 0.4rem;
+  border-bottom: 1.5px solid var(--border); color: var(--text); }
+.ims-lesson h3 { font-size: 1.05rem; font-weight: 600; margin-top: 1.75rem; color: var(--text); }
+.ims-lesson p { margin: 0.7rem 0; max-width: 72ch; }
+.ims-lesson figure { margin: 2rem 0; }
+.ims-lesson figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 0.6rem;
+  font-style: italic; text-align: center; }
+.ims-lesson svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+.ims-lesson img { max-width: 100%; height: auto; }
+.ims-lesson table { border-collapse: collapse; width: 100%; margin: 1.5rem 0; font-size: 0.9rem; }
+.ims-lesson th { background: var(--accent); color: #fff; padding: 0.55rem 0.9rem; text-align: left; }
+.ims-lesson td { padding: 0.5rem 0.9rem; border-bottom: 1px solid var(--border); }
+.ims-lesson tr:nth-child(even) td { background: var(--surface); }
+.ims-lesson .callout { border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+.ims-lesson .callout-note    { background: var(--note-bg);   border-left: 4px solid var(--note-border); }
+.ims-lesson .callout-warning { background: var(--warn-bg);   border-left: 4px solid var(--warn-border); }
+.ims-lesson .callout-key     { background: var(--key-bg);    border-left: 4px solid var(--key-border); }
+.ims-lesson .callout-danger  { background: var(--danger-bg); border-left: 4px solid var(--danger-border); }
+.ims-lesson .callout-label { font-weight: 700; font-size: 0.78rem; text-transform: uppercase;
+  letter-spacing: 0.06em; margin-bottom: 0.35rem; }
+.ims-lesson .objectives { background: var(--surface); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+.ims-lesson .objectives ul { margin: 0.5rem 0 0; padding-left: 1.4rem; }
+.ims-lesson .lesson-summary { background: var(--accent-light); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 2.5rem 0 1rem; }
+.ims-lesson .lesson-summary h3 { margin-top: 0; color: var(--accent); font-size: 1rem; }
+.ims-lesson .image-needed { border: 2px dashed var(--border); border-radius: 8px;
+  padding: 1.5rem; margin: 1.5rem 0; text-align: center;
+  color: var(--muted); font-size: 0.9rem; background: var(--surface); }
+.ims-lesson .meta { color: var(--muted); font-size: 0.88rem; margin-bottom: 1.75rem; }
+.ims-lesson .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.5rem; }
+</style>
+<div class="ims-lesson">
+<p class="breadcrumb">Module 3 overview</p>
+<h1>Aviation Warnings: SIGMET, AIRMET &amp; Aerodrome</h1>
+
+<p class="meta">
+  Estimated duration: ~95 min &nbsp;|&nbsp;
+  4 lessons &nbsp;|&nbsp;
+  Module quiz: 24 questions, pass at 75%
+</p>
+
+<p>How the IMS issues the three statutory aviation warning products: SIGMET and AIRMET for en-route hazards across the FIR, and AD WRNG / WS WRNG for hazards at the aerodrome. The module focuses on ICAO Annex 3 thresholds, the IMS operational criteria layered on top of them, and the message syntax &mdash; what to write, when to write it, and when to coordinate one product with another.</p>
+
+<div class="objectives">
+  <strong>By completing this module you will be certified to:</strong>
+  <ul>
+    <li>Distinguish SIGMET, AIRMET, and aerodrome warnings by phenomenon, intensity threshold, and area of responsibility.</li>
+    <li>Construct a syntactically valid SIGMET or AIRMET message including WMO header, validity, meteorological part, and lat/lon coordinates.</li>
+    <li>Apply ICAO Annex 3 validity, lead-time, and cancellation rules to SIGMET and AIRMET issuance.</li>
+    <li>Apply IMS-specific AD WRNG criteria for thunderstorms, low visibility, low cloud base, strong winds, and frost.</li>
+    <li>Issue a wind-shear warning based on forecast, observation, or pilot report, including low-level jet conditions.</li>
+    <li>Coordinate AD WRNG with SIGMET / AIRMET so the FIR-wide and aerodrome-local products stay consistent.</li>
+  </ul>
+</div>
+
+<h2>Lessons</h2>
+
+<div style="border:1px solid #E2DFD6; border-radius:8px; padding:1rem 1.25rem; margin:0.75rem 0;">
+  <div style="display:flex; justify-content:space-between; align-items:baseline;">
+    <strong>Lesson 1: The Aviation Warning Framework &amp; SIGMET Phenomena</strong>
+    <span style="color:#6B6A65; font-size:0.85rem;">~20 min</span>
+  </div>
+  <ul style="margin:0.5rem 0 0; padding-left:1.4rem; font-size:0.9rem;">
+    <li>Place SIGMET, AIRMET, and aerodrome warnings within the ICAO Annex 3 service hierarchy (MWO vs AFO; FIR vs aerodrome).</li>
+    <li>List the SIGMET phenomena and the severity qualifier required to trigger each (OBSC/EMBD/FRQ/SQL TS, SEV TURB, SEV ICE, SEV MTW, HVY DS/SS, VA, RDOACT).</li>
+    <li>Distinguish the three SIGMET subtypes (WS, WV, WC) and the data-type designator that identifies each.</li>
+    <li>Decide whether a given observation/forecast triggers a SIGMET or stays below threshold.</li>
+  </ul>
+</div>
+
+<div style="border:1px solid #E2DFD6; border-radius:8px; padding:1rem 1.25rem; margin:0.75rem 0;">
+  <div style="display:flex; justify-content:space-between; align-items:baseline;">
+    <strong>Lesson 2: SIGMET Message Structure, Coordinates &amp; Cancellation</strong>
+    <span style="color:#6B6A65; font-size:0.85rem;">~25 min</span>
+  </div>
+  <ul style="margin:0.5rem 0 0; padding-left:1.4rem; font-size:0.9rem;">
+    <li>Decode every field of a SIGMET WMO header (T1T2A1A2ii CCCC YYGGgg).</li>
+    <li>Construct the first line of a SIGMET (FIR/MWO indicators, sequential number, validity period).</li>
+    <li>Write lat/lon coordinates in the ICAO Annex 3 format including the space-hyphen-space polygon convention.</li>
+    <li>Issue a SIGMET cancellation message with the correct sequential numbering and validity reference.</li>
+    <li>Apply the 4-hour validity ceiling, the 4-hour pre-occurrence lead-time limit, and the one-phenomenon-per-message rule.</li>
+  </ul>
+</div>
+
+<div style="border:1px solid #E2DFD6; border-radius:8px; padding:1rem 1.25rem; margin:0.75rem 0;">
+  <div style="display:flex; justify-content:space-between; align-items:baseline;">
+    <strong>Lesson 3: AIRMET &mdash; Low-Level Warnings</strong>
+    <span style="color:#6B6A65; font-size:0.85rem;">~20 min</span>
+  </div>
+  <ul style="margin:0.5rem 0 0; padding-left:1.4rem; font-size:0.9rem;">
+    <li>Apply the AIRMET scope rule (below FL100, en-route, not already covered by an existing low-level forecast).</li>
+    <li>Identify the AIRMET phenomenon list (ISOL/OCNL TS, MOD ICE, MOD TURB/MTW, sustained SFC wind &ge; 30 kt, ceiling &lt; 1000 ft, vis &lt; 5 km, extensive mountain obscuration).</li>
+    <li>Differentiate the spatial-coverage qualifiers ISOL (&lt; 50%), OCNL (50&ndash;75%), and FRQ (&gt; 75%).</li>
+    <li>Choose between issuing a SIGMET, an AIRMET, or no message at all given a forecast scenario near threshold.</li>
+  </ul>
+</div>
+
+<div style="border:1px solid #E2DFD6; border-radius:8px; padding:1rem 1.25rem; margin:0.75rem 0;">
+  <div style="display:flex; justify-content:space-between; align-items:baseline;">
+    <strong>Lesson 4: Aerodrome (AD) &amp; Wind-Shear (WS) Warnings</strong>
+    <span style="color:#6B6A65; font-size:0.85rem;">~25 min</span>
+  </div>
+  <ul style="margin:0.5rem 0 0; padding-left:1.4rem; font-size:0.9rem;">
+    <li>Apply the IMS AD WRNG thresholds for TS/CB (within 16 km of runway centre), visibility (&lt; 5000 m), ceiling (BKN/OVC &le; 1500 ft), surface wind (&gt; 20 kt mean / &gt; 30 kt gust), and severe hail (&ge; 2 cm).</li>
+    <li>Construct a valid AD WRNG message and the equivalent WS WRNG message, including the phenomenon code (TS, GR, HVY SN, FZRA, SFC WSPD, SQ, FROST, TSUNAMI, VA, free text).</li>
+    <li>Issue a WS WRNG based on forecaster judgement (FCST), observation (OBS &mdash; AMDAR/sonde/pilot), or aircraft report (REP AT), including the low-level-jet criterion (peak &ge; 30 kt below 2000 ft AGL).</li>
+    <li>Coordinate AD WRNG issuance with SIGMET / AIRMET so the FIR-wide and aerodrome-local products stay consistent &mdash; and recognise the cases where coordination is not required (e.g. WS WRNG for LLJ).</li>
+  </ul>
+</div>
+</div>

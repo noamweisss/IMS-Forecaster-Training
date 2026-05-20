@@ -1,0 +1,354 @@
+<style>
+/*
+ * IMS Course Factory — Lesson Design System
+ *
+ * All rules are scoped to `.ims-lesson` so the styles can be injected into
+ * a host page (Moodle, in particular) without leaking onto the host's chrome
+ * and without the host's theme overriding lesson typography.
+ *
+ * Standalone lesson HTML wraps the entire body in <div class="ims-lesson">.
+ * Moodle body-fragment HTML does the same. The single rule below keeps the
+ * standalone preview's <body> background consistent without leaking into
+ * Moodle pages.
+ */
+
+.ims-lesson {
+  --bg: #ffffff;
+  --surface: #f6f5f0;
+  --border: #e2dfd6;
+  --text: #1a1917;
+  --muted: #6b6a65;
+  --accent: #185fa5;
+  --accent-light: #e6f1fb;
+  --note-bg: #e1f5ee;
+  --note-border: #0F6E56;
+  --warn-bg: #faeeda;
+  --warn-border: #BA7517;
+  --key-bg: #EEEDFE;
+  --key-border: #534AB7;
+  --danger-bg: #fcebeb;
+  --danger-border: #A32D2D;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .ims-lesson {
+    --bg: #1a1917;
+    --surface: #242320;
+    --border: #3a3835;
+    --text: #e8e6df;
+    --muted: #9a9890;
+    --accent-light: #042c53;
+    --note-bg: #04342c;
+    --warn-bg: #412402;
+    --key-bg: #26215c;
+  }
+}
+
+.ims-lesson h1 { font-size: 1.8rem; font-weight: 600; margin-bottom: 0.2rem; line-height: 1.2; color: var(--text); }
+.ims-lesson h2 { font-size: 1.25rem; font-weight: 600; margin-top: 2.5rem; padding-bottom: 0.4rem;
+  border-bottom: 1.5px solid var(--border); color: var(--text); }
+.ims-lesson h3 { font-size: 1.05rem; font-weight: 600; margin-top: 1.75rem; color: var(--text); }
+.ims-lesson p { margin: 0.7rem 0; max-width: 72ch; }
+.ims-lesson figure { margin: 2rem 0; }
+.ims-lesson figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 0.6rem;
+  font-style: italic; text-align: center; }
+.ims-lesson svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+.ims-lesson img { max-width: 100%; height: auto; }
+.ims-lesson table { border-collapse: collapse; width: 100%; margin: 1.5rem 0; font-size: 0.9rem; }
+.ims-lesson th { background: var(--accent); color: #fff; padding: 0.55rem 0.9rem; text-align: left; }
+.ims-lesson td { padding: 0.5rem 0.9rem; border-bottom: 1px solid var(--border); }
+.ims-lesson tr:nth-child(even) td { background: var(--surface); }
+.ims-lesson .callout { border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+.ims-lesson .callout-note    { background: var(--note-bg);   border-left: 4px solid var(--note-border); }
+.ims-lesson .callout-warning { background: var(--warn-bg);   border-left: 4px solid var(--warn-border); }
+.ims-lesson .callout-key     { background: var(--key-bg);    border-left: 4px solid var(--key-border); }
+.ims-lesson .callout-danger  { background: var(--danger-bg); border-left: 4px solid var(--danger-border); }
+.ims-lesson .callout-label { font-weight: 700; font-size: 0.78rem; text-transform: uppercase;
+  letter-spacing: 0.06em; margin-bottom: 0.35rem; }
+.ims-lesson .objectives { background: var(--surface); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+.ims-lesson .objectives ul { margin: 0.5rem 0 0; padding-left: 1.4rem; }
+.ims-lesson .lesson-summary { background: var(--accent-light); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 2.5rem 0 1rem; }
+.ims-lesson .lesson-summary h3 { margin-top: 0; color: var(--accent); font-size: 1rem; }
+.ims-lesson .image-needed { border: 2px dashed var(--border); border-radius: 8px;
+  padding: 1.5rem; margin: 1.5rem 0; text-align: center;
+  color: var(--muted); font-size: 0.9rem; background: var(--surface); }
+.ims-lesson .meta { color: var(--muted); font-size: 0.88rem; margin-bottom: 1.75rem; }
+.ims-lesson .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.5rem; }
+</style>
+<div class="ims-lesson">
+<p class="breadcrumb">Module 3 / Lesson 2</p>
+<h1>SIGMET Message Structure, Coordinates &amp; Cancellation</h1>
+
+<div class="objectives">
+  <strong>By the end of this lesson you will be able to:</strong>
+  <ul>
+    <li>Decode every field of a SIGMET WMO header (<code>T1T2A1A2ii CCCC YYGGgg</code>).</li>
+    <li>Construct the first line of a SIGMET (FIR/MWO indicators, sequential number, validity period).</li>
+    <li>Write latitude/longitude coordinates in the Annex 3 format, including the space-hyphen-space polygon convention.</li>
+    <li>Issue a SIGMET cancellation message with the correct sequential numbering and validity reference.</li>
+    <li>Apply the 4-hour validity ceiling, the 4-hour pre-occurrence lead-time limit, and the one-phenomenon-per-message rule.</li>
+  </ul>
+</div>
+
+<h2>The anatomy of a SIGMET</h2>
+
+<p>Every SIGMET has three parts in fixed order: the WMO bulletin header, the first (administrative) line, and the meteorological part. Each part has rigid syntax. A SIGMET that fails the syntax will be rejected by the AFTN parser, will not reach the airlines, and is therefore operationally invisible — no matter how correct the weather assessment behind it.</p>
+
+<p>The Annex 3 wording for the message components:</p>
+
+<ul>
+  <li><strong>WMO heading</strong> &mdash; the AFTN/WMO bulletin identifier; tells the network what kind of message this is.</li>
+  <li><strong>First line</strong> &mdash; the FIR or CTA identifier, the issuing MWO, the sequential number, and the validity period.</li>
+  <li><strong>Meteorological part</strong> &mdash; the phenomenon, its location and extent (lat/lon polygon), intensity, vertical extent, and forecast movement.</li>
+</ul>
+
+<h2>The WMO header, field by field</h2>
+
+<p>The header has the form <code>T1T2A1A2ii CCCC YYGGgg</code>. Every character has a role.</p>
+
+<figure>
+  <svg viewBox="0 0 680 280" role="img" xmlns="http://www.w3.org/2000/svg">
+    <title>Decoded WMO header for a SIGMET message</title>
+    <desc>The header WSXY31 LLBD 121400 is shown in large monospace text with each field labelled below: WS is the data-type designator, XY the country designator, 31 the bulletin number, LLBD the issuing communication centre, 12 the day, and 1400 the time in UTC.</desc>
+
+    <!-- Header text -->
+    <rect x="60" y="40" width="560" height="60" fill="#F6F5F0" stroke="#E2DFD6" stroke-width="1.5"/>
+    <text x="100" y="80" font-family="monospace" font-size="28" fill="#1A1917">WS</text>
+    <text x="160" y="80" font-family="monospace" font-size="28" fill="#1A1917">XY</text>
+    <text x="220" y="80" font-family="monospace" font-size="28" fill="#1A1917">31</text>
+    <text x="330" y="80" font-family="monospace" font-size="28" fill="#1A1917">LLBD</text>
+    <text x="470" y="80" font-family="monospace" font-size="28" fill="#1A1917">12</text>
+    <text x="540" y="80" font-family="monospace" font-size="28" fill="#1A1917">1400</text>
+
+    <!-- Field labels with colour-coded callouts -->
+    <!-- T1T2 -->
+    <rect x="80" y="130" width="80" height="30" rx="4" fill="#185FA5"/>
+    <text x="120" y="150" font-family="sans-serif" font-size="12" fill="#ffffff" text-anchor="middle">T1T2</text>
+    <text x="120" y="180" font-family="sans-serif" font-size="11" fill="#185FA5" text-anchor="middle">Data type</text>
+    <text x="120" y="195" font-family="sans-serif" font-size="11" fill="#6B6A65" text-anchor="middle">WS = SIGMET</text>
+    <line x1="120" y1="100" x2="120" y2="130" stroke="#185FA5" stroke-width="1.5"/>
+
+    <!-- A1A2 -->
+    <rect x="170" y="130" width="80" height="30" rx="4" fill="#0F6E56"/>
+    <text x="210" y="150" font-family="sans-serif" font-size="12" fill="#ffffff" text-anchor="middle">A1A2</text>
+    <text x="210" y="180" font-family="sans-serif" font-size="11" fill="#0F6E56" text-anchor="middle">Country</text>
+    <text x="210" y="195" font-family="sans-serif" font-size="11" fill="#6B6A65" text-anchor="middle">XY (example)</text>
+    <line x1="210" y1="100" x2="210" y2="130" stroke="#0F6E56" stroke-width="1.5"/>
+
+    <!-- ii -->
+    <rect x="260" y="130" width="80" height="30" rx="4" fill="#BA7517"/>
+    <text x="300" y="150" font-family="sans-serif" font-size="12" fill="#ffffff" text-anchor="middle">ii</text>
+    <text x="300" y="180" font-family="sans-serif" font-size="11" fill="#BA7517" text-anchor="middle">Bulletin no.</text>
+    <text x="300" y="195" font-family="sans-serif" font-size="11" fill="#6B6A65" text-anchor="middle">Assigned nationally</text>
+    <line x1="300" y1="100" x2="300" y2="130" stroke="#BA7517" stroke-width="1.5"/>
+
+    <!-- CCCC -->
+    <rect x="350" y="130" width="120" height="30" rx="4" fill="#534AB7"/>
+    <text x="410" y="150" font-family="sans-serif" font-size="12" fill="#ffffff" text-anchor="middle">CCCC</text>
+    <text x="410" y="180" font-family="sans-serif" font-size="11" fill="#534AB7" text-anchor="middle">Communication centre</text>
+    <text x="410" y="195" font-family="sans-serif" font-size="11" fill="#6B6A65" text-anchor="middle">ICAO indicator (often = MWO)</text>
+    <line x1="410" y1="100" x2="410" y2="130" stroke="#534AB7" stroke-width="1.5"/>
+
+    <!-- YY -->
+    <rect x="480" y="130" width="50" height="30" rx="4" fill="#993C1D"/>
+    <text x="505" y="150" font-family="sans-serif" font-size="12" fill="#ffffff" text-anchor="middle">YY</text>
+    <text x="505" y="180" font-family="sans-serif" font-size="11" fill="#993C1D" text-anchor="middle">Day</text>
+    <text x="505" y="195" font-family="sans-serif" font-size="11" fill="#6B6A65" text-anchor="middle">Of month</text>
+    <line x1="505" y1="100" x2="505" y2="130" stroke="#993C1D" stroke-width="1.5"/>
+
+    <!-- GGgg -->
+    <rect x="540" y="130" width="80" height="30" rx="4" fill="#1A1917"/>
+    <text x="580" y="150" font-family="sans-serif" font-size="12" fill="#ffffff" text-anchor="middle">GGgg</text>
+    <text x="580" y="180" font-family="sans-serif" font-size="11" fill="#1A1917" text-anchor="middle">Time UTC</text>
+    <text x="580" y="195" font-family="sans-serif" font-size="11" fill="#6B6A65" text-anchor="middle">Hours/minutes</text>
+    <line x1="580" y1="100" x2="580" y2="130" stroke="#1A1917" stroke-width="1.5"/>
+
+    <!-- Note -->
+    <text x="340" y="240" font-family="sans-serif" font-size="12" fill="#6B6A65" text-anchor="middle" font-style="italic">"A standard SIGMET, country XY, bulletin number 31,</text>
+    <text x="340" y="258" font-family="sans-serif" font-size="12" fill="#6B6A65" text-anchor="middle" font-style="italic">disseminated by LLBD on day 12 at 14:00 UTC."</text>
+  </svg>
+  <figcaption>Figure 2.1 &mdash; a SIGMET WMO header decoded field by field. The data-type designator <code>T1T2</code> is what distinguishes WS, WA, WV, and WC bulletins on the wire.</figcaption>
+</figure>
+
+<p>The data-type designator <code>T1T2</code> is the most operationally important field; it tells every downstream consumer what kind of message has arrived and how to route it. <code>WS</code> for standard SIGMET, <code>WA</code> for AIRMET, <code>WV</code> for volcanic-ash SIGMET, <code>WC</code> for tropical-cyclone SIGMET.</p>
+
+<h2>The first line — administrative metadata</h2>
+
+<p>The first line identifies the FIR and the MWO, gives the message its sequence number, and stamps the validity window. The general form is:</p>
+
+<div class="callout callout-key">
+  <div class="callout-label">First-line skeleton</div>
+  <code>&lt;FIR_ICAO&gt; SIGMET &lt;n&gt; VALID YYGGgg/YYGGgg &lt;MWO_ICAO&gt;-</code><br/>
+  <code>&lt;FIR_ICAO&gt; &lt;FIR name&gt; FIR ...</code>
+</div>
+
+<p>Worked example, taken directly from the source deck:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Header / first line</th>
+      <th>What each field is</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>WSXY31 YUSO 101200</code></td>
+      <td>WMO header &mdash; standard SIGMET (WS), country XY, bulletin 31, issued from YUSO on day 10 at 12:00 UTC</td>
+    </tr>
+    <tr>
+      <td><code>YUDD SIGMET 5 VALID 101200/101600 YUSO-</code></td>
+      <td>FIR <code>YUDD</code>, this is the fifth SIGMET of the day, validity 10 Dec 12:00&ndash;16:00 UTC, issued by MWO <code>YUSO</code></td>
+    </tr>
+    <tr>
+      <td><code>YUDD SHANLON FIR ...</code></td>
+      <td>FIR name spelled out; the meteorological part follows on this line</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The sequential number <code>n</code> resets daily and is allocated by the MWO. The <code>VALID</code> period uses the same <code>YYGGgg/YYGGgg</code> format — day, hours, minutes for the start, then the end. A trailing hyphen after the MWO indicator separates the first line from the meteorological part; the second line continues with the FIR name.</p>
+
+<h2>Validity, lead time, and the one-phenomenon rule</h2>
+
+<p>Three rules govern when and for how long a SIGMET can be in force.</p>
+
+<div class="callout callout-warning">
+  <div class="callout-label">The three timing rules</div>
+  <ol>
+    <li><strong>Maximum validity is 4 hours.</strong> A SIGMET cannot be valid for longer than 4 hours from its <code>VALID</code> start time. If the phenomenon is expected to persist beyond that, a new SIGMET with the next sequential number must be issued.</li>
+    <li><strong>Lead time is also 4 hours.</strong> The time of issuance shall not precede the expected start of the phenomenon by more than 4 hours. SIGMETs do not get to "warn 12 hours ahead".</li>
+    <li><strong>One phenomenon per message.</strong> A given SIGMET addresses exactly one phenomenon (e.g., SEV TURB <em>or</em> EMBD TS &mdash; not both). If two SIGMET-worthy phenomena coexist, issue two SIGMETs.</li>
+  </ol>
+</div>
+
+<p>The 4-hour validity ceiling exists because the meteorological part of a SIGMET contains a specific polygon and a single forecast position; beyond 4 hours, the polygon stops being useful. The one-phenomenon rule exists because consumers (airlines, dispatchers, ATC) parse the meteorological part as a single weather object — a message that mixes two phenomena is operationally ambiguous.</p>
+
+<p>WV (volcanic ash) and WC (tropical cyclone) SIGMETs are exceptions to the 4-hour ceiling because ash plumes and tropical cyclones evolve on longer timescales; their typical max validity is 6 hours.</p>
+
+<h2>Geographic coordinates in SIGMET</h2>
+
+<p>The phenomenon's location is described as a lat/lon polygon. Annex 3 prescribes a specific syntax that the AFTN parser will validate strictly.</p>
+
+<h3>Coordinate format</h3>
+
+<p>Each point is written as latitude followed by longitude, in whole degrees or degrees-and-minutes:</p>
+
+<div class="callout callout-key">
+  <div class="callout-label">Coordinate format</div>
+  <code>N(S)nn[nn] W(E)nnn[nn]</code>
+  <br/>
+  Examples: <code>N3623 W04515</code>, <code>S1530 E12500</code>, <code>N42 E023</code>.
+</div>
+
+<p>The hemisphere letter (<code>N</code>/<code>S</code> for latitude, <code>E</code>/<code>W</code> for longitude) comes first, followed by the magnitude in two or four digits for latitude and three or five digits for longitude. Optionally, the minutes pair is appended (no separator, no degree sign — the parser keys off the digit count).</p>
+
+<h3>Polygon syntax</h3>
+
+<p>When the phenomenon occupies an area, the polygon's vertices are listed in order, with the literal pattern <code>&nbsp;-&nbsp;</code> (space, hyphen, space) between adjacent points:</p>
+
+<div class="callout callout-key">
+  <div class="callout-label">Polygon example (Annex 3)</div>
+  <code>S0530 E09300 - N0100 E09530 - N1215 E11045 - S0820 E10330</code>
+  <br/><br/>
+  Coarser-resolution variant of the same area:<br/>
+  <code>S05 E093 - N01 E095 - N12 E110 - S08 E103</code>
+</div>
+
+<p>The polygon must be closed implicitly — the last vertex is connected back to the first by the consumer. Do not repeat the first vertex at the end. Do not use commas, semicolons, or degree symbols; the AFTN parser will reject the message.</p>
+
+<div class="callout callout-warning">
+  <div class="callout-label">Common syntax errors</div>
+  <ul>
+    <li><strong>Decimal degrees</strong> (<code>N36.4 E034.7</code>) &mdash; not accepted. Use degrees+minutes or whole degrees only.</li>
+    <li><strong>Missing hemisphere letter</strong> at the start &mdash; the parser will treat the first digit as the start of the magnitude and mis-locate the point by an order of magnitude.</li>
+    <li><strong>Mixed separators</strong> &mdash; the dash must be space-hyphen-space, never <code>&middot;</code>, comma, or arrow.</li>
+    <li><strong>Closing the polygon explicitly</strong> &mdash; do not repeat the first vertex; the consumer closes it.</li>
+  </ul>
+</div>
+
+<h2>Cancelling a SIGMET</h2>
+
+<p>If the phenomenon for which a SIGMET was issued is no longer occurring and is no longer expected during the original validity period, the issuing MWO cancels the SIGMET. Cancellation is itself a SIGMET message — same data-type designator, next sequential number, new validity period.</p>
+
+<p>The structure of the cancellation:</p>
+
+<ul>
+  <li>WMO heading with the same <code>T1T2</code> data-type designator as the original.</li>
+  <li>First line, including the <em>next</em> sequential number followed by a new validity period (typically running from "now" until the original SIGMET's end-time).</li>
+  <li>Second line containing the FIR location indicator and name, then the literal <code>CNL SIGMET &lt;n&gt; YYGGgg/YYGGgg</code> referencing the sequential number and validity period of the SIGMET being cancelled.</li>
+</ul>
+
+<h3>Worked example — original and its cancellation</h3>
+
+<figure>
+  <svg viewBox="0 0 680 360" role="img" xmlns="http://www.w3.org/2000/svg">
+    <title>SIGMET and its cancellation, side by side</title>
+    <desc>Two stacked panels. The top panel is the original SIGMET number 5 issued at 12:00 UTC and valid 12:00-16:00. The bottom panel is the cancellation, issued at 14:30, numbered 6, valid 14:30-16:00, containing CNL SIGMET 5 1200/1600.</desc>
+
+    <!-- Original SIGMET -->
+    <rect x="40" y="30" width="600" height="130" rx="6" fill="#F6F5F0" stroke="#185FA5" stroke-width="2"/>
+    <text x="60" y="55" font-family="sans-serif" font-size="12" font-weight="600" fill="#185FA5">ORIGINAL SIGMET</text>
+    <text x="60" y="85" font-family="monospace" font-size="14" fill="#1A1917">WSXY31 YUSO 101200</text>
+    <text x="60" y="108" font-family="monospace" font-size="14" fill="#1A1917">YUDD SIGMET 5 VALID 101200/101600 YUSO-</text>
+    <text x="60" y="131" font-family="monospace" font-size="14" fill="#1A1917">YUDD SHANLON FIR EMBD TS FCST WI ...</text>
+    <text x="60" y="152" font-family="sans-serif" font-size="11" fill="#6B6A65" font-style="italic">Sequential number 5, valid 12:00&ndash;16:00 UTC on day 10</text>
+
+    <!-- Arrow -->
+    <path d="M 340 175 L 340 210" stroke="#BA7517" stroke-width="2" marker-end="url(#dnArrow)"/>
+    <text x="350" y="195" font-family="sans-serif" font-size="11" fill="#BA7517" font-style="italic">phenomenon ceases at ~14:20 UTC</text>
+
+    <!-- Cancellation -->
+    <rect x="40" y="220" width="600" height="130" rx="6" fill="#FAEEDA" stroke="#BA7517" stroke-width="2"/>
+    <text x="60" y="245" font-family="sans-serif" font-size="12" font-weight="600" fill="#BA7517">CANCELLATION</text>
+    <text x="60" y="275" font-family="monospace" font-size="14" fill="#1A1917">WSXY31 YUSO 101430</text>
+    <text x="60" y="298" font-family="monospace" font-size="14" fill="#1A1917">YUDD SIGMET 6 VALID 101430/101600 YUSO-</text>
+    <text x="60" y="321" font-family="monospace" font-size="14" fill="#1A1917">YUDD SHANLON FIR CNL SIGMET 5 101200/101600=</text>
+    <text x="60" y="342" font-family="sans-serif" font-size="11" fill="#6B6A65" font-style="italic">Next sequential number 6; CNL refers back to the original by number AND original validity</text>
+
+    <defs>
+      <marker id="dnArrow" viewBox="0 0 10 10" refX="5" refY="9" markerWidth="6" markerHeight="6" orient="auto">
+        <path d="M 0 0 L 10 0 L 5 9 Z" fill="#BA7517"/>
+      </marker>
+    </defs>
+  </svg>
+  <figcaption>Figure 2.2 &mdash; the cancellation is itself a SIGMET. Note the next sequence number (6), the new validity (14:30&ndash;16:00 covering the remainder of the original window), and the back-reference <code>CNL SIGMET 5 101200/101600</code>.</figcaption>
+</figure>
+
+<div class="callout callout-note">
+  <div class="callout-label">Why both number AND validity in the CNL line</div>
+  The sequential number alone could be ambiguous if a SIGMET was re-numbered or re-issued during the day. Including the original validity period (<code>101200/101600</code>) makes the back-reference unambiguous &mdash; the consumer knows exactly which earlier SIGMET is being cancelled, even if their AFTN cache is incomplete.
+</div>
+
+<h2>When NOT to cancel</h2>
+
+<p>If the phenomenon is still occurring at the SIGMET's expiry time, you do not cancel — you issue a new SIGMET with the next sequential number and a new validity window. Cancellation is reserved for the case where the phenomenon has ended before the original validity expires. The two cases are operationally different: cancellation says "false alarm" or "phenomenon dissipated"; re-issuance says "still here, here is the updated forecast".</p>
+
+<div class="callout callout-danger">
+  <div class="callout-label">Pitfall</div>
+  Cancelling a still-active SIGMET because the original validity is about to expire is a serious error &mdash; the airlines and ATS units will believe the hazard has passed when it has not. If the phenomenon persists, the correct action is a new SIGMET, not a CNL.
+</div>
+
+<div class="lesson-summary">
+  <h3>Key Takeaways</h3>
+  <ul>
+    <li>The WMO header decodes as <code>T1T2 A1A2 ii CCCC YYGGgg</code>. <code>T1T2</code> identifies the subtype (WS/WA/WV/WC); <code>CCCC</code> is the disseminating centre; <code>YYGGgg</code> is day plus time in UTC.</li>
+    <li>The first line carries the FIR ICAO indicator, the literal <code>SIGMET</code>, the sequential number, the validity period <code>YYGGgg/YYGGgg</code>, and the MWO indicator with a trailing hyphen.</li>
+    <li>Maximum validity is 4 hours for WS SIGMETs. Issuance precedes the expected phenomenon by no more than 4 hours. One phenomenon per message.</li>
+    <li>Coordinates use <code>N(S)nn[nn] W(E)nnn[nn]</code> in whole degrees or degrees-and-minutes only. Polygons separate vertices with space-hyphen-space and are not closed explicitly.</li>
+    <li>Cancellation is a new SIGMET message: next sequential number, new validity, second line containing <code>CNL SIGMET &lt;n&gt; YYGGgg/YYGGgg</code> referring back to the original.</li>
+    <li>If the phenomenon outlasts the original validity, issue a new SIGMET &mdash; do not cancel.</li>
+  </ul>
+</div>
+</div>

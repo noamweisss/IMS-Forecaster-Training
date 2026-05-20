@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+  <question type="multichoice">
+    <name>
+      <text>L1-Q01 — MWO vs AFO responsibility</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>A line of thunderstorms is forecast to develop along the eastern boundary of the FIR over the next three hours. Cells are expected to be embedded within a stratiform cloud deck. Ben Gurion lies near the western boundary of the FIR and is not expected to be directly affected. Which office issues which products?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> The phenomenon is en-route within the FIR &mdash; that is the MWO's responsibility, and the EMBD qualifier on TS meets the SIGMET threshold. Because LLBG is not affected at the aerodrome, no AD WRNG is required. AFOs do not issue SIGMETs; MWOs do not issue AD WRNGs. Both products at once is the right answer only when the phenomenon affects both the FIR and the aerodrome &mdash; not the case here.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>The MWO issues a SIGMET; no AD WRNG is required because the aerodrome is not affected.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>The AFO issues a SIGMET because Ben Gurion is the reference aerodrome.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Both the MWO and the AFO must issue an AD WRNG, since the FIR and the aerodrome share the same area of responsibility.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>No product is required &mdash; embedded thunderstorms over an empty part of the FIR are not a SIGMET phenomenon.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L1-Q02 — SIGMET threshold for thunderstorms</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>A nowcast and the latest radar show two isolated thunderstorm cells over the central highlands, well separated and clearly visible from the satellite. Both cells are vertically developed and producing lightning, but neither is embedded in cloud, obscured by haze, frequent, or part of a line. Which warning, if any, is appropriate?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> Thunderstorms require a qualifier &mdash; OBSC, EMBD, FRQ, or SQL &mdash; to trigger a SIGMET. Isolated cells that pilots can see and route around do not meet that threshold. ISOL/OCNL TS is explicitly an AIRMET phenomenon, not a SIGMET phenomenon. Issuing a SIGMET here would over-issue and dilute the credibility of future SIGMETs.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>An AIRMET, because the cells are ISOL TS &mdash; below the SIGMET qualifier threshold.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A SIGMET, because any thunderstorm with lightning meets the SIGMET threshold.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Nothing &mdash; isolated cells do not warrant any warning product.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A WV SIGMET, because the cells are convective and vertically developed.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L1-Q03 — Severity threshold for icing</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>A pilot report and the model's icing-potential field both agree that moderate clear icing is occurring in stratus between 4,000 and 7,000 ft over the northern FIR. Freezing rain is not present. What warning is appropriate?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> The SIGMET icing threshold is SEV (with or without FZRA). Moderate icing is explicitly an AIRMET phenomenon (MOD ICE), regardless of the synoptic situation. The fact that freezing rain is absent makes no difference here &mdash; FZRA is an aggravating qualifier on a SEV icing case, not a stand-alone trigger. A WV SIGMET is for volcanic ash only.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>An AIRMET for MOD ICE &mdash; moderate icing is below the SIGMET severity threshold.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A SIGMET for SEV ICE, because clear icing on its own is always severe.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A SIGMET, because icing in stratus over an FIR is by definition en-route and therefore SIGMET-worthy.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A WV SIGMET, because freezing rain is absent.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L1-Q04 — Identifying SIGMET subtype from the header</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>An incoming bulletin begins with the WMO header <code>WVXY31 LLBD 121400</code>. Without reading any further, what subtype of message can you expect?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> The <code>T1T2</code> data-type designator is the first two letters: <code>WV</code> means a SIGMET for volcanic ash. The remaining letters are the country/territory designator (<code>XY</code>), the bulletin number (<code>31</code>), and the location indicator and date/time. <code>WS</code> would be a standard SIGMET, <code>WA</code> an AIRMET, and <code>WC</code> a tropical-cyclone SIGMET.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>A SIGMET for volcanic ash (WV).</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A standard SIGMET (WS).</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>An AIRMET (WA).</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A SIGMET for tropical cyclone (WC).</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L1-Q05 — Mountain wave severity threshold</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>Forecast output suggests mountain-wave activity east of the central ridge. The model's vertical-velocity field shows downdrafts peaking near 2.2 m/s, and no accompanying severe-turbulence signature is forecast. Which warning is appropriate?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> A mountain wave is considered SEV only when accompanied by a downdraft of 3.0 m/s or more, or severe turbulence. Downdrafts of 1.75&ndash;3.0 m/s (or accompanying moderate turbulence) fall into MOD MTW, which is an AIRMET phenomenon. A 2.2 m/s downdraft is comfortably inside the MOD band, so AIRMET is correct &mdash; no SIGMET. "No warning at all" misses the operational risk to general aviation below FL100.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>An AIRMET for MOD MTW &mdash; 2.2 m/s is below the 3.0 m/s SEV threshold.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A SIGMET for SEV MTW &mdash; any forecast mountain wave with a measurable downdraft warrants SEV.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>No warning is required because the downdraft is below 3.0 m/s.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A SIGMET, because forecast mountain waves over the central ridge are always SIGMET-worthy in the IMS.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L1-Q06 — Volcanic ash detection</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>A VAAC advisory reports a thin volcanic ash layer drifting through the FIR at FL250. The ash concentration is described as "low" with patchy coverage. Is a SIGMET required?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> Volcanic ash has no severity threshold under Annex 3 &mdash; <em>any</em> detection within the FIR triggers a WV SIGMET. The reasoning is operational: even thin or "low concentration" ash can damage turbine engines and aircraft control surfaces, so the MWO does not get to decide whether the ash is "bad enough". Concentration and altitude bands belong in the message body, not at the issuance gate.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Yes &mdash; a WV SIGMET is required for any detection of volcanic ash in the FIR, regardless of concentration.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>No &mdash; low-concentration ash is below the SIGMET threshold.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Yes, but only as an AIRMET &mdash; thin ash at FL250 is "low-level" in the AIRMET sense.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>No &mdash; ash advisories are the VAAC's responsibility; the MWO does not issue ash SIGMETs.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+</quiz>
