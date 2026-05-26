@@ -147,8 +147,14 @@ def run(module_dir: Path) -> None:
         raise SystemExit(f"No lessons/ folder under {module_dir}")
 
     # Allow either "Images" or "images" (the pilot used both at different times).
+    # Source-extracted images live under <module>/extracted_images/<source>/ —
+    # the relative-path resolver finds those naturally, but a basename match
+    # as a last resort lets a stray `<img src="foo.png">` still embed.
     images_dirs = [d for d in (lessons_dir / "Images", lessons_dir / "images")
                    if d.is_dir()]
+    extracted_root = module_dir / "extracted_images"
+    if extracted_root.is_dir():
+        images_dirs.extend(p for p in extracted_root.rglob("*") if p.is_dir())
 
     targets = sorted(lessons_dir.glob("*_moodle.html"))
     overview = module_dir / "00_module_overview_moodle.html"
