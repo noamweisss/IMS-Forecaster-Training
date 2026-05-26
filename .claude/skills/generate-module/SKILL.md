@@ -45,6 +45,8 @@ If the source files are not yet split into per-module subfolders, do that first.
 
 After extracting, open `_extraction.json` and actually read it. It is your only source of truth for what content the lessons must cover. Speaker notes often contain the real teaching content while slides only carry headlines — don't skim past them.
 
+Also check `courses/<course>/module-N/extracted_images/` — the script writes every embedded image from the source files here, organized by source filename. These are available to reference directly in lesson `<img>` tags (see Phase 2c). Skim the folder now so you know what's there before you design lessons.
+
 ## Phase 2 — Design and author
 
 This is the bulk of your work. Five sub-steps.
@@ -105,6 +107,29 @@ Create `courses/<course>/module-N/00_module_overview_moodle.html`. Same outer st
 
 The summary cards in the overview use inline styles with literal hex (not class-based styling) so they survive even if Moodle strips the leading `<style>` block. The template in the spec shows the exact markup.
 
+### 2f. Image gate — stop before finalizing
+
+Before running `finalize_module.py`, take stock of the image situation and **wait for the user**.
+
+**a. List extracted images available:**
+```bash
+find courses/<course>/module-N/extracted_images/ -type f | sort
+```
+For each file, note which source it came from and (from `_extraction.json`) which slide/page it appeared on. Tell the user which lesson each image was referenced in — or flag any you didn't reference but that might be useful.
+
+**b. List remaining placeholders:**
+```bash
+grep -rn 'class="image-needed"' courses/<course>/module-N/lessons/
+```
+For each hit, show the `data-description` so the user knows exactly what photo is still needed and which lesson it belongs to.
+
+**Then stop and tell the user:**
+- A short summary table: extracted images used, extracted images unused (available if needed), and open placeholders
+- Where to drop new files (`lessons/Images/`) and the `<img src="...Images/filename.ext" alt="...">` syntax to add to the lesson HTML
+- That you'll run finalize as soon as they reply — or they can say "proceed without images"
+
+**Do not run Phase 3 until the user explicitly replies.** `finalize_module.py` embeds whatever the lesson HTML contains at run time. Image-needed placeholders baked into `module_combined_moodle.html` require a full re-run to fix, which is exactly what happened with Module 3.
+
 ## Phase 3 — Finalize
 
 ```bash
@@ -153,9 +178,12 @@ Five-minute self-review of your output. Catches the failure modes the journal do
 - If the source content is genuinely ambiguous or sparse for a topic and you'd otherwise be making things up.
 - If you're unsure whether a topic belongs in this module or a later one — the subject-matter expert may have intent you can't infer from the slides.
 
+**Ask before running Phase 3 (finalize):**
+- Always — after completing Phase 2f, present the image inventory and wait for explicit go-ahead before running `finalize_module.py`.
+
 **Proceed without asking:**
 - Stylistic choices that conform to the spec (which callout class, exact diagram design, prose phrasing).
-- Routine pipeline commands.
+- Routine pipeline commands (Phase 1 extraction, sanity-check greps).
 - Self-correction after a sanity-check failure.
 
 ## Reference files in this skill folder
