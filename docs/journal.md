@@ -24,6 +24,20 @@ later reversed, add a new entry rather than editing the old one.
 ---
 
 <!-- New entries appended below -->
+## 2026-05-26 — Git synchronization, local Module 4 securing, and skill sync
+
+**Context.** The user opened the project in Antigravity after working in Claude Code in the browser. There were uncommitted changes locally (Module 4 PowerPoint files moved, and Module 4 lessons and quizzes generated), and the remote repository on GitHub had 3 new commits introducing image extraction that were missing locally. Additionally, the `.agents/skills/` directory on GitHub was drifting behind `.claude/skills/` because the browser agent only updated the latter.
+
+**Decision.** Clean up the repository and synchronize with GitHub by executing a structured plan:
+1. Stage and commit the local Module 4 files to secure the generated work: `feat: organize source files and author lessons for module 4`.
+2. Run `git pull --rebase` to pull remote image extraction commits from GitHub and place local commits cleanly on top, keeping history linear.
+3. Sync `.agents/skills/generate-module/SKILL.md` by copying the updated `.claude/skills/generate-module/SKILL.md` over it to resolve the drift, and commit: `chore: sync .agents/skills/ with .claude/skills/ for image gate feature`.
+4. Push both commits to remote main.
+
+**Result.** The local and remote branches are now 100% in sync on `main`. The working tree is clean. The skill directories are fully identical, and all Module 4 work is securely committed and backed up.
+
+---
+
 ## 2026-05-20 — Module 3: extracting source-deck images post-hoc
 
 **Context.** Module 3 was initially authored with zero external
