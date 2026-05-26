@@ -15,7 +15,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 2,
@@ -35,8 +36,17 @@
           }
         ],
         "notes": "",
-        "has_images": false,
-        "has_charts": false
+        "has_images": true,
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/15._TAF_Writing/slide02_img1.jpeg",
+            "format": "jpeg",
+            "width": 549,
+            "height": 667,
+            "hash": "ecd7bc21"
+          }
+        ]
       },
       {
         "slide_number": 3,
@@ -49,7 +59,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 4,
@@ -78,7 +89,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 5,
@@ -91,7 +103,16 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/15._TAF_Writing/slide05_img1.png",
+            "format": "png",
+            "width": 1161,
+            "height": 241,
+            "hash": "83e301de"
+          }
+        ]
       },
       {
         "slide_number": 6,
@@ -115,8 +136,17 @@
           }
         ],
         "notes": "--When the Forecaster feels there is a less than 50% chance for significant weather within the terminal aerodrome…but still wants to make the user aware of the potential for fog, showers, or thunderstorms w/in the airfield…he/she may chose to include a Vicinity in the TAF.\n\n--The use of VC has less stringent operational impact on the users than PROB30 or TEMPO. Basically, with a PROB30 or TEMPO…the user has to treat this as the prevailing condition…meaning Commercial airlines might add extra fuel for an alternate destination…or for the GA Pilot, this could mean you are grounded depending on your flight credentials and/or aircraft capabilities.\n \n--What does it mean if you, the TAF user, see a VC or a CB in the TAF? Even though the prevailing wx conditions are not show stoppers, the user needs to be pro-active and ask himself “what will I do if I encounter TS within the vicinity of the Airfield? Will this cause me significant problems…or can I (and my aircraft) handle this? \n\n--As for CB…the user will need to treat this as a heads up that the atmosphere they are flying into/out of is unstable…which could mean turbulence…or even an isolated thunderstorm or two might pop up…but the forecaster confidence is low…and if Tstorms do develop, they will be short-lived and minimal in coverage.",
-        "has_images": false,
-        "has_charts": false
+        "has_images": true,
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/15._TAF_Writing/slide06_img1.jpeg",
+            "format": "jpeg",
+            "width": 374,
+            "height": 344,
+            "hash": "8a86fbf6"
+          }
+        ]
       },
       {
         "slide_number": 7,
@@ -124,7 +154,23 @@
         "body": [],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/15._TAF_Writing/slide07_img1.png",
+            "format": "png",
+            "width": 1184,
+            "height": 433,
+            "hash": "33330ebf"
+          },
+          {
+            "path": "extracted_images/15._TAF_Writing/slide07_img2.png",
+            "format": "png",
+            "width": 122,
+            "height": 195,
+            "hash": "b25330ee"
+          }
+        ]
       },
       {
         "slide_number": 8,
@@ -141,7 +187,23 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/15._TAF_Writing/slide08_img1.png",
+            "format": "png",
+            "width": 1179,
+            "height": 283,
+            "hash": "bb1c684b"
+          },
+          {
+            "path": "extracted_images/15._TAF_Writing/slide08_img2.png",
+            "format": "png",
+            "width": 114,
+            "height": 183,
+            "hash": "dd5641f4"
+          }
+        ]
       },
       {
         "slide_number": 9,
@@ -154,7 +216,23 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/15._TAF_Writing/slide09_img1.png",
+            "format": "png",
+            "width": 1662,
+            "height": 755,
+            "hash": "069e727c"
+          },
+          {
+            "path": "extracted_images/15._TAF_Writing/slide09_img2.jpeg",
+            "format": "jpeg",
+            "width": 268,
+            "height": 213,
+            "hash": "84fa9e92"
+          }
+        ]
       },
       {
         "slide_number": 10,
@@ -167,7 +245,30 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/15._TAF_Writing/slide10_img1.png",
+            "format": "png",
+            "width": 1643,
+            "height": 207,
+            "hash": "2f415dc5"
+          },
+          {
+            "path": "extracted_images/15._TAF_Writing/slide10_img2.png",
+            "format": "png",
+            "width": 1585,
+            "height": 591,
+            "hash": "51e7fbca"
+          },
+          {
+            "path": "extracted_images/15._TAF_Writing/slide09_img2.jpeg",
+            "format": "jpeg",
+            "width": 268,
+            "height": 213,
+            "hash": "84fa9e92"
+          }
+        ]
       },
       {
         "slide_number": 11,
@@ -180,7 +281,30 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/15._TAF_Writing/slide11_img1.png",
+            "format": "png",
+            "width": 1603,
+            "height": 338,
+            "hash": "ddcb002e"
+          },
+          {
+            "path": "extracted_images/15._TAF_Writing/slide11_img2.png",
+            "format": "png",
+            "width": 1574,
+            "height": 214,
+            "hash": "886256b8"
+          },
+          {
+            "path": "extracted_images/15._TAF_Writing/slide09_img2.jpeg",
+            "format": "jpeg",
+            "width": 268,
+            "height": 213,
+            "hash": "84fa9e92"
+          }
+        ]
       },
       {
         "slide_number": 12,
@@ -193,7 +317,23 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/15._TAF_Writing/slide12_img1.png",
+            "format": "png",
+            "width": 1104,
+            "height": 561,
+            "hash": "890c9f1d"
+          },
+          {
+            "path": "extracted_images/15._TAF_Writing/slide12_img2.jpeg",
+            "format": "jpeg",
+            "width": 325,
+            "height": 200,
+            "hash": "7abf4c54"
+          }
+        ]
       },
       {
         "slide_number": 13,
@@ -206,7 +346,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 14,
@@ -250,8 +391,17 @@
           }
         ],
         "notes": "Over the past several years…the outreach efforts and forecast verification have indicated that although spectrum of TAF user and aviation customers is great, there are a few common needs throughout these groups…the need for CLEAR, CONCISE, CONSISTENT, RELEVENT, TIMELY, & ACCURATE TAFs—ref: Distance Aviation Learning Courses (DLAC)",
-        "has_images": false,
-        "has_charts": false
+        "has_images": true,
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/15._TAF_Writing/slide14_img1.png",
+            "format": "png",
+            "width": 400,
+            "height": 375,
+            "hash": "e9436d0e"
+          }
+        ]
       },
       {
         "slide_number": 15,
@@ -288,7 +438,16 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/15._TAF_Writing/slide14_img1.png",
+            "format": "png",
+            "width": 400,
+            "height": 375,
+            "hash": "e9436d0e"
+          }
+        ]
       },
       {
         "slide_number": 16,
@@ -365,7 +524,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 17,
@@ -430,7 +590,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 18,
@@ -503,7 +664,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 19,
@@ -520,7 +682,16 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/15._TAF_Writing/slide19_img1.png",
+            "format": "png",
+            "width": 1049,
+            "height": 240,
+            "hash": "7109590c"
+          }
+        ]
       },
       {
         "slide_number": 20,
@@ -528,7 +699,8 @@
         "body": [],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 21,
@@ -536,7 +708,23 @@
         "body": [],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/15._TAF_Writing/slide21_img1.png",
+            "format": "png",
+            "width": 1162,
+            "height": 332,
+            "hash": "c9b66471"
+          },
+          {
+            "path": "extracted_images/15._TAF_Writing/slide21_img2.png",
+            "format": "png",
+            "width": 1168,
+            "height": 135,
+            "hash": "8cedbdf4"
+          }
+        ]
       },
       {
         "slide_number": 22,
@@ -549,7 +737,30 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/15._TAF_Writing/slide22_img1.png",
+            "format": "png",
+            "width": 1091,
+            "height": 480,
+            "hash": "9b724c68"
+          },
+          {
+            "path": "extracted_images/15._TAF_Writing/slide22_img2.png",
+            "format": "png",
+            "width": 1059,
+            "height": 148,
+            "hash": "acb9ac7d"
+          },
+          {
+            "path": "extracted_images/15._TAF_Writing/slide22_img3.png",
+            "format": "png",
+            "width": 191,
+            "height": 306,
+            "hash": "b540ae25"
+          }
+        ]
       },
       {
         "slide_number": 23,
@@ -606,7 +817,16 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/15._TAF_Writing/slide23_img1.png",
+            "format": "png",
+            "width": 1154,
+            "height": 149,
+            "hash": "5e1c8f25"
+          }
+        ]
       },
       {
         "slide_number": 24,
@@ -635,7 +855,23 @@
         ],
         "notes": "--In the past couple years, Forecasters have had a sort of paradigm shift…where we are no longer writing the un-amendable TAF…meaning we are no longer throwing in everything but the kitchen sink. In the process, we’ve had to Find a way to provide quality service to our customers and present the realm of possibilities while avoiding the ‘cry wolf syndrome’ (reducing our FAR). \nHow do the forecasters indicate the threat for weather, thunderstorms for example, when the probability is less than 50%?? \n--Best Practices say to limit the use of TEMPO (which is for probability greater than 50% anyway) and avoid the use of PROB30? \n--What about the use of CB and/or VC?",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/15._TAF_Writing/slide24_img1.jpeg",
+            "format": "jpeg",
+            "width": 640,
+            "height": 468,
+            "hash": "2d2acbc2"
+          },
+          {
+            "path": "extracted_images/15._TAF_Writing/slide24_img2.jpeg",
+            "format": "jpeg",
+            "width": 300,
+            "height": 185,
+            "hash": "f643e56c"
+          }
+        ]
       },
       {
         "slide_number": 25,
@@ -684,7 +920,16 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/15._TAF_Writing/slide25_img1.jpeg",
+            "format": "jpeg",
+            "width": 252,
+            "height": 155,
+            "hash": "f75cdf87"
+          }
+        ]
       },
       {
         "slide_number": 26,
@@ -697,7 +942,23 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/15._TAF_Writing/slide26_img1.png",
+            "format": "png",
+            "width": 900,
+            "height": 163,
+            "hash": "0973e4fc"
+          },
+          {
+            "path": "extracted_images/15._TAF_Writing/slide22_img3.png",
+            "format": "png",
+            "width": 191,
+            "height": 306,
+            "hash": "b540ae25"
+          }
+        ]
       },
       {
         "slide_number": 27,
@@ -710,7 +971,16 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/15._TAF_Writing/slide27_img1.png",
+            "format": "png",
+            "width": 1166,
+            "height": 681,
+            "hash": "9ac8cb66"
+          }
+        ]
       },
       {
         "slide_number": 28,
@@ -723,7 +993,30 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/15._TAF_Writing/slide28_img1.png",
+            "format": "png",
+            "width": 1120,
+            "height": 181,
+            "hash": "b8a6a24f"
+          },
+          {
+            "path": "extracted_images/15._TAF_Writing/slide28_img2.png",
+            "format": "png",
+            "width": 937,
+            "height": 154,
+            "hash": "27e4e905"
+          },
+          {
+            "path": "extracted_images/15._TAF_Writing/slide28_img3.jpeg",
+            "format": "jpeg",
+            "width": 205,
+            "height": 162,
+            "hash": "8a0d5915"
+          }
+        ]
       },
       {
         "slide_number": 29,
@@ -731,7 +1024,8 @@
         "body": [],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 30,
@@ -744,7 +1038,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 31,
@@ -765,7 +1060,23 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/15._TAF_Writing/slide19_img1.png",
+            "format": "png",
+            "width": 1049,
+            "height": 240,
+            "hash": "7109590c"
+          },
+          {
+            "path": "extracted_images/15._TAF_Writing/slide31_img2.png",
+            "format": "png",
+            "width": 985,
+            "height": 199,
+            "hash": "9888cd1e"
+          }
+        ]
       },
       {
         "slide_number": 32,
@@ -782,7 +1093,16 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/15._TAF_Writing/slide32_img1.png",
+            "format": "png",
+            "width": 953,
+            "height": 353,
+            "hash": "ea68231b"
+          }
+        ]
       },
       {
         "slide_number": 33,
@@ -795,7 +1115,23 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/15._TAF_Writing/slide32_img1.png",
+            "format": "png",
+            "width": 953,
+            "height": 353,
+            "hash": "ea68231b"
+          },
+          {
+            "path": "extracted_images/15._TAF_Writing/slide33_img2.png",
+            "format": "png",
+            "width": 788,
+            "height": 177,
+            "hash": "1ba0946e"
+          }
+        ]
       },
       {
         "slide_number": 34,
@@ -812,7 +1148,16 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/15._TAF_Writing/slide34_img1.png",
+            "format": "png",
+            "width": 1173,
+            "height": 272,
+            "hash": "93a567be"
+          }
+        ]
       },
       {
         "slide_number": 35,
@@ -825,7 +1170,23 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/15._TAF_Writing/slide34_img1.png",
+            "format": "png",
+            "width": 1173,
+            "height": 272,
+            "hash": "93a567be"
+          },
+          {
+            "path": "extracted_images/15._TAF_Writing/slide35_img2.png",
+            "format": "png",
+            "width": 1003,
+            "height": 198,
+            "hash": "b8f009c8"
+          }
+        ]
       },
       {
         "slide_number": 36,
@@ -842,7 +1203,16 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/15._TAF_Writing/slide36_img1.png",
+            "format": "png",
+            "width": 1046,
+            "height": 322,
+            "hash": "8ed9e2d5"
+          }
+        ]
       },
       {
         "slide_number": 37,
@@ -855,7 +1225,23 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/15._TAF_Writing/slide37_img1.png",
+            "format": "png",
+            "width": 947,
+            "height": 212,
+            "hash": "242a7e7e"
+          },
+          {
+            "path": "extracted_images/15._TAF_Writing/slide36_img1.png",
+            "format": "png",
+            "width": 1046,
+            "height": 322,
+            "hash": "8ed9e2d5"
+          }
+        ]
       },
       {
         "slide_number": 38,
@@ -872,7 +1258,16 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/15._TAF_Writing/slide38_img1.png",
+            "format": "png",
+            "width": 1047,
+            "height": 282,
+            "hash": "951cf43e"
+          }
+        ]
       },
       {
         "slide_number": 39,
@@ -885,7 +1280,23 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/15._TAF_Writing/slide38_img1.png",
+            "format": "png",
+            "width": 1047,
+            "height": 282,
+            "hash": "951cf43e"
+          },
+          {
+            "path": "extracted_images/15._TAF_Writing/slide39_img2.png",
+            "format": "png",
+            "width": 1048,
+            "height": 182,
+            "hash": "1b50c77f"
+          }
+        ]
       },
       {
         "slide_number": 40,
@@ -902,7 +1313,16 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/15._TAF_Writing/slide40_img1.png",
+            "format": "png",
+            "width": 886,
+            "height": 247,
+            "hash": "452186c9"
+          }
+        ]
       },
       {
         "slide_number": 41,
@@ -915,7 +1335,23 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/15._TAF_Writing/slide40_img1.png",
+            "format": "png",
+            "width": 886,
+            "height": 247,
+            "hash": "452186c9"
+          },
+          {
+            "path": "extracted_images/15._TAF_Writing/slide41_img2.png",
+            "format": "png",
+            "width": 819,
+            "height": 224,
+            "hash": "2f4344ad"
+          }
+        ]
       },
       {
         "slide_number": 42,
@@ -932,7 +1368,16 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/15._TAF_Writing/slide42_img1.png",
+            "format": "png",
+            "width": 1016,
+            "height": 149,
+            "hash": "3d193d36"
+          }
+        ]
       },
       {
         "slide_number": 43,
@@ -945,7 +1390,23 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/15._TAF_Writing/slide43_img1.png",
+            "format": "png",
+            "width": 1099,
+            "height": 127,
+            "hash": "5659911b"
+          },
+          {
+            "path": "extracted_images/15._TAF_Writing/slide42_img1.png",
+            "format": "png",
+            "width": 1016,
+            "height": 149,
+            "hash": "3d193d36"
+          }
+        ]
       },
       {
         "slide_number": 44,
@@ -962,7 +1423,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       }
     ]
   },
@@ -998,7 +1460,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 2,
@@ -1043,7 +1506,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 3,
@@ -1072,7 +1536,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 4,
@@ -1096,8 +1561,17 @@
           }
         ],
         "notes": "",
-        "has_images": false,
-        "has_charts": false
+        "has_images": true,
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/16._Tropical_Storms/slide04_img1.png",
+            "format": "png",
+            "width": 723,
+            "height": 1034,
+            "hash": "e195fb3e"
+          }
+        ]
       },
       {
         "slide_number": 5,
@@ -1150,7 +1624,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 6,
@@ -1183,7 +1658,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 7,
@@ -1212,7 +1688,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 8,
@@ -1249,7 +1726,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 9,
@@ -1294,7 +1772,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 10,
@@ -1343,7 +1822,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 11,
@@ -1372,7 +1852,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 12,
@@ -1392,8 +1873,17 @@
           }
         ],
         "notes": "",
-        "has_images": false,
-        "has_charts": false
+        "has_images": true,
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/16._Tropical_Storms/slide12_img1.png",
+            "format": "png",
+            "width": 640,
+            "height": 291,
+            "hash": "ede12479"
+          }
+        ]
       },
       {
         "slide_number": 13,
@@ -1450,7 +1940,16 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/16._Tropical_Storms/slide13_img1.jpeg",
+            "format": "jpeg",
+            "width": 576,
+            "height": 144,
+            "hash": "a5a12faa"
+          }
+        ]
       },
       {
         "slide_number": 14,
@@ -1470,8 +1969,38 @@
           }
         ],
         "notes": "",
-        "has_images": false,
-        "has_charts": false
+        "has_images": true,
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/16._Tropical_Storms/slide14_img1.png",
+            "format": "png",
+            "width": 350,
+            "height": 395,
+            "hash": "0e6ded00"
+          },
+          {
+            "path": "extracted_images/16._Tropical_Storms/slide14_img2.png",
+            "format": "png",
+            "width": 350,
+            "height": 394,
+            "hash": "2838da8a"
+          },
+          {
+            "path": "extracted_images/16._Tropical_Storms/slide14_img3.png",
+            "format": "png",
+            "width": 350,
+            "height": 393,
+            "hash": "658ce8ab"
+          },
+          {
+            "path": "extracted_images/16._Tropical_Storms/slide14_img4.png",
+            "format": "png",
+            "width": 350,
+            "height": 396,
+            "hash": "9864bb36"
+          }
+        ]
       },
       {
         "slide_number": 15,
@@ -1491,8 +2020,17 @@
           }
         ],
         "notes": "",
-        "has_images": false,
-        "has_charts": false
+        "has_images": true,
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/16._Tropical_Storms/slide15_img1.png",
+            "format": "png",
+            "width": 320,
+            "height": 280,
+            "hash": "d8de199d"
+          }
+        ]
       },
       {
         "slide_number": 16,
@@ -1541,7 +2079,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 17,
@@ -1562,7 +2101,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 18,
@@ -1598,8 +2138,17 @@
           }
         ],
         "notes": "",
-        "has_images": false,
-        "has_charts": false
+        "has_images": true,
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/16._Tropical_Storms/slide18_img1.png",
+            "format": "png",
+            "width": 300,
+            "height": 428,
+            "hash": "02f01494"
+          }
+        ]
       },
       {
         "slide_number": 19,
@@ -1619,8 +2168,17 @@
           }
         ],
         "notes": "",
-        "has_images": false,
-        "has_charts": false
+        "has_images": true,
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/16._Tropical_Storms/slide19_img1.png",
+            "format": "png",
+            "width": 640,
+            "height": 526,
+            "hash": "9e74342e"
+          }
+        ]
       },
       {
         "slide_number": 20,
@@ -1664,8 +2222,17 @@
           }
         ],
         "notes": "",
-        "has_images": false,
-        "has_charts": false
+        "has_images": true,
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/16._Tropical_Storms/slide20_img1.png",
+            "format": "png",
+            "width": 540,
+            "height": 320,
+            "hash": "a4fae4fc"
+          }
+        ]
       },
       {
         "slide_number": 21,
@@ -1686,7 +2253,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 22,
@@ -1706,8 +2274,17 @@
           }
         ],
         "notes": "",
-        "has_images": false,
-        "has_charts": false
+        "has_images": true,
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/16._Tropical_Storms/slide22_img1.png",
+            "format": "png",
+            "width": 639,
+            "height": 350,
+            "hash": "a9b20cac"
+          }
+        ]
       },
       {
         "slide_number": 23,
@@ -1760,7 +2337,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 24,
@@ -1784,8 +2362,17 @@
           }
         ],
         "notes": "",
-        "has_images": false,
-        "has_charts": false
+        "has_images": true,
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/16._Tropical_Storms/slide24_img1.png",
+            "format": "png",
+            "width": 2720,
+            "height": 1111,
+            "hash": "ae0032f2"
+          }
+        ]
       },
       {
         "slide_number": 25,
@@ -1826,7 +2413,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 26,
@@ -1846,8 +2434,17 @@
           }
         ],
         "notes": "",
-        "has_images": false,
-        "has_charts": false
+        "has_images": true,
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/16._Tropical_Storms/slide26_img1.png",
+            "format": "png",
+            "width": 2720,
+            "height": 1111,
+            "hash": "21757e72"
+          }
+        ]
       },
       {
         "slide_number": 27,
@@ -1868,7 +2465,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 28,
@@ -1904,8 +2502,17 @@
           }
         ],
         "notes": "",
-        "has_images": false,
-        "has_charts": false
+        "has_images": true,
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/16._Tropical_Storms/slide28_img1.png",
+            "format": "png",
+            "width": 781,
+            "height": 801,
+            "hash": "9068ea6b"
+          }
+        ]
       },
       {
         "slide_number": 29,
@@ -1941,8 +2548,17 @@
           }
         ],
         "notes": "",
-        "has_images": false,
-        "has_charts": false
+        "has_images": true,
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/16._Tropical_Storms/slide29_img1.png",
+            "format": "png",
+            "width": 895,
+            "height": 716,
+            "hash": "dbb605b4"
+          }
+        ]
       },
       {
         "slide_number": 30,
@@ -1963,7 +2579,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 31,
@@ -1991,8 +2608,17 @@
           }
         ],
         "notes": "",
-        "has_images": false,
-        "has_charts": false
+        "has_images": true,
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/16._Tropical_Storms/slide31_img1.png",
+            "format": "png",
+            "width": 870,
+            "height": 801,
+            "hash": "1e50cbfd"
+          }
+        ]
       },
       {
         "slide_number": 32,
@@ -2033,7 +2659,16 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/16._Tropical_Storms/slide32_img1.png",
+            "format": "png",
+            "width": 977,
+            "height": 773,
+            "hash": "b1446a78"
+          }
+        ]
       },
       {
         "slide_number": 33,
@@ -2078,7 +2713,16 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/16._Tropical_Storms/slide33_img1.png",
+            "format": "png",
+            "width": 843,
+            "height": 745,
+            "hash": "1a282102"
+          }
+        ]
       },
       {
         "slide_number": 34,
@@ -2095,7 +2739,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 35,
@@ -2128,7 +2773,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 36,
@@ -2149,7 +2795,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 37,
@@ -2198,7 +2845,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 38,
@@ -2243,7 +2891,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       }
     ]
   },
@@ -2258,7 +2907,8 @@
         "body": [],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 2,
@@ -2266,7 +2916,23 @@
         "body": [],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/17._Volcanic_Ash/slide02_img1.jpeg",
+            "format": "jpeg",
+            "width": 470,
+            "height": 333,
+            "hash": "3811414f"
+          },
+          {
+            "path": "extracted_images/17._Volcanic_Ash/slide02_img2.jpeg",
+            "format": "jpeg",
+            "width": 307,
+            "height": 461,
+            "hash": "5df3ce8a"
+          }
+        ]
       },
       {
         "slide_number": 3,
@@ -2303,7 +2969,23 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/17._Volcanic_Ash/slide03_img1.jpeg",
+            "format": "jpeg",
+            "width": 500,
+            "height": 441,
+            "hash": "3a3e6286"
+          },
+          {
+            "path": "extracted_images/17._Volcanic_Ash/slide03_img2.png",
+            "format": "png",
+            "width": 356,
+            "height": 235,
+            "hash": "a5038108"
+          }
+        ]
       },
       {
         "slide_number": 4,
@@ -2336,7 +3018,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 5,
@@ -2353,7 +3036,16 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/17._Volcanic_Ash/slide05_img1.png",
+            "format": "png",
+            "width": 485,
+            "height": 312,
+            "hash": "5b8e7947"
+          }
+        ]
       },
       {
         "slide_number": 6,
@@ -2382,7 +3074,8 @@
         ],
         "notes": "The motivation for this developmental work is two-fold: \nThere is a need for improved volcanic ash detection tools, and\nWe have the opportunity to develop them using Meteosat Second Generation data.\n\nThe need for new, improved tools is to improve the existing VAAC service – there are limitations with existing observations of ash and this development will reduce these limitations.\nThe need to maintain our status as a VAAC – to show the outside world that we do take our responsibility seriously and provide the best service possible with current technology. I have attended a couple of international meetings about the use of satellite data and it has been commented upon on more than one occasion that very little resources are used to provide the tools and personnel for the London VAAC.\nThe opportunity that we have is to try to make the best use of newly available MSG data. These data are operationally available in the next couple of weeks and are routinely received and used in the Met Office. MSG will replace Meteosat – currently our main operational geostationary satellite and our major source of satellite imagery. MSG is superior to Meteosat in many ways …",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 7,
@@ -2395,7 +3088,16 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/17._Volcanic_Ash/slide07_img1.png",
+            "format": "png",
+            "width": 1024,
+            "height": 768,
+            "hash": "e3589aaa"
+          }
+        ]
       },
       {
         "slide_number": 8,
@@ -2412,7 +3114,16 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/17._Volcanic_Ash/slide08_img1.png",
+            "format": "png",
+            "width": 1024,
+            "height": 768,
+            "hash": "5824d256"
+          }
+        ]
       },
       {
         "slide_number": 9,
@@ -2441,7 +3152,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 10,
@@ -2454,7 +3166,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 11,
@@ -2495,7 +3208,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 12,
@@ -2544,7 +3258,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 13,
@@ -2577,7 +3292,16 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/17._Volcanic_Ash/slide13_img1.png",
+            "format": "png",
+            "width": 600,
+            "height": 450,
+            "hash": "fafc6c1a"
+          }
+        ]
       },
       {
         "slide_number": 14,
@@ -2638,7 +3362,23 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/17._Volcanic_Ash/slide14_img1.png",
+            "format": "png",
+            "width": 600,
+            "height": 450,
+            "hash": "2c56bee3"
+          },
+          {
+            "path": "extracted_images/17._Volcanic_Ash/slide14_img2.jpeg",
+            "format": "jpeg",
+            "width": 600,
+            "height": 450,
+            "hash": "92d21c21"
+          }
+        ]
       },
       {
         "slide_number": 15,
@@ -2655,7 +3395,16 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/17._Volcanic_Ash/slide15_img1.png",
+            "format": "png",
+            "width": 350,
+            "height": 315,
+            "hash": "a6e482b5"
+          }
+        ]
       },
       {
         "slide_number": 16,
@@ -2680,7 +3429,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 17,
@@ -2701,7 +3451,16 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/17._Volcanic_Ash/slide17_img1.png",
+            "format": "png",
+            "width": 928,
+            "height": 928,
+            "hash": "03e1e0a0"
+          }
+        ]
       },
       {
         "slide_number": 18,
@@ -2726,7 +3485,16 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/17._Volcanic_Ash/slide18_img1.png",
+            "format": "png",
+            "width": 928,
+            "height": 928,
+            "hash": "8ddf34a7"
+          }
+        ]
       },
       {
         "slide_number": 19,
@@ -2751,7 +3519,16 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/17._Volcanic_Ash/slide19_img1.png",
+            "format": "png",
+            "width": 480,
+            "height": 480,
+            "hash": "62b5def9"
+          }
+        ]
       },
       {
         "slide_number": 20,
@@ -2784,7 +3561,16 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/17._Volcanic_Ash/slide20_img1.png",
+            "format": "png",
+            "width": 928,
+            "height": 928,
+            "hash": "5a25dc86"
+          }
+        ]
       },
       {
         "slide_number": 21,
@@ -2825,7 +3611,16 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/17._Volcanic_Ash/slide21_img1.png",
+            "format": "png",
+            "width": 928,
+            "height": 928,
+            "hash": "2609dcd9"
+          }
+        ]
       },
       {
         "slide_number": 22,
@@ -2846,7 +3641,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 23,
@@ -2863,7 +3659,16 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/17._Volcanic_Ash/slide23_img1.jpeg",
+            "format": "jpeg",
+            "width": 1024,
+            "height": 768,
+            "hash": "76661668"
+          }
+        ]
       }
     ]
   },
@@ -2886,8 +3691,17 @@
           }
         ],
         "notes": "",
-        "has_images": false,
-        "has_charts": false
+        "has_images": true,
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/18._WAFC_Maps/slide01_img1.jpeg",
+            "format": "jpeg",
+            "width": 1024,
+            "height": 768,
+            "hash": "9a3daf65"
+          }
+        ]
       },
       {
         "slide_number": 2,
@@ -2916,7 +3730,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 3,
@@ -2969,7 +3784,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 4,
@@ -2985,8 +3801,17 @@
           }
         ],
         "notes": "",
-        "has_images": false,
-        "has_charts": false
+        "has_images": true,
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/18._WAFC_Maps/slide01_img1.jpeg",
+            "format": "jpeg",
+            "width": 1024,
+            "height": 768,
+            "hash": "9a3daf65"
+          }
+        ]
       },
       {
         "slide_number": 5,
@@ -3011,7 +3836,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 6,
@@ -3044,7 +3870,30 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/18._WAFC_Maps/slide06_img1.png",
+            "format": "png",
+            "width": 1728,
+            "height": 1129,
+            "hash": "a2f7aec3"
+          },
+          {
+            "path": "extracted_images/18._WAFC_Maps/slide06_img2.png",
+            "format": "png",
+            "width": 1024,
+            "height": 768,
+            "hash": "65f3ac93"
+          },
+          {
+            "path": "extracted_images/18._WAFC_Maps/slide06_img3.png",
+            "format": "png",
+            "width": 1024,
+            "height": 768,
+            "hash": "3be74159"
+          }
+        ]
       },
       {
         "slide_number": 7,
@@ -3085,7 +3934,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 8,
@@ -3130,7 +3980,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 9,
@@ -3155,7 +4006,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 10,
@@ -3184,7 +4036,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 11,
@@ -3217,7 +4070,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 12,
@@ -3246,7 +4100,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 13,
@@ -3279,7 +4134,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 14,
@@ -3312,7 +4168,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 15,
@@ -3320,7 +4177,16 @@
         "body": [],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/18._WAFC_Maps/slide15_img1.png",
+            "format": "png",
+            "width": 516,
+            "height": 985,
+            "hash": "00ec3538"
+          }
+        ]
       },
       {
         "slide_number": 16,
@@ -3353,7 +4219,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 17,
@@ -3366,7 +4233,16 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/18._WAFC_Maps/slide06_img1.png",
+            "format": "png",
+            "width": 1728,
+            "height": 1129,
+            "hash": "a2f7aec3"
+          }
+        ]
       },
       {
         "slide_number": 18,
@@ -3391,7 +4267,23 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/18._WAFC_Maps/slide18_img1.png",
+            "format": "png",
+            "width": 1024,
+            "height": 768,
+            "hash": "f8338251"
+          },
+          {
+            "path": "extracted_images/18._WAFC_Maps/slide18_img2.png",
+            "format": "png",
+            "width": 1024,
+            "height": 768,
+            "hash": "bc7ba27c"
+          }
+        ]
       },
       {
         "slide_number": 19,
@@ -3408,7 +4300,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 20,
@@ -3425,7 +4318,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 21,
@@ -3474,7 +4368,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 22,
@@ -3511,7 +4406,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 23,
@@ -3528,7 +4424,16 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/18._WAFC_Maps/slide23_img1.png",
+            "format": "png",
+            "width": 1728,
+            "height": 1129,
+            "hash": "c6f6bab5"
+          }
+        ]
       },
       {
         "slide_number": 24,
@@ -3541,7 +4446,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 25,
@@ -3549,7 +4455,8 @@
         "body": [],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 26,
@@ -3562,7 +4469,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 27,
@@ -3575,7 +4483,16 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/18._WAFC_Maps/slide27_img1.png",
+            "format": "png",
+            "width": 1024,
+            "height": 768,
+            "hash": "566d7828"
+          }
+        ]
       },
       {
         "slide_number": 28,
@@ -3588,7 +4505,16 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/18._WAFC_Maps/slide28_img1.png",
+            "format": "png",
+            "width": 1024,
+            "height": 768,
+            "hash": "6aafd1e5"
+          }
+        ]
       },
       {
         "slide_number": 29,
@@ -3613,7 +4539,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 30,
@@ -3630,7 +4557,16 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/18._WAFC_Maps/slide30_img1.png",
+            "format": "png",
+            "width": 2155,
+            "height": 1552,
+            "hash": "614a4d5f"
+          }
+        ]
       },
       {
         "slide_number": 31,
@@ -3683,7 +4619,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 32,
@@ -3728,7 +4665,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 33,
@@ -3769,7 +4707,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 34,
@@ -3789,8 +4728,17 @@
           }
         ],
         "notes": "",
-        "has_images": false,
-        "has_charts": false
+        "has_images": true,
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/18._WAFC_Maps/slide01_img1.jpeg",
+            "format": "jpeg",
+            "width": 1024,
+            "height": 768,
+            "hash": "9a3daf65"
+          }
+        ]
       },
       {
         "slide_number": 35,
@@ -3867,7 +4815,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       },
       {
         "slide_number": 36,
@@ -3915,8 +4864,17 @@
           }
         ],
         "notes": "",
-        "has_images": false,
-        "has_charts": false
+        "has_images": true,
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/18._WAFC_Maps/slide36_img1.png",
+            "format": "png",
+            "width": 443,
+            "height": 414,
+            "hash": "021d9734"
+          }
+        ]
       },
       {
         "slide_number": 37,
@@ -3933,7 +4891,16 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/18._WAFC_Maps/slide37_img1.png",
+            "format": "png",
+            "width": 496,
+            "height": 474,
+            "hash": "b41a03a5"
+          }
+        ]
       },
       {
         "slide_number": 38,
@@ -3949,8 +4916,17 @@
           }
         ],
         "notes": "",
-        "has_images": false,
-        "has_charts": false
+        "has_images": true,
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/18._WAFC_Maps/slide38_img1.jpeg",
+            "format": "jpeg",
+            "width": 595,
+            "height": 572,
+            "hash": "9c460755"
+          }
+        ]
       },
       {
         "slide_number": 39,
@@ -3967,7 +4943,16 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/18._WAFC_Maps/slide39_img1.png",
+            "format": "png",
+            "width": 723,
+            "height": 510,
+            "hash": "f1b55625"
+          }
+        ]
       },
       {
         "slide_number": 40,
@@ -4011,8 +4996,17 @@
           }
         ],
         "notes": "",
-        "has_images": false,
-        "has_charts": false
+        "has_images": true,
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/18._WAFC_Maps/slide40_img1.png",
+            "format": "png",
+            "width": 508,
+            "height": 414,
+            "hash": "0ba9cef7"
+          }
+        ]
       },
       {
         "slide_number": 41,
@@ -4029,7 +5023,16 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/18._WAFC_Maps/slide41_img1.png",
+            "format": "png",
+            "width": 463,
+            "height": 483,
+            "hash": "d0f028c3"
+          }
+        ]
       },
       {
         "slide_number": 42,
@@ -4077,8 +5080,17 @@
           }
         ],
         "notes": "",
-        "has_images": false,
-        "has_charts": false
+        "has_images": true,
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/18._WAFC_Maps/slide42_img1.png",
+            "format": "png",
+            "width": 554,
+            "height": 414,
+            "hash": "1f77512c"
+          }
+        ]
       },
       {
         "slide_number": 43,
@@ -4095,7 +5107,16 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/18._WAFC_Maps/slide43_img1.png",
+            "format": "png",
+            "width": 667,
+            "height": 506,
+            "hash": "20501c2d"
+          }
+        ]
       },
       {
         "slide_number": 44,
@@ -4139,8 +5160,17 @@
           }
         ],
         "notes": "",
-        "has_images": false,
-        "has_charts": false
+        "has_images": true,
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/18._WAFC_Maps/slide44_img1.png",
+            "format": "png",
+            "width": 426,
+            "height": 414,
+            "hash": "5a1d74f8"
+          }
+        ]
       },
       {
         "slide_number": 45,
@@ -4157,7 +5187,16 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/18._WAFC_Maps/slide45_img1.png",
+            "format": "png",
+            "width": 706,
+            "height": 492,
+            "hash": "f185adb3"
+          }
+        ]
       },
       {
         "slide_number": 46,
@@ -4173,8 +5212,17 @@
           }
         ],
         "notes": "",
-        "has_images": false,
-        "has_charts": false
+        "has_images": true,
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/18._WAFC_Maps/slide01_img1.jpeg",
+            "format": "jpeg",
+            "width": 1024,
+            "height": 768,
+            "hash": "9a3daf65"
+          }
+        ]
       },
       {
         "slide_number": 47,
@@ -4187,7 +5235,23 @@
         ],
         "notes": "",
         "has_images": true,
-        "has_charts": false
+        "has_charts": false,
+        "images": [
+          {
+            "path": "extracted_images/18._WAFC_Maps/slide47_img1.png",
+            "format": "png",
+            "width": 474,
+            "height": 298,
+            "hash": "fc638264"
+          },
+          {
+            "path": "extracted_images/18._WAFC_Maps/slide47_img2.png",
+            "format": "png",
+            "width": 1171,
+            "height": 506,
+            "hash": "9658c392"
+          }
+        ]
       },
       {
         "slide_number": 48,
@@ -4216,7 +5280,8 @@
         ],
         "notes": "",
         "has_images": false,
-        "has_charts": false
+        "has_charts": false,
+        "images": []
       }
     ]
   }

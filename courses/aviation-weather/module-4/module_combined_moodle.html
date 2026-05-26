@@ -85,9 +85,497 @@
   color: var(--muted); font-size: 0.9rem; background: var(--surface); }
 .ims-lesson .meta { color: var(--muted); font-size: 0.88rem; margin-bottom: 1.75rem; }
 .ims-lesson .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.5rem; }
+
+.ims-lesson .ims-toc { background: var(--surface); border: 1px solid var(--border);
+  border-radius: 8px; padding: 1rem 1.5rem; margin: 1rem 0 2rem; }
+.ims-lesson .ims-toc strong { display: block; margin-bottom: 0.5rem;
+  font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;
+  color: var(--muted); }
+.ims-lesson .ims-toc ol { margin: 0; padding-left: 1.4rem; }
+.ims-lesson .ims-toc a { color: var(--accent); text-decoration: none; }
+.ims-lesson .ims-toc a:hover { text-decoration: underline; }
+.ims-lesson .ims-lesson-sep { border: 0; border-top: 2px solid var(--border);
+  margin: 4rem 0 2rem; }
+.ims-lesson .ims-lesson-section { scroll-margin-top: 1rem; }
 </style>
 <div class="ims-lesson">
-<p class="breadcrumb">Module 4 / Lesson 4</p>
+<section id="module-overview">
+<h1>Module 4: Aviation Forecast Products &amp; Warnings</h1>
+
+<p class="meta">Estimated duration: 90 minutes</p>
+
+<p>Welcome to Module 4. In this final module of the Aviation Weather Forecasting Certification course, we shift our focus from local aerodrome phenomena to the specialized products and global hazards that dictate international aviation routing and safety.</p>
+
+<p>You will learn the philosophy behind writing effective, user-friendly Terminal Aerodrome Forecasts (TAFs) and how to manage complex meteorological transitions using strict change groups. We will also explore the severe hazards posed by Tropical Storms and Volcanic Ash, and how global authorities (VAACs and RSMCs) track these phenomena. Finally, you will learn to decode the World Area Forecast System (WAFS) charts that pilots use for en-route navigation.</p>
+
+<div class="objectives">
+  <strong>Core Competencies:</strong>
+  <ul>
+    <li>Produce clear, concise, and accurate Terminal Aerodrome Forecasts (TAFs) tailored to operational needs.</li>
+    <li>Apply appropriate change groups (BECMG, TEMPO) and amendment criteria to TAFs.</li>
+    <li>Interpret advisories and track forecasts for tropical cyclones and volcanic ash.</li>
+    <li>Decode global high-level (SWH) and medium-level (SWM) SIGWX charts from World Area Forecast Centres.</li>
+  </ul>
+</div>
+
+<h2>Module Structure</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Lesson</th>
+      <th>Topic</th>
+      <th>Duration</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Lesson 1</td>
+      <td><strong>TAF Structure &amp; Writing Philosophy</strong><br>Terminology, flight categories, and the push for user-friendly forecasts.</td>
+      <td>15 mins</td>
+    </tr>
+    <tr>
+      <td>Lesson 2</td>
+      <td><strong>Operational TAF Amendments &amp; Edge Cases</strong><br>Navigating BECMG, TEMPO, and PROB groups, and knowing when to amend.</td>
+      <td>20 mins</td>
+    </tr>
+    <tr>
+      <td>Lesson 3</td>
+      <td><strong>Tropical Storms</strong><br>Formation, the Saffir-Simpson scale, and interpreting the Cone of Uncertainty.</td>
+      <td>15 mins</td>
+    </tr>
+    <tr>
+      <td>Lesson 4</td>
+      <td><strong>Volcanic Ash</strong><br>The mechanical threat to jet engines, VAACs, and dispersion modeling polygons.</td>
+      <td>15 mins</td>
+    </tr>
+    <tr>
+      <td>Lesson 5</td>
+      <td><strong>WAFC Maps &amp; Global Forecast Charts</strong><br>Decoding SWH and SWM SIGWX charts, jetstreams, and CB coverage terminology.</td>
+      <td>25 mins</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="callout callout-note">
+  <div class="callout-label">Module Assessment</div>
+  At the conclusion of Lesson 5, you will complete a 25-question summative quiz covering all material presented in this module. A score of 75% or higher is required to pass.
+</div>
+</section>
+<nav class="ims-toc" aria-label="Module contents">
+  <strong>In this module:</strong>
+  <ol>
+    <li><a href="#module-overview">Module overview</a></li>
+    <li><a href="#lesson-1">Lesson 1: TAF Structure &amp; Writing Philosophy</a></li>
+    <li><a href="#lesson-2">Lesson 2: Operational TAF Amendments &amp; Edge Cases</a></li>
+    <li><a href="#lesson-3">Lesson 3: Tropical Storms</a></li>
+    <li><a href="#lesson-4">Lesson 4: Volcanic Ash</a></li>
+    <li><a href="#lesson-5">Lesson 5: WAFC Maps &amp; Global Forecast Charts</a></li>
+  </ol>
+</nav>
+<hr class="ims-lesson-sep">
+<section id="lesson-1" class="ims-lesson-section" data-lesson-slug="taf_structure">
+<h1>TAF Structure &amp; Writing Philosophy</h1>
+
+<div class="objectives">
+  <strong>By the end of this lesson you will be able to:</strong>
+  <ul>
+    <li>Define TAF structure and terminology, including the operational definition of Vicinity (VC).</li>
+    <li>Apply TAF writing philosophy to generate concise and user-friendly forecasts.</li>
+    <li>Categorize weather conditions into standard aviation flight categories (VFR, IFR).</li>
+  </ul>
+</div>
+
+<h2>The Terminal Aerodrome Forecast (TAF)</h2>
+
+<p>The Terminal Aerodrome Forecast (TAF) is a concise statement of expected meteorological conditions significant to aviation at an airport. It is prepared by an Aerodrome Forecast Office (AFO) and is the primary tool used by airlines and pilots for flight planning and fuel load decisions.</p>
+
+<p>The definition of the &quot;terminal&quot; area is strictly limited to the airspace within <strong>8 km (5 SM)</strong> of the center of an airport's runway complex. Conditions outside this circle require different reporting mechanisms or careful use of proximity modifiers.</p>
+
+<div class="callout callout-key">
+  <div class="callout-label">The Vicinity (VC) Modifier</div>
+  Vicinity (VC) denotes a donut-shaped area between circles with radii of 5 SM and 10 SM from the center of the runway complex. It is used exclusively in combination with fog (FG), showers (SH), and thunderstorms (TS).
+</div>
+
+<p>Including a VC modifier (e.g., VCSH, VCTS) informs the user about significant weather near the airfield without imposing the stringent operational impacts required by a PROB30 or TEMPO group. It acts as an advisory for the pilot to maintain situational awareness without grounding the flight or forcing alternate fuel requirements.</p>
+
+<h2>TAF Writing Philosophy</h2>
+
+<p>The modern paradigm in TAF writing is the <strong>user-friendly TAF</strong>. In the past, forecasters often wrote lengthy, un-amendable forecasts that included every possible variation in weather (&quot;throwing in the kitchen sink&quot;). This led to ambiguous products that penalized airline operations.</p>
+
+<p>A high-quality TAF meets six criteria: it is <strong>Clear, Concise, Consistent, Relevant, Timely, and Accurate</strong>. Your goal as a forecaster is to enhance flight safety while saving customers time and money.</p>
+
+<div class="callout callout-warning">
+  <div class="callout-label">Avoid Over-Forecasting</div>
+  Limit the use of PROB groups and conditional modifiers. Do not hedge—make a decision. If you cannot pinpoint exact numbers, at least ensure the trend and the flight category are correct. Aim to write a TAF that is no more than 5 lines long.
+</div>
+
+<h2>Aviation Flight Categories</h2>
+
+<p>Rather than obsessing over minute fluctuations in ceiling or visibility, structure your TAF around <strong>Aviation Flight Categories</strong>. The primary objective is to get the category correct (e.g., VFR vs. IFR) and spend most of your forecasting energy on the periods expected to fall below VFR.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Flight Category</th>
+      <th>Ceiling</th>
+      <th>Visibility</th>
+      <th>Operational Impact</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>VFR (Visual Flight Rules)</td>
+      <td>&gt; 3000 ft</td>
+      <td>&gt; 5 SM (8000 m)</td>
+      <td>Routine operations. Mention cirrus only if that is all there is to report.</td>
+    </tr>
+    <tr>
+      <td>MVFR (Marginal VFR)</td>
+      <td>1000 to 3000 ft</td>
+      <td>3 to 5 SM</td>
+      <td>Increased caution; may impact general aviation.</td>
+    </tr>
+    <tr>
+      <td>IFR (Instrument Flight Rules)</td>
+      <td>500 to &lt; 1000 ft</td>
+      <td>1 to &lt; 3 SM</td>
+      <td>Requires instrument approaches; significant delays possible.</td>
+    </tr>
+    <tr>
+      <td>LIFR (Low IFR) / CAT II/III</td>
+      <td>&lt; 500 ft</td>
+      <td>&lt; 1 SM</td>
+      <td>Critical thresholds for the airport. Major operational restrictions.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Structuring the TAF</h2>
+
+<p>When drafting a TAF, establish the overarching trend and write to the aviation flight categories first. Ensure you add the most detail to the <strong>first 6 hours</strong> of the forecast, as this is the critical operational period for incoming flights.</p>
+
+<p>Group similar visibilities and ceilings into coherent scenarios (scenario forecasting) rather than jumping sporadically between categories. For example, if you introduce a TEMPO group, try not to jump more than one category at a time (e.g., from VFR directly down to CAT II IFR).</p>
+
+<figure>
+  <svg viewBox="0 0 680 160" role="img" xmlns="http://www.w3.org/2000/svg">
+    <title>TAF Structure Best Practices</title>
+    <desc>Diagram showing the anatomy of a TAF focusing on the critical first 6 hours and category-based forecasting.</desc>
+
+    <!-- Base line -->
+    <line x1="40" y1="80" x2="640" y2="80" stroke="#E2DFD6" stroke-width="4"/>
+    
+    <!-- Time markers -->
+    <circle cx="40" cy="80" r="6" fill="#185FA5"/>
+    <text x="30" y="110" font-family="sans-serif" font-size="14" fill="#1A1917" font-weight="bold">T+0</text>
+    
+    <circle cx="240" cy="80" r="6" fill="#185FA5"/>
+    <text x="220" y="110" font-family="sans-serif" font-size="14" fill="#1A1917" font-weight="bold">T+6</text>
+    
+    <circle cx="640" cy="80" r="6" fill="#6B6A65"/>
+    <text x="610" y="110" font-family="sans-serif" font-size="14" fill="#6B6A65">T+24/30</text>
+    
+    <!-- Critical Period Highlight -->
+    <rect x="40" y="65" width="200" height="30" fill="#E6F1FB" opacity="0.5"/>
+    <line x1="40" y1="50" x2="240" y2="50" stroke="#185FA5" stroke-width="2"/>
+    <line x1="40" y1="45" x2="40" y2="55" stroke="#185FA5" stroke-width="2"/>
+    <line x1="240" y1="45" x2="240" y2="55" stroke="#185FA5" stroke-width="2"/>
+    <text x="90" y="40" font-family="sans-serif" font-size="12" fill="#185FA5" font-weight="bold">CRITICAL PERIOD</text>
+    
+    <text x="60" y="135" font-family="sans-serif" font-size="12" fill="#0F6E56">High detail. Accurate timing.</text>
+    <text x="60" y="150" font-family="sans-serif" font-size="12" fill="#0F6E56">Strict flight category forecasting.</text>
+    
+    <!-- Later Period Highlight -->
+    <line x1="260" y1="50" x2="640" y2="50" stroke="#6B6A65" stroke-width="2" stroke-dasharray="4 4"/>
+    <text x="380" y="40" font-family="sans-serif" font-size="12" fill="#6B6A65">TREND PERIOD</text>
+    
+    <text x="320" y="135" font-family="sans-serif" font-size="12" fill="#6B6A65">Broad trends. Fewer change groups.</text>
+    <text x="320" y="150" font-family="sans-serif" font-size="12" fill="#6B6A65">Limit PROB. Focus on prevailing conditions.</text>
+  </svg>
+  <figcaption>The first 6 hours of a TAF require the highest precision and detail, as they drive immediate flight and fuel decisions.</figcaption>
+</figure>
+
+<div class="lesson-summary">
+  <h3>Key Takeaways</h3>
+  <ul>
+    <li>A TAF covers the terminal area within 5 SM; the VC modifier covers the donut between 5 SM and 10 SM.</li>
+    <li>Use VC to alert users to nearby weather (TS, SH, FG) without triggering restrictive alternate-fuel regulations.</li>
+    <li>A user-friendly TAF is concise (ideally &le; 5 lines) and avoids hedging with excessive PROB or conditional groups.</li>
+    <li>Forecast by flight category (VFR, IFR) rather than exact values, ensuring the trend is always clear.</li>
+    <li>Concentrate the highest level of detail and accuracy in the first 6 hours of the forecast period.</li>
+  </ul>
+</div>
+</section>
+<hr class="ims-lesson-sep">
+<section id="lesson-2" class="ims-lesson-section" data-lesson-slug="taf_amendments">
+<h1>Operational TAF Amendments &amp; Edge Cases</h1>
+
+<div class="objectives">
+  <strong>By the end of this lesson you will be able to:</strong>
+  <ul>
+    <li>Formulate appropriate change groups (BECMG, TEMPO) for deteriorating or improving conditions.</li>
+    <li>Evaluate existing TAFs for ambiguity and propose operational amendments.</li>
+    <li>Discriminate between scenarios requiring TEMPO versus PROB groups.</li>
+  </ul>
+</div>
+
+<h2>Mastering Change Groups</h2>
+
+<p>The core of an effective TAF lies in accurately conveying changes over time. When conditions deviate from the prevailing forecast, forecasters use change groups: <strong>BECMG</strong>, <strong>TEMPO</strong>, and <strong>PROB</strong>. Applying these correctly ensures the TAF is not only accurate but also operationally actionable.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Change Group</th>
+      <th>Definition &amp; Duration Constraints</th>
+      <th>Operational Implication</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>BECMG</strong><br>(Becoming)</td>
+      <td>A regular or slow transition to a new prevailing condition. The transition period should normally not exceed 2 hours (absolute max 4 hours).</td>
+      <td>Establishes a permanent shift in the baseline flight category.</td>
+    </tr>
+    <tr>
+      <td><strong>TEMPO</strong><br>(Temporary)</td>
+      <td>Fluctuations expected to last <em>less than 1 hour</em> in each instance, and in aggregate cover <em>less than half</em> of the defined time period.</td>
+      <td>Pilots must carry alternate fuel to cover the TEMPO conditions. Very restrictive.</td>
+    </tr>
+    <tr>
+      <td><strong>PROB30 / 40</strong><br>(Probability)</td>
+      <td>A 30% or 40% probability of occurrence. Used primarily for low-confidence events in the trend period (beyond 6 hours).</td>
+      <td>Acts as a heads-up. Often treated similarly to TEMPO by dispatchers, so use it sparingly.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="callout callout-warning">
+  <div class="callout-label">Avoid TEMPO Abuse</div>
+  Do not string TEMPO groups back-to-back across long periods. If an intermittent condition will dominate the period (i.e., aggregate time is greater than half the period), it is no longer temporary—it is the prevailing condition. Use BECMG instead.
+</div>
+
+<h2>The Decision Flowchart</h2>
+
+<p>When you anticipate a change in the weather, follow this logic to select the correct change group. This removes ambiguity and keeps the forecast within ICAO guidelines.</p>
+
+<figure>
+  <svg viewBox="0 0 680 340" role="img" xmlns="http://www.w3.org/2000/svg">
+    <title>Change Group Decision Flowchart</title>
+    <desc>Flowchart guiding the selection between FM, BECMG, and TEMPO based on duration and aggregate time.</desc>
+
+    <!-- Start Node -->
+    <rect x="240" y="20" width="200" height="40" rx="6" fill="#185FA5"/>
+    <text x="340" y="45" font-family="sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="bold">Will the change persist &ge; 1 hour?</text>
+
+    <!-- Lines from Start -->
+    <line x1="340" y1="60" x2="340" y2="100" stroke="#1A1917" stroke-width="2"/>
+    <line x1="240" y1="40" x2="160" y2="40" stroke="#1A1917" stroke-width="2"/>
+    <line x1="160" y1="40" x2="160" y2="100" stroke="#1A1917" stroke-width="2"/>
+
+    <text x="350" y="85" font-family="sans-serif" font-size="14" fill="#1A1917" font-weight="bold">YES</text>
+    <text x="170" y="85" font-family="sans-serif" font-size="14" fill="#1A1917" font-weight="bold">NO</text>
+
+    <!-- YES Path: Persists -->
+    <rect x="240" y="100" width="200" height="40" rx="6" fill="#0F6E56"/>
+    <text x="340" y="125" font-family="sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="bold">Is it a rapid or slow transition?</text>
+
+    <line x1="290" y1="140" x2="290" y2="180" stroke="#1A1917" stroke-width="2"/>
+    <text x="295" y="165" font-family="sans-serif" font-size="14" fill="#1A1917" font-weight="bold">Rapid</text>
+    <rect x="250" y="180" width="80" height="40" rx="4" fill="#EEEDFE" stroke="#534AB7" stroke-width="2"/>
+    <text x="290" y="205" font-family="sans-serif" font-size="14" fill="#1A1917" text-anchor="middle" font-weight="bold">FM (From)</text>
+
+    <line x1="390" y1="140" x2="390" y2="180" stroke="#1A1917" stroke-width="2"/>
+    <text x="395" y="165" font-family="sans-serif" font-size="14" fill="#1A1917" font-weight="bold">Slow</text>
+    <rect x="350" y="180" width="80" height="40" rx="4" fill="#EEEDFE" stroke="#534AB7" stroke-width="2"/>
+    <text x="390" y="205" font-family="sans-serif" font-size="14" fill="#1A1917" text-anchor="middle" font-weight="bold">BECMG</text>
+
+    <!-- NO Path: Fluctuations -->
+    <rect x="60" y="100" width="200" height="40" rx="6" fill="#BA7517"/>
+    <text x="160" y="125" font-family="sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="bold">Aggregate &ge; 50% of period?</text>
+
+    <line x1="100" y1="140" x2="100" y2="260" stroke="#1A1917" stroke-width="2"/>
+    <text x="105" y="165" font-family="sans-serif" font-size="14" fill="#1A1917" font-weight="bold">NO</text>
+    <rect x="60" y="260" width="80" height="40" rx="4" fill="#EEEDFE" stroke="#534AB7" stroke-width="2"/>
+    <text x="100" y="285" font-family="sans-serif" font-size="14" fill="#1A1917" text-anchor="middle" font-weight="bold">TEMPO</text>
+
+    <line x1="220" y1="140" x2="220" y2="260" stroke="#1A1917" stroke-width="2"/>
+    <text x="225" y="165" font-family="sans-serif" font-size="14" fill="#1A1917" font-weight="bold">YES</text>
+    <rect x="180" y="260" width="80" height="40" rx="4" fill="#EEEDFE" stroke="#534AB7" stroke-width="2"/>
+    <text x="220" y="285" font-family="sans-serif" font-size="14" fill="#1A1917" text-anchor="middle" font-weight="bold">BECMG</text>
+  </svg>
+  <figcaption>Logic for selecting the appropriate change group to ensure operational clarity.</figcaption>
+</figure>
+
+<h2>Amendment Criteria</h2>
+
+<p>Do not wait for the next scheduled TAF release if the current forecast is failing. Proactive amendments are a hallmark of a professional forecaster. You must amend the TAF when observed or expected conditions cross critical operational thresholds that are not accounted for in the current forecast.</p>
+
+<div class="callout callout-key">
+  <div class="callout-label">When to Amend</div>
+  Amend immediately when conditions cross between VFR, MVFR, IFR, or LIFR. Additionally, amend if the timing of a major frontal passage or thunderstorm onset changes by more than 2 hours.
+</div>
+
+<p>A common mistake is leaving a TAF "as is" because a previously forecasted PROB30 didn't materialize, or because a TEMPO condition lasted too long. If the conditions become the prevailing weather, you must amend to establish the new baseline.</p>
+
+<div class="lesson-summary">
+  <h3>Key Takeaways</h3>
+  <ul>
+    <li>Use <strong>BECMG</strong> for permanent transitions and <strong>TEMPO</strong> for brief fluctuations lasting less than an hour per instance.</li>
+    <li>If intermittent weather aggregates to more than half the forecast period, it must be promoted to the prevailing condition via BECMG.</li>
+    <li>Amend proactively. If the forecast crosses a flight category threshold unexpectedly, issue an amendment immediately rather than waiting for the next cycle.</li>
+    <li>Do not use PROB groups in the first 6 hours of the TAF. Make a definitive forecast for the critical period.</li>
+  </ul>
+</div>
+</section>
+<hr class="ims-lesson-sep">
+<section id="lesson-3" class="ims-lesson-section" data-lesson-slug="tropical_storms">
+<h1>Tropical Storms</h1>
+
+<div class="objectives">
+  <strong>By the end of this lesson you will be able to:</strong>
+  <ul>
+    <li>Describe the atmospheric conditions required for tropical storm formation.</li>
+    <li>Classify tropical cyclones using the Saffir-Simpson scale.</li>
+    <li>Interpret global warning center advisories and graphical track forecasts.</li>
+  </ul>
+</div>
+
+<h2>Formation and Structure</h2>
+
+<p>A tropical cyclone is a rapidly rotating storm system characterized by a low-pressure center, a closed low-level atmospheric circulation, strong winds, and a spiral arrangement of thunderstorms that produce heavy rain. Unlike mid-latitude cyclones, they lack weather fronts and are driven by latent heat release from condensing water vapor.</p>
+
+<p>For a tropical storm to form and intensify, several specific atmospheric and oceanic conditions must align simultaneously:</p>
+
+<ul>
+  <li><strong>Warm Ocean Waters:</strong> Sea surface temperatures (SST) of at least 26.5 &deg;C through a depth of 50 meters to fuel the thermodynamic engine.</li>
+  <li><strong>Coriolis Force:</strong> A location at least 5&deg; latitude away from the equator. Without the Coriolis effect, the low-pressure center cannot maintain its cyclonic rotation.</li>
+  <li><strong>Low Vertical Wind Shear:</strong> High wind shear tears the storm structure apart, preventing the necessary vertical stacking of the convection.</li>
+  <li><strong>Atmospheric Instability and Moisture:</strong> Rapid cooling with height and high mid-tropospheric humidity.</li>
+</ul>
+
+<figure>
+  <img src="data:image/jpeg;base64,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" alt="Satellite view of the eye of a tropical cyclone" style="display:block; margin:0 auto; max-width:100%; border-radius:8px;">
+  <figcaption>Figure 3.1: Satellite visible imagery of a mature tropical cyclone, clearly showing the cloud-free eye and towering eyewall thunderstorms (from Source Slide 15).</figcaption>
+</figure>
+
+<p>Once formed, a mature storm exhibits three distinct structural regions: the <strong>Eye</strong> (a region of mostly calm weather and sinking air at the center), the <strong>Eyewall</strong> (a ring of towering thunderstorms containing the storm's most severe weather and highest winds), and the <strong>Spiral Rainbands</strong> (bands of convection spiraling outward).</p>
+
+<h2>The Saffir-Simpson Hurricane Wind Scale (SSHS)</h2>
+
+<p>To communicate the hazard level, storms are classified by their maximum sustained winds. The widely used Saffir-Simpson scale categorizes hurricanes from 1 to 5 based on a 1-minute average sustained wind speed measured at 10 meters above the surface.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Sustained Winds (Knots)</th>
+      <th>Expected Damage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Category 1</td>
+      <td>64 - 82 kt</td>
+      <td>Some damage. Unsecured objects become projectiles.</td>
+    </tr>
+    <tr>
+      <td>Category 2</td>
+      <td>83 - 95 kt</td>
+      <td>Extensive damage. Shallowly rooted trees snapped or uprooted.</td>
+    </tr>
+    <tr>
+      <td>Category 3 (Major)</td>
+      <td>96 - 112 kt</td>
+      <td>Devastating damage. Electricity and water unavailable for days.</td>
+    </tr>
+    <tr>
+      <td>Category 4 (Major)</td>
+      <td>113 - 136 kt</td>
+      <td>Catastrophic damage. Severe damage to well-built homes.</td>
+    </tr>
+    <tr>
+      <td>Category 5 (Major)</td>
+      <td>&gt; 136 kt</td>
+      <td>Catastrophic damage. High percentage of framed homes destroyed.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="callout callout-note">
+  <div class="callout-label">Aviation Impact</div>
+  While airports lock down and evacuate aircraft during landfalling Category 3+ storms, even a Category 1 storm or a strong Tropical Storm (34-63 kt) presents extreme hazards to aviation, including severe low-level wind shear, microbursts in the outer rainbands, and prolonged IFR/LIFR conditions.
+</div>
+
+<h2>Warning Centers and Track Forecasts</h2>
+
+<p>Global monitoring and forecasting of tropical cyclones is managed by a network of six Regional Specialized Meteorological Centres (RSMCs) and five Tropical Cyclone Warning Centres (TCWCs), designated by the WMO. For example, the National Hurricane Center (NHC) in Miami is the RSMC for the North Atlantic and Eastern Pacific.</p>
+
+<p>These centers issue regular advisories and graphical track forecasts. A key component of these forecasts is the "Cone of Uncertainty."</p>
+
+<figure>
+  <svg viewBox="0 0 680 320" role="img" xmlns="http://www.w3.org/2000/svg">
+    <title>Track Forecast Cone of Uncertainty</title>
+    <desc>A diagram illustrating the predicted track of a tropical cyclone and the widening cone of uncertainty over a 5-day forecast period.</desc>
+
+    <!-- Background/Grid lines -->
+    <line x1="80" y1="40" x2="600" y2="40" stroke="#E2DFD6" stroke-width="1"/>
+    <line x1="80" y1="100" x2="600" y2="100" stroke="#E2DFD6" stroke-width="1"/>
+    <line x1="80" y1="160" x2="600" y2="160" stroke="#E2DFD6" stroke-width="1"/>
+    <line x1="80" y1="220" x2="600" y2="220" stroke="#E2DFD6" stroke-width="1"/>
+    <line x1="80" y1="280" x2="600" y2="280" stroke="#E2DFD6" stroke-width="1"/>
+
+    <!-- The Cone (Polygon) -->
+    <polygon points="120,260 300,180 520,60 580,240 380,270 180,280" fill="#E6F1FB" opacity="0.6" stroke="#185FA5" stroke-width="1" stroke-dasharray="4 4"/>
+    
+    <!-- The Forecast Track (Line) -->
+    <path d="M 100 270 Q 300 240 500 150" fill="none" stroke="#1A1917" stroke-width="3" stroke-dasharray="8 4"/>
+
+    <!-- Current Position -->
+    <circle cx="100" cy="270" r="10" fill="#A32D2D"/>
+    <text x="115" y="275" font-family="sans-serif" font-size="12" fill="#1A1917" font-weight="bold">Current Center</text>
+
+    <!-- Forecast Points -->
+    <circle cx="210" cy="250" r="5" fill="#1A1917"/>
+    <text x="200" y="240" font-family="sans-serif" font-size="12" fill="#1A1917">24 HR</text>
+
+    <circle cx="330" cy="215" r="5" fill="#1A1917"/>
+    <text x="320" y="205" font-family="sans-serif" font-size="12" fill="#1A1917">48 HR</text>
+
+    <circle cx="430" cy="180" r="5" fill="#1A1917"/>
+    <text x="420" y="170" font-family="sans-serif" font-size="12" fill="#1A1917">72 HR</text>
+
+    <circle cx="500" cy="150" r="5" fill="#1A1917"/>
+    <text x="510" y="145" font-family="sans-serif" font-size="12" fill="#1A1917">120 HR</text>
+
+    <!-- Annotations -->
+    <text x="420" y="90" font-family="sans-serif" font-size="14" fill="#185FA5" font-weight="bold">Cone of Uncertainty</text>
+    <line x1="480" y1="95" x2="480" y2="120" stroke="#185FA5" stroke-width="2"/>
+    <polygon points="480,125 475,115 485,115" fill="#185FA5"/>
+
+  </svg>
+  <figcaption>The Cone of Uncertainty represents the probable track of the center of a tropical cyclone. The storm's center is expected to remain within the cone roughly 2/3 of the time. Importantly, hazardous impacts (like strong winds and heavy rain) often extend well outside the cone.</figcaption>
+</figure>
+
+<div class="callout callout-warning">
+  <div class="callout-label">Interpreting the Cone</div>
+  A common misconception is that the cone represents the size of the storm. It does not. It only represents the historical forecast error of the storm's <em>center</em>. Impacts such as hurricane-force wind gusts and torrential rain can, and frequently do, occur far outside the cone.
+</div>
+
+<p>In addition to deterministic tracks, advanced centers like the ECMWF provide <strong>Strike Probability Maps</strong>. These ensemble-based products calculate the probability that a tropical cyclone will pass within a specific radius (e.g., 120 km) of a given location over a set time window, offering a more nuanced view of risk than the cone alone.</p>
+
+<div class="lesson-summary">
+  <h3>Key Takeaways</h3>
+  <ul>
+    <li>Formation requires warm SSTs (&gt; 26.5 &deg;C), low wind shear, deep moisture, and sufficient Coriolis force.</li>
+    <li>The Saffir-Simpson scale classifies storms based on 1-minute sustained winds, with Category 3 and above considered Major Hurricanes.</li>
+    <li>RSMCs and TCWCs are the global authorities for tracking and issuing advisories on tropical cyclones.</li>
+    <li>The Cone of Uncertainty visualizes the probable track of the storm's center, but hazardous conditions routinely extend well beyond its boundaries.</li>
+  </ul>
+</div>
+</section>
+<hr class="ims-lesson-sep">
+<section id="lesson-4" class="ims-lesson-section" data-lesson-slug="volcanic_ash">
 <h1>Volcanic Ash</h1>
 
 <div class="objectives">
@@ -180,4 +668,112 @@
     <li>VAAs provide the critical polygon coordinates that MWOs use to issue mandatory airspace-closing SIGMETs.</li>
   </ul>
 </div>
+</section>
+<hr class="ims-lesson-sep">
+<section id="lesson-5" class="ims-lesson-section" data-lesson-slug="wafc_maps">
+<h1>WAFC Maps &amp; Global Forecast Charts</h1>
+
+<div class="objectives">
+  <strong>By the end of this lesson you will be able to:</strong>
+  <ul>
+    <li>Distinguish between High-level (SWH) and Medium-level (SWM) SIGWX charts.</li>
+    <li>Decode standard aviation meteorological parameters (jetstreams, CAT, CBs) on WAFC maps.</li>
+    <li>Differentiate between isolated, occasional, and frequent cumulonimbus coverage as defined by ICAO.</li>
+  </ul>
+</div>
+
+<h2>The World Area Forecast System (WAFS)</h2>
+
+<p>The World Area Forecast System (WAFS) is a global program developed by ICAO and the WMO to provide high-quality, consistent en-route meteorological guidance for international flights. It is operated by two World Area Forecast Centres (WAFCs): <strong>WAFC London</strong> and <strong>WAFC Washington</strong>.</p>
+
+<p>WAFCs broadcast global wind, temperature, humidity, and Significant Weather (SIGWX) forecasts in two formats: traditional <strong>PNG charts</strong> for direct viewing, and <strong>BUFR format</strong>, which allows end-users to generate customized, localized charts using visualization software.</p>
+
+<h2>SWH vs. SWM Charts</h2>
+
+<p>SIGWX charts are split into two operational levels:</p>
+
+<ul>
+  <li><strong>High-Level SIGWX (SWH):</strong> Valid for Flight Levels 250 to 630. This is a <strong>global dataset</strong>.</li>
+  <li><strong>Medium-Level SIGWX (SWM):</strong> Valid for Flight Levels 100 to 450. Unlike SWH, SWM is <strong>not global</strong>. It is issued for specific regional areas (e.g., EUR, MEA, NAT). SWM charts include finer detail regarding in-cloud icing and turbulence that are not present on high-level charts.</li>
+</ul>
+
+<div class="callout callout-warning">
+  <div class="callout-label">Chart Overlap</div>
+  Because SWH starts at FL250 and SWM goes up to FL450, there is an intentional overlap. Pilots flying in this middle band must consult the chart that best captures the specific weather hazards (like in-cloud icing on the SWM) relevant to their route.
+</div>
+
+<h2>Decoding the Charts</h2>
+
+<p>Both SWH and SWM charts use standard ICAO symbology to depict critical aviation hazards. You must be able to quickly decode these features:</p>
+
+<ul>
+  <li><strong>Jetstreams:</strong> Depicted when the core wind speed is &ge; 80 knots. Indicates location, core speed, and altitude.</li>
+  <li><strong>Clear Air Turbulence (CAT):</strong> Depicted by a dashed line enclosing the area. Labeled with intensity (Moderate, Severe) and the flight levels affected.</li>
+  <li><strong>Tropopause Heights:</strong> Indicated by boxes showing the flight level of the tropopause, including localized "trop highs" and "trop lows."</li>
+</ul>
+
+<figure>
+  <svg viewBox="0 0 680 280" role="img" xmlns="http://www.w3.org/2000/svg">
+    <title>WAFC Chart Symbology</title>
+    <desc>A mock section of a WAFC SIGWX chart illustrating a jetstream and a CAT area.</desc>
+
+    <!-- Background grid -->
+    <rect x="0" y="0" width="680" height="280" fill="#f6f5f0"/>
+    <line x1="0" y1="140" x2="680" y2="140" stroke="#e2dfd6" stroke-width="2"/>
+    <line x1="340" y1="0" x2="340" y2="280" stroke="#e2dfd6" stroke-width="2"/>
+
+    <!-- Jetstream Line -->
+    <path d="M 50 200 Q 200 180 300 100 T 600 50" fill="none" stroke="#185FA5" stroke-width="4"/>
+    <polygon points="600,50 580,40 585,50 580,60" fill="#185FA5"/>
+    
+    <!-- Wind Barbs -->
+    <line x1="260" y1="120" x2="280" y2="90" stroke="#185FA5" stroke-width="2"/>
+    <polygon points="280,90 290,95 285,100" fill="#185FA5"/> <!-- Pennant for 50 -->
+    <line x1="270" y1="105" x2="285" y2="110" stroke="#185FA5" stroke-width="2"/> <!-- 10 -->
+    <line x1="265" y1="112" x2="280" y2="117" stroke="#185FA5" stroke-width="2"/> <!-- 10 -->
+    
+    <!-- Jet Core Label -->
+    <rect x="230" y="55" width="80" height="25" fill="#ffffff" stroke="#185FA5" stroke-width="1"/>
+    <text x="270" y="73" font-family="sans-serif" font-size="12" fill="#1A1917" text-anchor="middle" font-weight="bold">FL360</text>
+    <text x="270" y="45" font-family="sans-serif" font-size="12" fill="#185FA5" text-anchor="middle" font-weight="bold">120 KT</text>
+
+    <!-- CAT Area -->
+    <path d="M 400 180 Q 480 120 580 160 Q 640 220 540 260 Q 450 240 400 180" fill="none" stroke="#A32D2D" stroke-width="3" stroke-dasharray="8 6"/>
+    <text x="490" y="210" font-family="sans-serif" font-size="14" fill="#A32D2D" font-weight="bold">MOD CAT</text>
+    <text x="490" y="230" font-family="sans-serif" font-size="12" fill="#1A1917">FL380 / FL280</text>
+
+    <!-- Annotations -->
+    <text x="70" y="230" font-family="sans-serif" font-size="14" fill="#185FA5" font-weight="bold">Jetstream</text>
+    <text x="70" y="250" font-family="sans-serif" font-size="12" fill="#6B6A65">Core at FL360, 120 knots.</text>
+    <text x="560" y="140" font-family="sans-serif" font-size="14" fill="#A32D2D" font-weight="bold">CAT Area</text>
+  </svg>
+  <figcaption>Example WAFC symbology showing a 120-knot jetstream core at FL360 and an adjacent area of Moderate Clear Air Turbulence between FL280 and FL380.</figcaption>
+</figure>
+
+<h2>Cumulonimbus (CB) Coverage Definitions</h2>
+
+<p>When forecasting thunderstorms (CBs) on a SIGWX chart, ICAO mandates specific terminology to describe the spatial coverage of the storm cells within the affected area. Scalloped lines denote the boundary of the convective area.</p>
+
+<div class="callout callout-key">
+  <div class="callout-label">Coverage Terminology</div>
+  <ul>
+    <li><strong>ISOL (Isolated):</strong> Individual CBs with a maximum spatial coverage of <strong>less than 50%</strong> of the forecast area.</li>
+    <li><strong>OCNL (Occasional):</strong> Well-separated CBs with a spatial coverage of <strong>50% to 75%</strong> of the forecast area.</li>
+    <li><strong>FRQ (Frequent):</strong> CBs with little or no separation, covering <strong>more than 75%</strong> of the forecast area.</li>
+    <li><strong>EMBD (Embedded):</strong> CBs that are hidden within other cloud layers and cannot be readily recognized visually by pilots.</li>
+  </ul>
+</div>
+
+<p>These terms dictate how an aircraft can navigate the hazard. An <em>ISOL</em> or <em>OCNL</em> area suggests that a pilot equipped with airborne weather radar can safely pick their way between the storms. A <em>FRQ</em> area implies a solid wall of thunderstorms that must be avoided entirely.</p>
+
+<div class="lesson-summary">
+  <h3>Key Takeaways</h3>
+  <ul>
+    <li>WAFCs distribute high-quality en-route weather forecasts globally to support international aviation.</li>
+    <li>SWH (High-level) charts are global and cover FL250 to FL630. SWM (Medium-level) charts are regional, cover FL100 to FL450, and include more detail on in-cloud icing.</li>
+    <li>Jetstreams are plotted when the core wind is 80 knots or greater.</li>
+    <li>CB coverage is strictly defined: ISOL (&lt;50%), OCNL (50-75%), and FRQ (&gt;75%).</li>
+  </ul>
+</div>
+</section>
 </div>
