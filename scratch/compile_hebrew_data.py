@@ -154,7 +154,7 @@ def main():
         content = content.replace("const courseData =", "const courseDataEn =")
         content = content.replace("const quizData =", "const quizDataEn =")
         
-        # Insert Hebrew data and update app state variables
+        # Insert Hebrew data and update app state variables AFTER the English variables are fully defined
         injection = f"""
 const courseDataHe = {course_json_str};
 const quizDataHe = {quiz_json_str};
@@ -162,7 +162,7 @@ const quizDataHe = {quiz_json_str};
 let courseData = courseDataEn;
 let quizData = quizDataEn;
 """
-        content = content.replace("const courseDataEn =", injection + "\nconst courseDataEn =")
+        content = content.replace("// Base64 helper for decoding built-in fragment strings", injection + "\n// Base64 helper for decoding built-in fragment strings")
         
     else:
         # Already injected once, update it
