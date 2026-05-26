@@ -891,6 +891,7 @@ body.dark-mode .quiz-option.incorrect {{
   <span class="topbar-course">{course_data['title']}</span>
   
   <div class="topbar-controls">
+    <button class="theme-toggle" onclick="toggleLanguage()" title="Toggle Hebrew/English">א/A</button>
     <button class="theme-toggle" onclick="toggleDarkMode()" title="Toggle Dark/Light Mode">🌓</button>
     <span class="preview-badge">PREVIEW</span>
   </div>
@@ -966,6 +967,31 @@ function decodeHTML(b64Str) {{
 // Initialize theme
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {{
   document.body.classList.add('dark-mode');
+}}
+
+function toggleLanguage() {{
+  if (typeof courseDataHe === 'undefined' || typeof courseDataEn === 'undefined') {{
+    console.warn("Bilingual data not found.");
+    return;
+  }}
+  
+  if (document.body.style.direction === 'rtl') {{
+    document.body.style.direction = 'ltr';
+    courseData = courseDataEn;
+    quizData = quizDataEn;
+  }} else {{
+    document.body.style.direction = 'rtl';
+    courseData = courseDataHe;
+    quizData = quizDataHe;
+  }}
+  
+  generateCourseHTML();
+  
+  if (currentView === 'course-landing') {{
+    showView('course-landing');
+  }} else {{
+    loadLesson(currentModule, currentLesson);
+  }}
 }}
 
 function toggleDarkMode() {{
