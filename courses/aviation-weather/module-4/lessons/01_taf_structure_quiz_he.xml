@@ -3,7 +3,7 @@
 
   <question type="multichoice">
     <name>
-      <text>L1-Q01 — החלת שינוי הסביבה (VC)</text>
+      <text>L1-Q01 - החלת שינוי הסביבה (VC).</text>
     </name>
     <questiontext format="html">
       <text>&lt;p&gt;תא של ממטרים עזים עוקב במכ"ם במרחק של 7 קילומטרים קבועים בדיוק ממרכז מתחם המסלול. זה לא צפוי להתקרב. כיצד יש לציין זאת ב-TAF?&lt;/p&gt;</text>
@@ -35,7 +35,7 @@
 
   <question type="multichoice">
     <name>
-      <text>L1-Q02 — הערכת תמציתי TAF</text>
+      <text>L1-Q02 - הערכת תמציתי TAF</text>
     </name>
     <questiontext format="html">
       <text>&lt;p&gt;חזאי כותב TAF בן 8 שורות המפרט תנודות קלות בכיסוי ענן VFR (למשל, FEW עד SCT) ושינויי רוח קלים על פני תקופה של 24 שעות. מהי הבעיה התפעולית העיקרית בתחזית זו?&lt;/p&gt;</text>
@@ -48,7 +48,7 @@
     <shuffleanswers>true</shuffleanswers>
 
     <answer fraction="100" format="html">
-      <text>&lt;p&gt;זה מפר את עיקרון התמציתיות וחיזוי יתר של מזג אוויר תעופה לא קריטי, ומפחית את הידידותיות למשתמש.&lt;/p&gt;</text>
+      <text>&lt;p&gt;היא מפרה את העיקרון של תמציתית וחיזוי יתר של מזג אוויר תעופה לא קריטי, ומפחיתה את הידידותיות למשתמש.&lt;/p&gt;</text>
       <feedback format="html"><text /></feedback>
     </answer>
     <answer fraction="0" format="html">
@@ -67,7 +67,7 @@
 
   <question type="multichoice">
     <name>
-      <text>L1-Q03 — חיזוי לפי קטגוריית טיסה</text>
+      <text>L1-Q03 - חיזוי לפי קטגוריית טיסה</text>
     </name>
     <questiontext format="html">
       <text>&lt;p&gt;שדה תעופה חווה תנודה מתמשכת בין תקרות של 4000 רגל ל-5000 רגל, כשהראות נשארת מעל 10 SM. החזאי מציג מספר קבוצות TEMPO כדי ללכוד את שינויי התקרה הללו. למה זה נוהג לקוי?&lt;/p&gt;</text>
@@ -88,7 +88,7 @@
       <feedback format="html"><text /></feedback>
     </answer>
     <answer fraction="0" format="html">
-      <text>&lt;p&gt;צריך היה לחזות את השינויים באמצעות קבוצת PROB30 יחידה כדי לציין אי ודאות.&lt;/p&gt;</text>
+      <text>&lt;p&gt;השינויים היו צריכים להיות חזויים באמצעות קבוצת PROB30 יחידה כדי לציין אי ודאות.&lt;/p&gt;</text>
       <feedback format="html"><text /></feedback>
     </answer>
     <answer fraction="0" format="html">
@@ -99,7 +99,7 @@
 
   <question type="multichoice">
     <name>
-      <text>L1-Q04 — הקצאת מאמץ לתקופה הקריטית</text>
+      <text>L1-Q04 - הקצאת מאמץ לתקופה הקריטית</text>
     </name>
     <questiontext format="html">
       <text>&lt;p&gt;TAF 24 שעות מונפקת ב-12Z. החזאי מעריך אירוע ערפל הצפוי בשעה 14Z ועוד אחד צפוי בשעה 04Z למחרת. כיצד עליהם להקצות את מאמץ החיזוי שלהם לפי פילוסופיית הכתיבה של TAF?&lt;/p&gt;</text>
@@ -112,7 +112,7 @@
     <shuffleanswers>true</shuffleanswers>
 
     <answer fraction="100" format="html">
-      <text>&lt;p&gt;התמקד בפרטים ובדיוק מירביים בפתרון אירוע ה-14Z, שכן 6 השעות הראשונות הן קריטיות לפעילות טיסה אקטיבית, תוך ביסוס מגמה רחבה יותר לאירוע 04Z.&lt;/p&gt;</text>
+      <text>&lt;p&gt;התמקד בפרטים ובדיוק מירביים בפתרון אירוע 14Z, שכן 6 השעות הראשונות הן קריטיות לפעילות טיסה אקטיבית, תוך ביסוס מגמה רחבה יותר לאירוע 04Z.&lt;/p&gt;</text>
       <feedback format="html"><text /></feedback>
     </answer>
     <answer fraction="0" format="html">
