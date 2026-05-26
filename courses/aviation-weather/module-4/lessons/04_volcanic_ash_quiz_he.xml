@@ -3,13 +3,13 @@
 
   <question type="multichoice">
     <name>
-      <text>L4-Q01 — זיהוי מכ"ם של אפר וולקני</text>
+      <text>L4-Q01 - זיהוי מכ"ם של אפר וולקני</text>
     </name>
     <questiontext format="html">
       <text>&lt;p&gt;הר געש גדול מתפרץ במהלך הלילה. מטוס מסחרי טס ב-FL350 ישירות לכיוון שביל הפלומה החזוי. צוות הטיסה מדווח כי מכ"ם מזג האוויר המשולב שלהם מראה שמיים בהירים לחלוטין לפנים. למה זה קורה?&lt;/p&gt;</text>
     </questiontext>
     <generalfeedback format="html">
-      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; מכ"ם מזג האוויר של מטוסים מכוון במיוחד כדי לזהות הידרומטרים גדולים (טיפות מים וגבישי קרח). אפר וולקני מורכב מחלקיקים יבשים על בסיס סיליקט, שהם בדרך כלל קטנים מדי וחסרים את התכונות הדיאלקטריות הנחוצות כדי להחזיר את אלומת המכ"ם אל המטוס, מה שהופך את הפלומה למעשה בלתי נראית לרדאר המשולב.&lt;/p&gt;</text>
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; מכ"ם מזג האוויר של מטוסים מכוון במיוחד כדי לזהות הידרומטרים גדולים (טיפות מים וגבישי קרח). אפר וולקני מורכב מחלקיקים יבשים על בסיס סיליקט, שהם בדרך כלל קטנים מדי וחסרים את התכונות הדיאלקטריות הנחוצות כדי להחזיר את אלומת המכ"ם חזרה למטוס, מה שהופך את הפלומה למעשה בלתי נראית לרדאר המשולב.&lt;/p&gt;</text>
     </generalfeedback>
     <defaultgrade>1</defaultgrade>
     <single>true</single>
@@ -52,7 +52,7 @@
       <feedback format="html"><text /></feedback>
     </answer>
     <answer fraction="0" format="html">
-      <text>&lt;p&gt;מדידות טמפרטורת פני השטח לחישוב כוח הנפץ הראשוני של ההתפרצות.&lt;/p&gt;</text>
+      <text>&lt;p&gt;מדידות טמפרטורת פני השטח כדי לחשב את כוח הנפץ הראשוני של ההתפרצות.&lt;/p&gt;</text>
       <feedback format="html"><text /></feedback>
     </answer>
     <answer fraction="0" format="html">
@@ -67,13 +67,13 @@
 
   <question type="multichoice">
     <name>
-      <text>L4-Q03 — מנגנון כשל מנוע</text>
+      <text>L4-Q03 - מנגנון של כשל מנוע</text>
     </name>
     <questiontext format="html">
       <text>&lt;p&gt;מטוס טס בטעות דרך ענן אפר וולקני דק. זמן קצר לאחר מכן, הצוות חווה אובדן מוחלט של דחף בכל המנועים. מהי הסיבה המכנית העיקרית לכשל זה?&lt;/p&gt;</text>
     </questiontext>
     <generalfeedback format="html">
-      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; אפר וולקני מכיל סיליקטים עם נקודת התכה נמוכה מטמפרטורת ההפעלה של מנוע סילון. כשהאפר עובר דרך תא הבעירה, הוא נמס. לאחר מכן הוא פוגע בלהבי הטורבינה המעט קרירים יותר, מתמצק מחדש לכדי ציפוי דמוי זכוכית שחוסם את זרימת האוויר וגורם למנוע להפסיק.&lt;/p&gt;</text>
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; אפר וולקני מכיל סיליקטים עם נקודת התכה נמוכה מטמפרטורת ההפעלה של מנוע סילון. כשהאפר עובר דרך תא הבעירה, הוא נמס. לאחר מכן הוא פוגע בלהבי הטורבינה המעט קרירים יותר, ומתגבש מחדש לכדי ציפוי דמוי זכוכית שחוסם את זרימת האוויר וגורם למנוע לעצור.&lt;/p&gt;</text>
     </generalfeedback>
     <defaultgrade>1</defaultgrade>
     <single>true</single>
@@ -99,7 +99,7 @@
 
   <question type="multichoice">
     <name>
-      <text>L4-Q04 — יחסי VAA ו-SIGMET</text>
+      <text>L4-Q04 - יחסי VAA ו-SIGMET</text>
     </name>
     <questiontext format="html">
       <text>&lt;p&gt; VAAC מנפיק VAA המכיל מצולע פלומת אפר החותך את קצה אזור המידע הטיסה שלך (FIR) ב-FL300. אתה סוקר את תפוקת מודל הפיזור ומאמין שריכוז האפר יהיה קל מאוד ולא יהווה סיכון משמעותי. מהו הנוהל התפעולי הנכון?&lt;/p&gt;</text>
@@ -112,7 +112,7 @@
     <shuffleanswers>true</shuffleanswers>
 
     <answer fraction="100" format="html">
-      <text>&lt;p&gt;עליך להנפיק SIGMET לאפר וולקני המבוסס על המצולע VAA, שכן SIGMETs של אפר הם חובה כאשר פלומה נכנסת ל-FIR.&lt;/p&gt;</text>
+      <text>&lt;p&gt;עליך להנפיק SIGMET עבור אפר וולקני המבוסס על המצולע VAA, שכן SIGMETs של אפר הם חובה כאשר פלומה נכנסת ל-FIR.&lt;/p&gt;</text>
       <feedback format="html"><text /></feedback>
     </answer>
     <answer fraction="0" format="html">

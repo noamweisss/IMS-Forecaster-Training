@@ -90,7 +90,7 @@
 <p class="breadcrumb">מודול 4 / שיעור 2</p>
 <h1>תיקוני TAF תפעולי ומקרי קצה</h1>
 <div class="objectives">
-<strong>עד סוף שיעור זה תוכל:</strong>
+<strong>בסוף שיעור זה תוכל:</strong>
 <ul>
 <li>ניסוח קבוצות שינוי מתאימות (BECMG, TEMPO) להידרדרות או שיפור התנאים.</li>
 <li>להעריך TAFs קיימים עבור עמימות ולהציע תיקונים תפעוליים.</li>
@@ -98,7 +98,7 @@
 </ul>
 </div>
 <h2>שליטה בקבוצות שינוי</h2>
-<p>הליבה של TAF אפקטיבי טמונה בהעברת שינויים מדויקים לאורך זמן. כאשר התנאים חורגים מהתחזית הרווחת, החזאים משתמשים בקבוצות שינוי: <strong>BECMG</strong>, <strong>TEMPO</strong>, ו <strong>PROB</strong>. יישום נכון של אלה מבטיח שה-TAF לא רק מדויק אלא גם ניתן לפעולה.</p>
+<p>הליבה של TAF אפקטיבי טמונה בהעברת שינויים מדויקים לאורך זמן. כאשר התנאים חורגים מהתחזית הרווחת, החזאים משתמשים בקבוצות שינוי: <strong>BECMG</strong>, <strong>טֶמפּוֹ</strong>, ו <strong>PROB</strong>. יישום נכון של אלה מבטיח שה-TAF לא רק מדויק אלא גם ניתן לפעולה.</p>
 <table>
 <thead>
 <tr>
@@ -109,17 +109,17 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>BECMG</strong><br/>(הופכים)</td>
+<td><strong>BECMG</strong><br/>(הִתהַוּוּת)</td>
 <td>מעבר קבוע או איטי למצב שורר חדש. תקופת המעבר בדרך כלל לא תעלה על שעתיים (מקסימום 4 שעות מוחלטות).</td>
 <td>קובע משמרת קבועה בקטגוריית טיסות הבסיס.</td>
 </tr>
 <tr>
-<td><strong>TEMPO</strong><br/>(זמני)</td>
-<td>התנודות הצפויות להימשך <em>פחות משעה</em> בכל מופע, ובכיסוי מצטבר <em>פחות מחצי</em> של פרק הזמן המוגדר.</td>
+<td><strong>טֶמפּוֹ</strong><br/>(זְמַנִי)</td>
+<td>התנודות צפויות להימשך <em>פחות משעה</em> בכל מקרה, ובכיסוי מצטבר <em>פחות ממחצית</em> של פרק הזמן המוגדר.</td>
 <td>הטייסים חייבים לשאת דלק חלופי כדי לכסות את תנאי TEMPO. מאוד מגביל.</td>
 </tr>
 <tr>
-<td><strong>PROB30 / 40</strong><br/>(הסתברות)</td>
+<td><strong>PROB30 / 40</strong><br/>(הִסתַבְּרוּת)</td>
 <td>סבירות של 30% או 40% להתרחשות. משמש בעיקר לאירועים בעלי ביטחון נמוך בתקופת המגמה (מעבר ל-6 שעות).</td>
 <td>מתנהג כ-heads-up. מטופלים לעתים קרובות באופן דומה ל-TEMPO על ידי השולחים, אז השתמש בו במשורה.</td>
 </tr>
@@ -129,41 +129,41 @@
 <div class="callout-label">הימנע משימוש לרעה ב- TEMPO</div>
   אל תחבר קבוצות TEMPO גב אל גב לאורך תקופות ארוכות. אם מצב לסירוגין ישלוט בתקופה (כלומר, הזמן המצטבר גדול ממחצית התקופה), הוא כבר לא זמני - זה המצב השורר. השתמש ב-BECMG במקום זאת.
 </div>
-<h2>תרשים זרימת ההחלטות</h2>
+<h2>תרשים זרימה של החלטות</h2>
 <p>כאשר אתה צופה שינוי במזג האוויר, עקוב אחר ההיגיון הזה כדי לבחור את קבוצת השינויים הנכונה. זה מסיר אי בהירות ושומר על התחזית במסגרת הנחיות ICAO.</p>
 <figure>
 <svg role="img" viewbox="0 0 680 340" xmlns="http://www.w3.org/2000/svg">
-<title>Change Group Decision Flowchart</title>
-<desc>Flowchart guiding the selection between FM, BECMG, and TEMPO based on duration and aggregate time.</desc>
+<title>שנה תרשים זרימה של החלטות קבוצתיות</title>
+<desc>תרשים זרימה המנחה את הבחירה בין FM, BECMG ו- TEMPO על סמך משך וזמן מצטבר.</desc>
 <!-- Start Node -->
 <rect fill="#185FA5" height="40" rx="6" width="200" x="240" y="20"></rect>
-<text fill="#ffffff" font-family="sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="340" y="45">Will the change persist ≥ 1 hour?</text>
+<text fill="#ffffff" font-family="sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="340" y="45">האם השינוי יימשך ≥ שעה?</text>
 <!-- Lines from Start -->
 <line stroke="#1A1917" stroke-width="2" x1="340" x2="340" y1="60" y2="100"></line>
 <line stroke="#1A1917" stroke-width="2" x1="240" x2="160" y1="40" y2="40"></line>
 <line stroke="#1A1917" stroke-width="2" x1="160" x2="160" y1="40" y2="100"></line>
-<text fill="#1A1917" font-family="sans-serif" font-size="14" font-weight="bold" x="350" y="85">YES</text>
-<text fill="#1A1917" font-family="sans-serif" font-size="14" font-weight="bold" x="170" y="85">NO</text>
+<text fill="#1A1917" font-family="sans-serif" font-size="14" font-weight="bold" x="350" y="85">כֵּן</text>
+<text fill="#1A1917" font-family="sans-serif" font-size="14" font-weight="bold" x="170" y="85">לֹא</text>
 <!-- YES Path: Persists -->
 <rect fill="#0F6E56" height="40" rx="6" width="200" x="240" y="100"></rect>
-<text fill="#ffffff" font-family="sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="340" y="125">Is it a rapid or slow transition?</text>
+<text fill="#ffffff" font-family="sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="340" y="125">האם מדובר במעבר מהיר או איטי?</text>
 <line stroke="#1A1917" stroke-width="2" x1="290" x2="290" y1="140" y2="180"></line>
-<text fill="#1A1917" font-family="sans-serif" font-size="14" font-weight="bold" x="295" y="165">Rapid</text>
+<text fill="#1A1917" font-family="sans-serif" font-size="14" font-weight="bold" x="295" y="165">מָהִיר</text>
 <rect fill="#EEEDFE" height="40" rx="4" stroke="#534AB7" stroke-width="2" width="80" x="250" y="180"></rect>
-<text fill="#1A1917" font-family="sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="290" y="205">FM (From)</text>
+<text fill="#1A1917" font-family="sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="290" y="205">FM (מאת)</text>
 <line stroke="#1A1917" stroke-width="2" x1="390" x2="390" y1="140" y2="180"></line>
-<text fill="#1A1917" font-family="sans-serif" font-size="14" font-weight="bold" x="395" y="165">Slow</text>
+<text fill="#1A1917" font-family="sans-serif" font-size="14" font-weight="bold" x="395" y="165">לְהַאֵט</text>
 <rect fill="#EEEDFE" height="40" rx="4" stroke="#534AB7" stroke-width="2" width="80" x="350" y="180"></rect>
 <text fill="#1A1917" font-family="sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="390" y="205">BECMG</text>
 <!-- NO Path: Fluctuations -->
 <rect fill="#BA7517" height="40" rx="6" width="200" x="60" y="100"></rect>
-<text fill="#ffffff" font-family="sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="160" y="125">Aggregate ≥ 50% of period?</text>
+<text fill="#ffffff" font-family="sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="160" y="125">לצבור ≥ 50% מהמחזור?</text>
 <line stroke="#1A1917" stroke-width="2" x1="100" x2="100" y1="140" y2="260"></line>
-<text fill="#1A1917" font-family="sans-serif" font-size="14" font-weight="bold" x="105" y="165">NO</text>
+<text fill="#1A1917" font-family="sans-serif" font-size="14" font-weight="bold" x="105" y="165">לֹא</text>
 <rect fill="#EEEDFE" height="40" rx="4" stroke="#534AB7" stroke-width="2" width="80" x="60" y="260"></rect>
-<text fill="#1A1917" font-family="sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="100" y="285">TEMPO</text>
+<text fill="#1A1917" font-family="sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="100" y="285">טֶמפּוֹ</text>
 <line stroke="#1A1917" stroke-width="2" x1="220" x2="220" y1="140" y2="260"></line>
-<text fill="#1A1917" font-family="sans-serif" font-size="14" font-weight="bold" x="225" y="165">YES</text>
+<text fill="#1A1917" font-family="sans-serif" font-size="14" font-weight="bold" x="225" y="165">כֵּן</text>
 <rect fill="#EEEDFE" height="40" rx="4" stroke="#534AB7" stroke-width="2" width="80" x="180" y="260"></rect>
 <text fill="#1A1917" font-family="sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="220" y="285">BECMG</text>
 </svg>
@@ -179,8 +179,8 @@
 <div class="lesson-summary">
 <h3>טייק אווי מפתח</h3>
 <ul>
-<li>השתמש <strong>BECMG</strong> למעברים קבועים ו <strong>TEMPO</strong> לתנודות קצרות הנמשכות פחות משעה לכל מופע.</li>
-<li>אם מזג האוויר לסירוגין מצטבר ליותר ממחצית תקופת התחזית, יש לקדם אותו למצב השורר באמצעות BECMG.</li>
+<li>לְהִשְׁתַמֵשׁ <strong>BECMG</strong> למעברים קבועים ו <strong>טֶמפּוֹ</strong> לתנודות קצרות הנמשכות פחות משעה לכל מופע.</li>
+<li>אם מזג האוויר לסירוגין מצטבר ליותר ממחצית מתקופת התחזית, יש לקדם אותו למצב השורר באמצעות BECMG.</li>
 <li>תקן באופן יזום. אם התחזית חוצה סף קטגוריית טיסה באופן בלתי צפוי, פרסם תיקון מיד במקום לחכות למחזור הבא.</li>
 <li>אין להשתמש בקבוצות PROB ב-6 השעות הראשונות של ה-TAF. ערכו תחזית סופית לתקופה הקריטית.</li>
 </ul>
