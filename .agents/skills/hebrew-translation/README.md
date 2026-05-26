@@ -1,13 +1,13 @@
 # Hebrew Translation Skills
 
-A pair of Antigravity skills that translate finalized English IMS course
-content into Hebrew. Designed to run as two model-specific agents inside
-Antigravity's Manager view.
+A pair of skills that translate finalized English IMS course content
+into Hebrew. Designed to run as two agents inside Antigravity's Manager
+view, or sequentially in Claude Code or any single-agent IDE.
 
-| Skill | Path | Model | Role |
-|-------|------|-------|------|
-| `translator` | [`translator/SKILL.md`](translator/SKILL.md) | Claude (Opus/Sonnet 4.x — strongest your Antigravity instance offers) | Layer 1. Reads English `module-N/`; writes Hebrew `module-N-he/` with RTL adjustments; emits `_translation_manifest.json`. |
-| `editor` | [`editor/SKILL.md`](editor/SKILL.md) | Gemini 3 Pro | Layer 2. Reads both trees + manifest; emits `review.json`. Review-only — never modifies Hebrew files. |
+| Skill | Path | Role |
+|-------|------|------|
+| `translator` | [`translator/SKILL.md`](translator/SKILL.md) | Layer 1. Reads English `module-N/`; writes Hebrew `module-N-he/` with RTL adjustments; emits `_translation_manifest.json`. |
+| `editor` | [`editor/SKILL.md`](editor/SKILL.md) | Layer 2. Reads both trees + manifest; emits `review.json`. Review-only — never modifies Hebrew files. |
 
 ## How they fit together
 
@@ -15,13 +15,13 @@ Antigravity's Manager view.
 English module-N/
         │
         ▼
-[ translator (Claude) ]       ← Layer 1, Antigravity Agent A
+[ translator ]                ← Layer 1, Antigravity Agent A
         │  Hebrew module-N-he/ + _translation_manifest.json
         ▼
 [ pipeline/validate_translation.py ]   ← Optional deterministic preflight
         │  augments review.json with structural findings
         ▼
-[ editor (Gemini) ]            ← Layer 2, Antigravity Agent B
+[ editor ]                    ← Layer 2, Antigravity Agent B
         │  review.json (errors, warnings, info)
         ▼
 human reviews; re-run translator on flagged issues if needed
@@ -49,9 +49,9 @@ session and walks through the two-agent flow.
 ## Why two skills, not one
 
 Splitting translation and review into separate agents gives:
-- **Independent model choice.** Claude tends to be stronger at long-form
-  multilingual translation; Gemini is the native model in Antigravity
-  and has tight integration with Google's grounding tools.
+- **An independent reviewer.** The two agents run with separate context
+  and instructions, so the editor can't inherit the translator's blind
+  spots or biases.
 - **A clean audit trail.** The translator's `_translation_manifest.json`
   declares what it did; the editor's `review.json` independently
   validates it. No single agent gets to grade its own work.

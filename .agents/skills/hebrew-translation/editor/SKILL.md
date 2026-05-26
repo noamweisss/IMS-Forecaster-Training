@@ -1,6 +1,6 @@
 ---
 name: editor
-description: "Review-only validator for a Hebrew translation produced by the translator skill. Compares English module-N/ and Hebrew module-N-he/ side by side, runs 12 checks (structural parity, hex preservation, RTL markers, residual English, glossary consistency, hallucination, quiz answer correctness, SVG content, fluency, file presence), writes a structured review.json. Never modifies Hebrew files. Use Gemini 3 Pro."
+description: "Review-only validator for a Hebrew translation produced by the translator skill. Compares English module-N/ and Hebrew module-N-he/ side by side, runs 12 checks (structural parity, hex preservation, RTL markers, residual English, glossary consistency, hallucination, quiz answer correctness, SVG content, fluency, file presence), writes a structured review.json. Never modifies Hebrew files."
 metadata:
   version: "0.1.0"
   layer: 2
@@ -132,7 +132,7 @@ Full schema in
 [`docs/hebrew_translation_spec.md`](../../../../docs/hebrew_translation_spec.md#reviewjson-schema).
 Each issue has: `file`, `locator`, `severity`, `category`, `produced_by`,
 `english_excerpt`, `hebrew_excerpt`, `message`, `suggested_fix`. Set
-`produced_by` to your model name (e.g. `"gemini-3-pro"`).
+`produced_by` to your model name (e.g. `"claude-opus-4-7"`, `"gemini-3-pro"`).
 
 ## Severity rubric
 
@@ -175,8 +175,8 @@ correct". A typical good message:
 4. If `pipeline/validate_translation.py` has already populated
    `review.json` with deterministic findings, **augment** that file
    (append your issues to the existing `issues` array, recompute the
-   `summary` counts). Mark your additions with `produced_by:
-   "gemini-3-pro"`; leave the Python-produced entries
+   `summary` counts). Mark your additions with your model name in
+   `produced_by`; leave the Python-produced entries
    (`produced_by: "python"`) untouched.
 5. If `review.json` does not exist yet, create it fresh with both your
    findings.

@@ -1,6 +1,6 @@
 ---
 name: translator
-description: "Translate a finalized English IMS module into Hebrew. Mirrors module-N/ to module-N-he/, applies dir=rtl and lang=he, preserves all structure/CSS/hex/quiz markers, writes _translation_manifest.json. Use the strongest Claude model your Antigravity instance offers."
+description: "Translate a finalized English IMS module into Hebrew. Mirrors module-N/ to module-N-he/, applies dir=rtl and lang=he, preserves all structure/CSS/hex/quiz markers, writes _translation_manifest.json."
 metadata:
   version: "0.1.0"
   layer: 1
