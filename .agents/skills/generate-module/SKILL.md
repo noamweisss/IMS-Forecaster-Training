@@ -45,6 +45,8 @@ If the source files are not yet split into per-module subfolders, do that first.
 
 After extracting, open `_extraction.json` and actually read it. It is your only source of truth for what content the lessons must cover. Speaker notes often contain the real teaching content while slides only carry headlines — don't skim past them.
 
+Also check `courses/<course>/module-N/extracted_images/` — the script writes every embedded image from the source files here, organized by source filename. These are available to reference directly in lesson `<img>` tags (see Phase 2c). Skim the folder now so you know what's there before you design lessons.
+
 ## Phase 2 — Design and author
 
 This is the bulk of your work. Five sub-steps.
@@ -77,6 +79,7 @@ Fill the body with:
 - **Inline SVG diagrams** for relationships, hierarchies, sequences, and comparisons that prose can't carry. Aim for roughly one visual per 200–300 words.
 - **Callouts** for definitions, warnings, key formulas, danger cases. Four classes: `callout-note`, `callout-warning`, `callout-key`, `callout-danger`.
 - **`<div class="image-needed" data-description="...">`** for real photographs to be sourced later. The `data-description` text becomes the entry in `IMAGES_TO_SOURCE.md`, so be specific about what the photo should show.
+- **Source-extracted images** — `_extraction.json` lists images embedded in the source PPTX/PDF under each slide/page's `images: [{path, width, height, format, hash}]` array. Reference one directly with `<img src="../extracted_images/<source>/<file>" alt="...">` when it's a clear fit: a labeled diagram the slide is built around, a satellite snapshot, a forecast chart, a recognisable instrument photo. **Skip** decorative backgrounds, logos, slide chrome, low-resolution thumbnails, and anything you'd struggle to caption in one sentence. When in doubt, emit the `image-needed` placeholder so the human curator decides. `finalize_module.py` inlines extracted images the same way it inlines `lessons/Images/` files.
 - **Summary** at the bottom: 4–6 takeaway bullets.
 
 The non-negotiable constraints (the rest are in `lesson_spec.md`):
@@ -103,6 +106,29 @@ Quality bar:
 Create `courses/<course>/module-N/00_module_overview_moodle.html`. Same outer structure as a lesson, content is module-level: title, duration estimate, lesson count, the certification competencies (from `module_structure.json`), and one summary card per lesson. The exact template is in `lesson_spec.md` under "Module overview body".
 
 The summary cards in the overview use inline styles with literal hex (not class-based styling) so they survive even if Moodle strips the leading `<style>` block. The template in the spec shows the exact markup.
+
+### 2f. Image gate — stop before finalizing
+
+Before running `finalize_module.py`, take stock of the image situation and **wait for the user**.
+
+**a. List extracted images available:**
+```bash
+find courses/<course>/module-N/extracted_images/ -type f | sort
+```
+For each file, note which source it came from and (from `_extraction.json`) which slide/page it appeared on. Tell the user which lesson each image was referenced in — or flag any you didn't reference but that might be useful.
+
+**b. List remaining placeholders:**
+```bash
+grep -rn 'class="image-needed"' courses/<course>/module-N/lessons/
+```
+For each hit, show the `data-description` so the user knows exactly what photo is still needed and which lesson it belongs to.
+
+**Then stop and tell the user:**
+- A short summary table: extracted images used, extracted images unused (available if needed), and open placeholders
+- Where to drop new files (`lessons/Images/`) and the `<img src="...Images/filename.ext" alt="...">` syntax to add to the lesson HTML
+- That you'll run finalize as soon as they reply — or they can say "proceed without images"
+
+**Do not run Phase 3 until the user explicitly replies.** `finalize_module.py` embeds whatever the lesson HTML contains at run time. Image-needed placeholders baked into `module_combined_moodle.html` require a full re-run to fix, which is exactly what happened with Module 3.
 
 ## Phase 3 — Finalize
 
@@ -152,9 +178,12 @@ Five-minute self-review of your output. Catches the failure modes the journal do
 - If the source content is genuinely ambiguous or sparse for a topic and you'd otherwise be making things up.
 - If you're unsure whether a topic belongs in this module or a later one — the subject-matter expert may have intent you can't infer from the slides.
 
+**Ask before running Phase 3 (finalize):**
+- Always — after completing Phase 2f, present the image inventory and wait for explicit go-ahead before running `finalize_module.py`.
+
 **Proceed without asking:**
 - Stylistic choices that conform to the spec (which callout class, exact diagram design, prose phrasing).
-- Routine pipeline commands.
+- Routine pipeline commands (Phase 1 extraction, sanity-check greps).
 - Self-correction after a sanity-check failure.
 
 ## Reference files in this skill folder
