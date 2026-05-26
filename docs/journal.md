@@ -24,6 +24,24 @@ later reversed, add a new entry rather than editing the old one.
 ---
 
 <!-- New entries appended below -->
+## 2026-05-26 — Git Worktree Synchronization Block and Resolution
+
+**Context.** The user tried to move the worktree changes (from `deploy-course-preview-pipeline` branch) back into the main workspace. The checkout/sync failed with the error: `failed to checkout worktree changes: main branch has uncommitted changes; please commit or stash your changes before checking out the worktree`. 
+
+**Decision.**
+1. Inspect the git status of all repositories and worktrees.
+   - Main workspace: `C:/Users/Noam/Documents/05_IMS/!Forecaster_Training_System` -> Completely clean (`nothing to commit, working tree clean`).
+   - Active worktree: `C:/Users/Noam/.gemini/antigravity/worktrees/!Forecaster_Training_System/deploy-course-preview-pipeline` -> Untracked folder `preview_dist/` present (as it was the local build folder for the course compiler).
+   - Other worktree: `C:/Users/Noam/.gemini/antigravity/worktrees/!Forecaster_Training_System/hebrew-translation-skill-branch` -> Untracked directory `courses/aviation-weather/module-1-he/` present.
+2. Formulate a solution: The automated sync tool interpreted the untracked, unignored local files/directories across the git repository's worktrees as "uncommitted changes" or a "dirty" state blocking checkout.
+3. Add `preview_dist/` to `.gitignore` to prevent our newly introduced compiler output from ever being tracked or flagged as untracked. Stage and commit `.gitignore`.
+4. Stash all untracked files inside the Hebrew translation worktree using `git -C C:/Users/Noam/.gemini/antigravity/worktrees/!Forecaster_Training_System/hebrew-translation-skill-branch stash -u` to make it completely clean.
+5. Verify that all 3 workspaces (main, deploy branch, Hebrew branch) are now 100% clean with absolutely zero uncommitted or untracked changes.
+
+**Result.** The entire git tree is 100% clean. The sync/merge block is completely resolved. The user is safe to retry their checkout/sync workflow to integrate the course-preview pipeline back into the main workspace.
+
+---
+
 ## 2026-05-26 — Module 4 image extraction and finalization for Moodle
 
 **Context.** The user requested auditing the pilot course modules for Moodle readiness. Module 1, 2, and 3 were fully ready, but Module 4 was drafted but not yet finalized (missing combined files, unified quiz XML, and containing 2 unresolved image-needed placeholders). The user approved running the newly added image extraction pipeline to harvest images from source decks and finalize the module.
