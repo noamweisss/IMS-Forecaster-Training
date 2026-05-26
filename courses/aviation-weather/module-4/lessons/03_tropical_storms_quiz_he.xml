@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='utf-8'?>
+<quiz>
+
+  <question type="multichoice">
+    <name>
+      <text>L3-Q01 — פירוש קונוס אי הוודאות</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;שדה תעופה ממוקם 50 מייל מחוץ לקצה 48 השעות של ציקלון טרופי רשמי קונוס של אי-ודאות. שדר חברת תעופה מחליט להשאיר מטוסים חונים על הסינר, בהנחה שהם בטוחים מרוחות בכוח הוריקן. מדוע זו הנחה מסוכנת?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; קונוס אי הוודאות מייצג רק את המסלול הסביר של &lt;em&gt;מרכז&lt;/em&gt; הסופה בהתבסס על טעויות תחזית היסטוריות. זה לא מייצג את גודל הסופה. פגיעות מסוכנות, כולל משבי רוח עזים ורצועות גשם חיצוניות, משתרעות לעתים קרובות עשרות או מאות קילומטרים מעבר לקצוות החרוט.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;החרוט מייצג רק את המסלול הסביר של מרכז הסופה; השפעות מסוכנות משתרעות לעיתים קרובות הרבה מעבר לגבולות החרוט.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;הקונוס נחשב מדויק רק ב-24 השעות הראשונות של התחזית, מה שהופך את הקצה של 48 השעות לחסר משמעות.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;החרוט מייצג את האזור שבו תהיה הסופה בעוד 5 ימים, כך שההשפעות של 48 שעות למעשה ממוקמות הרבה יותר קרוב למרכז.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;הקונוס עוקב רק אחר קיר העין של הסופה ומתעלם מהעין השלווה, כלומר הרוחות הקשות ביותר נמצאות בעצם בתוך החרוט.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L3-Q02 — תנאי היווצרות ציקלון טרופי</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;מקבץ של סופות רעמים עזות נע מעל האוקיינוס ​​האטלנטי. טמפרטורת פני הים היא 28&amp;nbsp;&amp;°C, וישנה לחות אטמוספרית עמוקה. עם זאת, שוקת ברמה העליונה מקנה 40 קשר של גזירת רוח אנכית על האזור. כיצד זה ישפיע על פיתוח המערכת?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; בעוד SSTs חמים (&amp;gt; 26.5 &amp;deg;C) ולחות נחוצים, גזירת רוח אנכית נמוכה היא גם דרישה קפדנית לציקלוגנזה טרופית. גזירת רוח חזקה מטה את המערכת, מרחיקה את שחרור החום הסמוי מהמרכז ומונעת מסופות הרעמים להיערם אנכית לציקלון מאורגן.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;גזזת הרוח האנכית הגבוהה תקרע את סופות הרעמים, ימנע מהמערכת להתארגן לציקלון טרופי.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;הגזירה הגבוהה תגביר את סיבוב הסופה ותגרום לה להתעצם במהירות להוריקן.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;המערכת תיצור בהצלחה ציקלון טרופי, אך הגזירה תגרום לה לחוסר עין מוגדרת.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;הגזירה תדחוף את הסופה לכיוון אחר אך לא תהיה לה השפעה על עוצמתה הכוללת.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L3-Q03 — יישום סולם Saffir-Simpson</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;סופת ציקלון טרופית מתקרבת לשדה תעופה על החוף. תחנה אוטומטית מדווחת על רוחות מתמשכות של דקה אחת של 90 קשר, עם משבי רוח שיא שהגיעו ל-110 קשר. לפי סולם הרוחות של הוריקן ספיר-סימפסון, כיצד יש לסווג את הסערה הזו בהתבסס על תצפית זו?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; סולם Saffir-Simpson מסווג סופות אך ורק על סמך מהירות הרוח המקסימלית הנמשכת של דקה אחת שלהן, לא משבים. רוחות מתמשכות של 90 קשר נופלות בטווח קטגוריה 2 (83-95 קראט). שימוש במהירות המשב (110 קראט) יסווג אותו באופן שגוי כקטגוריה 3.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;קטגוריה 2, מכיוון שהסיווג מבוסס על מהירות הרוח המתמשכת (90 קראט), לא משבים.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;קטגוריה 3, מכיוון שהסיווג חייב לקחת בחשבון את משבי השיא המרביים (110 קראט) שגורמים לנזק הרב ביותר.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;קטגוריה 1, כי 90 קשר מעל היבשה שווה ערך ל-70 קשר מעל האוקיינוס ​​הפתוח.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;קטגוריה 4, מכיוון שהשילוב של רוחות מתמשכות של 90 קשר וגישה לחוף מעלה את רמת המפגע.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L3-Q04 - הסתברות פגיעה לעומת מסלול דטרמיניסטי</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;מסלול תחזית דטרמיניסטי מראה ציקלון טרופי העובר 200 ק"מ דרומית לשדה תעופה באי תוך 72 שעות. עם זאת, מפת ההסתברות לתקיפה של ECMWF מציגה סיכוי של 45% לחלוף הסופה בטווח של 120 ק"מ משדה התעופה. מהי הדרך הטובה ביותר לפרש זאת עבור הפעילות של שדה התעופה?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;רציונל:&lt;/strong&gt; מסלולים דטרמיניסטיים מייצגים "ניחוש הטוב ביותר" בודד או ריצת מודל בודדת, שעלולה להיות מטעה ימים מראש. הסתברויות פגיעה מבוססות אנסמבל אחראיות לאי וודאות אטמוספרית, מה שמצביע על כך שבעוד שהמסלול היחיד הסביר ביותר הוא דרומה, קיים סיכון ממשי מאוד שניתן לכימות (45%) של פגיעה ישירה או כמעט ישירה שיש לשלב בתכנון מגירה.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;בעוד שהמסלול הדטרמיניסטי היחיד שומר על הסערה דרומה, ההסתברויות מצביעות על סיכון משמעותי למעבר קרוב יותר שיש לקחת בחשבון בתכנון מגירה.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;מפת Strike Probability היא מוצר מדור קודם ויש להתעלם ממנה לטובת המסלול הדטרמיניסטי החדש יותר.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;הסתברות של 45% היא מתחת לסף של 50%, כלומר היא נמוכה מכדי להצדיק שינויים או הכנות תפעוליות כלשהן.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;מפת ההסתברות לתקיפה מבטיחה שהסערה תסטה ממסלולה ותפגע ישירות בשדה התעופה.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+</quiz>

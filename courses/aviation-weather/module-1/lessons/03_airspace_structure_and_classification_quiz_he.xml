@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<quiz>
+  <question type="multichoice">
+    <name><text>L3-Q01 — VFR במרחב האווירי של Class G</text></name>
+    <questiontext format="html"><text>&lt;p&gt;טייס תעופה כללית מתכנן טיסת שטח VFR כולה בתוך המרחב האווירי של Class G. TAF הבוקר מצביע על תנאי VFR שוליים (עננים מפוזרים בגובה 800 רגל וראות של 4 ק"מ). מדוע חיזוי מדויק של התנאים הנמוכים הללו קריטי במיוחד עבור הטייס הזה בהשוואה למטוס נוסעים מסחרי?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;מחלקה G היא מרחב אווירי לא מבוקר שבו טיסות נערכות לרוב תחת כללי טיסה חזותית (VFR). טייסי VFR מסתמכים לחלוטין על התייחסות חזותית לקרקע וחייבים להתרחק מעננים. מטוסי נוסעים מסחריים פועלים תחת כללי טיסת מכשירים (IFR), בדרך כלל במרחב אווירי מבוקר Class A, ואינם מחויבים באותם מינימום חזותיים.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;מחלקה G מסתמכת במידה רבה על פעולות VFR, אשר דורשות בהחלט מהטייסים לשמור על התייחסות חזותית לקרקע ולהישאר נקי מעננים כדי להימנע משטח.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;המרחב האווירי מסוג G אוסר על שימוש במדדי גובה, ולכן הטייסים חייבים להשתמש בבסיסי ענן כדי להעריך את גובהם מעל פני הקרקע.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;בקרת תנועה אווירית בדרגה G תקיף את הטייס באופן פעיל סביב עננים נמוכים, ותגדיל את עומס העבודה של הבקר באופן משמעותי.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;מטוסי נוסעים מסחריים מחוזקים מבחינה מבנית כנגד מערבולת ברמה נמוכה, בעוד שמטוסי תעופה כללית אינם.&lt;/p&gt;</text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L3-Q02 — אחריות משרד המשמר המטאורולוגי</text></name>
+    <questiontext format="html"><text>&lt;p&gt;קו סוער שזז במהירות חוצה את הגבול מ-FIR ALPHA אל FIR BRAVO. איזה משרד שמירה מטאורולוגי (MWO) אחראי על הנפקת ה-SIGMET עבור החלק של קו הסערה שנכנס ל-FIR BRAVO?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;המרחב האווירי מחולק לאזורי מידע טיסות נפרדים גיאוגרפית (FIR). כל FIR מנוטר על ידי MWO ייעודי. ברגע שתופעת מזג אוויר עוברת ל-FIR חדש, ה-MWO האחראי לאותו FIR חדש לוקח על עצמו את האחריות להוצאת האזהרות המתאימות (SIGMETs) עבור המרחב האווירי שלהם.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;ה-MWO האחראי על FIR BRAVO.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;ה-MWO האחראי על FIR ALPHA, מאחר שקו הסערה מקורו שם.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;שני ה-MWOs חייבים להנפיק SIGMET משותף כדי לכסות את כל קו הסערה בצורה חלקה.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;המרכז האזורי של WMO, כאשר תופעות חוצות גבולות FIR מסלימות לתחום שיפוט בינלאומי.&lt;/p&gt;</text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L3-Q03 — מבצעי מרחב אווירי Class A</text></name>
+    <questiontext format="html"><text>&lt;p&gt;שולח חברת תעופה בוחן את סכנות מזג האוויר עבור טיסה הפועלת כולה במרחב האווירי של Class A ב-FL350. איזו מהתופעות המטאורולוגיות הבאות תהיה החשש המבצעי הקריטי ביותר עבור חלק ספציפי זה של הטיסה?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;Class A הוא מרחב אווירי בגובה רב בשליטה קפדנית בדרך המשמשת בעיקר תעבורה מסחרית של IFR. ב-FL350, תופעות ברמה נמוכה כמו ערפל קרינה או מערבולות מכניות אינן רלוונטיות. הסכנות העיקריות הן מערבולת אוויר צלולה (CAT), הסעה עמוקה (CBs משובצים) ואפר וולקני.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;סערת אוויר צלולה (CAT) הקשורה לזרם סילון חזק ברמה העליונה.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;ערפל קרינה מפחית את הראות מתחת ל-500 מטר.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;גזירת רוח ברמה נמוכה המתרחשת 500 רגל מעל פני הקרקע.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;תקרת ענן שבורה בגובה 2,000 רגל המשפיעה על מינימום VFR.&lt;/p&gt;</text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L3-Q04 — מרחב אווירי לשימוש מיוחד</text></name>
+    <questiontext format="html"><text>&lt;p&gt;שורה של סופות רעמים קשות חוסמת נתיב אוויר פעיל. נתיב הסטייה הבטוח היחיד לוקח את המטוס ישירות דרך אזור מוגבל פעיל המשמש לירי צבאי. כחזאית המתקשרת עם בקרת התעבורה האווירית, מהו הסכסוך המבצעי הבסיסי כאן?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;שימוש מיוחד המרחב האווירי (כמו אזורים מוגבלים או סכנה) מופרד לפעילויות מסוכנות. בעוד המטאורולוגיה אינה מכתיבה את הגבולות הללו, מזג האוויר מאלץ לעתים קרובות מטוסים לצאת מהמסלולים המתוכננים שלהם. סטייה לתוך המרחב האווירי המוגבל כדי להימנע ממזג אוויר מהווה קונפליקט בטיחות ותיאום חמור עבור ATC והטייס.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;הקפת סכנת מזג האוויר מאלצת את המטוס לתוך מרחב אווירי שנועד להגן עליהם מפני סכנות לא מטאורולוגיות, המחייב תיאום ATC חירום.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;אזורים מוגבלים מושבתים אוטומטית על ידי ICAO כאשר מזג אוויר קשה קיים, אך ATC עדיין חייב לפנות ידנית את המרחב האווירי.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;סופות רעמים בתוך אזורים מוגבלים מייצרות עלייה חזקה יותר עקב הפעילות הצבאית, ומחמירות את הסערה.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;מטוסים נדרשים על פי חוק לטוס דרך סופת הרעמים במקום להפר אזור מוגבל בשום פנים ואופן.&lt;/p&gt;</text></answer>
+  </question>
+
+</quiz>

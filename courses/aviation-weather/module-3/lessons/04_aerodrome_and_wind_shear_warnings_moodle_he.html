@@ -1,0 +1,458 @@
+<style>
+/*
+ * IMS Course Factory — Lesson Design System
+ *
+ * All rules are scoped to `.ims-lesson` so the styles can be injected into
+ * a host page (Moodle, in particular) without leaking onto the host's chrome
+ * and without the host's theme overriding lesson typography.
+ *
+ * Standalone lesson HTML wraps the entire body in <div class="ims-lesson">.
+ * Moodle body-fragment HTML does the same. The single rule below keeps the
+ * standalone preview's <body> background consistent without leaking into
+ * Moodle pages.
+ */
+
+.ims-lesson {
+  --bg: #ffffff;
+  --surface: #f6f5f0;
+  --border: #e2dfd6;
+  --text: #1a1917;
+  --muted: #6b6a65;
+  --accent: #185fa5;
+  --accent-light: #e6f1fb;
+  --note-bg: #e1f5ee;
+  --note-border: #0F6E56;
+  --warn-bg: #faeeda;
+  --warn-border: #BA7517;
+  --key-bg: #EEEDFE;
+  --key-border: #534AB7;
+  --danger-bg: #fcebeb;
+  --danger-border: #A32D2D;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .ims-lesson {
+    --bg: #1a1917;
+    --surface: #242320;
+    --border: #3a3835;
+    --text: #e8e6df;
+    --muted: #9a9890;
+    --accent-light: #042c53;
+    --note-bg: #04342c;
+    --warn-bg: #412402;
+    --key-bg: #26215c;
+  }
+}
+
+.ims-lesson h1 { font-size: 1.8rem; font-weight: 600; margin-bottom: 0.2rem; line-height: 1.2; color: var(--text); }
+.ims-lesson h2 { font-size: 1.25rem; font-weight: 600; margin-top: 2.5rem; padding-bottom: 0.4rem;
+  border-bottom: 1.5px solid var(--border); color: var(--text); }
+.ims-lesson h3 { font-size: 1.05rem; font-weight: 600; margin-top: 1.75rem; color: var(--text); }
+.ims-lesson p { margin: 0.7rem 0; max-width: 72ch; }
+.ims-lesson figure { margin: 2rem 0; }
+.ims-lesson figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 0.6rem;
+  font-style: italic; text-align: center; }
+.ims-lesson svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+.ims-lesson img { max-width: 100%; height: auto; }
+.ims-lesson table { border-collapse: collapse; width: 100%; margin: 1.5rem 0; font-size: 0.9rem; }
+.ims-lesson th { background: var(--accent); color: #fff; padding: 0.55rem 0.9rem; text-align: left; }
+.ims-lesson td { padding: 0.5rem 0.9rem; border-bottom: 1px solid var(--border); }
+.ims-lesson tr:nth-child(even) td { background: var(--surface); }
+.ims-lesson .callout { border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+.ims-lesson .callout-note    { background: var(--note-bg);   border-left: 4px solid var(--note-border); }
+.ims-lesson .callout-warning { background: var(--warn-bg);   border-left: 4px solid var(--warn-border); }
+.ims-lesson .callout-key     { background: var(--key-bg);    border-left: 4px solid var(--key-border); }
+.ims-lesson .callout-danger  { background: var(--danger-bg); border-left: 4px solid var(--danger-border); }
+.ims-lesson .callout-label { font-weight: 700; font-size: 0.78rem; text-transform: uppercase;
+  letter-spacing: 0.06em; margin-bottom: 0.35rem; }
+.ims-lesson .objectives { background: var(--surface); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+.ims-lesson .objectives ul { margin: 0.5rem 0 0; padding-left: 1.4rem; }
+.ims-lesson .lesson-summary { background: var(--accent-light); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 2.5rem 0 1rem; }
+.ims-lesson .lesson-summary h3 { margin-top: 0; color: var(--accent); font-size: 1rem; }
+.ims-lesson .image-needed { border: 2px dashed var(--border); border-radius: 8px;
+  padding: 1.5rem; margin: 1.5rem 0; text-align: center;
+  color: var(--muted); font-size: 0.9rem; background: var(--surface); }
+.ims-lesson .meta { color: var(--muted); font-size: 0.88rem; margin-bottom: 1.75rem; }
+.ims-lesson .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.5rem; }
+</style>
+<div class="ims-lesson">
+<p class="breadcrumb">מודול 3 / שיעור 4</p>
+<h1>אזהרות על שדה תעופה (AD) וגזירת רוח (WS).</h1>
+<div class="objectives">
+<strong>בסוף שיעור זה תוכל:</strong>
+<ul>
+<li>החל את ספי IMS AD WRNG עבור TS/CB, ראות, תקרה, רוח משטח וברד חמור.</li>
+<li>בנה הודעת AD WRNG חוקית ואת הודעת WS WRNG המקבילה.</li>
+<li>הנפק WS WRNG המבוסס על שיקול דעת חזא (FCST), תצפית (OBS), או דו"ח טייס (REP AT), כולל קריטריון הסילון ברמה נמוכה.</li>
+<li>תאם הנפקת AD WRNG עם SIGMET / AIRMET כך שהמוצרים ברחבי ה-FIR והמקומיים בשדה התעופה יישארו עקביים.</li>
+</ul>
+</div>
+<h2>למה מיועד AD WRNG</h2>
+<p>אזהרת שדה תעופה מונפקת כאשר מזג אוויר מסוכן מתרחש בשדה תעופה ספציפי, או צפוי במהלך 4 השעות הקרובות בשדה תעופה ספציפי - לא ב-FIR. זה המוצר של ה-AFO, לא של ה-MWO. הוא מתייחס לשלושה חששות תפעוליים: סכנות למטוסים הממריאים או נוחתים, סכנות למטוסים על הקרקע (כולל מטוסים חונים), ושיבושים בזרימה הרגילה של הפעילות בשדה התעופה.</p>
+<p>אזהרת גזירת הרוח (WS WRNG) היא מוצר אחים, מצומצם יותר בהיקפה: היא נותנת מענה לגזירת רוח בנתיב הגישה או הטיפוס החוצה של מסלול מסוים. אזהרות AD ו-WS חולקות מבנה וחלון תוקף של 4 שעות אך יש להן רשימות תופעות נפרדות, הודעות ביטול נפרדות ודפוסי הפצה נפרדים.</p>
+<div class="callout callout-note">
+<div class="callout-label">היקף במבט חטוף</div>
+<strong>AD WRNG -</strong> סיכונים בשדה התעופה המשפיעים על המראה, נחיתה, פעולות קרקעיות או כלי טיס חונים. הונפק על ידי ה-AFO. תוקף עד 4 שעות.<br/>
+<strong>WS WRNG -</strong> גזירת רוח בגישה או טיפוס החוצה עבור מסלול המראה ספציפי, כולל מיקרו-פריצה וסילון ברמה נמוכה. הונפק על ידי ה-AFO. תוקף עד 4 שעות.
+</div>
+<h2>תופעות וספים של IMS AD WRNG</h2>
+<p>נספח 3 מפרט את קטגוריות התופעות ש-AD WRNG יכול לטפל בהן. הספים המספריים שמחליטים מתי כל קטגוריה מפעילה נקבעים באופן ארצי, על ידי ה-IMS. השילובים שלהלן הם ספי IMS אופרטיביים עבור בן גוריון ונמלי תעופה ישראליים אחרים.</p>
+<table>
+<thead>
+<tr>
+<th>תוֹפָעָה</th>
+<th>סף IMS</th>
+<th>קוד בהודעה</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>סופות רעמים / קומולונימבוס</td>
+<td>CB בפנים <strong>16 ק"מ</strong> של מרכז דפוסי המסלול</td>
+<td><code>TS</code> אוֹ <code>HVY TS</code></td>
+</tr>
+<tr>
+<td>ברד עז</td>
+<td>קוטר ברד <strong>≥ 2 ס"מ</strong></td>
+<td><code>GR</code></td>
+</tr>
+<tr>
+<td>רְאוּת</td>
+<td>רְאוּת <strong>&lt; 5000 מ'</strong> עקב ערפל, ערפל, אובך, אבק או סופת חול</td>
+<td><code>FG</code> / <code>BR</code> / <code>HZ</code> / <code>DU</code> / <code>SA</code> / <code>SS</code> / <code>DS</code></td>
+</tr>
+<tr>
+<td>בסיס ענן נמוך</td>
+<td>כיסוי <strong>BKN/OVC</strong> (≥ 5/8) בשעה <strong>≤ 1500 רגל AGL</strong></td>
+<td>טקסט חופשי המתאר ענן ובסיס</td>
+</tr>
+<tr>
+<td>רוח משטח חזקה</td>
+<td>ממוצע של 10 דקות &gt; <strong>20 קראט</strong> <em>ו/או</em> משבים (3 שניות / 10 דקות) &gt; <strong>30 קראט</strong></td>
+<td><code>SFC WSPD nnKT MAX nnKT</code></td>
+</tr>
+<tr>
+<td>משקעים מקפיאים</td>
+<td>כל גשם מקפיא או טפטוף מקפיא</td>
+<td><code>FZRA</code> / <code>FZDZ</code> (עִם <code>HVY</code> אם רלוונטי)</td>
+</tr>
+<tr>
+<td>שלג על הקרקע</td>
+<td>שלג מצטבר או צפוי להצטבר</td>
+<td><code>SN [nnCM]</code> (עִם <code>HVY</code> אם רלוונטי)</td>
+</tr>
+<tr>
+<td>כְּפוֹר</td>
+<td>טמפרטורה &lt; <strong>0 °C</strong> ב-2 מ' במסך סטיבנסון</td>
+<td><code>כְּפוֹר</code></td>
+</tr>
+<tr>
+<td>שקיעת אפר וולקני</td>
+<td>אפר מצטבר על הקרקע</td>
+<td><code>VA</code></td>
+</tr>
+<tr>
+<td>ענן רדיואקטיבי/כימי</td>
+<td>בסיס ענן בגובה פני השטח</td>
+<td>טקסט חופשי</td>
+</tr>
+<tr>
+<td>תְזָזִית</td>
+<td>רוח חזקה פתאומית וקצרה</td>
+<td><code>SQ</code></td>
+</tr>
+<tr>
+<td>צונאמי</td>
+<td>אזהרת צונאמי המשפיעה על שדה התעופה</td>
+<td><code>צונאמי</code></td>
+</tr>
+</tbody>
+</table>
+<p>שניים מהספים הללו ראויים להדגשה מכיוון שהם זכורים באופן שגרתי לא נכון. הקריטריון של סופת רעמים הוא <strong>מרחק למרכז המסלול, לא אם קיים TS</strong>: CB ב-25 ק"מ מ-LLBG אינו מפעיל AD WRNG גם אם הוא חמור. קריטריון הרוח יש <strong>שני טריגרים עצמאיים</strong> מצטרף על ידי "ו/או": או ממוצע מתמשך מעל 20 קט או משבים מעל 30 קט מספיק.</p>
+<h2>מבנה הודעות AD WRNG</h2>
+<p>לגוף AD WRNG יש שישה אלמנטים בסדר קבוע:</p>
+<ol>
+<li>מחוון מיקום של שדה התעופה (למשל, <code>LLBG</code>).</li>
+<li>זיהוי סוג ההודעה (<code>AD WRNG</code>).</li>
+<li>מספר רציף (מתאפס מדי יום).</li>
+<li>תקופת תוקף ב <code>YYGGgg/YYGGgg</code> פוּרמָט.</li>
+<li>קוד/ים של תופעה וכל משנה (<code>HVY</code>, <code>טֶמפּוֹ</code>, עוצמה, שינוי צפוי).</li>
+<li>האם נצפתה התופעה (<code>FCST</code> / <code>OBS</code>) וכל שינוי בעוצמה במהלך תקופת התוקף.</li>
+</ol>
+<figure>
+<svg role="img" viewbox="0 0 680 240" xmlns="http://www.w3.org/2000/svg">
+<title>דוגמה מוערת של AD WRNG</title>
+<desc>הודעת AD WRNG עם הערות שדה אחר שדה. LLBG הוא שדה התעופה, AD WRNG הוא סוג ההודעה, 1 הוא המספר הרציף, תקופת התוקף נמשכת מיום 11 בשעה 0130 ועד ליום 11 בשעה 0500, והגוף אומר ענני שכבה שבורים עם בסיס של 1500 רגל תחזית זמנית של 1000 רגל מעל שדה התעופה בן גוריון.</desc>
+<!-- Message body -->
+<rect fill="#F6F5F0" height="60" rx="6" stroke="#185FA5" stroke-width="2" width="600" x="40" y="30"></rect>
+<text fill="#1A1917" font-family="monospace" font-size="14" x="60" y="60">LLBG AD WRNG 1 תקף 110130/110500</text>
+<text fill="#1A1917" font-family="monospace" font-size="14" x="60" y="80">BKN ST CLDS BASE 1500FT TEMPO 1000FT FCST OVER LLBG AP=</text>
+<!-- Annotation pointers -->
+<line stroke="#185FA5" stroke-width="1.5" x1="65" x2="85" y1="90" y2="125"></line>
+<text fill="#185FA5" font-family="sans-serif" font-size="11" x="55" y="142">שְׂדֵה תְעוּפָה</text>
+<line stroke="#0F6E56" stroke-width="1.5" x1="130" x2="160" y1="90" y2="125"></line>
+<text fill="#0F6E56" font-family="sans-serif" font-size="11" x="125" y="142">סוג הודעה</text>
+<line stroke="#BA7517" stroke-width="1.5" x1="220" x2="240" y1="90" y2="125"></line>
+<text fill="#BA7517" font-family="sans-serif" font-size="11" x="218" y="142">Seq. מִספָּר</text>
+<line stroke="#534AB7" stroke-width="1.5" x1="330" x2="360" y1="90" y2="125"></line>
+<text fill="#534AB7" font-family="sans-serif" font-size="11" x="320" y="142">תוֹקֶף</text>
+<line stroke="#993C1D" stroke-width="1.5" x1="200" x2="160" y1="90" y2="175"></line>
+<text fill="#993C1D" font-family="sans-serif" font-size="11" x="80" y="190">תופעה ועוצמה</text>
+<line stroke="#1A1917" stroke-width="1.5" x1="400" x2="430" y1="90" y2="175"></line>
+<text fill="#1A1917" font-family="sans-serif" font-size="11" x="395" y="190">שינוי מתאר (TEMPO)</text>
+<line stroke="#6B6A65" stroke-width="1.5" x1="540" x2="560" y1="90" y2="175"></line>
+<text fill="#6B6A65" font-family="sans-serif" font-size="11" x="535" y="190">FCST או OBS</text>
+<!-- Footer note -->
+<text fill="#6B6A65" font-family="sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="340" y="225">"מספר רציף 1 הונפק עבור LLBG, תקף ל-11 יום מ-01:30 עד 05:00 UTC,</text>
+</svg>
+<figcaption>איור 4.1 - הודעת AD WRNG מפוענחת. השדה תופעה ועוצמה מקבל רשימה קבועה של קודים בתוספת משנה; טקסט חופשי של עד 32 תווים מותר כאשר אין קוד לוכד את המפגע.</figcaption>
+</figure>
+<h3>ערכת קוד תופעות AD WRNG הסטנדרטית</h3>
+<p>שדה קוד התופעה עוקב אחר אוצר מילים קפדני. הערכים המקובלים, עם מתקנים אופציונליים בסוגריים:</p>
+<div class="callout callout-key">
+<div class="callout-label">קודי תופעת AD WRNG</div>
+<ul>
+<li><code>TS</code> אוֹ <code>[HVY] TS</code></li>
+<li><code>GR</code> אוֹ <code>[HVY] SN [nnCM]</code></li>
+<li><code>[HVY] FZRA</code> אוֹ <code>[HVY] FZDZ</code></li>
+<li><code>[HVY] SS</code> אוֹ <code>[HVY] DS</code> אוֹ <code>SA</code> אוֹ <code>DU</code></li>
+<li><code>SFC WSPD nn[n]KMH MAX nn[n]</code> - (או <code>SFC WSPD nn[n]KT MAX nn[n]</code>)</li>
+<li><code>SQ</code> אוֹ <code>כְּפוֹר</code></li>
+<li><code>צונאמי</code> אוֹ <code>VA</code></li>
+<li>טקסט חופשי, עד 32 תווים, עבור תופעות שאינן מכוסות לעיל</li>
+</ul>
+</div>
+<p>טקסט חופשי קיים בדיוק כדי שניתן יהיה להעביר מפגע אקזוטי אך משמעותי מבחינה תפעולית מבלי להמציא קוד לא תקני. השתמש בו במשורה; אוטומציה במורד הזרם אינה יכולה לנתח טקסט שרירותי.</p>
+<h2>אזהרות נגד גזירת רוח - FCST, OBS או REP AT</h2>
+<p>WS WRNG מונפקת בכל פעם שמתגלה או צפויה גזירת רוח בגישה או ביציאה ממסלול מסוים. נוסח נספח 3 מאפשר שלושה בסיסים שונים להנפקה, והבסיס מופיע במפורש בגוף ההודעה.</p>
+<table>
+<thead>
+<tr>
+<th>בָּסִיס</th>
+<th>מַד</th>
+<th>ראיות מעוררות</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>שיקול דעתו של החזאי</td>
+<td><code>FCST</code></td>
+<td>מצב סינופטי, פלט דגם או כל אינדיקציה שעדיין לא עומדת בספי OBS</td>
+</tr>
+<tr>
+<td>תַצְפִּית</td>
+<td><code>OBS</code></td>
+<td>זיהוי ברור בנתוני AMDAR, רדיוסונד, בלון טייס או פרופיל רוח</td>
+</tr>
+<tr>
+<td>דו"ח טייס</td>
+<td><code>REP AT</code></td>
+<td>טייס דיווח על גזירת רוח במהלך גישה או טיפוס החוצה (אחריו הזמן)</td>
+</tr>
+</tbody>
+</table>
+<p>ההבחנה חשובה מבחינה מבצעית: א <code>FCST</code> WS WRNG מטילה אחריות רבה יותר על החזאי לנטר ולתקן; an <code>OBS</code> אוֹ <code>REP AT</code> לאזהרה יש אישור חיצוני. שולחי מטוסים ובקרי תעבורה אוויריים מתייחסים לשלושה באופן מעט שונה, כך שהחיווי נכון אינו קוסמטי.</p>
+<h2>מבנה הודעות WS WRNG</h2>
+<p>לגוף WS WRNG יש אותו שלד כמו AD WRNG, כאשר סוג ההודעה השתנה וקודי תופעה נשאבים מאוצר מילים אחר.</p>
+<figure>
+<svg role="img" viewbox="0 0 680 220" xmlns="http://www.w3.org/2000/svg">
+<title>דוגמה מוערת של WS WRNG עם סילון ברמה נמוכה</title>
+<desc>הודעת WS WRNG לדוגמה, מצוירת כדי להדגיש את מפרט המסלול, מחוון הנפקת החזאים FCST, הרוח השטחית ורוח הסילון של 900 רגל.</desc>
+<rect fill="#F6F5F0" height="80" rx="6" stroke="#534AB7" stroke-width="2" width="600" x="40" y="30"></rect>
+<text fill="#1A1917" font-family="monospace" font-size="14" x="60" y="60">LLBG WS WRNG NO 1 021930Z תקף 022100/030400</text>
+<text fill="#1A1917" font-family="monospace" font-size="14" x="60" y="80">WS ALL RWY FCST OVER LLBG SFC WIND 150/05KT</text>
+<text fill="#1A1917" font-family="monospace" font-size="14" x="60" y="100">900FT-WIND: 160/30KT =</text>
+<line stroke="#534AB7" stroke-width="1.5" x1="160" x2="180" y1="110" y2="145"></line>
+<text fill="#534AB7" font-family="sans-serif" font-size="11" x="115" y="160">סוג הודעה (WS WRNG NO)</text>
+<line stroke="#0F6E56" stroke-width="1.5" x1="160" x2="160" y1="110" y2="175"></line>
+<text fill="#0F6E56" font-family="sans-serif" font-size="11" x="80" y="190">זמן הנפקה (Z) ותוקף</text>
+<line stroke="#185FA5" stroke-width="1.5" x1="220" x2="290" y1="110" y2="145"></line>
+<text fill="#185FA5" font-family="sans-serif" font-size="11" x="245" y="160">מסלול (כל RWY)</text>
+<line stroke="#BA7517" stroke-width="1.5" x1="330" x2="350" y1="110" y2="175"></line>
+<text fill="#BA7517" font-family="sans-serif" font-size="11" x="320" y="190">FCST - שיקול דעתו של החזאי</text>
+<line stroke="#993C1D" stroke-width="1.5" x1="540" x2="560" y1="110" y2="160"></line>
+<text fill="#993C1D" font-family="sans-serif" font-size="11" x="500" y="175">משטח מול ניגודיות רוח של 900 רגל</text>
+</svg>
+<figcaption>איור 4.2 - WS WRNG המתאר תחזית סילון ברמה נמוכה מעל LLBG. רוח פני השטח של 5 קראט מנוגדת לרוח של 30 קראט ב-900 רגל AGL - חתימת גזירה של ספר לימוד.</figcaption>
+</figure>
+<h3>קודי תופעת WS WRNG</h3>
+<p>WS WRNG משתמש באוצר מילים ספציפי עבור שדה התופעה, מבחין בין גזירת רוח למיקרו-פרץ ומציין היכן על המסלול מתרחשת הסכנה.</p>
+<table>
+<thead>
+<tr>
+<th>קוד</th>
+<th>מַשְׁמָעוּת</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[MOD] [SEV] WS ב-APCH</code></td>
+<td>גזירת רוח בשלב הגישה - מסלול לא מוגדר</td>
+</tr>
+<tr>
+<td><code>[MOD] [SEV] WS [APCH] RWYnnn</code></td>
+<td>גזירת רוח בגישה למסלול מסוים (למשל, <code>RWY26</code>)</td>
+</tr>
+<tr>
+<td><code>[MOD] [SEV] WS ב-CLIMB-OUT</code></td>
+<td>גזירת רוח בשלב הטיפוס החוצה - מסלול לא מוגדר</td>
+</tr>
+<tr>
+<td><code>[MOD] [SEV] WS CLIMB-OUT RWYnnn</code></td>
+<td>גזירת רוח ביציאה ממסלול מסוים</td>
+</tr>
+<tr>
+<td><code>MBST ב-APCH</code></td>
+<td>מיקרופרץ בשלב הגישה</td>
+</tr>
+<tr>
+<td><code>MBST [APCH] RWYnn</code></td>
+<td>מיקרו-פרץ בגישה למסלול מסוים</td>
+</tr>
+<tr>
+<td><code>MBST ב-CLIMB-OUT</code></td>
+<td>מיקרופרץ בשלב הטיפוס החוצה</td>
+</tr>
+<tr>
+<td><code>MBST CLIMB-OUT RWYnn</code></td>
+<td>מיקרופרץ בטיפוס החוצה ממסלול מסוים</td>
+</tr>
+</tbody>
+</table>
+<h2>סילון ברמה נמוכה - מתי להנפיק WS WRNG</h2>
+<p>סילון נמוך (LLJ) מעל שדה התעופה הוא אחד המפעילים הנפוצים ביותר של WS WRNG בישראל, במיוחד במהלך היפוך חורף ולינה בתנאים צלולים ורגועים. הקריטריונים של IMS מפורשים.</p>
+<div class="callout callout-key">
+<div class="callout-label">קריטריוני IMS LLJ עבור WS WRNG</div>
+<strong>טריגר ראשי.</strong> סילון ברמה נמוכה עם רוח שיא ≥ 30 קט, עם ציר הסילון מתחת <strong>2000 רגל AGL</strong>.<br/><br/>
+<strong>אינדיקטורים תומכים (בעיה כאשר המצב הסינופטי תומך):</strong>
+<ul>
+<li>הבדל של ≥ 30 קט בין הרוח העילי לרוח הגיאוסטרופית.</li>
+<li>הפרש של &gt; 15 ק"ט בין רוח פני השטח לרוח 500 מ'. דוגמה: 5 ק"ט על פני השטח, 20 ק"ט ב-500 מ' - מספיק להנפיק, בהינתן דפוס סינופטי תואם.</li>
+</ul>
+  כאשר רוח פני השטח קלה, תדרך את המגדל על רוחות משמעותיות בגובה 1000-2000 רגל AGL <em>גם אם הם עדיין לא מגיעים ל-30 קראט</em>.
+</div>
+<figure>
+<svg role="img" viewbox="0 0 680 320" xmlns="http://www.w3.org/2000/svg">
+<title>חתך רוחב של סילון במפלס נמוך מעל מסלול</title>
+<desc>חתך אנכי המראה את המסלול בגובה הקרקע עם סמן דק המראה רוח משטח של 5 קשר הנושבת מדרום מזרח, ורוח חזקה הרבה יותר של 30 קשר הנושבת מכיוון מעט שונה בגובה 900 רגל AGL. קו אופקי מקווקו מסמן את סף 2000 רגל שמעליו הסילון אינו עוד הדק WS WRNG.</desc>
+<!-- Ground / runway -->
+<line stroke="#1A1917" stroke-width="2" x1="40" x2="640" y1="280" y2="280"></line>
+<rect fill="#534AB7" height="6" width="280" x="200" y="276"></rect>
+<text fill="#1A1917" font-family="sans-serif" font-size="12" text-anchor="middle" x="340" y="305">מַסלוּל הַמרָאָה</text>
+<!-- Altitude scale -->
+<line stroke="#6B6A65" stroke-width="1.5" x1="60" x2="60" y1="40" y2="280"></line>
+<text fill="#6B6A65" font-family="sans-serif" font-size="11" text-anchor="end" x="50" y="285">0</text>
+<text fill="#6B6A65" font-family="sans-serif" font-size="11" text-anchor="end" x="50" y="225">500 רגל</text>
+<text fill="#6B6A65" font-family="sans-serif" font-size="11" text-anchor="end" x="50" y="170">900 רגל</text>
+<text fill="#6B6A65" font-family="sans-serif" font-size="11" text-anchor="end" x="50" y="115">1500 רגל</text>
+<text fill="#6B6A65" font-family="sans-serif" font-size="11" text-anchor="end" x="50" y="60">2000 רגל</text>
+<!-- 2000 ft dashed limit -->
+<line stroke="#993C1D" stroke-dasharray="6 4" stroke-width="1.5" x1="60" x2="640" y1="55" y2="55"></line>
+<text fill="#993C1D" font-family="sans-serif" font-size="11" text-anchor="end" x="640" y="49">תקרת WS WRNG: ציר הסילון חייב להיות מתחת לזה</text>
+<!-- Surface wind arrow (5 kt, short, southeast) -->
+<path d="M 250 270 L 290 268" fill="none" marker-end="url(#sfArrow)" stroke="#185FA5" stroke-width="2"></path>
+<text fill="#185FA5" font-family="sans-serif" font-size="11" x="265" y="262">5 קראט @ sfc</text>
+<!-- 900 ft jet (30 kt, long, slightly different direction) -->
+<path d="M 150 170 L 410 168" fill="none" marker-end="url(#jtArrow)" stroke="#993C1D" stroke-width="3"></path>
+<text fill="#993C1D" font-family="sans-serif" font-size="13" font-weight="600" x="240" y="155">30 קראט @ 900 רגל - ציר LLJ</text>
+<!-- 500 m (~1640 ft) reference wind for the >15 kt rule -->
+<path d="M 200 100 L 330 99" fill="none" marker-end="url(#midArrow)" stroke="#BA7517" stroke-width="2"></path>
+<text fill="#BA7517" font-family="sans-serif" font-size="11" x="260" y="90">רוח של 500 מ' (הצלבה &gt; הפרש של 15 קראט)</text>
+<!-- Aircraft on approach -->
+<text fill="#1A1917" font-family="sans-serif" font-size="14" x="540" y="160">✈</text>
+<text fill="#1A1917" font-family="sans-serif" font-size="11" font-style="italic" x="500" y="180">מטוס בגמר</text>
+<text fill="#1A1917" font-family="sans-serif" font-size="11" font-style="italic" x="500" y="194">יורד דרך הסילון</text>
+<defs>
+<marker id="sfArrow" markerheight="6" markerwidth="6" orient="auto" refx="9" refy="5" viewbox="0 0 10 10"><path d="M 0 0 L 10 5 L 0 10 z" fill="#185FA5"></path></marker>
+<marker id="jtArrow" markerheight="8" markerwidth="8" orient="auto" refx="9" refy="5" viewbox="0 0 10 10"><path d="M 0 0 L 10 5 L 0 10 z" fill="#993C1D"></path></marker>
+<marker id="midArrow" markerheight="6" markerwidth="6" orient="auto" refx="9" refy="5" viewbox="0 0 10 10"><path d="M 0 0 L 10 5 L 0 10 z" fill="#BA7517"></path></marker>
+</defs>
+</svg>
+<figcaption>איור 4.3 - סילון ברמה נמוכה מעל שדה התעופה. רוח משטח קלה מתחת לסילון חזק בגובה 900 רגל היא מארז הגזירה של ספר הלימוד - המטוס מאבד רוח נגדית לפתע כשהוא יורד דרך ציר הסילון.</figcaption>
+</figure>
+<h2>עדכונים, תיקונים וביטולים</h2>
+<p>יש לעדכן AD WRNG או WS WRNG בתוקף אם החזאי שופט שבמשך קטע של שעתיים או יותר בתוך התוקף שנותר, מזג האוויר יהיה שונה באופן משמעותי ממה שמתארת ​​האזהרה. העדכון יכול לשנות את העוצמה (למעלה או למטה), להוסיף או להסיר אלמנטים מסוכנים, או לשנות את זמני ההתחלה או הסיום.</p>
+<p>אם התופעה תסתיים ולא צפויה להתפתח מחדש במהלך השעתיים הקרובות, האזהרה תבוטל. בדומה ל-SIGMET, הביטול הוא בעצמו הודעת אזהרה, כאשר המספר הרציף הבא ותקופת תוקף חדשה פועלים עד לשעת הסיום המקורית. הגוף מכיל <code>CNL AD WRNG &lt;n&gt; YYGGgg/YYGGgg</code> אוֹ <code>CNL WS WRNG &lt;n&gt; YYGGgg/YYGGgg</code> בהתייחסות חזרה למקור.</p>
+<div class="callout callout-key">
+<div class="callout-label">דוגמה לביטול</div>
+<code>LLBG AD WRNG 2 תקף 110330/110500</code><br/>
+<code>CNL AD WRNG 1 110130/110500=</code>
+</div>
+<h2>תיאום AD WRNG עם SIGMET ו- AIRMET</h2>
+<p>אותה תופעה פיזיקלית מצדיקה לעתים קרובות מספר מוצרי אזהרה מכיוון שהיא משפיעה גם על ה-FIR וגם על שדה התעופה. הכללים התפעוליים של IMS לתיאום זה - שהוסר מהשקופית הדו-לשונית "חשוב לזכור" שסוגרת את שתי חפיסות המקור - נמצאים למטה.</p>
+<div class="callout callout-warning">
+<div class="callout-label">כללי תיאום IMS (סיפון 13 שקופית 25 / סיפון 14 שקופית 12)</div>
+<ol>
+<li>כאשר מונפק AD WRNG, אתה בדרך כלל מנפיק גם SIGMET או AIRMET. אזהרות לספירה יוצאות בכל פעם שצפוי מזג אוויר משמעותי בשדה התעופה. במקביל, הנפק AIRMET או SIGMET לפי חומרה והיקף שטח.</li>
+<li>כאשר מונפק WS WRNG עבור שדה התעופה בגלל סילון ברמה נמוכה, אתה עושה <strong>לֹא</strong> צריך להנפיק AIRMET או SIGMET. ה-LLJ היא תופעה בקנה מידה של תעופה.</li>
+<li>כאשר מזג האוויר המסוכן צפוי להשפיע על המרחב האווירי FIR אך לא בהכרח על שדה התעופה, הנפק SIGMET או AIRMET (לפי החומרה), אך ייתכן שלא תזדקק ל-AD WRNG. דוגמאות: ערפל מעל מישור החוף שעלול לא להגיע ל-LLBG/SDV; ענן הסעה התפתח מעל ההרים.</li>
+<li>SIGMET ו-AIRMET מופצות ברחבי העולם באמצעות AFTN ומשודרות ב-VOLMET. הפצת AD WRNG היא מקומית בלבד.</li>
+</ol>
+</div>
+<p>לכלל הרביעי יש תוצאה מבצעית שקטה: אזהרה על שדה תעופה בלבד לעולם לא מגיעה למשרד לתכנון טיסות בחו"ל. אם אותה סכנה חשובה לטיסה בשלב המסלול, ה-SIGMET או AIRMET הם המוצר היחיד שייראה על ידי שגר בינלאומי.</p>
+<h3>מטריצת תיאום במבצעים</h3>
+<table>
+<thead>
+<tr>
+<th>תַרחִישׁ</th>
+<th>מוצרים להנפקה</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SEV TURB על פני ה-FIR, ללא השפעה ספציפית על שדה התעופה</td>
+<td>SIGMET בלבד</td>
+</tr>
+<tr>
+<td>OCNL TS בתת-אזור הצפוני של ה-FIR, לא מעל LLBG</td>
+<td>AIRMET בלבד</td>
+</tr>
+<tr>
+<td>CB מתקרב למרחק של 16 ק"מ ממרכז המסלול LLBG, FRQ מעל ה-FIR</td>
+<td>AD WRNG (TS) + SIGMET (FRQ TS)</td>
+</tr>
+<tr>
+<td>ראות &lt; 5000 מ' ב-LLBG עקב ערפל; רוחב FIR מול &gt; 5 ק"מ במקום אחר</td>
+<td>AD WRNG בלבד (אף סף AIRMET לא עמד ב-FIR)</td>
+</tr>
+<tr>
+<td>ראות &lt;5000 מ' ב-LLBG ו&lt;5 ק"מ על פני תת-אזור החוף של ה-FIR</td>
+<td>AD WRNG + AIRMET (<code>VIS &lt;5KM</code>)</td>
+</tr>
+<tr>
+<td>LLJ מעל LLBG ב-900 רגל, 30 ק"ט; משטח 5 קראט</td>
+<td>WS WRNG בלבד (אין צורך ב-AIRMET או SIGMET)</td>
+</tr>
+<tr>
+<td>רוח עילי מתמשכת 32 קראט תת-אזור, בתוספת משבים של מעל 30 קראט ב-LLBG</td>
+<td>AD WRNG (<code>SFC WSPD</code>) + AIRMET (<code>SFC WSPD ≥30KT</code>)</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-danger">
+<div class="callout-label">הטעות הנפוצה ביותר</div>
+  הנפקת AD WRNG ללא ה-SIGMET או AIRMET התואמים כאשר התופעה משפיעה גם על ה-FIR. אזהרת שדה התעופה היא הפצה מקומית בלבד - מטוסי נוסעים בגישה מחו"ל לעולם לא רואים אותה. אם המפגע הוא רחב FIR, ה-SIGMET/AIRMET הוא זה שמגיע אליהם.
+</div>
+<div class="lesson-summary">
+<h3>טייק אווי מפתח</h3>
+<ul>
+<li>AD WRNG הוא המוצר של AFO למפגעים בשדה התעופה; WS WRNG הוא אחיו עבור גזירת רוח בגישה או יציאה ממסלול מסוים. לשניהם תוקף של 4 שעות.</li>
+<li>ספי IMS: CB בטווח של 16 ק"מ ממרכז המסלול, ברד ≥ 2 ס"מ, מול &lt; 5000 מ', תקרה BKN/OVC ≤ 1500 רגל, רוח משטח ממוצעת &gt; 20 ק"ט או משבים &gt; 30 ק"ט, כפור &lt; 0 מעלות צלזיוס ב-2 מ'.</li>
+<li>מחוון בסיס WS WRNG הוא אחד מהם <code>FCST</code>, <code>OBS</code>, או <code>REP AT</code>. הבסיס מופיע במפורש בהודעה ומודיע כיצד צרכנים במורד הזרם פועלים לפיו.</li>
+<li>סילון ברמה נמוכה WS WRNG: שיא ≥ 30 קט עם הציר מתחת ל-2000 רגל AGL. האינדיקטורים התומכים הם &gt; 30 kt sfc-vs-geostrophic הבדל, או &gt; 15 kt sfc-vs-500-m הבדל עם התאמה סינופטית.</li>
+<li>כלל אצבע של תיאום: AD WRNG כמעט תמיד מזדווג עם SIGMET או AIRMET אלא אם כן הסכנה היא בקנה מידה של תעופה בלבד (LLJ בלבד WS WRNG, ערפל מוגבל לשדה התעופה). מפגעים רחבי FIR תמיד משתלבים עם המוצר שבדרך.</li>
+<li>הפצת AD WRNG היא מקומית בלבד; SIGMET ו- AIRMET יוצאות בינלאומיות דרך AFTN ו- VOLMET. אם שגר זר צריך לדעת, ה-SIGMET/AIRMET הוא המוצר היחיד שיגיע אליהם.</li>
+</ul>
+</div>
+</div>

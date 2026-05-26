@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='utf-8'?>
+<quiz>
+  <question type="multichoice">
+    <name><text>L2-Q01 — טווח טמפרטורות SLW</text></name>
+    <questiontext format="html">
+      <text>&lt;p&gt;באיזה טווח טמפרטורות ההתרחשות של מים נוזליים מצוננים (SLW) היא השכיחה והמשמעותית ביותר עבור ציפוי מבני?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; SLW שכיח ביותר בין 0°C ל-15°C. מתחת ל-20 מעלות צלזיוס, ההסתברות להקפאה ספונטנית לגבישי קרח עולה באופן משמעותי, ומפחיתה את המים הנוזליים הזמינים לציפוי.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;0°C עד -15°C&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;+10°C עד 0°C&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;-25°C עד -40°C&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;בלעדית ב-0°C בדיוק&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L2-Q02 - סכנות קרח מזכוכית</text></name>
+    <questiontext format="html">
+      <text>&lt;p&gt;מדוע קרח Glaze (Clear) נחשב למסוכן יותר מקרח Rime עבור פעולות מטוסים?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; קרח גלייז הוא קשה, שקוף וכבד. מכיוון שהוא נוצר מטיפות גדולות יותר או תכולת מים נוזלית גבוהה, הוא "בורח לאחור" וקופא על משטחים מאחורי הקצה המוביל שאינם מוגנים על ידי מגפיים או תנורי חימום להסרת קרח.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;הוא כבד יותר ויכול להתפשט לאזורים לא מוגנים מאחורי הקצה המוביל.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;הוא שביר יותר ומתפרק לתוך המנועים.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;זה נוצר רק באוויר צלול איפה שלא ניתן לראותו.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;זה יוצר יותר גרירה מאשר עונש משקל.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L2-Q03 - היווצרות גשם קפוא</text></name>
+    <questiontext format="html">
+      <text>&lt;p&gt;איזה מבנה תרמודינמי נדרש להיווצרות גשם קפוא (FZRA) על פני השטח?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; FZRA דורש שכבת התכה (T &gt; 0°C) מעל שכבה תת-קפואה (T &lt; 0°C) ליד פני השטח. שלג נמס בשכבה החמה והופך לגשם מקורר בשכבה הקרה למטה.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;שכבה חמה מעל 0°C המונחת על שכבה תת-קפואה ליד הקרקע.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;קצב חלוף קבוע של 6.5°C לק"מ מהמשטח כלפי מעלה.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;אי יציבות מוחלטת מפני השטח ועד הטרופופוזה.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;שכבה איזותרמית עמוקה בדיוק ב-5°C.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L2-Q04 - אבחון נשמע</text></name>
+    <questiontext format="html">
+      <text>&lt;p&gt;כאשר מנתחים צלילים לפוטנציאל הדובדבן, איזה שילוב של פרמטרים מצביע על הסיכון הגבוה ביותר?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; סיכון גבוה לקרח קשור לשכבות רוויות (שקע נקודת טל &amp;lt; 5°C) בטווח הטמפרטורות הקריטי (0°C עד -15°C), במיוחד אם השכבה אינה יציבה (הסעה), מה שמרמז על תכולת מים נוזלית גבוהה יותר.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;טמפרטורה -8 מעלות צלזיוס, שקע נקודת טל 2 מעלות צלזיוס ושיעור פגייה לא יציב.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;טמפרטורה -25°C, שקע נקודת טל 1°C ושיעור פג יציב.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;טמפרטורה +5°C, שקע נקודת טל 4°C ויציבות ניטרלית.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;טמפרטורה -10°C, שקע נקודת טל 12°C ושכבת היפוך.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+</quiz>

@@ -1,0 +1,195 @@
+<style>
+/*
+ * IMS Course Factory — Lesson Design System
+ *
+ * All rules are scoped to `.ims-lesson` so the styles can be injected into
+ * a host page (Moodle, in particular) without leaking onto the host's chrome
+ * and without the host's theme overriding lesson typography.
+ *
+ * Standalone lesson HTML wraps the entire body in <div class="ims-lesson">.
+ * Moodle body-fragment HTML does the same. The single rule below keeps the
+ * standalone preview's <body> background consistent without leaking into
+ * Moodle pages.
+ */
+
+.ims-lesson {
+  --bg: #ffffff;
+  --surface: #f6f5f0;
+  --border: #e2dfd6;
+  --text: #1a1917;
+  --muted: #6b6a65;
+  --accent: #185fa5;
+  --accent-light: #e6f1fb;
+  --note-bg: #e1f5ee;
+  --note-border: #0F6E56;
+  --warn-bg: #faeeda;
+  --warn-border: #BA7517;
+  --key-bg: #EEEDFE;
+  --key-border: #534AB7;
+  --danger-bg: #fcebeb;
+  --danger-border: #A32D2D;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .ims-lesson {
+    --bg: #1a1917;
+    --surface: #242320;
+    --border: #3a3835;
+    --text: #e8e6df;
+    --muted: #9a9890;
+    --accent-light: #042c53;
+    --note-bg: #04342c;
+    --warn-bg: #412402;
+    --key-bg: #26215c;
+  }
+}
+
+.ims-lesson h1 { font-size: 1.8rem; font-weight: 600; margin-bottom: 0.2rem; line-height: 1.2; color: var(--text); }
+.ims-lesson h2 { font-size: 1.25rem; font-weight: 600; margin-top: 2.5rem; padding-bottom: 0.4rem;
+  border-bottom: 1.5px solid var(--border); color: var(--text); }
+.ims-lesson h3 { font-size: 1.05rem; font-weight: 600; margin-top: 1.75rem; color: var(--text); }
+.ims-lesson p { margin: 0.7rem 0; max-width: 72ch; }
+.ims-lesson figure { margin: 2rem 0; }
+.ims-lesson figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 0.6rem;
+  font-style: italic; text-align: center; }
+.ims-lesson svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+.ims-lesson img { max-width: 100%; height: auto; }
+.ims-lesson table { border-collapse: collapse; width: 100%; margin: 1.5rem 0; font-size: 0.9rem; }
+.ims-lesson th { background: var(--accent); color: #fff; padding: 0.55rem 0.9rem; text-align: left; }
+.ims-lesson td { padding: 0.5rem 0.9rem; border-bottom: 1px solid var(--border); }
+.ims-lesson tr:nth-child(even) td { background: var(--surface); }
+.ims-lesson .callout { border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+.ims-lesson .callout-note    { background: var(--note-bg);   border-left: 4px solid var(--note-border); }
+.ims-lesson .callout-warning { background: var(--warn-bg);   border-left: 4px solid var(--warn-border); }
+.ims-lesson .callout-key     { background: var(--key-bg);    border-left: 4px solid var(--key-border); }
+.ims-lesson .callout-danger  { background: var(--danger-bg); border-left: 4px solid var(--danger-border); }
+.ims-lesson .callout-label { font-weight: 700; font-size: 0.78rem; text-transform: uppercase;
+  letter-spacing: 0.06em; margin-bottom: 0.35rem; }
+.ims-lesson .objectives { background: var(--surface); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+.ims-lesson .objectives ul { margin: 0.5rem 0 0; padding-left: 1.4rem; }
+.ims-lesson .lesson-summary { background: var(--accent-light); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 2.5rem 0 1rem; }
+.ims-lesson .lesson-summary h3 { margin-top: 0; color: var(--accent); font-size: 1rem; }
+.ims-lesson .image-needed { border: 2px dashed var(--border); border-radius: 8px;
+  padding: 1.5rem; margin: 1.5rem 0; text-align: center;
+  color: var(--muted); font-size: 0.9rem; background: var(--surface); }
+.ims-lesson .meta { color: var(--muted); font-size: 0.88rem; margin-bottom: 1.75rem; }
+.ims-lesson .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.5rem; }
+</style>
+<div class="ims-lesson">
+<p class="breadcrumb">מודול 4 / שיעור 1</p>
+<h1>TAF מבנה ופילוסופיית כתיבה</h1>
+<div class="objectives">
+<strong>עד סוף שיעור זה תוכל:</strong>
+<ul>
+<li>הגדר מבנה ומינוח TAF, כולל ההגדרה המבצעית של Vicinity (VC).</li>
+<li>החל את פילוסופיית הכתיבה של TAF כדי ליצור תחזיות תמציתית וידידותית למשתמש.</li>
+<li>סווגו את תנאי מזג האוויר לקטגוריות טיסות תעופה סטנדרטיות (VFR, IFR).</li>
+</ul>
+</div>
+<h2>תחזית תעופה מסוף (TAF)</h2>
+<p>תחזית תעופה של טרמינל (TAF) היא הצהרה תמציתית של תנאים מטאורולוגיים צפויים משמעותיים לתעופה בנמל תעופה. הוא הוכן על ידי משרד תחזית תעופה (AERodrome Forecast Office) והוא הכלי העיקרי המשמש את חברות התעופה והטייסים לתכנון טיסה והחלטות עומס דלק.</p>
+<p>ההגדרה של אזור ה"טרמינל" מוגבלת בהחלט למרחב האווירי בתוך <strong>8 ק"מ (5 SM)</strong> של מרכז מתחם המסלול של שדה תעופה. תנאים מחוץ למעגל זה דורשים מנגנוני דיווח שונים או שימוש זהיר במתאמני קרבה.</p>
+<div class="callout callout-key">
+<div class="callout-label">שינוי הסביבה (VC)</div>
+  הסביבה (VC) מציינת אזור בצורת סופגנייה בין עיגולים עם רדיוסים של 5 SM ו-10 SM ממרכז מתחם המסלול. הוא משמש אך ורק בשילוב עם ערפל (FG), ממטרים (SH) וסופות רעמים (TS).
+</div>
+<p>הכללת מתקן VC (לדוגמה, VCSH, VCTS) מודיע למשתמש על מזג אוויר משמעותי ליד שדה התעופה מבלי להטיל את ההשפעות התפעוליות המחמירות הנדרשות על ידי קבוצת PROB30 או TEMPO. זה משמש כייעוץ לטייס לשמור על מודעות למצב מבלי לקרק את הטיסה או לאלץ דרישות דלק חלופיות.</p>
+<h2>TAF Writing Philosophy</h2>
+<p>הפרדיגמה המודרנית בכתיבת TAF היא <strong>TAF ידידותי למשתמש</strong>. בעבר, החזאים כתבו לעתים קרובות תחזיות ארוכות, בלתי ניתנות לתיקון, שכללו כל וריאציה אפשרית במזג האוויר ("השלכה בכיור המטבח"). זה הוביל למוצרים מעורפלים שהענישו את פעילות חברות התעופה.</p>
+<p>TAF איכותי עונה על שישה קריטריונים: זה <strong>ברור, תמציתי, עקבי, רלוונטי, בזמן ומדויק</strong>. המטרה שלך כחזאית היא לשפר את בטיחות הטיסה תוך חיסכון ללקוחות זמן וכסף.</p>
+<div class="callout callout-warning">
+<div class="callout-label">הימנע מחיזוי יתר</div>
+  הגבל את השימוש בקבוצות PROB ובמשתנים מותנים. אל תגדיר - קבל החלטה. אם אינך יכול לאתר מספרים מדויקים, לפחות וודא שהמגמה וקטגוריית הטיסה נכונות. שאפו לכתוב TAF שאורכו לא יותר מ-5 שורות.
+</div>
+<h2>קטגוריות טיסות תעופה</h2>
+<p>במקום להתעסק בתנודות זעירות בתקרה או בנראות, מבנה את ה-TAF שלך סביב <strong>קטגוריות טיסות תעופה</strong>. המטרה העיקרית היא להשיג את הקטגוריה נכונה (למשל, VFR לעומת IFR) ולהוציא את רוב אנרגיית החיזוי שלך בתקופות הצפויות לרדת מתחת ל-VFR.</p>
+<table>
+<thead>
+<tr>
+<th>קטגוריית טיסה</th>
+<th>תקרה</th>
+<th>נראות</th>
+<th>השפעה תפעולית</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VFR (כללי טיסה חזותית)</td>
+<td>&gt; 3000 רגל</td>
+<td>&gt; 5 SM (8000 מ')</td>
+<td>פעולות שגרתיות. הזכירו סיררוס רק אם זה כל מה שיש לדווח.</td>
+</tr>
+<tr>
+<td>MVFR (VFR שולי)</td>
+<td>1000 עד 3000 רגל</td>
+<td>3 עד 5 SM</td>
+<td>זהירות מוגברת; עלול להשפיע על תעופה כללית.</td>
+</tr>
+<tr>
+<td>IFR (כללי טיסת מכשירים)</td>
+<td>500 עד &lt; 1000 רגל</td>
+<td>1 עד &lt; 3 SM</td>
+<td>דורש גישות מכשיר; עיכובים משמעותיים אפשריים.</td>
+</tr>
+<tr>
+<td>LIFR (IFR נמוך) / CAT II/III</td>
+<td>&lt; 500 רגל</td>
+<td>&lt; 1 SM</td>
+<td>ספים קריטיים לשדה התעופה. הגבלות מבצעיות גדולות.</td>
+</tr>
+</tbody>
+</table>
+<h2>מבנה ה-TAF</h2>
+<p>בעת ניסוח TAF, קבע את המגמה הכוללת וכתוב תחילה לקטגוריות הטיסות האוויריות. ודא שאתה מוסיף את מירב הפרטים ל- <strong>6 השעות הראשונות</strong> מהתחזית, שכן זוהי התקופה המבצעית הקריטית לטיסות נכנסות.</p>
+<p>קבץ נראות ותקרות דומות לתרחישים קוהרנטיים (חיזוי תרחישים) במקום לדלג באופן ספורדי בין קטגוריות. לדוגמה, אם אתה מציג קבוצת TEMPO, נסה לא לקפוץ ליותר מקטגוריה אחת בכל פעם (למשל, מ-VFR ישירות למטה ל-CAT II IFR).</p>
+<figure>
+<svg role="img" viewbox="0 0 680 160" xmlns="http://www.w3.org/2000/svg">
+<title>TAF Structure Best Practices</title>
+<desc>Diagram showing the anatomy of a TAF focusing on the critical first 6 hours and category-based forecasting.</desc>
+<!-- Base line -->
+<line stroke="#E2DFD6" stroke-width="4" x1="40" x2="640" y1="80" y2="80"></line>
+<!-- Time markers -->
+<circle cx="40" cy="80" fill="#185FA5" r="6"></circle>
+<text fill="#1A1917" font-family="sans-serif" font-size="14" font-weight="bold" x="30" y="110">T+0</text>
+<circle cx="240" cy="80" fill="#185FA5" r="6"></circle>
+<text fill="#1A1917" font-family="sans-serif" font-size="14" font-weight="bold" x="220" y="110">T+6</text>
+<circle cx="640" cy="80" fill="#6B6A65" r="6"></circle>
+<text fill="#6B6A65" font-family="sans-serif" font-size="14" x="610" y="110">T+24/30</text>
+<!-- Critical Period Highlight -->
+<rect fill="#E6F1FB" height="30" opacity="0.5" width="200" x="40" y="65"></rect>
+<line stroke="#185FA5" stroke-width="2" x1="40" x2="240" y1="50" y2="50"></line>
+<line stroke="#185FA5" stroke-width="2" x1="40" x2="40" y1="45" y2="55"></line>
+<line stroke="#185FA5" stroke-width="2" x1="240" x2="240" y1="45" y2="55"></line>
+<text fill="#185FA5" font-family="sans-serif" font-size="12" font-weight="bold" x="90" y="40">CRITICAL PERIOD</text>
+<text fill="#0F6E56" font-family="sans-serif" font-size="12" x="60" y="135">High detail. Accurate timing.</text>
+<text fill="#0F6E56" font-family="sans-serif" font-size="12" x="60" y="150">Strict flight category forecasting.</text>
+<!-- Later Period Highlight -->
+<line stroke="#6B6A65" stroke-dasharray="4 4" stroke-width="2" x1="260" x2="640" y1="50" y2="50"></line>
+<text fill="#6B6A65" font-family="sans-serif" font-size="12" x="380" y="40">TREND PERIOD</text>
+<text fill="#6B6A65" font-family="sans-serif" font-size="12" x="320" y="135">Broad trends. Fewer change groups.</text>
+<text fill="#6B6A65" font-family="sans-serif" font-size="12" x="320" y="150">Limit PROB. Focus on prevailing conditions.</text>
+</svg>
+<figcaption>6 השעות הראשונות של TAF דורשות את הדיוק והפירוט הגבוהים ביותר, שכן הן מובילות להחלטות טיסה ודלק מיידיות.</figcaption>
+</figure>
+<div class="lesson-summary">
+<h3>טייק אווי מפתח</h3>
+<ul>
+<li>TAF מכסה את אזור הטרמינל בתוך 5 SM; משנה ה-VC מכסה את הסופגניה בין 5 SM ל-10 SM.</li>
+<li>השתמש ב-VC כדי להתריע בפני משתמשים על מזג אוויר קרוב (TS, SH, FG) מבלי להפעיל תקנות מגבילות של דלק חלופי.</li>
+<li>TAF ידידותי למשתמש הוא תמציתי (באופן אידיאלי ≤ 5 שורות) ומונע גידור עם PROB מוגזם או קבוצות מותנות.</li>
+<li>תחזית לפי קטגוריית טיסה (VFR, IFR) במקום ערכים מדויקים, מה שמבטיח שהמגמה תמיד ברורה.</li>
+<li>רכז את רמת הפירוט והדיוק הגבוהים ביותר ב-6 השעות הראשונות של תקופת התחזית.</li>
+</ul>
+</div>
+</div>

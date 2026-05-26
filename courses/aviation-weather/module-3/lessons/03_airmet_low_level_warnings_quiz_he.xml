@@ -1,0 +1,196 @@
+<?xml version='1.0' encoding='utf-8'?>
+<quiz>
+
+  <question type="multichoice">
+    <name>
+      <text>L3-Q01 - הבחנה בין OCNL ל-FRQ</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;הרדאר מציג קו מתפתח של תאי סופת רעמים מעל תת-האזור הצפוני של ה-FIR. בדיקה חזותית וכיסוי רפלקטיביות מצביעים על כך שהתאים תופסים בערך 60% משטח המשנה, עם פערים ניכרים בין תאים סמוכים. האינטנסיביות מתונה. איזו הודעה צריכה ה-MWO להנפיק?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; כיסוי בין 50% ל-75% עם הפרדה ניכרת בין תאים הוא OCNL TS &amp;mdash; תופעת AIRMET. FRQ דורש כיסוי של יותר מ-75% עם הפרדה קטנה או ללא הפרדה. התאים אינם צריכים להיות מוטבעים, מעורפלים או בקו סוער כדי ליפול תחת AIRMET, כך ש-SIGMET אינו מוצדק. "אין הודעה" מפספס את הסכנה התפעולית לתנועה ברמות נמוכות שחוצה את האזור.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;AIRMET עבור OCNL TS מעל תת-האזור המושפע.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;סימן עבור FRQ TS &amp;mdash; ברגע שהכיסוי עולה על 50%, ה-FRQ חל.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;סימן עבור EMBD TS, על בסיס מבנה הקו.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;אין הודעה &amp;mdash; תאים בעוצמה בינונית עם פערים אינם מפעילים שום מוצר.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L3-Q02 - תופעות AIRMET בלבד</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;איזו מהתופעות הבאות מפעילה AIRMET אך אין לה &lt;em&gt;אין&lt;/em&gt; מקבילה ל-SIGMET בכל עוצמה?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; תקרות ענן מתחת לגובה של 1,000 רגל, רוחות עיליות מתמשכות &amp;ge; 30 ק"ט, ראות מתחת ל-5 ק"מ, וסתימת הרים נרחבת הן תופעות AIRMET בלבד &amp;mdash; הם מתארים את הסביבה ברמה נמוכה ואין להם מקבילה ל-SIGMET. דובדבן חמור וסופות רעמים משובצות הן תופעות SIGMET (עם מקבילים ל-AIRMET בעוצמה נמוכה יותר, MOD ICE ו-ISOL/OCNL TS). אפר וולקני הוא אך ורק תופעת SIGMET (WV).&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;תקרות ענן מתחת ל-1000 רגל על ​​פני שטח נרחב.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;הקרדה קשה עם גשם קופא.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;סופות רעמים מוטבעות מעל ה-FIR.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;אפר וולקני נסחף דרך ה-FIR.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L3-Q03 - תרחיש הדובדבן הגבולי</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;שדה פוטנציאל הדובדבן של הדגם הוא בינוני עד חזק מעל שכבת שכבה בין 5,000 ל-8,500 רגל. דוח טייס בגובה 7,000 רגל מתאר את הציפוי כ"בינוני" ללא התייחסות לגשם מקפיא. המצב הסינופטי תומך בציפוי מתון מתמשך למשך שלוש השעות הבאות. איזו הודעה על ה-MWO להנפיק?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;רציונל:&lt;/strong&gt; גם פלט הדגם וגם ה-PIREP מתארים את הדובדבן כמתון, והענן הוא סטרטיפורמי (לא קונווקטטיבי), כך ש-MOD ICE היא תופעת ה-AIRMET הנכונה. SEV ICE ידרוש PIREP חמור או אינדיקציה מודל חד משמעית של ציפוי חמור &amp;mdash; לא נוכח כאן. נוכחות או היעדרות של FZRA היא מוקדמות במקרה חמור, לא טריגר עצמאי. דבר לא מותיר סכנה ידועה ברמה נמוכה ללא אזהרה.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;AIRMET עבור MOD ICE.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;סימן עבור SEV ICE, מכיוון שתמיד יש לקדם את הדובדבן השכבתי לחמור בחורף.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;סימן עבור SEV ICE FZRA, כי גשם קופא הוא הנחת ברירת המחדל של החורף.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;אין הודעה &amp;mdash; דיווחי פיילוט על ציפוי מתון אינם ניתנים לפעולה בפני עצמם.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L3-Q04 - סף רוח משטח</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;שיפוע לחץ סינופטי חזק צפוי להניע רוחות משטחים מתמשכות של 10 דקות של 32 ק"ט על פני תת-אזור רחב של ה-FIR במשך 4 השעות הבאות. משבים יהיו גבוהים יותר. איזה מוצר מכסה את הסכנה בדרך לתעופה כללית ברחבי האזור המושפע?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; רוחות משטח מתמשכות &amp;ge; 30 KT על שטח נרחב היא תופעת AIRMET (&lt;code&gt;SFC WSPD &amp;ge;30KT&lt;/code&gt;) ואין לה מקבילה ל-SIGMET. אזהרת שדה התעופה היא מוצר נפרד, המוגדר לשדה התעופה עצמו, ומכוסה בשיעור 4 &amp;mdash; AD WRNG אינו מזהיר את טייס GA במסלול חוצה את ה-FIR. WS WRNG נותן מענה לגזירת רוח ספציפית למסלול, לא לרוחות שטח בקנה מידה גדול.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;AIRMET עבור &lt;code&gt;SFC WSPD &amp;ge;30KT&lt;/code&gt; מעל תת-האזור המושפע.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;סימן עבור רוחות שטח קשות, מכיוון ש-32 ק"ט הוא הרבה מעל 30 ק"ט.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;AD WRNG, כי רוחות פני השטח משפיעות בעיקר על תעופה.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt; WS WRNG, מכיוון שהרוחות עלולות לגרום לתנאי גזירה של המסלול.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L3-Q05 - AIRMET לעומת SIGMET במקרה גבולי</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;תחזית של גלי הרים מציגה ירידה בגובה השיא במהירות של 3.0 מ' לשנייה בדיוק לאורך מורדות הירייה, עם תחזית מערבולות חמורה בחלקים. איזו אזהרה מתאימה?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; סף SEV MTW הוא downdraft &amp;ge; 3.0 מ' לשנייה &lt;em&gt;או&lt;/em&gt; מלווה במערבולת חמורה. שני התנאים קיימים כאן, כך ש-SIGMET היא השיחה הנכונה &amp;mdash; הגבול הוא כוללני, לא בלעדי. הנפקת AIRMET עבור MOD MTW תזהיר את המפגע. הנפקת AIRMET וגם SIGMET עבור אותה תופעה על אותו אזור מפרה את עקרון תופעה אחת-הודעה אחת.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;סימן עבור SEV MTW &amp;mdash; הסף של 3.0 מ"ש כולל ומערבולת ה- SEV הנלווית גם היא כשירה בעצמה.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;AIRMET עבור MOD MTW &amp;mdash; 3.0 m/s הוא הגבול העליון של רצועת MOD.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;גם AIRMET (עבור הגל) וגם SIGMET (עבור המערבולת) על אותו אזור.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;אין אזהרה &amp;mdash; הדגם נמצא בגבול, לכן יש להשאיר את המקרה לתרשים SIGWX השגרתי.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L3-Q06 - "לא כבר בתחזית"</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;חניך ב-MWO שואל מדוע ה-IMS מנפיק AIRMET לראות &amp;lt;5 ק"מ באובך למרות שה-TAFs עבור שדות התעופה המושפעים כבר מזכירים ראות מופחתת. מהו ההסבר הנכון?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;רציונל:&lt;/strong&gt; הפטור "לא כבר בתחזית" מתייחס ספציפית לתחזית שטח ברמה נמוכה המכסה את אותו FIR או תת-אזור בעוצמת AIRMET &amp;mdash; בדרך כלל GAMET. TAFs הם תחזיות תעופה, לא תחזיות אזור ברמה נמוכה; הם אינם פוטרים את ה-MWO מהנפקת AIRMET עבור סכנת ראות במסלול. ישראל לא מייצרת GAMET, כך שהפטור כמעט ולא חל וה-AIRMET מונפק בכל פעם שמתקיימים התופעה והקריטריונים לעוצמה. הפטור אינו סעיף "שיקול דעת" או "מסורת" &amp;mdash; זהו גזירה ספציפית הקשורה לקיומה של תחזית שטח כיסוי.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;הפטור חל רק כאשר תחזית אזור ברמה נמוכה (למשל, GAMET) מכסה את ה-FIR בעוצמת AIRMET; TAFs הם תחזיות תעופה ואינם עומדים בפטור.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;הפטור הוא שיקול דעת בלבד &amp;mdash; ה-MWO יכול לבחור להנפיק את ה-AIRMET או להסתמך על TAFs.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;הפטור לעולם אינו חל על ראות, רק על AIRMETs עם תקרה ורוח משטח.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;הפטור הוא מסורת של IMS בלבד; במדינות אחרות ה-TAFs יספיקו.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+</quiz>

@@ -1,0 +1,296 @@
+<style>
+/*
+ * IMS Course Factory — Lesson Design System
+ *
+ * All rules are scoped to `.ims-lesson` so the styles can be injected into
+ * a host page (Moodle, in particular) without leaking onto the host's chrome
+ * and without the host's theme overriding lesson typography.
+ *
+ * Standalone lesson HTML wraps the entire body in <div class="ims-lesson">.
+ * Moodle body-fragment HTML does the same. The single rule below keeps the
+ * standalone preview's <body> background consistent without leaking into
+ * Moodle pages.
+ */
+
+.ims-lesson {
+  --bg: #ffffff;
+  --surface: #f6f5f0;
+  --border: #e2dfd6;
+  --text: #1a1917;
+  --muted: #6b6a65;
+  --accent: #185fa5;
+  --accent-light: #e6f1fb;
+  --note-bg: #e1f5ee;
+  --note-border: #0F6E56;
+  --warn-bg: #faeeda;
+  --warn-border: #BA7517;
+  --key-bg: #EEEDFE;
+  --key-border: #534AB7;
+  --danger-bg: #fcebeb;
+  --danger-border: #A32D2D;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .ims-lesson {
+    --bg: #1a1917;
+    --surface: #242320;
+    --border: #3a3835;
+    --text: #e8e6df;
+    --muted: #9a9890;
+    --accent-light: #042c53;
+    --note-bg: #04342c;
+    --warn-bg: #412402;
+    --key-bg: #26215c;
+  }
+}
+
+.ims-lesson h1 { font-size: 1.8rem; font-weight: 600; margin-bottom: 0.2rem; line-height: 1.2; color: var(--text); }
+.ims-lesson h2 { font-size: 1.25rem; font-weight: 600; margin-top: 2.5rem; padding-bottom: 0.4rem;
+  border-bottom: 1.5px solid var(--border); color: var(--text); }
+.ims-lesson h3 { font-size: 1.05rem; font-weight: 600; margin-top: 1.75rem; color: var(--text); }
+.ims-lesson p { margin: 0.7rem 0; max-width: 72ch; }
+.ims-lesson figure { margin: 2rem 0; }
+.ims-lesson figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 0.6rem;
+  font-style: italic; text-align: center; }
+.ims-lesson svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+.ims-lesson img { max-width: 100%; height: auto; }
+.ims-lesson table { border-collapse: collapse; width: 100%; margin: 1.5rem 0; font-size: 0.9rem; }
+.ims-lesson th { background: var(--accent); color: #fff; padding: 0.55rem 0.9rem; text-align: left; }
+.ims-lesson td { padding: 0.5rem 0.9rem; border-bottom: 1px solid var(--border); }
+.ims-lesson tr:nth-child(even) td { background: var(--surface); }
+.ims-lesson .callout { border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+.ims-lesson .callout-note    { background: var(--note-bg);   border-left: 4px solid var(--note-border); }
+.ims-lesson .callout-warning { background: var(--warn-bg);   border-left: 4px solid var(--warn-border); }
+.ims-lesson .callout-key     { background: var(--key-bg);    border-left: 4px solid var(--key-border); }
+.ims-lesson .callout-danger  { background: var(--danger-bg); border-left: 4px solid var(--danger-border); }
+.ims-lesson .callout-label { font-weight: 700; font-size: 0.78rem; text-transform: uppercase;
+  letter-spacing: 0.06em; margin-bottom: 0.35rem; }
+.ims-lesson .objectives { background: var(--surface); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+.ims-lesson .objectives ul { margin: 0.5rem 0 0; padding-left: 1.4rem; }
+.ims-lesson .lesson-summary { background: var(--accent-light); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 2.5rem 0 1rem; }
+.ims-lesson .lesson-summary h3 { margin-top: 0; color: var(--accent); font-size: 1rem; }
+.ims-lesson .image-needed { border: 2px dashed var(--border); border-radius: 8px;
+  padding: 1.5rem; margin: 1.5rem 0; text-align: center;
+  color: var(--muted); font-size: 0.9rem; background: var(--surface); }
+.ims-lesson .meta { color: var(--muted); font-size: 0.88rem; margin-bottom: 1.75rem; }
+.ims-lesson .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.5rem; }
+</style>
+<div class="ims-lesson">
+<p class="breadcrumb">מודול 3 / שיעור 1</p>
+<h1>מסגרת אזהרת התעופה ותופעות SIGMET</h1>
+<div class="objectives">
+<strong>בסוף שיעור זה תוכל:</strong>
+<ul>
+<li>הצב אזהרות SIGMET, AIRMET ושדה תעופה בתוך היררכיית שירות ICAO נספח 3 (MWO לעומת AFO; FIR לעומת שדה תעופה).</li>
+<li>רשום את תופעות SIGMET ואת דרגת החומרה הנדרשת כדי להפעיל כל אחת מהן.</li>
+<li>הבדיל בין שלושת תתי-הסוגים של SIGMET (WS, WV, WC) ובין סוג הנתונים המזהה כל אחד מהם.</li>
+<li>החלט אם תצפית או תחזית נתונה מפעילה SIGMET או נשארת מתחת לסף.</li>
+</ul>
+</div>
+<h2>מי מנפק מה, איפה</h2>
+<p>נספח 3 של ICAO מפצל את השירות המטאורולוגי התעופתי לשני תפקידים מבצעיים, כל אחד עם המוצרים שלו ותחום האחריות שלו. משרד השמירה המטאורולוגי (MWO) אחראי על סיכונים ברחבי אזור מידע טיסה (FIR) - כל דבר בדרך. משרד החיזוי של התעופה (AFO) אחראי על שדה התעופה עצמו - ה- METARs, TAFs ואזהרות שדה התעופה שלו.</p>
+<p>SIGMET ו-AIRMET הם מוצרי האזהרה של ה-MWO. הם מתארים סיכונים ברחבי FIR המשפיעים על מטוסים בטיסה. AD WRNG ו-WS WRNG הם המוצרים של ה-AFO; הם מתארים סכנות בשדה תעופה ספציפי המשפיעות על המראה, נחיתה, כלי טיס חונים או פעולות פני השטח. אותה תופעה (סופת רעמים חוצה את ה-FIR לכיוון בן גוריון, נניח) זקוקה לעיתים קרובות לשני המוצרים - התיאום הזה הוא הנושא של שיעור 4.</p>
+<figure>
+<svg role="img" viewbox="0 0 680 320" xmlns="http://www.w3.org/2000/svg">
+<title>היררכיית שירותי תחזיות תעופה נספח 3 של ICAO</title>
+<desc>היררכיה של שלוש שכבות. World Area Forecast Center בראש מוציא תרשימי SIGWX וייעוץ עבור FL100 ומעלה. משרד השמירה המטאורולוגי באמצע מכסה את אזור מידע הטיסה ומנפיק SIGMET ו- AIRMET. משרד החיזוי של תעופה בתחתית מכסה שדה תעופה בודד ומוציא אזהרות TAF, TREND ו-AD/WS.</desc>
+<!-- Tier 1: WAFC -->
+<rect fill="#EEEDFE" height="60" rx="8" stroke="#534AB7" stroke-width="2" width="240" x="220" y="20"></rect>
+<text fill="#1A1917" font-family="sans-serif" font-size="14" font-weight="600" text-anchor="middle" x="340" y="44">World Area Forecast Center (WAFC)</text>
+<text fill="#6B6A65" font-family="sans-serif" font-size="12" text-anchor="middle" x="340" y="64">SIGWX גלובלי &gt; FL100, תרשימי רוח/טמפ', עצות</text>
+<!-- Tier 2: MWO -->
+<rect fill="#E1F5EE" height="80" rx="8" stroke="#0F6E56" stroke-width="2" width="280" x="60" y="130"></rect>
+<text fill="#1A1917" font-family="sans-serif" font-size="14" font-weight="600" text-anchor="middle" x="200" y="156">משרד השמירה המטאורולוגי (MWO)</text>
+<text fill="#6B6A65" font-family="sans-serif" font-size="12" text-anchor="middle" x="200" y="176">תחום אחריות: ה-FIR</text>
+<text fill="#0F6E56" font-family="sans-serif" font-size="13" font-weight="600" text-anchor="middle" x="200" y="196">SIGMET · AIRMET · (GAMET)</text>
+<!-- Tier 2 right: AFO -->
+<rect fill="#FAEEDA" height="80" rx="8" stroke="#BA7517" stroke-width="2" width="240" x="380" y="130"></rect>
+<text fill="#1A1917" font-family="sans-serif" font-size="14" font-weight="600" text-anchor="middle" x="500" y="156">משרד החיזוי של תעופה (AFO)</text>
+<text fill="#6B6A65" font-family="sans-serif" font-size="12" text-anchor="middle" x="500" y="176">תחום אחריות: שדה תעופה אחד</text>
+<text fill="#BA7517" font-family="sans-serif" font-size="13" font-weight="600" text-anchor="middle" x="500" y="196">TAF · טרנד · AD WRNG · WS WRNG</text>
+<!-- Tier 3: aircraft / consumers -->
+<rect fill="#F6F5F0" height="50" rx="8" stroke="#E2DFD6" stroke-width="2" width="320" x="180" y="250"></rect>
+<text fill="#1A1917" font-family="sans-serif" font-size="13" font-weight="600" text-anchor="middle" x="340" y="272">צרכנים: חברות תעופה, יחידות ATS, VOLMET / D-VOLMET</text>
+<text fill="#6B6A65" font-family="sans-serif" font-size="12" text-anchor="middle" x="340" y="290">תכנון טיסה + שירות בטיסה</text>
+<!-- Connectors -->
+<line stroke="#1A1917" stroke-width="1.5" x1="340" x2="200" y1="80" y2="130"></line>
+<line stroke="#1A1917" stroke-width="1.5" x1="340" x2="500" y1="80" y2="130"></line>
+<line stroke="#1A1917" stroke-width="1.5" x1="200" x2="300" y1="210" y2="250"></line>
+<line stroke="#1A1917" stroke-width="1.5" x1="500" x2="400" y1="210" y2="250"></line>
+</svg>
+<figcaption>איור 1.1 - היררכיית השירותים בנספח 3 של ICAO שלושת השכבות. מוצרי MWO מכסים סכנות בדרך ברחבי ה-FIR; מוצרי AFO מכסים שדה תעופה בודד.</figcaption>
+</figure>
+<h2>מה זה SIGMET - ואינו</h2>
+<p>נספח 3 מגדיר SIGMET כמידע הנוגע להתרחשות או התרחשות צפויה של תופעות מזג אוויר מוגדרות בדרך אשר עשויות להשפיע על בטיחות פעולות המטוס. שלושה דברים חשובים במשפט הזה.</p>
+<p>ראשית, "בדרך" - SIGMET מיועד למטוסים בטיסה, לא על הקרקע. שנית, "תופעות מוגדרות" - רק התופעות ברשימה נספח 3 מעוררות SIGMET; כל דבר אחר, לא משנה כמה יוצא דופן, לא. שלישית, "התרחשות או התרחשות צפויה" - אתה יכול להוציא SIGMET לפני התופעה, אבל רק עם זמן אספקה ​​מוגדר (מכוסה בשיעור 2).</p>
+<div class="callout callout-note">
+<div class="callout-label">הַגדָרָה</div>
+  SIGMET מונפק על ידי ה-MWO עבור סיכונים ברחבי ה-FIR. זו לא תחזית במובן ש-TAF הוא - זה א <em>התרעה על מזג אוויר משמעותי</em> against a fixed list of phenomena. אם התופעה לא מופיעה ברשימה, או שהיא מתחת לסף החומרה, לא מונפק SIGMET, ללא קשר למידת חוסר הנוחות התפעולית של מזג האוויר.
+</div>
+<h2>שלושת תת-הסוגים של SIGMET</h2>
+<p>SIGMETs מסווגים לפי התופעה שהם מכסים. מציין סוג הנתונים בכותרת WMO (ה <code>T1T2</code> אותיות - מכוסה בפירוט בשיעור 2) אומר לנמען לאיזה סוג לצפות.</p>
+<table>
+<thead>
+<tr>
+<th>סוג משנה</th>
+<th><code>T1T2</code></th>
+<th>תופעות</th>
+<th>תוקף מקסימלי טיפוסי</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WS - SIGMET סטנדרטי</td>
+<td><code>WS</code></td>
+<td>סופות רעמים עם מוקדמות, מערבולות קשות, קרח עז, גלי הרים עזים, סופת אבק כבדה/סופת חול, ענן רדיואקטיבי</td>
+<td>4 שעות</td>
+</tr>
+<tr>
+<td>WV - וולקני אפר SIGMET</td>
+<td><code>WV</code></td>
+<td>ענן אפר וולקני</td>
+<td>6 שעות (יותר זמן מכיוון שנומרות האפר מתפתחות לאט יותר מאשר הסעה)</td>
+</tr>
+<tr>
+<td>WC - טרופי ציקלון SIGMET</td>
+<td><code>שֵׁרוּתִים</code></td>
+<td>ציקלון טרופי (לא חובה באזור EUR)</td>
+<td>6 שעות</td>
+</tr>
+</tbody>
+</table>
+<p>ה-IMS, כחלק מאזור ה-EUR, אינו נדרש להנפיק SIGMETs של WC - ציקלונים טרופיים באזור האחריות שלנו למעשה לעולם אינם. WV הוא נדיר אך קריטי מבחינה תפעולית כאשר הוא מתרחש: זיהוי אפר מגיע מ-VAACs (מרכזי אפר וולקני) ומפעיל WV SIGMET העוקב אחר מבנה הודעות שונה מ-WS, המכוסה במודול 4 לצד סיפון המקור.</p>
+<h2>תופעות ושער החומרה</h2>
+<p>הכלל הקריטי עבור חזאי עובד: <strong>לכל תופעה ברשימת SIGMET יש דרגת חומרה שיש לעמוד בה</strong>. סופת רעמים בפני עצמה אינה מפעילה SIGMET. דוח טורבולנציה אינו מפעיל SIGMET. על התופעה להגיע לעוצמה המוסמכת.</p>
+<figure>
+<svg role="img" viewbox="0 0 680 380" xmlns="http://www.w3.org/2000/svg">
+<title>תופעות SIGMET ודרגת החומרה הנדרשת כדי להפעיל כל אחת מהן</title>
+<desc>שמונה פסים אופקיים, אחד לכל תופעה. החצי השמאלי של כל פס מציג את שם התופעה; החצי הימני מפרט את המוקדמות הנדרשות כדי להפוך אותו ל-SIGMET ראוי. תופעות שצריכות מוקד עוצמה הן ענבר צבעוני; תופעות שאינן זקוקות לסימן נצבעות בכחול.</desc>
+<!-- Title -->
+<text fill="#1A1917" font-family="sans-serif" font-size="13" font-weight="600" text-anchor="middle" x="340" y="20">שער טריגר SIGMET - תופעה פלוס מוקדמות</text>
+<!-- Bars: y0=40, gap=40 -->
+<!-- Thunderstorms -->
+<rect fill="#F6F5F0" height="30" stroke="#1A1917" width="180" x="40" y="40"></rect>
+<text fill="#1A1917" font-family="sans-serif" font-size="13" x="50" y="60">סופת רעמים (TS)</text>
+<rect fill="#FAEEDA" height="30" stroke="#BA7517" width="400" x="220" y="40"></rect>
+<text fill="#1A1917" font-family="sans-serif" font-size="12" x="230" y="60">חייב להיות OBSC, EMBD, FRQ או SQL - עם או בלי ברד</text>
+<!-- Severe turbulence -->
+<rect fill="#F6F5F0" height="30" stroke="#1A1917" width="180" x="40" y="80"></rect>
+<text fill="#1A1917" font-family="sans-serif" font-size="13" x="50" y="100">מערבולות (TURB)</text>
+<rect fill="#FAEEDA" height="30" stroke="#BA7517" width="400" x="220" y="80"></rect>
+<text fill="#1A1917" font-family="sans-serif" font-size="12" x="230" y="100">SEV בלבד (רמה נמוכה עם רוחות sfc חזקות, רוטור או ליד זרם סילון)</text>
+<!-- Severe icing -->
+<rect fill="#F6F5F0" height="30" stroke="#1A1917" width="180" x="40" y="120"></rect>
+<text fill="#1A1917" font-family="sans-serif" font-size="13" x="50" y="140">ציפוי (ICE)</text>
+<rect fill="#FAEEDA" height="30" stroke="#BA7517" width="400" x="220" y="120"></rect>
+<text fill="#1A1917" font-family="sans-serif" font-size="12" x="230" y="140">SEV בלבד - עם או בלי גשם קופא (FZRA)</text>
+<!-- Severe mountain wave -->
+<rect fill="#F6F5F0" height="30" stroke="#1A1917" width="180" x="40" y="160"></rect>
+<text fill="#1A1917" font-family="sans-serif" font-size="13" x="50" y="180">גל הרים (MTW)</text>
+<rect fill="#FAEEDA" height="30" stroke="#BA7517" width="400" x="220" y="160"></rect>
+<text fill="#1A1917" font-family="sans-serif" font-size="12" x="230" y="180">SEV בלבד - ירידה בירידה ≥ 3.0 מ'/שניה או מערבולת SEV</text>
+<!-- Heavy DS/SS -->
+<rect fill="#F6F5F0" height="30" stroke="#1A1917" width="180" x="40" y="200"></rect>
+<text fill="#1A1917" font-family="sans-serif" font-size="13" x="50" y="220">סופת אבק / סופת חול</text>
+<rect fill="#FAEEDA" height="30" stroke="#BA7517" width="400" x="220" y="200"></rect>
+<text fill="#1A1917" font-family="sans-serif" font-size="12" x="230" y="220">HVY בלבד</text>
+<!-- Volcanic ash (no qualifier) -->
+<rect fill="#F6F5F0" height="30" stroke="#1A1917" width="180" x="40" y="240"></rect>
+<text fill="#1A1917" font-family="sans-serif" font-size="13" x="50" y="260">אפר וולקני (VA)</text>
+<rect fill="#E6F1FB" height="30" stroke="#185FA5" width="400" x="220" y="240"></rect>
+<text fill="#1A1917" font-family="sans-serif" font-size="12" x="230" y="260">כל זיהוי - אין סף חומרה</text>
+<!-- Tropical cyclone (no qualifier; not in EUR) -->
+<rect fill="#F6F5F0" height="30" stroke="#1A1917" width="180" x="40" y="280"></rect>
+<text fill="#1A1917" font-family="sans-serif" font-size="13" x="50" y="300">ציקלון טרופי (TC)</text>
+<rect fill="#E6F1FB" height="30" stroke="#185FA5" width="400" x="220" y="280"></rect>
+<text fill="#1A1917" font-family="sans-serif" font-size="12" x="230" y="300">כל - לא נדרש באזור EUR</text>
+<!-- Radioactive cloud -->
+<rect fill="#F6F5F0" height="30" stroke="#1A1917" width="180" x="40" y="320"></rect>
+<text fill="#1A1917" font-family="sans-serif" font-size="13" x="50" y="340">ענן רדיואקטיבי</text>
+<rect fill="#E6F1FB" height="30" stroke="#185FA5" width="400" x="220" y="320"></rect>
+<text fill="#1A1917" font-family="sans-serif" font-size="12" x="230" y="340">RDOACT CLD - כל זיהוי</text>
+<!-- Legend -->
+<rect fill="#FAEEDA" height="10" stroke="#BA7517" width="14" x="40" y="365"></rect>
+<text fill="#6B6A65" font-family="sans-serif" font-size="11" x="60" y="374">נדרש מוקדמות</text>
+<rect fill="#E6F1FB" height="10" stroke="#185FA5" width="14" x="200" y="365"></rect>
+<text fill="#6B6A65" font-family="sans-serif" font-size="11" x="220" y="374">כל טריגר לזיהוי</text>
+</svg>
+<figcaption>איור 1.2 - תופעות SIGMET. שורות ענבר דורשות דרגת חומרה; שורות כחולות מופעלות בכל זיהוי.</figcaption>
+</figure>
+<h3>המוקדמות TS - OBSC, EMBD, FRQ, SQL</h3>
+<p>סופות רעמים זוכות לארבעה מוקדי התאמה ברורים מכיוון שהסיכון התפעולי תלוי בשאלה אם הטייס יכול לראות את התא, ולא ברפלקטיביות של התא בלבד.</p>
+<table>
+<thead>
+<tr>
+<th>מַגְדִיר</th>
+<th>מַשְׁמָעוּת</th>
+<th>למה זה חשוב</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>OBSC</strong> - מעורפל</td>
+<td>ה-TS מוסתר על ידי אובך, עשן או חושך ולא ניתן לראותו בקלות.</td>
+<td>טייסים אינם יכולים לסטות חזותית סביב מה שהם לא יכולים לראות; רדאר הוא הכלי היחיד.</td>
+</tr>
+<tr>
+<td><strong>EMBD</strong> - מוטבע</td>
+<td>ה-TS מוטבע בתוך שכבת ענן רחבה יותר ולא ניתן לזהות אותו בקלות.</td>
+<td>הענן השכבתי שמסביב מסתיר את התא הן מהעין והן (לפעמים) מהרדאר.</td>
+</tr>
+<tr>
+<td><strong>FRQ</strong> - תדיר</td>
+<td>כיסוי מרחבי של TS &gt; 75% מהאזור הפגוע, עם הפרדה קטנה או ללא הפרדה בין התאים.</td>
+<td>אין מסדרון בטוח דרך - סטייה אינה אופציה.</td>
+</tr>
+<tr>
+<td><strong>SQL</strong> - קו סערה</td>
+<td>TS לאורך קו עם מעט מרווח או ללא רווח בין עננים בודדים.</td>
+<td>כיוון הקו מאלץ את הסטייה להיות מאונך וארוך.</td>
+</tr>
+</tbody>
+</table>
+<p>קומולונימבוס מבודד שהטייס יכול לראות ולנתב סביבו אינו מקבל SIGMET - הוא מדווח במוצר SIGWX אך לא מוזהר מפניו. המוקדמות הן מה שמסמן את המקרה שבו סטיית הטייס לבדה אינה מספקת.</p>
+<h3>מוקדמות החומרה - SEV ו-HVY</h3>
+<p>עבור מערבולות, דובדבן וגלי הרים, SIGMET דורש <strong>SEV</strong> - עוצמה בינונית שמורה ל-AIRMET (השיעור הבא). הנוסח של נספח 3 עבור מערבולות חמורות הוא ספציפי: מערבולות ברמה נמוכה הקשורה לרוחות שטח חזקות, זרימת רוטור או מערבולות (בענן או באוויר צלול CAT) ליד זרם סילון. עבור גלי הרים חמורים, הקריטריון הוא ירידה נלווית של 3.0 מ' לשנייה או יותר, או מלווה במערבולת חמורה.</p>
+<p>עבור סופת אבק וסופת חול, SIGMET דורש <strong>HVY</strong> - כבד. עוצמות נמוכות יותר נופלות ל-AIRMET או פשוט מדווחות בתחזית השגרתית.</p>
+<div class="callout callout-warning">
+<div class="callout-label">שגיאה נפוצה</div>
+  חזאים חדשים בתפקיד מנפיקים לעתים קרובות SIGMET עבור "קרח מתון בענן" או "סופות רעמים בודדות מעל ההרים המרכזיים". שניהם לא עומדים בתנאי הסף. ציפוי מתון הוא תופעת AIRMET. סופות רעמים בודדות (ISOL, ללא מוקדמות OBSC/EMBD/FRQ/SQL) הן תופעת AIRMET. סף SIGMET גבוה במתכוון - SIGMET שהונפקו יתר על המידה מדלל את האמינות של כל SIGMET אחר בזרם העלונים.
+</div>
+<h2>קריאת הסף לאחור</h2>
+<p>הדרך המהירה ביותר ליישם זאת בפעולות היא לשאול את השאלה הפוך. במקום "האם זו תופעת SIGMET?", שאל "מה עם התצפית הזו חוצה את סף SIGMET?". אם התשובה היא "כלום - אין אישור", התשובה לשאלה המקורית היא לא.</p>
+<div class="callout callout-key">
+<div class="callout-label">היוריסטיקה תפעולית</div>
+  שלושה מסננים מהירים בסדר זה:
+  <ol>
+<li><strong>תופעה ברשימה?</strong> אם לא → אין SIGMET.</li>
+<li><strong>עמידה במוקדמות או בסף?</strong> (OBSC/EMBD/FRQ/SQL עבור TS; SEV עבור TURB/ICE/MTW; HVY עבור DS/SS; כל עבור VA/RDOACT.) אם לא ← שקול AIRMET, לא SIGMET.</li>
+<li><strong>בדרך, לא רק שדה תעופה?</strong> אם רק שדה התעופה מושפע → AD WRNG, לא SIGMET.</li>
+</ol>
+</div>
+<h2>איפה השיעור הזה מסתיים ומתחיל הבא</h2>
+<p>עכשיו אתה יכול להחליט <em>אִם</em> יש צורך ב-SIGMET. שיעור 2 מכסה <em>איך לכתוב את זה</em>: כותרת ה-WMO, שדות השורה הראשונה (מחוון FIR, מספר רציף, תקופת תוקף), החלק המטאורולוגי, קואורדינטות גיאוגרפיות והודעת הביטול. לאחר מכן שיעור 3 מוריד את הסף ל-AIRMET, אשר לוכד את המקרים בעוצמה בינונית ובגובה נמוך שנופלים דרך המסנן של השיעור הזה.</p>
+<div class="lesson-summary">
+<h3>טייק אווי מפתח</h3>
+<ul>
+<li>SIGMET ו-AIRMET הם מוצרי MWO המכסים את ה-FIR; AD WRNG ו-WS WRNG הם מוצרי AFO המכסים שדה תעופה יחיד. אותה תופעה זקוקה לרוב לשניהם.</li>
+<li>SIGMET הוא אזהרה, לא תחזית. הוא מונפק רק עבור התופעות שצוינו, ורק כאשר התופעה עומדת בדרגת החומרה שלה.</li>
+<li>שלושה תת-סוגים של SIGMET: WS (כללי), WV (אפר וולקני), WC (ציקלון טרופי - לא נדרש באירו). ה <code>T1T2</code> אותיות בכותרת של WMO מזהות מי זה איזה.</li>
+<li>סופות רעמים חייבות להיות OBSC, EMBD, FRQ או SQL כדי להפעיל SIGMET. פשוט "TS מבודד" הוא תופעת AIRMET, לא תופעת SIGMET.</li>
+<li>TURB, ICE ו-MTW דורשים SEV; DS ו-SS דורשים HVY. עוצמות מתונות נופלות ל-AIRMET. ל-VA ו-RDOACT CLD אין סף חומרה - כל טריגר לזיהוי.</li>
+<li>אם התשובה ל"תופעה, מוקדמת, בדרך" היא כל דבר אחר מלבד כן/כן/כן, המוצר אינו SIGMET.</li>
+</ul>
+</div>
+</div>

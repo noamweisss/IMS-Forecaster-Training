@@ -1,0 +1,196 @@
+<?xml version='1.0' encoding='utf-8'?>
+<quiz>
+
+  <question type="multichoice">
+    <name>
+      <text>L1-Q01 - אחריות MWO לעומת AFO</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;שורה של סופות רעמים צפויה להתפתח לאורך הגבול המזרחי של ה-FIR במהלך שלוש השעות הקרובות. תאים צפויים להיות מוטמעים בתוך סיפון ענן שכבה. בן גוריון שוכן בסמוך לגבול המערבי של ה-FIR ולא צפוי להיות מושפע ישירות. איזה משרד מנפיק אילו מוצרים?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; התופעה נמצאת בדרך בתוך ה-FIR &amp;mdash; זוהי אחריותו של ה-MWO, ומוקד ה-EMBD ב-TS עומד בסף SIGMET. מכיוון ש-LLBG אינו מושפע בשדה התעופה, אין צורך ב-AD WRNG. AFOs אינם מנפיקים SIGMETs; MWOs אינם מנפיקים AD WRNGs. שני המוצרים בו זמנית הם התשובה הנכונה רק כאשר התופעה משפיעה הן על ה-FIR והן על שדה התעופה &amp;mdash; לא המקרה כאן.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;ה-MWO מנפיק SIGMET; אין צורך ב-AD WRNG מכיוון ששדה התעופה אינו מושפע.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;ה-AFO מוציא SIGMET כי בן גוריון הוא שדה התעופה הייחוס.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;גם ה-MWO וגם ה-AFO חייבים להנפיק AD WRNG, מכיוון שה-FIR ושדה התעופה חולקים את אותו תחום אחריות.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;אין צורך במוצר &amp;mdash; סופות רעמים מוטבעות על חלק ריק של ה-FIR אינן תופעת SIGMET.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L1-Q02 - סף SIGMET לסופות רעמים</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;המכ"ם העדכני ביותר מציג שני תאי סופת רעמים מבודדים מעל הרמה המרכזית, מופרדים היטב ונראים בבירור מהלוויין. שני התאים מפותחים אנכית ומייצרים ברק, אך אף אחד מהם אינו מוטבע בענן, מוסתר על ידי אובך, תכופים או חלק מקו. איזו אזהרה, אם בכלל, מתאימה?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; סופות רעמים דורשות מוקדמות &amp;mdash; OBSC, EMBD, FRQ או SQL &amp;mdash; כדי להפעיל SIGMET. תאים מבודדים שהטייסים יכולים לראות ולנתב סביבם אינם עומדים ברף הזה. ISOL/OCNL TS היא בפירוש תופעת AIRMET, לא תופעת SIGMET. הנפקת SIGMET כאן תגרום להפרעה ולדלל את האמינות של SIGMETs עתידיים.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;AIRMET, מכיוון שהתאים הם ISOL TS &amp;mdash; מתחת לסף המוקדמות של SIGMET.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;SIGMET, כי כל סופת רעמים עם ברקים עומדת בסף SIGMET.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;כלום &amp;mdash; תאים מבודדים אינם מצדיקים שום מוצר אזהרה.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;סימן WV SIGMET, מכיוון שהתאים הם הסעה ומפותחים אנכית.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L1-Q03 - סף חומרה לציפוי</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;דוח פיילוט ושדה פוטנציאל הקרח של הדגם מסכימים שניהם שהקרח מתון ברור מתרחש בשכבות בין 4,000 ל-7,000 רגל מעל ה-FIR הצפוני. גשם קופא אינו קיים. איזו אזהרה מתאימה?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; סף הדובדבן של SIGMET הוא SEV (עם או בלי FZRA). ציפוי בינוני הוא בפירוש תופעת AIRMET (MOD ICE), ללא קשר למצב הסינופטי. העובדה שגשם קפוא נעדר לא משנה כאן &amp;mdash; FZRA הוא מוקדמות מחמירות על מארז זילוף SEV, לא טריגר עצמאי. WV SIGMET מיועד לאפר וולקני בלבד.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;AIRMET עבור MOD ICE &amp;mdash; הדובדבן המתון הוא מתחת לסף חומרת SIGMET.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;סימן עבור SEV ICE, כי הדובדבן השקוף בפני עצמו הוא תמיד חמור.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;SIGMET, מכיוון שהקרח בשכבה מעל FIR הוא בהגדרה בדרך ולכן ראוי ל-SIGMET.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;סימן WV SIGMET, כי גשם קופא חסר.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L1-Q04 - זיהוי תת-סוג SIGMET מהכותרת</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;עלון נכנס מתחיל בכותרת WMO &lt;code&gt;WVXY31 LLBD 121400&lt;/code&gt;. מבלי לקרוא עוד, לאיזה תת-סוג של הודעה אתה יכול לצפות?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; מציין סוג הנתונים &lt;code&gt;T1T2&lt;/code&gt; הוא שתי האותיות הראשונות: &lt;code&gt;WV&lt;/code&gt; פירושו SIGMET עבור אפר וולקני. האותיות הנותרות הן מציין המדינה/טריטוריה (&lt;code&gt;XY&lt;/code&gt;), מספר העלון (&lt;code&gt;31&lt;/code&gt;), ומחוון המיקום ותאריך/שעה. &lt;code&gt;WS&lt;/code&gt; יהיה SIGMET רגיל, &lt;code&gt;WA&lt;/code&gt; AIRMET ו-&lt;code&gt;WC&lt;/code&gt; SIGMET טרופי-ציקלון.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;סימן לאפר וולקני (WV).&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;SIGMET סטנדרטי (WS).&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;AIRMET (WA).&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;סימן עבור ציקלון טרופי (WC).&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L1-Q05 - סף חומרת גלי הרים</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;תחזית תחזית מצביעה על פעילות גלי הרים ממזרח לרכס המרכזי. שדה המהירות האנכית של הדגם מראה ירידה בנסיגה בשיאם של קרוב ל-2.2 מ"ש, ולא צפויה חתימה נלווית של מערבולות קשות. איזו אזהרה מתאימה?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; גל הרים נחשב SEV רק כאשר הוא מלווה בירידה של 3.0 מ' לשנייה או יותר, או מערבולות חמורות. ירידה של 1.75&amp;ndash;3.0 m/s (או ערבולות מתונות) נופלות לתוך MOD MTW, שהיא תופעת AIRMET. ירידה של 2.2 מטר לשנייה נמצאת בנוחות בתוך רצועת MOD, כך ש-AIRMET נכונה &amp;mdash; אין SIGMET. "אין אזהרה בכלל" מפספס את הסיכון התפעולי לתעופה כללית מתחת ל-FL100.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;AIRMET עבור MOD MTW &amp;mdash; 2.2 מ' לשנייה הוא מתחת לסף SEV של 3.0 מ' לשנייה.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;סימן עבור SEV MTW &amp;mdash; כל גל הרים חזוי עם ירידה ניתנת למדידה מחייב SEV.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;אין צורך באזהרה מכיוון שהנסיגה למטה היא מתחת ל-3.0 מ'/שנייה.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;SIGMET, מכיוון שגלי הרים חזויים מעל הרכס המרכזי תמיד ראויים ל-SIGMET ב-IMS.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L1-Q06 - זיהוי אפר וולקני</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;הודעת ייעוץ של VAAC מדווחת על שכבת אפר וולקני דקה הנסחפת דרך ה-FIR ב-FL250. ריכוז האפר מתואר כ"נמוך" עם כיסוי חלקי. האם נדרש SIGMET?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; לאפר וולקני אין סף חומרה לפי נספח 3 &amp;mdash; &lt;em&gt;כל&lt;/em&gt; זיהוי בתוך ה-FIR מפעיל WV SIGMET. הנימוק הוא מבצעי: אפילו אפר דק או "ריכוז נמוך" עלול לפגוע במנועי טורבינות ובמשטחי בקרת מטוסים, כך שה-MWO לא מקבל להחליט אם האפר "רע מספיק". פסי ריכוז וגובה שייכים לגוף ההודעה, לא בשער ההנפקה.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;כן &amp;mdash; נדרש WV SIGMET לכל זיהוי של אפר וולקני ב-FIR, ללא קשר לריכוז.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;לא &amp;mdash; אפר בריכוז נמוך מתחת לסף SIGMET.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;כן, אבל רק בתור AIRMET &amp;mdash; אפר דק ב-FL250 הוא "רמה נמוכה" במובן של AIRMET.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;לא &amp;mdash; ייעוץ אפר הם באחריות VAAC; ה-MWO אינו מנפיק SIGMETs של אפר.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+</quiz>

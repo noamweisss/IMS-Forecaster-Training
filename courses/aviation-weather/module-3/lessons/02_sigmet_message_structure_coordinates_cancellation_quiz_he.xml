@@ -1,0 +1,196 @@
+<?xml version='1.0' encoding='utf-8'?>
+<quiz>
+
+  <question type="multichoice">
+    <name>
+      <text>L2-Q01 - פענוח T1T2 בעלון שמגיע</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;עלון AFTN מגיע עם כותרת WMO &lt;code&gt;WAXY12 LLBD 080900&lt;/code&gt;. אילו שתי עובדות לגבי הודעה זו תוכל לציין בוודאות לפני ניתוח נוסף?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;רציונל:&lt;/strong&gt; שתי האותיות הראשונות של כותרת WMO הן סוג הנתונים &lt;code&gt;T1T2&lt;/code&gt;. &lt;code&gt;WA&lt;/code&gt; מזהה את ההודעה כ-AIRMET. השדה &lt;code&gt;CCCC&lt;/code&gt; (עמדות 8&amp;ndash;11) הוא מרכז התקשורת המפיץ &amp;mdash; כאן &lt;code&gt;LLBD&lt;/code&gt; &amp;mdash; לא ה-FIR. מזהה FIR מופיע בשורה הראשונה של גוף ההודעה, לא בכותרת WMO. המספר הרציף &lt;code&gt;12&lt;/code&gt; ב-&lt;code&gt;ii&lt;/code&gt; הוא מספר עלון, לא מספר הרצף של SIGMET/AIRMET.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;זהו AIRMET (WA), ומרכז התקשורת המפיץ הוא LLBD.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;זהו SIGMET סטנדרטי (WS), ומזהה FIR הוא LLBD.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;זהו SIGMET לאפר וולקני (WV), עלון מספר 12.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;זהו ייעוץ לציקלון טרופי (WC), תקף ביום 8 בשעה 09:00 UTC.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L2-Q02 - מגבלת תקופת תוקף</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;השעה היא 09:00 UTC ביום 14. המודל מציע בתוקף שדובדבן חמור ישפיע על שכבה מעל ה-FIR המרכזי משעה 10:00 UTC לערך ועד 19:00 UTC באותו היום. מהי אסטרטגיית ההנפקה הנכונה?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; חלים שני אילוצי תזמון. ראשית, התוקף המרבי של WS SIGMET הוא 4 שעות. SIGMET בודד לא יכול להימשך בין 10:00&amp;ndash;19:00 (כלומר 9 שעות). שנית, ההנפקה לא צריכה להקדים את ההתחלה הצפויה של התופעה ביותר מ-4 שעות; 09:00 UTC היא בטווח של 4 שעות מההתחלה הצפויה בשעה 10:00, כך שניתן להנפיק את ה-SIGMET הראשון כעת. הגישה התפעולית הנכונה היא להנפיק את ה-SIGMET הראשון עם חלון של 4 שעות החל מהשעה 10:00, ואז להנפיק מחדש את המספר הרציף הבא כשהחלון הזה מסתיים והתופעה עדיין פעילה &amp;mdash; לא "לחכות עד מאוחר יותר" ולא "להאריך את התוקף".&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;הנפקת SIGMET 1 בתוקף 141000/141400 כעת; הוצא מחדש את המספר הרציף הבא כאשר כל חלון של 4 שעות יפוג בזמן שהתופעה נמשכת.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;הנפק SIGMET יחיד תקף 141000/141900 עכשיו &amp;mdash; הודעה אחת המכסה את כל הפרק הצפוי.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;המתן עד 06:00 UTC למחרת לפני הנפקת &amp;mdash; כלל זמן ההובלה אוסר על הנפקה כה רחוק.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;הנפק שני SIGMET בו-זמנית: אחד עבור 1000&amp;ndash;1400 ואחד עבור 1400&amp;ndash;1800, כל אחד עם מספר רציף משלו.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L2-Q03 - תוקף פורמט קואורדינטות</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;איזה מהמצולעים הבאים מעוצב כהלכה לפי נספח 3 לשימוש בחלק מטאורולוגי של SIGMET?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; נספח 3 מחייב רוחב/אורך במעלות שלמות או מעלות ודקות (ללא מעלות עשרוניות), כל נקודה מתחילה באות חצי הכדור (N/S/E/W), וקודקודים מופרדים על ידי רווח-מקף-רווח. האפשרות הנכונה משתמשת בנקודות בסגנון &lt;code&gt;N3623 W04515&lt;/code&gt; (מעלות+דקות, ללא מפריד) עם המפריד שנקבע. דרגות עשרוניות (&lt;code&gt;N36.4&lt;/code&gt;) אינן מתקבלות. פסיקים כמפרידים אינם מתקבלים. גם החמצה של האות ההמיספרתית בתחילת קואורדינטה אינה מתקבלת &amp;mdash; מקשי המנתח מחוץ ל-N/S או E/W המובילים.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;&lt;code&gt;N3623 W04515 - N3700 W04400 - N3645 W04300 - N3530 W04400&lt;/code&gt;&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;&lt;code&gt;N36.4 E034.7, N37.0 E035.0, N36.7 E035.3, N35.5 E034.5&lt;/code&gt;&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;&lt;code&gt;3623N 04515W - 3700N 04400W - 3645N 04300W - 3530N 04400W&lt;/code&gt;&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;&lt;code&gt;N3623 W04515 / N3700 W04400 / N3645 W04300 / N3530 W04400 / N3623 W04515&lt;/code&gt;&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L2-Q04 — בניית הודעת ביטול</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;SIGMET מספר 4 הונפק בשעה 06:00 UTC ביום 22 עם תוקף &lt;code&gt;220600/221000&lt;/code&gt; עבור EMBD TS מעל LLBG FIR. עד 08:15 UTC הסעה התפוגגה וכבר לא צפויה להתפתח מחדש בתוך חלון התוקף המקורי. מהו גוף הודעת הביטול הנכון (אחרי הכותרת של WMO)?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; ביטול SIGMET הוא בעצמו SIGMET, כאשר המספר הרציף &lt;em&gt;הבא&lt;/em&gt; (5), תקופת תוקף &lt;em&gt;חדשה&lt;/em&gt; החל ממועד ההנפקה ועד סוף החלון המקורי (220815/221000), ושורה שנייה שמתייחסת למספר המקורי שלו AND. (&lt;code&gt;CNL SIGMET 4 220600/221000&lt;/code&gt;). שימוש חוזר בתוקף המקורי (220600/221000) בשורה הראשונה של הביטול יגרום לביטול רטרואקטיבית עד 06:00. שימוש באותו מספר רציף (4) לא יהיה עלון חדש חוקי. השמטת התוקף המקורי משורת ה-CNL מותירה את ההפניה לאחור מעורפלת.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;&lt;code&gt;LLBG SIGMET 5 תקף 220815/221000 LLBD- LLBG TEL-AVIV FIR CNL SIGMET 4 220600/221000=&lt;/code&gt;&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;&lt;code&gt;LLBG SIGMET 4 תקף 220600/221000 LLBD- LLBG TEL-AVIV FIR CNL SIGMET 4=&lt;/code&gt;&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;&lt;code&gt;LLBG SIGMET 5 תקף 220600/221000 LLBD- LLBG TEL-AVIV FIR CNL SIGMET 4=&lt;/code&gt;&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;&lt;code&gt;LLBG SIGMET 5 תקף 220815/221000 LLBD- LLBG TEL-AVIV FIR CNL ALL SIGMETS=&lt;/code&gt;&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L2-Q05 - תופעה אחת לכל הודעה</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;ניתוח אחר הצהריים מראה שתי תופעות ראויות ל-SIGMET על אותו FIR: קרח חמור בענן שכבות בגובה 4,000&amp;ndash;8,000 רגל, וסופות רעמים משובצות שצפויות להתפתח מעל הגבול המזרחי. שניהם בתוך 4 השעות הקרובות. מהו דפוס ההנפקה הנכון?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; נספח 3 קובע תופעה אחת לכל SIGMET. שתי תופעות ראויות ל-SIGMET פירושן שני SIGMETs &amp;mdash; כל אחד עם מספר רציף משלו, מצולע משלו ותנועת תחזית משלו. שילובם להודעה בודדת יוצר אובייקט מזג אוויר דו-משמעי שמנתחים במורד הזרם אינם יכולים לפרש. בחירה רק ב"חמור יותר" מבין השניים משאירה את השני ללא אזהרה. הנפקת SIGMET יחיד עבור "מזג אוויר שלילי כללי" אינה מוצר מוגדר.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;שני SIGMETs &amp;mdash; אחד עבור SEV ICE ואחד עבור EMBD TS, כל אחד עם מספר רציף משלו.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;SIGMET אחד המפרט גם את SEV ICE וגם את EMBD TS בחלק המטאורולוגי.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;סימן אחד עבור התופעה החמורה יותר; השני נלכד בתחזית השגרתית.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;SIGMET משולב יחיד עם קוד התופעה המילולי &lt;code&gt;MULT&lt;/code&gt; ותיאור טקסט חופשי של שניהם.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L2-Q06 - ביטול מול הנפקה מחדש</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;SIGMET 7 עבור מערבולות חמורות מעל ה-LLBG FIR תקף 1200/1600. בשעה 15:45 UTC הסערה עדיין מדווחת והיא צפויה להימשך עוד 2&amp;ndash;3 שעות. איזו פעולה על ה-MWO לנקוט רגע לפני שה-SIGMET יפוג?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; הביטול שמור למקרה בו התופעה הסתיימה (או אינה צפויה עוד) במסגרת התוקף המקורי. אם התופעה נמשכת יותר מתוקף ה-SIGMET, הפעולה הנכונה היא להוציא SIGMET חדש &amp;mdash; אותה תופעה, המספר הרציף הבא (8), חלון תוקף חדש של 4 שעות החל מ-1600. הנפקת CNL בזמן שהתופעה עדיין פעילה תטעה את הצרכנים לחשוב שהסכנה חלפה. הארכת ה-SIGMET המקורי מעבר לתוקפו מפרה את תקרת 4 השעות. שום דבר לא משאיר את המפגע ללא אזהרה לאחר 1600.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;הנפק SIGMET 8 חדש עם תוקף חדש של 4 שעות (לדוגמה, 1600/2000); אל תבטל את SIGMET 7.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;הפק הודעת CNL SIGMET 7 כדי שהצרכנים ידעו שה-SIGMET הקיים "מתגלגל".&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;שנה את התוקף של SIGMET 7 ל-&lt;code&gt;1200/1900&lt;/code&gt;.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;אל תנקוט פעולה &amp;mdash; התוקף יפוג בשעה 1600 והסכנה מועברת לאחר מכן באמצעות דוחות טייס.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+</quiz>

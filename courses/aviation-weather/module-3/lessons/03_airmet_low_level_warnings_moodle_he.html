@@ -1,0 +1,305 @@
+<style>
+/*
+ * IMS Course Factory — Lesson Design System
+ *
+ * All rules are scoped to `.ims-lesson` so the styles can be injected into
+ * a host page (Moodle, in particular) without leaking onto the host's chrome
+ * and without the host's theme overriding lesson typography.
+ *
+ * Standalone lesson HTML wraps the entire body in <div class="ims-lesson">.
+ * Moodle body-fragment HTML does the same. The single rule below keeps the
+ * standalone preview's <body> background consistent without leaking into
+ * Moodle pages.
+ */
+
+.ims-lesson {
+  --bg: #ffffff;
+  --surface: #f6f5f0;
+  --border: #e2dfd6;
+  --text: #1a1917;
+  --muted: #6b6a65;
+  --accent: #185fa5;
+  --accent-light: #e6f1fb;
+  --note-bg: #e1f5ee;
+  --note-border: #0F6E56;
+  --warn-bg: #faeeda;
+  --warn-border: #BA7517;
+  --key-bg: #EEEDFE;
+  --key-border: #534AB7;
+  --danger-bg: #fcebeb;
+  --danger-border: #A32D2D;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .ims-lesson {
+    --bg: #1a1917;
+    --surface: #242320;
+    --border: #3a3835;
+    --text: #e8e6df;
+    --muted: #9a9890;
+    --accent-light: #042c53;
+    --note-bg: #04342c;
+    --warn-bg: #412402;
+    --key-bg: #26215c;
+  }
+}
+
+.ims-lesson h1 { font-size: 1.8rem; font-weight: 600; margin-bottom: 0.2rem; line-height: 1.2; color: var(--text); }
+.ims-lesson h2 { font-size: 1.25rem; font-weight: 600; margin-top: 2.5rem; padding-bottom: 0.4rem;
+  border-bottom: 1.5px solid var(--border); color: var(--text); }
+.ims-lesson h3 { font-size: 1.05rem; font-weight: 600; margin-top: 1.75rem; color: var(--text); }
+.ims-lesson p { margin: 0.7rem 0; max-width: 72ch; }
+.ims-lesson figure { margin: 2rem 0; }
+.ims-lesson figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 0.6rem;
+  font-style: italic; text-align: center; }
+.ims-lesson svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+.ims-lesson img { max-width: 100%; height: auto; }
+.ims-lesson table { border-collapse: collapse; width: 100%; margin: 1.5rem 0; font-size: 0.9rem; }
+.ims-lesson th { background: var(--accent); color: #fff; padding: 0.55rem 0.9rem; text-align: left; }
+.ims-lesson td { padding: 0.5rem 0.9rem; border-bottom: 1px solid var(--border); }
+.ims-lesson tr:nth-child(even) td { background: var(--surface); }
+.ims-lesson .callout { border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+.ims-lesson .callout-note    { background: var(--note-bg);   border-left: 4px solid var(--note-border); }
+.ims-lesson .callout-warning { background: var(--warn-bg);   border-left: 4px solid var(--warn-border); }
+.ims-lesson .callout-key     { background: var(--key-bg);    border-left: 4px solid var(--key-border); }
+.ims-lesson .callout-danger  { background: var(--danger-bg); border-left: 4px solid var(--danger-border); }
+.ims-lesson .callout-label { font-weight: 700; font-size: 0.78rem; text-transform: uppercase;
+  letter-spacing: 0.06em; margin-bottom: 0.35rem; }
+.ims-lesson .objectives { background: var(--surface); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+.ims-lesson .objectives ul { margin: 0.5rem 0 0; padding-left: 1.4rem; }
+.ims-lesson .lesson-summary { background: var(--accent-light); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 2.5rem 0 1rem; }
+.ims-lesson .lesson-summary h3 { margin-top: 0; color: var(--accent); font-size: 1rem; }
+.ims-lesson .image-needed { border: 2px dashed var(--border); border-radius: 8px;
+  padding: 1.5rem; margin: 1.5rem 0; text-align: center;
+  color: var(--muted); font-size: 0.9rem; background: var(--surface); }
+.ims-lesson .meta { color: var(--muted); font-size: 0.88rem; margin-bottom: 1.75rem; }
+.ims-lesson .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.5rem; }
+</style>
+<div class="ims-lesson">
+<p class="breadcrumb">מודול 3 / שיעור 3</p>
+<h1>AIRMET - אזהרות ברמה נמוכה</h1>
+<div class="objectives">
+<strong>בסוף שיעור זה תוכל:</strong>
+<ul>
+<li>החל את כלל היקף AIRMET (מתחת ל-FL100, בדרך, לא מכוסה כבר על ידי תחזית קיימת ברמה נמוכה).</li>
+<li>זהה את רשימת התופעות של AIRMET ואת מוקד העוצמה הנדרש עבור כל אחת מהן.</li>
+<li>הבדיל את מוקדי הכיסוי המרחבי ISOL (&lt;50%), OCNL (50-75%) ו-FRQ (&gt;75%).</li>
+<li>בחר בין הנפקת SIGMET, AIRMET או ללא הודעה כלל בהינתן תרחיש תחזית קרוב לסף.</li>
+</ul>
+</div>
+<h2>למה מיועד AIRMET</h2>
+<p>AIRMET קולט את הסכנות בדרך ש-SIGMET משאיר בכוונה על השולחן: עוצמות מתונות, תכונות ברמה נמוכה מתחת ל-FL100, ותופעות שמשפיעות בעיקר על תעופה כללית ומטוסי רוטור. הנוסח נספח 3 מדויק:</p>
+<div class="callout callout-note">
+<div class="callout-label">הגדרה של נספח 3 (פרפראזה)</div>
+  AIRMET הוא מידע שהונפק על ידי MWO בנוגע להתרחשות או התרחשות צפויה של תופעות מזג אוויר מוגדרות בדרך שעלולות להשפיע על הבטיחות של <strong>ברמה נמוכה</strong> פעולות מטוסים (מתחת לרמת טיסה 100) ו <strong>שלא נכלל כבר בתחזית</strong> הונפק עבור טיסות ברמה נמוכה ב-FIR או תת-אזור שלו.
+</div>
+<p>שלושה מרכיבים של הגדרה זו חשובים מבחינה תפעולית.</p>
+<p><strong>ברמה נמוכה</strong> פירושו מתחת ל-FL100. אם התופעה היא כולה מעל FL100, AIRMET אינו המוצר המתאים - קחו בחשבון את סף SIGMET או את תרשים SIGWX. אם הוא משתרע על FL100, AIRMET מכסה את החלק למטה.</p>
+<p><strong>עדיין לא נכלל בתחזית</strong> הוא הסעיף המבולבל ביותר בהגדרה. זה לא אומר "אל תנפיק AIRMET אם יש TAF". זה אומר: אם תחזית האזור השגרתי ברמה הנמוכה (ה-GAMET באזורים שמנפיקים אחד, או ה-SIGWX ברמה נמוכה) כבר מציגה את התופעה בעוצמת AIRMET, ה-AIRMET מיותר ואינו מונפק. בישראל, בה לא מייצרים GAMET, פטור זה כמעט ואינו תקף ו-AIRMET מונפקים בכל פעם שמתקיימים התופעה והקריטריונים של העוצמה.</p>
+<p><strong>תופעות מוגדרות</strong> — רשימת AIRMET קבועה. מזג אוויר לא נוח שאינו ברשימה לא הופך ל-AIRMET לא משנה עד כמה הוא מרגיש רלוונטי מבחינה מבצעית.</p>
+<h2>רשימת תופעות AIRMET</h2>
+<table>
+<thead>
+<tr>
+<th>תוֹפָעָה</th>
+<th>קוד</th>
+<th>סַף</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>סופות רעמים</td>
+<td><code>ISOL TS</code> / <code>OCNL TS</code></td>
+<td>סופות רעמים בודדות או מזדמנות (אין מוקדמות &gt; 75% כיסוי)</td>
+</tr>
+<tr>
+<td>הִתקָרְחוּת</td>
+<td><code>MOD ICE</code></td>
+<td>ציפוי מתון (מלבד בענן הסעה)</td>
+</tr>
+<tr>
+<td>מְעַרבּוֹלֶת</td>
+<td><code>MOD TURB</code></td>
+<td>מערבולת מתונה (רמה נמוכה עם רוחות sfc חזקות, רוטור או CAT)</td>
+</tr>
+<tr>
+<td>גלי הרים</td>
+<td><code>MOD MTW</code></td>
+<td>דראפט ירידה 1.75-3.0 מ'/שניה או מערבולת מתונה נלווית</td>
+</tr>
+<tr>
+<td>רוח פני השטח</td>
+<td><code>SFC WSPD ≥30KT</code></td>
+<td>רוחות משטח מתמשכות ב-30 קראט או מעל</td>
+</tr>
+<tr>
+<td>תִקרָה</td>
+<td><code>BKN/OVC &lt;1000FT</code></td>
+<td>תקרת ענן מתחת ל-1000 רגל על ​​פני שטח מוגדר</td>
+</tr>
+<tr>
+<td>רְאוּת</td>
+<td><code>VIS &lt;5KM</code></td>
+<td>ראות מתחת ל-5 ק"מ על פני שטח מוגדר</td>
+</tr>
+<tr>
+<td>ערפול הרים</td>
+<td><code>MT OBSC</code></td>
+<td>טשטוש נרחב של שטח הררי</td>
+</tr>
+</tbody>
+</table>
+<p>שימו לב שסופות רעמים, דובדבן, מערבולות וגלי הרים מופיעים ברשימות SIGMET וגם ברשימות AIRMET - ההבדל הוא במוקד העוצמה. ארבע התופעות הנותרות (רוח פני השטח, תקרה, ראות, ערפול הרים) הן AIRMET בלבד: אין מקבילה ל-SIGMET מכיוון שהן מטבען ברמה נמוכה ומשפיעות על תעופה כללית ועל מטוסי רוטור ולא על מטוסי נוסעים.</p>
+<h2>מוקדמות כיסוי מרחבי - ISOL, OCNL, FRQ</h2>
+<p>עבור תופעות של סופות רעמים, AIRMET משתמש בשלושה מתארים של כיסוי מרחבי המכמתים איזה חלק מהאזור הפגוע תפוס על ידי התאים. השברים מוגדרים בזמן קבוע או בתקופת התוקף.</p>
+<figure>
+<svg role="img" viewbox="0 0 680 240" xmlns="http://www.w3.org/2000/svg">
+<title>מתארי כיסוי מרחבי ISOL, OCNL ו-FRQ</title>
+<desc>שלושה מלבנים כל אחד מייצג את אותו אזור FIR, עם יותר ויותר תאי סופת רעמים. הראשון מציג תאים מבודדים מפוזרים המכסים פחות מ-50 אחוז מהשטח. השני מציג בערך שני שליש כיסוי. השלישי מציג תאים צפופים המכסים יותר מ-75 אחוז מהשטח, למעשה ללא הפרדה ביניהם.</desc>
+<!-- ISOL panel -->
+<rect fill="#F6F5F0" height="140" stroke="#E2DFD6" stroke-width="1.5" width="180" x="40" y="40"></rect>
+<text fill="#185FA5" font-family="sans-serif" font-size="14" font-weight="600" text-anchor="middle" x="130" y="30">ISOL - &lt; 50%</text>
+<!-- A few scattered cells -->
+<circle cx="70" cy="75" fill="#185FA5" r="10"></circle>
+<circle cx="130" cy="100" fill="#185FA5" r="9"></circle>
+<circle cx="180" cy="130" fill="#185FA5" r="11"></circle>
+<circle cx="90" cy="155" fill="#185FA5" r="8"></circle>
+<text fill="#6B6A65" font-family="sans-serif" font-size="11" text-anchor="middle" x="130" y="200">תאים בודדים</text>
+<text fill="#6B6A65" font-family="sans-serif" font-size="11" text-anchor="middle" x="130" y="215">פערים גדולים לסטייה</text>
+<!-- OCNL panel -->
+<rect fill="#F6F5F0" height="140" stroke="#E2DFD6" stroke-width="1.5" width="180" x="250" y="40"></rect>
+<text fill="#BA7517" font-family="sans-serif" font-size="14" font-weight="600" text-anchor="middle" x="340" y="30">OCNL - 50-75%</text>
+<!-- Moderately filled cells -->
+<circle cx="275" cy="65" fill="#BA7517" r="12"></circle>
+<circle cx="310" cy="95" fill="#BA7517" r="14"></circle>
+<circle cx="360" cy="80" fill="#BA7517" r="11"></circle>
+<circle cx="395" cy="115" fill="#BA7517" r="13"></circle>
+<circle cx="290" cy="140" fill="#BA7517" r="12"></circle>
+<circle cx="345" cy="155" fill="#BA7517" r="11"></circle>
+<circle cx="395" cy="155" fill="#BA7517" r="10"></circle>
+<text fill="#6B6A65" font-family="sans-serif" font-size="11" text-anchor="middle" x="340" y="200">הרבה תאים, כמה פערים</text>
+<text fill="#6B6A65" font-family="sans-serif" font-size="11" text-anchor="middle" x="340" y="215">חריגה עדיין אפשרית</text>
+<!-- FRQ panel -->
+<rect fill="#F6F5F0" height="140" stroke="#E2DFD6" stroke-width="1.5" width="180" x="460" y="40"></rect>
+<text fill="#993C1D" font-family="sans-serif" font-size="14" font-weight="600" text-anchor="middle" x="550" y="30">FRQ - &gt; 75%</text>
+<!-- Densely packed cells -->
+<circle cx="482" cy="62" fill="#993C1D" r="16"></circle>
+<circle cx="515" cy="80" fill="#993C1D" r="17"></circle>
+<circle cx="548" cy="64" fill="#993C1D" r="14"></circle>
+<circle cx="582" cy="80" fill="#993C1D" r="16"></circle>
+<circle cx="615" cy="62" fill="#993C1D" r="13"></circle>
+<circle cx="492" cy="110" fill="#993C1D" r="15"></circle>
+<circle cx="525" cy="125" fill="#993C1D" r="17"></circle>
+<circle cx="565" cy="110" fill="#993C1D" r="15"></circle>
+<circle cx="600" cy="125" fill="#993C1D" r="14"></circle>
+<circle cx="500" cy="155" fill="#993C1D" r="16"></circle>
+<circle cx="540" cy="160" fill="#993C1D" r="14"></circle>
+<circle cx="585" cy="150" fill="#993C1D" r="16"></circle>
+<circle cx="620" cy="160" fill="#993C1D" r="12"></circle>
+<text fill="#6B6A65" font-family="sans-serif" font-size="11" text-anchor="middle" x="550" y="200">מעט או ללא הפרדה</text>
+<text fill="#6B6A65" font-family="sans-serif" font-size="11" text-anchor="middle" x="550" y="215">אין מסדרון בטוח</text>
+</svg>
+<figcaption>איור 3.1 - מתארי כיסוי מרחבי. ISOL ו-OCNL הם מוקדי AIRMET; FRQ מקדם את ההודעה ל-SIGMET (לצד OBSC, EMBD ו-SQL).</figcaption>
+</figure>
+<div class="callout callout-key">
+<div class="callout-label">הגבול שחשוב מבחינה מבצעית</div>
+  ISOL (&lt;50%) ו-OCNL (50-75%) חיים בטריטוריית AIRMET. FRQ (&gt;75%) עובר ל-SIGMET. לכן הבחירה בין AIRMET ו-SIGMET לאזור של סופות רעמים מונעת ישירות על ידי חלק הכיסוי - לא על ידי עוצמת התא, קצב הברקים או רפלקטיביות המכ"ם.
+</div>
+<h2>AIRMET לעומת SIGMET, תופעה אחר תופעה</h2>
+<p>עבור ארבע התופעות המופיעות בשתי הרשימות, טבלת הסף היא החפץ השימושי ביותר שיש בהישג יד במהלך משמרת.</p>
+<table>
+<thead>
+<tr>
+<th>תוֹפָעָה</th>
+<th>סף AIRMET</th>
+<th>סף SIGMET</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>סופות רעמים</td>
+<td><code>ISOL</code> אוֹ <code>OCNL</code> (כיסוי &lt; 75%)</td>
+<td><code>OBSC</code>, <code>EMBD</code>, <code>FRQ</code> (&gt; 75%), או <code>SQL</code></td>
+</tr>
+<tr>
+<td>הִתקָרְחוּת</td>
+<td><code>MOD ICE</code></td>
+<td><code>SEV ICE</code> (עם או בלי FZRA)</td>
+</tr>
+<tr>
+<td>מְעַרבּוֹלֶת</td>
+<td><code>MOD TURB</code></td>
+<td><code>SEV TURB</code></td>
+</tr>
+<tr>
+<td>גל הר</td>
+<td><code>MOD MTW</code> (דראפט ירידה של 1.75-3.0 מ'/שניה או טורב MOD)</td>
+<td><code>SEV MTW</code> (דראפט ירידה ≥ 3.0 מטר/שניה או טורב SEV)</td>
+</tr>
+</tbody>
+</table>
+<p>ציפוי הסעה (ציפוי בענן cumulform) אינו נכלל במפורש מ-MOD ICE ב-AIRMET - מקרה זה נתפס על ידי סופת הרעמים AIRMET עצמה, מכיוון שסיכון הדובדבן אינו ניתן להפרדה מההסעה.</p>
+<h2>תופעות AIRMET בלבד</h2>
+<p>לארבע תופעות AIRMET אין מקבילה ל-SIGMET. כולם מאפיינים של הסביבה ברמה נמוכה.</p>
+<h3>רוחות פני שטח מתמשכות ≥ 30 קראט</h3>
+<p>אם רוח פני השטח המתמשכת (ממוצע של 10 דקות) על פני תת-אזור מוגדר של ה-FIR צפויה להגיע או לחרוג מ-30 ק"ט, מונפק AIRMET. זה נבדל מאזהרות שדה תעופה מונעות משבים (שיעור 4) - ה-AIRMET מתייחס להשפעת המסלול על תעופה כללית על פני שטח פתוח, לא לסיכון הספציפי לשדה התעופה להמראה ונחיתה.</p>
+<h3>תקרות מתחת ל-1000 רגל</h3>
+<p>כאשר חזוי ענן נרחב עם בסיס מתחת ל-1000 רגל AGL המכסה מספיק מה-FIR כדי שהתנועה ברמה נמוכה של VFR תיפגע, מונפק AIRMET. זהו קריטריון כיסוי כמו קריטריון גובה - ענן נמוך מבודד מעל נקודה מסוימת מדווח ב-TAF/METAR, לא ב-AIRMET.</p>
+<h3>ראות מתחת ל-5 ק"מ</h3>
+<p>עבור ראות, סף AIRMET הוא 5 ק"מ על פני שטח נרחב מתחת ל-FL100. הסיבה חשובה פחות מהתוצאה: ערפל, ערפל, אובך, עשן, אבק נושב ומשקעים יורדים כולם זכאים אם הם מביאים נראות לתוך הלהקה הזו.</p>
+<h3>ערפול הרים נרחב</h3>
+<p>כאשר חלק ניכר מהשטח ההררי ב-FIR מוסתר על ידי ענן או משקעים, AIRMET (<code>MT OBSC</code>) מונפקת. זה תופס את המקרה שבו ההרים עצמם ניתנים לטיסה באופן עקרוני, אבל הראות בצד השפל או השיפוע הופכת את המודעות לשטח בלתי אפשרית - סיכון גדול עבור מטוסי רוטור ותעופה כללית.</p>
+<h2>תוקף, זמן אספקה ​​ומבנה</h2>
+<p>הכללים המבניים עוברים כמעט מילה במילה מ-SIGMET:</p>
+<div class="callout callout-warning">
+<div class="callout-label">כללים מבניים של AIRMET</div>
+<ul>
+<li>תוקף מקסימלי הוא <strong>4 שעות</strong>, זהה ל-WS SIGMET.</li>
+<li>ההנפקה מקדימה את ההתחלה הצפויה של התופעה ב <strong>לא יותר מ-4 שעות</strong>.</li>
+<li><strong>תופעה אחת לכל הודעה</strong>; אם שתי תופעות ראויות ל-AIRMET מתקיימות במקביל, הנפק שני AIRMETs.</li>
+<li>שימוש בכותרת WMO <code>WA</code> כמציין סוג הנתונים (לעומת <code>WS</code>/<code>WV</code>/<code>שֵׁרוּתִים</code> עבור תת-סוגי SIGMET).</li>
+<li>תחביר קו ראשון וחלק מטאורולוגי הם <strong>זהה ל-SIGMET</strong>, עם המילה <code>AIRMET</code> החליף <code>SIGMET</code>.</li>
+<li>הביטול פועל לפי אותו דפוס: המספר הרציף הבא, תוקף חדש, שורה שנייה <code>CNL AIRMET &lt;n&gt; YYGGgg/YYGGgg</code>.</li>
+</ul>
+</div>
+<p>מכיוון שה-AIRMET יורש את מבנה ההודעות SIGMET, הכיסוי של שיעור 2 של כותרת WMO, תקופת תוקף, מצולעי רוחב/אורך וביטול חל ללא שינוי. הדבר היחיד ששונה הוא מציין סוג הנתונים והמילה המופיעה בשורה הראשונה של הגוף.</p>
+<p>AIRMETs מונפקים עבור FIR אחד. במידת הצורך, ניתן לחלק FIR לתת-אזורים, כאשר AIRMETs נפרדים מונפקים עבור כל תת-אזור - שימושי כאשר אותה תופעה משפיעה, למשל, על החוף הצפוני ולא על הפנים הדרומי. ה-AIRMET של כל תת-אזור נושא את המספר הרציף שלו.</p>
+<div class="callout callout-note">
+<div class="callout-label">לאחר ההנפקה</div>
+  נספח 3 מחייב את ה-MWO "לשמור על השגחה" על התופעה ולהוציא AIRMET מעודכן בעת ​​הצורך. בפועל זה אומר: אם התחזית הופכת לשונה משמעותית ממה שמתאר ה-AIRMET הפעיל (שינויי עוצמה, שינויי שטח, שינויים בתזמון ב-&gt; 2 שעות), פרסם עדכון. אם התופעה מסתיימת מוקדם מהצפוי, בטל.
+</div>
+<h2>ההחלטה במבצעים</h2>
+<p>השגיאה התפעולית הנפוצה ביותר בתחום זה היא קידום-יתר או תת-קידום: הנפקת SIGMET עבור משהו שאמור להיות AIRMET, או להיפך. הדרך הנקייה להחליט היא רציפה:</p>
+<ol>
+<li>האם התופעה נמצאת באחת מהרשימות בכלל? אם לא, אין הודעה.</li>
+<li>האם סף ה-SIGMET עומד (דרגת חומרה או כיסוי &gt; 75%)? אם כן, SIGMET.</li>
+<li>האם קיים סף AIRMET (עוצמה מתונה, כיסוי ISOL/OCNL, &lt;5 ק"מ מול, &lt;1000 רגל תקרה, רוח ≥30 kt sfc, MT OBSC)? אם כן, AIRMET.</li>
+<li>אחרת: דיווח בתחזית השגרתית; אין SIGMET, אין AIRMET.</li>
+</ol>
+<div class="callout callout-danger">
+<div class="callout-label">מהמורת נפוצה</div>
+  חזאים בלחץ לפעמים "מסכים" מקרה גבולי ל-SIGMET מכיוון שההשלכות של תת אזהרה מרגישות גרועות יותר מאשר אזהרת יתר. זה לא נכון. הנפקת יתר של SIGMET מכשירה את חברות התעופה והשולחים להוזיל אותם, מה שעולה בחיי אדם כשמגיע אירוע אמיתי בדרגת SIGMET. מבנה הסף קיים מסיבה כלשהי - כבד אותו.
+</div>
+<div class="lesson-summary">
+<h3>טייק אווי מפתח</h3>
+<ul>
+<li>AIRMET תופס סכנות בדרך מתחת ל-FL100 בעוצמות מתונות - המקרים שנופלים דרך מסנן SIGMET.</li>
+<li>שמונה תופעות: TS (ISOL/OCNL), MOD ICE, MOD TURB, MOD MTW, רוח משטח מתמשכת ≥ 30 kt, תקרות &lt; 1000 רגל, ראות &lt; 5 ק"מ, וסתימת הרים.</li>
+<li>מוקדי כיסוי מרחבי: ISOL &lt; 50%, OCNL 50-75%, FRQ &gt; 75%. FRQ מקדם את ההודעה ל-SIGMET.</li>
+<li>רוח פני השטח, תקרה, ראות וטשטוש הרים הם AIRMET בלבד - אין להם מקבילה ל-SIGMET.</li>
+<li>כללים מבניים זהים ל-SIGMET: תוקף מקסימלי של 4 שעות, זמן אספקה ​​של 4 שעות, תופעה אחת לכל הודעה. שימושים בכותרת <code>WA</code>.</li>
+<li>סעיף "לא כבר בתחזית" פוטר את AIRMET רק כאשר תחזית GAMET או אזור ברמה נמוכה כבר מציגה את התופעה בעוצמת AIRMET. בישראל פטור זה חל רק לעתים רחוקות.</li>
+</ul>
+</div>
+</div>

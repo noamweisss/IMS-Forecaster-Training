@@ -1,0 +1,228 @@
+<?xml version='1.0' encoding='utf-8'?>
+<quiz>
+
+  <question type="multichoice">
+    <name>
+      <text>L4-Q01 — סף מרחק של סופת רעמים AD WRNG</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;תא סופת רעמים עז נצפה במכ"ם 22 ק"מ דרומית-מזרחית למרכז דפוס המסלול LLBG, נע לאט מערבה. התא מייצר ברד באורך 4 ס"מ. התא צפוי להתקרב לא יותר מ-18 ק"מ למרכז המסלול במהלך השעתיים הקרובות. איזו פעולת AD WRNG נכונה?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; סף IMS AD WRNG עבור TS/CB הוא "CB בתוך 16 ק"מ ממרכז דפוס המסלול". תא שצפוי להתקרב לא יותר מ-18 ק"מ אינו עומד בסף הזה, ולכן לא נדרשת AD WRNG עבור TS &amp;mdash; למרות שהתא חמור ומייצר ברד. סף גודל הברד (&amp;ge; 2 ס"מ) הוא תכונה של תאי CB &lt;em&gt;בשדה התעופה&lt;/em&gt;; הוא אינו מרחיב כשלעצמו את קריטריון המרחק של 16 ק"מ TS. הנפקת AD WRNG בכל מקרה תזהיר יתר על המידה ותבזבז אמינות; המפגע בדרך נקלט בנפרד על ידי SIGMET/AIRMET.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;אין AD WRNG עבור TS &amp;mdash; התא נשאר מחוץ לסף IMS של 16 ק"מ. שקול את SIGMET/AIRMET עבור הסכנה שבדרך.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;הנפק מיד AD WRNG מכיוון ש-4 ס"מ ברד הוא הרבה מעל סף ברד חמור של 2 ס"מ.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;הנפק AD WRNG עבור "מתקרב ל-CB" מכיוון שהמרחק של התא הולך ופוחת.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;הנפק AD WRNG עם סף מרחק של 24 ק"מ, רדיוס האדיבות של IMS גדול יותר.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L4-Q02 - סף רוח: ממוצע לעומת משב רוח</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;ב-LLBG רוח פני השטח הממוצעת של 10 דקות היא 17 קראט, אבל המשב הגבוה ביותר של 3 שניות ב-10 הדקות האחרונות הוא 33 קראט. התנאים צפויים להימשך במשך 4 השעות הקרובות. מה נכון?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; קריטריון הרוח של IMS כולל שני טריגרים עצמאיים שמצטרפים אליהם "ו/או": ממוצע של 10 דקות &amp;gt; 20 קראט או משבי רוח &amp;gt; 30 קראט. המשב (33 קראט) הוא מעל הסף שלו, ולכן נדרשת הנפקת AD WRNG ללא קשר לממוצע. הממוצע של 17 קראט הוא מתחת ל-20 קראט ולא היה מופעל מעצמו. המתנה שהממוצע יעלה גם על 20 קראט פירושו מניעת האזהרה במהלך אותם תנאים שהיא קיימת כדי לסמן.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;הנפק AD WRNG &amp;mdash; סף המשב (&amp;gt; 30 kt) עומד ללא קשר לממוצע.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;אל תנפיק &amp;mdash; הממוצע של 10 דקות חייב לעלות על 20 kt כדי שקריטריון הרוח יתקיים.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;הנפק WS WRNG במקום זאת, מכיוון שמשבים מעל 30 קראט הם גזירת רוח בהגדרה.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;הנפק רק AIRMET, כי רוחות פני השטח הן תופעה בדרך.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L4-Q03 - מחוון בסיס WS WRNG</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;צוות טיסה ביציאה מ-RWY26 ב-LLBG מתקשר ל-TWR ב-0512Z כדי לדווח על גזירת רוח מתונה בגובה 700 רגל בטיפוס החוצה. החזאי מאשר מצב סינופטי התומך בהמשך הגזירה. מהו מחוון הבסיס הנכון ב-WS WRNG שנוצר, ומה המשמעות?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;רציונל:&lt;/strong&gt; אוצר המילים של WS WRNG מבחין בין &lt;code&gt;FCST&lt;/code&gt; (שיפוט החזאי), &lt;code&gt;OBS&lt;/code&gt; (זיהוי ברור בנתוני MET כגון AMDAR, זונדה, פרופילי), ו&lt;code&gt;REP AT&lt;/code&gt; (דוח טייס, ואחריו השעה). הקריאה של הצוות היא דוח טייס, ולכן יש להנפיק את האזהרה עם &lt;code&gt;REP AT 0512Z&lt;/code&gt;. &lt;code&gt;FCST&lt;/code&gt; יהיה מתאים אם לא הייתה תצפית טייס. &lt;code&gt;OBS&lt;/code&gt; יהיה מתאים אם הטריגר היה נתונים ממכשירים (למשל, AMDAR), ולא דוח קולי של הצוות. שילוב של FCST ו-OBS אינו אופציה מוגדרת.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;&lt;code&gt;REP AT 0512Z&lt;/code&gt; &amp;mdash; האזהרה מבוססת על דוח טייס.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;&lt;code&gt;FCST&lt;/code&gt; &amp;mdash; שיקול דעתו של החזאי לפיו התנאים תומכים בהמשכיות הגזירה היא מה שמפעיל את האזהרה.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;&lt;code&gt;OBS&lt;/code&gt; &amp;mdash; קריאת הטייס היא תצפית מטאורולוגית.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;משולב &lt;code&gt;FCST OBS&lt;/code&gt; &amp;mdash; גם שיקול דעת החזא וגם תצפית חלים.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L4-Q04 - קריטריון סילון ברמה נמוכה</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;זונדה של לילה ב-LLBG מציגה רוח עילי של 4 ק"ט וסילון של 22 ק"ט ב-1100 רגל AGL. המצב הסינופטי תומך בהיפוך לילי יציב. מהי פעולת ה-IMS הנכונה?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; הטריגר הראשי של IMS WS WRNG LLJ הוא peak &amp;ge; 30 ק"ט עם ציר מתחת ל-2000 רגל. 22 ק"ט לא עומדים בטריגר הראשי. עם זאת, ההבדל בין רוח פני השטח (4 ק"ט) ל-500 מ' (כ-1640 רגל וקרוב לרמת הסילון של 1100 רגל) הוא 18 קראט, החורג מהמחוון התומך של 15 קראט. עם תקציר תואם, הנחיית IMS אומרת ש&lt;em&gt;ניתן&lt;/em&gt; להתייחס לזה כמספיק כדי להנפיק WS WRNG עבור ה-LLJ. שום דבר לא מזהיר; הנפקת AIRMET מקטלגת באופן שגוי תופעה בקנה מידה של תעופה כדרך; הנפקת AD WRNG עבור רוח פני השטח מחמיצה את אופי הגזירה של המפגע.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;הנפק WS WRNG &amp;mdash; את &amp;gt; הפרש רוח של 15 קראט משטח ל-500 מ' עם סינופטיק תומך מספיק בהנחיית IMS.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;אל תנפיק &amp;mdash; שיא הסילון הוא מתחת לסף העיקרי של 30 קראט.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;הנפק AIRMET עבור MOD TURB &amp;mdash; ה-LLJ הוא תופעה בדרך.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;הנפק AD WRNG עבור רוח פני השטח, למרות שמהירות פני השטח היא רק 4 קילו.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L4-Q05 - תיאום עם SIGMET / AIRMET</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;תאי הסעה מעל הרמה המרכזית מייצרים OCNL TS על פני אותו תת-אזור של ה-FIR, ותא אחד צפוי לעקוב עד 12 ק"מ ממרכז המסלול של LLBG במהלך 90 הדקות הבאות. אילו מוצרים צריך להנפיק IMS?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; שני סיכונים ברורים פועלים. OCNL TS ברחבי תת-האזור היא תופעת AIRMET (50&amp;ndash;75% כיסוי נופל ל-OCNL, שהוא מתחת לסף SIGMET FRQ). מעקב התא עד למרחק של 12 ק"מ ממרכז המסלול עומד בסף IMS AD WRNG (&amp;lt; 16 ק"מ). שני המוצרים נדרשים: AD WRNG כך שה-AFO מתקשר למבצעי שדות תעופה, AIRMET כך שבדרך GA חוצה את האזור מקבל את האזהרה באמצעות VOLMET/AFTN. הנפקת ה-AD WRNG בלבד תשאיר צרכנים זרים ובדרך עיוורים; הנפקת AIRMET בלבד תעזוב את שדה התעופה ללא כיסוי הפצה מקומי.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;AD WRNG (TS, &amp;lt; 16 ק"מ מ-LLBG) בתוספת AIRMET (OCNL TS עבור תת-אזור).&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;AD WRNG בלבד &amp;mdash; התא הוא הבעיה של שדה התעופה.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;AIRMET בלבד &amp;mdash; סף AD WRNG עדיין לא עומד עד שהתא חוצה את המסלול.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;AD WRNG plus SIGMET (FRQ TS) &amp;mdash; כל תא בטווח של 12 ק"מ משדה תעופה מקדם את כיסוי ה-OCNL ל-FRQ.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L4-Q06 - היקף הפצה</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;שולח בינלאומי בפרנקפורט מתכנן טיסה ל-LLBG. אילו מוצרי אזהרה של IMS יהיו זמינים עבורה בזרם AFTN / VOLMET הסטנדרטי, ואילו לא?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; SIGMET ו-AIRMET מופצות בינלאומיות דרך AFTN ומשודרות ב-VOLMET / D-VOLMET. הפצת AD WRNG ו-WS WRNG היא מקומית בלבד &amp;mdash; הם מגיעים למבצעי שדות תעופה, מגדלים ו-ATS מקומיים, אך לא למשרדי תכנון טיסות זרים. בדיוק בשביל זה יש חשיבות לתיאום: מפגע בשדה התעופה שמשפיע גם על שלב הניווט חייב לבוא לידי ביטוי ב-SIGMET או AIRMET, אחרת הצרכן הבינלאומי לעולם לא ילמד על כך.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;SIGMET ו-AIRMET מגיעים לפרנקפורט דרך AFTN/VOLMET; AD WRNG ו-WS WRNG הם הפצה מקומית בלבד.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;כל ארבעת המוצרים מופצים בינלאומית דרך AFTN.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;רק AD WRNG ו-WS WRNG מגיעות לפרנקפורט &amp;mdash; הם המוצרים הספציפיים לשדה התעופה שתכנון הטיסה צריך.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;אף אחד מהמוצרים אינו זמין מחוץ לישראל; שולחים זרים מסתמכים על ה-TAF בלבד.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L4-Q07 - מתי לא לשייך WS WRNG ל-AIRMET</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;ה-IMS מנפיק WS WRNG עבור LLBG בגלל סילון ברמה נמוכה (32 kt ב-900 ft AGL, 5 kt על פני השטח). אחרת, ה-FIR שקט. מהי הפעולה הנלווית הנכונה?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; כלל התיאום של IMS אומר במפורש שכאשר מונפק WS WRNG עבור שדה תעופה בגלל סילון ברמה נמוכה, אין צורך ב-AIRMET או SIGMET. ה-LLJ הוא תופעה בקנה מידה של תעופה &amp;mdash; הוא גזז את שבילי הגישה והטיפוס החוצה, אך אינו מהווה, כשלעצמו, מפגע כלל-FIR בדרך. הנפקת AIRMET תזהיר יתר על המידה; הנפקת AD WRNG תתאר מפגע אחר (רוח עילי) שאינו חל כאן.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;אין צורך ב-AIRMET או SIGMET &amp;mdash; ה-LLJ הוא תופעה בקנה מידה של תעופה וה-WS WRNG לבדו מספיק.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;הנפק גם AIRMET עבור &lt;code&gt;SFC WSPD &amp;ge;30KT&lt;/code&gt; מכיוון שהמטוס הוא 32 קראט.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;הנפק גם AD WRNG עבור רוח עילי, מכיוון שסילון חזק מרמז על רוח עילי חזקה.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;הנפק גם SIGMET עבור SEV TURB, בהנחה שכל LLJ מייצר מערבולות חמורות.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+</quiz>

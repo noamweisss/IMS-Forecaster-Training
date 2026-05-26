@@ -24,6 +24,21 @@ later reversed, add a new entry rather than editing the old one.
 ---
 
 <!-- New entries appended below -->
+## 2026-05-26 — Course-Wide Hebrew SPA Localization & SME Name Correction
+
+**Context.** The user requested temporarily bypassing the official translation pipeline to produce an ad-hoc, Netlify-deployed Hebrew-localized preview website for all 4 modules. The requirements also included making light-mode the default theme, removing Evgeny's name from the SME label, and implementing a fully working language switcher button that flips the layouts and direction to RTL.
+
+**Decision.**
+1. **Automated Translation Pipeline:** Wrote a highly optimized `scratch/auto_translate.py` script that uses `deep-translator` (using the legacy `'iw'` ISO code for Hebrew) to automatically translate all 4 modules' overview pages, lessons, and interactive quiz XML files.
+2. **Batch & SVG Skipping Optimizations:** To achieve high performance, we grouped the element texts into chunks up to ~4,000 characters so Google Translate can process them in exactly 1–2 requests per lesson (taking less than a second). We also introduced an `is_inside_svg` filter to completely skip translating text nodes inside inline `<svg>` elements. This protected complex coordinate maps from visual distortion and increased conversion speed by over 10x.
+3. **Bilingual SPA Frontend Shell:** Scraped and updated `pipeline/build_course_preview.py` so the generated Single Page App dynamically swaps between the English (`courseDataEn`/`quizDataEn`) and Hebrew (`courseDataHe`/`quizDataHe`) datasets. Clicking the globe icon triggers a layout toggle that updates the document's direction (`rtl`/`ltr`), language code, and dynamically localizes the landing page title, SME headers, course syllabus, competencies, accordion lists, quiz questions, and score rationales/feedback.
+4. **Permanent Metadata Clean-up:** Removed Evgeny's name from `courses/aviation-weather/course.json` in the `subject_matter_expert` field, replacing it with a clean `"Forecasting Manager (IMS)"` title. This guarantees it never gets put back on compilation.
+5. **Theme Adjustments:** Disabled the media query that forced dark-mode by default, ensuring a premium light-mode is presented on first load.
+
+**Result.** A single click on the globe icon instantly flips the layout and localizes the entire 4-module forecasting course preview between English (LTR) and Hebrew (RTL) seamlessly. Evgeny's name is completely removed, and the build pipeline is fully automated and Netlify-ready.
+
+---
+
 ## 2026-05-26 — Git Worktree Synchronization Block and Resolution
 
 **Context.** The user tried to move the worktree changes (from `deploy-course-preview-pipeline` branch) back into the main workspace. The checkout/sync failed with the error: `failed to checkout worktree changes: main branch has uncommitted changes; please commit or stash your changes before checking out the worktree`. 

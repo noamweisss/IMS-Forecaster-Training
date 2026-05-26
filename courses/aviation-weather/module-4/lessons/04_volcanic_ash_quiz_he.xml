@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='utf-8'?>
+<quiz>
+
+  <question type="multichoice">
+    <name>
+      <text>L4-Q01 — זיהוי מכ"ם של אפר וולקני</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;הר געש גדול מתפרץ במהלך הלילה. מטוס מסחרי טס ב-FL350 ישירות לכיוון שביל הפלומה החזוי. צוות הטיסה מדווח כי מכ"ם מזג האוויר המשולב שלהם מראה שמיים בהירים לחלוטין לפנים. למה זה קורה?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; מכ"ם מזג האוויר של מטוסים מכוון במיוחד כדי לזהות הידרומטרים גדולים (טיפות מים וגבישי קרח). אפר וולקני מורכב מחלקיקים יבשים על בסיס סיליקט, שהם בדרך כלל קטנים מדי וחסרים את התכונות הדיאלקטריות הנחוצות כדי להחזיר את אלומת המכ"ם אל המטוס, מה שהופך את הפלומה למעשה בלתי נראית לרדאר המשולב.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;מכ"ם מטוסים נועד לזהות מים וקרח; הוא לא יכול לזהות חלקיקי אפר געשי יבשים על בסיס סיליקט.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;אפר וולקני נוצר באופן בלעדי מתחת ל-FL200, כך שהוא נמצא מתחת לזווית הטאטוא של המכ"ם בגובה שיוט.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;אלומת המכ"ם נספגת כולה על ידי גז הדו תחמוצת הגופרית הרעיל בתוך הפלומה, ומסווה את האפר.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;חלקיקי אפר מחזיקים במטען שלילי חזק המבטל את פעימות הרדאר החיוביות.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L4-Q02 — מודל פיזור VAAC</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;בעקבות התפרצות, VAAC מפעיל מודל פיזור אטמוספרי (כמו מודל NAME) כדי להנפיק הודעה לאפר וולקני (VAA). מהו הקלט המטאורולוגי העיקרי הנדרש למודל זה כדי לחזות במדויק את מסלולה של פלומת האפר?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; מודלים של פיזור מחשבים את המסלול התלת-ממדי של חלקיקי אפר. לשם כך, הם מסתמכים במידה רבה על תחזיות רוח מדויקות ברמה העליונה (מהירות, כיוון וגזירה על פני רמות טיסה מרובות) כדי לקבוע לאן הפלומה תיסחף וכיצד היא תתפזר לאורך זמן.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;נתוני רוח מפורטים ברמה העליונה לחישוב המסלול והדיפוזיה של החלקיקים.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;מדידות טמפרטורת פני השטח לחישוב כוח הנפץ הראשוני של ההתפרצות.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;טמפרטורות פני הים לקביעת החום הסמוי הזמין למנוצה.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;נתוני קרינת שמש נכנסים למודל של הפירוק הפוטוכימי של האפר.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L4-Q03 — מנגנון כשל מנוע</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;מטוס טס בטעות דרך ענן אפר וולקני דק. זמן קצר לאחר מכן, הצוות חווה אובדן מוחלט של דחף בכל המנועים. מהי הסיבה המכנית העיקרית לכשל זה?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; אפר וולקני מכיל סיליקטים עם נקודת התכה נמוכה מטמפרטורת ההפעלה של מנוע סילון. כשהאפר עובר דרך תא הבעירה, הוא נמס. לאחר מכן הוא פוגע בלהבי הטורבינה המעט קרירים יותר, מתמצק מחדש לכדי ציפוי דמוי זכוכית שחוסם את זרימת האוויר וגורם למנוע להפסיק.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;סיליקטים באפר נמסים בתא הבעירה ומתגבשים מחדש על להבי הטורבינה, וחונקים את זרימת האוויר.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;האופי השוחק של האפר גוזר לחלוטין את להבי מאוורר הטיטניום בקדמת המנוע.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;חלקיקי האפר נושאים מטען סטטי חזק שמקצר את יחידת הבקרה האלקטרונית של המנוע (FADEC).&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;גזים רעילים בנוצה צורכים את כל החמצן הזמין, ומרעיבים את תהליך הבעירה.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L4-Q04 — יחסי VAA ו-SIGMET</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt; VAAC מנפיק VAA המכיל מצולע פלומת אפר החותך את קצה אזור המידע הטיסה שלך (FIR) ב-FL300. אתה סוקר את תפוקת מודל הפיזור ומאמין שריכוז האפר יהיה קל מאוד ולא יהווה סיכון משמעותי. מהו הנוהל התפעולי הנכון?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; אין כיום ריכוז "בטוח" מוסכם על בסיס אפר וולקני עבור מנועי סילון. לכן, SIGMETs של אפר וולקני אינם ניתנים לשיקול דעת של החזאי המקומי של MWO. אם מצולע VAA מציין שאפר נכנס ל-FIR שלך, עליך להנפיק SIGMET מתאים כדי לסגור או להגביל את המרחב האווירי הזה.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;עליך להנפיק SIGMET לאפר וולקני המבוסס על המצולע VAA, שכן SIGMETs של אפר הם חובה כאשר פלומה נכנסת ל-FIR.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;שדרג לאחור את האזהרה ל-AIRMET מכיוון שהניתוח הבלתי תלוי שלך מצביע על כך שהריכוז קל.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;התעלם מה-VAA מכיוון שהוא חותך רק את קצה ה-FIR ויוצא במהירות.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;המתן לדוחות הטייסים (PIREPs) כדי לאשר את נוכחותו של אפר בפועל לפני הוצאת אזהרות כלשהן.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+</quiz>

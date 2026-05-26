@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<quiz>
+  <question type="multichoice">
+    <name><text>L4-Q01 — שגיאת גובה במזג אוויר קר</text></name>
+    <questiontext format="html"><text>&lt;p&gt;מטוס מבצע גישת מכשירים בתנאי מזג אוויר קר קיצוניים (ISA -30°C). מד הגובה של הטייס, המוגדר ל-QNH המקומי הנכון, מציין שהם נמצאים בדיוק בגובה הירידה המינימלי שפורסם (MDA) של 1,500 רגל. מהו המצב הפיזי בפועל של המטוס ביחס לשטח?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;מדדי גובה מכוילים לטמפרטורות סטנדרטיות. כאשר האוויר קר משמעותית מהסטנדרטי, עמוד האוויר נדחס. מד הגובה יקרא יתר על המידה את הגובה ("מגבוה לנמוך, תסתכל למטה"). לכן, המטוס נמוך פיזית מ-1,500 הרגלים המצוינים על מד הגובה, מה שמפחית בצורה מסוכנת את מרווח השטח.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;המטוס למעשה נמוך מ-1,500 רגל, מה שמקטין משמעותית את המרווח לפינוי שטח.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;המטוס נמצא בדיוק בגובה 1,500 רגל, מכיוון שהגדרת ה-QNH המקומית מתקנת באופן אוטומטי חריגות טמפרטורה.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;המטוס למעשה גבוה מ-1,500 רגל, כלומר הטייס יעבור את סף המסלול.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;מהירות האוויר האמיתית של המטוס תרד, אך הגובה הפיזי יישאר בדיוק ב-1,500 רגל.&lt;/p&gt;</text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L4-Q02 — גובה מעבר לעומת רמה</text></name>
+    <questiontext format="html"><text>&lt;p&gt;מטוס המריא זה עתה והוא מטפס בגובה 10,000 רגל, שהוא גובה המעבר שפורסם עבור נמל התעופה. איזו פעולה ספציפית חייב הטייס לנקוט לגבי מד הגובה שלו בשלב זה?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;במהלך הטיפוס, כאשר עוברים את גובה המעבר, על הטייסים לשנות את הגדרת מד הגובה שלהם מ-QNH המקומי להגדרת הלחץ הסטנדרטי (1013.25 hPa). זה מבטיח שכל המטוסים במרחב האווירי העליון במסלול פועלים על אותו נתון לחץ (רמות טיסה) להפרדה אנכית.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;שנה את הגדרת מד הגובה מה-QNH המקומי להגדרת הלחץ הסטנדרטי (1013.25 hPa).&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;שנה את הגדרת מד הגובה מהגדרת הלחץ הסטנדרטי ל-QNH המקומי המסופק על ידי ATC.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;שנה את הגדרת מד הגובה מ-QFE ל-QNH כדי להתחיל לקרוא את גובה פני הים הממוצע.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;שמור על הגדרת ה-QNH הנוכחית עד שהמטוס מגיע לראש הטיפוס (TOC).&lt;/p&gt;</text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L4-Q03 — יישום QFE</text></name>
+    <questiontext format="html"><text>&lt;p&gt;טייס צבאי מבקש את הגדרת ה-QFE מהמגדל במהלך הגישה הסופית. אם הטייס יזין נכון את ההגדרה הזו, מה יקרא מד הגובה ברגע המדויק שגלגלי המטוס נוגעים במסלול?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;QFE הוא הלחץ הנמדד בגובה שדה התעופה. כאשר מד גובה מוגדר ל-QFE, הוא מציג את גובה המטוס מעל המסלול הספציפי הזה. לכן, עם הנגיעה, מד הגובה יקרא אפס.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;אפס&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;גובה שדה התעופה מעל פני הים הממוצע (MSL)&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;גובה המעבר של שדה התעופה&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;גובה לחץ סטנדרטי (גובה צפיפות)&lt;/p&gt;</text></answer>
+  </question>
+
+</quiz>

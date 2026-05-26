@@ -1,0 +1,201 @@
+<style>
+.ims-lesson {
+  --bg: #ffffff;
+  --surface: #f6f5f0;
+  --border: #e2dfd6;
+  --text: #1a1917;
+  --muted: #6b6a65;
+  --accent: #185fa5;
+  --accent-light: #e6f1fb;
+  --note-bg: #e1f5ee;
+  --note-border: #0F6E56;
+  --warn-bg: #faeeda;
+  --warn-border: #BA7517;
+  --key-bg: #EEEDFE;
+  --key-border: #534AB7;
+  --danger-bg: #fcebeb;
+  --danger-border: #A32D2D;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .ims-lesson {
+    --bg: #1a1917;
+    --surface: #242320;
+    --border: #3a3835;
+    --text: #e8e6df;
+    --muted: #9a9890;
+    --accent-light: #042c53;
+    --note-bg: #04342c;
+    --warn-bg: #412402;
+    --key-bg: #26215c;
+  }
+}
+
+.ims-lesson h1 { font-size: 1.8rem; font-weight: 600; margin-bottom: 0.2rem; line-height: 1.2; color: var(--text); }
+.ims-lesson h2 { font-size: 1.25rem; font-weight: 600; margin-top: 2.5rem; padding-bottom: 0.4rem;
+  border-bottom: 1.5px solid var(--border); color: var(--text); }
+.ims-lesson h3 { font-size: 1.05rem; font-weight: 600; margin-top: 1.75rem; color: var(--text); }
+.ims-lesson p { margin: 0.7rem 0; max-width: 72ch; }
+.ims-lesson figure { margin: 2rem 0; }
+.ims-lesson figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 0.6rem;
+  font-style: italic; text-align: center; }
+.ims-lesson svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+.ims-lesson img { max-width: 100%; height: auto; }
+.ims-lesson table { border-collapse: collapse; width: 100%; margin: 1.5rem 0; font-size: 0.9rem; }
+.ims-lesson th { background: var(--accent); color: #fff; padding: 0.55rem 0.9rem; text-align: left; }
+.ims-lesson td { padding: 0.5rem 0.9rem; border-bottom: 1px solid var(--border); }
+.ims-lesson tr:nth-child(even) td { background: var(--surface); }
+.ims-lesson .callout { border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+.ims-lesson .callout-note    { background: var(--note-bg);   border-left: 4px solid var(--note-border); }
+.ims-lesson .callout-warning { background: var(--warn-bg);   border-left: 4px solid var(--warn-border); }
+.ims-lesson .callout-key     { background: var(--key-bg);    border-left: 4px solid var(--key-border); }
+.ims-lesson .callout-danger  { background: var(--danger-bg); border-left: 4px solid var(--danger-border); }
+.ims-lesson .callout-label { font-weight: 700; font-size: 0.78rem; text-transform: uppercase;
+  letter-spacing: 0.06em; margin-bottom: 0.35rem; }
+.ims-lesson .objectives { background: var(--surface); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+.ims-lesson .objectives ul { margin: 0.5rem 0 0; padding-left: 1.4rem; }
+.ims-lesson .lesson-summary { background: var(--accent-light); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 2.5rem 0 1rem; }
+.ims-lesson .lesson-summary h3 { margin-top: 0; color: var(--accent); font-size: 1rem; }
+.ims-lesson .image-needed { border: 2px dashed var(--border); border-radius: 8px;
+  padding: 1.5rem; margin: 1.5rem 0; text-align: center;
+  color: var(--muted); font-size: 0.9rem; background: var(--surface); }
+.ims-lesson .meta { color: var(--muted); font-size: 0.88rem; margin-bottom: 1.75rem; }
+.ims-lesson .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.5rem; }
+</style>
+<div class="ims-lesson">
+<p class="breadcrumb">מודול 2 / שיעור 1</p>
+<h1>מערבולות אטמוספריות וגזירת רוח</h1>
+<div class="objectives">
+<strong>עד סוף שיעור זה תוכל:</strong>
+<ul>
+<li>הבחנה בין מערבולות מכאניות, הסעה ו-CAT (CAT)</li>
+<li>זיהוי תכונות סינופטיות ומסוקטיות הקשורות לגלי הרים קשים</li>
+<li>הסבר היווצרות וסכנות של מערבולות ערות</li>
+<li>תחזית גזירת רוח ברמה נמוכה ותנאי מיקרו-פרץ במהלך ההמראה והנחיתה</li>
+</ul>
+</div>
+<h2>מבוא למערבולת תעופה</h2>
+<p>מערבולת היא אחת הסכנות המשמעותיות ביותר הקשורות למזג האוויר לתעופה, והיא אחראית לאלפי פציעות קלות ולסיכון מבני משמעותי מדי שנה. עבור חזאי, האתגר טמון בזיהוי המנגנונים האטמוספריים הספציפיים - החל מגלי הרים בקנה מידה גדול ועד מערבולות ערות בקנה מידה מיקרו - שיוצרים את תנועות האוויר הכאוטיות הללו.</p>
+<div class="callout callout-note">
+<div class="callout-label">השפעה תפעולית</div>
+  בעוד שמערבולת קלה היא אי נוחות, <strong>מערבולות חמורות</strong> כרוך בשינויים גדולים ופתאומיים בגובה ובגישה, שעלולים להוביל לאובדן זמני של שליטה במטוס ולנזק מבני.
+</div>
+<h2>סוגים ומנגנונים</h2>
+<p>מערבולות תעופה מסווגות בדרך כלל לפי הגורם הפיזי הבסיסי שלה. הבנת הקטגוריות הללו מאפשרת לחזאים לחפש טריגרים ספציפיים בתרשימים סינופטיים ובמודלים ברזולוציה גבוהה.</p>
+<h3>מערבולת מכנית</h3>
+<p>מערבולת מכנית מתרחשת כאשר רוחות חזקות מופרעות על ידי תכונות פני השטח כגון הרים, גבעות, או אפילו מבנים גדולים. החומרה נקבעת על פי מהירות הרוח, חספוס השטח ויציבות האטמוספירה. כאשר רוחות העולה על 15-25 קשר מקיימות אינטראקציה עם מכשולים גדולים, מערבולות סוערות יכולות להגיע לגובה של 5,000-10,000 רגל.</p>
+<figure>
+<svg role="img" viewbox="0 0 680 200">
+<title>Mechanical Turbulence over Obstacles</title>
+<desc>Diagram showing wind flow hitting an obstacle and creating eddies on the leeward side.</desc>
+<!-- Ground -->
+<path d="M 0 180 L 300 180 L 350 100 L 400 180 L 680 180" fill="none" stroke="#E2DFD6" stroke-width="2"></path>
+<!-- Wind vectors -->
+<path d="M 20 50 L 100 50" fill="none" marker-end="url(#arrow)" stroke="#185FA5" stroke-width="2"></path>
+<path d="M 20 80 L 120 80" fill="none" stroke="#185FA5" stroke-width="2"></path>
+<path d="M 20 110 L 140 110" fill="none" stroke="#185FA5" stroke-width="2"></path>
+<!-- Eddies -->
+<circle cx="450" cy="130" fill="none" r="20" stroke="#BA7517" stroke-dasharray="4 2" stroke-width="1.5"></circle>
+<circle cx="500" cy="100" fill="none" r="15" stroke="#BA7517" stroke-dasharray="4 2" stroke-width="1.5"></circle>
+<circle cx="540" cy="140" fill="none" r="25" stroke="#BA7517" stroke-dasharray="4 2" stroke-width="1.5"></circle>
+<!-- Labels -->
+<text fill="#1A1917" font-family="sans-serif" font-size="14" x="50" y="40">Prevailing Wind</text>
+<text fill="#6B6A65" font-family="sans-serif" font-size="12" x="460" y="170">Leeward Eddies (Turbulence)</text>
+<defs>
+<marker id="arrow" markerheight="6" markerwidth="6" orient="auto-start-reverse" refx="5" refy="5" viewbox="0 0 10 10">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#185FA5"></path>
+</marker>
+</defs>
+</svg>
+<figcaption>איור 1.1: מערבולות מכניות שנוצרות על ידי חסימות טופוגרפיות.</figcaption>
+</figure>
+<h3>מערבול אוויר נקי (CAT)</h3>
+<p>CAT הוא מערבולות ברמה גבוהה (בדרך כלל מעל 15,000 רגל) המתרחשת באזורים נטולי ענן, מה שהופך אותה לבלתי נראית לטייסים ולרדאר סטנדרטי. זה קשור בעיקר ל- <strong>זרם סילון</strong>, במיוחד באזורים של גזירת רוח אופקית ואנכית אינטנסיבית ליד ליבת הסילון.</p>
+<div class="callout callout-warning">
+<div class="callout-label">טיפ לחיזוי</div>
+  כ-60% מדיווחי CAT ממוקמים ליד זרמי סילון. חפשו חידוד שקות ורכסים ברמה העליונה, כמו גם אזורים עם "רצועות רוחביות" בענני סיררוס סילון בתמונות לוויין.
+</div>
+<h2>גלי הרים ורוטורים</h2>
+<p>כאשר אוויר יציב נאלץ מעל רכס הרים, הוא יכול לעורר גלי כבידה שמתפשטים הן אנכית והן הרחוקה במורד הרוח. "גלי הרים" אלו מסוגלים לייצר מערבולות קיצוניות.</p>
+<ul>
+<li><strong>כובע עננים:</strong> נוצר מעל הרכס כאשר האוויר נאלץ כלפי מעלה.</li>
+<li><strong>עננים עדשים:</strong> מוצב בפסגות הגלים במורד הזרם.</li>
+<li><strong>רוטורים:</strong> מערבולות גלים אלימות שנוצרות במפלסים הנמוכים מתחת לפסגות הגלים, מסומנות לרוב על ידי "ענני גלגול".</li>
+</ul>
+<figure>
+<svg role="img" viewbox="0 0 680 250">
+<title>Mountain Wave Structure</title>
+<!-- Mountain -->
+<path d="M 50 220 L 200 80 L 350 220" fill="#F6F5F0" stroke="#E2DFD6" stroke-width="2"></path>
+<!-- Wave pattern -->
+<path d="M 50 100 Q 200 -20 350 100 T 650 100" fill="none" stroke="#185FA5" stroke-dasharray="5 5" stroke-width="2"></path>
+<!-- Lenticular Cloud -->
+<ellipse cx="450" cy="60" fill="#EEEDFE" rx="40" ry="10" stroke="#534AB7" stroke-width="1"></ellipse>
+<!-- Rotor -->
+<circle cx="450" cy="180" fill="none" r="25" stroke="#993C1D" stroke-width="2"></circle>
+<path d="M 440 165 L 460 165 L 450 155 Z" fill="#993C1D"></path> <!-- Direction arrow -->
+<!-- Labels -->
+<text fill="#1A1917" font-family="sans-serif" font-size="14" x="180" y="70">Mountain Ridge</text>
+<text fill="#534AB7" font-family="sans-serif" font-size="12" x="410" y="40">Lenticular Cloud</text>
+<text fill="#993C1D" font-family="sans-serif" font-size="12" x="440" y="215">Rotor (Severe Turbulence)</text>
+</svg>
+<figcaption>איור 1.2: סכמטי של גלי הרים ורוטורים ברמה נמוכה הקשורים.</figcaption>
+</figure>
+<h2>ערבול ערות</h2>
+<p>כל מטוס המייצר עילוי יוצר זוג <strong>מסתובב נגדי מערבולות ערות</strong> נגרר מקצות כנפיו. מערבולות אלו שוקעות ומתפוררות לאט, אך יכולות להישאר מסוכנות למשך מספר דקות, במיוחד בתנאים רגועים.</p>
+<table>
+<thead>
+<tr>
+<th>פקטור</th>
+<th>השפעה על חוזק ערות</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>משקל מטוס</td>
+<td>מטוסים כבדים יותר מייצרים מערבולות חזקות יותר.</td>
+</tr>
+<tr>
+<td>מהירות</td>
+<td>הכוח הוא הגדול ביותר במהירויות איטיות (המראה/נחיתה).</td>
+</tr>
+<tr>
+<td>תצורה</td>
+<td>תצורות "נקיות" (דש למעלה) מייצרות מערבולות מרוכזות יותר.</td>
+</tr>
+<tr>
+<td>רוח</td>
+<td>רוחות חזקות מפזרות מערבולות; רוחות שקטות מאפשרות להם להתעכב על המסלול.</td>
+</tr>
+</tbody>
+</table>
+<h2>גזירת רוח ברמה נמוכה (LLWS) ומיקרו-פריצות</h2>
+<p>גזירת רוח מוגדרת כשינוי במהירות ו/או כיוון הרוח לאורך מרחק קצר. אמנם זה יכול להתרחש בכל גובה, <strong>גזירת רוח ברמה נמוכה</strong> (מתחת ל-2,000 רגל AGL) מסוכן במיוחד בשלבי הגישה והיציאה של הטיסה.</p>
+<h3>סכנת ההתפרצות</h3>
+<p>מיקרו-פרץ הוא ירידה מרוכזת ואינטנסיבית מענן הסעה שפוגע בקרקע ומתפשט אופקית. כלי טיס שטס דרך מיקרו-פרץ נתקל תחילה ברוח קדמית חזקה (עלייה הולכת וגוברת), לאחר מכן בירידה חמורה ולבסוף ברוח גב חזקה (אובדן עילוי דרסטי), שעלול להיות קטלני בגובה נמוך.</p>
+<div class="callout callout-danger">
+<div class="callout-label">התראת בטיחות</div>
+  מטוסים פגיעים ביותר להתפרצויות מיקרו כשהם קרובים לקרקע ופועלים בקרבת מהירויות עצירה. הכרה של <strong>וירגה</strong> (משקעים מתאדים לפני שהם מגיעים לקרקע) הוא אינדיקטור ויזואלי מרכזי של התפרצויות מיקרו יבשות פוטנציאליות.
+</div>
+<div class="lesson-summary">
+<h3>טייק אווי מפתח</h3>
+<ul>
+<li>מערבולות מסווגת כמכנית, הסעה, CAT או התעוררות.</li>
+<li>CAT הוא בלתי נראה ומונע בזרם סילון; חפש גזירה אופקית/אנכית גבוהה.</li>
+<li>גלי הרים יוצרים סכנות אנכיות, בעוד שהרוטורים מייצרים מערבולות חמורה ברמה נמוכה.</li>
+<li>מערבולות ערות הן החזקות ביותר ממטוסים כבדים ואיטיים בתצורות נקיות.</li>
+<li>התפרצויות מיקרו מהוות איום ייחודי על ידי גרימת מעבר מהיר מרוח קדמית לרוח גב.</li>
+</ul>
+</div>
+</div>

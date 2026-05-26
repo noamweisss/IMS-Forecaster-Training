@@ -1,0 +1,190 @@
+<style>
+.ims-lesson {
+  --bg: #ffffff;
+  --surface: #f6f5f0;
+  --border: #e2dfd6;
+  --text: #1a1917;
+  --muted: #6b6a65;
+  --accent: #185fa5;
+  --accent-light: #e6f1fb;
+  --note-bg: #e1f5ee;
+  --note-border: #0F6E56;
+  --warn-bg: #faeeda;
+  --warn-border: #BA7517;
+  --key-bg: #EEEDFE;
+  --key-border: #534AB7;
+  --danger-bg: #fcebeb;
+  --danger-border: #A32D2D;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .ims-lesson {
+    --bg: #1a1917;
+    --surface: #242320;
+    --border: #3a3835;
+    --text: #e8e6df;
+    --muted: #9a9890;
+    --accent-light: #042c53;
+    --note-bg: #04342c;
+    --warn-bg: #412402;
+    --key-bg: #26215c;
+  }
+}
+
+.ims-lesson h1 { font-size: 1.8rem; font-weight: 600; margin-bottom: 0.2rem; line-height: 1.2; color: var(--text); }
+.ims-lesson h2 { font-size: 1.25rem; font-weight: 600; margin-top: 2.5rem; padding-bottom: 0.4rem;
+  border-bottom: 1.5px solid var(--border); color: var(--text); }
+.ims-lesson h3 { font-size: 1.05rem; font-weight: 600; margin-top: 1.75rem; color: var(--text); }
+.ims-lesson p { margin: 0.7rem 0; max-width: 72ch; }
+.ims-lesson figure { margin: 2rem 0; }
+.ims-lesson figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 0.6rem;
+  font-style: italic; text-align: center; }
+.ims-lesson svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+.ims-lesson img { max-width: 100%; height: auto; }
+.ims-lesson table { border-collapse: collapse; width: 100%; margin: 1.5rem 0; font-size: 0.9rem; }
+.ims-lesson th { background: var(--accent); color: #fff; padding: 0.55rem 0.9rem; text-align: left; }
+.ims-lesson td { padding: 0.5rem 0.9rem; border-bottom: 1px solid var(--border); }
+.ims-lesson tr:nth-child(even) td { background: var(--surface); }
+.ims-lesson .callout { border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+.ims-lesson .callout-note    { background: var(--note-bg);   border-left: 4px solid var(--note-border); }
+.ims-lesson .callout-warning { background: var(--warn-bg);   border-left: 4px solid var(--warn-border); }
+.ims-lesson .callout-key     { background: var(--key-bg);    border-left: 4px solid var(--key-border); }
+.ims-lesson .callout-danger  { background: var(--danger-bg); border-left: 4px solid var(--danger-border); }
+.ims-lesson .callout-label { font-weight: 700; font-size: 0.78rem; text-transform: uppercase;
+  letter-spacing: 0.06em; margin-bottom: 0.35rem; }
+.ims-lesson .objectives { background: var(--surface); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+.ims-lesson .objectives ul { margin: 0.5rem 0 0; padding-left: 1.4rem; }
+.ims-lesson .lesson-summary { background: var(--accent-light); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 2.5rem 0 1rem; }
+.ims-lesson .lesson-summary h3 { margin-top: 0; color: var(--accent); font-size: 1rem; }
+.ims-lesson .image-needed { border: 2px dashed var(--border); border-radius: 8px;
+  padding: 1.5rem; margin: 1.5rem 0; text-align: center;
+  color: var(--muted); font-size: 0.9rem; background: var(--surface); }
+.ims-lesson .meta { color: var(--muted); font-size: 0.88rem; margin-bottom: 1.75rem; }
+.ims-lesson .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.5rem; }
+</style>
+<div class="ims-lesson">
+<p class="breadcrumb">מודול 2 / שיעור 4</p>
+<h1>הגבלות ראות: ערפל ואובך</h1>
+<div class="objectives">
+<strong>בסוף שיעור זה תוכל:</strong>
+<ul>
+<li>סיווג סוגי ערפל (קרינה, סחיפה, שיפוע) לפי מנגנון היווצרות</li>
+<li>זיהוי הגורמים המטאורולוגיים הקריטיים להתפרצות ופיזור ערפל</li>
+<li>הערכת ההשפעה של ריכוז אירוסול ולחות על התפתחות אובך</li>
+<li>פרש מגמות RVR (Runway Visual Range) בתנאי ראות נמוכה</li>
+</ul>
+</div>
+<h2>מדידת נראות</h2>
+<p>הראות מוגדרת כמרחק הגדול ביותר בו ניתן לראות ולזהות אובייקט על רקע. בתעופה, אנו מבחינים בין נראות כללית (מדווחת ב- METARs) לבין <strong>טווח ראייה למסלול (RVR)</strong>, שהוא המרחק שבו טייס יכול לראות סימוני מסלול או אורות מקו המרכז.</p>
+<div class="callout callout-note">
+<div class="callout-label">תקן טכני</div>
+  שימוש בשדות תעופה מודרניים <strong>מדי שידור</strong> אוֹ <strong>מטרים פיזור קדימה</strong> כדי למדוד את הטווח האופטי המטאורולוגי (MOR). RVR מחושב לאחר מכן באמצעות חוק Allard, תוך התחשבות באור הסביבה ובעוצמת מנורות המסלול.
+</div>
+<h2>ערפל: היווצרות וסיווג</h2>
+<p>ערפל הוא מבחינה טכנית ענן שנמצא במגע עם הקרקע, ומפחית את הראות האופקית לפחות מ-1,000 מטר. עבור חזאי, זיהוי מנגנון הקירור הוא המפתח לניבוי תחילתו.</p>
+<h3>ערפל קרינה</h3>
+<p>נוצר על ידי קירור קרינתי של פני כדור הארץ בלילה. הוא נפוץ בעיקר בעמקים בפנים הארץ ובאזורים נמוכים בתנאי לחץ גבוה.</p>
+<ul>
+<li><strong>דרישות קדם:</strong> לחות פני השטח גבוהה, שמיים בהירים ורוחות קלות (3-5 קשר).</li>
+<li><strong>רוח "הזהבה":</strong> אם הרוח רגועה, נוצר רק טל. אם הרוח עולה על 5-10 קשר, האוויר מתערבב עם אוויר יבש יותר למעלה, מפזר את הערפל או מעלים אותו לשכבת סטרטוס.</li>
+</ul>
+<figure>
+<svg role="img" viewbox="0 0 680 180">
+<title>היווצרות ערפל קרינה</title>
+<!-- Ground -->
+<rect fill="#E2DFD6" height="30" width="680" x="0" y="150"></rect>
+<!-- Fog Layer -->
+<rect fill="#F6F5F0" height="70" opacity="0.8" width="680" x="0" y="80"></rect>
+<!-- Radiative cooling arrows -->
+<path d="M 100 150 L 100 120" fill="none" marker-end="url(#arrow-red)" stroke="#993C1D" stroke-width="1.5"></path>
+<path d="M 300 150 L 300 120" fill="none" marker-end="url(#arrow-red)" stroke="#993C1D" stroke-width="1.5"></path>
+<path d="M 500 150 L 500 120" fill="none" marker-end="url(#arrow-red)" stroke="#993C1D" stroke-width="1.5"></path>
+<!-- Labels -->
+<text fill="#6B6A65" font-family="sans-serif" font-size="14" font-weight="bold" x="250" y="115">שכבת ערפל קרינה</text>
+<text fill="#1A1917" font-family="sans-serif" font-size="12" x="250" y="170">הקרקע מתקררת במהירות בלילה</text>
+<defs>
+<marker id="arrow-red" markerheight="5" markerwidth="5" orient="auto-start-reverse" refx="5" refy="5" viewbox="0 0 10 10">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#993C1D"></path>
+</marker>
+</defs>
+</svg>
+<figcaption>איור 4.1: היווצרות ערפל קרינה באמצעות קירור פני השטח.</figcaption>
+</figure>
+<h3>ערפל סחיפה</h3>
+<p>מתרחש כאשר אוויר חם ולח נע על פני משטח קר יותר (יבשה או מים). שלא כמו ערפל קרינה, הוא יכול להיווצר במהירויות רוח גבוהות יותר (5-15 קשר) ולהימשך במהלך היום.</p>
+<div class="callout callout-warning">
+<div class="callout-label">הקשר אזורי</div>
+  בישראל, ערפל סחף נפוץ לאורך חופי הים התיכון כאשר אוויר ימי לח נע על פני קרקע חוף קרה יותר במהלך סוף החורף והאביב.
+</div>
+<h3>סוגי ערפל אחרים</h3>
+<ul>
+<li><strong>ערפל במורד:</strong> אוויר יציב עלה במדרון ההר, מתקרר באופן אדיאבטי עד לנקודת הטל שלו.</li>
+<li><strong>ערפל קיטור (עשן ים):</strong> אוויר קר נע על פני מים חמים; אידוי מהמים מרווה את האוויר הקר שמעל.</li>
+<li><strong>ערפל חזיתי:</strong> גשם חם יורד באוויר קר לפני חזית חמה, מרווה את האוויר באמצעות אידוי.</li>
+</ul>
+<h2>ראות לעומת לחות יחסית</h2>
+<p>הראות אינה מוגבלת רק על ידי מים נוזליים (ערפל/ערפל) אלא גם על ידי חלקיקים יבשים (ערפל). הקשר בין ראות ללחות יחסית (RH) אינו ליניארי עקב <strong>גרעינים היגרוסקופיים</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>מַצָב</th>
+<th>לחות יחסית</th>
+<th>התנהגות אירוסול</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>אובך יבש</strong></td>
+<td>&lt; 70%</td>
+<td>החלקיקים נשארים קטנים ויבשים.</td>
+</tr>
+<tr>
+<td><strong>אובך רטוב</strong></td>
+<td>70% – 90%</td>
+<td>חלקיקים היגרוסקופיים מתחילים להתנפח (דליקה).</td>
+</tr>
+<tr>
+<td><strong>עֲרָפֶל</strong></td>
+<td>90% – 100%</td>
+<td>טיפות גדלות מספיק כדי לפזר אור נראה באופן משמעותי.</td>
+</tr>
+<tr>
+<td><strong>עֲרָפֶל</strong></td>
+<td>~100%</td>
+<td>טיפות גדלות לתרחיף צפוף; ראות &lt; 1,000 מ'.</td>
+</tr>
+</tbody>
+</table>
+<h2>אובך ואבק בישראל</h2>
+<p>חיזוי הראות בישראל מחייב מעקב אחר מקורות סינופטיים של אבק מינרלי ממדבריות סהרה ומדבר ערב. הגדרות מפתח כוללות:</p>
+<ol>
+<li><strong>שרב נמוך:</strong> שקעים צפון אפריקאים עמוקים שמעבירים אבק לפני החזית הקרה.</li>
+<li><strong>שוקת ים סוף:</strong> קשור לרוחות מזרחיות שמביאות אבק מהמדבריות הירדן/סעודית.</li>
+<li><strong>מעבר חזיתי קר:</strong> רוחות פוסט-חזיתיות חזקות יכולות להרים אבק מקומי (הבובים) בנגב.</li>
+</ol>
+<div class="callout callout-key">
+<div class="callout-label">כלי תפעולי</div>
+  השתמש בלוויין <strong>אבק RGB</strong> תמונות למעקב אחר התקדמות תעלות אבק על פני הים התיכון. פלומות אלו יכולות להפחית משמעותית את ה-RVR גם בהיעדר ענן או ערפל.
+</div>
+<div class="lesson-summary">
+<h3>טייק אווי מפתח</h3>
+<ul>
+<li>ערפל מוגדר כראות &lt; 1,000 מ'; ערפל הוא 1,000 מ' עד 5,000 מ'.</li>
+<li>ערפל קרינה דורש שמיים בהירים, לחות גבוהה ורוחות קלות (3-5 קראט).</li>
+<li>ערפל סחף מתמשך יותר ויכול להתרחש עם רוחות חזקות יותר.</li>
+<li>חלקיקים היגרוסקופיים גורמים לירידה חדה בראות כאשר RH עולה על 70-80%.</li>
+<li>אבק ואובך בישראל מונעים באופן תקיף על ידי שפל שרב ושוקות ים סוף.</li>
+</ul>
+</div>
+</div>
