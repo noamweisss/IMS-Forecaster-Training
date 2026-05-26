@@ -14,6 +14,10 @@ future course-to-mbz Claude skill) should read both.
 - **Course-Wide Preview Compiler:** Added `pipeline/build_course_preview.py` — a reusable, course-agnostic Python pipeline that compiles all generated modules, lessons, inlined SVG diagrams, base64-embedded images, and XML quizzes into a single highly-polished offline-first Single Page App (SPA) `index.html` file in under 2 seconds. Built with pure Python standard libraries (no third-party dependencies) for instant native execution in any CI environment.
 - **Git-Synced Netlify Continuous Deployment:** Added a root-level `netlify.toml` configuration to integrate the preview compiler directly with Netlify's continuous deployment. Every `git push` automatically rebuilds the entire course preview and publishes it to the same permanent live demonstration link, allowing seamless feedback-and-revision cycles.
 
+### Fixed
+- **Git Worktree Sync Resolution:** Added `preview_dist/` to `.gitignore` to prevent untracked local build files from blocking branch checkout and sync back to the main workspace. Stashed untracked translation files in the Hebrew worktree to ensure the entire repository is completely clean and ready for worktree integration.
+
+
 ### Added
 - **Module 3 generated:** "Aviation Warnings: SIGMET, AIRMET &
   Aerodrome" — 4 lessons (24-question end-of-module quiz) covering the
