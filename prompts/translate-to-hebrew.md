@@ -1,11 +1,10 @@
-# Handoff prompt — Translate a module to Hebrew (Antigravity dual-agent)
+# Handoff prompt — Translate a module to Hebrew (dual-agent)
 
-Copy everything below the line into a fresh Antigravity session opened
-on this repo. The session uses **two agents in parallel** in
-Antigravity's Manager view: a Claude-backed translator and a
-Gemini-backed editor. The same flow works in Claude Code (or any
-single-agent IDE) by running the two steps sequentially in one session
-— see the fallback at the bottom.
+Copy everything below the line into a fresh agent session opened on
+this repo. The session uses **two agents in parallel** in Antigravity's
+Manager view: a translator and an editor. The same flow works in Claude
+Code (or any single-agent IDE) by running the two steps sequentially in
+one session — see the fallback at the bottom.
 
 Expected runtime: ~30–45 minutes of agent work plus whatever Antigravity's
 inference takes.
@@ -23,11 +22,12 @@ agents.
 
 1. **Open the repo in Antigravity.** Switch to **Manager view**.
 2. **Create two agents:**
-   - **Agent A — translator.** Model: the strongest Claude available
-     (Opus 4.x preferred, Sonnet 4.x acceptable). This agent runs the
-     `translator` skill at `.agents/skills/hebrew-translation/translator/`.
-   - **Agent B — editor.** Model: **Gemini 3 Pro**. This agent runs
-     the `editor` skill at `.agents/skills/hebrew-translation/editor/`.
+   - **Agent A — translator.** Use whatever capable model is available
+     in your environment. This agent runs the `translator` skill at
+     `.agents/skills/hebrew-translation/translator/`.
+   - **Agent B — editor.** Use whatever capable model is available in
+     your environment. This agent runs the `editor` skill at
+     `.agents/skills/hebrew-translation/editor/`.
 3. **Confirm both agents have read access to the whole repo.** They
    need to read `docs/hebrew_translation_spec.md`,
    `docs/hebrew_glossary.md`, `docs/lesson_spec.md`, and the entire
