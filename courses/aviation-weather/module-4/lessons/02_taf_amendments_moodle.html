@@ -1,0 +1,210 @@
+<style>
+/*
+ * IMS Course Factory — Lesson Design System
+ *
+ * All rules are scoped to `.ims-lesson` so the styles can be injected into
+ * a host page (Moodle, in particular) without leaking onto the host's chrome
+ * and without the host's theme overriding lesson typography.
+ *
+ * Standalone lesson HTML wraps the entire body in <div class="ims-lesson">.
+ * Moodle body-fragment HTML does the same. The single rule below keeps the
+ * standalone preview's <body> background consistent without leaking into
+ * Moodle pages.
+ */
+
+.ims-lesson {
+  --bg: #ffffff;
+  --surface: #f6f5f0;
+  --border: #e2dfd6;
+  --text: #1a1917;
+  --muted: #6b6a65;
+  --accent: #185fa5;
+  --accent-light: #e6f1fb;
+  --note-bg: #e1f5ee;
+  --note-border: #0F6E56;
+  --warn-bg: #faeeda;
+  --warn-border: #BA7517;
+  --key-bg: #EEEDFE;
+  --key-border: #534AB7;
+  --danger-bg: #fcebeb;
+  --danger-border: #A32D2D;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .ims-lesson {
+    --bg: #1a1917;
+    --surface: #242320;
+    --border: #3a3835;
+    --text: #e8e6df;
+    --muted: #9a9890;
+    --accent-light: #042c53;
+    --note-bg: #04342c;
+    --warn-bg: #412402;
+    --key-bg: #26215c;
+  }
+}
+
+.ims-lesson h1 { font-size: 1.8rem; font-weight: 600; margin-bottom: 0.2rem; line-height: 1.2; color: var(--text); }
+.ims-lesson h2 { font-size: 1.25rem; font-weight: 600; margin-top: 2.5rem; padding-bottom: 0.4rem;
+  border-bottom: 1.5px solid var(--border); color: var(--text); }
+.ims-lesson h3 { font-size: 1.05rem; font-weight: 600; margin-top: 1.75rem; color: var(--text); }
+.ims-lesson p { margin: 0.7rem 0; max-width: 72ch; }
+.ims-lesson figure { margin: 2rem 0; }
+.ims-lesson figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 0.6rem;
+  font-style: italic; text-align: center; }
+.ims-lesson svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+.ims-lesson img { max-width: 100%; height: auto; }
+.ims-lesson table { border-collapse: collapse; width: 100%; margin: 1.5rem 0; font-size: 0.9rem; }
+.ims-lesson th { background: var(--accent); color: #fff; padding: 0.55rem 0.9rem; text-align: left; }
+.ims-lesson td { padding: 0.5rem 0.9rem; border-bottom: 1px solid var(--border); }
+.ims-lesson tr:nth-child(even) td { background: var(--surface); }
+.ims-lesson .callout { border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+.ims-lesson .callout-note    { background: var(--note-bg);   border-left: 4px solid var(--note-border); }
+.ims-lesson .callout-warning { background: var(--warn-bg);   border-left: 4px solid var(--warn-border); }
+.ims-lesson .callout-key     { background: var(--key-bg);    border-left: 4px solid var(--key-border); }
+.ims-lesson .callout-danger  { background: var(--danger-bg); border-left: 4px solid var(--danger-border); }
+.ims-lesson .callout-label { font-weight: 700; font-size: 0.78rem; text-transform: uppercase;
+  letter-spacing: 0.06em; margin-bottom: 0.35rem; }
+.ims-lesson .objectives { background: var(--surface); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+.ims-lesson .objectives ul { margin: 0.5rem 0 0; padding-left: 1.4rem; }
+.ims-lesson .lesson-summary { background: var(--accent-light); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 2.5rem 0 1rem; }
+.ims-lesson .lesson-summary h3 { margin-top: 0; color: var(--accent); font-size: 1rem; }
+.ims-lesson .image-needed { border: 2px dashed var(--border); border-radius: 8px;
+  padding: 1.5rem; margin: 1.5rem 0; text-align: center;
+  color: var(--muted); font-size: 0.9rem; background: var(--surface); }
+.ims-lesson .meta { color: var(--muted); font-size: 0.88rem; margin-bottom: 1.75rem; }
+.ims-lesson .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.5rem; }
+</style>
+<div class="ims-lesson">
+<p class="breadcrumb">Module 4 / Lesson 2</p>
+<h1>Operational TAF Amendments &amp; Edge Cases</h1>
+
+<div class="objectives">
+  <strong>By the end of this lesson you will be able to:</strong>
+  <ul>
+    <li>Formulate appropriate change groups (BECMG, TEMPO) for deteriorating or improving conditions.</li>
+    <li>Evaluate existing TAFs for ambiguity and propose operational amendments.</li>
+    <li>Discriminate between scenarios requiring TEMPO versus PROB groups.</li>
+  </ul>
+</div>
+
+<h2>Mastering Change Groups</h2>
+
+<p>The core of an effective TAF lies in accurately conveying changes over time. When conditions deviate from the prevailing forecast, forecasters use change groups: <strong>BECMG</strong>, <strong>TEMPO</strong>, and <strong>PROB</strong>. Applying these correctly ensures the TAF is not only accurate but also operationally actionable.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Change Group</th>
+      <th>Definition &amp; Duration Constraints</th>
+      <th>Operational Implication</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>BECMG</strong><br>(Becoming)</td>
+      <td>A regular or slow transition to a new prevailing condition. The transition period should normally not exceed 2 hours (absolute max 4 hours).</td>
+      <td>Establishes a permanent shift in the baseline flight category.</td>
+    </tr>
+    <tr>
+      <td><strong>TEMPO</strong><br>(Temporary)</td>
+      <td>Fluctuations expected to last <em>less than 1 hour</em> in each instance, and in aggregate cover <em>less than half</em> of the defined time period.</td>
+      <td>Pilots must carry alternate fuel to cover the TEMPO conditions. Very restrictive.</td>
+    </tr>
+    <tr>
+      <td><strong>PROB30 / 40</strong><br>(Probability)</td>
+      <td>A 30% or 40% probability of occurrence. Used primarily for low-confidence events in the trend period (beyond 6 hours).</td>
+      <td>Acts as a heads-up. Often treated similarly to TEMPO by dispatchers, so use it sparingly.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="callout callout-warning">
+  <div class="callout-label">Avoid TEMPO Abuse</div>
+  Do not string TEMPO groups back-to-back across long periods. If an intermittent condition will dominate the period (i.e., aggregate time is greater than half the period), it is no longer temporary—it is the prevailing condition. Use BECMG instead.
+</div>
+
+<h2>The Decision Flowchart</h2>
+
+<p>When you anticipate a change in the weather, follow this logic to select the correct change group. This removes ambiguity and keeps the forecast within ICAO guidelines.</p>
+
+<figure>
+  <svg viewBox="0 0 680 340" role="img" xmlns="http://www.w3.org/2000/svg">
+    <title>Change Group Decision Flowchart</title>
+    <desc>Flowchart guiding the selection between FM, BECMG, and TEMPO based on duration and aggregate time.</desc>
+
+    <!-- Start Node -->
+    <rect x="240" y="20" width="200" height="40" rx="6" fill="#185FA5"/>
+    <text x="340" y="45" font-family="sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="bold">Will the change persist &ge; 1 hour?</text>
+
+    <!-- Lines from Start -->
+    <line x1="340" y1="60" x2="340" y2="100" stroke="#1A1917" stroke-width="2"/>
+    <line x1="240" y1="40" x2="160" y2="40" stroke="#1A1917" stroke-width="2"/>
+    <line x1="160" y1="40" x2="160" y2="100" stroke="#1A1917" stroke-width="2"/>
+
+    <text x="350" y="85" font-family="sans-serif" font-size="14" fill="#1A1917" font-weight="bold">YES</text>
+    <text x="170" y="85" font-family="sans-serif" font-size="14" fill="#1A1917" font-weight="bold">NO</text>
+
+    <!-- YES Path: Persists -->
+    <rect x="240" y="100" width="200" height="40" rx="6" fill="#0F6E56"/>
+    <text x="340" y="125" font-family="sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="bold">Is it a rapid or slow transition?</text>
+
+    <line x1="290" y1="140" x2="290" y2="180" stroke="#1A1917" stroke-width="2"/>
+    <text x="295" y="165" font-family="sans-serif" font-size="14" fill="#1A1917" font-weight="bold">Rapid</text>
+    <rect x="250" y="180" width="80" height="40" rx="4" fill="#EEEDFE" stroke="#534AB7" stroke-width="2"/>
+    <text x="290" y="205" font-family="sans-serif" font-size="14" fill="#1A1917" text-anchor="middle" font-weight="bold">FM (From)</text>
+
+    <line x1="390" y1="140" x2="390" y2="180" stroke="#1A1917" stroke-width="2"/>
+    <text x="395" y="165" font-family="sans-serif" font-size="14" fill="#1A1917" font-weight="bold">Slow</text>
+    <rect x="350" y="180" width="80" height="40" rx="4" fill="#EEEDFE" stroke="#534AB7" stroke-width="2"/>
+    <text x="390" y="205" font-family="sans-serif" font-size="14" fill="#1A1917" text-anchor="middle" font-weight="bold">BECMG</text>
+
+    <!-- NO Path: Fluctuations -->
+    <rect x="60" y="100" width="200" height="40" rx="6" fill="#BA7517"/>
+    <text x="160" y="125" font-family="sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="bold">Aggregate &ge; 50% of period?</text>
+
+    <line x1="100" y1="140" x2="100" y2="260" stroke="#1A1917" stroke-width="2"/>
+    <text x="105" y="165" font-family="sans-serif" font-size="14" fill="#1A1917" font-weight="bold">NO</text>
+    <rect x="60" y="260" width="80" height="40" rx="4" fill="#EEEDFE" stroke="#534AB7" stroke-width="2"/>
+    <text x="100" y="285" font-family="sans-serif" font-size="14" fill="#1A1917" text-anchor="middle" font-weight="bold">TEMPO</text>
+
+    <line x1="220" y1="140" x2="220" y2="260" stroke="#1A1917" stroke-width="2"/>
+    <text x="225" y="165" font-family="sans-serif" font-size="14" fill="#1A1917" font-weight="bold">YES</text>
+    <rect x="180" y="260" width="80" height="40" rx="4" fill="#EEEDFE" stroke="#534AB7" stroke-width="2"/>
+    <text x="220" y="285" font-family="sans-serif" font-size="14" fill="#1A1917" text-anchor="middle" font-weight="bold">BECMG</text>
+  </svg>
+  <figcaption>Logic for selecting the appropriate change group to ensure operational clarity.</figcaption>
+</figure>
+
+<h2>Amendment Criteria</h2>
+
+<p>Do not wait for the next scheduled TAF release if the current forecast is failing. Proactive amendments are a hallmark of a professional forecaster. You must amend the TAF when observed or expected conditions cross critical operational thresholds that are not accounted for in the current forecast.</p>
+
+<div class="callout callout-key">
+  <div class="callout-label">When to Amend</div>
+  Amend immediately when conditions cross between VFR, MVFR, IFR, or LIFR. Additionally, amend if the timing of a major frontal passage or thunderstorm onset changes by more than 2 hours.
+</div>
+
+<p>A common mistake is leaving a TAF "as is" because a previously forecasted PROB30 didn't materialize, or because a TEMPO condition lasted too long. If the conditions become the prevailing weather, you must amend to establish the new baseline.</p>
+
+<div class="lesson-summary">
+  <h3>Key Takeaways</h3>
+  <ul>
+    <li>Use <strong>BECMG</strong> for permanent transitions and <strong>TEMPO</strong> for brief fluctuations lasting less than an hour per instance.</li>
+    <li>If intermittent weather aggregates to more than half the forecast period, it must be promoted to the prevailing condition via BECMG.</li>
+    <li>Amend proactively. If the forecast crosses a flight category threshold unexpectedly, issue an amendment immediately rather than waiting for the next cycle.</li>
+    <li>Do not use PROB groups in the first 6 hours of the TAF. Make a definitive forecast for the critical period.</li>
+  </ul>
+</div>
+</div>

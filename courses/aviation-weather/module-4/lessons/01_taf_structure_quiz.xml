@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+  <question type="multichoice">
+    <name>
+      <text>L1-Q01 — Applying the Vicinity (VC) modifier</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>A cell of heavy showers is tracked on radar exactly 7 statute miles from the center of the runway complex. It is not expected to move closer. How should this be indicated in the TAF?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> The Vicinity (VC) modifier specifically denotes the donut-shaped area between 5 and 10 SM from the center of the runway complex. It allows you to alert pilots to nearby weather (like VCSH) without imposing the restrictive alternate-fuel regulations that a TEMPO SH or SHRA (which implies the weather is within the 5 SM terminal area) would trigger.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Use the VCSH modifier, as the weather is between 5 and 10 SM from the runway center.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Use a TEMPO SHRA group, as the showers may temporarily impact the approach path.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Use SHRA without a modifier, as 7 SM is considered part of the terminal area.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Omit it entirely, as weather outside of 5 SM is not relevant to the TAF.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L1-Q02 — Evaluating TAF conciseness</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>A forecaster writes an 8-line TAF detailing minor fluctuations in VFR cloud cover (e.g., FEW to SCT) and slight wind shifts over a 24-hour period. What is the primary operational issue with this forecast?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> A user-friendly TAF should be concise (ideally no more than 5 lines). Over-forecasting minor, non-critical fluctuations in VFR conditions clutters the forecast and obscures the critical weather trends that pilots and dispatchers actually need to make fuel and alternate decisions.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>It violates the principle of being concise and over-forecasts non-critical aviation weather, reducing its user-friendliness.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>It does not include enough PROB30 groups to cover all possible variations in the VFR cloud cover.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>It fails to use the BECMG group to transition between the minor wind shifts.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>It does not extend to the mandatory 30-hour forecast period required for all international flights.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L1-Q03 — Forecasting by flight category</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>An airport is experiencing an ongoing fluctuation between 4000 ft and 5000 ft ceilings, with visibility remaining above 10 SM. The forecaster introduces multiple TEMPO groups to capture these ceiling changes. Why is this a poor practice?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> Both 4000 ft and 5000 ft ceilings fall well within the VFR flight category (ceiling &gt; 3000 ft). TAFs should focus on changes that cross critical aviation thresholds (e.g., dropping from VFR to MVFR or IFR) rather than minor fluctuations within a single, safe flight category.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Both conditions fall within the VFR flight category; TAFs should focus on changes crossing critical aviation thresholds rather than minor VFR fluctuations.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>TEMPO groups are strictly prohibited for ceilings above 3000 ft; only BECMG can be used.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>The changes should have been forecasted using a single PROB30 group to indicate uncertainty.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ceilings above 3000 ft are not considered "weather" and must be omitted from the TAF entirely.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L1-Q04 — Allocating effort to the critical period</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>A 24-hour TAF is being issued at 12Z. The forecaster is evaluating a fog event expected at 14Z and another expected at 04Z the next day. How should they allocate their forecasting effort according to TAF writing philosophy?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> The first 6 hours of the forecast (in this case, 12Z to 18Z) are the critical operational period for incoming flights, requiring the highest precision and detail. The later period (04Z) is the trend period, where broad trends should be established without excessive change groups or hedging.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Focus maximum detail and precision on resolving the 14Z event, as the first 6 hours are critical for active flight operations, while establishing a broader trend for the 04Z event.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Detail both events with equal precision using multiple TEMPO and PROB groups to ensure full coverage over the 24 hours.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Use a PROB40 group for the 14Z event because it is soon, and a definitive BECMG group for the 04Z event because there is more time to prepare.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Leave both events out of the initial TAF and rely on short-notice amendments as they occur.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+</quiz>

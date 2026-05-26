@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+  <question type="multichoice">
+    <name>
+      <text>L2-Q01 — Choosing between TEMPO and BECMG</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>A forecaster expects intermittent heavy snow showers between 10Z and 16Z. Each individual shower will last about 45 minutes, but they will occur frequently enough that it will be snowing for roughly 4 hours total during that 6-hour window. Which change group should be used?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> Even though each individual shower lasts less than an hour, the aggregate duration of the snow (4 hours) exceeds half of the 6-hour forecast period. When a condition dominates more than half the period, it is no longer temporary—it must be forecasted as the prevailing condition using a BECMG (or FM) group.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>BECMG to establish the snow as the prevailing condition, because the aggregate duration exceeds half the period.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>TEMPO, because each individual shower lasts less than an hour.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>PROB40, because showers are intermittent and therefore not guaranteed to hit the exact center of the terminal.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>FM, because the onset of each shower is a rapid change in conditions.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L2-Q02 — Recognizing amendment criteria</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>A TAF issued at 17Z forecasts VFR conditions with a 4000 ft ceiling through 00Z. At 19Z, an unforecasted boundary pushes through, dropping the ceiling to 800 ft (IFR). Upstream observations show this IFR ceiling will persist for several hours. What is the appropriate operational action?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> The weather has crossed a critical aviation flight category threshold (dropping from VFR to IFR) and is expected to persist. Proactive forecasters must issue an immediate amendment to correct the TAF and ensure flight safety, rather than waiting for the next scheduled issuance.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Issue an immediate amendment establishing IFR as the prevailing condition, as a critical flight category threshold has been crossed.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Wait until the next scheduled TAF release at 23Z to update the forecast, keeping the current cycle clean.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Issue a SPECI observation to alert pilots, but leave the TAF alone since the boundary was unforecasted.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Append a short-duration TEMPO group to the existing TAF to account for the surprise IFR condition.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L2-Q03 — Proper use of PROB groups</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>A forecaster is writing the first 6 hours of a TAF. They have a 30% confidence that a thunderstorm will impact the terminal during this critical window. How should they format the forecast?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> The first 6 hours of a TAF are the most critical for immediate flight operations. Using a PROB group in this window is considered hedging. Forecasters must make a definitive decision: if the threat is significant enough, use a TEMPO group; if not, omit it entirely or use VCSH/VCTS to indicate nearby activity.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Make a definitive forecast without using PROB groups; either include the thunderstorm as a TEMPO group if confident, or use VCTS to indicate nearby activity.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Use a PROB30 TSRA group to alert pilots to the low probability without overly restricting operations.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Use a PROB40 group, because thunderstorms are a severe hazard and warrant a higher stated probability.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Use a BECMG TSRA group, but strictly limit its validity to a 1-hour window.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L2-Q04 — Operational implications of TEMPO</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>A TAF includes a TEMPO group from 08Z to 12Z forecasting visibility reduced to 1 SM in fog. What does this practically imply for a flight dispatcher planning an arrival at 10Z?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> Dispatchers and pilots must plan for the worst-case scenario legally presented in the TAF. A TEMPO group indicating sub-minimum conditions forces them to assume those conditions will occur during their arrival, requiring them to carry extra fuel to reach an alternate airport. This is why TEMPO should not be overused.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>They must assume the 1 SM visibility will occur and must carry sufficient alternate fuel to divert if necessary.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>They can ignore the TEMPO group for fuel calculations as long as the prevailing visibility is forecasted to be VFR.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>They only need to calculate alternate fuel if the fog is upgraded to a BECMG group in a later amendment.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>They must delay their flight departure entirely until the TEMPO group expires at 12Z.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+</quiz>

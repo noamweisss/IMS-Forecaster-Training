@@ -1,0 +1,221 @@
+<style>
+/*
+ * IMS Course Factory — Lesson Design System
+ *
+ * All rules are scoped to `.ims-lesson` so the styles can be injected into
+ * a host page (Moodle, in particular) without leaking onto the host's chrome
+ * and without the host's theme overriding lesson typography.
+ *
+ * Standalone lesson HTML wraps the entire body in <div class="ims-lesson">.
+ * Moodle body-fragment HTML does the same. The single rule below keeps the
+ * standalone preview's <body> background consistent without leaking into
+ * Moodle pages.
+ */
+
+.ims-lesson {
+  --bg: #ffffff;
+  --surface: #f6f5f0;
+  --border: #e2dfd6;
+  --text: #1a1917;
+  --muted: #6b6a65;
+  --accent: #185fa5;
+  --accent-light: #e6f1fb;
+  --note-bg: #e1f5ee;
+  --note-border: #0F6E56;
+  --warn-bg: #faeeda;
+  --warn-border: #BA7517;
+  --key-bg: #EEEDFE;
+  --key-border: #534AB7;
+  --danger-bg: #fcebeb;
+  --danger-border: #A32D2D;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .ims-lesson {
+    --bg: #1a1917;
+    --surface: #242320;
+    --border: #3a3835;
+    --text: #e8e6df;
+    --muted: #9a9890;
+    --accent-light: #042c53;
+    --note-bg: #04342c;
+    --warn-bg: #412402;
+    --key-bg: #26215c;
+  }
+}
+
+.ims-lesson h1 { font-size: 1.8rem; font-weight: 600; margin-bottom: 0.2rem; line-height: 1.2; color: var(--text); }
+.ims-lesson h2 { font-size: 1.25rem; font-weight: 600; margin-top: 2.5rem; padding-bottom: 0.4rem;
+  border-bottom: 1.5px solid var(--border); color: var(--text); }
+.ims-lesson h3 { font-size: 1.05rem; font-weight: 600; margin-top: 1.75rem; color: var(--text); }
+.ims-lesson p { margin: 0.7rem 0; max-width: 72ch; }
+.ims-lesson figure { margin: 2rem 0; }
+.ims-lesson figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 0.6rem;
+  font-style: italic; text-align: center; }
+.ims-lesson svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+.ims-lesson img { max-width: 100%; height: auto; }
+.ims-lesson table { border-collapse: collapse; width: 100%; margin: 1.5rem 0; font-size: 0.9rem; }
+.ims-lesson th { background: var(--accent); color: #fff; padding: 0.55rem 0.9rem; text-align: left; }
+.ims-lesson td { padding: 0.5rem 0.9rem; border-bottom: 1px solid var(--border); }
+.ims-lesson tr:nth-child(even) td { background: var(--surface); }
+.ims-lesson .callout { border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+.ims-lesson .callout-note    { background: var(--note-bg);   border-left: 4px solid var(--note-border); }
+.ims-lesson .callout-warning { background: var(--warn-bg);   border-left: 4px solid var(--warn-border); }
+.ims-lesson .callout-key     { background: var(--key-bg);    border-left: 4px solid var(--key-border); }
+.ims-lesson .callout-danger  { background: var(--danger-bg); border-left: 4px solid var(--danger-border); }
+.ims-lesson .callout-label { font-weight: 700; font-size: 0.78rem; text-transform: uppercase;
+  letter-spacing: 0.06em; margin-bottom: 0.35rem; }
+.ims-lesson .objectives { background: var(--surface); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+.ims-lesson .objectives ul { margin: 0.5rem 0 0; padding-left: 1.4rem; }
+.ims-lesson .lesson-summary { background: var(--accent-light); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 2.5rem 0 1rem; }
+.ims-lesson .lesson-summary h3 { margin-top: 0; color: var(--accent); font-size: 1rem; }
+.ims-lesson .image-needed { border: 2px dashed var(--border); border-radius: 8px;
+  padding: 1.5rem; margin: 1.5rem 0; text-align: center;
+  color: var(--muted); font-size: 0.9rem; background: var(--surface); }
+.ims-lesson .meta { color: var(--muted); font-size: 0.88rem; margin-bottom: 1.75rem; }
+.ims-lesson .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.5rem; }
+</style>
+<div class="ims-lesson">
+<p class="breadcrumb">Module 4 / Lesson 1</p>
+<h1>TAF Structure &amp; Writing Philosophy</h1>
+
+<div class="objectives">
+  <strong>By the end of this lesson you will be able to:</strong>
+  <ul>
+    <li>Define TAF structure and terminology, including the operational definition of Vicinity (VC).</li>
+    <li>Apply TAF writing philosophy to generate concise and user-friendly forecasts.</li>
+    <li>Categorize weather conditions into standard aviation flight categories (VFR, IFR).</li>
+  </ul>
+</div>
+
+<h2>The Terminal Aerodrome Forecast (TAF)</h2>
+
+<p>The Terminal Aerodrome Forecast (TAF) is a concise statement of expected meteorological conditions significant to aviation at an airport. It is prepared by an Aerodrome Forecast Office (AFO) and is the primary tool used by airlines and pilots for flight planning and fuel load decisions.</p>
+
+<p>The definition of the &quot;terminal&quot; area is strictly limited to the airspace within <strong>8 km (5 SM)</strong> of the center of an airport's runway complex. Conditions outside this circle require different reporting mechanisms or careful use of proximity modifiers.</p>
+
+<div class="callout callout-key">
+  <div class="callout-label">The Vicinity (VC) Modifier</div>
+  Vicinity (VC) denotes a donut-shaped area between circles with radii of 5 SM and 10 SM from the center of the runway complex. It is used exclusively in combination with fog (FG), showers (SH), and thunderstorms (TS).
+</div>
+
+<p>Including a VC modifier (e.g., VCSH, VCTS) informs the user about significant weather near the airfield without imposing the stringent operational impacts required by a PROB30 or TEMPO group. It acts as an advisory for the pilot to maintain situational awareness without grounding the flight or forcing alternate fuel requirements.</p>
+
+<h2>TAF Writing Philosophy</h2>
+
+<p>The modern paradigm in TAF writing is the <strong>user-friendly TAF</strong>. In the past, forecasters often wrote lengthy, un-amendable forecasts that included every possible variation in weather (&quot;throwing in the kitchen sink&quot;). This led to ambiguous products that penalized airline operations.</p>
+
+<p>A high-quality TAF meets six criteria: it is <strong>Clear, Concise, Consistent, Relevant, Timely, and Accurate</strong>. Your goal as a forecaster is to enhance flight safety while saving customers time and money.</p>
+
+<div class="callout callout-warning">
+  <div class="callout-label">Avoid Over-Forecasting</div>
+  Limit the use of PROB groups and conditional modifiers. Do not hedge—make a decision. If you cannot pinpoint exact numbers, at least ensure the trend and the flight category are correct. Aim to write a TAF that is no more than 5 lines long.
+</div>
+
+<h2>Aviation Flight Categories</h2>
+
+<p>Rather than obsessing over minute fluctuations in ceiling or visibility, structure your TAF around <strong>Aviation Flight Categories</strong>. The primary objective is to get the category correct (e.g., VFR vs. IFR) and spend most of your forecasting energy on the periods expected to fall below VFR.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Flight Category</th>
+      <th>Ceiling</th>
+      <th>Visibility</th>
+      <th>Operational Impact</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>VFR (Visual Flight Rules)</td>
+      <td>&gt; 3000 ft</td>
+      <td>&gt; 5 SM (8000 m)</td>
+      <td>Routine operations. Mention cirrus only if that is all there is to report.</td>
+    </tr>
+    <tr>
+      <td>MVFR (Marginal VFR)</td>
+      <td>1000 to 3000 ft</td>
+      <td>3 to 5 SM</td>
+      <td>Increased caution; may impact general aviation.</td>
+    </tr>
+    <tr>
+      <td>IFR (Instrument Flight Rules)</td>
+      <td>500 to &lt; 1000 ft</td>
+      <td>1 to &lt; 3 SM</td>
+      <td>Requires instrument approaches; significant delays possible.</td>
+    </tr>
+    <tr>
+      <td>LIFR (Low IFR) / CAT II/III</td>
+      <td>&lt; 500 ft</td>
+      <td>&lt; 1 SM</td>
+      <td>Critical thresholds for the airport. Major operational restrictions.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Structuring the TAF</h2>
+
+<p>When drafting a TAF, establish the overarching trend and write to the aviation flight categories first. Ensure you add the most detail to the <strong>first 6 hours</strong> of the forecast, as this is the critical operational period for incoming flights.</p>
+
+<p>Group similar visibilities and ceilings into coherent scenarios (scenario forecasting) rather than jumping sporadically between categories. For example, if you introduce a TEMPO group, try not to jump more than one category at a time (e.g., from VFR directly down to CAT II IFR).</p>
+
+<figure>
+  <svg viewBox="0 0 680 160" role="img" xmlns="http://www.w3.org/2000/svg">
+    <title>TAF Structure Best Practices</title>
+    <desc>Diagram showing the anatomy of a TAF focusing on the critical first 6 hours and category-based forecasting.</desc>
+
+    <!-- Base line -->
+    <line x1="40" y1="80" x2="640" y2="80" stroke="#E2DFD6" stroke-width="4"/>
+    
+    <!-- Time markers -->
+    <circle cx="40" cy="80" r="6" fill="#185FA5"/>
+    <text x="30" y="110" font-family="sans-serif" font-size="14" fill="#1A1917" font-weight="bold">T+0</text>
+    
+    <circle cx="240" cy="80" r="6" fill="#185FA5"/>
+    <text x="220" y="110" font-family="sans-serif" font-size="14" fill="#1A1917" font-weight="bold">T+6</text>
+    
+    <circle cx="640" cy="80" r="6" fill="#6B6A65"/>
+    <text x="610" y="110" font-family="sans-serif" font-size="14" fill="#6B6A65">T+24/30</text>
+    
+    <!-- Critical Period Highlight -->
+    <rect x="40" y="65" width="200" height="30" fill="#E6F1FB" opacity="0.5"/>
+    <line x1="40" y1="50" x2="240" y2="50" stroke="#185FA5" stroke-width="2"/>
+    <line x1="40" y1="45" x2="40" y2="55" stroke="#185FA5" stroke-width="2"/>
+    <line x1="240" y1="45" x2="240" y2="55" stroke="#185FA5" stroke-width="2"/>
+    <text x="90" y="40" font-family="sans-serif" font-size="12" fill="#185FA5" font-weight="bold">CRITICAL PERIOD</text>
+    
+    <text x="60" y="135" font-family="sans-serif" font-size="12" fill="#0F6E56">High detail. Accurate timing.</text>
+    <text x="60" y="150" font-family="sans-serif" font-size="12" fill="#0F6E56">Strict flight category forecasting.</text>
+    
+    <!-- Later Period Highlight -->
+    <line x1="260" y1="50" x2="640" y2="50" stroke="#6B6A65" stroke-width="2" stroke-dasharray="4 4"/>
+    <text x="380" y="40" font-family="sans-serif" font-size="12" fill="#6B6A65">TREND PERIOD</text>
+    
+    <text x="320" y="135" font-family="sans-serif" font-size="12" fill="#6B6A65">Broad trends. Fewer change groups.</text>
+    <text x="320" y="150" font-family="sans-serif" font-size="12" fill="#6B6A65">Limit PROB. Focus on prevailing conditions.</text>
+  </svg>
+  <figcaption>The first 6 hours of a TAF require the highest precision and detail, as they drive immediate flight and fuel decisions.</figcaption>
+</figure>
+
+<div class="lesson-summary">
+  <h3>Key Takeaways</h3>
+  <ul>
+    <li>A TAF covers the terminal area within 5 SM; the VC modifier covers the donut between 5 SM and 10 SM.</li>
+    <li>Use VC to alert users to nearby weather (TS, SH, FG) without triggering restrictive alternate-fuel regulations.</li>
+    <li>A user-friendly TAF is concise (ideally &le; 5 lines) and avoids hedging with excessive PROB or conditional groups.</li>
+    <li>Forecast by flight category (VFR, IFR) rather than exact values, ensuring the trend is always clear.</li>
+    <li>Concentrate the highest level of detail and accuracy in the first 6 hours of the forecast period.</li>
+  </ul>
+</div>
+</div>

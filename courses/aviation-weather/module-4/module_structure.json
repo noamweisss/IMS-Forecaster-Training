@@ -1,0 +1,102 @@
+{
+  "module_title": "Aviation Forecast Products & Warnings",
+  "module_description": "Examines aviation forecast products and specific high-impact hazards on a global scale. Covers the structure and effective writing of TAFs, tracking and impacts of Tropical Storms and Volcanic Ash, and decoding global WAFC SIGWX charts.",
+  "estimated_duration_minutes": 90,
+  "competencies": [
+    "Produce clear, concise, and accurate Terminal Aerodrome Forecasts (TAFs) tailored to operational needs",
+    "Apply appropriate change groups and amendment criteria to TAFs",
+    "Interpret advisories and track forecasts for tropical cyclones and volcanic ash",
+    "Decode global high-level and medium-level SIGWX charts from World Area Forecast Centres"
+  ],
+  "lessons": [
+    {
+      "lesson_id": "L1",
+      "lesson_title": "TAF Structure & Writing Philosophy",
+      "learning_objectives": [
+        "Define TAF structure and terminology, including the operational definition of Vicinity (VC)",
+        "Apply TAF writing philosophy to generate concise and user-friendly forecasts",
+        "Categorize weather conditions into standard aviation flight categories (VFR, IFR)"
+      ],
+      "source_files": ["15. TAF Writing.pptx"],
+      "key_concepts": ["TAF", "Vicinity (VC)", "Flight Categories", "Trend establishment"],
+      "visual_elements_needed": [
+        "Worked TAF example with color-coded groups illustrating the structure"
+      ],
+      "external_imagery_needed": [],
+      "estimated_duration_minutes": 15
+    },
+    {
+      "lesson_id": "L2",
+      "lesson_title": "Operational TAF Amendments & Edge Cases",
+      "learning_objectives": [
+        "Formulate appropriate change groups (BECMG, TEMPO) for deteriorating or improving conditions",
+        "Evaluate existing TAFs for ambiguity and propose operational amendments",
+        "Discriminate between scenarios requiring TEMPO versus PROB groups"
+      ],
+      "source_files": ["15. TAF Writing.pptx"],
+      "key_concepts": ["BECMG", "TEMPO", "PROB30/40", "Amendment Criteria", "User-friendly vs Un-amendable"],
+      "visual_elements_needed": [
+        "Flowchart for deciding between change groups (BECMG, TEMPO, PROB)"
+      ],
+      "external_imagery_needed": [],
+      "estimated_duration_minutes": 20
+    },
+    {
+      "lesson_id": "L3",
+      "lesson_title": "Tropical Storms",
+      "learning_objectives": [
+        "Describe the atmospheric conditions required for tropical storm formation",
+        "Classify tropical cyclones using the Saffir-Simpson scale",
+        "Interpret global warning center advisories and graphical track forecasts"
+      ],
+      "source_files": ["16. Tropical Storms.pptx"],
+      "key_concepts": ["Tropical Cyclone", "Saffir-Simpson Scale", "RSMC", "TCWC", "Strike Probability"],
+      "visual_elements_needed": [
+        "Track-forecast diagram (cone of uncertainty) showing the cyclone's predicted path"
+      ],
+      "external_imagery_needed": [
+        "Satellite image of a tropical storm (e.g., a Mediterranean storm relevant to IMS forecasting)"
+      ],
+      "estimated_duration_minutes": 15
+    },
+    {
+      "lesson_id": "L4",
+      "lesson_title": "Volcanic Ash",
+      "learning_objectives": [
+        "Explain the specific hazards volcanic ash poses to jet aircraft operations",
+        "Interpret Volcanic Ash Advisories (VAA) from VAACs",
+        "Outline the role of atmospheric dispersion modeling for predicting ash plume trajectories"
+      ],
+      "source_files": ["17. Volcanic Ash.pptx"],
+      "key_concepts": ["Volcanic Ash", "VAAC", "Volcanic Ash Advisory (VAA)", "Atmospheric Dispersion Model"],
+      "visual_elements_needed": [
+        "SIGMET dispersion-area sketch illustrating an ash plume polygon"
+      ],
+      "external_imagery_needed": [
+        "Photograph of a volcanic ash plume from a real eruption"
+      ],
+      "estimated_duration_minutes": 15
+    },
+    {
+      "lesson_id": "L5",
+      "lesson_title": "WAFC Maps & Global Forecast Charts",
+      "learning_objectives": [
+        "Distinguish between High-level (SWH) and Medium-level (SWM) SIGWX charts",
+        "Decode standard aviation meteorological parameters (jetstreams, CAT, CBs) on WAFC maps",
+        "Differentiate between isolated, occasional, and frequent cumulonimbus coverage as defined by ICAO"
+      ],
+      "source_files": ["18. WAFC Maps.pptx"],
+      "key_concepts": ["WAFS", "WAFC", "SWH", "SWM", "Jetstream", "Clear Air Turbulence (CAT)", "Embedded CB"],
+      "visual_elements_needed": [
+        "Annotated mock-WAFC-chart showing jetstreams, CAT areas, and tropopause heights"
+      ],
+      "external_imagery_needed": [],
+      "estimated_duration_minutes": 25
+    }
+  ],
+  "module_quiz": {
+    "description": "End-of-module summative assessment covering TAFs, global hazards, and WAFC charts",
+    "question_count": 25,
+    "passing_score_percent": 75
+  }
+}

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+  <question type="multichoice">
+    <name>
+      <text>L5-Q01 — Chart Altitude Overlap</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>A flight is scheduled to cruise at FL360 over Europe. The dispatcher is reviewing the WAFC SIGWX charts. Which chart(s) should they consult?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> The High-Level (SWH) chart covers FL250 to FL630, while the Medium-Level (SWM) chart covers FL100 to FL450. A cruising altitude of FL360 falls directly into the overlap region. Dispatchers and pilots should consult both charts, as the SWM may contain finer details (like in-cloud icing) relevant to that altitude that the SWH omits.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Both the SWH and the SWM charts, because FL360 falls into the overlap region where both charts provide valid, complementary information.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Only the SWH chart, because it is the primary global dataset for all high-altitude jet traffic.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Only the SWM chart, because it provides finer detail specifically tailored for European regional routes.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Neither chart; at that altitude, they should rely solely on the TAFs for the departure and destination airports.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L5-Q02 — Interpreting Jetstreams</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>A WAFC SIGWX chart displays a solid line with wind barbs indicating a 120-knot wind speed and a text box labeled "FL340". What does this specific symbology represent?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> A solid line with wind barbs and flight level labels on a SIGWX chart indicates the axis of a jetstream. Jetstreams are only plotted when the core wind speed is 80 knots or greater. The label "FL340" indicates the altitude of the maximum wind speed core.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>The core of a jetstream located at FL340 with a maximum wind speed of 120 knots.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>An area of severe clear air turbulence (CAT) extending from the surface up to FL340.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>The forecasted track of a mid-latitude frontal system moving at a speed of 120 knots.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>The upper limit of the tropopause in that specific region.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L5-Q03 — ICAO CB Coverage Definitions</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>A SIGWX chart shows a scalloped area labeled "OCNL CB". A pilot asks the briefing forecaster what this means for their ability to navigate through the area using airborne weather radar.</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> Under ICAO definitions, Occasional (OCNL) means well-separated cumulonimbus clouds covering between 50% and 75% of the forecast area. Because they are well-separated, an aircraft equipped with weather radar can usually deviate around individual cells safely. "FRQ" (Frequent, &gt;75%) would imply little to no separation, requiring the area to be avoided entirely.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>It means well-separated thunderstorms covering 50-75% of the area, implying the pilot can likely use radar to pick a safe path between the cells.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>It means the storms will only happen briefly, so the pilot can safely fly straight through the area without deviating.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>It means the coverage is less than 50% (Isolated), representing a very low risk to en-route navigation.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>It means the storms are embedded in other cloud layers and invisible to radar, requiring the area to be completely avoided.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L5-Q04 — SWM vs SWH Features</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>A forecaster is preparing a localized briefing using WAFC BUFR data and wants to highlight areas of moderate in-cloud icing for a regional flight at FL220. Which WAFC dataset contains this specific parameter?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> The Medium-level (SWM) dataset includes finer meteorological details—specifically cloud types, amounts, and in-cloud icing—that are omitted from the High-level (SWH) charts to avoid cluttering the global high-altitude picture.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>The Medium-level (SWM) dataset, which includes finer details like in-cloud icing not present on High-level charts.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>The High-level (SWH) dataset, because significant structural icing only occurs at high altitudes near the tropopause.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Both datasets include in-cloud icing information, as it is a critical hazard for all flight levels.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Neither dataset includes icing; icing forecasts are only available via localized AIRMETs.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+</quiz>

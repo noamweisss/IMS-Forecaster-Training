@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+  <question type="multichoice">
+    <name>
+      <text>L4-Q01 — Radar detection of volcanic ash</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>A large volcano erupts during the night. A commercial jet is flying at FL350 directly toward the forecasted plume path. The flight crew reports that their onboard weather radar shows completely clear skies ahead. Why is this occurring?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> Aircraft weather radar is tuned specifically to detect large hydrometeors (water droplets and ice crystals). Volcanic ash consists of dry, silicate-based particles that are generally too small and lack the dielectric properties necessary to reflect the radar beam back to the aircraft, making the plume effectively invisible to onboard radar.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Aircraft radar is designed to detect water and ice; it cannot detect dry, silicate-based volcanic ash particles.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Volcanic ash forms exclusively below FL200, so it is beneath the radar's sweep angle at cruising altitude.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>The radar beam is entirely absorbed by the toxic sulfur dioxide gas within the plume, masking the ash.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ash particles hold a strong negative charge that cancels out the positive radar pulses.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L4-Q02 — VAAC Dispersion Modeling</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>Following an eruption, a VAAC runs an atmospheric dispersion model (like the NAME model) to issue a Volcanic Ash Advisory (VAA). What is the primary meteorological input required for this model to accurately predict the ash plume's trajectory?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> Dispersion models calculate the 3D trajectory of ash particles. To do this, they heavily rely on accurate upper-level wind forecasts (speed, direction, and shear across multiple flight levels) to determine where the plume will drift and how it will diffuse over time.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Detailed upper-level wind data to calculate the trajectory and diffusion of the particles.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Surface temperature measurements to calculate the initial explosive force of the eruption.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Sea surface temperatures to determine the latent heat available to the plume.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Incoming solar radiation data to model the photochemical breakdown of the ash.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L4-Q03 — Mechanism of engine failure</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>An aircraft inadvertently flies through a thin volcanic ash cloud. Shortly after, the crew experiences a complete loss of thrust in all engines. What is the primary mechanical cause of this failure?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> Volcanic ash contains silicates with a melting point lower than the core operating temperature of a jet engine. As the ash passes through the combustion chamber, it melts. It then impacts the slightly cooler turbine blades, resolidifying into a glass-like coating that chokes off airflow and causes the engine to stall.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Silicates in the ash melt in the combustion chamber and resolidify on the turbine blades, choking airflow.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>The abrasive nature of the ash completely shreds the titanium fan blades at the front of the engine.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>The ash particles carry a strong static charge that shorts out the engine's electronic control unit (FADEC).</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Toxic gases in the plume consume all available oxygen, starving the combustion process.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L4-Q04 — VAA and SIGMET relationship</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>A VAAC issues a VAA containing an ash plume polygon that intersects the edge of your Flight Information Region (FIR) at FL300. You review the dispersion model output and believe the ash concentration will be very light and not pose a significant risk. What is the correct operational procedure?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> There is currently no globally agreed-upon "safe" concentration of volcanic ash for jet engines. Therefore, volcanic ash SIGMETs are not discretionary for the local MWO forecaster. If a VAA polygon indicates ash entering your FIR, you must issue a corresponding SIGMET to close or restrict that airspace.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>You must issue a SIGMET for volcanic ash based on the VAA polygon, as ash SIGMETs are mandatory when a plume enters an FIR.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Downgrade the warning to an AIRMET since your independent analysis indicates the concentration is light.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ignore the VAA since it only clips the edge of the FIR and will exit quickly.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Wait for pilot reports (PIREPs) to confirm the presence of actual ash before issuing any warnings.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+</quiz>

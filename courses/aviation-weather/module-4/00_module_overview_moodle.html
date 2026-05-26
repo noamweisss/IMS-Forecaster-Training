@@ -1,0 +1,152 @@
+<style>
+/*
+ * IMS Course Factory — Lesson Design System
+ *
+ * All rules are scoped to `.ims-lesson` so the styles can be injected into
+ * a host page (Moodle, in particular) without leaking onto the host's chrome
+ * and without the host's theme overriding lesson typography.
+ *
+ * Standalone lesson HTML wraps the entire body in <div class="ims-lesson">.
+ * Moodle body-fragment HTML does the same. The single rule below keeps the
+ * standalone preview's <body> background consistent without leaking into
+ * Moodle pages.
+ */
+
+.ims-lesson {
+  --bg: #ffffff;
+  --surface: #f6f5f0;
+  --border: #e2dfd6;
+  --text: #1a1917;
+  --muted: #6b6a65;
+  --accent: #185fa5;
+  --accent-light: #e6f1fb;
+  --note-bg: #e1f5ee;
+  --note-border: #0F6E56;
+  --warn-bg: #faeeda;
+  --warn-border: #BA7517;
+  --key-bg: #EEEDFE;
+  --key-border: #534AB7;
+  --danger-bg: #fcebeb;
+  --danger-border: #A32D2D;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .ims-lesson {
+    --bg: #1a1917;
+    --surface: #242320;
+    --border: #3a3835;
+    --text: #e8e6df;
+    --muted: #9a9890;
+    --accent-light: #042c53;
+    --note-bg: #04342c;
+    --warn-bg: #412402;
+    --key-bg: #26215c;
+  }
+}
+
+.ims-lesson h1 { font-size: 1.8rem; font-weight: 600; margin-bottom: 0.2rem; line-height: 1.2; color: var(--text); }
+.ims-lesson h2 { font-size: 1.25rem; font-weight: 600; margin-top: 2.5rem; padding-bottom: 0.4rem;
+  border-bottom: 1.5px solid var(--border); color: var(--text); }
+.ims-lesson h3 { font-size: 1.05rem; font-weight: 600; margin-top: 1.75rem; color: var(--text); }
+.ims-lesson p { margin: 0.7rem 0; max-width: 72ch; }
+.ims-lesson figure { margin: 2rem 0; }
+.ims-lesson figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 0.6rem;
+  font-style: italic; text-align: center; }
+.ims-lesson svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+.ims-lesson img { max-width: 100%; height: auto; }
+.ims-lesson table { border-collapse: collapse; width: 100%; margin: 1.5rem 0; font-size: 0.9rem; }
+.ims-lesson th { background: var(--accent); color: #fff; padding: 0.55rem 0.9rem; text-align: left; }
+.ims-lesson td { padding: 0.5rem 0.9rem; border-bottom: 1px solid var(--border); }
+.ims-lesson tr:nth-child(even) td { background: var(--surface); }
+.ims-lesson .callout { border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+.ims-lesson .callout-note    { background: var(--note-bg);   border-left: 4px solid var(--note-border); }
+.ims-lesson .callout-warning { background: var(--warn-bg);   border-left: 4px solid var(--warn-border); }
+.ims-lesson .callout-key     { background: var(--key-bg);    border-left: 4px solid var(--key-border); }
+.ims-lesson .callout-danger  { background: var(--danger-bg); border-left: 4px solid var(--danger-border); }
+.ims-lesson .callout-label { font-weight: 700; font-size: 0.78rem; text-transform: uppercase;
+  letter-spacing: 0.06em; margin-bottom: 0.35rem; }
+.ims-lesson .objectives { background: var(--surface); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+.ims-lesson .objectives ul { margin: 0.5rem 0 0; padding-left: 1.4rem; }
+.ims-lesson .lesson-summary { background: var(--accent-light); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 2.5rem 0 1rem; }
+.ims-lesson .lesson-summary h3 { margin-top: 0; color: var(--accent); font-size: 1rem; }
+.ims-lesson .image-needed { border: 2px dashed var(--border); border-radius: 8px;
+  padding: 1.5rem; margin: 1.5rem 0; text-align: center;
+  color: var(--muted); font-size: 0.9rem; background: var(--surface); }
+.ims-lesson .meta { color: var(--muted); font-size: 0.88rem; margin-bottom: 1.75rem; }
+.ims-lesson .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.5rem; }
+</style>
+<div class="ims-lesson">
+<p class="breadcrumb">Aviation Weather Forecasting / Module 4</p>
+<h1>Module 4: Aviation Forecast Products &amp; Warnings</h1>
+
+<p class="meta">Estimated duration: 90 minutes</p>
+
+<p>Welcome to Module 4. In this final module of the Aviation Weather Forecasting Certification course, we shift our focus from local aerodrome phenomena to the specialized products and global hazards that dictate international aviation routing and safety.</p>
+
+<p>You will learn the philosophy behind writing effective, user-friendly Terminal Aerodrome Forecasts (TAFs) and how to manage complex meteorological transitions using strict change groups. We will also explore the severe hazards posed by Tropical Storms and Volcanic Ash, and how global authorities (VAACs and RSMCs) track these phenomena. Finally, you will learn to decode the World Area Forecast System (WAFS) charts that pilots use for en-route navigation.</p>
+
+<div class="objectives">
+  <strong>Core Competencies:</strong>
+  <ul>
+    <li>Produce clear, concise, and accurate Terminal Aerodrome Forecasts (TAFs) tailored to operational needs.</li>
+    <li>Apply appropriate change groups (BECMG, TEMPO) and amendment criteria to TAFs.</li>
+    <li>Interpret advisories and track forecasts for tropical cyclones and volcanic ash.</li>
+    <li>Decode global high-level (SWH) and medium-level (SWM) SIGWX charts from World Area Forecast Centres.</li>
+  </ul>
+</div>
+
+<h2>Module Structure</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Lesson</th>
+      <th>Topic</th>
+      <th>Duration</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Lesson 1</td>
+      <td><strong>TAF Structure &amp; Writing Philosophy</strong><br>Terminology, flight categories, and the push for user-friendly forecasts.</td>
+      <td>15 mins</td>
+    </tr>
+    <tr>
+      <td>Lesson 2</td>
+      <td><strong>Operational TAF Amendments &amp; Edge Cases</strong><br>Navigating BECMG, TEMPO, and PROB groups, and knowing when to amend.</td>
+      <td>20 mins</td>
+    </tr>
+    <tr>
+      <td>Lesson 3</td>
+      <td><strong>Tropical Storms</strong><br>Formation, the Saffir-Simpson scale, and interpreting the Cone of Uncertainty.</td>
+      <td>15 mins</td>
+    </tr>
+    <tr>
+      <td>Lesson 4</td>
+      <td><strong>Volcanic Ash</strong><br>The mechanical threat to jet engines, VAACs, and dispersion modeling polygons.</td>
+      <td>15 mins</td>
+    </tr>
+    <tr>
+      <td>Lesson 5</td>
+      <td><strong>WAFC Maps &amp; Global Forecast Charts</strong><br>Decoding SWH and SWM SIGWX charts, jetstreams, and CB coverage terminology.</td>
+      <td>25 mins</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="callout callout-note">
+  <div class="callout-label">Module Assessment</div>
+  At the conclusion of Lesson 5, you will complete a 25-question summative quiz covering all material presented in this module. A score of 75% or higher is required to pass.
+</div>
+</div>

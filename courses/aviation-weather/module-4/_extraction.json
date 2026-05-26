@@ -1,0 +1,4223 @@
+[
+  {
+    "filename": "15. TAF Writing.pptx",
+    "format": "pptx",
+    "slide_count": 44,
+    "slides": [
+      {
+        "slide_number": 1,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "דגשים בכתיבת TAF"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 2,
+        "title": "Objectives for today…",
+        "body": [
+          {
+            "level": 0,
+            "text": "TAF Terminology"
+          },
+          {
+            "level": 0,
+            "text": "TAF Writing Philosophy"
+          },
+          {
+            "level": 0,
+            "text": "TAF Examples"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 3,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "TAF Terminology"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 4,
+        "title": "TAF Terminology",
+        "body": [
+          {
+            "level": 0,
+            "text": "Terminal Aerodrome Forecast"
+          },
+          {
+            "level": 0,
+            "text": "Terminal Aerodrome Forecasts, also known as Aerodrome Forecasts, are prepared by Aerodrome Forecast Office (AFO)."
+          },
+          {
+            "level": 0,
+            "text": "The definition of terminal is an area within five 8 km of the center of an airport’s runway complex."
+          },
+          {
+            "level": 0,
+            "text": "A TAF will consist of expected meteorological conditions significant to aviation at the airport (terminal) for a specified time period."
+          },
+          {
+            "level": 0,
+            "text": "TAFs are a critical element of aviation weather services because they are a key product in decisions on aircraft movement."
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 5,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "Terminal Aerodrome Forecast"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 6,
+        "title": "Use of Vicinity (VC)",
+        "body": [
+          {
+            "level": 0,
+            "text": "Used in combination with fog (FG), showers (SH), and thunderstorms (TS)"
+          },
+          {
+            "level": 0,
+            "text": "Less stringent operational impacts on users than PROB30 groups"
+          },
+          {
+            "level": 0,
+            "text": "Vicinity =  A donut-shaped area between circles with radii of 5 and"
+          },
+          {
+            "level": 0,
+            "text": "10 SM from the center of the runway complex of an airport."
+          }
+        ],
+        "notes": "--When the Forecaster feels there is a less than 50% chance for significant weather within the terminal aerodrome…but still wants to make the user aware of the potential for fog, showers, or thunderstorms w/in the airfield…he/she may chose to include a Vicinity in the TAF.\n\n--The use of VC has less stringent operational impact on the users than PROB30 or TEMPO. Basically, with a PROB30 or TEMPO…the user has to treat this as the prevailing condition…meaning Commercial airlines might add extra fuel for an alternate destination…or for the GA Pilot, this could mean you are grounded depending on your flight credentials and/or aircraft capabilities.\n \n--What does it mean if you, the TAF user, see a VC or a CB in the TAF? Even though the prevailing wx conditions are not show stoppers, the user needs to be pro-active and ask himself “what will I do if I encounter TS within the vicinity of the Airfield? Will this cause me significant problems…or can I (and my aircraft) handle this? \n\n--As for CB…the user will need to treat this as a heads up that the atmosphere they are flying into/out of is unstable…which could mean turbulence…or even an isolated thunderstorm or two might pop up…but the forecaster confidence is low…and if Tstorms do develop, they will be short-lived and minimal in coverage.",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 7,
+        "title": "",
+        "body": [],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 8,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "חוסר הידידותיות של ה BECMG :"
+          },
+          {
+            "level": 0,
+            "text": "לאיזו עננות יש לצפות ב 2306 ?"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 9,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "Change groups/Amendment Criteria"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 10,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "Change groups/Amendment Criteria"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 11,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "Change groups/Amendment Criteria"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 12,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "Change groups/Amendment Criteria"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 13,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "TAF Writing Philosopy"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 14,
+        "title": "TAF Writing Philosophy",
+        "body": [
+          {
+            "level": 0,
+            "text": "Common Needs…"
+          },
+          {
+            "level": 2,
+            "text": "Clear"
+          },
+          {
+            "level": 2,
+            "text": "Concise"
+          },
+          {
+            "level": 2,
+            "text": "Consistent"
+          },
+          {
+            "level": 2,
+            "text": "Relevant"
+          },
+          {
+            "level": 2,
+            "text": "Timely"
+          },
+          {
+            "level": 2,
+            "text": "Accurate"
+          },
+          {
+            "level": 0,
+            "text": "Through the TAF, Forecasters have a great opportunity"
+          },
+          {
+            "level": 0,
+            "text": "to enhance flight safety and save customers both time and money."
+          }
+        ],
+        "notes": "Over the past several years…the outreach efforts and forecast verification have indicated that although spectrum of TAF user and aviation customers is great, there are a few common needs throughout these groups…the need for CLEAR, CONCISE, CONSISTENT, RELEVENT, TIMELY, & ACCURATE TAFs—ref: Distance Aviation Learning Courses (DLAC)",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 15,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "TAF EGYP 301320Z 3015/0109 24030G40KT 9999 NSW SCT025 TEMPO 3015/3020 23035G45KT 6000 SHRA SHRAGS BKN020CB PROB30 22040G50KT 3015/3020 4000 +SHRAGS SHRASN SCT012 BKN015CB PROB30 TEMPO 3020/0109 7000 SHRA -SHRAGS BKN022 BECMG 3023/0102 25018G28KT BECMG 0102/0105 28015KT"
+          },
+          {
+            "level": 0,
+            "text": "TAF EGYP 301320Z 3015/0109 24030G40KT 9999 NSW SCT025 TEMPO 3015/3020 23035G45KT 6000 SHRA SHRAGS BKN020CB PROB30 22040G50KT 3015/3020 4000 +SHRAGS SHRASN SCT012 BKN015CB PROB30 TEMPO 3020/0109 7000 SHRA -SHRAGS BKN022 BECMG 3023/0102 25018G28KT BECMG 0102/0105 28015KT"
+          },
+          {
+            "level": 0,
+            "text": "KIAD 301731Z 3018/0124 27013G25KT P6SM BKN050"
+          },
+          {
+            "level": 0,
+            "text": "FM010100 32009KT P6SM FEW050"
+          },
+          {
+            "level": 0,
+            "text": "FM011600 35005KT P6SM SKC"
+          },
+          {
+            "level": 0,
+            "text": "YMML 301605Z 3018/0124 27010KT 9999 FEW030 SCT040\u000b\t    BECMG 3023/0101 20016KT 9999 -SHRA FEW030 SCT050\u000b\t    BECMG 0108/0110 18008KT 9999 FEW015 SCT020\u000b\t    TEMPO 0118/0123 9999 BKN010"
+          },
+          {
+            "level": 0,
+            "text": "TAF ידידותי למשתמש :"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 16,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "TAF EGYP 301320Z 3015/0109 24030G40KT 9999 NSW SCT025 TEMPO 3015/3020 23035G45KT 6000 SHRA SHRAGS BKN020CB PROB30 22040G50KT 3015/3020 4000 +SHRAGS SHRASN SCT012 BKN015CB PROB30 TEMPO 3020/0109 7000 SHRA -SHRAGS BKN022 BECMG 3023/0102 25018G28KT BECMG 0102/0105 28015KT"
+          },
+          {
+            "level": 0,
+            "text": "TAF EGYP 301320Z 3015/0109 24030G40KT 9999 NSW SCT025 TEMPO 3015/3020 23035G45KT 6000 SHRA SHRAGS BKN020CB PROB30 22040G50KT 3015/3020 4000 +SHRAGS SHRASN SCT012 BKN015CB PROB30 TEMPO 3020/0109 7000 SHRA -SHRAGS BKN022 BECMG 3023/0102 25018G28KT BECMG 0102/0105 28015KT"
+          },
+          {
+            "level": 0,
+            "text": "TAF EGSS 301704Z 3018/0124 20015G25KT 9999 SCT030"
+          },
+          {
+            "level": 0,
+            "text": "BECMG 3021/3023 6000 RA BKN014"
+          },
+          {
+            "level": 0,
+            "text": "TEMPO 3022/0102 21025G38KT 4000 +RA BKN009"
+          },
+          {
+            "level": 0,
+            "text": "TEMPO 0102/0104 9999 NSW SCT015"
+          },
+          {
+            "level": 0,
+            "text": "BECMG 0104/0107 24005KT 9999 NSW BKN015"
+          },
+          {
+            "level": 0,
+            "text": "TEMPO 0107/0113 6000 RA"
+          },
+          {
+            "level": 0,
+            "text": "BECMG 0113/0116 6000 RA"
+          },
+          {
+            "level": 0,
+            "text": "PROB40 TEMPO 0113/0122 4000 +RA BKN012"
+          },
+          {
+            "level": 0,
+            "text": "א. מהו גובה בסיס ענן הצפוי ב 3022 ? האם אפשר לתכנן לשעה זו גישה בראיה?"
+          },
+          {
+            "level": 0,
+            "text": "ב. מהי הראות החזויה לשעות 0102/0104 ?"
+          },
+          {
+            "level": 0,
+            "text": "ג. מהי הרוח החזויה לשעות 0102/0104 ?"
+          },
+          {
+            "level": 0,
+            "text": "ד. מהי הרוח הצפויה בשעות 0122/0124 ?"
+          },
+          {
+            "level": 0,
+            "text": "ה. מהי העננות ומז\"א בשעות 0122/0124 ?"
+          },
+          {
+            "level": 0,
+            "text": "ו. מתי לא צפוי גשם?"
+          },
+          {
+            "level": 0,
+            "text": "חוסר הידידותיות של TAF (1) :"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 17,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "TAF EGYP 301320Z 3015/0109 24030G40KT 9999 NSW SCT025 TEMPO 3015/3020 23035G45KT 6000 SHRA SHRAGS BKN020CB PROB30 22040G50KT 3015/3020 4000 +SHRAGS SHRASN SCT012 BKN015CB PROB30 TEMPO 3020/0109 7000 SHRA -SHRAGS BKN022 BECMG 3023/0102 25018G28KT BECMG 0102/0105 28015KT"
+          },
+          {
+            "level": 0,
+            "text": "TAF EGYP 301320Z 3015/0109 24030G40KT 9999 NSW SCT025 TEMPO 3015/3020 23035G45KT 6000 SHRA SHRAGS BKN020CB PROB30 22040G50KT 3015/3020 4000 +SHRAGS SHRASN SCT012 BKN015CB PROB30 TEMPO 3020/0109 7000 SHRA -SHRAGS BKN022 BECMG 3023/0102 25018G28KT BECMG 0102/0105 28015KT"
+          },
+          {
+            "level": 0,
+            "text": "TAF EHAM 301710Z 3018/0124 18010KT CAVOK"
+          },
+          {
+            "level": 0,
+            "text": "BECMG 3020/3023 17015KT"
+          },
+          {
+            "level": 0,
+            "text": "BECMG 0101/0104 18018G28KT"
+          },
+          {
+            "level": 0,
+            "text": "TEMPO 0103/0124 7000 -RA SCT010 BKN040"
+          },
+          {
+            "level": 0,
+            "text": "PROB30 TEMPO 0103/0107 4000 -DZRA BKN010 BKN030"
+          },
+          {
+            "level": 0,
+            "text": "BECMG 0107/0110 21020G30KT BKN015"
+          },
+          {
+            "level": 0,
+            "text": "PROB30 TEMPO 0114/0120 4000 RA BKN008 BKN018"
+          },
+          {
+            "level": 0,
+            "text": "BECMG 0117/0120 31006KT 6000 -DZRA BKN010"
+          },
+          {
+            "level": 0,
+            "text": "PROB30 TEMPO 0120/0124 2500 DZRA BKN006="
+          },
+          {
+            "level": 0,
+            "text": "א. מהם כל אפשרויות רוח, ראות, מזג האוויר ועננות המוזכרות כאן לגבי 0103 ?"
+          },
+          {
+            "level": 0,
+            "text": "ב. מהם כל אפשרויות רוח, ראות, מזג האוויר ועננות המוזכרות כאן לגבי 0120 ?"
+          },
+          {
+            "level": 0,
+            "text": "חוסר הידידותיות של TAF (2) :"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 18,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "TAF EGYP 301320Z 3015/0109 24030G40KT 9999 NSW SCT025 TEMPO 3015/3020 23035G45KT 6000 SHRA SHRAGS BKN020CB PROB30 22040G50KT 3015/3020 4000 +SHRAGS SHRASN SCT012 BKN015CB PROB30 TEMPO 3020/0109 7000 SHRA -SHRAGS BKN022 BECMG 3023/0102 25018G28KT BECMG 0102/0105 28015KT"
+          },
+          {
+            "level": 0,
+            "text": "TAF EGYP 301320Z 3015/0109 24030G40KT 9999 NSW SCT025 TEMPO 3015/3020 23035G45KT 6000 SHRA SHRAGS BKN020CB PROB30 22040G50KT 3015/3020 4000 +SHRAGS SHRASN SCT012 BKN015CB PROB30 TEMPO 3020/0109 7000 SHRA -SHRAGS BKN022 BECMG 3023/0102 25018G28KT BECMG 0102/0105 28015KT"
+          },
+          {
+            "level": 0,
+            "text": "TAF EINN 301700Z 3018/0118 19020G32KT 9999 SCT015 BKN025"
+          },
+          {
+            "level": 0,
+            "text": "TEMPO 3018/3021 18025G40KT"
+          },
+          {
+            "level": 0,
+            "text": "TEMPO 3018/3023 5000 RADZ BKN010"
+          },
+          {
+            "level": 0,
+            "text": "PROB40 TEMPO 3018/3021 3000 +RA BKN007 SCT018CB"
+          },
+          {
+            "level": 0,
+            "text": "BECMG 3020/3022 26018G30KT"
+          },
+          {
+            "level": 0,
+            "text": "BECMG 3022/3024 SCT020 SCT040"
+          },
+          {
+            "level": 0,
+            "text": "TEMPO 0100/0115 FEW018CB"
+          },
+          {
+            "level": 0,
+            "text": "BECMG 0100/0103 25012KT"
+          },
+          {
+            "level": 0,
+            "text": "BECMG 0104/0106 19010KT"
+          },
+          {
+            "level": 0,
+            "text": "BECMG 0108/0110 24010KT"
+          },
+          {
+            "level": 0,
+            "text": "BECMG 0110/0112 32008KT="
+          },
+          {
+            "level": 0,
+            "text": "א. מהם כל אפשרויות רוח, ראות, מזג האוויר ועננות המוזכרות כאן לגבי 3020 ?"
+          },
+          {
+            "level": 0,
+            "text": "ב. מהי העננות הצפויה ב 0112/0118 ?"
+          },
+          {
+            "level": 0,
+            "text": "חוסר הידידותיות של TAF (3) :"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 19,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "מה לא בסדר ?"
+          },
+          {
+            "level": 0,
+            "text": "חוסר הידידותיות של TAF (4) :"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 20,
+        "title": "",
+        "body": [],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 21,
+        "title": "",
+        "body": [],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 22,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "The most probable !"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 23,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "TAF Writing Philosophy"
+          },
+          {
+            "level": 0,
+            "text": "18"
+          },
+          {
+            "level": 0,
+            "text": "18"
+          },
+          {
+            "level": 0,
+            "text": "00"
+          },
+          {
+            "level": 0,
+            "text": "04"
+          },
+          {
+            "level": 0,
+            "text": "08"
+          },
+          {
+            "level": 0,
+            "text": "12"
+          },
+          {
+            "level": 0,
+            "text": "IFR/ CAT I"
+          },
+          {
+            "level": 0,
+            "text": "IFR/ CAT II"
+          },
+          {
+            "level": 0,
+            "text": "VFR"
+          },
+          {
+            "level": 0,
+            "text": "VFR"
+          },
+          {
+            "level": 0,
+            "text": "VFR + Cross Winds"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 24,
+        "title": "Forecaster Best Practices",
+        "body": [
+          {
+            "level": 0,
+            "text": "Goal: Avoid writing the un-amendable, ambiguous TAF and strive"
+          },
+          {
+            "level": 0,
+            "text": "for an effective, practical, user-friendly TAF by…"
+          },
+          {
+            "level": 0,
+            "text": "Establishing trends and writing to Aviation Flight Categories first"
+          },
+          {
+            "level": 0,
+            "text": "Add detail to the first 6 hours of the TAF, known as the critical TAF period"
+          },
+          {
+            "level": 0,
+            "text": "Limit the use of PROB groups"
+          }
+        ],
+        "notes": "--In the past couple years, Forecasters have had a sort of paradigm shift…where we are no longer writing the un-amendable TAF…meaning we are no longer throwing in everything but the kitchen sink. In the process, we’ve had to Find a way to provide quality service to our customers and present the realm of possibilities while avoiding the ‘cry wolf syndrome’ (reducing our FAR). \nHow do the forecasters indicate the threat for weather, thunderstorms for example, when the probability is less than 50%?? \n--Best Practices say to limit the use of TEMPO (which is for probability greater than 50% anyway) and avoid the use of PROB30? \n--What about the use of CB and/or VC?",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 25,
+        "title": "TAF Writing Philosophy",
+        "body": [
+          {
+            "level": 0,
+            "text": "No more than 5 lines per TAF"
+          },
+          {
+            "level": 0,
+            "text": "Avoid PROB groups"
+          },
+          {
+            "level": 0,
+            "text": "Link similar visibility and ceilings into similar categories (scenario forecasting)"
+          },
+          {
+            "level": 0,
+            "text": "Mention cirrus only when that’s all there is to mention"
+          },
+          {
+            "level": 0,
+            "text": "Consider the local critical thresholds for the airport"
+          },
+          {
+            "level": 0,
+            "text": "At least get the forecast category (VFR, IFR) correct"
+          },
+          {
+            "level": 0,
+            "text": "Focus on the aviation critical weather—spend most of your energy on the forecast period that is expected to be below VFR"
+          },
+          {
+            "level": 0,
+            "text": "If you can’t get exact numbers, at least show the trend"
+          },
+          {
+            "level": 0,
+            "text": "Limit your use of conditional groups—don’t hedge, make a decision!"
+          },
+          {
+            "level": 0,
+            "text": "When you do use a TEMPO group, try not to jump more than one category (e.g., from VFR to CAT II)"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 26,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "TAF Writing Philosophy"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 27,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "TAF Writing Philosophy"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 28,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "TAF Writing Philosophy"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 29,
+        "title": "",
+        "body": [],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 30,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "TAF Examples"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 31,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "זה מול זה"
+          },
+          {
+            "level": 0,
+            "text": "או..."
+          },
+          {
+            "level": 0,
+            "text": "דוגמא א'"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 32,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "מה לא בסדר?"
+          },
+          {
+            "level": 0,
+            "text": "דוגמא ב'"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 33,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "איזה נוסח עדיף?"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 34,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "מה לא בסדר?"
+          },
+          {
+            "level": 0,
+            "text": "דוגמא ג'"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 35,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "איזה נוסח עדיף?"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 36,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "מה לא בסדר?"
+          },
+          {
+            "level": 0,
+            "text": "דוגמא ד'"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 37,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "איזה נוסח עדיף?"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 38,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "מה לא בסדר?"
+          },
+          {
+            "level": 0,
+            "text": "דוגמא ה'"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 39,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "איזה נוסח עדיף?"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 40,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "מה לא בסדר?"
+          },
+          {
+            "level": 0,
+            "text": "דוגמא ו'"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 41,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "איזה נוסח עדיף?"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 42,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "מה לא בסדר?"
+          },
+          {
+            "level": 0,
+            "text": "דוגמא ז'"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 43,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "איזה נוסח עדיף?"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 44,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "דגשים בכתיבת TAF"
+          },
+          {
+            "level": 0,
+            "text": "- סוף -"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      }
+    ]
+  },
+  {
+    "filename": "16. Tropical Storms.pptx",
+    "format": "pptx",
+    "slide_count": 38,
+    "slides": [
+      {
+        "slide_number": 1,
+        "title": "סופות טרופיות",
+        "body": [
+          {
+            "level": 0,
+            "text": "ינואר 2012"
+          },
+          {
+            "level": 0,
+            "text": "סופות טרופיות- קורס חיזוי לתעופה"
+          },
+          {
+            "level": 0,
+            "text": "קורס חיזוי לתעופה"
+          },
+          {
+            "level": 0,
+            "text": "השירות המטאורולוגי"
+          },
+          {
+            "level": 0,
+            "text": "גולדי גושן ומאיה ברטוב"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 2,
+        "title": "על מה נדבר?",
+        "body": [
+          {
+            "level": 0,
+            "text": "ינואר 2012"
+          },
+          {
+            "level": 0,
+            "text": "סופות טרופיות- קורס חיזוי לתעופה"
+          },
+          {
+            "level": 0,
+            "text": "2"
+          },
+          {
+            "level": 0,
+            "text": "תהליך היווצרות ומבנה"
+          },
+          {
+            "level": 0,
+            "text": "דרגות עוצמה"
+          },
+          {
+            "level": 0,
+            "text": "מרכזי חיזוי עולמיים"
+          },
+          {
+            "level": 0,
+            "text": "התראות"
+          },
+          {
+            "level": 0,
+            "text": "כלים באתר ECMWF"
+          },
+          {
+            "level": 0,
+            "text": "אחריות מרכז החיזוי התעופתי"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 3,
+        "title": "תהליך היווצרות ומבנה",
+        "body": [
+          {
+            "level": 0,
+            "text": "ינואר 2012"
+          },
+          {
+            "level": 0,
+            "text": "סופות טרופיות- קורס חיזוי לתעופה"
+          },
+          {
+            "level": 0,
+            "text": "מהי סופה טרופית?"
+          },
+          {
+            "level": 0,
+            "text": "כיצד נוצרת?"
+          },
+          {
+            "level": 0,
+            "text": "כיצד נראית?"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 4,
+        "title": "מהי סופה טרופית?",
+        "body": [
+          {
+            "level": 0,
+            "text": "ינואר 2012"
+          },
+          {
+            "level": 0,
+            "text": "סופות טרופיות- קורס חיזוי לתעופה"
+          },
+          {
+            "level": 0,
+            "text": "4"
+          },
+          {
+            "level": 0,
+            "text": "A rotating low pressure system over tropical or sub-tropical waters, with well defined circulation and sustained winds of 74 mph (64 knots) or higher."
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 5,
+        "title": "האטמוספרה הטרופית",
+        "body": [
+          {
+            "level": 0,
+            "text": "ינואר 2012"
+          },
+          {
+            "level": 0,
+            "text": "סופות טרופיות- קורס חיזוי לתעופה"
+          },
+          {
+            "level": 0,
+            "text": "5"
+          },
+          {
+            "level": 0,
+            "text": "האזור הטרופי מוגדר בין קווי רוחב 30N ל 30S"
+          },
+          {
+            "level": 0,
+            "text": "באטמוספרה הטרופית:"
+          },
+          {
+            "level": 1,
+            "text": "מאזן הקרינה חיובי ושטף החום הוא לכיוון הקטבים"
+          },
+          {
+            "level": 1,
+            "text": "כוח קוריוליס וכוח גרדיאנט הלחץ קטנים על כן ישנה חשיבות רבה לכוחות אינרצייאלים"
+          },
+          {
+            "level": 1,
+            "text": "קיימת מהירות אנכית משמעותית"
+          },
+          {
+            "level": 1,
+            "text": "שחרור חום כמוס משפיע מאוד בתהליך היווצרות עננים והאנרגיה עוברת הלאה במערכת"
+          },
+          {
+            "level": 1,
+            "text": "שינויי הלחץ במרחב קטנים"
+          },
+          {
+            "level": 1,
+            "text": "השינויים בזמן לרוב מחזוריים"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 6,
+        "title": "האטמוספרה הטרופית",
+        "body": [
+          {
+            "level": 0,
+            "text": "ינואר 2012"
+          },
+          {
+            "level": 0,
+            "text": "סופות טרופיות- קורס חיזוי לתעופה"
+          },
+          {
+            "level": 0,
+            "text": "6"
+          },
+          {
+            "level": 0,
+            "text": "מידת היציבות של האטמוספרה באזורים הטרופיים מאופיינת ע\"י טמפ' פוטנציאלית אקוויוולנטית ואנרגיה סטטית של אוויר לח"
+          },
+          {
+            "level": 1,
+            "text": "או במילים אחרות:"
+          },
+          {
+            "level": 1,
+            "text": "אי היציבות גדולה באזורים אלו והאוויר לח, כל סטייה קלה גורמת מיד לעלייה של אוויר לח ובנייה של עננות, עם תחילת התהליך הוא מואץ מעצם אי יציבותה של האטמוספרה"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 7,
+        "title": "הפרעה טרופית",
+        "body": [
+          {
+            "level": 0,
+            "text": "ינואר 2012"
+          },
+          {
+            "level": 0,
+            "text": "סופות טרופיות- קורס חיזוי לתעופה"
+          },
+          {
+            "level": 0,
+            "text": "7"
+          },
+          {
+            "level": 0,
+            "text": "באטמוספרה הטרופית כל הפרעה קטנה משפיעה מאוד ויכולה להתפתח למערבל גדול ואף לתופעות בסדר גודל של גלים אטמוספריים"
+          },
+          {
+            "level": 0,
+            "text": "בהתפתחות גדולה הלחץ במערכת יכול לרדת אף מתחת ל 900 מ\"ב בקרקע עם מהירויות רוח של אפילו 100 מטרים לשנייה"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 8,
+        "title": "ציקלון טרופי/סופה טרופית",
+        "body": [
+          {
+            "level": 0,
+            "text": "ינואר 2012"
+          },
+          {
+            "level": 0,
+            "text": "סופות טרופיות- קורס חיזוי לתעופה"
+          },
+          {
+            "level": 0,
+            "text": "8"
+          },
+          {
+            "level": 0,
+            "text": "היא מערבל גדול הנוצר מעל האוקיינוסים הטרופיים"
+          },
+          {
+            "level": 0,
+            "text": "נוצרים בקיץ (של חצי הכדור הצפוני) רק מצידו הצפוני של קו המשווה ואילו בחורף נוצרים בעיקר מצידו הדרומי של קו המשווה"
+          },
+          {
+            "level": 0,
+            "text": "נעים עם תנועת האנרגיה מכיוון קו המשווה לקטבים במסלולים מסובכים ופתלתלים"
+          },
+          {
+            "level": 0,
+            "text": "ישנן תקופות בהן נוצרים ציקלונים רבים ולאחריהן תקופות ללא ציקלון אחד"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 9,
+        "title": "תהליך היווצרות",
+        "body": [
+          {
+            "level": 0,
+            "text": "ינואר 2012"
+          },
+          {
+            "level": 0,
+            "text": "סופות טרופיות- קורס חיזוי לתעופה"
+          },
+          {
+            "level": 0,
+            "text": "9"
+          },
+          {
+            "level": 0,
+            "text": "שלבי התפתחות סופה טרופית:"
+          },
+          {
+            "level": 1,
+            "text": "שקע"
+          },
+          {
+            "level": 1,
+            "text": "סער טרופי"
+          },
+          {
+            "level": 1,
+            "text": "סופה טרופית/ הוריקן/טייפון"
+          },
+          {
+            "level": 1,
+            "text": "סופר הוריקן"
+          },
+          {
+            "level": 1,
+            "text": "סופר טייפון"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 10,
+        "title": "תהליך היווצרות",
+        "body": [
+          {
+            "level": 0,
+            "text": "ינואר 2012"
+          },
+          {
+            "level": 0,
+            "text": "סופות טרופיות- קורס חיזוי לתעופה"
+          },
+          {
+            "level": 0,
+            "text": "10"
+          },
+          {
+            "level": 0,
+            "text": "תנאים להיווצרות הסופה: (עפ\"י Gray, 1986)"
+          },
+          {
+            "level": 1,
+            "text": "אנרגיה מהאוקיינוס, טמפ' המים 26 מעלות לפחות ושכבת מים חמים קטנה יחסית"
+          },
+          {
+            "level": 1,
+            "text": "לחות ברמות הבינוניות באטמוספרה (700 מ\"ב)"
+          },
+          {
+            "level": 1,
+            "text": "אי יציבות- גרדיאנט אנכי של טמפ' פוטנציאלית אקוויוולנטית"
+          },
+          {
+            "level": 1,
+            "text": "ערבוליות יחסית באטמוספרה התחתונה"
+          },
+          {
+            "level": 1,
+            "text": "פרמטר גזירת הרוח בגובה חלש"
+          },
+          {
+            "level": 1,
+            "text": "כוח קוריוליס ליצירת מהירות משיקית"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 11,
+        "title": "תהליך היווצרות",
+        "body": [
+          {
+            "level": 0,
+            "text": "ינואר 2012"
+          },
+          {
+            "level": 0,
+            "text": "סופות טרופיות- קורס חיזוי לתעופה"
+          },
+          {
+            "level": 0,
+            "text": "11"
+          },
+          {
+            "level": 0,
+            "text": "היווצרות הסופה הטרופית מלווה בשינויים בכלל הסקאלות באטמוספרה מתהליכים בסקלת מיקרו ועד סקלות מרחביות"
+          },
+          {
+            "level": 0,
+            "text": "הסופה הטרופית היא מנוע חום לשחרור חום מאזור המשווה וגם מתוך האוקיינוס כלפי הקטבים"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 12,
+        "title": "מבנה סופה טרופית",
+        "body": [
+          {
+            "level": 0,
+            "text": "ינואר 2012"
+          },
+          {
+            "level": 0,
+            "text": "סופות טרופיות- קורס חיזוי לתעופה"
+          },
+          {
+            "level": 0,
+            "text": "12"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 13,
+        "title": "מבנה סופה טרופית",
+        "body": [
+          {
+            "level": 0,
+            "text": "ינואר 2012"
+          },
+          {
+            "level": 0,
+            "text": "סופות טרופיות- קורס חיזוי לתעופה"
+          },
+          {
+            "level": 0,
+            "text": "13"
+          },
+          {
+            "level": 0,
+            "text": "שכבת החדירה"
+          },
+          {
+            "level": 1,
+            "text": "2-5 ק\"מ, הרוח מסתובבת סביב המרכז ומתכנסת"
+          },
+          {
+            "level": 0,
+            "text": "שכבת היציאה"
+          },
+          {
+            "level": 1,
+            "text": "גג הציקלון בגובה 150 מ\"ב לערך"
+          },
+          {
+            "level": 1,
+            "text": "צירוסים המייצרים קיר עננות ברדיוס של כ 5 ק\"מ"
+          },
+          {
+            "level": 0,
+            "text": "עין הציקלון"
+          },
+          {
+            "level": 1,
+            "text": "כאשר הלחץ יורד עוד מתחילה ירידת אוויר"
+          },
+          {
+            "level": 1,
+            "text": "משקעים רבים"
+          },
+          {
+            "level": 0,
+            "text": "הרוח המקסימלית מתקבלת בטווח 10 עד 30 ק\"מ ונחלשת בחדות בעין"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 14,
+        "title": "שלבים בסופה",
+        "body": [
+          {
+            "level": 0,
+            "text": "ינואר 2012"
+          },
+          {
+            "level": 0,
+            "text": "סופות טרופיות- קורס חיזוי לתעופה"
+          },
+          {
+            "level": 0,
+            "text": "14"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 15,
+        "title": "עין הציקלון",
+        "body": [
+          {
+            "level": 0,
+            "text": "ינואר 2012"
+          },
+          {
+            "level": 0,
+            "text": "סופות טרופיות- קורס חיזוי לתעופה"
+          },
+          {
+            "level": 0,
+            "text": "15"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 16,
+        "title": "תנועת הסופה",
+        "body": [
+          {
+            "level": 0,
+            "text": "ינואר 2012"
+          },
+          {
+            "level": 0,
+            "text": "סופות טרופיות- קורס חיזוי לתעופה"
+          },
+          {
+            "level": 0,
+            "text": "16"
+          },
+          {
+            "level": 0,
+            "text": "סופות טרופיות נוטות לנוע לכיוון הקטבים, במסלולים ארוכים ופתלתלים"
+          },
+          {
+            "level": 0,
+            "text": "התנועה צפונה מטרתה שימור התנע של הציקלון והארכת חייו"
+          },
+          {
+            "level": 0,
+            "text": "התנועה החוצה מהאזור המשווני היא שלב חשוב בתנועת הציקלון בו הוא מקבל תוספת אנרגיה אך יכול גם לאבד הרבה אנרגיה ולהתחיל להתפרק"
+          },
+          {
+            "level": 0,
+            "text": "הציקלון יחל להתפרק ולהיחלש כשיתקל בתנאים מגבילים, לדוגמא:"
+          },
+          {
+            "level": 1,
+            "text": "עלייה על היבשה"
+          },
+          {
+            "level": 1,
+            "text": "מעבר מעל מים קרים"
+          },
+          {
+            "level": 1,
+            "text": "איבוד הפוטנציאל האנרגטי"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 17,
+        "title": "דרגות עוצמה",
+        "body": [
+          {
+            "level": 0,
+            "text": "ינואר 2012"
+          },
+          {
+            "level": 0,
+            "text": "סופות טרופיות- קורס חיזוי לתעופה"
+          },
+          {
+            "level": 0,
+            "text": "Saffir-Simpson Scale"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 18,
+        "title": "דרגות עוצמה - SSHS",
+        "body": [
+          {
+            "level": 0,
+            "text": "ינואר 2012"
+          },
+          {
+            "level": 0,
+            "text": "סופות טרופיות- קורס חיזוי לתעופה"
+          },
+          {
+            "level": 0,
+            "text": "18"
+          },
+          {
+            "level": 0,
+            "text": "סקלת Saffir-Simpson לעוצמת הציקלונים מקובלת ברוב המקומות בעולם ומשמשת בהתראות שונות של מרכזים עולמיים"
+          },
+          {
+            "level": 0,
+            "text": "רשמית משמש את אזור האוקיינוס האטנלטי וצפון הפסיפי בלבד"
+          },
+          {
+            "level": 0,
+            "text": "עודכן לאחרונה ב 2010"
+          },
+          {
+            "level": 0,
+            "text": "http://www.nhc.noaa.gov/sshws_table.shtml?large"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 19,
+        "title": "דרגות עוצמה - SSHS",
+        "body": [
+          {
+            "level": 0,
+            "text": "ינואר 2012"
+          },
+          {
+            "level": 0,
+            "text": "סופות טרופיות- קורס חיזוי לתעופה"
+          },
+          {
+            "level": 0,
+            "text": "19"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 20,
+        "title": "תדירות הסופות",
+        "body": [
+          {
+            "level": 0,
+            "text": "ינואר 2012"
+          },
+          {
+            "level": 0,
+            "text": "סופות טרופיות- קורס חיזוי לתעופה"
+          },
+          {
+            "level": 0,
+            "text": "20"
+          },
+          {
+            "level": 0,
+            "text": "NW Pacific: 20-30, May-November"
+          },
+          {
+            "level": 0,
+            "text": "NE Pacific: 15-20, May-November"
+          },
+          {
+            "level": 0,
+            "text": "Atlantic: 8-15, June-November"
+          },
+          {
+            "level": 0,
+            "text": "N Indian: 3-8, April-June\u000b& September-November"
+          },
+          {
+            "level": 0,
+            "text": "SW Indian: 8-12, November-April"
+          },
+          {
+            "level": 0,
+            "text": "Australian: 10-20, November-April"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 21,
+        "title": "מרכזי חיזוי עולמיים",
+        "body": [
+          {
+            "level": 0,
+            "text": "ינואר 2012"
+          },
+          {
+            "level": 0,
+            "text": "סופות טרופיות- קורס חיזוי לתעופה"
+          },
+          {
+            "level": 0,
+            "text": "RSMC ; TCWC"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 22,
+        "title": "מרכזי חיזוי עולמיים",
+        "body": [
+          {
+            "level": 0,
+            "text": "ינואר 2012"
+          },
+          {
+            "level": 0,
+            "text": "סופות טרופיות- קורס חיזוי לתעופה"
+          },
+          {
+            "level": 0,
+            "text": "22"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 23,
+        "title": "מרכזי חיזוי עולמיים",
+        "body": [
+          {
+            "level": 0,
+            "text": "ינואר 2012"
+          },
+          {
+            "level": 0,
+            "text": "סופות טרופיות- קורס חיזוי לתעופה"
+          },
+          {
+            "level": 0,
+            "text": "23"
+          },
+          {
+            "level": 0,
+            "text": "שישה מרכזים מיוחדים ועוד חמישה מרכזי התראה"
+          },
+          {
+            "level": 0,
+            "text": "אחראים על הוצאות התראות כפי שהוגדר ע\"י WMO"
+          },
+          {
+            "level": 1,
+            "text": "סקירות כל 6-12 שעות בעונת ההוריקן הרלוונטית"
+          },
+          {
+            "level": 1,
+            "text": "אנליזה של הסופות המצויות"
+          },
+          {
+            "level": 1,
+            "text": "התראות לפחות כל 6 שעות"
+          },
+          {
+            "level": 1,
+            "text": "מעבירים המידע למוקדי הממשל הדרושים"
+          },
+          {
+            "level": 1,
+            "text": "מפיצים האתראות בכלל האמצעים האפשריים"
+          },
+          {
+            "level": 0,
+            "text": "http://www.wmo.int/pages/prog/www/tcp/index_en.html"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 24,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "ינואר 2012"
+          },
+          {
+            "level": 0,
+            "text": "סופות טרופיות- קורס חיזוי לתעופה"
+          },
+          {
+            "level": 0,
+            "text": "24"
+          },
+          {
+            "level": 0,
+            "text": "מרכזי חיזוי עולמיים"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 25,
+        "title": "חיזוי סופות טרופיות",
+        "body": [
+          {
+            "level": 0,
+            "text": "ינואר 2012"
+          },
+          {
+            "level": 0,
+            "text": "סופות טרופיות- קורס חיזוי לתעופה"
+          },
+          {
+            "level": 0,
+            "text": "25"
+          },
+          {
+            "level": 0,
+            "text": "לא נכביר במילים"
+          },
+          {
+            "level": 1,
+            "text": "החיזוי משתפר מעונה לעונה"
+          },
+          {
+            "level": 1,
+            "text": "עדיין קשיים בגלל שילובי הסקאלות השונות"
+          },
+          {
+            "level": 1,
+            "text": "תחזית ECMWF ו UKMET נחשבות מהטובות בעולם"
+          },
+          {
+            "level": 1,
+            "text": "קיימים מגוון רב של מודלים"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 26,
+        "title": "תחזיות במרכזים שונים בעולם",
+        "body": [
+          {
+            "level": 0,
+            "text": "ינואר 2012"
+          },
+          {
+            "level": 0,
+            "text": "סופות טרופיות- קורס חיזוי לתעופה"
+          },
+          {
+            "level": 0,
+            "text": "26"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 27,
+        "title": "התראות",
+        "body": [
+          {
+            "level": 0,
+            "text": "ינואר 2012"
+          },
+          {
+            "level": 0,
+            "text": "סופות טרופיות- קורס חיזוי לתעופה"
+          },
+          {
+            "level": 0,
+            "text": "התראות בכתב והתראות גרפיות"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 28,
+        "title": "התראות בכתב",
+        "body": [
+          {
+            "level": 0,
+            "text": "ינואר 2012"
+          },
+          {
+            "level": 0,
+            "text": "סופות טרופיות- קורס חיזוי לתעופה"
+          },
+          {
+            "level": 0,
+            "text": "28"
+          },
+          {
+            "level": 0,
+            "text": "מופצות על ידי המרכזים העולמיים"
+          },
+          {
+            "level": 0,
+            "text": "ניתנות לצפייה במערכות התפוצה וכן באינטרנט"
+          },
+          {
+            "level": 0,
+            "text": "מרכזים שונים נותנים פירוט שונה"
+          },
+          {
+            "level": 0,
+            "text": "דוגמא מNHC"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 29,
+        "title": "התראות גרפיות",
+        "body": [
+          {
+            "level": 0,
+            "text": "ינואר 2012"
+          },
+          {
+            "level": 0,
+            "text": "סופות טרופיות- קורס חיזוי לתעופה"
+          },
+          {
+            "level": 0,
+            "text": "29"
+          },
+          {
+            "level": 0,
+            "text": "דוגמא מNHC"
+          },
+          {
+            "level": 0,
+            "text": "קיים מגוון רחב מאוד של התראות גרפיות"
+          },
+          {
+            "level": 0,
+            "text": "מרכזים שונים המעדכנים אותם באופן תדיר ממודלים ומלווינים"
+          },
+          {
+            "level": 0,
+            "text": "קישורים באינטרנט"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 30,
+        "title": "כלים מאתר ECMWF",
+        "body": [
+          {
+            "level": 0,
+            "text": "ינואר 2012"
+          },
+          {
+            "level": 0,
+            "text": "סופות טרופיות- קורס חיזוי לתעופה"
+          },
+          {
+            "level": 0,
+            "text": "למשתמשים רשומים"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 31,
+        "title": "כלים באתר ECMWF",
+        "body": [
+          {
+            "level": 0,
+            "text": "סופות טרופיות כפי שעודכנו עפ\"י האזורים"
+          },
+          {
+            "level": 0,
+            "text": "ינואר 2012"
+          },
+          {
+            "level": 0,
+            "text": "סופות טרופיות- קורס חיזוי לתעופה"
+          },
+          {
+            "level": 0,
+            "text": "31"
+          },
+          {
+            "level": 0,
+            "text": "http://www.ecmwf.int/products/forecasts/d/charts"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 32,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "ינואר 2012"
+          },
+          {
+            "level": 0,
+            "text": "סופות טרופיות- קורס חיזוי לתעופה"
+          },
+          {
+            "level": 0,
+            "text": "32"
+          },
+          {
+            "level": 0,
+            "text": "A short explanation about the products is  available here by clicking in the show guide"
+          },
+          {
+            "level": 0,
+            "text": "Selected forecast steps covering the next 12 days"
+          },
+          {
+            "level": 0,
+            "text": "Strike probability for TC/TS/HR"
+          },
+          {
+            "level": 0,
+            "text": "Maps: global view and 7 additional TC basins"
+          },
+          {
+            "level": 0,
+            "text": "Forecast runs covering the last 10 days"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 33,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "ינואר 2012"
+          },
+          {
+            "level": 0,
+            "text": "סופות טרופיות- קורס חיזוי לתעופה"
+          },
+          {
+            "level": 0,
+            "text": "33"
+          },
+          {
+            "level": 0,
+            "text": "A short explanation about the products is  available here by clicking in the show guide"
+          },
+          {
+            "level": 0,
+            "text": "Strike probability or probability anomalies (from model climate)"
+          },
+          {
+            "level": 0,
+            "text": "Strike probability for TC/TS/HR"
+          },
+          {
+            "level": 0,
+            "text": "Maps: global view and 7 additional TC basins"
+          },
+          {
+            "level": 0,
+            "text": "Forecast up to 32 days (weekly periods)"
+          },
+          {
+            "level": 0,
+            "text": "Forecast basetime runs"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 34,
+        "title": "אחריות מרכז החיזוי התעופתי",
+        "body": [
+          {
+            "level": 0,
+            "text": "ינואר 2012"
+          },
+          {
+            "level": 0,
+            "text": "סופות טרופיות- קורס חיזוי לתעופה"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 35,
+        "title": "אחריות מרכז החיזוי התעופתי",
+        "body": [
+          {
+            "level": 0,
+            "text": "ינואר 2012"
+          },
+          {
+            "level": 0,
+            "text": "סופות טרופיות- קורס חיזוי לתעופה"
+          },
+          {
+            "level": 0,
+            "text": "35"
+          },
+          {
+            "level": 0,
+            "text": "אחריות המרכז להעביר לידיעת צרכנים נדרשים"
+          },
+          {
+            "level": 0,
+            "text": "מופיע במפות סיגניפיקנטיות"
+          },
+          {
+            "level": 0,
+            "text": "האחריות על החיזוי של המרכזים העולמיים"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 36,
+        "title": "-סוף-",
+        "body": [
+          {
+            "level": 0,
+            "text": "ינואר 2012"
+          },
+          {
+            "level": 0,
+            "text": "סופות טרופיות- קורס חיזוי לתעופה"
+          },
+          {
+            "level": 0,
+            "text": "תודה על הסבלנות..."
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 37,
+        "title": "קישורים",
+        "body": [
+          {
+            "level": 0,
+            "text": "ינואר 2012"
+          },
+          {
+            "level": 0,
+            "text": "סופות טרופיות- קורס חיזוי לתעופה"
+          },
+          {
+            "level": 0,
+            "text": "37"
+          },
+          {
+            "level": 0,
+            "text": "http://severe.worldweather.org/"
+          },
+          {
+            "level": 0,
+            "text": "http://stormadvisory.org/"
+          },
+          {
+            "level": 0,
+            "text": "http://ibiseye.com/"
+          },
+          {
+            "level": 0,
+            "text": "http://tropic.ssec.wisc.edu/"
+          },
+          {
+            "level": 0,
+            "text": "http://www.tropicalstormrisk.com/"
+          },
+          {
+            "level": 0,
+            "text": "http://www.wmo.int/pages/prog/www/tcp/Advisories-RSMCs.html"
+          },
+          {
+            "level": 0,
+            "text": "http://www.nhc.noaa.gov/"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 38,
+        "title": "מקורות",
+        "body": [
+          {
+            "level": 0,
+            "text": "ינואר 2012"
+          },
+          {
+            "level": 0,
+            "text": "סופות טרופיות- קורס חיזוי לתעופה"
+          },
+          {
+            "level": 0,
+            "text": "38"
+          },
+          {
+            "level": 0,
+            "text": "UK Met Office"
+          },
+          {
+            "level": 0,
+            "text": "ECMWF"
+          },
+          {
+            "level": 0,
+            "text": "רשימות מקורס \"מטאורולוגיה של האזורים הטרופיים\" פרופ' אלכסנדר חיין, האונ' העברית"
+          },
+          {
+            "level": 0,
+            "text": "מצגות מקורסי UKMET ו ECMWF הנמצאות בתיקיית הקורב ב Public"
+          },
+          {
+            "level": 0,
+            "text": "WMO ;  http://severe.worldweather.org/"
+          },
+          {
+            "level": 0,
+            "text": "COMET® Website at http://meted.ucar.edu/"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      }
+    ]
+  },
+  {
+    "filename": "17. Volcanic Ash.pptx",
+    "format": "pptx",
+    "slide_count": 23,
+    "slides": [
+      {
+        "slide_number": 1,
+        "title": "Volcanic Ash\u000bAviation Seminar, Alanya\u000bIan Mills",
+        "body": [],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 2,
+        "title": "Volcanic Ash Advisories",
+        "body": [],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 3,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "© Crown copyright 2008"
+          },
+          {
+            "level": 0,
+            "text": "Danger to aircraft"
+          },
+          {
+            "level": 0,
+            "text": "Approximately 15-25 volcanoes each year world-wide erupt volcanic ash to jet aircraft cruising levels"
+          },
+          {
+            "level": 0,
+            "text": "Radar systems on jet aircraft cannot detect volcanic ash"
+          },
+          {
+            "level": 0,
+            "text": "Damage to outer frame due to abrasion by ash particles → expensive repairs"
+          },
+          {
+            "level": 0,
+            "text": "Ash melts at high operating temperatures of jet engines → can stall engines"
+          },
+          {
+            "level": 0,
+            "text": "During Pinatubo eruption June 1991"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 4,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "© Crown copyright 2008"
+          },
+          {
+            "level": 0,
+            "text": "Volcanic ash detection"
+          },
+          {
+            "level": 0,
+            "text": "Volcanic Ash Advisory Centres (VAACs) issue volcanic ash advisory statements"
+          },
+          {
+            "level": 0,
+            "text": "Requirement for detection and monitoring of eruptions/ash clouds"
+          },
+          {
+            "level": 0,
+            "text": "Set up in early 1980’s in response to incidents where aircraft lost power in one or more engines"
+          },
+          {
+            "level": 0,
+            "text": "June 1982 a British Airways 747 lost all four engines and suffered severe damage on encountering volcanic ash over Indonesia.  The aircraft descended to 12,000ft before being able to restart some engines and make an emergency landing in Jakarta."
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 5,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "© Crown copyright 2008"
+          },
+          {
+            "level": 0,
+            "text": "Volcanic ash detection"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 6,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "© Crown copyright 2008"
+          },
+          {
+            "level": 0,
+            "text": "What happens"
+          },
+          {
+            "level": 0,
+            "text": "Volcanic erruption occurs"
+          },
+          {
+            "level": 0,
+            "text": "London VAAC runs an atmospheric dispersion model (NAME) to forecast the plume behaviour."
+          },
+          {
+            "level": 0,
+            "text": "Volcanic Ash Advisory issued"
+          }
+        ],
+        "notes": "The motivation for this developmental work is two-fold: \nThere is a need for improved volcanic ash detection tools, and\nWe have the opportunity to develop them using Meteosat Second Generation data.\n\nThe need for new, improved tools is to improve the existing VAAC service – there are limitations with existing observations of ash and this development will reduce these limitations.\nThe need to maintain our status as a VAAC – to show the outside world that we do take our responsibility seriously and provide the best service possible with current technology. I have attended a couple of international meetings about the use of satellite data and it has been commented upon on more than one occasion that very little resources are used to provide the tools and personnel for the London VAAC.\nThe opportunity that we have is to try to make the best use of newly available MSG data. These data are operationally available in the next couple of weeks and are routinely received and used in the Met Office. MSG will replace Meteosat – currently our main operational geostationary satellite and our major source of satellite imagery. MSG is superior to Meteosat in many ways …",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 7,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "© Crown copyright 2008"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 8,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "© Crown copyright 2008"
+          },
+          {
+            "level": 0,
+            "text": "Papua New Guinea"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 9,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "© Crown copyright 2008"
+          },
+          {
+            "level": 0,
+            "text": "Volcanic ash tracking"
+          },
+          {
+            "level": 0,
+            "text": "Volcanic Ash shows up well in MSG imagery if you calculate"
+          },
+          {
+            "level": 1,
+            "text": "Channel 9 (10.8 μm) - Channel 10 (12.0μm)"
+          },
+          {
+            "level": 1,
+            "text": "Both channels are IR"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 10,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "© Crown copyright 2008"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 11,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "© Crown copyright 2008"
+          },
+          {
+            "level": 0,
+            "text": "Volcanic ash tracking"
+          },
+          {
+            "level": 0,
+            "text": "Volcanic Ash shows up well in satellite imagery if you calculate"
+          },
+          {
+            "level": 1,
+            "text": "Channel 9 (10.8 μm) - Channel 10 (12.0μm)"
+          },
+          {
+            "level": 1,
+            "text": "Both channels are IR"
+          },
+          {
+            "level": 0,
+            "text": "The brightness temperature difference is"
+          },
+          {
+            "level": 1,
+            "text": "positive for water and ice"
+          },
+          {
+            "level": 1,
+            "text": "negative for volcanic ash"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 12,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "© Crown copyright 2008"
+          },
+          {
+            "level": 0,
+            "text": "Difference between dust and clouds"
+          },
+          {
+            "level": 0,
+            "text": "Clouds absorb more energy at 12.0μm than 10.8μm"
+          },
+          {
+            "level": 0,
+            "text": "Brightness temp of a moisture laden atmosphere re-emitting to space is colder at 12.0μm than 10.8μm"
+          },
+          {
+            "level": 0,
+            "text": "Therefore 12.0μm-10.8μm  -ve"
+          },
+          {
+            "level": 0,
+            "text": "But           10.8μm-12.0μm  +ve for clouds"
+          },
+          {
+            "level": 0,
+            "text": "Ash/Dust however absorbs more energy at 10.8μm"
+          },
+          {
+            "level": 0,
+            "text": "BT of an ash/dust laden atmosphere re-emitting to space is colder at 10.8μm than 12.0μm"
+          },
+          {
+            "level": 0,
+            "text": "Therefore 10.8μm-12.0μm  -ve for dust/ash"
+          },
+          {
+            "level": 0,
+            "text": "Exploit this difference to detect volcanic ash cloud"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 13,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "© Crown copyright 2008"
+          },
+          {
+            "level": 0,
+            "text": "Infrared image of the volcanic ash cloud from the eruption of Mt. Spurr, Alaska"
+          },
+          {
+            "level": 0,
+            "text": "Spot the volcanic ash cloud"
+          },
+          {
+            "level": 0,
+            "text": "Mt. Spurr"
+          },
+          {
+            "level": 0,
+            "text": "Pacific Ocean"
+          },
+          {
+            "level": 0,
+            "text": "North America"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 14,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "© Crown copyright 2008"
+          },
+          {
+            "level": 0,
+            "text": "Volcanic ash"
+          },
+          {
+            "level": 0,
+            "text": "Water/ice"
+          },
+          {
+            "level": 0,
+            "text": "Volcanic Ash tracking – Mt Spurr, Alaska"
+          },
+          {
+            "level": 0,
+            "text": "Mt. Spurr"
+          },
+          {
+            "level": 0,
+            "text": "Pacific Ocean"
+          },
+          {
+            "level": 0,
+            "text": "North America"
+          },
+          {
+            "level": 0,
+            "text": "AVHRR imagery"
+          },
+          {
+            "level": 0,
+            "text": "Channel 9 - Channel 10"
+          },
+          {
+            "level": 0,
+            "text": "(10.8-12.0μm)"
+          },
+          {
+            "level": 0,
+            "text": "The brightness temperature difference is"
+          },
+          {
+            "level": 1,
+            "text": "positive for water and ice"
+          },
+          {
+            "level": 1,
+            "text": "negative for volcanic ash"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 15,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "© Crown copyright 2008"
+          },
+          {
+            "level": 0,
+            "text": "Etna eruption"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 16,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "© Crown copyright 2008"
+          },
+          {
+            "level": 0,
+            "text": "Ash detection using MSG"
+          },
+          {
+            "level": 0,
+            "text": "Karthala eruption near Madagascar"
+          },
+          {
+            "level": 0,
+            "text": "Meteosat-8 data of 25 November 2005"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 17,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "© Crown copyright 2008"
+          },
+          {
+            "level": 0,
+            "text": "Channel IR 10.8 brightness temperature"
+          },
+          {
+            "level": 0,
+            "text": "Ash appears similar to ice clouds"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 18,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "© Crown copyright 2008"
+          },
+          {
+            "level": 0,
+            "text": "Difference of channels IR8.7 and IR10.8"
+          },
+          {
+            "level": 0,
+            "text": "Bright means that IR8.7 is warmer than IR10.8."
+          },
+          {
+            "level": 0,
+            "text": "The ash plume appears similar to the surrounding ice clouds."
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 19,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "© Crown copyright 2008"
+          },
+          {
+            "level": 0,
+            "text": "Difference of channel IR12.0 and IR10.8"
+          },
+          {
+            "level": 0,
+            "text": "IR12.0 is warmer than IR10.8."
+          },
+          {
+            "level": 0,
+            "text": "For this difference the ash plume appears much brighter than normal clouds"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 20,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "© Crown copyright 2008"
+          },
+          {
+            "level": 0,
+            "text": "Solar part of channel IR3.9 and channel VIS0.6"
+          },
+          {
+            "level": 0,
+            "text": "For this difference the ash plume appears much brighter than normal clouds,"
+          },
+          {
+            "level": 0,
+            "text": "The ash plume has higher reflectances in channel IR3.9 than in channel VIS0.6"
+          },
+          {
+            "level": 0,
+            "text": "Clouds appear dark, cloud free land appears bright."
+          },
+          {
+            "level": 0,
+            "text": "With this test the ash plume can easily be separated from other clouds."
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 21,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "© Crown copyright 2008"
+          },
+          {
+            "level": 0,
+            "text": "Results of the ash plume detection"
+          },
+          {
+            "level": 0,
+            "text": "Blue – clear ocean"
+          },
+          {
+            "level": 0,
+            "text": "Green – clear land"
+          },
+          {
+            "level": 0,
+            "text": "White – clouds"
+          },
+          {
+            "level": 0,
+            "text": "Grey - clouds within the search area"
+          },
+          {
+            "level": 0,
+            "text": "Orange – ash plume"
+          },
+          {
+            "level": 0,
+            "text": "The red dot on the island marks the detected hotspot of the volcano"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 22,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "© Crown copyright 2008"
+          },
+          {
+            "level": 0,
+            "text": "Volcanic Ash Advisory Centres (VAAC)"
+          },
+          {
+            "level": 0,
+            "text": "http://www.metoffice.gov.uk/aviation/vaac/index.html"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 23,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "© Crown copyright 2008"
+          },
+          {
+            "level": 0,
+            "text": "Any Questions?"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      }
+    ]
+  },
+  {
+    "filename": "18. WAFC Maps.pptx",
+    "format": "pptx",
+    "slide_count": 48,
+    "slides": [
+      {
+        "slide_number": 1,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "© Crown copyright"
+          },
+          {
+            "level": 0,
+            "text": "Roles and responsibilities of the World Area Forecast System (WAFS)"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 2,
+        "title": "Roles and responsibilities of the WAFS",
+        "body": [
+          {
+            "level": 0,
+            "text": "The World Area Forecast System (WAFS) is a program developed by ICAO and WMO to improve the quality and consistency of en-route guidance provided for international aircraft operations"
+          },
+          {
+            "level": 0,
+            "text": "Services meet Annex 3 provisions of the ICAO Convention on Civil Aviation (Meteorological Services for International Air Navigation)"
+          },
+          {
+            "level": 0,
+            "text": "Global upper-air wind/temperature and humidity forecasts, and global significant weather (SIGWX) forecasts, in digital format, are provided by two World Area Forecast Centres (WAFCs):"
+          },
+          {
+            "level": 1,
+            "text": "WAFC London (United Kingdom)"
+          },
+          {
+            "level": 1,
+            "text": "WAFC Washington (United States of America)"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 3,
+        "title": "World Area Forecast Centres",
+        "body": [
+          {
+            "level": 0,
+            "text": "WAFC London (Met Office, Exeter, UK) is responsible for satellite data broadcasts to:"
+          },
+          {
+            "level": 1,
+            "text": "Europe"
+          },
+          {
+            "level": 1,
+            "text": "Africa"
+          },
+          {
+            "level": 1,
+            "text": "Middle East"
+          },
+          {
+            "level": 1,
+            "text": "Western Asia"
+          },
+          {
+            "level": 0,
+            "text": "WAFC Washington (Aviation Weather Centre, Kansas City, USA) is responsible for satellite data broadcasts to:"
+          },
+          {
+            "level": 1,
+            "text": "The Americas"
+          },
+          {
+            "level": 1,
+            "text": "The Atlantic"
+          },
+          {
+            "level": 1,
+            "text": "The Pacific"
+          },
+          {
+            "level": 1,
+            "text": "Eastern Asia"
+          },
+          {
+            "level": 0,
+            "text": "Note: SADIS FTP service also available to approved users"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 4,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "© Crown copyright 2004"
+          },
+          {
+            "level": 0,
+            "text": "High and medium level aviation meteorological products"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 5,
+        "title": "High and medium level aviation meteorological products",
+        "body": [
+          {
+            "level": 0,
+            "text": "Products from WAFC London and WAFC Washington are available in two output formats:"
+          },
+          {
+            "level": 2,
+            "text": "Portable Network Graphic chart format (PNG)"
+          },
+          {
+            "level": 2,
+            "text": "Binary Universal Format for the Representation of Meteorological data (BUFR)"
+          },
+          {
+            "level": 0,
+            "text": "It is the responsibility of end-users to decide which output format they will utilise to prepare aeronautical met products"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 6,
+        "title": "High and medium level aviation meteorological products",
+        "body": [
+          {
+            "level": 0,
+            "text": "PNG chart format:"
+          },
+          {
+            "level": 2,
+            "text": "Standard ICAO chart areas (right)"
+          },
+          {
+            "level": 0,
+            "text": "BUFR format"
+          },
+          {
+            "level": 2,
+            "text": "Standard ICAO chart areas (far left); and"
+          },
+          {
+            "level": 2,
+            "text": "Versatility for end users to prepare ‘localised’ chart areas (left)"
+          },
+          {
+            "level": 2,
+            "text": "Requires (commercially available) WAFS visualisation software to decode and view BUFR"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 7,
+        "title": "High level aviation meteorological products",
+        "body": [
+          {
+            "level": 0,
+            "text": "WAFS SIGWX forecast data for HIGH levels is valid for flight levels (FL) 250 to 630"
+          },
+          {
+            "level": 0,
+            "text": "High-level SIGWX forecast data (SWH) includes:"
+          },
+          {
+            "level": 2,
+            "text": "Jetstreams"
+          },
+          {
+            "level": 2,
+            "text": "Clear Air Turbulence (CAT)"
+          },
+          {
+            "level": 2,
+            "text": "Embedded or Frequent Cumulonimbus \u000b(EMBD CB or FRQ CB)"
+          },
+          {
+            "level": 2,
+            "text": "Tropopause Heights (TROP)"
+          },
+          {
+            "level": 2,
+            "text": "Frontal Systems"
+          },
+          {
+            "level": 2,
+            "text": "Tropical Cyclone, Sandstorms and Volcanic ash information (VTS)"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 8,
+        "title": "Medium level aviation meteorological products",
+        "body": [
+          {
+            "level": 0,
+            "text": "WAFS SIGWX forecast data for MEDIUM levels is valid for FL100 to FL450.  SWM of for specific regional areas, and is NOT a global dataset."
+          },
+          {
+            "level": 0,
+            "text": "Medium-level SIGWX forecast data (SWM) includes:"
+          },
+          {
+            "level": 2,
+            "text": "Jetstreams"
+          },
+          {
+            "level": 2,
+            "text": "Clear Air Turbulence (CAT)"
+          },
+          {
+            "level": 2,
+            "text": "Cloud, in-cloud icing and turbulence*"
+          },
+          {
+            "level": 2,
+            "text": "Tropopause Heights (TROP)"
+          },
+          {
+            "level": 2,
+            "text": "Frontal Systems"
+          },
+          {
+            "level": 2,
+            "text": "Tropical Cyclone, Sandstorms and Volcanic ash information"
+          },
+          {
+            "level": 0,
+            "text": "* This is one of the main differences between a SWH chart and a SWM chart.  Finer detail is assigned to in-cloud icing and turbulence regions."
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 9,
+        "title": "High level aviation meteorological parameters",
+        "body": [
+          {
+            "level": 0,
+            "text": "Jetstreams"
+          },
+          {
+            "level": 1,
+            "text": "Location"
+          },
+          {
+            "level": 1,
+            "text": "Strength (≥80KT)"
+          },
+          {
+            "level": 1,
+            "text": "Depth of the 80KT isotach indicated at point of maximum jet core speed (for jetstreams ≥120KT)"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 10,
+        "title": "High level aviation meteorological parameters",
+        "body": [
+          {
+            "level": 0,
+            "text": "Clear Air Turbulence"
+          },
+          {
+            "level": 1,
+            "text": "Moderate (MOD)"
+          },
+          {
+            "level": 1,
+            "text": "Moderate occasionally Severe (MOD OCNL SEV)"
+          },
+          {
+            "level": 1,
+            "text": "Severe (SEV)"
+          },
+          {
+            "level": 0,
+            "text": "Depicted by broken (dashed) line with associated labelling"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 11,
+        "title": "High level aviation meteorological parameters",
+        "body": [
+          {
+            "level": 0,
+            "text": "Embedded Cumulonimbus (EMBD CB) can be depicted as"
+          },
+          {
+            "level": 1,
+            "text": "ISOL EMBD CB;"
+          },
+          {
+            "level": 1,
+            "text": "OCNL EMBD CB; or"
+          },
+          {
+            "level": 1,
+            "text": "FRQ CB"
+          },
+          {
+            "level": 0,
+            "text": "….depending on the intensity forecast"
+          },
+          {
+            "level": 0,
+            "text": "Depicted by scalloped line with associated labelling"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 12,
+        "title": "High level aviation meteorological parameters",
+        "body": [
+          {
+            "level": 0,
+            "text": "ICAO definitions when referring to CBs"
+          },
+          {
+            "level": 0,
+            "text": "ISOL implies individual CBs, with maximum spatial coverage <50% of area forecast to be affected"
+          },
+          {
+            "level": 0,
+            "text": "OCNL implies well-separated CBs, with maximum spatial coverage ≥50% and ≤75% of forecast area to be affected"
+          },
+          {
+            "level": 0,
+            "text": "FRQ implies CBs with little or no separation, with maximum spatial coverage >75% of forecast area to be affected"
+          },
+          {
+            "level": 0,
+            "text": "EMBD implies CBs are embedded within cloud layers and cannot readily be recognised"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 13,
+        "title": "High level aviation meteorological parameters",
+        "body": [
+          {
+            "level": 0,
+            "text": "Tropopause Heights"
+          },
+          {
+            "level": 1,
+            "text": "the upper limit of the troposphere"
+          },
+          {
+            "level": 0,
+            "text": "Indicated on chart by:"
+          },
+          {
+            "level": 1,
+            "text": "standard levels"
+          },
+          {
+            "level": 1,
+            "text": "minima (trop lows)"
+          },
+          {
+            "level": 1,
+            "text": "maxima (trop highs)"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 14,
+        "title": "High level aviation meteorological parameters",
+        "body": [
+          {
+            "level": 0,
+            "text": "Frontal Systems associated with significant weather"
+          },
+          {
+            "level": 1,
+            "text": "Warm fronts"
+          },
+          {
+            "level": 1,
+            "text": "Cold fronts"
+          },
+          {
+            "level": 1,
+            "text": "Occluded front"
+          },
+          {
+            "level": 1,
+            "text": "Quasi-Stationary front"
+          },
+          {
+            "level": 0,
+            "text": "Will include a speed of movement (in KT)"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 15,
+        "title": "ICAO Annex 3 depiction of features",
+        "body": [],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 16,
+        "title": "High level aviation meteorological parameters",
+        "body": [
+          {
+            "level": 0,
+            "text": "Other parameters:"
+          },
+          {
+            "level": 1,
+            "text": "Tropical Cyclones;"
+          },
+          {
+            "level": 1,
+            "text": "Widespread sandstorms;"
+          },
+          {
+            "level": 1,
+            "text": "Volcanic Eruption; and"
+          },
+          {
+            "level": 1,
+            "text": "Radioactive release"
+          },
+          {
+            "level": 0,
+            "text": "Example:"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 17,
+        "title": "High level aviation meteorological parameters",
+        "body": [
+          {
+            "level": 0,
+            "text": "Putting all these elements together, allows the WAFC to produce WAFS SIGWX charts for aviation customers. For example:"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 18,
+        "title": "High level aviation meteorological parameters",
+        "body": [
+          {
+            "level": 0,
+            "text": "© Crown copyright"
+          },
+          {
+            "level": 0,
+            "text": "Remember, SIGWX forecasts for high level (SWH) aviation are available in BUFR format"
+          },
+          {
+            "level": 0,
+            "text": "High level BUFR (HBUFR) is a GLOBAL dataset"
+          },
+          {
+            "level": 0,
+            "text": "Users can access the standard ICAO region areas, or create their own for anywhere in the world"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 19,
+        "title": "High level aviation meteorological parameters",
+        "body": [
+          {
+            "level": 0,
+            "text": "© Crown copyright"
+          },
+          {
+            "level": 0,
+            "text": "Remember, when using a WAFS SIGWX chart, refer to the chart legend for additional information.  For example:"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 20,
+        "title": "Medium level aviation meteorological parameters",
+        "body": [
+          {
+            "level": 0,
+            "text": "© Crown copyright"
+          },
+          {
+            "level": 0,
+            "text": "The same is true of a medium level SIGWX chart legend:"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 21,
+        "title": "Medium level aviation meteorological products",
+        "body": [
+          {
+            "level": 0,
+            "text": "To re-cap:"
+          },
+          {
+            "level": 0,
+            "text": "WAFS SIGWX forecast data for MEDIUM levels is valid for FL100 to FL450.  SWM of for specific regional areas, and is NOT a global dataset."
+          },
+          {
+            "level": 0,
+            "text": "Medium-level SIGWX forecast data (SWM) includes:"
+          },
+          {
+            "level": 2,
+            "text": "Jetstreams"
+          },
+          {
+            "level": 2,
+            "text": "Clear Air Turbulence (CAT)"
+          },
+          {
+            "level": 2,
+            "text": "Cloud, in-cloud icing and turbulence*"
+          },
+          {
+            "level": 2,
+            "text": "Tropopause Heights (TROP)"
+          },
+          {
+            "level": 2,
+            "text": "Frontal Systems"
+          },
+          {
+            "level": 2,
+            "text": "Tropical Cyclone, Sandstorms and Volcanic ash information"
+          },
+          {
+            "level": 0,
+            "text": "* This is one of the main differences between a SWH chart and a SWM chart.  Finer detail is assigned to in-cloud icing and turbulence regions."
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 22,
+        "title": "Medium level aviation meteorological products",
+        "body": [
+          {
+            "level": 0,
+            "text": "WAFC London currently produces 3 regional ICAO chart areas for SWM:"
+          },
+          {
+            "level": 1,
+            "text": "EUR (European Area)"
+          },
+          {
+            "level": 1,
+            "text": "MEA (Middle East Area)"
+          },
+          {
+            "level": 1,
+            "text": "ASIA S (Asia South Area)"
+          },
+          {
+            "level": 0,
+            "text": "WAFC Washington currently produces 1 regional ICAO chart area for SWM:"
+          },
+          {
+            "level": 1,
+            "text": "NAT (North Atlantic)"
+          },
+          {
+            "level": 0,
+            "text": "SWM is available for these 4 areas in PNG chart form, and BUFR format."
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 23,
+        "title": "Medium level aviation meteorological products",
+        "body": [
+          {
+            "level": 0,
+            "text": "PNG formatted SIGWX medium level (SWM) chart areas"
+          },
+          {
+            "level": 0,
+            "text": "EUR"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 24,
+        "title": "Medium level aviation meteorological products",
+        "body": [
+          {
+            "level": 0,
+            "text": "Example European SIGWX chart (EUR):"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 25,
+        "title": "A closer look at in-cloud icing and turbulence",
+        "body": [],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 26,
+        "title": "A closer look at in-cloud icing and turbulence",
+        "body": [
+          {
+            "level": 0,
+            "text": "Note, the presence of icing and turbulence, does not always need to be related to the presence of EMBD CB"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 27,
+        "title": "Medium level aviation meteorological products",
+        "body": [
+          {
+            "level": 0,
+            "text": "Medium level products can be generated from BUFR data sets:"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 28,
+        "title": "Medium level aviation meteorological products",
+        "body": [
+          {
+            "level": 0,
+            "text": "Remember, medium level BUFR (MBUFR) is NOT a global dataset:"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 29,
+        "title": "WAFS SIGWX changes proposed under Amendment 74 to ICAO Annex 3",
+        "body": [
+          {
+            "level": 0,
+            "text": "Removal of fronts (warm, cold, occluded, Q-S) and convergence zones (ITCZ) from SWH and SWH"
+          },
+          {
+            "level": 0,
+            "text": "Removal of all non-CB related cloud (amount and type) from SWM"
+          },
+          {
+            "level": 0,
+            "text": "These changes will affect WAFS SIGWX in PNG chart format, and BUFR format"
+          },
+          {
+            "level": 0,
+            "text": "These changes are expected to be implemented in November 2007"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 30,
+        "title": "WAFS SIGWX changes proposed under Amendment 74 to ICAO Annex 3",
+        "body": [
+          {
+            "level": 0,
+            "text": "Removal of non-CB related cloud type and amount will mean areas will appear as:"
+          },
+          {
+            "level": 0,
+            "text": "For SWM:"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 31,
+        "title": "SIGWX charts headers (WMO)",
+        "body": [
+          {
+            "level": 0,
+            "text": "Issued by WAFC London:"
+          },
+          {
+            "level": 2,
+            "text": "EURSAM\tPGSE05 EGRR"
+          },
+          {
+            "level": 2,
+            "text": "EURAFI\tPGRE05 EGRR"
+          },
+          {
+            "level": 2,
+            "text": "EURASIA\tPGZE05 EGRR"
+          },
+          {
+            "level": 2,
+            "text": "INDOC\tPGGE05 EGRR"
+          },
+          {
+            "level": 2,
+            "text": "MID\t\tPGCE05 EGRR"
+          },
+          {
+            "level": 2,
+            "text": "NAT\t\tPGAE05 EGRR"
+          },
+          {
+            "level": 2,
+            "text": "SIO\t\tPGKE05 EGRR"
+          },
+          {
+            "level": 2,
+            "text": "EUR\t\tPGDE14 EGRR"
+          },
+          {
+            "level": 2,
+            "text": "MEA\t\tPGCE14 EGRR"
+          },
+          {
+            "level": 2,
+            "text": "ASIA S\tPGZE14 EGRR"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 32,
+        "title": "SIGWX charts headers (WMO)",
+        "body": [
+          {
+            "level": 0,
+            "text": "Issued by WAFC Washington:"
+          },
+          {
+            "level": 2,
+            "text": "AMERICAS\t\tPGEE05 KKCI"
+          },
+          {
+            "level": 2,
+            "text": "AMERICAS-AFI\tPGIE05 KKCI"
+          },
+          {
+            "level": 2,
+            "text": "PACIFIC\t\tPGGE05 KKCI"
+          },
+          {
+            "level": 2,
+            "text": "NAT\t\t\tPGAE05 KKCI"
+          },
+          {
+            "level": 2,
+            "text": "PACIFIC\t\tPGBE05 KKCI"
+          },
+          {
+            "level": 2,
+            "text": "SOUTH POLAR\tPGJE05 KKCI"
+          },
+          {
+            "level": 2,
+            "text": "NORTH PACIFIC\tPGDE29 KKCI"
+          },
+          {
+            "level": 2,
+            "text": "NAT\t\t\tPGNE14 KKCI"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 33,
+        "title": "How to receive and visualise the WAFS data",
+        "body": [
+          {
+            "level": 0,
+            "text": "© Crown copyright"
+          },
+          {
+            "level": 0,
+            "text": "All of the WAFS data that has been referred to so far is available to all approved SADIS and ISCS recipients:"
+          },
+          {
+            "level": 2,
+            "text": "GRIB"
+          },
+          {
+            "level": 2,
+            "text": "BUFR (high and medium level)"
+          },
+          {
+            "level": 2,
+            "text": "OPMET"
+          },
+          {
+            "level": 2,
+            "text": "WAFS SIGWX charts"
+          },
+          {
+            "level": 0,
+            "text": "Approval is sought through the SADIS Focal Point within the State concerned, and sanctioned by ICAO"
+          },
+          {
+            "level": 0,
+            "text": "Once approved, end-users will need to purchase SADIS 2G or ISCS integration equipment (i.e. satellite dish, antenna, LNB, indoor multiplexer unit) to receive the broadcast, plus a 3rd party data processing and display workstation to visualise the WAFS products"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 34,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "© Crown copyright"
+          },
+          {
+            "level": 0,
+            "text": "WAFS additional"
+          },
+          {
+            "level": 0,
+            "text": "products"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 35,
+        "title": "WAFS additional products",
+        "body": [
+          {
+            "level": 0,
+            "text": "© Crown copyright"
+          },
+          {
+            "level": 0,
+            "text": "The 15 products that the UKMO have developed are:"
+          },
+          {
+            "level": 3,
+            "text": "Mean icing potential"
+          },
+          {
+            "level": 3,
+            "text": "Maximum icing potential"
+          },
+          {
+            "level": 3,
+            "text": "Mean clear-air turbulence potential"
+          },
+          {
+            "level": 3,
+            "text": "Maximum clear-air turbulence potential"
+          },
+          {
+            "level": 3,
+            "text": "Mean in-cloud turbulence potential"
+          },
+          {
+            "level": 3,
+            "text": "Maximum in-cloud turbulence potential"
+          },
+          {
+            "level": 3,
+            "text": "CB horizontal extent"
+          },
+          {
+            "level": 3,
+            "text": "Pressure at CB base"
+          },
+          {
+            "level": 3,
+            "text": "Pressure at CB top"
+          },
+          {
+            "level": 3,
+            "text": "Pressure at embedded CB base"
+          },
+          {
+            "level": 3,
+            "text": "Pressure at embedded CB top"
+          },
+          {
+            "level": 3,
+            "text": "ICAO height at CB base"
+          },
+          {
+            "level": 3,
+            "text": "ICAO height at CB top"
+          },
+          {
+            "level": 3,
+            "text": "ICAO height at embedded CB base"
+          },
+          {
+            "level": 3,
+            "text": "ICAO height at embedded CB top"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 36,
+        "title": "Gridded icing products",
+        "body": [
+          {
+            "level": 0,
+            "text": "© Crown copyright"
+          },
+          {
+            "level": 0,
+            "text": "Mean  & max icing potential fields available"
+          },
+          {
+            "level": 0,
+            "text": "Gives a measure of icing potential"
+          },
+          {
+            "level": 0,
+            "text": "Units = fractional layer cloud cover where temperature is \u000b-20 to 0˚C"
+          },
+          {
+            "level": 0,
+            "text": "Produced for 5 levels:"
+          },
+          {
+            "level": 1,
+            "text": "700 hPa (~FL100)"
+          },
+          {
+            "level": 1,
+            "text": "600 hPa (~FL140)"
+          },
+          {
+            "level": 1,
+            "text": "500 hPa (~FL180)"
+          },
+          {
+            "level": 1,
+            "text": "400 hPa (~FL240)"
+          },
+          {
+            "level": 1,
+            "text": "300 hPa (~FL300)"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 37,
+        "title": "Gridded icing products",
+        "body": [
+          {
+            "level": 0,
+            "text": "© Crown copyright"
+          },
+          {
+            "level": 0,
+            "text": "Example, mean icing \u000bpotential at FL100"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 38,
+        "title": "Gridded icing products",
+        "body": [
+          {
+            "level": 0,
+            "text": "© Crown copyright"
+          },
+          {
+            "level": 0,
+            "text": "Example, maximum icing \u000bpotential at FL100"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 39,
+        "title": "Gridded icing products",
+        "body": [
+          {
+            "level": 0,
+            "text": "© Crown copyright"
+          },
+          {
+            "level": 0,
+            "text": "Example, global mean icing potential at FL100"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 40,
+        "title": "Clear Air Turbulence (CAT) Product",
+        "body": [
+          {
+            "level": 0,
+            "text": "© Crown copyright"
+          },
+          {
+            "level": 0,
+            "text": "Gives probability (as %) of encountering mountain wave or wind shear turbulence per 100km of flight"
+          },
+          {
+            "level": 0,
+            "text": "Values ≥ 4% indicate moderate or severe turbulence"
+          },
+          {
+            "level": 0,
+            "text": "Produced for 5 levels:"
+          },
+          {
+            "level": 1,
+            "text": "400 hPa (~FL240)"
+          },
+          {
+            "level": 1,
+            "text": "300 hPa (~FL300)"
+          },
+          {
+            "level": 1,
+            "text": "250 hPa (~FL340)"
+          },
+          {
+            "level": 1,
+            "text": "200 hPa (~FL390)"
+          },
+          {
+            "level": 1,
+            "text": "150 hPa (~FL445)"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 41,
+        "title": "Gridded clear-air turbulence products",
+        "body": [
+          {
+            "level": 0,
+            "text": "© Crown copyright"
+          },
+          {
+            "level": 0,
+            "text": "Example, mean \u000bCAT potential at FL340"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 42,
+        "title": "In-Cloud Turbulence Product",
+        "body": [
+          {
+            "level": 0,
+            "text": "© Crown copyright"
+          },
+          {
+            "level": 0,
+            "text": "Gives a measure of likelihood of turbulence within layer cloud"
+          },
+          {
+            "level": 0,
+            "text": "Positive values indicate a risk of encountering in-cloud turbulence"
+          },
+          {
+            "level": 0,
+            "text": "Typical values 0 to 0.1, the larger the value the larger the probability of turbulence"
+          },
+          {
+            "level": 0,
+            "text": "Produced for 5 levels:"
+          },
+          {
+            "level": 1,
+            "text": "700 hPa (~FL100)"
+          },
+          {
+            "level": 1,
+            "text": "600 hPa (~FL140)"
+          },
+          {
+            "level": 1,
+            "text": "500 hPa (~FL180)"
+          },
+          {
+            "level": 1,
+            "text": "400 hPa (~FL240)"
+          },
+          {
+            "level": 1,
+            "text": "300 hPa (~FL300)"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 43,
+        "title": "Gridded in-cloud turbulence products",
+        "body": [
+          {
+            "level": 0,
+            "text": "© Crown copyright"
+          },
+          {
+            "level": 0,
+            "text": "Example, maximum in-cloud turbulence potential FL240"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 44,
+        "title": "CB Products",
+        "body": [
+          {
+            "level": 0,
+            "text": "© Crown copyright"
+          },
+          {
+            "level": 0,
+            "text": "Various fields available:"
+          },
+          {
+            "level": 1,
+            "text": "CB horizontal extent (%)"
+          },
+          {
+            "level": 1,
+            "text": "Pressure/height of CB top"
+          },
+          {
+            "level": 1,
+            "text": "Pressure/height of CB base"
+          },
+          {
+            "level": 1,
+            "text": "Pressure/height of embedded CB top"
+          },
+          {
+            "level": 1,
+            "text": "Pressure/height of embedded CB base"
+          },
+          {
+            "level": 0,
+            "text": "Produced using convective cloud forecast fields, where the cloud top is colder than \u000b-30˚C"
+          },
+          {
+            "level": 0,
+            "text": "Embedded CB fields produced where CBs occur adjacent to layer cloud"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 45,
+        "title": "Gridded CB products",
+        "body": [
+          {
+            "level": 0,
+            "text": "© Crown copyright"
+          },
+          {
+            "level": 0,
+            "text": "Example, global CB horizontal extent – All levels"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 46,
+        "title": "",
+        "body": [
+          {
+            "level": 0,
+            "text": "© Crown copyright 2004"
+          },
+          {
+            "level": 0,
+            "text": "Low level aviation meteorological products"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      },
+      {
+        "slide_number": 47,
+        "title": "Significant Weather Charts (up to 15000 ft)",
+        "body": [
+          {
+            "level": 0,
+            "text": "© Crown copyright"
+          }
+        ],
+        "notes": "",
+        "has_images": true,
+        "has_charts": false
+      },
+      {
+        "slide_number": 48,
+        "title": "Wind and Temperature \u000b\t\t\t  maps",
+        "body": [
+          {
+            "level": 0,
+            "text": "900 mb – FL030"
+          },
+          {
+            "level": 0,
+            "text": "850 mb – FL050"
+          },
+          {
+            "level": 0,
+            "text": "700 mb – FL100"
+          },
+          {
+            "level": 0,
+            "text": "500 mb – FL180"
+          },
+          {
+            "level": 0,
+            "text": "© Crown copyright"
+          }
+        ],
+        "notes": "",
+        "has_images": false,
+        "has_charts": false
+      }
+    ]
+  }
+]

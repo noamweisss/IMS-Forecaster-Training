@@ -1,0 +1,195 @@
+<style>
+/*
+ * IMS Course Factory — Lesson Design System
+ *
+ * All rules are scoped to `.ims-lesson` so the styles can be injected into
+ * a host page (Moodle, in particular) without leaking onto the host's chrome
+ * and without the host's theme overriding lesson typography.
+ *
+ * Standalone lesson HTML wraps the entire body in <div class="ims-lesson">.
+ * Moodle body-fragment HTML does the same. The single rule below keeps the
+ * standalone preview's <body> background consistent without leaking into
+ * Moodle pages.
+ */
+
+.ims-lesson {
+  --bg: #ffffff;
+  --surface: #f6f5f0;
+  --border: #e2dfd6;
+  --text: #1a1917;
+  --muted: #6b6a65;
+  --accent: #185fa5;
+  --accent-light: #e6f1fb;
+  --note-bg: #e1f5ee;
+  --note-border: #0F6E56;
+  --warn-bg: #faeeda;
+  --warn-border: #BA7517;
+  --key-bg: #EEEDFE;
+  --key-border: #534AB7;
+  --danger-bg: #fcebeb;
+  --danger-border: #A32D2D;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .ims-lesson {
+    --bg: #1a1917;
+    --surface: #242320;
+    --border: #3a3835;
+    --text: #e8e6df;
+    --muted: #9a9890;
+    --accent-light: #042c53;
+    --note-bg: #04342c;
+    --warn-bg: #412402;
+    --key-bg: #26215c;
+  }
+}
+
+.ims-lesson h1 { font-size: 1.8rem; font-weight: 600; margin-bottom: 0.2rem; line-height: 1.2; color: var(--text); }
+.ims-lesson h2 { font-size: 1.25rem; font-weight: 600; margin-top: 2.5rem; padding-bottom: 0.4rem;
+  border-bottom: 1.5px solid var(--border); color: var(--text); }
+.ims-lesson h3 { font-size: 1.05rem; font-weight: 600; margin-top: 1.75rem; color: var(--text); }
+.ims-lesson p { margin: 0.7rem 0; max-width: 72ch; }
+.ims-lesson figure { margin: 2rem 0; }
+.ims-lesson figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 0.6rem;
+  font-style: italic; text-align: center; }
+.ims-lesson svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+.ims-lesson img { max-width: 100%; height: auto; }
+.ims-lesson table { border-collapse: collapse; width: 100%; margin: 1.5rem 0; font-size: 0.9rem; }
+.ims-lesson th { background: var(--accent); color: #fff; padding: 0.55rem 0.9rem; text-align: left; }
+.ims-lesson td { padding: 0.5rem 0.9rem; border-bottom: 1px solid var(--border); }
+.ims-lesson tr:nth-child(even) td { background: var(--surface); }
+.ims-lesson .callout { border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+.ims-lesson .callout-note    { background: var(--note-bg);   border-left: 4px solid var(--note-border); }
+.ims-lesson .callout-warning { background: var(--warn-bg);   border-left: 4px solid var(--warn-border); }
+.ims-lesson .callout-key     { background: var(--key-bg);    border-left: 4px solid var(--key-border); }
+.ims-lesson .callout-danger  { background: var(--danger-bg); border-left: 4px solid var(--danger-border); }
+.ims-lesson .callout-label { font-weight: 700; font-size: 0.78rem; text-transform: uppercase;
+  letter-spacing: 0.06em; margin-bottom: 0.35rem; }
+.ims-lesson .objectives { background: var(--surface); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+.ims-lesson .objectives ul { margin: 0.5rem 0 0; padding-left: 1.4rem; }
+.ims-lesson .lesson-summary { background: var(--accent-light); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 2.5rem 0 1rem; }
+.ims-lesson .lesson-summary h3 { margin-top: 0; color: var(--accent); font-size: 1rem; }
+.ims-lesson .image-needed { border: 2px dashed var(--border); border-radius: 8px;
+  padding: 1.5rem; margin: 1.5rem 0; text-align: center;
+  color: var(--muted); font-size: 0.9rem; background: var(--surface); }
+.ims-lesson .meta { color: var(--muted); font-size: 0.88rem; margin-bottom: 1.75rem; }
+.ims-lesson .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.5rem; }
+</style>
+<div class="ims-lesson">
+<p class="breadcrumb">Module 4 / Lesson 5</p>
+<h1>WAFC Maps &amp; Global Forecast Charts</h1>
+
+<div class="objectives">
+  <strong>By the end of this lesson you will be able to:</strong>
+  <ul>
+    <li>Distinguish between High-level (SWH) and Medium-level (SWM) SIGWX charts.</li>
+    <li>Decode standard aviation meteorological parameters (jetstreams, CAT, CBs) on WAFC maps.</li>
+    <li>Differentiate between isolated, occasional, and frequent cumulonimbus coverage as defined by ICAO.</li>
+  </ul>
+</div>
+
+<h2>The World Area Forecast System (WAFS)</h2>
+
+<p>The World Area Forecast System (WAFS) is a global program developed by ICAO and the WMO to provide high-quality, consistent en-route meteorological guidance for international flights. It is operated by two World Area Forecast Centres (WAFCs): <strong>WAFC London</strong> and <strong>WAFC Washington</strong>.</p>
+
+<p>WAFCs broadcast global wind, temperature, humidity, and Significant Weather (SIGWX) forecasts in two formats: traditional <strong>PNG charts</strong> for direct viewing, and <strong>BUFR format</strong>, which allows end-users to generate customized, localized charts using visualization software.</p>
+
+<h2>SWH vs. SWM Charts</h2>
+
+<p>SIGWX charts are split into two operational levels:</p>
+
+<ul>
+  <li><strong>High-Level SIGWX (SWH):</strong> Valid for Flight Levels 250 to 630. This is a <strong>global dataset</strong>.</li>
+  <li><strong>Medium-Level SIGWX (SWM):</strong> Valid for Flight Levels 100 to 450. Unlike SWH, SWM is <strong>not global</strong>. It is issued for specific regional areas (e.g., EUR, MEA, NAT). SWM charts include finer detail regarding in-cloud icing and turbulence that are not present on high-level charts.</li>
+</ul>
+
+<div class="callout callout-warning">
+  <div class="callout-label">Chart Overlap</div>
+  Because SWH starts at FL250 and SWM goes up to FL450, there is an intentional overlap. Pilots flying in this middle band must consult the chart that best captures the specific weather hazards (like in-cloud icing on the SWM) relevant to their route.
+</div>
+
+<h2>Decoding the Charts</h2>
+
+<p>Both SWH and SWM charts use standard ICAO symbology to depict critical aviation hazards. You must be able to quickly decode these features:</p>
+
+<ul>
+  <li><strong>Jetstreams:</strong> Depicted when the core wind speed is &ge; 80 knots. Indicates location, core speed, and altitude.</li>
+  <li><strong>Clear Air Turbulence (CAT):</strong> Depicted by a dashed line enclosing the area. Labeled with intensity (Moderate, Severe) and the flight levels affected.</li>
+  <li><strong>Tropopause Heights:</strong> Indicated by boxes showing the flight level of the tropopause, including localized "trop highs" and "trop lows."</li>
+</ul>
+
+<figure>
+  <svg viewBox="0 0 680 280" role="img" xmlns="http://www.w3.org/2000/svg">
+    <title>WAFC Chart Symbology</title>
+    <desc>A mock section of a WAFC SIGWX chart illustrating a jetstream and a CAT area.</desc>
+
+    <!-- Background grid -->
+    <rect x="0" y="0" width="680" height="280" fill="#f6f5f0"/>
+    <line x1="0" y1="140" x2="680" y2="140" stroke="#e2dfd6" stroke-width="2"/>
+    <line x1="340" y1="0" x2="340" y2="280" stroke="#e2dfd6" stroke-width="2"/>
+
+    <!-- Jetstream Line -->
+    <path d="M 50 200 Q 200 180 300 100 T 600 50" fill="none" stroke="#185FA5" stroke-width="4"/>
+    <polygon points="600,50 580,40 585,50 580,60" fill="#185FA5"/>
+    
+    <!-- Wind Barbs -->
+    <line x1="260" y1="120" x2="280" y2="90" stroke="#185FA5" stroke-width="2"/>
+    <polygon points="280,90 290,95 285,100" fill="#185FA5"/> <!-- Pennant for 50 -->
+    <line x1="270" y1="105" x2="285" y2="110" stroke="#185FA5" stroke-width="2"/> <!-- 10 -->
+    <line x1="265" y1="112" x2="280" y2="117" stroke="#185FA5" stroke-width="2"/> <!-- 10 -->
+    
+    <!-- Jet Core Label -->
+    <rect x="230" y="55" width="80" height="25" fill="#ffffff" stroke="#185FA5" stroke-width="1"/>
+    <text x="270" y="73" font-family="sans-serif" font-size="12" fill="#1A1917" text-anchor="middle" font-weight="bold">FL360</text>
+    <text x="270" y="45" font-family="sans-serif" font-size="12" fill="#185FA5" text-anchor="middle" font-weight="bold">120 KT</text>
+
+    <!-- CAT Area -->
+    <path d="M 400 180 Q 480 120 580 160 Q 640 220 540 260 Q 450 240 400 180" fill="none" stroke="#A32D2D" stroke-width="3" stroke-dasharray="8 6"/>
+    <text x="490" y="210" font-family="sans-serif" font-size="14" fill="#A32D2D" font-weight="bold">MOD CAT</text>
+    <text x="490" y="230" font-family="sans-serif" font-size="12" fill="#1A1917">FL380 / FL280</text>
+
+    <!-- Annotations -->
+    <text x="70" y="230" font-family="sans-serif" font-size="14" fill="#185FA5" font-weight="bold">Jetstream</text>
+    <text x="70" y="250" font-family="sans-serif" font-size="12" fill="#6B6A65">Core at FL360, 120 knots.</text>
+    <text x="560" y="140" font-family="sans-serif" font-size="14" fill="#A32D2D" font-weight="bold">CAT Area</text>
+  </svg>
+  <figcaption>Example WAFC symbology showing a 120-knot jetstream core at FL360 and an adjacent area of Moderate Clear Air Turbulence between FL280 and FL380.</figcaption>
+</figure>
+
+<h2>Cumulonimbus (CB) Coverage Definitions</h2>
+
+<p>When forecasting thunderstorms (CBs) on a SIGWX chart, ICAO mandates specific terminology to describe the spatial coverage of the storm cells within the affected area. Scalloped lines denote the boundary of the convective area.</p>
+
+<div class="callout callout-key">
+  <div class="callout-label">Coverage Terminology</div>
+  <ul>
+    <li><strong>ISOL (Isolated):</strong> Individual CBs with a maximum spatial coverage of <strong>less than 50%</strong> of the forecast area.</li>
+    <li><strong>OCNL (Occasional):</strong> Well-separated CBs with a spatial coverage of <strong>50% to 75%</strong> of the forecast area.</li>
+    <li><strong>FRQ (Frequent):</strong> CBs with little or no separation, covering <strong>more than 75%</strong> of the forecast area.</li>
+    <li><strong>EMBD (Embedded):</strong> CBs that are hidden within other cloud layers and cannot be readily recognized visually by pilots.</li>
+  </ul>
+</div>
+
+<p>These terms dictate how an aircraft can navigate the hazard. An <em>ISOL</em> or <em>OCNL</em> area suggests that a pilot equipped with airborne weather radar can safely pick their way between the storms. A <em>FRQ</em> area implies a solid wall of thunderstorms that must be avoided entirely.</p>
+
+<div class="lesson-summary">
+  <h3>Key Takeaways</h3>
+  <ul>
+    <li>WAFCs distribute high-quality en-route weather forecasts globally to support international aviation.</li>
+    <li>SWH (High-level) charts are global and cover FL250 to FL630. SWM (Medium-level) charts are regional, cover FL100 to FL450, and include more detail on in-cloud icing.</li>
+    <li>Jetstreams are plotted when the core wind is 80 knots or greater.</li>
+    <li>CB coverage is strictly defined: ISOL (&lt;50%), OCNL (50-75%), and FRQ (&gt;75%).</li>
+  </ul>
+</div>
+</div>

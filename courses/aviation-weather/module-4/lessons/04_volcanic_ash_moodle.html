@@ -1,0 +1,182 @@
+<style>
+/*
+ * IMS Course Factory — Lesson Design System
+ *
+ * All rules are scoped to `.ims-lesson` so the styles can be injected into
+ * a host page (Moodle, in particular) without leaking onto the host's chrome
+ * and without the host's theme overriding lesson typography.
+ *
+ * Standalone lesson HTML wraps the entire body in <div class="ims-lesson">.
+ * Moodle body-fragment HTML does the same. The single rule below keeps the
+ * standalone preview's <body> background consistent without leaking into
+ * Moodle pages.
+ */
+
+.ims-lesson {
+  --bg: #ffffff;
+  --surface: #f6f5f0;
+  --border: #e2dfd6;
+  --text: #1a1917;
+  --muted: #6b6a65;
+  --accent: #185fa5;
+  --accent-light: #e6f1fb;
+  --note-bg: #e1f5ee;
+  --note-border: #0F6E56;
+  --warn-bg: #faeeda;
+  --warn-border: #BA7517;
+  --key-bg: #EEEDFE;
+  --key-border: #534AB7;
+  --danger-bg: #fcebeb;
+  --danger-border: #A32D2D;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .ims-lesson {
+    --bg: #1a1917;
+    --surface: #242320;
+    --border: #3a3835;
+    --text: #e8e6df;
+    --muted: #9a9890;
+    --accent-light: #042c53;
+    --note-bg: #04342c;
+    --warn-bg: #412402;
+    --key-bg: #26215c;
+  }
+}
+
+.ims-lesson h1 { font-size: 1.8rem; font-weight: 600; margin-bottom: 0.2rem; line-height: 1.2; color: var(--text); }
+.ims-lesson h2 { font-size: 1.25rem; font-weight: 600; margin-top: 2.5rem; padding-bottom: 0.4rem;
+  border-bottom: 1.5px solid var(--border); color: var(--text); }
+.ims-lesson h3 { font-size: 1.05rem; font-weight: 600; margin-top: 1.75rem; color: var(--text); }
+.ims-lesson p { margin: 0.7rem 0; max-width: 72ch; }
+.ims-lesson figure { margin: 2rem 0; }
+.ims-lesson figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 0.6rem;
+  font-style: italic; text-align: center; }
+.ims-lesson svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+.ims-lesson img { max-width: 100%; height: auto; }
+.ims-lesson table { border-collapse: collapse; width: 100%; margin: 1.5rem 0; font-size: 0.9rem; }
+.ims-lesson th { background: var(--accent); color: #fff; padding: 0.55rem 0.9rem; text-align: left; }
+.ims-lesson td { padding: 0.5rem 0.9rem; border-bottom: 1px solid var(--border); }
+.ims-lesson tr:nth-child(even) td { background: var(--surface); }
+.ims-lesson .callout { border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+.ims-lesson .callout-note    { background: var(--note-bg);   border-left: 4px solid var(--note-border); }
+.ims-lesson .callout-warning { background: var(--warn-bg);   border-left: 4px solid var(--warn-border); }
+.ims-lesson .callout-key     { background: var(--key-bg);    border-left: 4px solid var(--key-border); }
+.ims-lesson .callout-danger  { background: var(--danger-bg); border-left: 4px solid var(--danger-border); }
+.ims-lesson .callout-label { font-weight: 700; font-size: 0.78rem; text-transform: uppercase;
+  letter-spacing: 0.06em; margin-bottom: 0.35rem; }
+.ims-lesson .objectives { background: var(--surface); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+.ims-lesson .objectives ul { margin: 0.5rem 0 0; padding-left: 1.4rem; }
+.ims-lesson .lesson-summary { background: var(--accent-light); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 2.5rem 0 1rem; }
+.ims-lesson .lesson-summary h3 { margin-top: 0; color: var(--accent); font-size: 1rem; }
+.ims-lesson .image-needed { border: 2px dashed var(--border); border-radius: 8px;
+  padding: 1.5rem; margin: 1.5rem 0; text-align: center;
+  color: var(--muted); font-size: 0.9rem; background: var(--surface); }
+.ims-lesson .meta { color: var(--muted); font-size: 0.88rem; margin-bottom: 1.75rem; }
+.ims-lesson .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.5rem; }
+</style>
+<div class="ims-lesson">
+<p class="breadcrumb">Module 4 / Lesson 4</p>
+<h1>Volcanic Ash</h1>
+
+<div class="objectives">
+  <strong>By the end of this lesson you will be able to:</strong>
+  <ul>
+    <li>Explain the specific hazards volcanic ash poses to jet aircraft operations.</li>
+    <li>Interpret Volcanic Ash Advisories (VAA) from VAACs.</li>
+    <li>Outline the role of atmospheric dispersion modeling for predicting ash plume trajectories.</li>
+  </ul>
+</div>
+
+<h2>The Hidden Hazard to Jet Aviation</h2>
+
+<p>Approximately 15 to 25 volcanoes erupt worldwide each year with sufficient force to eject volcanic ash into jet cruising levels (FL300 and above). Unlike meteorological clouds, volcanic ash plumes are often <strong>invisible to aircraft weather radar</strong>. Weather radar is tuned to detect large water droplets and ice crystals; dry volcanic ash particles are too small and lack the dielectric properties needed to reflect the radar beam back to the aircraft.</p>
+
+<p>The hazards posed by an aircraft inadvertently flying into an ash plume are severe and potentially catastrophic:</p>
+
+<ul>
+  <li><strong>Engine Stall:</strong> Volcanic ash contains silicates with a melting point lower than the operating temperatures of modern jet turbine engines. The ash melts inside the combustion chamber and resolidifies on the cooler turbine blades, choking off airflow and causing complete engine failure.</li>
+  <li><strong>Abrasion:</strong> Ash is essentially pulverized rock and glass. It sandblasts the aircraft's outer frame, leading to expensive repairs, and violently pits the cockpit windows, blinding the flight crew.</li>
+  <li><strong>System Contamination:</strong> Ash clogs pitot tubes (disrupting airspeed indications) and contaminates cabin air systems with toxic sulfur dioxide.</li>
+</ul>
+
+<div class="callout callout-danger">
+  <div class="callout-label">Historical Context</div>
+  In June 1982, British Airways Flight 9 (a Boeing 747) encountered an unforecasted ash plume from Mount Galunggung over Indonesia. The aircraft lost power in all four engines and descended to 12,000 feet before the crew managed to restart some engines and make an emergency landing. This incident catalyzed the creation of the modern volcanic ash monitoring system.
+</div>
+
+<div class="image-needed" data-description="High-resolution photograph of a volcanic eruption sending a large, dark ash plume high into the troposphere/stratosphere (e.g., Eyjafjallajökull or Pinatubo), illustrating the massive volume of particulates ejected.">
+  &#128247; Image needed: Real photograph of a volcanic ash plume from an eruption.
+</div>
+
+<h2>Detection and Dispersion Modeling</h2>
+
+<p>Because aircraft radar is useless against ash, aviation relies entirely on external meteorological monitoring. This responsibility falls to nine <strong>Volcanic Ash Advisory Centres (VAACs)</strong> worldwide, such as the London VAAC hosted by the UK Met Office.</p>
+
+<p>When an eruption occurs, the VAAC immediately utilizes satellite imagery to detect and pinpoint the ash plume. They then input the eruption details (plume height, duration, and source geometry) into an <strong>Atmospheric Dispersion Model</strong>.</p>
+
+<p>For instance, the London VAAC uses the <strong>NAME (Numerical Atmospheric-dispersion Modelling Environment)</strong> model. The model calculates the 3D trajectory of the ash particles as they are carried by upper-level winds, factoring in particle settling and atmospheric diffusion over time.</p>
+
+<h2>Volcanic Ash Advisories (VAA)</h2>
+
+<p>The output of the dispersion model is translated into a Volcanic Ash Advisory (VAA). The VAA provides coordinate polygons mapping the current position of the ash cloud and its forecasted position at +6, +12, and +18 hours. These advisories are critical for airspace management and are often accompanied by graphical representations.</p>
+
+<figure>
+  <svg viewBox="0 0 680 320" role="img" xmlns="http://www.w3.org/2000/svg">
+    <title>Volcanic Ash Plume Dispersion</title>
+    <desc>A diagram showing an ash plume emanating from a volcano and spreading into a polygon defining the hazard area for a SIGMET.</desc>
+
+    <!-- Volcano -->
+    <path d="M 100 280 L 160 180 L 220 280 Z" fill="#6B6A65"/>
+    <path d="M 140 215 L 160 180 L 180 215 Z" fill="#ffffff" stroke="#6B6A65"/>
+    <text x="125" y="300" font-family="sans-serif" font-size="12" fill="#1A1917" font-weight="bold">Source Volcano</text>
+
+    <!-- Plume Generation -->
+    <path d="M 160 180 Q 150 120 180 80 Q 220 60 280 100 Q 250 160 160 180" fill="#A32D2D" opacity="0.8"/>
+    
+    <!-- Wind Vector -->
+    <line x1="180" y1="40" x2="300" y2="40" stroke="#185FA5" stroke-width="3"/>
+    <polygon points="300,40 290,35 290,45" fill="#185FA5"/>
+    <text x="200" y="30" font-family="sans-serif" font-size="14" fill="#185FA5" font-weight="bold">Upper-Level Winds</text>
+
+    <!-- Dispersion Polygon (+6 HR) -->
+    <polygon points="150,180 300,50 550,60 620,180 400,240 150,180" fill="#faeeda" opacity="0.6" stroke="#BA7517" stroke-width="2" stroke-dasharray="4 4"/>
+    
+    <!-- Dots inside polygon representing ash -->
+    <circle cx="350" cy="120" r="2" fill="#1A1917"/>
+    <circle cx="400" cy="150" r="2" fill="#1A1917"/>
+    <circle cx="450" cy="100" r="2" fill="#1A1917"/>
+    <circle cx="500" cy="140" r="2" fill="#1A1917"/>
+    <circle cx="300" cy="160" r="2" fill="#1A1917"/>
+    <circle cx="380" cy="180" r="2" fill="#1A1917"/>
+    <circle cx="480" cy="180" r="2" fill="#1A1917"/>
+    
+    <text x="450" y="80" font-family="sans-serif" font-size="14" fill="#BA7517" font-weight="bold">+6 HR Forecast Polygon</text>
+    <text x="450" y="100" font-family="sans-serif" font-size="12" fill="#BA7517">FL250 / FL400</text>
+  </svg>
+  <figcaption>The VAAC provides a defined polygon based on dispersion modeling. Any aircraft penetrating this airspace risks severe engine damage, making these polygons strict "no-fly" zones.</figcaption>
+</figure>
+
+<p>Meteorological Watch Offices (MWOs) use the VAA polygons directly to issue SIGMETs for their respective Flight Information Regions (FIRs). Unlike thunderstorm SIGMETs, volcanic ash SIGMETs are not discretionary—if an ash plume is forecast to enter an FIR, the corresponding SIGMET must be issued.</p>
+
+<div class="lesson-summary">
+  <h3>Key Takeaways</h3>
+  <ul>
+    <li>Volcanic ash is invisible to standard aircraft weather radar because it lacks water content.</li>
+    <li>Ash melts in jet engines causing stalls, and its abrasive nature destroys outer structures and windshields.</li>
+    <li>Nine VAACs monitor global volcanism and run complex atmospheric dispersion models (like NAME) to track and forecast ash plumes.</li>
+    <li>VAAs provide the critical polygon coordinates that MWOs use to issue mandatory airspace-closing SIGMETs.</li>
+  </ul>
+</div>
+</div>
