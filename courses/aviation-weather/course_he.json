@@ -1,0 +1,36 @@
+{
+  "course_id": "aviation-weather",
+  "title": "הסמכת חזאות תעופתית",
+  "target_audience": "מטאורולוגים מקצועיים המבקשים הסמכת חזאי תעופה (שמ״ט)",
+  "subject_matter_expert": "מנהל חזאות (שמ״ט)",
+  "modules": [
+    {
+      "number": 1,
+      "title": "יסודות מזג אוויר תעופתי ותקנות",
+      "folder": "module-1",
+      "source_files": ["01-04"],
+      "status": "הופק והועלה לפיילוט ב-Moodle"
+    },
+    {
+      "number": 2,
+      "title": "סכנות תעופה בטיסה",
+      "folder": "module-2",
+      "source_files": ["05-12"],
+      "status": "ממתין להפקה"
+    },
+    {
+      "number": 3,
+      "title": "אזהרות תעופתיות: SIGMET, AIRMET ושדה תעופה",
+      "folder": "module-3",
+      "source_files": ["13-14"],
+      "status": "הופק, ממתין להעלאה ל-Moodle"
+    },
+    {
+      "number": 4,
+      "title": "תוצרי חיזוי תעופתי ואזהרות",
+      "folder": "module-4",
+      "source_files": ["15-18"],
+      "status": "ממתין להפקה"
+    }
+  ]
+}

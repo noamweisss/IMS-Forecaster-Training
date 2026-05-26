@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8'?>
+<quiz>
+  <question type="multichoice">
+    <name><text>L1-Q01 — אי עמידה בתקני ICAO</text></name>
+    <questiontext format="html"><text>&lt;p&gt;שירות מטאורולוגי לאומי קובע שהוא אינו יכול לעמוד ברזולוציית הרשת המדויקת המצוינת בתקן ICAO נספח 3 המעודכן לאחרונה בשל מגבלות מחשוב מדור קודם. מהי התגובה המבצעית המתאימה?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;כאשר מדינה אינה יכולה לציית לתקן מחייב של ICAO, היא נדרשת על פי חוק להגיש "הבדל" ל-ICAO. זה מאותת למפעילים בעולם שהנהלים המקומיים חורגים מהנורמות הבינלאומיות, ומאפשר להם להתאים את תכנון הטיסה שלהם בהתאם. המתנה למחזור הבא או סתם התייחסות אליו כאל תרגול מומלץ היא הפרת בטיחות ותאימות.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;המדינה חייבת להגיש רשמית "הבדל" ל-ICAO כדי שמפעילים בינלאומיים יהיו מודעים לאי ההתאמה במהלך תכנון הטיסה.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;השירות צריך לסווג מחדש את התקן כ"פרקטיקה מומלצת" פנימית עד שניתן יהיה לשדרג את משאבי המחשוב.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;המדינה חייבת לעצור לחלוטין את הנפקת המוצר החזוי הספציפי עד שתושג עמידה מלאה בנספח 3.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;השירות צריך להנפיק את התחזית באמצעות הרזולוציה הישנה אך להוסיף טקסט כתב ויתור כללי לקטע ההערות של כל ה- METARs.&lt;/p&gt;</text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L1-Q02 — תפקידים של WMO לעומת ICAO</text></name>
+    <questiontext format="html"><text>&lt;p&gt;תעשיית התעופה מזהה צורך בסוג חדש של מוצר חיזוי אפר וולקני כדי לתמוך בפעולות מרחב אווירי בצפיפות גבוהה. על פי המסגרת הרגולטורית הבינלאומית, איזה ארגון אחראי בעיקר לפיתוח המדע המטאורולוגי ותקני התצפית הבסיסיים עבור מוצר זה?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;ICAO קובע את הדרישה התפעולית (מה נחוץ לתעופה), בעוד שה-WMO מספק את הבסיס המדעי והטכני (כיצד לצפות, למדוד ולעצב את הנתונים). לכן, ה-WMO אחראי למו"פ ולמתודולוגיה המדעית.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;הארגון המטאורולוגי העולמי (WMO)&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;ארגון התעופה האזרחית הבינלאומית (ICAO)&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;איגוד התחבורה האווירית הבינלאומי (IATA)&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;השירותים הלאומיים המטאורולוגיים וההידרולוגיים (NMHS) של המדינה המושפעת&lt;/p&gt;</text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L1-Q03 — תקנים לעומת שיטות עבודה מומלצות</text></name>
+    <questiontext format="html"><text>&lt;p&gt;במהלך ביקורת, יצוין כי משרד שמירה מטאורולוגי (MWO) יישם במלואו "סטנדרט" של ICAO לגבי הנפקת SIGMET, אך בחר שלא ליישם "פרקטיקה מומלצת" קשורה. האם זה משפיע על סטטוס התאימות של ה-MWO עבור ניווט אווירי בינלאומי?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;"תקן" הוא חובה לבטיחות ולסדירות של ניווט אווירי בינלאומי, בעוד ש"פרקטיקה מומלצת" מוכרת כרצויה אך לא חובה. אי יישום של נוהג מומלץ אינו מהווה כשל בציות או מחייב הגשת הבדל פורמלי.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;לא. ציות לנוהג מומלץ רצוי אך לא חובה; ה-MWO נשאר תואם במלואו על ידי עמידה בתקן.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;כן. יש להקפיד על שני התקנים וגם הנוהלים המומלצים על מנת לשמור על הסמכה בינלאומית.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;לא, בתנאי שה-MWO הגיש "הבדל" רשמי ל-ICAO לגבי הנוהל המומלץ שהושמט.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;כן, מכיוון שהשמטת נוהג מומלץ מאלץ את רשות התעופה האזרחית המקומית להוריד לאחור את סיווג המרחב האווירי.&lt;/p&gt;</text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L1-Q04 — מערכת מידע WMO (WIS)</text></name>
+    <questiontext format="html"><text>&lt;p&gt;חזאי ב-IMS מבחין ש- METAR ממדינה שכנה הפסיקו להגיע דרך הרשת הגלובלית, מה שהשפיע על היערכות ה-TAF המקומית. הפרעה זו בחילופי הנתונים היא בעיקר כשל במסגרת המסגרת של איזה ארגון?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;התקינה וההחלפה הטכנית של נתונים מטאורולוגיים ברחבי העולם נשלטים על ידי ה-WMO, במיוחד באמצעות מערכת המידע של ה-WMO (WIS). בעוד ש-ICAO דורש את הנתונים עבור תעופה, רשת החליפין הטכנית בפועל נופלת תחת WMO.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;מערכת המידע של הארגון המטאורולוגי העולמי (WMO)&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;פרוטוקולי תקשורת ICAO נספח 3&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;רשת בקרת התעבורה האווירית של רשות התעופה האזרחית המקומית&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;להקת התעופה הבינלאומית של איגוד הטלקומוניקציה (ITU)&lt;/p&gt;</text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L1-Q05 — מסמכי מקור רגולטוריים</text></name>
+    <questiontext format="html"><text>&lt;p&gt;חזאי צריך לאמת את הפורמט החוקי והקריטריונים הסופיים להנפקת תחזית תעופה מסוף (TAF) למפעילי תעופה בינלאומיים. איזה מסמך משמש כסמכות הרגולטורית האולטימטיבית עבור מוצר תעופה ספציפי זה?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;נספח ICAO 3 (שירות מטאורולוגי לניווט אווירי בינלאומי) הוא המסמך הרגולטורי הסופי המכתיב את הפורמטים, הקריטריונים והדרישות התפעוליות המדויקות עבור מוצרי תעופה כמו TAFs ו- METARs.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;נספח ICAO 3 (שירות מטאורולוגי לניווט אווירי בינלאומי)&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;WMO-No. 49, כרך א' (תקנים מטאורולוגיים כלליים)&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;החלק הכללי של פרסום מידע אווירונאוטי לאומי (AIP)&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;תוכנית הניווט האווירי העולמי של ICAO (GANP)&lt;/p&gt;</text></answer>
+  </question>
+</quiz>

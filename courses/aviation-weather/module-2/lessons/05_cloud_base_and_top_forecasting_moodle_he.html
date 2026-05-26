@@ -1,0 +1,147 @@
+<style>
+.ims-lesson {
+  --bg: #ffffff;
+  --surface: #f6f5f0;
+  --border: #e2dfd6;
+  --text: #1a1917;
+  --muted: #6b6a65;
+  --accent: #185fa5;
+  --accent-light: #e6f1fb;
+  --note-bg: #e1f5ee;
+  --note-border: #0F6E56;
+  --warn-bg: #faeeda;
+  --warn-border: #BA7517;
+  --key-bg: #EEEDFE;
+  --key-border: #534AB7;
+  --danger-bg: #fcebeb;
+  --danger-border: #A32D2D;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .ims-lesson {
+    --bg: #1a1917;
+    --surface: #242320;
+    --border: #3a3835;
+    --text: #e8e6df;
+    --muted: #9a9890;
+    --accent-light: #042c53;
+    --note-bg: #04342c;
+    --warn-bg: #412402;
+    --key-bg: #26215c;
+  }
+}
+
+.ims-lesson h1 { font-size: 1.8rem; font-weight: 600; margin-bottom: 0.2rem; line-height: 1.2; color: var(--text); }
+.ims-lesson h2 { font-size: 1.25rem; font-weight: 600; margin-top: 2.5rem; padding-bottom: 0.4rem;
+  border-bottom: 1.5px solid var(--border); color: var(--text); }
+.ims-lesson h3 { font-size: 1.05rem; font-weight: 600; margin-top: 1.75rem; color: var(--text); }
+.ims-lesson p { margin: 0.7rem 0; max-width: 72ch; }
+.ims-lesson figure { margin: 2rem 0; }
+.ims-lesson figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 0.6rem;
+  font-style: italic; text-align: center; }
+.ims-lesson svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+.ims-lesson img { max-width: 100%; height: auto; }
+.ims-lesson table { border-collapse: collapse; width: 100%; margin: 1.5rem 0; font-size: 0.9rem; }
+.ims-lesson th { background: var(--accent); color: #fff; padding: 0.55rem 0.9rem; text-align: left; }
+.ims-lesson td { padding: 0.5rem 0.9rem; border-bottom: 1px solid var(--border); }
+.ims-lesson tr:nth-child(even) td { background: var(--surface); }
+.ims-lesson .callout { border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+.ims-lesson .callout-note    { background: var(--note-bg);   border-left: 4px solid var(--note-border); }
+.ims-lesson .callout-warning { background: var(--warn-bg);   border-left: 4px solid var(--warn-border); }
+.ims-lesson .callout-key     { background: var(--key-bg);    border-left: 4px solid var(--key-border); }
+.ims-lesson .callout-danger  { background: var(--danger-bg); border-left: 4px solid var(--danger-border); }
+.ims-lesson .callout-label { font-weight: 700; font-size: 0.78rem; text-transform: uppercase;
+  letter-spacing: 0.06em; margin-bottom: 0.35rem; }
+.ims-lesson .objectives { background: var(--surface); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+.ims-lesson .objectives ul { margin: 0.5rem 0 0; padding-left: 1.4rem; }
+.ims-lesson .lesson-summary { background: var(--accent-light); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 2.5rem 0 1rem; }
+.ims-lesson .lesson-summary h3 { margin-top: 0; color: var(--accent); font-size: 1rem; }
+.ims-lesson .image-needed { border: 2px dashed var(--border); border-radius: 8px;
+  padding: 1.5rem; margin: 1.5rem 0; text-align: center;
+  color: var(--muted); font-size: 0.9rem; background: var(--surface); }
+.ims-lesson .meta { color: var(--muted); font-size: 0.88rem; margin-bottom: 1.75rem; }
+.ims-lesson .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.5rem; }
+</style>
+<div class="ims-lesson">
+<p class="breadcrumb">מודול 2 / שיעור 5</p>
+<h1>בסיס ענן וחיזוי מוביל</h1>
+<div class="objectives">
+<strong>בסוף שיעור זה תוכל:</strong>
+<ul>
+<li>הערך את גבהי בסיס העננים באמצעות שקעים בטמפרטורה ובנקודות טל</li>
+<li>קבע את גבהי העל בענן מתוך תמונות לוויין ונתוני צלילים</li>
+<li>תחזית כיסוי ענן ועובי שכבה לתכנון תעופה</li>
+<li>החל ידע טופוגרפי מקומי על היווצרות ענן תת-רשת</li>
+</ul>
+</div>
+<h2>קביעת גובה בסיס ענן (CBH)</h2>
+<p>גובה בסיס ענן הוא פרמטר קריטי עבור תפעול טרמינלים ותכנון טיסה. המנגנון לקביעת CBH שונה בין עננים הסעה לעננים שכבתיים (שכבתיים).</p>
+<h3>עננים הסעה (Cumulus/TCU/CB)</h3>
+<p>עבור עננים המופעלים על ידי חימום פני השטח, הבסיס ממוקם ב- <strong>רמת עיבוי הרמה (LCL)</strong>. כלל אצבע פשוט לאומדן מבוסס על טמפרטורת פני השטח (T) ונקודת הטל (Td) בצלזיוס:</p>
+<div class="callout callout-key">
+<div class="callout-label">נוּסחָה</div>
+<strong>בסיס (ft) ≈ (T - Td) / 2.5 * 1000</strong> <br/>
+<em>הערה: דגמים מסוימים משתמשים ב-3°C לכל 1,000 רגל לקירור אדיאבטי יבש של ממרח T-Td.</em>
+</div>
+<h3>עננים שכבות (Stratus/Altostratus)</h3>
+<p>עננים שכבות מונעים בדרך כלל על ידי סחיפת לחות או הרמה בקנה מידה גדול (למשל, חזיתות חמות). הבסיס שלהם נקבע לפי הרמה שבה שכבה לחה הופכת לרוויה. באזורי חוף כמו ישראל, בסיס ה <strong>היפוך ימי</strong> משמש לעתים קרובות כמלכודת ללחות, ומגדיר את בסיס הסטרטוס.</p>
+<figure>
+<svg role="img" viewbox="0 0 680 220">
+<title>קביעת בסיס ענן על צלילים</title>
+<!-- Grid -->
+<path d="M 50 200 L 650 200 M 50 200 L 50 20" fill="none" stroke="#E2DFD6" stroke-width="1"></path>
+<!-- T line (red) -->
+<path d="M 400 200 L 300 100 L 250 20" fill="none" stroke="#993C1D" stroke-width="2"></path>
+<!-- Td line (blue) -->
+<path d="M 300 200 L 280 100 L 250 20" fill="none" stroke="#185FA5" stroke-width="2"></path>
+<!-- Saturation point -->
+<circle cx="280" cy="100" fill="#0F6E56" r="5"></circle>
+<!-- Labels -->
+<text fill="#993C1D" font-family="sans-serif" font-size="12" x="350" y="215">טמפ' (T)</text>
+<text fill="#185FA5" font-family="sans-serif" font-size="12" x="250" y="215">נקודת טל (Td)</text>
+<text fill="#0F6E56" font-family="sans-serif" font-size="12" x="290" y="95">בסיס ענן (רוויה)</text>
+<text fill="#6B6A65" font-family="sans-serif" font-size="12" transform="rotate(-90 10 110)" x="10" y="110">גוֹבַה</text>
+</svg>
+<figcaption>איור 5.1: צליל קונספטואלי המציג את בסיס הענן ברמה שבה T ו-Td מתכנסים.</figcaption>
+</figure>
+<h2>קביעת גובה הענן העליון</h2>
+<p>ידיעת ההיקף האנכי של שכבת ענן מאפשרת לטייסים לקבוע אם הם יכולים לטוס "מעל העליון" או שהם יישארו ב-IMC (Instrument Meteorological Conditions) לאורך טיפוס או ירידה.</p>
+<h3>הערכת IR לווין</h3>
+<p>חיישני לוויין אינפרא אדום (IR) מודדים את <strong>טמפרטורת בהירות</strong> של ראש הענן. מכיוון שהטמפרטורה בדרך כלל יורדת עם הגובה בטרופוספירה, אנו יכולים למפות את הטמפרטורה הזו בחזרה לגובה מסוים באמצעות צלילים עדכניים (טפיגרם).</p>
+<div class="callout callout-warning">
+<div class="callout-label">מגבלות IR</div>
+<ul>
+<li><strong>סיררוס דק:</strong> עננים דקים ברמה גבוהה יותר מאפשרים לקרינה משכבות חמות יותר מתחת לעבור דרכן, מה שגורם לחיישן ה-IR להמעיט בגובה העליון של הענן.</li>
+<li><strong>כיסוי חלקי:</strong> אם פיקסל מכוסה רק בחלקו על ידי ענן, הטמפרטורה המתקבלת היא ממוצע של ראש הענן והקרקע.</li>
+</ul>
+</div>
+<h3>Radar Echo Tops</h3>
+<p>מכ"ם מזג אוויר מספק מדידה ישירה יותר של ההיקף האנכי של עננים נושאי משקעים. המוצר "Echo Top" מציין את הגובה הגבוה ביותר שבו מזוהה סף רפלקטיביות ספציפי (בדרך כלל 18 dBZ).</p>
+<h2>אפקטים מקומיים בישראל</h2>
+<p>לטופוגרפיה יש תפקיד מרכזי בחיזוי ענן מקומי:</p>
+<ul>
+<li><strong>הרמה אורוגרפית:</strong> רוחות מערביות הפוגעות בהרי יהודה או הגליל עלולות לאלץ אוויר ל-LCL שלה, וליצור בסיסי עננים נמוכים ו"ערפל הרים" גם כאשר בסיסי החוף גבוהים יותר.</li>
+<li><strong>היפוך ימי:</strong> במהלך הקיץ, היפוך שקיעה חזק לוכד לחות בשכבה רדודה. גובה ההיפוך הזה שולט ישירות אם מישור החוף חווה שמיים בהירים או סיפון צפוף של סטרטוס.</li>
+</ul>
+<div class="lesson-summary">
+<h3>טייק אווי מפתח</h3>
+<ul>
+<li>ניתן להעריך בסיסי ענן הסעה באמצעות משטחי T ו-Td משטחים.</li>
+<li>בסיסים סטרטיפורמיים קשורים לעתים קרובות לגבהים היפוך או שכבות סחיפת לחות.</li>
+<li>צמרות העננים מוערכים באמצעות טמפרטורת בהירות אינפראולוגית לוויינית או מדדי מכ"ם.</li>
+<li>IR לווייני יכול להיות מטעה עבור תכונות ענן דק או תת-פיקסל.</li>
+<li>הטופוגרפיה המקומית משנה משמעותית את בסיסי הענן באמצעות הרמה אורוגרפית.</li>
+</ul>
+</div>
+</div>

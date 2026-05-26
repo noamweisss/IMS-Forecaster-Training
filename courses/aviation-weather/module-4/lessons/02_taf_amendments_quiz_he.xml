@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='utf-8'?>
+<quiz>
+
+  <question type="multichoice">
+    <name>
+      <text>L2-Q01 — בחירה בין TEMPO ל-BECMG</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;חזאי מצפה לממטרי שלג כבדים לסירוגין בין 10Z ל-16Z. כל מקלחת בודדת תימשך כ-45 דקות, אך הן יתרחשו בתדירות מספקת כדי שיירד שלג במשך כ-4 שעות בסך הכל במהלך אותו חלון של 6 שעות. באיזו קבוצת שינוי יש להשתמש?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; למרות שכל מקלחת בודדת נמשכת פחות משעה, משך השלג המצטבר (4 ​​שעות) עולה על מחצית מתקופת התחזית של 6 השעות. כאשר מצב שולט ביותר ממחצית התקופה, הוא אינו זמני עוד - יש לחזות אותו כמצב השורר באמצעות קבוצת BECMG (או FM).&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;BECMG לקבוע את השלג כמצב הרווח, מכיוון שהמשך המצטבר עולה על מחצית התקופה.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;TEMPO, מכיוון שכל מקלחת בודדת נמשכת פחות משעה.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;PROB40, מכיוון שהמקלחות הן לסירוגין ולכן לא מובטח שיפגעו במרכז המדויק של הטרמינל.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;FM, כי תחילתה של כל מקלחת היא שינוי מהיר בתנאים.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L2-Q02 — הכרה בקריטריונים לתיקון</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;TAF שהוצא ב-17Z חוזה תנאי VFR עם תקרה של 4000 רגל עד 00Z. ב-19Z, גבול בלתי צפוי נדחק, מוריד את התקרה ל-800 רגל (IFR). תצפיות במעלה הזרם מראות שתקרת IFR זו תימשך מספר שעות. מהי הפעולה המבצעית המתאימה?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; מזג האוויר חצה רף קטגוריית טיסות תעופה קריטי (ירידה מ-VFR ל-IFR) וצפוי להימשך. חזאים יזומים חייבים להוציא תיקון מיידי לתיקון ה-TAF ולהבטחת בטיחות הטיסה, במקום לחכות להנפקה המתוכננת הבאה.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;הנפק תיקון מיידי הקובע את IFR כתנאי הרווח, שכן נחצה סף קטגוריית טיסה קריטית.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;המתן עד לשחרור ה-TAF המתוכנן הבא ב-23Z כדי לעדכן את התחזית, ולשמור על המחזור הנוכחי נקי.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;הפק תצפית SPECI כדי להתריע על טייסים, אך השאר את ה-TAF לבד מכיוון שהגבול לא היה צפוי.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;צרף קבוצת TEMPO לטווח קצר ל-TAF הקיים כדי להסביר את מצב ה-IFR ההפתעה.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L2-Q03 — שימוש נכון בקבוצות PROB</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;חזאי כותב את 6 השעות הראשונות של TAF. יש להם ביטחון של 30% שסופת רעמים תשפיע על הטרמינל במהלך החלון הקריטי הזה. כיצד עליהם לעצב את התחזית?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; 6 השעות הראשונות של TAF הן הקריטיות ביותר עבור פעולות טיסה מיידיות. שימוש בקבוצת PROB בחלון זה נחשב לגידור. על החזאים לקבל החלטה סופית: אם האיום משמעותי מספיק, השתמש בקבוצת TEMPO; אם לא, השמט אותו לחלוטין או השתמש ב-VCSH/VCTS כדי לציין פעילות קרובה.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;הכן תחזית סופית מבלי להשתמש בקבוצות PROB; כלול את סופת הרעם כקבוצת TEMPO אם אתה בטוח, או השתמש ב-VCTS כדי לציין פעילות בקרבת מקום.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;השתמש בקבוצת PROB30 TSRA כדי להתריע לטייסים על ההסתברות הנמוכה מבלי להגביל יתר על המידה פעולות.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;השתמש בקבוצת PROB40, מכיוון שסופות רעמים מהוות סכנה חמורה ומצדיקות הסתברות גבוהה יותר.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;השתמש בקבוצת BECMG TSRA, אך הגביל לחלוטין את התוקף שלה לחלון של שעה אחת.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L2-Q04 — השלכות תפעוליות של TEMPO</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;TAF כולל קבוצת TEMPO מ-08Z עד 12Z המחזה ראות מופחתת ל-1 SM בערפל. מה זה מעיד באופן מעשי על שדר טיסה המתכנן הגעה ל-10Z?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;רציונל:&lt;/strong&gt; שולחים וטייסים חייבים לתכנן את התרחיש הגרוע ביותר המוצג באופן חוקי ב-TAF. קבוצת TEMPO המציינת תנאים תת-מינימליים מאלצת אותם להניח שהתנאים הללו יתרחשו במהלך הגעתם, מה שמחייב אותם לשאת דלק נוסף כדי להגיע לשדה תעופה חלופי. זו הסיבה שאין לעשות שימוש יתר ב-TEMPO.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;הם חייבים להניח שהראות של 1 SM תתרחש וחייבים לשאת מספיק דלק חלופי להסטה במידת הצורך.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;הם יכולים להתעלם מקבוצת TEMPO עבור חישובי דלק כל עוד הראות הרווחת צפויה להיות VFR.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;הם צריכים לחשב דלק חלופי רק אם הערפל ישודרג לקבוצת BECMG בתיקון מאוחר יותר.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;הם חייבים לדחות את יציאת הטיסה שלהם לחלוטין עד שתוקף קבוצת TEMPO יפוג בשעה 12Z.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+</quiz>

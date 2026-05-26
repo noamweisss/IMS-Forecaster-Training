@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='utf-8'?>
+<quiz>
+  <question type="multichoice">
+    <name><text>L1-Q01 - זיהוי CAT</text></name>
+    <questiontext format="html">
+      <text>&lt;p&gt;חזאי מתבונן בחידוד שקתות ברמה העליונה וברצועות רוחביות בסיררוס סילון בתמונות לוויין. איזה סוג של מערבולות סביר ביותר להיתקל באזור זה?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;רציונל:&lt;/strong&gt; פסים רוחביים בענני מעגל ושפלים מתחדדים הם אינדיקטורים קלאסיים של גזירת רוח אנכית ואופקית אינטנסיבית הקשורה ל-Cle Air Turbulence (CAT) ליד זרם הסילון.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;סערת אוויר נקייה (CAT)&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;מערבולת שכבת גבול מכנית&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;ערבולת מערבולת מתעוררת&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;מערבולת הסעה תרמית&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L1-Q02 - סכנות גלי הרים</text></name>
+    <questiontext format="html">
+      <text>&lt;p&gt;כאשר מנתחים פרופיל אטמוספרי יציב עם רוחות מאונכות חזקות מעל רכס הרים, היכן צפויה להיות ממוקמת המערבולת האלימה ביותר (הקשורה לרוטורים)?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;רציונל:&lt;/strong&gt; רוטורים הם מערבולות גליליות אלימות שנוצרות ברמות הנמוכות מיד במורד הרוח של רכס ההרים, בדרך כלל מתחת לפסגות גלי הרמה.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;במפלסים הנמוכים מיד במורד הרוח של רכס ההר, מתחת לפסגות הגלים.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;בנקודה הגבוהה ביותר של העננים העדשים.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;בלעדי על מדרון הרוח של ההר.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;באזור הסטרטוספירי מעל ענן המכסה.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L1-Q03 - עוצמת וורטקס ערה</text></name>
+    <questiontext format="html">
+      <text>&lt;p&gt;איזו תצורה ומצב מטוסים יפיקו את מערבולות הערות החזקות והמתמשכות ביותר?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; חוזק מערבולת ערות הוא פרופורציונלי למשקל המטוס וביחס הפוך למהירות. מטוסים כבדים ואיטיים יותר בתצורה נקייה (מתנפנפת למעלה) מייצרים את המערבולות החזקות ביותר. רוחות שקטות מונעות מהם להתפוגג או להתרחק מהמסלול.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;מטוס כבד טס לאט בתצורה נקייה עם רוחות שטח שקטות.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;מטוס קל במהירות גבוהה עם רוח צולבת חזקה.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;מטוס כבד במהירות שיוט בתצורה מלוכלכת.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;מטוס במשקל בינוני במהלך ירידה תלולה עם מערבולת מתונה.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L1-Q04 - רצף מיקרו-פרצים</text></name>
+    <questiontext format="html">
+      <text>&lt;p&gt;מטוס בגישה סופית נתקל במיקרו-פרץ. מהו הרצף הטיפוסי של השפעות הרוח שהטייס יחווה?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; מבנה המיקרו-פרץ הקלאסי כרוך ברוח נגדית חזקה ראשונית כאשר הזרימה מגיעה למטוס, ולאחריה ירידה חזקה ולבסוף רוח גב חזקה כאשר המטוס עובר את מרכז ההתפרצות.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;רוח נגדית חזקה ← ירידה חזקה ← רוח גב חזקה&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;רוח גב חזקה ← רוח גבית חזקה ← רוח נגדית חזקה&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;רוח צדדית מתמדת ← שקט פתאומי ← עלייה קשה&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;דרפט עז → רוח קדמית חזקה → רוח גב מתמדת&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L1-Q05 - מנגנוני רוח מרווחים</text></name>
+    <questiontext format="html">
+      <text>&lt;p&gt;מדוע 'רוחות מרווח' מגיעות לרוב למהירות המרבית שלהן ביציאה של פער טופוגרפי ולא בנקודה הצרה ביותר, כפי שחזה אפקט ונטורי הפשוט?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;רציונל:&lt;/strong&gt; בטבע, אפקט ונטורי הוא לעתים קרובות משני לאילוץ שיפוע לחץ. ההתרחבות ביציאה גורמת לזרימה להתדלדל אנכית, מה שיחד עם שיפוע הלחץ הסינופטי (לחץ גבוה בכניסה, נמוך ביציאה), מאיץ את הרוח לכיוון היציאה.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;התרחבות אופקית ביציאה גורמת לדילול אנכי ולהאצה המונעת על ידי שיפוע הלחץ הסינופטי.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;אפקט ונטורי תקף רק עבור זרימות על-קוליות.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;החיכוך הוא אפס ביציאה מעמק.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;כוח הקוריוליס הופך את הכיוון בנקודה הצרה ביותר של הפער.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+</quiz>

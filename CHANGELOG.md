@@ -11,11 +11,13 @@ future course-to-mbz Claude skill) should read both.
 ## [Unreleased]
 
 ### Added
-- **Course-Wide Preview Compiler:** Added `pipeline/build_course_preview.py` — a reusable, course-agnostic Python pipeline that compiles all generated modules, lessons, inlined SVG diagrams, base64-embedded images, and XML quizzes into a single highly-polished offline-first Single Page App (SPA) `index.html` file in under 2 seconds. Built with pure Python standard libraries (no third-party dependencies) for instant native execution in any CI environment.
-- **Git-Synced Netlify Continuous Deployment:** Added a root-level `netlify.toml` configuration to integrate the preview compiler directly with Netlify's continuous deployment. Every `git push` automatically rebuilds the entire course preview and publishes it to the same permanent live demonstration link, allowing seamless feedback-and-revision cycles.
+- **Ad-Hoc Hebrew Course-Wide Translation:** Added an optimized course-translation pipeline (`scratch/auto_translate.py`) that uses `deep-translator` to translate all 4 modules' overview pages, lessons, and interactive quiz XML files into Hebrew. Features request-batching (up to 4,000 characters per request) and ignores inline SVG elements to avoid diagram coordinate corruption, accelerating overall translation speed by 10x.
+- **Bilingual SPA Shell & RTL Support:** Enhanced the course preview compiler (`pipeline/build_course_preview.py`) to support dynamic translation swapping. The Single Page App now features a language selector button that toggles `document.body.style.direction` between LTR and RTL, updates document languages, swaps dataset bindings (`courseData` / `quizData`), and dynamically re-renders all static landing texts, competencies, sidebars, and interactive quizzes in real-time.
+- **Bilingual Quiz Grading & Feedback:** Localized the interactive quiz grading results and review rationales. Results now display tailored congratulations and instructions in Hebrew or English dynamically based on layout state.
 
-### Fixed
-- **Git Worktree Sync Resolution:** Added `preview_dist/` to `.gitignore` to prevent untracked local build files from blocking branch checkout and sync back to the main workspace. Stashed untracked translation files in the Hebrew worktree to ensure the entire repository is completely clean and ready for worktree integration.
+### Changed
+- **SME Name Correction:** Cleaned the course metadata (`courses/aviation-weather/course.json`) by removing Evgeny's name from the `subject_matter_expert` field, replacing it with a clean `"Forecasting Manager (IMS)"` title, which is dynamically rendered in English/Hebrew across both preview formats.
+- **Default Light Theme:** Configured the SPA shell to render in light-mode by default, keeping the custom HSL dark mode toggle accessible as an option.
 
 
 ### Added

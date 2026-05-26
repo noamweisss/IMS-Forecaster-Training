@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='utf-8'?>
+<quiz>
+  <question type="multichoice">
+    <name><text>L5-Q01 - הערכת בסיס ענן הסעה</text></name>
+    <questiontext format="html">
+      <text>&lt;p&gt;בתחנת חוף, טמפרטורת פני השטח היא 28°C ונקודת הטל היא 20°C. בהשתמש בקירוב קצב ההחלפה האדיאבטי הסטנדרטי עבור התפשטות T-Td, מהו הבסיס המשוער של ענני המצטבר הסעה?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;רציונל:&lt;/strong&gt; כלל אצבע נפוץ עבור בסיסי ענן הסעה הוא (T - Td) / 2.5 * 1000. כאן, (28 - 20) = 8. ואז 8 / 2.5 = 3.2. כפול 1000, הבסיס המשוער הוא 3,200 רגל AGL.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;3,200 רגל AGL&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;800 רגל AGL&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;5,500 רגל AGL&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;1,500 רגל AGL&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L5-Q02 - מגבלות IR לווין</text></name>
+    <questiontext format="html">
+      <text>&lt;p&gt;מדוע עלול חיישן האינפרא אדום (IR) של לוויין &lt;strong&gt;להמעיט&lt;/strong&gt; את הגובה האמיתי של שכבת ענן Cirrus דקה?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; ענני סיררוס דקים הם חצי שקופים לקרינה אינפרא אדומה. החיישן מזהה תערובת של קרינת הענן הקרה והקרינה החמה יותר המגיעה מפני השטח או משכבות ענן תחתונות, וכתוצאה מכך טמפרטורת בהירות "חמה" יותר וגובה משוער נמוך יותר.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;החיישן מזהה קרינה חמה יותר מרמות נמוכות יותר העוברות דרך הענן הדק.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;כוח קוריוליס מעוות את אות ה-IR בקווי רוחב גבוהים.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;גבישי קרח בענן מחזירים את כל קרינת ה-IR אל הקרקע.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;הטרופופוזה פועלת כגוף שחור מושלם, חוסמת את האות.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L5-Q03 - היפוך ימי וסטרטוס</text></name>
+    <questiontext format="html">
+      <text>&lt;p&gt;בהקשר של מטאורולוגיית הקיץ הישראלית, מה התפקיד העיקרי של ה&lt;strong&gt;היפוך ימי&lt;/strong&gt; בקביעת בסיסי עננים לאורך החוף?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; ההיפוך הימי פועל כ"מכסה" חזק הלוכד לחות בשכבת הגבול. בסיסים וצמרות העננים של סטרטוס מוגבלים בדרך כלל על ידי גובה בסיס ההיפוך הזה.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;הוא לוכד לחות בשכבה רדודה, ומגדיר את הגבול העליון והבסיס של סיפון ה-Stratus.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;זה גורם לאוויר לשקוע במהירות, מה שתמיד גורם לשמים בהירים לחלוטין.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;זה יוצר חימום פני השטח אינטנסיבי שמעלה את בסיסי העננים ל-10,000 רגל.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;זה משפיע רק על הראות ברמת 500 hPa.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L5-Q04 — אפקטי הרמה אורוגרפיים</text></name>
+    <questiontext format="html">
+      <text>&lt;p&gt;אם שכבה יציבה של אוויר לח נעה מהים התיכון לכיוון הרי יהודה, מהי ההשפעה הסבירה ביותר על בסיסי עננים כשהאוויר מגיע לגבעות?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; כאשר האוויר נאלץ במעלה המדרון של הגבעות (הרמה אורוגרפית), הוא מתקרר באופן אדיאבטי. לעתים קרובות זה מביא את האוויר לרוויה בגובה נמוך יותר ביחס לקרקע, וכתוצאה מכך בסיסי עננים נמוכים יותר ועלול להיות "ערפל הרים" שבו בסיס הענן פוגע בשטח.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;בסיסי הענן יירדו עקב קירור אדיאבטי כאשר האוויר נאלץ כלפי מעלה.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;בסיסי העננים יעלו ככל שהאוויר יתייבש מעל היבשה.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;העננים יתפוגגו מיד עקב חיכוך.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;לא יחול שינוי כל עוד הטמפרטורה תישאר מעל 10°C.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+</quiz>

@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<quiz>
+  <question type="multichoice">
+    <name><text>L2-Q01 — השפעת רוחות נגד</text></name>
+    <questiontext format="html"><text>&lt;p&gt;טיסה לטווח ארוך מתוכננת במהירות אוויר אמיתית (TAS) של 480 קשר. התחזית בדרך מצביעה על מרכיב רוח קדמי בלתי צפוי של 60 קשר על פני חלק ניכר מהמסלול. בתור חזאי, איך אתה צריך לצפות שזה ישפיע על תכנון הדלק של השולח?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;רוח נגדית מפחיתה את מהירות הקרקע (במקרה זה ל-420 קשר), מה שמגדיל את זמן הטיסה הכולל כדי לעבור את אותו המרחק. זה גורם ישירות לדרישת דלק לנסיעה גבוהה יותר. זה לא משפיע על מהירות האוויר האמיתית, שהיא פונקציה של ביצועי המטוס וצפיפות האוויר.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;מהירות הקרקע תקטן, תגדיל את זמן הטיסה ויצריך חישוב דלק נסיעה גבוה יותר.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;מהירות האוויר האמיתית תרד ל-420 קשר, תקטין את יעילות המנוע אך ידרוש אותה כמות דלק.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;המטוס יפצה על ידי הגדלת TAS ל-540 קשר, תוך שמירה על שריפת דלק זהה לתוכנית המקורית.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;הרוח הקדמית תדרוש בעיקר הגדלת הדלק הרזרבה הסופית עקב דרישות דפוס החזקה.&lt;/p&gt;</text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L2-Q02 — טמפרטורות פני שטח גבוהות</text></name>
+    <questiontext format="html"><text>&lt;p&gt;במהלך חודשי הקיץ, שדה תעופה חווה טמפרטורות פני שטח גבוהות בצורה יוצאת דופן יחד עם לחץ אטמוספרי נמוך. כיצד המצב המטאורולוגי הספציפי הזה משפיע על מטוסים מסחריים עוזבים?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;טמפרטורות גבוהות ולחץ נמוך מגדילים את גובה הצפיפות, כלומר האוויר פחות צפוף. אוויר פחות צפוף מספק פחות עילוי ומפחית את דחף המנוע. כתוצאה מכך, מטוסים זקוקים לגלגול המראה ארוך יותר וייתכן שיצטרכו להפחית את משקל ההמראה שלהם (מטען או דלק) כדי לצאת בבטחה.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;זה מגדיל את גובה הצפיפות, מה שמוביל לגלגולי המראה ארוכים יותר ולהפחתה פוטנציאלית במשקל ההמראה המרבי המותר.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;זה מקטין את גובה הצפיפות, ומאפשר למטוסים לטפס מהר יותר ולשאת דלק חירום נוסף.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;זה יוצר גזירת רוח חזקה ברמה נמוכה, המחייבת מטוסים לשמור על מהירות אוויר אמיתית גבוהה יותר במהלך הטיפוס הראשוני.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;זה משפיע בעיקר על שלב השיוט בדרך, וגורם למטוס לשרוף דלק מהר יותר בגובה רב.&lt;/p&gt;</text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L2-Q03 — תחזיות מסוף ודלק חלופי</text></name>
+    <questiontext format="html"><text>&lt;p&gt;אתה מנפיק TAF עבור שדה תעופה מרכזי המציין קבוצת TEMPO עבור סופות רעמים כבדות וראות נמוכה בדיוק בזמן ההגעה המתוכנן של חברת תעופה. מהי ההשלכה הרגולטורית המיידית של תחזית זו על תוכנית הטיסה של חברת התעופה?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;אם TAF יעד חוזה תנאים מתחת למינימום ספציפיים (כמו סופות רעמים כבדות), התקנות מחייבות את השולח לתכנן שדה תעופה חלופי מתאים. משמעות הדבר היא שהם חייבים להעמיס דלק נוסף כדי לטוס מהיעד אל החלופית, בתוספת דלק מילואים, שעלול להוביל לעקירת משקל של נוסע או מטען.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;השולח יידרש על פי חוק לציין שדה תעופה חלופי ולהעמיס מספיק דלק כדי להגיע אליו.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;הטיסה תבוטל אוטומטית מכיוון שמטוסים מסחריים אינם יכולים להישלח באופן חוקי לתחזית סופת רעמים של TEMPO.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;הטייס ייאלץ לעבור לגובה שיוט גבוה יותר כדי לחסוך בדלק להחזקה פוטנציאלית.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;חברת התעופה חייבת לבקש פטור מ-ICAO כדי לנחות מתחת למינימום שנקבע.&lt;/p&gt;</text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L2-Q04 — רמות שיוט אופטימליות</text></name>
+    <questiontext format="html"><text>&lt;p&gt;מטוס מתוכנן לטוס מזרחה. תחזית האוויר העליון מציגה זרם סילון חזק (רוח צד) ב-FL350, אך הטמפרטורה ברמה זו חמה משמעותית מהאטמוספירה הסטנדרטית הבינלאומית (ISA). מדוע עשוי השולח לבחור להגיש את תוכנית הטיסה במקום זאת ב-FL310?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;טמפרטורות חמות יותר מהסטנדרט בגובה מפחיתות את ביצועי המנוע והרמה. אם מטוס עמוס בכבדות, צפיפות האוויר המופחתת עלולה למנוע פיזית מהמטוס לטפס או לשמור על FL350, ולאלץ אותם לטוס נמוך יותר היכן שהאוויר צפוף יותר, גם אם זה אומר להחמיץ את הרוחות האחוריות החזקות ביותר.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;הטמפרטורות החמות יותר מפחיתות את צפיפות האוויר, כלומר המטוס הטעון בכבדות עשוי להיות חסר ביצועים כדי לטפס או לשמור על FL350.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;טמפרטורות חמות יותר בתוך זרם סילון מעידות תמיד על מערבולת אוויר צלולה חמורה (CAT), אשר יש להימנע ממנה.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;רוח גב בשילוב עם טמפרטורות חמות יגרמו למטוס לחרוג ממספר המאך המרבי שלו מעל הקרקע.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;טיסות לכיוון מזרח מוגבלות על ידי חוקי ICAO לטוס מעל FL330 כאשר הטמפרטורות עולות על ISA+10.&lt;/p&gt;</text></answer>
+  </question>
+
+</quiz>
