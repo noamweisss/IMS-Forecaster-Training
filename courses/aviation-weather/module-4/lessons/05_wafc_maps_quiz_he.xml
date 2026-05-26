@@ -3,7 +3,7 @@
 
   <question type="multichoice">
     <name>
-      <text>L5-Q01 — חפיפת גובה תרשים</text>
+      <text>L5-Q01 - חפיפת גובה תרשים</text>
     </name>
     <questiontext format="html">
       <text>&lt;p&gt;טיסה מתוכננת לשייט ב-FL360 מעל אירופה. השולח בוחן את תרשימי WAFC SIGWX. באילו תרשימים עליהם להתייעץ?&lt;/p&gt;</text>
@@ -35,7 +35,7 @@
 
   <question type="multichoice">
     <name>
-      <text>L5-Q02 — פירוש Jetstreams</text>
+      <text>L5-Q02 - פירוש Jetstreams</text>
     </name>
     <questiontext format="html">
       <text>&lt;p&gt;תרשים SIGWX של WAFC מציג קו אחיד עם דוקרני רוח המציינים מהירות רוח של 120 קשר ותיבת טקסט שכותרתה "FL340". מה מייצגת הסמליות הספציפית הזו?&lt;/p&gt;</text>
@@ -48,7 +48,7 @@
     <shuffleanswers>true</shuffleanswers>
 
     <answer fraction="100" format="html">
-      <text>&lt;p&gt;הליבה של זרם סילון הממוקם ב-FL340 עם מהירות רוח מרבית של 120 קשר.&lt;/p&gt;</text>
+      <text>&lt;p&gt;הליבה של זרם סילון הממוקם ב-FL340 עם מהירות רוח מקסימלית של 120 קשר.&lt;/p&gt;</text>
       <feedback format="html"><text /></feedback>
     </answer>
     <answer fraction="0" format="html">
@@ -56,7 +56,7 @@
       <feedback format="html"><text /></feedback>
     </answer>
     <answer fraction="0" format="html">
-      <text>&lt;p&gt;המסלול החזוי של מערכת חזיתית בקו הרוחב האמצעית הנעה במהירות של 120 קשר.&lt;/p&gt;</text>
+      <text>&lt;p&gt;המסלול החזוי של מערכת חזיתית בקו הרוחב הנעה במהירות של 120 קשר.&lt;/p&gt;</text>
       <feedback format="html"><text /></feedback>
     </answer>
     <answer fraction="0" format="html">
@@ -67,13 +67,13 @@
 
   <question type="multichoice">
     <name>
-      <text>L5-Q03 — הגדרות כיסוי ICAO CB</text>
+      <text>L5-Q03 - הגדרות כיסוי ICAO CB</text>
     </name>
     <questiontext format="html">
       <text>&lt;p&gt;תרשים SIGWX מציג אזור מסולסל שכותרתו "OCNL CB". טייס שואל את חזאי התדרוך מה זה אומר על יכולתו לנווט באזור באמצעות מכ"ם מזג אוויר מוטס.&lt;/p&gt;</text>
     </questiontext>
     <generalfeedback format="html">
-      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; לפי הגדרות ICAO, מזדמן (OCNL) פירושו ענני קומולונימבוס מופרדים היטב המכסים בין 50% ל-75% משטח התחזית. מכיוון שהם מופרדים היטב, מטוס המצויד במכ"ם מזג אוויר יכול בדרך כלל לסטות סביב תאים בודדים בבטחה. "FRQ" (Frequent, &amp;gt;75%) ירמז על הפרדה מועטה או לא, מה שמחייב להימנע לחלוטין מהאזור.&lt;/p&gt;</text>
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; לפי הגדרות ICAO, מזדמן (OCNL) פירושו ענני קומולונימבוס מופרדים היטב המכסים בין 50% ל-75% משטח התחזית. מכיוון שהם מופרדים היטב, מטוס המצויד במכ"ם מזג אוויר יכול בדרך כלל לסטות סביב תאים בודדים בבטחה. "FRQ" (תכוף, &amp;gt;75%) ירמז על הפרדה מועטה עד ללא הפרדה, מה שמחייב להימנע לחלוטין מהאזור.&lt;/p&gt;</text>
     </generalfeedback>
     <defaultgrade>1</defaultgrade>
     <single>true</single>
@@ -88,7 +88,7 @@
       <feedback format="html"><text /></feedback>
     </answer>
     <answer fraction="0" format="html">
-      <text>&lt;p&gt;פירוש הדבר שהכיסוי הוא פחות מ-50% (מבודד), המייצג סיכון נמוך מאוד לניווט בדרך.&lt;/p&gt;</text>
+      <text>&lt;p&gt;זה אומר שהכיסוי הוא פחות מ-50% (מבודד), המייצג סיכון נמוך מאוד לניווט בדרך.&lt;/p&gt;</text>
       <feedback format="html"><text /></feedback>
     </answer>
     <answer fraction="0" format="html">
@@ -99,10 +99,10 @@
 
   <question type="multichoice">
     <name>
-      <text>L5-Q04 — תכונות SWM לעומת SWH</text>
+      <text>L5-Q04 - תכונות SWM לעומת SWH</text>
     </name>
     <questiontext format="html">
-      <text>&lt;p&gt;חזאי מכין תדרוך מקומי באמצעות נתוני WAFC BUFR ורוצה להדגיש אזורים של קרח מתון בענן לטיסה אזורית ב-FL220. איזה מערך נתונים של WAFC מכיל פרמטר ספציפי זה?&lt;/p&gt;</text>
+      <text>&lt;p&gt;חזאי מכין תדרוך מקומי באמצעות נתוני WAFC BUFR ורוצה להדגיש אזורים של קרח מתון בענן לטיסה אזורית ב-FL220. איזה מערך נתונים של WAFC מכיל את הפרמטר הספציפי הזה?&lt;/p&gt;</text>
     </questiontext>
     <generalfeedback format="html">
       <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; מערך הנתונים של הרמה הבינונית (SWM) כולל פרטים מטאורולוגיים עדינים יותר - ספציפית סוגי עננים, כמויות ודובדבן בענן - אשר מושמטים מהתרשימי הרמה הגבוהה (SWH) כדי למנוע עומס בתמונה הגלובלית בגובה רב.&lt;/p&gt;</text>
