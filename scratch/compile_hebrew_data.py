@@ -70,6 +70,7 @@ def main():
         "title": course_meta.get("title", ""),
         "target_audience": course_meta.get("target_audience", ""),
         "subject_matter_expert": course_meta.get("subject_matter_expert", ""),
+        "certification_goals": course_meta.get("certification_goals", []),
         "modules": []
     }
     
@@ -83,25 +84,16 @@ def main():
             "title": mod["title"],
             "status": mod.get("status", ""),
             "is_available": False,
-            "competencies": [],
+            "competencies": mod.get("module_competencies", []),
             "overview_html_b64": "",
             "lessons": []
         }
-        
+
         overview_file = mod_dir / "00_module_overview_moodle_he.html"
         lessons_dir = mod_dir / "lessons"
-        
+
         if overview_file.is_file() and lessons_dir.is_dir():
             module_info["is_available"] = True
-            
-            # Load English competencies and translate them (just copy for now if we didn't translate module_structure)
-            struct_file = mod_dir / "module_structure.json"
-            if struct_file.is_file():
-                try:
-                    struct_data = json.loads(struct_file.read_text(encoding="utf-8"))
-                    # In a real app we'd translate these too, for now just use them
-                    module_info["competencies"] = struct_data.get("module_competencies", [])
-                except: pass
                 
             ov_raw = overview_file.read_text(encoding="utf-8")
             _, ov_body = split_style_and_body(ov_raw)

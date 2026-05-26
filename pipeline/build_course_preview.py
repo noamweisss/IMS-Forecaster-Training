@@ -891,7 +891,7 @@ body.dark-mode .quiz-option.incorrect {{
   <span class="topbar-course">{course_data['title']}</span>
   
   <div class="topbar-controls">
-    <button class="theme-toggle" onclick="toggleLanguage()" title="Toggle Hebrew/English">א/A</button>
+    <button class="theme-toggle" id="lang-toggle-btn" onclick="toggleLanguage()" title="Toggle Hebrew/English">א</button>
     <button class="theme-toggle" onclick="toggleDarkMode()" title="Toggle Dark/Light Mode">🌓</button>
     <span class="preview-badge">PREVIEW</span>
   </div>
@@ -969,29 +969,39 @@ if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').match
   document.body.classList.add('dark-mode');
 }}
 
-function toggleLanguage() {{
+function applyLanguage(lang) {{
   if (typeof courseDataHe === 'undefined' || typeof courseDataEn === 'undefined') {{
     console.warn("Bilingual data not found.");
     return;
   }}
-  
-  if (document.body.style.direction === 'rtl') {{
-    document.body.style.direction = 'ltr';
-    courseData = courseDataEn;
-    quizData = quizDataEn;
-  }} else {{
-    document.body.style.direction = 'rtl';
+  const html = document.documentElement;
+  if (lang === 'he') {{
+    html.setAttribute('lang', 'he');
+    html.setAttribute('dir', 'rtl');
     courseData = courseDataHe;
     quizData = quizDataHe;
-  }}
-  
-  generateCourseHTML();
-  
-  if (currentView === 'course-landing') {{
-    showView('course-landing');
   }} else {{
-    loadLesson(currentModule, currentLesson);
+    html.setAttribute('lang', 'en');
+    html.setAttribute('dir', 'ltr');
+    courseData = courseDataEn;
+    quizData = quizDataEn;
   }}
+  const btn = document.getElementById('lang-toggle-btn');
+  if (btn) {{ btn.textContent = lang === 'he' ? 'A' : 'א'; }}
+  try {{ localStorage.setItem('preview-lang', lang); }} catch (e) {{}}
+}}
+
+function toggleLanguage() {{
+  const current = document.documentElement.getAttribute('dir') === 'rtl' ? 'he' : 'en';
+  const next = current === 'he' ? 'en' : 'he';
+  applyLanguage(next);
+
+  // Capture which view is active *before* re-rendering, then restore it.
+  const active = document.querySelector('.view-panel.active');
+  const activeId = active ? active.id : 'course-landing';
+
+  generateCourseHTML();
+  showView(activeId);
 }}
 
 function toggleDarkMode() {{
@@ -1050,7 +1060,7 @@ function generateCourseHTML() {{
   const syllabusGrid = document.getElementById('landing-syllabus-grid');
   const viewsContainer = document.getElementById('dynamic-views-container');
   
-  const isRTL = document.body.style.direction === 'rtl';
+  const isRTL = document.documentElement.getAttribute('dir') === 'rtl';
   
   // Dynamic translations of landing pages static texts
   const heroH1 = document.querySelector('.landing-hero h1');
@@ -1244,7 +1254,7 @@ function renderQuizQuestions(modNum, lesNum) {{
   const container = document.getElementById(`quiz-container-${{modNum}}-${{lesNum}}`);
   let html = "";
   
-  const isRTL = document.body.style.direction === 'rtl';
+  const isRTL = document.documentElement.getAttribute('dir') === 'rtl';
   
   questions.forEach((q, qIdx) => {{
     html += `
@@ -1282,7 +1292,7 @@ function gradeQuiz(modNum, lesNum) {{
   const questions = quizData[key];
   let correctCount = 0;
   
-  const isRTL = document.body.style.direction === 'rtl';
+  const isRTL = document.documentElement.getAttribute('dir') === 'rtl';
   
   questions.forEach((q, qIdx) => {{
     const radios = document.getElementsByName(`q-${{modNum}}-${{lesNum}}-${{qIdx}}`);
@@ -1349,8 +1359,12 @@ function gradeQuiz(modNum, lesNum) {{
 
 // Bootstrap
 document.addEventListener('DOMContentLoaded', () => {{
+  let savedLang = 'en';
+  try {{ savedLang = localStorage.getItem('preview-lang') || 'en'; }} catch (e) {{}}
+  applyLanguage(savedLang);
+
   generateCourseHTML();
-  
+
   // Default landing view
   showView('course-landing');
 }});
