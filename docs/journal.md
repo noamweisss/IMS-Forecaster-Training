@@ -705,5 +705,21 @@ callout class conventions — will be reconstructed into the new
 `docs/lesson_spec.md` (next commit). The spec doc is what a future
 Claude Code agent or skill reads to know what to produce.
 
+---
+
+## 2026-05-26 — Course-Wide Preview Compiler & Netlify Git-Sync
+
+**Context.** As the Aviation Weather Forecasting course expanded and all four modules were fully generated, the need for a comprehensive en-route preview system outside of Moodle returned. Previously, a basic pre-Moodle developer script `build_preview.py` created a mock site just for Module 1, which was then hosted on Netlify. A reusable, course-agnostic pipeline was needed to compile any course's full syllabus, lessons, inlined SVG diagrams, base64-embedded downscaled images, and interactive quizzes into a single, high-impact demonstration link.
+
+**Decision.**
+1. Implement a new, highly portable build script `pipeline/build_course_preview.py`. To make it fully compatible with Netlify's serverless build runners, the script is designed using **pure standard library Python** with **zero third-party dependencies**.
+2. Have the compiler read the course-wide `course.json` and each module's `module_structure.json` to dynamically map out a complete Course Curriculum.
+3. Dynamically parse every module's `lessons/*_quiz.xml` (using standard `xml.etree.ElementTree`) to compile an interactive JSON-formatted question bank. To avoid any JSON formatting or string escaping bugs, all Moodle HTML fragments (overviews and lessons) are base64-encoded on build-time and decoded in the browser on-the-fly using `atob()`.
+4. Compile the output into a single-file `index.html` inside a `preview_dist/` folder. The frontend shell is a highly polished Single Page App (SPA) styled with custom HSL light/dark themes, an accordion-based collapsible curriculum sidebar, and a full interactive quiz engine that grades selections, colors options, and reveals rationales/feedback.
+5. Place a root-level `netlify.toml` in the repository, linking `preview_dist/` to the Netlify publishing directory.
+
+**Result.** A single command (`python pipeline/build_course_preview.py --course courses/aviation-weather --output preview_dist`) compiles all 4 modules, 18 lessons, and 18 interactive quizzes into a single 4.6 MB file (`index.html`) in under 2 seconds. Because Netlify is directly linked to the Git repository, pushing any changes automatically triggers this script and compiles the preview, providing a permanent, Git-synchronized demonstration link.
+
+
 Both deleted files remain in `git log` if anyone ever needs to
 reference the original prompt phrasing.
