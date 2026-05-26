@@ -24,6 +24,21 @@ later reversed, add a new entry rather than editing the old one.
 ---
 
 <!-- New entries appended below -->
+## 2026-05-26 — Module 4 image extraction and finalization for Moodle
+
+**Context.** The user requested auditing the pilot course modules for Moodle readiness. Module 1, 2, and 3 were fully ready, but Module 4 was drafted but not yet finalized (missing combined files, unified quiz XML, and containing 2 unresolved image-needed placeholders). The user approved running the newly added image extraction pipeline to harvest images from source decks and finalize the module.
+
+**Decision.**
+1. Run `python pipeline/extract_sources.py` on Module 4 source PowerPoint presentations. This extracted 19 images from the Tropical Storms deck and 17 images from the Volcanic Ash deck.
+2. Review extracted images against placeholders. Identified Slide 15 image (`slide15_img1.png`) as a perfect fit for the tropical cyclone eye in Lesson 3, and Slide 2 image (`slide02_img1.jpeg`) for the volcanic ash plume in Lesson 4.
+3. Replace the `image-needed` placeholders in `03_tropical_storms_moodle.html` and `04_volcanic_ash_moodle.html` with `<figure>` elements referencing these source-extracted images.
+4. Run `python pipeline/finalize_module.py --module courses/aviation-weather/module-4` to combine per-lesson quizzes into `module_quiz_all_questions.xml`, inline images as base64 data URIs, generate the unified lesson file `module_combined_moodle.html` (129 KB), and create the deployment `README.md`.
+5. Stage, commit, and push both the extracted images and finalized module files to GitHub main.
+
+**Result.** All four modules in the Aviation Weather course are now **100% Ready** for Moodle deployment. No unresolved image-needed placeholders remain in the entire course. The local repository is fully clean and in sync with GitHub remote main.
+
+---
+
 ## 2026-05-26 — Git synchronization, local Module 4 securing, and skill sync
 
 **Context.** The user opened the project in Antigravity after working in Claude Code in the browser. There were uncommitted changes locally (Module 4 PowerPoint files moved, and Module 4 lessons and quizzes generated), and the remote repository on GitHub had 3 new commits introducing image extraction that were missing locally. Additionally, the `.agents/skills/` directory on GitHub was drifting behind `.claude/skills/` because the browser agent only updated the latter.
