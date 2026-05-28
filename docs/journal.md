@@ -24,6 +24,36 @@ later reversed, add a new entry rather than editing the old one.
 ---
 
 <!-- New entries appended below -->
+## 2026-05-28 — Structural assembler (manifest, sections, course, gradebook, question bank)
+
+**Context.** The layer that ties the activities together: the `moodle_backup.xml`
+manifest, the per-section `section.xml` (with the cmid `<sequence>`), the course
+record + course boilerplate, the course `gradebook.xml`, and the whole
+`questions.xml` question bank.
+
+**Decision.** `pipeline/mbz/structure.py` with pure builders + small description
+dataclasses (`ActivityRef`, `SectionRef`, `QuizSpec`). The trickiest part is
+`build_question_bank()`: it emits the `top` + `Default for <quiz>` category pair
+per quiz (scoped to that quiz's module contextid) and the nested
+`question_bank_entry → question_version → question_versions → questions`
+wrapping each converted `<question>` — and it *records back onto each QuizSpec*
+the category ids and question-bank-entry ids, so the orchestrator can wire the
+quiz's `question_instances`/`inforef` to the same contexts. That back-reference is
+how the contextid invariant is kept.
+
+**Notes.** `moodle_backup.xml` settings include the required per-section and
+per-activity `included`/`userinfo` pairs (without them the restore UI hides the
+content). `original_site_identifier_hash` and `backup_id` are random per build.
+Course total grade category uses `aggregation=13` (natural), matching the
+reference.
+
+**Verification.** Self-test builds a question bank, sections, course files,
+gradebook, and a manifest; parses all for well-formedness; and asserts the
+manifest contains the section/activity include flags and that QuizSpec got its ids
+back.
+
+---
+
 ## 2026-05-28 — Per-activity builders (page + quiz)
 
 **Context.** With the converter, ids, and boilerplate in place, the next layer

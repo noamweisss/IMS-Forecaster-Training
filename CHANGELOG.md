@@ -11,6 +11,10 @@ future course-to-mbz Claude skill) should read both.
 ## [Unreleased]
 
 ### Added
+- **`.mbz` structural assembler:** `pipeline/mbz/structure.py` builds the
+  `moodle_backup.xml` manifest, section files (with cmid sequences), the course
+  record + boilerplate, the course `gradebook.xml`, and the full `questions.xml`
+  question bank — wiring each quiz to its questions through shared contextids.
 - **`.mbz` per-activity builders:** `pipeline/mbz/activities.py` builds a full
   Page or Quiz activity directory (`module.xml`, `page.xml`/`quiz.xml`, grades,
   inforef, and boilerplate). The quiz links to its questions via the modern
