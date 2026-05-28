@@ -11,6 +11,11 @@ future course-to-mbz Claude skill) should read both.
 ## [Unreleased]
 
 ### Added
+- **Quiz import→backup converter:** New `pipeline/mbz/quiz_to_backup.py` —
+  converts our Moodle-import-format lesson quizzes into the nested backup
+  `<question>` format a `.mbz` restore expects (field remaps + escaped HTML).
+  Ships with a self-test that converts all 16 module-1 questions and checks
+  well-formedness. First building block of the `.mbz` generator.
 - **Moodle 5.2 `.mbz` reference + schema map:** Reviving the deferred Moodle
   backup (`.mbz`) generator now that we have a real reference export. Added
   `docs/mbz_reference/` (the raw reference `.mbz` and its extracted XML tree,

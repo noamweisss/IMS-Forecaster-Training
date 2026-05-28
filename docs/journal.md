@@ -24,6 +24,29 @@ later reversed, add a new entry rather than editing the old one.
 ---
 
 <!-- New entries appended below -->
+## 2026-05-28 — Quiz import-XML → backup questions.xml converter
+
+**Context.** Our per-lesson quizzes (`lessons/NN_<slug>_quiz.xml`) are in Moodle
+*import* format. A `.mbz` restore reads the *backup* format, which nests
+differently and renames several fields. The converter is the one genuinely fiddly
+piece of the builder, so it lands first and in isolation.
+
+**Decision.** Added `pipeline/mbz/quiz_to_backup.py`: `parse_quiz_file()` reads
+import-format multichoice questions into small dataclasses, and
+`build_question_element()` renders one as a backup-format `<question>` element.
+Key field remaps (full table in `docs/mbz_format.md`): `defaultgrade`→
+`defaultmark`, answer `<text>`→`<answertext>`, `fraction="100"`→
+`<fraction>1.0000000`, `format="html"`→format code `1`, and HTML stored escaped
+(not CDATA). Standard multichoice feedback strings copied verbatim from the
+reference.
+
+**Verification.** A built-in self-test converts all 16 module-1 questions and
+asserts 4 answers + exactly one correct answer each, then round-trips every
+generated element through serialise+parse to prove well-formedness. Passing.
+Spot-checked one question's XML against the reference — identical shape.
+
+---
+
 ## 2026-05-28 — Reviving the `.mbz` builder; got a Moodle 5.2 reference
 
 **Context.** On 2026-05-19 we *deferred* the `.mbz` (Moodle backup) generator
