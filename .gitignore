@@ -24,3 +24,6 @@ Thumbs.db
 
 # ── Netlify / Course Preview ──
 preview_dist/
+
+# ── Moodle Backups ──
+/courses/**/*.mbz
