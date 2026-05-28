@@ -24,6 +24,36 @@ later reversed, add a new entry rather than editing the old one.
 ---
 
 <!-- New entries appended below -->
+## 2026-05-28 — Reviving the `.mbz` builder; got a Moodle 5.2 reference
+
+**Context.** On 2026-05-19 we *deferred* the `.mbz` (Moodle backup) generator
+(see that entry) for one reason: the target Moodle version and backup schema were
+unknown, making it a blind 1–2 day effort with no way to test. That blocker is
+now gone — the owner exported a throwaway course from the real IMS Moodle as a
+reference backup.
+
+**Finding.** Reverse-engineered the reference: Moodle **5.2+ (build 20260501),
+`backup_version 2026042000`, format `moodle2`**. Critically, it contains exactly
+the two activity types we generate — a **Page** and a **Quiz** — so it pins down
+the whole schema: the `moodle_backup.xml` manifest, sections with cmid
+`<sequence>`, per-activity dirs, the modern question-bank model
+(`question_reference` → `questionbankentryid`), the new `.ARCHIVE_INDEX` index
+file, and all the near-empty boilerplate files.
+
+**Decision.** Revive the builder, targeting 5.2. Committed the raw reference and
+its extracted XML tree under `docs/mbz_reference/` (provenance, do not edit) and
+wrote `docs/mbz_format.md` as the canonical schema map the builder is coded
+against. Images stay base64-inline in the page HTML, so `files.xml` is empty and
+we skip Moodle's file pool entirely (the reference confirms an empty
+`files.xml`).
+
+**Why now and not in May.** The reference removes every unknown from the original
+deferral. The owner also confirmed production Moodle is the same 5.2, so the
+version stamp is safe. The decisive test is still a real restore (tracked later
+in this feature).
+
+---
+
 ## 2026-05-28 — Adopt incremental-documentation working practice
 
 **Context.** Starting the `.mbz` (Moodle backup) generator feature — a

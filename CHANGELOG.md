@@ -11,6 +11,19 @@ future course-to-mbz Claude skill) should read both.
 ## [Unreleased]
 
 ### Added
+- **Moodle 5.2 `.mbz` reference + schema map:** Reviving the deferred Moodle
+  backup (`.mbz`) generator now that we have a real reference export. Added
+  `docs/mbz_reference/` (the raw reference `.mbz` and its extracted XML tree,
+  provenance) and `docs/mbz_format.md` (the canonical schema map the builder is
+  coded against — version stamps, archive layout, page/quiz/question-bank XML,
+  `.ARCHIVE_INDEX`, and the import→backup quiz-field mapping). Target: Moodle
+  5.2+ (build 20260501), `backup_version 2026042000`.
+- **Incremental-documentation working practice:** Made the repo's "commit small
+  logical steps" rule explicit about docs — every code commit carries its own
+  journal/CHANGELOG update. Recorded in `AGENTS.md` and the `generate-module`
+  skill (both `.claude/` and `.agents/` mirrors).
+
+### Added
 - **Course-Wide Preview Compiler:** Added `pipeline/build_course_preview.py` — a reusable, course-agnostic Python pipeline that compiles all generated modules, lessons, inlined SVG diagrams, base64-embedded images, and XML quizzes into a single highly-polished offline-first Single Page App (SPA) `index.html` file in under 2 seconds. Built with pure Python standard libraries (no third-party dependencies) for instant native execution in any CI environment.
 - **Git-Synced Netlify Continuous Deployment:** Added a root-level `netlify.toml` configuration to integrate the preview compiler directly with Netlify's continuous deployment. Every `git push` automatically rebuilds the entire course preview and publishes it to the same permanent live demonstration link, allowing seamless feedback-and-revision cycles.
 
