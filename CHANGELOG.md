@@ -11,6 +11,10 @@ future course-to-mbz Claude skill) should read both.
 ## [Unreleased]
 
 ### Added
+- **`.mbz` per-activity builders:** `pipeline/mbz/activities.py` builds a full
+  Page or Quiz activity directory (`module.xml`, `page.xml`/`quiz.xml`, grades,
+  inforef, and boilerplate). The quiz links to its questions via the modern
+  question-bank-entry model and carries its own grade item.
 - **`.mbz` boilerplate + ID allocator:** `pipeline/mbz/templates.py` holds the
   ~20 constant backup XML files (per-activity, course, and top-level boilerplate)
   as reviewable named constants, and `pipeline/mbz/ids.py` provides a

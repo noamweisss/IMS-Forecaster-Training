@@ -24,6 +24,33 @@ later reversed, add a new entry rather than editing the old one.
 ---
 
 <!-- New entries appended below -->
+## 2026-05-28 — Per-activity builders (page + quiz)
+
+**Context.** With the converter, ids, and boilerplate in place, the next layer
+emits a full activity directory: `activities/page_<cmid>/` or
+`activities/quiz_<cmid>/`.
+
+**Decision.** `pipeline/mbz/activities.py` exposes `build_page_activity()` and
+`build_quiz_activity()`, each returning a `{archive_path: content}` dict.
+`build_module_xml()` is shared. The page puts the lesson body fragment into
+`<content>` (escaped). The quiz wires `question_instances` →
+`question_reference` → `questionbankentryid` (the 5.x model), emits its own
+activity-level grade item in `grades.xml`, and ties grade item + question
+categories together in `inforef.xml`. The quiz↔questions contextid invariant is
+asserted in the self-test.
+
+**Small choices.** `preferredbehaviour=deferredfeedback` (answer all, submit, then
+see rationale/feedback) rather than the reference's `interactive` — better fit for
+a certification quiz. No completion tracking (`completion=0`); pass grade left at
+0 and can be set per-quiz after restore. Review bitmasks copied verbatim from the
+reference so feedback/right-answer show on review.
+
+**Verification.** Self-test builds one page (9 files) and one quiz (9 files), parses
+every file for well-formedness, and confirms the quiz uses its own contextid in
+both `question_reference` and `inforef`. Works run-as-script and import-as-package.
+
+---
+
 ## 2026-05-28 — `.mbz` boilerplate constants + deterministic ID allocator
 
 **Context.** A `.mbz` carries ~20 small, near-empty XML files (per-activity
