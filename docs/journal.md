@@ -24,6 +24,25 @@ later reversed, add a new entry rather than editing the old one.
 ---
 
 <!-- New entries appended below -->
+## 2026-05-28 — Adopt incremental-documentation working practice
+
+**Context.** Starting the `.mbz` (Moodle backup) generator feature — a
+multi-commit effort. The owner asked that documentation arrive in small steps
+alongside the code, not as one big writeup at the end (their stated preference,
+and a common failure mode where the journal/CHANGELOG drift behind the code).
+
+**Decision.** Made the existing "commit small logical steps" rule explicit about
+docs: every code commit carries its own journal + CHANGELOG update for that step.
+Added the rule to `AGENTS.md` (Agent Personality) and to the `generate-module`
+SKILL, mirrored across `.claude/skills/` and `.agents/skills/` in this same
+commit so the two never drift.
+
+**Why.** The journal is meant to read as a running log of *why*. Batching all of
+it at the end loses the per-step reasoning and leaves intermediate commits with
+stale docs. This entry is itself the first instance of the practice.
+
+---
+
 ## 2026-05-26 — Module 4 image extraction and finalization for Moodle
 
 **Context.** The user requested auditing the pilot course modules for Moodle readiness. Module 1, 2, and 3 were fully ready, but Module 4 was drafted but not yet finalized (missing combined files, unified quiz XML, and containing 2 unresolved image-needed placeholders). The user approved running the newly added image extraction pipeline to harvest images from source decks and finalize the module.

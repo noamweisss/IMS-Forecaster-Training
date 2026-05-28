@@ -19,6 +19,8 @@ Three phases. You run two commands and write the middle phase yourself.
 
 The audience for the lessons is **certified professional meteorologists** taking a certification refresh course. They are technically literate, time-pressured, and will be irritated by filler prose or condescending explanations. No "in this lesson we will learn…" openers. No basics that a working forecaster already has internalized.
 
+> **Working practice — ship docs incrementally.** Commit small logical steps, and let each code commit carry its own `docs/journal.md` + `CHANGELOG.md` update for that step. Never batch all documentation into one writeup at the end. See `AGENTS.md` (Agent Personality).
+
 ## Before you write a single lesson
 
 Three files to read in full. They are the contract — your output is judged against them, not against this skill's body.
