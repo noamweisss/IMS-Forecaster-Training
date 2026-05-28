@@ -203,17 +203,44 @@ regenerates a lesson.
 
 ---
 
-## Phase 6 — Upload to Moodle (manual, 2 clicks per module)
+## Phase 6 — Upload to Moodle
 
-Open the module's freshly-written `README.md` and follow it. The short
-version:
+You have two ways to get the content into Moodle. The `.mbz` path is one upload
+for the whole course; the copy-paste path is the version-agnostic fallback.
+
+### Option A (recommended) — restore a `.mbz` (one upload)
+
+Build the backup, then restore it:
+
+```bash
+# whole course in one file:
+python pipeline/build_mbz.py --course courses/<course>
+# -> courses/<course>/<course>.mbz
+
+# or just one module:
+python pipeline/build_mbz.py --module courses/<course>/module-N
+# -> courses/<course>/module-N/<course>-module-N.mbz
+```
+
+Then in Moodle: **Course → Restore → drag the `.mbz` → Restore → Merge into this
+course → Continue.** Every module restores as its own section laid out as
+overview Page → (lesson Page → lesson Quiz) per lesson, with all questions,
+base64-embedded images, and feedback already wired. No pasting, no question-bank
+import. Targets Moodle 5.2+ (see `docs/mbz_format.md`).
+
+Generated `.mbz` files are gitignored — rebuild any time; the build is fast and
+reads only the finalized HTML/XML (no source binaries / LFS needed).
+
+### Option B (fallback) — copy-paste (2 clicks per module)
+
+Open the module's freshly-written `README.md` and follow it. The short version:
 
 1. Create a Moodle Page activity; paste `module_combined_moodle.html`
    into the HTML editor.
 2. Question Bank → Import → upload `module_quiz_all_questions.xml`;
    create a Quiz activity drawing from that bank.
 
-Five minutes per module if your hands are warm.
+Use this if your Moodle blocks restores or runs an incompatible version.
 
 ---
 

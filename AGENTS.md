@@ -28,6 +28,7 @@ subscription (Claude via Claude Code, Gemini via Antigravity, etc.).
 1. extract_sources.py        → _extraction.json     (Python, no LLM)
 2. you / another agent        → lesson HTML + quiz XML + overview
 3. finalize_module.py         → Moodle-ready module (Python, no LLM)
+4. build_mbz.py  (optional)   → <course>.mbz one-upload backup (Python, no LLM)
 ```
 
 ## If You're an Agent Reading This for the First Time
@@ -65,6 +66,9 @@ pipeline/           → Python scripts (no LLM in any of them)
   embed_images.py         Inlines images as base64 (with downscaling)
   build_combined_page.py  Concatenates lesson fragments into one Page
   retrofit_to_moodle.py   Upgrades legacy standalone HTML to fragments
+  build_mbz.py            Packages a course into one importable Moodle .mbz
+  mbz/                    Helper package for build_mbz.py (ids, quiz
+                          conversion, activity + structure builders, packaging)
 
 docs/                → Documentation, runbook, spec, journal
 courses/             → Course content (source files + generated output)
@@ -145,5 +149,7 @@ Follow the runbook. The condensed version:
 2. `python pipeline/extract_sources.py --input ... --output ...`
 3. Read `docs/lesson_spec.md`. Author the lessons + quizzes + overview.
 4. `python pipeline/finalize_module.py --module ...`
-5. Tell the user to follow the module's `README.md` for the 2-click
-   Moodle upload.
+5. (Optional) `python pipeline/build_mbz.py --course courses/<course>` to
+   produce a single `.mbz` the user restores in one upload (schema:
+   `docs/mbz_format.md`). Or tell the user to follow the module's `README.md`
+   for the copy-paste Moodle upload.

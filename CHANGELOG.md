@@ -20,6 +20,14 @@ future course-to-mbz Claude skill) should read both.
   activities, 82 questions; structural cross-references verified. Generated
   `.mbz` files are gitignored (`courses/**/*.mbz`) — regenerate with
   `python pipeline/build_mbz.py --course courses/<course>`.
+  - `--module <folder>` builds a single-module `.mbz`; `finalize_module.py --mbz`
+    builds it as part of finalizing.
+
+### Changed
+- **Docs** updated for the `.mbz` path: `docs/runbook.md` Phase 6 (restore as
+  Option A, copy-paste as fallback), `docs/architecture.md` (Phase 4),
+  `AGENTS.md` (pipeline diagram, structure, steps), and the per-module
+  `README.md` template.
 - **`.mbz` structural assembler:** `pipeline/mbz/structure.py` builds the
   `moodle_backup.xml` manifest, section files (with cmid sequences), the course
   record + boilerplate, the course `gradebook.xml`, and the full `questions.xml`

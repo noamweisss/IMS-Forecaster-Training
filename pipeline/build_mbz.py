@@ -283,6 +283,14 @@ def package(files: dict[str, str], output: Path, timestamp: int) -> Path:
 # CLI                                                                          #
 # --------------------------------------------------------------------------- #
 
+def _write(files: dict[str, str], out: Path) -> Path:
+    out.parent.mkdir(parents=True, exist_ok=True)
+    package(files, out, int(time.time()))
+    print(f"\nWrote {out}  ({out.stat().st_size / 1024:,.0f} KB, {len(files)} files)")
+    print("Restore it in Moodle: Course → Restore → upload → Merge into this course.")
+    return out
+
+
 def build_course(course_dir: Path, output: Path | None = None) -> Path:
     meta, modules = read_course(course_dir)
     if not modules:
@@ -296,22 +304,40 @@ def build_course(course_dir: Path, output: Path | None = None) -> Path:
         print(f"  - {m.title}: {len(m.lessons)} lesson(s), {nq} question(s)")
     files = assemble(shortname=course_id, fullname=fullname, modules=modules,
                      filename=out.name)
-    ts = int(time.time())
-    package(files, out, ts)
-    print(f"\nWrote {out}  ({out.stat().st_size / 1024:,.0f} KB, {len(files)} files)")
-    print("Restore it in Moodle: Course → Restore → upload → Merge into this course.")
-    return out
+    return _write(files, out)
+
+
+def build_module(module_dir: Path, output: Path | None = None) -> Path:
+    """Build a single-module .mbz (one section). Course metadata is read from the
+    parent course.json when available."""
+    module = read_module(module_dir)
+    course_dir = module_dir.parent
+    course_json = course_dir / "course.json"
+    course_id = course_dir.name
+    if course_json.is_file():
+        course_id = json.loads(course_json.read_text(encoding="utf-8")).get("course_id", course_id)
+    out = output or (module_dir / f"{course_id}-{module_dir.name}.mbz")
+    nq = sum(len(l.questions) for l in module.lessons)
+    print(f"Building module backup: {module.title} "
+          f"({len(module.lessons)} lesson(s), {nq} question(s))")
+    files = assemble(shortname=course_id, fullname=module.title, modules=[module],
+                     filename=out.name)
+    return _write(files, out)
 
 
 def main() -> None:
     p = argparse.ArgumentParser(description=__doc__,
                                 formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("--course", help="Path to a course folder (containing course.json).")
+    g = p.add_mutually_exclusive_group(required=True)
+    g.add_argument("--course", help="Path to a course folder (containing course.json).")
+    g.add_argument("--module", help="Path to a single module folder.")
     p.add_argument("--output", help="Output .mbz path (optional).")
     args = p.parse_args()
-    if not args.course:
-        p.error("provide --course <course-folder>")
-    build_course(Path(args.course), Path(args.output) if args.output else None)
+    out = Path(args.output) if args.output else None
+    if args.course:
+        build_course(Path(args.course), out)
+    else:
+        build_module(Path(args.module), out)
 
 
 if __name__ == "__main__":

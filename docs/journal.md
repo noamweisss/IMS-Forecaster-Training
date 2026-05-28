@@ -24,6 +24,30 @@ later reversed, add a new entry rather than editing the old one.
 ---
 
 <!-- New entries appended below -->
+## 2026-05-28 — `--module` flag, finalize integration, and docs
+
+**Context.** The course-wide build works; now the single-module option and the
+pipeline/doc integration.
+
+**Decision.**
+1. `build_mbz.py --module <folder>` builds a one-section `.mbz` for a single
+   module (reuses `assemble()` with a one-module list; reads course id from the
+   parent `course.json`). Verified on module 1: 2 sections (General + Module 1),
+   9 activities, all XML well-formed.
+2. `finalize_module.py --mbz` optionally builds the single-module `.mbz` right
+   after finalizing.
+3. Documentation threaded through: `docs/runbook.md` Phase 6 now leads with the
+   `.mbz` restore (Option A) and keeps copy-paste as Option B;
+   `docs/architecture.md` gains Phase 4; `AGENTS.md` updates the pipeline diagram,
+   project structure, and the "Generate Module N" steps; the per-module
+   `README.md` template (in `finalize_module.py`) leads with the restore path.
+
+**Why this shape.** Course-wide is the normal case (one upload); `--module` is for
+re-uploading a single updated module without touching the rest. Both go through
+the same builders, so there's no second code path to keep correct.
+
+---
+
 ## 2026-05-28 — `build_mbz.py`: orchestrator + packaging (whole course builds)
 
 **Context.** Final assembly: read finalized course content, allocate ids, drive
