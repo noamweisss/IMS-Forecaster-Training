@@ -11,6 +11,15 @@ future course-to-mbz Claude skill) should read both.
 ## [Unreleased]
 
 ### Added
+- **`pipeline/build_mbz.py` — one-upload Moodle course backup:** New pipeline
+  step that turns finalized course content into a single importable `.mbz`.
+  Restoring it stands up the whole course in one upload: one section per module,
+  laid out as overview Page → (lesson Page → lesson Quiz) per lesson, with all
+  questions, base64-embedded images, and feedback wired in. Pure stdlib Python.
+  First full build of the Aviation Weather course: 1.4 MB, 5 sections, 40
+  activities, 82 questions; structural cross-references verified. Generated
+  `.mbz` files are gitignored (`courses/**/*.mbz`) — regenerate with
+  `python pipeline/build_mbz.py --course courses/<course>`.
 - **`.mbz` structural assembler:** `pipeline/mbz/structure.py` builds the
   `moodle_backup.xml` manifest, section files (with cmid sequences), the course
   record + boilerplate, the course `gradebook.xml`, and the full `questions.xml`

@@ -24,6 +24,37 @@ later reversed, add a new entry rather than editing the old one.
 ---
 
 <!-- New entries appended below -->
+## 2026-05-28 — `build_mbz.py`: orchestrator + packaging (whole course builds)
+
+**Context.** Final assembly: read finalized course content, allocate ids, drive
+the activity + structure builders, and package a `.mbz`.
+
+**Decision.** `pipeline/build_mbz.py` reads `course.json` and each module's
+`00_module_overview_moodle.html`, `lessons/NN_*_moodle.html`, and matching
+`*_quiz.xml`, then `assemble()` lays out one section per module (overview Page →
+lesson Page → lesson Quiz …), building the question bank *before* the quiz
+activities so the question-bank-entry ids are available to wire each quiz's
+slots. `package()` writes everything to a temp dir, generates a correct
+`.ARCHIVE_INDEX` (dirs-before-files, byte sizes), and tars+gzips to
+`courses/<course>/<course_id>.mbz`.
+
+**Result — first full-course build.** Aviation Weather → a 1.4 MB `.mbz`: 5
+sections (General + 4 modules), 40 activities (22 pages + 18 quizzes), 82
+questions. Structural verification all green: every XML well-formed,
+`.ARCHIVE_INDEX` count matches, every section `<sequence>` references an existing
+cmid, the quiz↔questions contextid invariant holds, and all 82
+question-bank-entry references resolve.
+
+**Decision — don't commit the generated `.mbz`.** The plan said to commit it, but
+the output embeds a fresh timestamp and random ids (`backup_id`,
+`original_site_identifier_hash`) on every build, so committing would churn a large
+binary each run. Added `courses/**/*.mbz` to `.gitignore` and documented the
+one-line regeneration command instead. The tracked reference under
+`docs/mbz_reference/` is unaffected. (Still the decisive test — a real Moodle
+restore — before the PR.)
+
+---
+
 ## 2026-05-28 — Structural assembler (manifest, sections, course, gradebook, question bank)
 
 **Context.** The layer that ties the activities together: the `moodle_backup.xml`
