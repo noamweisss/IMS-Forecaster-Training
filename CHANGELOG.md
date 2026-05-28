@@ -11,6 +11,11 @@ future course-to-mbz Claude skill) should read both.
 ## [Unreleased]
 
 ### Added
+- **`.mbz` boilerplate + ID allocator:** `pipeline/mbz/templates.py` holds the
+  ~20 constant backup XML files (per-activity, course, and top-level boilerplate)
+  as reviewable named constants, and `pipeline/mbz/ids.py` provides a
+  deterministic per-entity-type id allocator + question-stamp helper. (Boilerplate
+  consolidated into one module rather than 20 tiny `.xml` stubs — see journal.)
 - **Quiz import→backup converter:** New `pipeline/mbz/quiz_to_backup.py` —
   converts our Moodle-import-format lesson quizzes into the nested backup
   `<question>` format a `.mbz` restore expects (field remaps + escaped HTML).

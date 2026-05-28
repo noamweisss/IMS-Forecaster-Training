@@ -24,6 +24,36 @@ later reversed, add a new entry rather than editing the old one.
 ---
 
 <!-- New entries appended below -->
+## 2026-05-28 — `.mbz` boilerplate constants + deterministic ID allocator
+
+**Context.** A `.mbz` carries ~20 small, near-empty XML files (per-activity
+`roles/filters/calendar/competencies/grade_history`, course-level
+`enrolments/roles/filters/...`, top-level `badges/scales/groups/...`). They're
+constant for every backup. We also need ids that are unique within the backup.
+
+**Decision.**
+1. `pipeline/mbz/ids.py` — `IdAllocator` with one incrementing counter per entity
+   kind (context, cmid, section, question, answer, qbe, ...), plus `make_stamp()`
+   for unique question stamps. Deterministic, so output is byte-stable across
+   runs (clean diffs). Moodle remaps all ids on restore anyway; they only need
+   internal consistency.
+2. `pipeline/mbz/templates.py` — the constant boilerplate as named string
+   constants copied verbatim from the reference, bundled into
+   `ACTIVITY_COMMON_FILES` / `COURSE_COMMON_FILES` / `TOP_COMMON_FILES` dicts the
+   builder writes out.
+
+**Deviation worth noting.** The plan called for a `pipeline/mbz_templates/`
+directory of ~20 tiny `.xml` files. I consolidated them into one reviewable
+Python module instead — two dozen near-empty XML stubs are harder to review than
+a single annotated file, and it keeps the builder self-contained (no reading from
+`docs/` at build time). The raw reference files remain under
+`docs/mbz_reference/` for diffing.
+
+**Verification.** Every constant and bundle parses as well-formed XML; allocator
+and stamp helper exercised.
+
+---
+
 ## 2026-05-28 — Quiz import-XML → backup questions.xml converter
 
 **Context.** Our per-lesson quizzes (`lessons/NN_<slug>_quiz.xml`) are in Moodle
