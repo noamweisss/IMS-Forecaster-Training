@@ -28,6 +28,15 @@ future course-to-mbz Claude skill) should read both.
   Option A, copy-paste as fallback), `docs/architecture.md` (Phase 4),
   `AGENTS.md` (pipeline diagram, structure, steps), and the per-module
   `README.md` template.
+- **New `prompts/restore-mbz-to-moodle.md`** — step-by-step restore walkthrough
+  (build → Course → Restore → Merge), with spot-checks and troubleshooting.
+- **`courses/aviation-weather/course.json`** module statuses refreshed — all four
+  modules generated, finalized, and packaged into the course `.mbz` (the prior
+  "Pending generation" entries for modules 2 and 4 were stale).
+
+> Note: the `.mbz` output is verified structurally (well-formed XML, resolved
+> cross-references). A real restore into a live Moodle 5.2 instance is the
+> remaining acceptance test before this is considered done.
 - **`.mbz` structural assembler:** `pipeline/mbz/structure.py` builds the
   `moodle_backup.xml` manifest, section files (with cmid sequences), the course
   record + boilerplate, the course `gradebook.xml`, and the full `questions.xml`

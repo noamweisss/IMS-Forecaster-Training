@@ -24,6 +24,33 @@ later reversed, add a new entry rather than editing the old one.
 ---
 
 <!-- New entries appended below -->
+## 2026-05-28 — `.mbz` verification status + restore guide
+
+**Context.** Closing out the `.mbz` feature: a user-facing restore walkthrough,
+and recording what has and has not been verified.
+
+**Automated verification (done, green).** Unpacked the generated course `.mbz`
+and checked: all 390 XML files well-formed; `.ARCHIVE_INDEX` count matches the
+archive; every manifest activity/section directory exists; every section
+`<sequence>` references an existing cmid; the quiz↔questions contextid invariant
+holds for all 18 quizzes; all 82 question-bank-entry references resolve. The
+single-module build (`--module module-1`) passes the same checks (2 sections, 9
+activities).
+
+**NOT yet done — the decisive test.** A real restore into a live Moodle 5.2
+instance. I don't have access to the IMS Moodle, so this is the user's step (or
+mine if given a throwaway Moodle URL). `prompts/restore-mbz-to-moodle.md` is the
+walkthrough; it lists exactly what to spot-check (page rendering, image
+embedding, quiz grading + rationale). **Until a clean restore is confirmed, treat
+the builder as structurally-correct-but-unproven against a running Moodle.** This
+is why the PR is held until the user verifies.
+
+**Status.** Updated `courses/aviation-weather/course.json` — all four modules are
+generated, finalized, and packaged into the course `.mbz` (the prior "Pending
+generation" entries for modules 2 and 4 were stale).
+
+---
+
 ## 2026-05-28 — `--module` flag, finalize integration, and docs
 
 **Context.** The course-wide build works; now the single-module option and the
