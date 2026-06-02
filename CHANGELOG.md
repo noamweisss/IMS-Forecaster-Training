@@ -12,6 +12,14 @@ future course-to-mbz Claude skill) should read both.
 
 ### Course V2 iteration (roadmap.md)
 
+- **Completion-tracked, ungraded quizzes.** Lesson quizzes now use Moodle
+  automatic completion requiring one submitted attempt (`completion=2` +
+  `completionminattempts=1`), giving the instructor a "who finished the course"
+  report. The numeric grade is hidden from learners — review "marks" options
+  zeroed and the gradebook grade item set `hidden=1` — while correctness and
+  feedback stay visible. Grade is not part of the completion rule, so
+  completion means "did it", not "passed it" (`pipeline/mbz/activities.py`;
+  schema in `docs/mbz_format.md`). Pages remain untracked.
 - **Emoji prefixes on activity names.** The `.mbz` builder now prefixes Moodle
   activity names with `📚` for pages (module overview + lessons) and `❓` for
   quizzes, so they're easy to distinguish in Moodle's course-index sidebar

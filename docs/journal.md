@@ -24,6 +24,47 @@ later reversed, add a new entry rather than editing the old one.
 ---
 
 <!-- New entries appended below -->
+## 2026-06-02 — V2: completion-tracked, ungraded quizzes
+
+**Context.** The owner needs to verify that forecasters actually did the
+course — who finished and who didn't — but explicitly does *not* want the
+quizzes to feel graded ("we shouldn't grade them with a numerical value, or
+at least not show them the numerical value"). V1 quizzes had no completion
+tracking (`completion=0`) and showed marks, so neither requirement was met.
+
+**Decision.** Make every lesson quiz **completion-tracked but ungraded**, in
+`pipeline/mbz/activities.py`:
+
+- `module.xml` `completion=2` (automatic) + `quiz.xml`
+  `completionminattempts=1` → Moodle ticks the activity complete once the
+  learner submits one attempt. Grade is deliberately *not* part of the rule
+  (`completiongradeitemnumber` NULL, `completionpassgrade=0`), so completion
+  means "did it", not "passed it". This is exactly the reference
+  `quiz_9/module.xml` config, so it's known-good on restore.
+- `reviewmaxmarks=0` + `reviewmarks=0` → the learner never sees a score.
+  Correctness, per-answer feedback, general feedback, and the right answer
+  stay on, so the quiz is still a useful self-check.
+- quiz `grades.xml` grade_item `hidden=1` → the score stays in the gradebook
+  for the instructor but is hidden from the learner.
+
+Pages stay `completion=0` (untracked) — the roadmap asked for completion on
+quizzes specifically, and since every lesson has a quiz, "completed all
+quizzes" is the "did the course fully" signal. Course-level completion was
+already enabled (`enablecompletion=1` in `course.xml`).
+
+**Why hide rather than remove the grade.** Removing grading entirely (e.g.
+`grade=0`) would also strip the per-question scoring the review feedback
+relies on. Keeping the quiz graded internally but hidden from the learner
+preserves the feedback while honoring "don't show them the number", and lets
+the instructor still inspect scores if they want to. Easy to flip back: set
+`hidden=0` and restore the review-marks bitmasks to `4352`/`69888`.
+
+**Verified.** Rebuilt `module-1.mbz`; activities self-test green; confirmed
+`completion=2`, `completionminattempts=1`, zeroed review-marks, and
+`hidden=1` in the unpacked XML, with pages still at `completion=0`.
+
+---
+
 ## 2026-06-02 — V2: emoji prefixes on activity names
 
 **Context.** In Moodle's course-index sidebar, every lesson Page and every
