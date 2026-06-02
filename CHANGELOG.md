@@ -10,6 +10,34 @@ future course-to-mbz Claude skill) should read both.
 
 ## [Unreleased]
 
+### Course V2 iteration (roadmap.md)
+
+- **Rewrote the broken Figure 1** in Module 1 Lesson 2 (route planning & fuel).
+  Replaced the cramped, confusing diagram (and, in the legacy standalone copy,
+  a `var()`-in-SVG bug that rendered invisible) with a clean head-to-tail vector
+  diagram showing `Ground Speed = TAS ± along-track wind` for tailwind vs
+  headwind. Literal hex only, with `<title>`/`<desc>`. Updated in the
+  `_moodle.html` fragment, the combined page, and the standalone HTML.
+- **Completion-tracked, ungraded quizzes.** Lesson quizzes now use Moodle
+  automatic completion requiring one submitted attempt (`completion=2` +
+  `completionminattempts=1`), giving the instructor a "who finished the course"
+  report. The numeric grade is hidden from learners — review "marks" options
+  zeroed and the gradebook grade item set `hidden=1` — while correctness and
+  feedback stay visible. Grade is not part of the completion rule, so
+  completion means "did it", not "passed it" (`pipeline/mbz/activities.py`;
+  schema in `docs/mbz_format.md`). Pages remain untracked.
+- **Emoji prefixes on activity names.** The `.mbz` builder now prefixes Moodle
+  activity names with `📚` for pages (module overview + lessons) and `❓` for
+  quizzes, so they're easy to distinguish in Moodle's course-index sidebar
+  (`pipeline/build_mbz.py`).
+- **Removed dark mode from lessons.** Lessons carried a
+  `@media (prefers-color-scheme: dark)` block that flipped them to a dark
+  palette on dark-mode machines — but Moodle has no dark theme, so the lesson
+  body clashed with Moodle's light chrome. Lessons are now always light.
+  Removed from `config/design_system.css` (the source future modules copy
+  verbatim) and stripped in place from all 29 generated HTML files under
+  `courses/`. `docs/lesson_spec.md` gained a "no dark-mode override" note.
+
 ### Added
 - **`pipeline/build_mbz.py` — one-upload Moodle course backup:** New pipeline
   step that turns finalized course content into a single importable `.mbz`.

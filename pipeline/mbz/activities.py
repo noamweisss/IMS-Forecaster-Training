@@ -166,9 +166,14 @@ def build_quiz_activity(
     prefix = f"activities/quiz_{cmid}"
     files = _common_activity_files(prefix)
 
+    # completion=2 = automatic tracking. Combined with completionminattempts=1
+    # below, Moodle marks the quiz complete once the learner submits one
+    # attempt — our "who did the course" signal — without requiring a passing
+    # grade (completiongradeitemnumber stays NULL, completionpassgrade stays 0).
+    # See roadmap.md (V2) and the reference quiz_9/module.xml.
     files[f"{prefix}/module.xml"] = build_module_xml(
         cmid=cmid, modulename="quiz", sectionid=sectionid,
-        sectionnumber=sectionnumber, added_ts=timestamp,
+        sectionnumber=sectionnumber, added_ts=timestamp, completion=2,
     )
 
     activity = ET.Element(
@@ -192,11 +197,15 @@ def build_quiz_activity(
     _sub(quiz, "grademethod", "1")
     _sub(quiz, "decimalpoints", "2")
     _sub(quiz, "questiondecimalpoints", "-1")
-    # Review-option bitmasks, copied verbatim from the reference quiz.xml.
+    # Review-option bitmasks. 0 = never show; 4352/69888 = show at the various
+    # review times. We zero the two *marks* options so learners never see a
+    # numeric score (these quizzes are completion-tracked, not graded — see
+    # roadmap.md V2). Correctness, per-answer feedback, the right answer, and
+    # general feedback stay on so the quiz is still a useful self-check.
     _sub(quiz, "reviewattempt", "69888")
     _sub(quiz, "reviewcorrectness", "4352")
-    _sub(quiz, "reviewmaxmarks", "69888")
-    _sub(quiz, "reviewmarks", "4352")
+    _sub(quiz, "reviewmaxmarks", "0")
+    _sub(quiz, "reviewmarks", "0")
     _sub(quiz, "reviewspecificfeedback", "4352")
     _sub(quiz, "reviewgeneralfeedback", "4352")
     _sub(quiz, "reviewrightanswer", "4352")
@@ -216,7 +225,7 @@ def build_quiz_activity(
     _sub(quiz, "showuserpicture", "0")
     _sub(quiz, "showblocks", "0")
     _sub(quiz, "completionattemptsexhausted", "0")
-    _sub(quiz, "completionminattempts", "0")
+    _sub(quiz, "completionminattempts", "1")  # complete after one submitted attempt
     _sub(quiz, "allowofflineattempts", "0")
     _sub(quiz, "precreateattempts", "$@NULL@$")
     _sub(quiz, "subplugin_quizaccess_seb_quiz")
@@ -306,7 +315,10 @@ def _build_quiz_grades(
     _sub(gi, "sortorder", str(grade_item_id))
     _sub(gi, "display", "0")
     _sub(gi, "decimals", "$@NULL@$")
-    _sub(gi, "hidden", "0")
+    # hidden=1: the score stays in the gradebook for the instructor but is not
+    # shown to the learner — these quizzes track completion, not a grade
+    # (roadmap.md V2).
+    _sub(gi, "hidden", "1")
     _sub(gi, "locked", "0")
     _sub(gi, "locktime", "0")
     _sub(gi, "needsupdate", "0")

@@ -120,6 +120,12 @@ def read_course(course_dir: Path) -> tuple[dict, list[ModuleContent]]:
 # Assembly                                                                     #
 # --------------------------------------------------------------------------- #
 
+# Emoji prefixes on activity names so lessons and quizzes are easy to tell
+# apart in Moodle's course-index sidebar (roadmap.md, V2). 📚 = page/lesson,
+# ❓ = quiz.
+LESSON_EMOJI = "📚"
+QUIZ_EMOJI = "❓"
+
 def assemble(*, shortname: str, fullname: str, modules: list[ModuleContent],
              filename: str) -> dict[str, str]:
     """Build the complete set of {archive_path: content} files for a backup
@@ -146,7 +152,7 @@ def assemble(*, shortname: str, fullname: str, modules: list[ModuleContent],
 
         if module.overview_html:
             cmid = ids.next("cmid")
-            name = f"{module.title} — Overview"
+            name = f"{LESSON_EMOJI} {module.title} — Overview"
             files.update(build_page_activity(
                 cmid=cmid, instance_id=ids.next("instance"), contextid=ids.next("context"),
                 sectionid=sec_id, sectionnumber=m_index, name=name,
@@ -156,16 +162,17 @@ def assemble(*, shortname: str, fullname: str, modules: list[ModuleContent],
 
         for lesson in module.lessons:
             cmid = ids.next("cmid")
+            lname = f"{LESSON_EMOJI} {lesson.title}"
             files.update(build_page_activity(
                 cmid=cmid, instance_id=ids.next("instance"), contextid=ids.next("context"),
-                sectionid=sec_id, sectionnumber=m_index, name=lesson.title,
+                sectionid=sec_id, sectionnumber=m_index, name=lname,
                 content_html=lesson.page_html, timestamp=ts))
-            activities.append(ActivityRef(cmid, sec_id, "page", lesson.title))
+            activities.append(ActivityRef(cmid, sec_id, "page", lname))
             seq.append(cmid)
 
             if lesson.questions:
                 qcmid = ids.next("cmid")
-                qname = f"{lesson.title} — Quiz"
+                qname = f"{QUIZ_EMOJI} {lesson.title} — Quiz"
                 spec = QuizSpec(cmid=qcmid, contextid=ids.next("context"),
                                 name=qname, questions=lesson.questions)
                 quiz_plans.append({

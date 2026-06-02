@@ -119,6 +119,11 @@ Always include the `<style>` block at the top of every lesson fragment.
 `finalize_module.py` does not inject it; it's part of what makes the
 fragment self-contained when pasted into Moodle.
 
+**No dark-mode override.** Copy `config/design_system.css` verbatim — it
+deliberately has no `@media (prefers-color-scheme: dark)` block. Moodle has
+no dark theme, so a dark lesson clashed with Moodle's light chrome. Lessons
+are always light. Do not add a dark-mode media query back in.
+
 The shared CSS lives in [config/design_system.css](../config/design_system.css).
 Open it before you start — every class you use comes from there.
 

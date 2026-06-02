@@ -24,6 +24,137 @@ later reversed, add a new entry rather than editing the old one.
 ---
 
 <!-- New entries appended below -->
+## 2026-06-02 — V2: rewrote the broken Figure 1 (Module 1, Lesson 2)
+
+**Context.** The owner flagged Figure 1 in Module 1 Lesson 2 (route planning
+& fuel) as broken. Looking at it: the Moodle/combined copies used literal hex
+but the diagram was cramped and confusing — a free-floating aircraft glyph
+and two loosely-related labelled boxes that never actually showed the
+TAS/wind/ground-speed *relationship*. Worse, the legacy standalone copy of
+the same figure used `fill="var(--text)"` etc. inside SVG attributes — the
+exact var-in-SVG anti-pattern `lesson_spec.md` warns about, which renders
+black/invisible once the CSS variables aren't in scope.
+
+**Decision.** Redrew Figure 1 as a proper head-to-tail vector diagram that
+shows `Ground Speed = TAS ± along-track wind`:
+- A tailwind band: TAS 450 kt (blue) + 50 kt (teal, same direction) = GS 500
+  kt, "shorter flight time → less fuel burn".
+- A headwind band: TAS 450 kt (blue) with a 50 kt vector pointing *back*
+  (amber) = GS 400 kt, "longer flight time → more fuel burn".
+Literal hex only, `role="img"` + `<title>`/`<desc>` for accessibility, no
+`var()`. Applied to all three copies: the `_moodle.html` fragment, the
+`module_combined_moodle.html`, and the legacy standalone `.html`.
+
+**Verified.** Parsed each new `<svg>` with ElementTree (well-formed, numeric
+entities valid), confirmed no `var(` leaked in, and rendered it to PNG with
+cairosvg to eyeball the layout — clean, no overlaps, the arithmetic reads
+left to right.
+
+**Out of scope (noted).** Figure 2 in the *legacy standalone* copy still has
+the `var()`-in-SVG bug. The roadmap only named Figure 1, and the standalone
+file isn't shipped to Moodle (the `_moodle.html`/combined copies of Figure 2
+already use literal hex), so I left it. Flagging here in case we later retire
+or fix the legacy standalones.
+
+---
+
+## 2026-06-02 — V2: completion-tracked, ungraded quizzes
+
+**Context.** The owner needs to verify that forecasters actually did the
+course — who finished and who didn't — but explicitly does *not* want the
+quizzes to feel graded ("we shouldn't grade them with a numerical value, or
+at least not show them the numerical value"). V1 quizzes had no completion
+tracking (`completion=0`) and showed marks, so neither requirement was met.
+
+**Decision.** Make every lesson quiz **completion-tracked but ungraded**, in
+`pipeline/mbz/activities.py`:
+
+- `module.xml` `completion=2` (automatic) + `quiz.xml`
+  `completionminattempts=1` → Moodle ticks the activity complete once the
+  learner submits one attempt. Grade is deliberately *not* part of the rule
+  (`completiongradeitemnumber` NULL, `completionpassgrade=0`), so completion
+  means "did it", not "passed it". This is exactly the reference
+  `quiz_9/module.xml` config, so it's known-good on restore.
+- `reviewmaxmarks=0` + `reviewmarks=0` → the learner never sees a score.
+  Correctness, per-answer feedback, general feedback, and the right answer
+  stay on, so the quiz is still a useful self-check.
+- quiz `grades.xml` grade_item `hidden=1` → the score stays in the gradebook
+  for the instructor but is hidden from the learner.
+
+Pages stay `completion=0` (untracked) — the roadmap asked for completion on
+quizzes specifically, and since every lesson has a quiz, "completed all
+quizzes" is the "did the course fully" signal. Course-level completion was
+already enabled (`enablecompletion=1` in `course.xml`).
+
+**Why hide rather than remove the grade.** Removing grading entirely (e.g.
+`grade=0`) would also strip the per-question scoring the review feedback
+relies on. Keeping the quiz graded internally but hidden from the learner
+preserves the feedback while honoring "don't show them the number", and lets
+the instructor still inspect scores if they want to. Easy to flip back: set
+`hidden=0` and restore the review-marks bitmasks to `4352`/`69888`.
+
+**Verified.** Rebuilt `module-1.mbz`; activities self-test green; confirmed
+`completion=2`, `completionminattempts=1`, zeroed review-marks, and
+`hidden=1` in the unpacked XML, with pages still at `completion=0`.
+
+---
+
+## 2026-06-02 — V2: emoji prefixes on activity names
+
+**Context.** In Moodle's course-index sidebar, every lesson Page and every
+Quiz showed up as a plain line of text. With ~9 activities per module they
+were hard to scan — you couldn't tell a lesson from its quiz at a glance.
+
+**Decision.** Prefix activity names in the `.mbz` builder: `📚` for pages
+(module overview + lessons), `❓` for quizzes. Added `LESSON_EMOJI` /
+`QUIZ_EMOJI` constants in `pipeline/build_mbz.py` and applied them where the
+page/quiz `name` (and the matching manifest `ActivityRef.title`) are built.
+The names now read e.g. `📚 Principles Of Aviation Altimetry` and
+`❓ Principles Of Aviation Altimetry — Quiz`. Verified by building
+`module-1.mbz` and reading the names back out of the activity XML.
+
+**Why only the `.mbz` path.** The `.mbz` one-upload restore is the primary
+(and production-verified) way the course reaches Moodle, so that's where the
+convention belongs. The per-module `README.md` copy-paste path is a fallback
+with a different shape (one combined Page + one Quiz per module), so the
+per-lesson emoji scheme doesn't map onto it.
+
+---
+
+## 2026-06-02 — Course V2 iteration: kickoff + drop dark mode
+
+**Context.** With V1 live in Moodle and a fast build→restore loop, we opened
+the V2 iteration. The plan lives in `courses/aviation-weather/roadmap.md`
+(now a standing part of the project's docs). V2's "Design/Technical" bucket
+has four bounded items; the "Meteorology" bucket (deepen every lesson, more
+examples) is a larger, separate content pass we'll do afterward using the
+source presentations first.
+
+**Decision (this commit).** Removed the dark-mode styling. Every lesson
+carried a `@media (prefers-color-scheme: dark)` block (lifted from
+`config/design_system.css`) that flipped `.ims-lesson` to a dark palette
+based on the reader's OS. Moodle has no dark theme, so on a dark-mode laptop
+the lesson body rendered dark inside Moodle's light chrome — an obvious
+visual clash the owner flagged. Lessons are now always light.
+
+Scope of the change:
+- `config/design_system.css` — removed the block (source of truth; future
+  modules generated via the skill copy this verbatim, so they inherit the fix).
+- All 29 already-generated HTML files under `courses/` — stripped the block
+  in place with a brace-counting script so we didn't have to re-finalize
+  (handled both the `.ims-lesson` Moodle-fragment form and the legacy
+  `:root` standalone form). No other CSS touched; `<style>` blocks still
+  balanced.
+- `docs/lesson_spec.md` — added an explicit "no dark-mode override" note so
+  a future author doesn't reintroduce it.
+
+**Why script-strip instead of re-finalize.** `finalize_module.py` doesn't
+inject the `<style>` block — the author bakes it into each fragment — so
+re-finalizing wouldn't have removed it. Editing in place is the surgical fix
+and keeps the diff readable.
+
+---
+
 ## 2026-06-02 — `.mbz` restore verified in production Moodle
 
 **Context.** The remaining acceptance test for the `.mbz` builder: restore the

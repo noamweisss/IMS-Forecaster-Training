@@ -118,7 +118,7 @@ Common to page and quiz; the `id` attribute is the cmid:
   <score>0</score><indent>0</indent>
   <visible>1</visible><visibleoncoursepage>1</visibleoncoursepage><visibleold>1</visibleold>
   <groupmode>0</groupmode><groupingid>0</groupingid>
-  <completion>0</completion>           <!-- quiz used 2 (automatic) in the ref -->
+  <completion>0</completion>           <!-- page=0 (untracked); quiz=2 (automatic), see below -->
   <completiongradeitemnumber>$@NULL@$</completiongradeitemnumber>
   <completionpassgrade>0</completionpassgrade><completionview>0</completionview>
   <completionexpected>0</completionexpected><availability>$@NULL@$</availability>
@@ -148,6 +148,24 @@ Common to page and quiz; the `id` attribute is the cmid:
 The lesson HTML goes in `<content>`, **escaped** (`&lt;p&gt;…`). ElementTree
 escapes automatically when you set `.text`. Base64 `data:` image URIs survive
 inside the content verbatim — this is why we don't need `files.xml`.
+
+### Quiz completion + grade visibility (V2)
+
+Quizzes are **completion-tracked but ungraded** (roadmap.md). The builder sets:
+
+- `module.xml`: `<completion>2</completion>` (automatic). The other
+  `completion*` fields stay at the defaults above — grade is *not* used for
+  completion (`completiongradeitemnumber` NULL, `completionpassgrade` 0).
+- `quiz.xml`: `<completionminattempts>1</completionminattempts>` — Moodle marks
+  the quiz complete once the learner submits one attempt. Also
+  `<reviewmaxmarks>0</reviewmaxmarks>` and `<reviewmarks>0</reviewmarks>` so the
+  learner never sees a numeric score (other review options — correctness,
+  per-answer + general feedback, right answer — stay on).
+- `grades.xml`: the quiz grade_item is `<hidden>1</hidden>` — the score stays in
+  the gradebook for the instructor but is hidden from the learner.
+
+Net effect: instructors get a completion report showing who finished every
+quiz; learners get full feedback but no grade. Pages keep `<completion>0</completion>`.
 
 ### Quiz activity — `quiz.xml`
 
