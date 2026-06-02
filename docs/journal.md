@@ -24,6 +24,24 @@ later reversed, add a new entry rather than editing the old one.
 ---
 
 <!-- New entries appended below -->
+## 2026-06-02 — `.mbz` restore verified in production Moodle
+
+**Context.** The remaining acceptance test for the `.mbz` builder: restore the
+generated course backup into the live IMS Moodle 5.2 instance and confirm it
+renders.
+
+**Result.** Owner restored the course `.mbz` into Moodle — the first version of
+the course is now up and running on the production server. The builder is no
+longer "structurally correct but unproven"; it's verified end-to-end. PR #4 is
+cleared for merge.
+
+**What this unlocks.** The pipeline now has a fast iteration loop:
+edit → `finalize_module.py` → `build_mbz.py` → restore. The owner can build the
+next iteration of the course on top of `main` without going back through manual
+copy-paste each time.
+
+---
+
 ## 2026-05-28 — `.mbz` verification status + restore guide
 
 **Context.** Closing out the `.mbz` feature: a user-facing restore walkthrough,

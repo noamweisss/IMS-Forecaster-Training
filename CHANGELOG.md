@@ -34,9 +34,10 @@ future course-to-mbz Claude skill) should read both.
   modules generated, finalized, and packaged into the course `.mbz` (the prior
   "Pending generation" entries for modules 2 and 4 were stale).
 
-> Note: the `.mbz` output is verified structurally (well-formed XML, resolved
-> cross-references). A real restore into a live Moodle 5.2 instance is the
-> remaining acceptance test before this is considered done.
+- **Verified end-to-end (2026-06-02):** Course `.mbz` restored successfully into
+  the production IMS Moodle 5.2 instance; the first version of the course is
+  live. The structural checks (XML well-formedness, resolved cross-references)
+  are now backed by a real restore.
 - **`.mbz` structural assembler:** `pipeline/mbz/structure.py` builds the
   `moodle_backup.xml` manifest, section files (with cmid sequences), the course
   record + boilerplate, the course `gradebook.xml`, and the full `questions.xml`
