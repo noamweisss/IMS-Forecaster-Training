@@ -1,0 +1,145 @@
+<style>
+/*
+ * IMS Course Factory — Lesson Design System
+ *
+ * All rules are scoped to `.ims-lesson` so the styles can be injected into
+ * a host page (Moodle, in particular) without leaking onto the host's chrome
+ * and without the host's theme overriding lesson typography.
+ *
+ * Standalone lesson HTML wraps the entire body in <div class="ims-lesson">.
+ * Moodle body-fragment HTML does the same. The single rule below keeps the
+ * standalone preview's <body> background consistent without leaking into
+ * Moodle pages.
+ */
+
+.ims-lesson {
+  --bg: #ffffff;
+  --surface: #f6f5f0;
+  --border: #e2dfd6;
+  --text: #1a1917;
+  --muted: #6b6a65;
+  --accent: #185fa5;
+  --accent-light: #e6f1fb;
+  --note-bg: #e1f5ee;
+  --note-border: #0F6E56;
+  --warn-bg: #faeeda;
+  --warn-border: #BA7517;
+  --key-bg: #EEEDFE;
+  --key-border: #534AB7;
+  --danger-bg: #fcebeb;
+  --danger-border: #A32D2D;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .ims-lesson {
+    --bg: #1a1917;
+    --surface: #242320;
+    --border: #3a3835;
+    --text: #e8e6df;
+    --muted: #9a9890;
+    --accent-light: #042c53;
+    --note-bg: #04342c;
+    --warn-bg: #412402;
+    --key-bg: #26215c;
+  }
+}
+
+.ims-lesson h1 { font-size: 1.8rem; font-weight: 600; margin-bottom: 0.2rem; line-height: 1.2; color: var(--text); }
+.ims-lesson h2 { font-size: 1.25rem; font-weight: 600; margin-top: 2.5rem; padding-bottom: 0.4rem;
+  border-bottom: 1.5px solid var(--border); color: var(--text); }
+.ims-lesson h3 { font-size: 1.05rem; font-weight: 600; margin-top: 1.75rem; color: var(--text); }
+.ims-lesson p { margin: 0.7rem 0; max-width: 72ch; }
+.ims-lesson figure { margin: 2rem 0; }
+.ims-lesson figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 0.6rem;
+  font-style: italic; text-align: center; }
+.ims-lesson svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+.ims-lesson img { max-width: 100%; height: auto; }
+.ims-lesson table { border-collapse: collapse; width: 100%; margin: 1.5rem 0; font-size: 0.9rem; }
+.ims-lesson th { background: var(--accent); color: #fff; padding: 0.55rem 0.9rem; text-align: left; }
+.ims-lesson td { padding: 0.5rem 0.9rem; border-bottom: 1px solid var(--border); }
+.ims-lesson tr:nth-child(even) td { background: var(--surface); }
+.ims-lesson .callout { border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+.ims-lesson .callout-note    { background: var(--note-bg);   border-left: 4px solid var(--note-border); }
+.ims-lesson .callout-warning { background: var(--warn-bg);   border-left: 4px solid var(--warn-border); }
+.ims-lesson .callout-key     { background: var(--key-bg);    border-left: 4px solid var(--key-border); }
+.ims-lesson .callout-danger  { background: var(--danger-bg); border-left: 4px solid var(--danger-border); }
+.ims-lesson .callout-label { font-weight: 700; font-size: 0.78rem; text-transform: uppercase;
+  letter-spacing: 0.06em; margin-bottom: 0.35rem; }
+.ims-lesson .objectives { background: var(--surface); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+.ims-lesson .objectives ul { margin: 0.5rem 0 0; padding-left: 1.4rem; }
+.ims-lesson .lesson-summary { background: var(--accent-light); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 2.5rem 0 1rem; }
+.ims-lesson .lesson-summary h3 { margin-top: 0; color: var(--accent); font-size: 1rem; }
+.ims-lesson .image-needed { border: 2px dashed var(--border); border-radius: 8px;
+  padding: 1.5rem; margin: 1.5rem 0; text-align: center;
+  color: var(--muted); font-size: 0.9rem; background: var(--surface); }
+.ims-lesson .meta { color: var(--muted); font-size: 0.88rem; margin-bottom: 1.75rem; }
+.ims-lesson .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.5rem; }
+</style>
+<div class="ims-lesson">
+<p class="breadcrumb">תחזית מזג אוויר תעופה / מודול 4</p>
+<h1>מודול 4: מוצרים ואזהרות תחזית תעופה</h1>
+<p class="meta">משך זמן משוער: 90 דקות</p>
+<p>ברוכים הבאים למודול 4. במודול אחרון זה של קורס הסמכת חיזוי מזג אוויר תעופה, אנו מעבירים את המיקוד שלנו מתופעות תעופה מקומיות למוצרים המיוחדים ולסכנות גלובליות שמכתיבות ניתוב ובטיחות תעופה בינלאומית.</p>
+<p>תלמד את הפילוסופיה שמאחורי כתיבת תחזיות טרמינל תעופה (TAF) יעילות וידידותיות למשתמש וכיצד לנהל מעברים מטאורולוגיים מורכבים באמצעות קבוצות שינוי קפדניות. כמו כן, נחקור את הסכנות החמורות הכרוכות בסופות טרופיות ואפר וולקני, וכיצד הרשויות העולמיות (VAACs ו-RSMCs) עוקבות אחר תופעות אלו. לבסוף, תלמדו לפענח את תרשימי מערכת החיזוי העולמית (WAFS) שהטייסים משתמשים בהם לניווט בדרך.</p>
+<div class="objectives">
+<strong>כישורי ליבה:</strong>
+<ul>
+<li>הפקת תחזיות מסוף תעופה ברורות, תמציתיות ומדויקות (TAFs) המותאמות לצרכים התפעוליים.</li>
+<li>החל קבוצות שינוי מתאימות (BECMG, TEMPO) וקריטריונים לתיקון על TAFs.</li>
+<li>לפרש ייעוץ ועקוב אחר תחזיות לציקלון טרופי ואפר געשי.</li>
+<li>פענוח תרשימי SIGWX ברמה גבוהה (SWH) וברמה בינונית (SWM) ממרכזי חיזוי אזורי העולם.</li>
+</ul>
+</div>
+<h2>מבנה מודול</h2>
+<table>
+<thead>
+<tr>
+<th>לֶקַח</th>
+<th>נוֹשֵׂא</th>
+<th>מֶשֶׁך</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>שיעור 1</td>
+<td><strong>TAF מבנה ופילוסופיית כתיבה</strong><br/>טרמינולוגיה, קטגוריות טיסה והדחיפה לתחזיות ידידותיות למשתמש.</td>
+<td>15 דקות</td>
+</tr>
+<tr>
+<td>שיעור 2</td>
+<td><strong>תיקוני TAF תפעולי ומקרי קצה</strong><br/>ניווט בקבוצות BECMG, TEMPO ו-PROB, ויודע מתי לתקן.</td>
+<td>20 דקות</td>
+</tr>
+<tr>
+<td>שיעור 3</td>
+<td><strong>סופות טרופיות</strong><br/>היווצרות, סולם ספיר-סימפסון ופרשנות קונוס אי הוודאות.</td>
+<td>15 דקות</td>
+</tr>
+<tr>
+<td>שיעור 4</td>
+<td><strong>אפר וולקני</strong><br/>האיום המכני על מנועי סילון, VAACs ומצולעי דוגמנות פיזור.</td>
+<td>15 דקות</td>
+</tr>
+<tr>
+<td>שיעור 5</td>
+<td><strong>מפות WAFC וטבלאות תחזיות גלובליות</strong><br/>פענוח תרשימי SWH ו-SWM SIGWX, זרמי סילון ומינוח כיסוי CB.</td>
+<td>25 דקות</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-note">
+<div class="callout-label">הערכת מודול</div>
+  בסיום שיעור 5, תשלים חידון מסכם בן 25 שאלות המכסה את כל החומר המוצג במודול זה. נדרש ציון של 75% ומעלה כדי לעבור.
+</div>
+</div>

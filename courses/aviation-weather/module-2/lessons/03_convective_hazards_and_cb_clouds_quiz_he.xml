@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='utf-8'?>
+<quiz>
+  <question type="multichoice">
+    <name><text>L3-Q01 — מאפייני שלב בוגר של CB</text></name>
+    <questiontext format="html">
+      <text>&lt;p&gt;מה מגדיר את תחילת ה&lt;strong&gt;שלב בוגר&lt;/strong&gt; במחזור החיים של קומולונימבוס (CB)?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;רציונל:&lt;/strong&gt; שלב הבשלות מתחיל כאשר משקעים מתחילים לרדת מבסיס הענן, מה שמתחיל את הדראפט לצד העלייה הקיימת.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;התחילות של משקעים והיווצרות של ירידה.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;היווצרות של ראש סדן בטרופופוזה.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;ההפסקה המוחלטת של משימות עדיפות בתוך התא.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;ההופעה הראשונה של ענן מצטבר בלוויין גלוי.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L3-Q02 - מנגנון היווצרות ברד</text></name>
+    <questiontext format="html">
+      <text>&lt;p&gt;איזה מצב אטמוספרי חיוני להיווצרות ברד גדול בתוך ענן הסעה?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;רציונל:&lt;/strong&gt; ברד גדול מצריך זרימה עזה שיכולה להשהות טיפות מים מספיק זמן כדי שהן יעברו דרך השכבה המקפיאה מספר פעמים, תוך צבירת שכבות של קרח.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;עלייה עוצמתית המסוגלת להעביר טיפות מעל רמת הקפאה.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;שכבה עמוקה של אוויר חם ליד פני השטח.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;לחות יחסית נמוכה בכל עומק הענן.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;היפוך טמפרטורה חזק ברמת 500 hPa.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L3-Q03 - סכנות חזית משב</text></name>
+    <questiontext format="html">
+      <text>&lt;p&gt;מהי סכנה תעופה עיקרית הקשורה ל&lt;strong&gt;חזית משב&lt;/strong&gt; המתפשטת לקראת סופת רעמים?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;רציונל:&lt;/strong&gt; חזית משב היא הקצה המוביל של ירידה בהסעה. זה גורם לתזוזות רוח פתאומיות ולשינויים מהירים במהירות הרוח, מה שעלול לגרום לגזירה משמעותית של רוח ברמה נמוכה במהלך ההמראה או הנחיתה.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;שינויי רוח פתאומיים וגזירה חמורה של רוח ברמה נמוכה.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;הקרדה חמורה בגובה רב.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;ירידה מהירה בלחץ ובטמפרטורה של פני השטח.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;היווצרות ערפל קרינה נרחב.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L3-Q04 - מדד היציבות (CAPE)</text></name>
+    <questiontext format="html">
+      <text>&lt;p&gt;מה מצביע בדרך כלל על ערך &lt;strong&gt;CAPE&lt;/strong&gt; (אנרגיה פנויה זמינה) גבוה לחזאי תעופה?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; CAPE הוא מדד לאנרגיה הציפה המצטברת הזמינה לחבילת אוויר עולה. ערכים גבוהים מצביעים על פוטנציאל גדול לעליפות אינטנסיביות והסעה חמורה אם קיים טריגר.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;פוטנציאל גבוה לעליפות אינטנסיביות ופיתוח הסעה חמור.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;אטמוספירה יציבה מאוד שבה היווצרות עננים אינה סבירה.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;שמנגנון הרמה (כמו חזית) פעיל כעת.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;שהאטמוספירה רוויה מפני השטח ועד הטרופופוזה.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+</quiz>

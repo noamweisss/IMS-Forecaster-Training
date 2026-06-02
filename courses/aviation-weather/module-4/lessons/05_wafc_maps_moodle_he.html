@@ -1,0 +1,172 @@
+<style>
+/*
+ * IMS Course Factory — Lesson Design System
+ *
+ * All rules are scoped to `.ims-lesson` so the styles can be injected into
+ * a host page (Moodle, in particular) without leaking onto the host's chrome
+ * and without the host's theme overriding lesson typography.
+ *
+ * Standalone lesson HTML wraps the entire body in <div class="ims-lesson">.
+ * Moodle body-fragment HTML does the same. The single rule below keeps the
+ * standalone preview's <body> background consistent without leaking into
+ * Moodle pages.
+ */
+
+.ims-lesson {
+  --bg: #ffffff;
+  --surface: #f6f5f0;
+  --border: #e2dfd6;
+  --text: #1a1917;
+  --muted: #6b6a65;
+  --accent: #185fa5;
+  --accent-light: #e6f1fb;
+  --note-bg: #e1f5ee;
+  --note-border: #0F6E56;
+  --warn-bg: #faeeda;
+  --warn-border: #BA7517;
+  --key-bg: #EEEDFE;
+  --key-border: #534AB7;
+  --danger-bg: #fcebeb;
+  --danger-border: #A32D2D;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .ims-lesson {
+    --bg: #1a1917;
+    --surface: #242320;
+    --border: #3a3835;
+    --text: #e8e6df;
+    --muted: #9a9890;
+    --accent-light: #042c53;
+    --note-bg: #04342c;
+    --warn-bg: #412402;
+    --key-bg: #26215c;
+  }
+}
+
+.ims-lesson h1 { font-size: 1.8rem; font-weight: 600; margin-bottom: 0.2rem; line-height: 1.2; color: var(--text); }
+.ims-lesson h2 { font-size: 1.25rem; font-weight: 600; margin-top: 2.5rem; padding-bottom: 0.4rem;
+  border-bottom: 1.5px solid var(--border); color: var(--text); }
+.ims-lesson h3 { font-size: 1.05rem; font-weight: 600; margin-top: 1.75rem; color: var(--text); }
+.ims-lesson p { margin: 0.7rem 0; max-width: 72ch; }
+.ims-lesson figure { margin: 2rem 0; }
+.ims-lesson figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 0.6rem;
+  font-style: italic; text-align: center; }
+.ims-lesson svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+.ims-lesson img { max-width: 100%; height: auto; }
+.ims-lesson table { border-collapse: collapse; width: 100%; margin: 1.5rem 0; font-size: 0.9rem; }
+.ims-lesson th { background: var(--accent); color: #fff; padding: 0.55rem 0.9rem; text-align: left; }
+.ims-lesson td { padding: 0.5rem 0.9rem; border-bottom: 1px solid var(--border); }
+.ims-lesson tr:nth-child(even) td { background: var(--surface); }
+.ims-lesson .callout { border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+.ims-lesson .callout-note    { background: var(--note-bg);   border-left: 4px solid var(--note-border); }
+.ims-lesson .callout-warning { background: var(--warn-bg);   border-left: 4px solid var(--warn-border); }
+.ims-lesson .callout-key     { background: var(--key-bg);    border-left: 4px solid var(--key-border); }
+.ims-lesson .callout-danger  { background: var(--danger-bg); border-left: 4px solid var(--danger-border); }
+.ims-lesson .callout-label { font-weight: 700; font-size: 0.78rem; text-transform: uppercase;
+  letter-spacing: 0.06em; margin-bottom: 0.35rem; }
+.ims-lesson .objectives { background: var(--surface); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+.ims-lesson .objectives ul { margin: 0.5rem 0 0; padding-left: 1.4rem; }
+.ims-lesson .lesson-summary { background: var(--accent-light); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 2.5rem 0 1rem; }
+.ims-lesson .lesson-summary h3 { margin-top: 0; color: var(--accent); font-size: 1rem; }
+.ims-lesson .image-needed { border: 2px dashed var(--border); border-radius: 8px;
+  padding: 1.5rem; margin: 1.5rem 0; text-align: center;
+  color: var(--muted); font-size: 0.9rem; background: var(--surface); }
+.ims-lesson .meta { color: var(--muted); font-size: 0.88rem; margin-bottom: 1.75rem; }
+.ims-lesson .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.5rem; }
+</style>
+<div class="ims-lesson">
+<p class="breadcrumb">מודול 4 / שיעור 5</p>
+<h1>מפות WAFC וטבלאות תחזיות גלובליות</h1>
+<div class="objectives">
+<strong>בסוף שיעור זה תוכל:</strong>
+<ul>
+<li>הבחנה בין תרשימי SIGWX ברמה גבוהה (SWH) ורמה בינונית (SWM).</li>
+<li>פענוח פרמטרים מטאורולוגיים תעופה סטנדרטיים (זרמי סילון, CAT, CBs) במפות WAFC.</li>
+<li>הבדיל בין כיסוי קומולונימבוס מבודד, מזדמן ותכוף כפי שהוגדר על ידי ICAO.</li>
+</ul>
+</div>
+<h2>מערכת חיזוי האזור העולמי (WAFS)</h2>
+<p>מערכת החיזוי העולמית (WAFS) היא תוכנית עולמית שפותחה על ידי ICAO וה-WMO כדי לספק הדרכה מטאורולוגית איכותית ועקבית לטיסות בינלאומיות. הוא מופעל על ידי שני מרכזי חיזוי אזורי עולמיים (WAFCs): <strong>WAFC לונדון</strong> ו <strong>WAFC וושינגטון</strong>.</p>
+<p>WAFCs משדרים רוח, טמפרטורה, לחות ותחזיות מזג אוויר משמעותי (SIGWX) עולמיות בשני פורמטים: מסורתיים <strong>תרשימי PNG</strong> לצפייה ישירה, ו <strong>פורמט BUFR</strong>, המאפשרת למשתמשי קצה ליצור תרשימים מותאמים אישית, מקומיים באמצעות תוכנת הדמיה.</p>
+<h2>תרשימים של SWH לעומת SWM</h2>
+<p>תרשימי SIGWX מחולקים לשתי רמות תפעוליות:</p>
+<ul>
+<li><strong>SIGWX ברמה גבוהה (SWH):</strong> תקף לרמות טיסה 250 עד 630. זהו א <strong>מערך נתונים גלובלי</strong>.</li>
+<li><strong>SIGWX ברמה בינונית (SWM):</strong> תקף לרמות טיסה 100 עד 450. שלא כמו SWH, SWM כן <strong>לא גלובלי</strong>. הוא מונפק עבור אזורים אזוריים ספציפיים (למשל, EUR, MEA, NAT). תרשימי SWM כוללים פרטים עדינים יותר לגבי קרח בענן ומערבולת שאינם קיימים בתרשימים ברמה גבוהה.</li>
+</ul>
+<div class="callout callout-warning">
+<div class="callout-label">חפיפה בתרשים</div>
+  מכיוון ש-SWH מתחיל ב-FL250 ו-SWM עולה ל-FL450, יש חפיפה מכוונת. טייסים שטסים ברצועה האמצעית הזו חייבים לעיין בטבלה המתעדת בצורה הטובה ביותר את מפגעי מזג האוויר הספציפיים (כמו דובדבן בענן ב-SWM) הרלוונטית למסלול שלהם.
+</div>
+<h2>פענוח התרשימים</h2>
+<p>גם תרשימים SWH ו-SWM משתמשים בסימולוגיה סטנדרטית של ICAO כדי לתאר סכנות תעופה קריטיות. אתה חייב להיות מסוגל לפענח במהירות את התכונות האלה:</p>
+<ul>
+<li><strong>Jetstreams:</strong> מתואר כאשר מהירות הרוח הליבה היא ≥ 80 קשר. מציין מיקום, מהירות ליבה וגובה.</li>
+<li><strong>מערבול אוויר נקי (CAT):</strong> מתואר בקו מקווקו המקיף את השטח. מסומן עם עוצמה (בינונית, חמורה) ורמות הטיסה המושפעות.</li>
+<li><strong>גובה הטרופופוזה:</strong> מסומן על ידי תיבות המציגות את רמת הטיסה של הטרופופוזה, כולל "שיא טרופ" ו"שפל טרופ" מקומי.</li>
+</ul>
+<figure>
+<svg role="img" viewbox="0 0 680 280" xmlns="http://www.w3.org/2000/svg">
+<title>סמלי תרשים WAFC</title>
+<desc>קטע מדמה של תרשים WAFC SIGWX הממחיש זרם סילון ואזור CAT.</desc>
+<!-- Background grid -->
+<rect fill="#f6f5f0" height="280" width="680" x="0" y="0"></rect>
+<line stroke="#e2dfd6" stroke-width="2" x1="0" x2="680" y1="140" y2="140"></line>
+<line stroke="#e2dfd6" stroke-width="2" x1="340" x2="340" y1="0" y2="280"></line>
+<!-- Jetstream Line -->
+<path d="M 50 200 Q 200 180 300 100 T 600 50" fill="none" stroke="#185FA5" stroke-width="4"></path>
+<polygon fill="#185FA5" points="600,50 580,40 585,50 580,60"></polygon>
+<!-- Wind Barbs -->
+<line stroke="#185FA5" stroke-width="2" x1="260" x2="280" y1="120" y2="90"></line>
+<polygon fill="#185FA5" points="280,90 290,95 285,100"></polygon> <!-- Pennant for 50 -->
+<line stroke="#185FA5" stroke-width="2" x1="270" x2="285" y1="105" y2="110"></line> <!-- 10 -->
+<line stroke="#185FA5" stroke-width="2" x1="265" x2="280" y1="112" y2="117"></line> <!-- 10 -->
+<!-- Jet Core Label -->
+<rect fill="#ffffff" height="25" stroke="#185FA5" stroke-width="1" width="80" x="230" y="55"></rect>
+<text fill="#1A1917" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="270" y="73">FL360</text>
+<text fill="#185FA5" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" x="270" y="45">120 קראט</text>
+<!-- CAT Area -->
+<path d="M 400 180 Q 480 120 580 160 Q 640 220 540 260 Q 450 240 400 180" fill="none" stroke="#A32D2D" stroke-dasharray="8 6" stroke-width="3"></path>
+<text fill="#A32D2D" font-family="sans-serif" font-size="14" font-weight="bold" x="490" y="210">MOD CAT</text>
+<text fill="#1A1917" font-family="sans-serif" font-size="12" x="490" y="230">FL380 / FL280</text>
+<!-- Annotations -->
+<text fill="#185FA5" font-family="sans-serif" font-size="14" font-weight="bold" x="70" y="230">Jetstream</text>
+<text fill="#6B6A65" font-family="sans-serif" font-size="12" x="70" y="250">ליבה ב-FL360, 120 קשר.</text>
+<text fill="#A32D2D" font-family="sans-serif" font-size="14" font-weight="bold" x="560" y="140">אזור CAT</text>
+</svg>
+<figcaption>דוגמה לסמליות של WAFC המציגה ליבת זרם סילון של 120 קשר ב-FL360 ואזור סמוך של מערבולת אוויר צלולה בינונית בין FL280 ל-FL380.</figcaption>
+</figure>
+<h2>הגדרות כיסוי קומולונימבוס (CB).</h2>
+<p>בעת חיזוי סופות רעמים (CBs) על תרשים SIGWX, ICAO מחייב טרמינולוגיה ספציפית לתאר את הכיסוי המרחבי של תאי הסערה בתוך האזור המושפע. קווים מסולסלים מציינים את גבול אזור ההסעה.</p>
+<div class="callout callout-key">
+<div class="callout-label">טרמינולוגיה של כיסוי</div>
+<ul>
+<li><strong>ISOL (מבודד):</strong> CBs בודדים עם כיסוי מרחבי מקסימלי של <strong>פחות מ-50%</strong> של אזור התחזית.</li>
+<li><strong>OCNL (מדי פעם):</strong> CBs מופרדים היטב עם כיסוי מרחבי של <strong>50% עד 75%</strong> של אזור התחזית.</li>
+<li><strong>FRQ (תדירות):</strong> CBs עם מעט או ללא הפרדה, כיסוי <strong>יותר מ-75%</strong> של אזור התחזית.</li>
+<li><strong>EMBD (מוטבע):</strong> CBs המוסתרים בתוך שכבות ענן אחרות ואינם ניתנים לזיהוי חזותי על ידי טייסים.</li>
+</ul>
+</div>
+<p>מונחים אלה מכתיבים כיצד מטוס יכול לנווט את המפגע. א <em>ISOL</em> אוֹ <em>OCNL</em> האזור מצביע על כך שטייס המצויד במכ"ם מזג אוויר מוטס יכול לבחור את דרכם בבטחה בין הסופות. א <em>FRQ</em> האזור מרמז על קיר מוצק של סופות רעמים שיש להימנע לחלוטין.</p>
+<div class="lesson-summary">
+<h3>טייק אווי מפתח</h3>
+<ul>
+<li>WAFCs מפיצים תחזיות מזג אוויר באיכות גבוהה ברחבי העולם כדי לתמוך בתעופה בינלאומית.</li>
+<li>תרשימי SWH (רמה גבוהה) הם גלובליים ומכסים את FL250 עד FL630. תרשימי SWM (רמה בינונית) הם אזוריים, מכסים FL100 עד FL450 וכוללים פרטים נוספים על ציפוי בענן.</li>
+<li>זרמי סילון מתווים כאשר רוח הליבה היא 80 קשר או יותר.</li>
+<li>כיסוי CB מוגדר בקפדנות: ISOL (&lt;50%), OCNL (50-75%) ו-FRQ (&gt;75%).</li>
+</ul>
+</div>
+</div>

@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='utf-8'?>
+<quiz>
+
+  <question type="multichoice">
+    <name>
+      <text>L5-Q01 - חפיפת גובה תרשים</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;טיסה מתוכננת לשייט ב-FL360 מעל אירופה. השולח בוחן את תרשימי WAFC SIGWX. באילו תרשימים עליהם להתייעץ?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; התרשים ברמה גבוהה (SWH) מכסה את FL250 עד FL630, בעוד שהתרשים ברמה בינונית (SWM) מכסה את FL100 עד FL450. גובה שיוט של FL360 נופל ישירות לאזור החפיפה. שולחים וטייסים צריכים להתייעץ בשני התרשימים, שכן ה-SWM עשוי להכיל פרטים עדינים יותר (כמו דובדבן בענן) הרלוונטיים לאותו גובה שה-SWH משמיט.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;גם תרשימים SWH וגם תרשימים SWM, מכיוון ש-FL360 נופל לאזור החפיפה שבו שני התרשימים מספקים מידע תקף ומשלים.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;רק תרשים SWH, מכיוון שהוא מערך הנתונים הגלובלי העיקרי לכל תעבורת סילון בגובה רב.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;רק תרשים SWM, מכיוון שהוא מספק פרטים עדינים יותר המותאמים במיוחד לנתיבים אזוריים באירופה.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;אף אחד מהתרשים; בגובה זה, עליהם להסתמך אך ורק על ה-TAFs עבור שדות התעופה היוצאים והיעד.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L5-Q02 - פירוש Jetstreams</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;תרשים SIGWX של WAFC מציג קו אחיד עם דוקרני רוח המציינים מהירות רוח של 120 קשר ותיבת טקסט שכותרתה "FL340". מה מייצגת הסמליות הספציפית הזו?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; קו מוצק עם דוקרני רוח ותוויות מפלס טיסה בתרשים SIGWX מציין את הציר של זרם סילון. זרמי סילון מתווים רק כאשר מהירות הרוח הליבה היא 80 קשר או יותר. התווית "FL340" מציינת את הגובה של ליבת מהירות הרוח המרבית.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;הליבה של זרם סילון הממוקם ב-FL340 עם מהירות רוח מקסימלית של 120 קשר.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;אזור של מערבולת אוויר צלולה חמורה (CAT) המשתרע מפני השטח עד FL340.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;המסלול החזוי של מערכת חזיתית בקו הרוחב הנעה במהירות של 120 קשר.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;הגבול העליון של הטרופופוזה באזור הספציפי הזה.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L5-Q03 - הגדרות כיסוי ICAO CB</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;תרשים SIGWX מציג אזור מסולסל שכותרתו "OCNL CB". טייס שואל את חזאי התדרוך מה זה אומר על יכולתו לנווט באזור באמצעות מכ"ם מזג אוויר מוטס.&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; לפי הגדרות ICAO, מזדמן (OCNL) פירושו ענני קומולונימבוס מופרדים היטב המכסים בין 50% ל-75% משטח התחזית. מכיוון שהם מופרדים היטב, מטוס המצויד במכ"ם מזג אוויר יכול בדרך כלל לסטות סביב תאים בודדים בבטחה. "FRQ" (תכוף, &amp;gt;75%) ירמז על הפרדה מועטה עד ללא הפרדה, מה שמחייב להימנע לחלוטין מהאזור.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;משמעות הדבר היא שסופות רעמים מופרדות היטב המכסות 50-75% מהשטח, מה שמרמז שהטייס עשוי להשתמש במכ"ם כדי לבחור נתיב בטוח בין התאים.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;זה אומר שהסערות יתרחשו רק לזמן קצר, כך שהטייס יכול לטוס בבטחה ישר דרך האזור מבלי לסטות.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;זה אומר שהכיסוי הוא פחות מ-50% (מבודד), המייצג סיכון נמוך מאוד לניווט בדרך.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;זה אומר שהסערות משובצות בשכבות ענן אחרות ואינן נראות לרדאר, מה שמחייב להימנע לחלוטין מהאזור.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L5-Q04 - תכונות SWM לעומת SWH</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;חזאי מכין תדרוך מקומי באמצעות נתוני WAFC BUFR ורוצה להדגיש אזורים של קרח מתון בענן לטיסה אזורית ב-FL220. איזה מערך נתונים של WAFC מכיל את הפרמטר הספציפי הזה?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; מערך הנתונים של הרמה הבינונית (SWM) כולל פרטים מטאורולוגיים עדינים יותר - ספציפית סוגי עננים, כמויות ודובדבן בענן - אשר מושמטים מהתרשימי הרמה הגבוהה (SWH) כדי למנוע עומס בתמונה הגלובלית בגובה רב.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;מערך הנתונים של הרמה הבינונית (SWM), הכולל פרטים עדינים יותר כמו דובדבן בענן שאינו קיים בתרשימים ברמה גבוהה.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;מערך הנתונים ברמה גבוהה (SWH), מכיוון שהקרח מבני משמעותי מתרחש רק בגבהים גבוהים ליד הטרופופוזה.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;שני מערכי הנתונים כוללים מידע על קרח בענן, מכיוון שהוא מהווה סכנה קריטית לכל רמות הטיסה.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;אף מערך נתונים אינו כולל ציפוי; תחזיות קרח זמינות רק באמצעות AIRMETs מקומיים.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+</quiz>

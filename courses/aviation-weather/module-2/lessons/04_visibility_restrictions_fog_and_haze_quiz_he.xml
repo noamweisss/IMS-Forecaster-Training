@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='utf-8'?>
+<quiz>
+  <question type="multichoice">
+    <name><text>L4-Q01 — מצב רוח ערפל קרינה</text></name>
+    <questiontext format="html">
+      <text>&lt;p&gt;מהי מהירות הרוח ה"אידיאלית" להיווצרות והעמקה של שכבת &lt;strong&gt;ערפל קרינה&lt;/strong&gt;?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; ערפל קרינה דורש רוחות קלות (בדרך כלל 3-5 קשר). רוחות שקטות גורמות להיווצרות טל בלבד, בעוד רוחות מעל 10 קשר גורמות יותר מדי ערבוב עם אוויר יבש יותר למעלה, או מונעת ערפל או מרימה אותו לתוך Stratus.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;3 עד 5 קשר&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;בדיוק 0 קשרים (רגוע)&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;15 עד 20 קשר&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;יותר מ-25 קשר&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L4-Q02 - סחף מול ערפל קרינה</text></name>
+    <questiontext format="html">
+      <text>&lt;p&gt;איזה מאפיין מבדיל בין &lt;strong&gt;ערפל סחף&lt;/strong&gt; לבין ערפל קרינה?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; ערפל סחף נוצר כאשר אוויר חם ולח נע על פני משטח קר יותר. לעתים קרובות הוא מתמשך יותר מערפל קרינה, יכול להיווצר במהלך היום, ומתרחש בדרך כלל עם רוחות חזקות יותר (5-15 קשר).&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;זה יכול להימשך בשעות האור ועם מהירויות רוח גבוהות יותר.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;זה נוצר רק בסביבות מדבריות.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;זה דורש שמיים בהירים לחלוטין כדי ליצור.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;זה תמיד רדוד מ-50 רגל.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L4-Q03 - השפעת גרעינים היגרוסקופיים</text></name>
+    <questiontext format="html">
+      <text>&lt;p&gt;באיזה סף לחות יחסית (RH) &lt;strong&gt;גרעינים היגרוסקופיים&lt;/strong&gt; מתחילים בדרך כלל להתנפח, מה שגורם לירידה חדה בראות (Wet Haze)?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;רציונל:&lt;/strong&gt; חלקיקים היגרוסקופיים מתחילים לספוג מים ולגדול בגודלם (דליקה) ברגע שהלחות היחסית עולה על כ-70-80%, מה שמוביל למעבר מאובך יבש לאובך רטוב.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;כ-70% עד 80%&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;בדיוק 100%&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;מתחת ל-30%&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;רק כאשר RH מגיע ל-99%&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L4-Q04 — מקורות אבק בישראל</text></name>
+    <questiontext format="html">
+      <text>&lt;p&gt;איזה מצב סינופטי צפוי להביא אבק מינרלי נרחב והפחתת ראות משמעותית למרכז ישראל ממזרח/דרום מזרח?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;רציונל:&lt;/strong&gt; שוקת ים סוף פעילה (RST) עם רוחות מזרחיות או דרום מזרחיות היא המנגנון העיקרי להובלת אבק מינרלי מהמדבר הירדני וסעודיה לישראל.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;שוקת ים סוף פעילה עם זרימה מזרחית.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;שיא סיבירי עמוק באמצע הקיץ.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;שוקת פרסית חלשה עם רוחות מערביות קבועות.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;רכס נייח מעל הים התיכון.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+</quiz>

@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='utf-8'?>
+<quiz>
+
+  <question type="multichoice">
+    <name>
+      <text>L1-Q01 - החלת שינוי הסביבה (VC).</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;תא של ממטרים עזים עוקב במכ"ם במרחק של 7 קילומטרים קבועים בדיוק ממרכז מתחם המסלול. זה לא צפוי להתקרב. כיצד יש לציין זאת ב-TAF?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;רציונל:&lt;/strong&gt; משנה הסביבה (VC) מציין באופן ספציפי את האזור בצורת סופגניה בין 5 ל-10 SM ממרכז מתחם המסלול. זה מאפשר לך להתריע לטייסים על מזג אוויר קרוב (כמו VCSH) מבלי לכפות את תקנות הדלק החלופי המגבילות ש- TEMPO SH או SHRA (מה שמרמז שמזג האוויר נמצא באזור מסוף 5 SM) יפעילו.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;השתמש במשנה VCSH, מכיוון שמזג האוויר הוא בין 5 ל-10 SM ממרכז המסלול.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;השתמש בקבוצת TEMPO SHRA, מכיוון שהמקלחות עלולות להשפיע באופן זמני על נתיב הגישה.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;השתמש ב-SHRA ללא שינוי, שכן 7 SM נחשב לחלק מאזור הטרמינל.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;השמט את זה לחלוטין, מכיוון שמזג אוויר מחוץ ל-5 SM אינו רלוונטי ל-TAF.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L1-Q02 - הערכת תמציתי TAF</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;חזאי כותב TAF בן 8 שורות המפרט תנודות קלות בכיסוי ענן VFR (למשל, FEW עד SCT) ושינויי רוח קלים על פני תקופה של 24 שעות. מהי הבעיה התפעולית העיקרית בתחזית זו?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; TAF ידידותי למשתמש צריך להיות תמציתי (באופן אידיאלי לא יותר מ-5 שורות). חיזוי יתר של תנודות קלות ולא קריטיות בתנאי VFR מבלבל את התחזית ומטשטש את מגמות מזג האוויר הקריטיות שהטייסים והשולחים צריכים למעשה כדי לקבל דלק והחלטות חלופיות.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;היא מפרה את העיקרון של תמציתית וחיזוי יתר של מזג אוויר תעופה לא קריטי, ומפחיתה את הידידותיות למשתמש.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;הוא אינו כולל מספיק קבוצות PROB30 כדי לכסות את כל הווריאציות האפשריות בכיסוי ענן VFR.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;היא לא מצליחה להשתמש בקבוצת BECMG למעבר בין משמרות הרוח הקטנות.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;היא אינה מתרחבת לתקופת התחזית החובה של 30 שעות הנדרשת עבור כל הטיסות הבינלאומיות.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L1-Q03 - חיזוי לפי קטגוריית טיסה</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;שדה תעופה חווה תנודה מתמשכת בין תקרות של 4000 רגל ל-5000 רגל, כשהראות נשארת מעל 10 SM. החזאי מציג מספר קבוצות TEMPO כדי ללכוד את שינויי התקרה הללו. למה זה נוהג לקוי?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;נימוק:&lt;/strong&gt; גם תקרות של 4000 רגל וגם תקרות של 5000 רגל נכנסות היטב לקטגוריית טיסות VFR (תקרה &gt; 3000 רגל). TAFs צריכים להתמקד בשינויים שחוצים ספי תעופה קריטיים (למשל, ירידה מ-VFR ל-MVFR או IFR) ולא בתנודות קלות בתוך קטגוריית טיסה אחת ובטוחה.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;שני התנאים נופלים בקטגוריית טיסות VFR; TAFs צריכים להתמקד בשינויים שחוצים ספי תעופה קריטיים במקום תנודות VFR קלות.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;קבוצות TEMPO אסורות בהחלט עבור תקרות מעל 3000 רגל; ניתן להשתמש רק ב-BECMG.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;השינויים היו צריכים להיות חזויים באמצעות קבוצת PROB30 יחידה כדי לציין אי ודאות.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;תקרות מעל 3000 רגל אינן נחשבות ל"מזג אוויר" ויש להשמיט אותן לחלוטין מה-TAF.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L1-Q04 - הקצאת מאמץ לתקופה הקריטית</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;TAF 24 שעות מונפקת ב-12Z. החזאי מעריך אירוע ערפל הצפוי בשעה 14Z ועוד אחד צפוי בשעה 04Z למחרת. כיצד עליהם להקצות את מאמץ החיזוי שלהם לפי פילוסופיית הכתיבה של TAF?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;רציונל:&lt;/strong&gt; 6 השעות הראשונות של התחזית (במקרה זה, 12Z עד 18Z) הן התקופה המבצעית הקריטית לטיסות נכנסות, הדורשות דיוק ופרטים גבוהים ביותר. התקופה המאוחרת (04Z) היא תקופת המגמה, שבה יש לבסס מגמות רחבות ללא קבוצות שינוי מוגזמות או גידור.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;התמקד בפרטים ובדיוק מירביים בפתרון אירוע 14Z, שכן 6 השעות הראשונות הן קריטיות לפעילות טיסה אקטיבית, תוך ביסוס מגמה רחבה יותר לאירוע 04Z.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;פרט את שני האירועים בדיוק שווה תוך שימוש במספר קבוצות TEMPO ו-PROB כדי להבטיח כיסוי מלא לאורך 24 השעות.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;השתמש בקבוצת PROB40 לאירוע 14Z כי הוא בקרוב, ובקבוצת BECMG מוחלטת לאירוע 04Z כי יש יותר זמן להתכונן.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;השאר את שני האירועים מחוץ ל-TAF הראשוני והסתמך על תיקונים בהתראה קצרה כשהם מתרחשים.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+</quiz>

@@ -1,0 +1,188 @@
+<style>
+/*
+ * IMS Course Factory — Lesson Design System
+ *
+ * All rules are scoped to `.ims-lesson` so the styles can be injected into
+ * a host page (Moodle, in particular) without leaking onto the host's chrome
+ * and without the host's theme overriding lesson typography.
+ *
+ * Standalone lesson HTML wraps the entire body in <div class="ims-lesson">.
+ * Moodle body-fragment HTML does the same. The single rule below keeps the
+ * standalone preview's <body> background consistent without leaking into
+ * Moodle pages.
+ */
+
+.ims-lesson {
+  --bg: #ffffff;
+  --surface: #f6f5f0;
+  --border: #e2dfd6;
+  --text: #1a1917;
+  --muted: #6b6a65;
+  --accent: #185fa5;
+  --accent-light: #e6f1fb;
+  --note-bg: #e1f5ee;
+  --note-border: #0F6E56;
+  --warn-bg: #faeeda;
+  --warn-border: #BA7517;
+  --key-bg: #EEEDFE;
+  --key-border: #534AB7;
+  --danger-bg: #fcebeb;
+  --danger-border: #A32D2D;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .ims-lesson {
+    --bg: #1a1917;
+    --surface: #242320;
+    --border: #3a3835;
+    --text: #e8e6df;
+    --muted: #9a9890;
+    --accent-light: #042c53;
+    --note-bg: #04342c;
+    --warn-bg: #412402;
+    --key-bg: #26215c;
+  }
+}
+
+.ims-lesson h1 { font-size: 1.8rem; font-weight: 600; margin-bottom: 0.2rem; line-height: 1.2; color: var(--text); }
+.ims-lesson h2 { font-size: 1.25rem; font-weight: 600; margin-top: 2.5rem; padding-bottom: 0.4rem;
+  border-bottom: 1.5px solid var(--border); color: var(--text); }
+.ims-lesson h3 { font-size: 1.05rem; font-weight: 600; margin-top: 1.75rem; color: var(--text); }
+.ims-lesson p { margin: 0.7rem 0; max-width: 72ch; }
+.ims-lesson figure { margin: 2rem 0; }
+.ims-lesson figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 0.6rem;
+  font-style: italic; text-align: center; }
+.ims-lesson svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+.ims-lesson img { max-width: 100%; height: auto; }
+.ims-lesson table { border-collapse: collapse; width: 100%; margin: 1.5rem 0; font-size: 0.9rem; }
+.ims-lesson th { background: var(--accent); color: #fff; padding: 0.55rem 0.9rem; text-align: left; }
+.ims-lesson td { padding: 0.5rem 0.9rem; border-bottom: 1px solid var(--border); }
+.ims-lesson tr:nth-child(even) td { background: var(--surface); }
+.ims-lesson .callout { border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+.ims-lesson .callout-note    { background: var(--note-bg);   border-left: 4px solid var(--note-border); }
+.ims-lesson .callout-warning { background: var(--warn-bg);   border-left: 4px solid var(--warn-border); }
+.ims-lesson .callout-key     { background: var(--key-bg);    border-left: 4px solid var(--key-border); }
+.ims-lesson .callout-danger  { background: var(--danger-bg); border-left: 4px solid var(--danger-border); }
+.ims-lesson .callout-label { font-weight: 700; font-size: 0.78rem; text-transform: uppercase;
+  letter-spacing: 0.06em; margin-bottom: 0.35rem; }
+.ims-lesson .objectives { background: var(--surface); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+.ims-lesson .objectives ul { margin: 0.5rem 0 0; padding-left: 1.4rem; }
+.ims-lesson .lesson-summary { background: var(--accent-light); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 2.5rem 0 1rem; }
+.ims-lesson .lesson-summary h3 { margin-top: 0; color: var(--accent); font-size: 1rem; }
+.ims-lesson .image-needed { border: 2px dashed var(--border); border-radius: 8px;
+  padding: 1.5rem; margin: 1.5rem 0; text-align: center;
+  color: var(--muted); font-size: 0.9rem; background: var(--surface); }
+.ims-lesson .meta { color: var(--muted); font-size: 0.88rem; margin-bottom: 1.75rem; }
+.ims-lesson .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.5rem; }
+</style>
+<div class="ims-lesson">
+<p class="breadcrumb">מודול 4 / שיעור 2</p>
+<h1>תיקוני TAF תפעולי ומקרי קצה</h1>
+<div class="objectives">
+<strong>בסוף שיעור זה תוכל:</strong>
+<ul>
+<li>ניסוח קבוצות שינוי מתאימות (BECMG, TEMPO) להידרדרות או שיפור התנאים.</li>
+<li>להעריך TAFs קיימים עבור עמימות ולהציע תיקונים תפעוליים.</li>
+<li>הבחנה בין תרחישים הדורשים TEMPO לעומת קבוצות PROB.</li>
+</ul>
+</div>
+<h2>שליטה בקבוצות שינוי</h2>
+<p>הליבה של TAF אפקטיבי טמונה בהעברת שינויים מדויקים לאורך זמן. כאשר התנאים חורגים מהתחזית הרווחת, החזאים משתמשים בקבוצות שינוי: <strong>BECMG</strong>, <strong>טֶמפּוֹ</strong>, ו <strong>PROB</strong>. יישום נכון של אלה מבטיח שה-TAF לא רק מדויק אלא גם ניתן לפעולה.</p>
+<table>
+<thead>
+<tr>
+<th>שנה קבוצה</th>
+<th>מגבלות הגדרה ומשך</th>
+<th>השלכה תפעולית</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>BECMG</strong><br/>(הִתהַוּוּת)</td>
+<td>מעבר קבוע או איטי למצב שורר חדש. תקופת המעבר בדרך כלל לא תעלה על שעתיים (מקסימום 4 שעות מוחלטות).</td>
+<td>קובע משמרת קבועה בקטגוריית טיסות הבסיס.</td>
+</tr>
+<tr>
+<td><strong>טֶמפּוֹ</strong><br/>(זְמַנִי)</td>
+<td>התנודות צפויות להימשך <em>פחות משעה</em> בכל מקרה, ובכיסוי מצטבר <em>פחות ממחצית</em> של פרק הזמן המוגדר.</td>
+<td>הטייסים חייבים לשאת דלק חלופי כדי לכסות את תנאי TEMPO. מאוד מגביל.</td>
+</tr>
+<tr>
+<td><strong>PROB30 / 40</strong><br/>(הִסתַבְּרוּת)</td>
+<td>סבירות של 30% או 40% להתרחשות. משמש בעיקר לאירועים בעלי ביטחון נמוך בתקופת המגמה (מעבר ל-6 שעות).</td>
+<td>מתנהג כ-heads-up. מטופלים לעתים קרובות באופן דומה ל-TEMPO על ידי השולחים, אז השתמש בו במשורה.</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-warning">
+<div class="callout-label">הימנע משימוש לרעה ב- TEMPO</div>
+  אל תחבר קבוצות TEMPO גב אל גב לאורך תקופות ארוכות. אם מצב לסירוגין ישלוט בתקופה (כלומר, הזמן המצטבר גדול ממחצית התקופה), הוא כבר לא זמני - זה המצב השורר. השתמש ב-BECMG במקום זאת.
+</div>
+<h2>תרשים זרימה של החלטות</h2>
+<p>כאשר אתה צופה שינוי במזג האוויר, עקוב אחר ההיגיון הזה כדי לבחור את קבוצת השינויים הנכונה. זה מסיר אי בהירות ושומר על התחזית במסגרת הנחיות ICAO.</p>
+<figure>
+<svg role="img" viewbox="0 0 680 340" xmlns="http://www.w3.org/2000/svg">
+<title>שנה תרשים זרימה של החלטות קבוצתיות</title>
+<desc>תרשים זרימה המנחה את הבחירה בין FM, BECMG ו- TEMPO על סמך משך וזמן מצטבר.</desc>
+<!-- Start Node -->
+<rect fill="#185FA5" height="40" rx="6" width="200" x="240" y="20"></rect>
+<text fill="#ffffff" font-family="sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="340" y="45">האם השינוי יימשך ≥ שעה?</text>
+<!-- Lines from Start -->
+<line stroke="#1A1917" stroke-width="2" x1="340" x2="340" y1="60" y2="100"></line>
+<line stroke="#1A1917" stroke-width="2" x1="240" x2="160" y1="40" y2="40"></line>
+<line stroke="#1A1917" stroke-width="2" x1="160" x2="160" y1="40" y2="100"></line>
+<text fill="#1A1917" font-family="sans-serif" font-size="14" font-weight="bold" x="350" y="85">כֵּן</text>
+<text fill="#1A1917" font-family="sans-serif" font-size="14" font-weight="bold" x="170" y="85">לֹא</text>
+<!-- YES Path: Persists -->
+<rect fill="#0F6E56" height="40" rx="6" width="200" x="240" y="100"></rect>
+<text fill="#ffffff" font-family="sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="340" y="125">האם מדובר במעבר מהיר או איטי?</text>
+<line stroke="#1A1917" stroke-width="2" x1="290" x2="290" y1="140" y2="180"></line>
+<text fill="#1A1917" font-family="sans-serif" font-size="14" font-weight="bold" x="295" y="165">מָהִיר</text>
+<rect fill="#EEEDFE" height="40" rx="4" stroke="#534AB7" stroke-width="2" width="80" x="250" y="180"></rect>
+<text fill="#1A1917" font-family="sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="290" y="205">FM (מאת)</text>
+<line stroke="#1A1917" stroke-width="2" x1="390" x2="390" y1="140" y2="180"></line>
+<text fill="#1A1917" font-family="sans-serif" font-size="14" font-weight="bold" x="395" y="165">לְהַאֵט</text>
+<rect fill="#EEEDFE" height="40" rx="4" stroke="#534AB7" stroke-width="2" width="80" x="350" y="180"></rect>
+<text fill="#1A1917" font-family="sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="390" y="205">BECMG</text>
+<!-- NO Path: Fluctuations -->
+<rect fill="#BA7517" height="40" rx="6" width="200" x="60" y="100"></rect>
+<text fill="#ffffff" font-family="sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="160" y="125">לצבור ≥ 50% מהמחזור?</text>
+<line stroke="#1A1917" stroke-width="2" x1="100" x2="100" y1="140" y2="260"></line>
+<text fill="#1A1917" font-family="sans-serif" font-size="14" font-weight="bold" x="105" y="165">לֹא</text>
+<rect fill="#EEEDFE" height="40" rx="4" stroke="#534AB7" stroke-width="2" width="80" x="60" y="260"></rect>
+<text fill="#1A1917" font-family="sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="100" y="285">טֶמפּוֹ</text>
+<line stroke="#1A1917" stroke-width="2" x1="220" x2="220" y1="140" y2="260"></line>
+<text fill="#1A1917" font-family="sans-serif" font-size="14" font-weight="bold" x="225" y="165">כֵּן</text>
+<rect fill="#EEEDFE" height="40" rx="4" stroke="#534AB7" stroke-width="2" width="80" x="180" y="260"></rect>
+<text fill="#1A1917" font-family="sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="220" y="285">BECMG</text>
+</svg>
+<figcaption>היגיון לבחירת קבוצת השינוי המתאימה כדי להבטיח בהירות תפעולית.</figcaption>
+</figure>
+<h2>קריטריוני תיקון</h2>
+<p>אל תחכה לשחרור ה-TAF המתוכנן הבא אם התחזית הנוכחית נכשלת. תיקונים יזומים הם סימן היכר של חזאי מקצועי. עליך לתקן את ה-TAF כאשר תנאים נצפים או צפויים חוצים ספים תפעוליים קריטיים שאינם מובאים בחשבון בתחזית הנוכחית.</p>
+<div class="callout callout-key">
+<div class="callout-label">מתי לתקן</div>
+  תקן מיד כאשר התנאים מצליבים בין VFR, MVFR, IFR או LIFR. בנוסף, תקן אם התזמון של מעבר חזיתי גדול או הופעת סופת רעמים משתנה ביותר משעתיים.
+</div>
+<p>טעות נפוצה היא השארת TAF "כמות שהוא" מכיוון ש-PROB30 חזוי בעבר לא התממש, או בגלל שמצב TEMPO נמשך זמן רב מדי. אם התנאים הופכים למזג האוויר השורר, עליך לתקן את קו הבסיס החדש.</p>
+<div class="lesson-summary">
+<h3>טייק אווי מפתח</h3>
+<ul>
+<li>לְהִשְׁתַמֵשׁ <strong>BECMG</strong> למעברים קבועים ו <strong>טֶמפּוֹ</strong> לתנודות קצרות הנמשכות פחות משעה לכל מופע.</li>
+<li>אם מזג האוויר לסירוגין מצטבר ליותר ממחצית מתקופת התחזית, יש לקדם אותו למצב השורר באמצעות BECMG.</li>
+<li>תקן באופן יזום. אם התחזית חוצה סף קטגוריית טיסה באופן בלתי צפוי, פרסם תיקון מיד במקום לחכות למחזור הבא.</li>
+<li>אין להשתמש בקבוצות PROB ב-6 השעות הראשונות של ה-TAF. ערכו תחזית סופית לתקופה הקריטית.</li>
+</ul>
+</div>
+</div>
