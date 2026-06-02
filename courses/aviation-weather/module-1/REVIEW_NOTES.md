@@ -49,3 +49,35 @@ not the standard numeric values below. Please confirm:
    the daily NAT tracks are built around the jet. (The "great circle = shortest
    distance" point itself *is* from the source deck.)
    *Used in:* "Choosing the Route" section + quiz Q05.
+
+---
+
+## Lesson 3 — Airspace Structure & Classification
+
+The source deck (`03. Airspace.pdf`, 11 slides, Hebrew) is the thinnest in the
+module. It **does** give: the control hierarchy (FIR/ACC, TMA/Approach, CTR,
+ATC), CVFR and IFR/ATS routes with vertical separation, transition level / QNH /
+QNE, and the **semicircular cruising-level allocation** (the FL250/270/290…
+ladder on slide 10). Those are source-grounded. The ICAO A–G classification and
+the VMC numbers below were added from standard references — please confirm:
+
+1. **ICAO airspace classes A–G** as a system (the deck names the structural
+   units but not the A–G letter classification or its service/clearance rules).
+   *Used in:* "Airspace Classification (A to G)" section, Figure 3, the class
+   table, and quiz Q01/Q03/Q05.
+
+2. **VMC minima values** — at/above FL100: 8 km visibility, 1,500 m horizontal /
+   1,000 ft vertical from cloud; below FL100 (above 3,000 ft AMSL / 1,000 ft
+   AGL): 5 km, 1,500 m / 1,000 ft; at/below 3,000 ft AMSL or 1,000 ft AGL:
+   Class A–E 5 km + 1,500 m / 1,000 ft, Class F/G 5 km + "clear of cloud, in
+   sight of the surface." (These follow ICAO Annex 2 Table 3-1.)
+   *Used in:* the VMC-minima table, the "same weather, two verdicts" worked
+   example, takeaways, and quiz Q06.
+
+3. **Class-specific cruise/approach MET dependencies** (e.g., Class A → CAT and
+   upper winds; CTR → wind-shear warnings) — operational framing, standard but
+   not in the deck.
+   *Used in:* "Why Airspace Structure Drives Your Products" + quiz Q05.
+
+Note: the **semicircular rule** itself (odd eastbound / even westbound) IS from
+the source deck (slide 10); only the surrounding VMC/class material is flagged.

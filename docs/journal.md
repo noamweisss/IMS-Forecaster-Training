@@ -84,6 +84,32 @@ needs to check the handful of borrowed numbers, not re-read the whole lesson.
 
 ---
 
+## 2026-06-02 — V2 meteorology expansion: Module 1 Lesson 3 (airspace)
+
+**Context.** Lesson 3 had the thinnest source in the module (11 Hebrew slides)
+and was the weakest lesson. The owner approved pulling standard airspace material
+from references, flagged for Evgeny.
+
+**Finding.** The deck does carry real structure — the FIR/ACC → TMA → CTR
+hierarchy, CVFR/IFR routes, transition level, and the semicircular cruising-level
+ladder — but it never presents the ICAO A–G class system or VMC minima, which a
+forecaster needs to judge VFR legality. So the expansion is part source
+(hierarchy, semicircular rule) and part flagged reference (A–G, VMC numbers).
+
+**Decision.** Built a "Control Hierarchy" section with a nested FIR/TMA/CTR
+diagram and a "Why Airspace Structure Drives Your Products" section with the
+semicircular-level diagram, both from the deck. Added an ICAO VMC-minima table
+and a Class D vs Class G worked example showing identical weather producing
+opposite legality. All flagged items recorded in REVIEW_NOTES.md, with an
+explicit note that the semicircular rule is source-grounded.
+
+**Why.** The lesson's whole point for a forecaster is that the *same* ceiling and
+visibility forecast means different things in different airspace. A concrete
+"two verdicts" example makes that operational rather than abstract, and the
+product-to-airspace mapping turns a structural taxonomy into a working checklist.
+
+---
+
 ## 2026-06-02 — V2: rewrote the broken Figure 1 (Module 1, Lesson 2)
 
 **Context.** The owner flagged Figure 1 in Module 1 Lesson 2 (route planning

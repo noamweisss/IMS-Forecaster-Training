@@ -40,6 +40,16 @@ from the source decks (internet additions, where needed, flagged for SME review)
   quiz 4 → 7. Created `module-1/REVIEW_NOTES.md` listing the six standard-value
   additions for Evgeny to confirm.
 
+- **Module 1, Lesson 3 (Airspace Structure).** The thinnest source (11 Hebrew
+  slides). Expanded the source's control hierarchy (FIR/ACC, TMA, CTR, CVFR/IFR
+  routes) and semicircular cruising-level rule into full sections, and added the
+  ICAO A–G classification depth and VMC minima from standard references (flagged
+  in `module-1/REVIEW_NOTES.md`). New: a nested-hierarchy diagram and a
+  semicircular-level diagram (now Figures 1–4); a VMC-minima table; a
+  "same weather, two verdicts" Class D vs G worked example; and a
+  "Why Airspace Structure Drives Your Products" section mapping each product to
+  its airspace. Objectives 3 → 6, takeaways 4 → 6, quiz 4 → 7.
+
 ### Course V2 iteration (roadmap.md)
 
 - **Rewrote the broken Figure 1** in Module 1 Lesson 2 (route planning & fuel).
