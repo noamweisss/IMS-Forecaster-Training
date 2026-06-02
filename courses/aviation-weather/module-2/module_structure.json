@@ -1,0 +1,114 @@
+{
+  "module_title": "In-flight Aviation Hazards",
+  "module_description": "Comprehensive analysis of atmospheric hazards affecting flight safety, including turbulence, icing, convection, and visibility restrictions. Focuses on operational forecasting and risk assessment for aviation meteorologists.",
+  "estimated_duration_minutes": 100,
+  "competencies": [
+    "Identify and forecast various types of atmospheric turbulence and wind shear",
+    "Assess aircraft icing risk based on thermodynamic profiles and cloud characteristics",
+    "Predict convective development and associated severe weather hazards",
+    "Evaluate factors contributing to fog and haze for visibility forecasting",
+    "Determine cloud base and top altitudes for flight planning and terminal operations"
+  ],
+  "lessons": [
+    {
+      "lesson_id": "L1",
+      "lesson_title": "Atmospheric Turbulence and Wind Shear",
+      "learning_objectives": [
+        "Distinguish between mechanical, convective, and clear-air turbulence (CAT)",
+        "Identify synoptic and mesoscale features associated with severe mountain waves",
+        "Explain the formation and hazards of wake vortices",
+        "Forecast low-level wind shear and microburst conditions during takeoff and landing"
+      ],
+      "source_files": ["05. Turbulence.pptx", "11. Wind Shear.pptx"],
+      "key_concepts": ["Mechanical Turbulence", "CAT", "Mountain Waves", "Wake Vortices", "Microburst", "LLWS"],
+      "visual_elements_needed": [
+        "Diagram of mountain wave structures including rotors and lenticular clouds",
+        "Cross-section of a jet stream showing regions of maximum shear and CAT",
+        "Illustration of wake vortex propagation and decay",
+        "Microburst life cycle diagram"
+      ],
+      "estimated_duration_minutes": 25
+    },
+    {
+      "lesson_id": "L2",
+      "lesson_title": "Aircraft Icing Hazards",
+      "learning_objectives": [
+        "Explain the physics of supercooled large droplets (SLD) in icing formation",
+        "Differentiate between rime, glaze, and mixed icing based on temperature and drop size",
+        "Analyze tephigrams to identify layers of critical icing potential",
+        "Interpret WAFS icing potential products for flight path safety assessment"
+      ],
+      "source_files": ["06. Icing.pptx"],
+      "key_concepts": ["Supercooled Liquid Water (SLW)", "Rime Ice", "Glaze Ice", "Tephigram Analysis", "WAFS Icing Products"],
+      "visual_elements_needed": [
+        "Diagram comparing ice accumulation profiles (Rime vs Glaze) on a wing",
+        "Annotated tephigram showing a 'critical layer' for icing",
+        "Freezing rain formation process in a warm frontal structure"
+      ],
+      "external_imagery_needed": [
+        "Photograph of severe icing on an aircraft leading edge or windshield"
+      ],
+      "estimated_duration_minutes": 20
+    },
+    {
+      "lesson_id": "L3",
+      "lesson_title": "Convective Hazards and CB Clouds",
+      "learning_objectives": [
+        "Identify the life cycle stages of a Cumulonimbus (CB) cell",
+        "Describe the internal dynamics of severe convective updrafts and downdrafts",
+        "Predict secondary hazards such as lightning, hail, and squall lines",
+        "Evaluate convective potential using stability indices"
+      ],
+      "source_files": ["07. CB Clouds.pptx"],
+      "key_concepts": ["Cumulonimbus Life Cycle", "Entrainment", "Gust Front", "Convective Inhibition (CIN)", "CAPE"],
+      "visual_elements_needed": [
+        "CB life cycle diagram (Developing, Mature, Dissipating)",
+        "Schematic of a multi-cell storm structure"
+      ],
+      "external_imagery_needed": [
+        "Satellite image of a Mesoscale Convective System (MCS)",
+        "Photograph of an anvil cloud (Cb capillatus incus)"
+      ],
+      "estimated_duration_minutes": 15
+    },
+    {
+      "lesson_id": "L4",
+      "lesson_title": "Visibility Restrictions: Fog and Haze",
+      "learning_objectives": [
+        "Classify types of fog (radiation, advection, upslope) by formation mechanism",
+        "Identify the critical meteorological factors for fog onset and dissipation",
+        "Assess the impact of aerosol concentration and humidity on haze development",
+        "Interpret RVR (Runway Visual Range) trends in low-visibility conditions"
+      ],
+      "source_files": ["08. Fog.pptx", "09. More on Fog Forecasting.docx", "10. Haze.pptx"],
+      "key_concepts": ["Radiation Fog", "Advection Fog", "Haze", "Hygroscopic Nuclei", "Dissipation Mechanisms"],
+      "visual_elements_needed": [
+        "Formation mechanism diagrams for radiation and advection fog",
+        "Graph showing visibility vs. relative humidity for different aerosol types"
+      ],
+      "estimated_duration_minutes": 25
+    },
+    {
+      "lesson_id": "L5",
+      "lesson_title": "Cloud Base and Top Forecasting",
+      "learning_objectives": [
+        "Estimate cloud base heights using temperature and dew point depressions",
+        "Determine cloud top altitudes from satellite imagery and sounding data",
+        "Forecast cloud coverage and layer thickness for aviation planning",
+        "Apply local topographical knowledge to sub-grid cloud formation"
+      ],
+      "source_files": ["12. Cloud Base and Top Forecasting.pptx"],
+      "key_concepts": ["Cloud Base Height (CBH)", "Cloud Top Temperature", "LCL/CCL", "Orographic Forcing"],
+      "visual_elements_needed": [
+        "Thermodynamic diagram showing LCL and cloud layer determination",
+        "Satellite IR vs. Visible comparison for cloud top identification"
+      ],
+      "estimated_duration_minutes": 15
+    }
+  ],
+  "module_quiz": {
+    "description": "Summative assessment covering in-flight hazards, icing, convection, and visibility forecasting.",
+    "question_count": 25,
+    "passing_score_percent": 80
+  }
+}

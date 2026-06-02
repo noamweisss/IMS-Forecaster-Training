@@ -1,0 +1,327 @@
+<style>
+/*
+ * IMS Course Factory — Lesson Design System
+ *
+ * All rules are scoped to `.ims-lesson` so the styles can be injected into
+ * a host page (Moodle, in particular) without leaking onto the host's chrome
+ * and without the host's theme overriding lesson typography.
+ *
+ * Standalone lesson HTML wraps the entire body in <div class="ims-lesson">.
+ * Moodle body-fragment HTML does the same. The single rule below keeps the
+ * standalone preview's <body> background consistent without leaking into
+ * Moodle pages.
+ */
+
+.ims-lesson {
+  --bg: #ffffff;
+  --surface: #f6f5f0;
+  --border: #e2dfd6;
+  --text: #1a1917;
+  --muted: #6b6a65;
+  --accent: #185fa5;
+  --accent-light: #e6f1fb;
+  --note-bg: #e1f5ee;
+  --note-border: #0F6E56;
+  --warn-bg: #faeeda;
+  --warn-border: #BA7517;
+  --key-bg: #EEEDFE;
+  --key-border: #534AB7;
+  --danger-bg: #fcebeb;
+  --danger-border: #A32D2D;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+.ims-lesson h1 { font-size: 1.8rem; font-weight: 600; margin-bottom: 0.2rem; line-height: 1.2; color: var(--text); }
+.ims-lesson h2 { font-size: 1.25rem; font-weight: 600; margin-top: 2.5rem; padding-bottom: 0.4rem;
+  border-bottom: 1.5px solid var(--border); color: var(--text); }
+.ims-lesson h3 { font-size: 1.05rem; font-weight: 600; margin-top: 1.75rem; color: var(--text); }
+.ims-lesson p { margin: 0.7rem 0; max-width: 72ch; }
+.ims-lesson figure { margin: 2rem 0; }
+.ims-lesson figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 0.6rem;
+  font-style: italic; text-align: center; }
+.ims-lesson svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+.ims-lesson img { max-width: 100%; height: auto; }
+.ims-lesson table { border-collapse: collapse; width: 100%; margin: 1.5rem 0; font-size: 0.9rem; }
+.ims-lesson th { background: var(--accent); color: #fff; padding: 0.55rem 0.9rem; text-align: left; }
+.ims-lesson td { padding: 0.5rem 0.9rem; border-bottom: 1px solid var(--border); }
+.ims-lesson tr:nth-child(even) td { background: var(--surface); }
+.ims-lesson .callout { border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+.ims-lesson .callout-note    { background: var(--note-bg);   border-left: 4px solid var(--note-border); }
+.ims-lesson .callout-warning { background: var(--warn-bg);   border-left: 4px solid var(--warn-border); }
+.ims-lesson .callout-key     { background: var(--key-bg);    border-left: 4px solid var(--key-border); }
+.ims-lesson .callout-danger  { background: var(--danger-bg); border-left: 4px solid var(--danger-border); }
+.ims-lesson .callout-label { font-weight: 700; font-size: 0.78rem; text-transform: uppercase;
+  letter-spacing: 0.06em; margin-bottom: 0.35rem; }
+.ims-lesson .objectives { background: var(--surface); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+.ims-lesson .objectives ul { margin: 0.5rem 0 0; padding-left: 1.4rem; }
+.ims-lesson .lesson-summary { background: var(--accent-light); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 2.5rem 0 1rem; }
+.ims-lesson .lesson-summary h3 { margin-top: 0; color: var(--accent); font-size: 1rem; }
+.ims-lesson .image-needed { border: 2px dashed var(--border); border-radius: 8px;
+  padding: 1.5rem; margin: 1.5rem 0; text-align: center;
+  color: var(--muted); font-size: 0.9rem; background: var(--surface); }
+.ims-lesson .meta { color: var(--muted); font-size: 0.88rem; margin-bottom: 1.75rem; }
+.ims-lesson .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.5rem; }
+</style>
+<div class="ims-lesson">
+<p class="breadcrumb">Module 3 / Lesson 1</p>
+<h1>The Aviation Warning Framework &amp; SIGMET Phenomena</h1>
+
+<div class="objectives">
+  <strong>By the end of this lesson you will be able to:</strong>
+  <ul>
+    <li>Place SIGMET, AIRMET, and aerodrome warnings within the ICAO Annex 3 service hierarchy (MWO vs AFO; FIR vs aerodrome).</li>
+    <li>List the SIGMET phenomena and the severity qualifier required to trigger each.</li>
+    <li>Distinguish the three SIGMET subtypes (WS, WV, WC) and the data-type designator that identifies each.</li>
+    <li>Decide whether a given observation or forecast triggers a SIGMET or stays below threshold.</li>
+  </ul>
+</div>
+
+<h2>Who issues what, where</h2>
+
+<p>ICAO Annex 3 splits the aviation meteorological service into two operational roles, each with its own products and its own area of responsibility. The Meteorological Watch Office (MWO) is responsible for hazards across a Flight Information Region (FIR) — anything en route. The Aerodrome Forecast Office (AFO) is responsible for the airport itself — its METARs, TAFs, and aerodrome warnings.</p>
+
+<p>SIGMET and AIRMET are the MWO's warning products. They describe FIR-wide hazards that affect aircraft in flight. AD WRNG and WS WRNG are the AFO's products; they describe hazards at a specific aerodrome that affect take-off, landing, parked aircraft, or surface operations. The same phenomenon (a thunderstorm crossing the FIR towards Ben Gurion, say) frequently needs both products — that coordination is the subject of Lesson 4.</p>
+
+<figure>
+  <svg viewBox="0 0 680 320" role="img" xmlns="http://www.w3.org/2000/svg">
+    <title>ICAO Annex 3 aviation forecast service hierarchy</title>
+    <desc>A three-tier hierarchy. World Area Forecast Centre at the top issues SIGWX charts and advisories for FL100 and above. The Meteorological Watch Office in the middle covers the Flight Information Region and issues SIGMET and AIRMET. The Aerodrome Forecast Office at the bottom covers a single airport and issues TAF, TREND, and AD/WS warnings.</desc>
+
+    <!-- Tier 1: WAFC -->
+    <rect x="220" y="20" width="240" height="60" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="2"/>
+    <text x="340" y="44" font-family="sans-serif" font-size="14" font-weight="600" fill="#1A1917" text-anchor="middle">World Area Forecast Centre (WAFC)</text>
+    <text x="340" y="64" font-family="sans-serif" font-size="12" fill="#6B6A65" text-anchor="middle">Global SIGWX &gt; FL100, wind/temp charts, advisories</text>
+
+    <!-- Tier 2: MWO -->
+    <rect x="60" y="130" width="280" height="80" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="2"/>
+    <text x="200" y="156" font-family="sans-serif" font-size="14" font-weight="600" fill="#1A1917" text-anchor="middle">Meteorological Watch Office (MWO)</text>
+    <text x="200" y="176" font-family="sans-serif" font-size="12" fill="#6B6A65" text-anchor="middle">Area of responsibility: the FIR</text>
+    <text x="200" y="196" font-family="sans-serif" font-size="13" font-weight="600" fill="#0F6E56" text-anchor="middle">SIGMET &middot; AIRMET &middot; (GAMET)</text>
+
+    <!-- Tier 2 right: AFO -->
+    <rect x="380" y="130" width="240" height="80" rx="8" fill="#FAEEDA" stroke="#BA7517" stroke-width="2"/>
+    <text x="500" y="156" font-family="sans-serif" font-size="14" font-weight="600" fill="#1A1917" text-anchor="middle">Aerodrome Forecast Office (AFO)</text>
+    <text x="500" y="176" font-family="sans-serif" font-size="12" fill="#6B6A65" text-anchor="middle">Area of responsibility: one airport</text>
+    <text x="500" y="196" font-family="sans-serif" font-size="13" font-weight="600" fill="#BA7517" text-anchor="middle">TAF &middot; TREND &middot; AD WRNG &middot; WS WRNG</text>
+
+    <!-- Tier 3: aircraft / consumers -->
+    <rect x="180" y="250" width="320" height="50" rx="8" fill="#F6F5F0" stroke="#E2DFD6" stroke-width="2"/>
+    <text x="340" y="272" font-family="sans-serif" font-size="13" font-weight="600" fill="#1A1917" text-anchor="middle">Consumers: airlines, ATS units, VOLMET / D-VOLMET</text>
+    <text x="340" y="290" font-family="sans-serif" font-size="12" fill="#6B6A65" text-anchor="middle">Flight planning + in-flight service</text>
+
+    <!-- Connectors -->
+    <line x1="340" y1="80" x2="200" y2="130" stroke="#1A1917" stroke-width="1.5"/>
+    <line x1="340" y1="80" x2="500" y2="130" stroke="#1A1917" stroke-width="1.5"/>
+    <line x1="200" y1="210" x2="300" y2="250" stroke="#1A1917" stroke-width="1.5"/>
+    <line x1="500" y1="210" x2="400" y2="250" stroke="#1A1917" stroke-width="1.5"/>
+  </svg>
+  <figcaption>Figure 1.1 &mdash; the three-tier ICAO Annex 3 service hierarchy. MWO products cover en-route hazards across the FIR; AFO products cover a single aerodrome.</figcaption>
+</figure>
+
+<h2>What a SIGMET is — and is not</h2>
+
+<p>Annex 3 defines a SIGMET as information concerning the occurrence or expected occurrence of specified en-route weather phenomena which may affect the safety of aircraft operations. Three things matter in that sentence.</p>
+
+<p>First, "en-route" — SIGMET is for aircraft in flight, not on the ground. Second, "specified phenomena" — only the phenomena on the Annex 3 list trigger a SIGMET; anything else, no matter how unusual, does not. Third, "occurrence or expected occurrence" — you can issue a SIGMET ahead of the phenomenon, but only with a defined lead time (covered in Lesson 2).</p>
+
+<div class="callout callout-note">
+  <div class="callout-label">Definition</div>
+  A SIGMET is issued by the MWO for hazards across the FIR. It is not a forecast in the sense a TAF is — it is a <em>warning of significant weather</em> against a fixed list of phenomena. If the phenomenon is not on the list, or is below the severity threshold, no SIGMET is issued, regardless of how operationally inconvenient the weather is.
+</div>
+
+<h2>The three subtypes of SIGMET</h2>
+
+<p>SIGMETs are categorised by the phenomenon they cover. The data-type designator in the WMO header (the <code>T1T2</code> letters — covered in detail in Lesson 2) tells the recipient which type to expect.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Subtype</th>
+      <th><code>T1T2</code></th>
+      <th>Phenomena</th>
+      <th>Typical max validity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>WS &mdash; Standard SIGMET</td>
+      <td><code>WS</code></td>
+      <td>Thunderstorms with qualifier, severe turbulence, severe icing, severe mountain waves, heavy duststorm/sandstorm, radioactive cloud</td>
+      <td>4 hours</td>
+    </tr>
+    <tr>
+      <td>WV &mdash; Volcanic Ash SIGMET</td>
+      <td><code>WV</code></td>
+      <td>Volcanic ash cloud</td>
+      <td>6 hours (longer because ash plumes evolve more slowly than convection)</td>
+    </tr>
+    <tr>
+      <td>WC &mdash; Tropical Cyclone SIGMET</td>
+      <td><code>WC</code></td>
+      <td>Tropical cyclone (not required in the EUR region)</td>
+      <td>6 hours</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The IMS, as part of the EUR region, is not required to issue WC SIGMETs — tropical cyclones in our area of responsibility are essentially never. WV is rare but operationally critical when it occurs: ash detection comes from VAACs (Volcanic Ash Advisory Centres) and triggers a WV SIGMET that follows a different message structure than WS, covered in Module 4 alongside the source deck.</p>
+
+<h2>Phenomena and the severity gate</h2>
+
+<p>The critical rule for a working forecaster: <strong>each phenomenon on the SIGMET list has a severity qualifier that must be met</strong>. A thunderstorm by itself does not trigger a SIGMET. A turbulence report does not trigger a SIGMET. The phenomenon must reach the qualified intensity.</p>
+
+<figure>
+  <svg viewBox="0 0 680 380" role="img" xmlns="http://www.w3.org/2000/svg">
+    <title>SIGMET phenomena and the severity qualifier required to trigger each</title>
+    <desc>Eight horizontal bars, one per phenomenon. The left half of each bar shows the phenomenon name; the right half lists the qualifier required to make it SIGMET-worthy. Phenomena that need an intensity qualifier are coloured amber; phenomena that need no qualifier are coloured blue.</desc>
+
+    <!-- Title -->
+    <text x="340" y="20" font-family="sans-serif" font-size="13" font-weight="600" fill="#1A1917" text-anchor="middle">SIGMET trigger gate &mdash; phenomenon plus qualifier</text>
+
+    <!-- Bars: y0=40, gap=40 -->
+    <!-- Thunderstorms -->
+    <rect x="40" y="40"  width="180" height="30" fill="#F6F5F0" stroke="#1A1917"/>
+    <text x="50" y="60"  font-family="sans-serif" font-size="13" fill="#1A1917">Thunderstorm (TS)</text>
+    <rect x="220" y="40" width="400" height="30" fill="#FAEEDA" stroke="#BA7517"/>
+    <text x="230" y="60" font-family="sans-serif" font-size="12" fill="#1A1917">must be OBSC, EMBD, FRQ, or SQL &mdash; with or without hail</text>
+
+    <!-- Severe turbulence -->
+    <rect x="40" y="80"  width="180" height="30" fill="#F6F5F0" stroke="#1A1917"/>
+    <text x="50" y="100" font-family="sans-serif" font-size="13" fill="#1A1917">Turbulence (TURB)</text>
+    <rect x="220" y="80" width="400" height="30" fill="#FAEEDA" stroke="#BA7517"/>
+    <text x="230" y="100" font-family="sans-serif" font-size="12" fill="#1A1917">SEV only (low-level w/ strong sfc winds, rotor, or near jet stream)</text>
+
+    <!-- Severe icing -->
+    <rect x="40" y="120" width="180" height="30" fill="#F6F5F0" stroke="#1A1917"/>
+    <text x="50" y="140" font-family="sans-serif" font-size="13" fill="#1A1917">Icing (ICE)</text>
+    <rect x="220" y="120" width="400" height="30" fill="#FAEEDA" stroke="#BA7517"/>
+    <text x="230" y="140" font-family="sans-serif" font-size="12" fill="#1A1917">SEV only &mdash; with or without freezing rain (FZRA)</text>
+
+    <!-- Severe mountain wave -->
+    <rect x="40" y="160" width="180" height="30" fill="#F6F5F0" stroke="#1A1917"/>
+    <text x="50" y="180" font-family="sans-serif" font-size="13" fill="#1A1917">Mountain wave (MTW)</text>
+    <rect x="220" y="160" width="400" height="30" fill="#FAEEDA" stroke="#BA7517"/>
+    <text x="230" y="180" font-family="sans-serif" font-size="12" fill="#1A1917">SEV only &mdash; downdraft &ge; 3.0 m/s or SEV turbulence</text>
+
+    <!-- Heavy DS/SS -->
+    <rect x="40" y="200" width="180" height="30" fill="#F6F5F0" stroke="#1A1917"/>
+    <text x="50" y="220" font-family="sans-serif" font-size="13" fill="#1A1917">Duststorm / Sandstorm</text>
+    <rect x="220" y="200" width="400" height="30" fill="#FAEEDA" stroke="#BA7517"/>
+    <text x="230" y="220" font-family="sans-serif" font-size="12" fill="#1A1917">HVY only</text>
+
+    <!-- Volcanic ash (no qualifier) -->
+    <rect x="40" y="240" width="180" height="30" fill="#F6F5F0" stroke="#1A1917"/>
+    <text x="50" y="260" font-family="sans-serif" font-size="13" fill="#1A1917">Volcanic ash (VA)</text>
+    <rect x="220" y="240" width="400" height="30" fill="#E6F1FB" stroke="#185FA5"/>
+    <text x="230" y="260" font-family="sans-serif" font-size="12" fill="#1A1917">any detection &mdash; no severity threshold</text>
+
+    <!-- Tropical cyclone (no qualifier; not in EUR) -->
+    <rect x="40" y="280" width="180" height="30" fill="#F6F5F0" stroke="#1A1917"/>
+    <text x="50" y="300" font-family="sans-serif" font-size="13" fill="#1A1917">Tropical cyclone (TC)</text>
+    <rect x="220" y="280" width="400" height="30" fill="#E6F1FB" stroke="#185FA5"/>
+    <text x="230" y="300" font-family="sans-serif" font-size="12" fill="#1A1917">any &mdash; not required in EUR region</text>
+
+    <!-- Radioactive cloud -->
+    <rect x="40" y="320" width="180" height="30" fill="#F6F5F0" stroke="#1A1917"/>
+    <text x="50" y="340" font-family="sans-serif" font-size="13" fill="#1A1917">Radioactive cloud</text>
+    <rect x="220" y="320" width="400" height="30" fill="#E6F1FB" stroke="#185FA5"/>
+    <text x="230" y="340" font-family="sans-serif" font-size="12" fill="#1A1917">RDOACT CLD &mdash; any detection</text>
+
+    <!-- Legend -->
+    <rect x="40" y="365" width="14" height="10" fill="#FAEEDA" stroke="#BA7517"/>
+    <text x="60" y="374" font-family="sans-serif" font-size="11" fill="#6B6A65">qualifier required</text>
+    <rect x="200" y="365" width="14" height="10" fill="#E6F1FB" stroke="#185FA5"/>
+    <text x="220" y="374" font-family="sans-serif" font-size="11" fill="#6B6A65">any detection triggers</text>
+  </svg>
+  <figcaption>Figure 1.2 &mdash; SIGMET phenomena. Amber rows require a severity qualifier; blue rows trigger on any detection.</figcaption>
+</figure>
+
+<h3>The TS qualifiers — OBSC, EMBD, FRQ, SQL</h3>
+
+<p>Thunderstorms get four distinct qualifiers because the operational risk depends on whether the pilot can see the cell, not on the cell's reflectivity alone.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Qualifier</th>
+      <th>Meaning</th>
+      <th>Why it matters</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>OBSC</strong> &mdash; Obscured</td>
+      <td>The TS is obscured by haze, smoke, or darkness and cannot be readily seen.</td>
+      <td>Pilots cannot visually deviate around what they cannot see; radar is the only tool.</td>
+    </tr>
+    <tr>
+      <td><strong>EMBD</strong> &mdash; Embedded</td>
+      <td>The TS is embedded within a wider cloud layer and cannot be readily recognised.</td>
+      <td>The surrounding stratiform cloud hides the cell from both eye and (sometimes) onboard radar.</td>
+    </tr>
+    <tr>
+      <td><strong>FRQ</strong> &mdash; Frequent</td>
+      <td>Spatial coverage of TS &gt; 75% of the affected area, with little or no separation between cells.</td>
+      <td>No safe corridor through &mdash; deviation is not an option.</td>
+    </tr>
+    <tr>
+      <td><strong>SQL</strong> &mdash; Squall line</td>
+      <td>TS along a line with little or no space between individual clouds.</td>
+      <td>Line orientation forces the deviation to be perpendicular and long.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>An isolated cumulonimbus that the pilot can see and route around does not get a SIGMET — it gets reported in the SIGWX product but not warned against. The qualifier is what flags the case where pilot deviation alone is insufficient.</p>
+
+<h3>The severity qualifiers — SEV and HVY</h3>
+
+<p>For turbulence, icing, and mountain waves, SIGMET requires <strong>SEV</strong> — moderate intensity is reserved for AIRMET (next lesson). The Annex 3 wording for severe turbulence is specific: low-level turbulence associated with strong surface winds, rotor streaming, or turbulence (in cloud or clear-air CAT) near a jet stream. For severe mountain wave, the criterion is an accompanying downdraft of 3.0 m/s or more, or accompanying severe turbulence.</p>
+
+<p>For duststorm and sandstorm, SIGMET requires <strong>HVY</strong> &mdash; heavy. Lower intensities fall through to AIRMET or are simply reported in the routine forecast.</p>
+
+<div class="callout callout-warning">
+  <div class="callout-label">Common error</div>
+  Forecasters new to the role often issue a SIGMET for "moderate icing in cloud" or "isolated thunderstorms over the central mountains". Neither meets the threshold. Moderate icing is an AIRMET phenomenon. Isolated thunderstorms (ISOL, no OBSC/EMBD/FRQ/SQL qualifier) are an AIRMET phenomenon. The SIGMET threshold is deliberately high &mdash; an over-issued SIGMET dilutes the credibility of every other SIGMET in the bulletin stream.
+</div>
+
+<h2>Reading the threshold backwards</h2>
+
+<p>The fastest way to apply this in operations is to ask the question in reverse. Instead of "is this a SIGMET phenomenon?", ask "what about this observation crosses the SIGMET threshold?". If the answer is "nothing — there's no qualifier", the answer to the original question is no.</p>
+
+<div class="callout callout-key">
+  <div class="callout-label">Operational heuristic</div>
+  Three quick filters in this order:
+  <ol>
+    <li><strong>Phenomenon on the list?</strong> If no &rarr; no SIGMET.</li>
+    <li><strong>Qualifier or threshold met?</strong> (OBSC/EMBD/FRQ/SQL for TS; SEV for TURB/ICE/MTW; HVY for DS/SS; any for VA/RDOACT.) If no &rarr; consider AIRMET, not SIGMET.</li>
+    <li><strong>En-route, not just aerodrome?</strong> If only the aerodrome is affected &rarr; AD WRNG, not SIGMET.</li>
+  </ol>
+</div>
+
+<h2>Where this lesson ends and the next begins</h2>
+
+<p>You can now decide <em>whether</em> a SIGMET is warranted. Lesson 2 covers <em>how to write it</em>: the WMO header, the first-line fields (FIR indicator, sequential number, validity period), the meteorological part, geographic coordinates, and the cancellation message. Lesson 3 then drops the threshold to AIRMET, which captures the moderate-intensity and low-altitude cases that fall through this lesson's filter.</p>
+
+<div class="lesson-summary">
+  <h3>Key Takeaways</h3>
+  <ul>
+    <li>SIGMET and AIRMET are MWO products covering the FIR; AD WRNG and WS WRNG are AFO products covering a single aerodrome. The same phenomenon often needs both.</li>
+    <li>A SIGMET is a warning, not a forecast. It is issued only for the specified phenomena, and only when the phenomenon meets its severity qualifier.</li>
+    <li>Three SIGMET subtypes: WS (general), WV (volcanic ash), WC (tropical cyclone &mdash; not required in EUR). The <code>T1T2</code> letters in the WMO header identify which is which.</li>
+    <li>Thunderstorms must be OBSC, EMBD, FRQ, or SQL to trigger a SIGMET. Plain "isolated TS" is an AIRMET phenomenon, not a SIGMET phenomenon.</li>
+    <li>TURB, ICE, and MTW require SEV; DS and SS require HVY. Moderate intensities fall to AIRMET. VA and RDOACT CLD have no severity threshold &mdash; any detection triggers.</li>
+    <li>If the answer to "phenomenon, qualifier, en-route" is anything other than yes/yes/yes, the product is not a SIGMET.</li>
+  </ul>
+</div>
+</div>

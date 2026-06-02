@@ -19,7 +19,10 @@ Source files (PPTX/PDF/DOCX)
         │  module_combined_moodle.html, module_quiz_all_questions.xml,
         │  IMAGES_TO_SOURCE.md, README.md
         ▼
-Moodle (2 clicks per module)
+[4] build_mbz.py (optional)   ← Python only, no LLM
+        │  <course>.mbz  (one importable Moodle backup)
+        ▼
+Moodle (1 restore for the whole course, or 2 clicks per module)
 ```
 
 ## Pipeline Phases
@@ -64,6 +67,17 @@ the user's IDE using whatever model is bundled with their subscription
 
 Idempotent. Re-running picks up newly-sourced images or regenerated
 lessons without manual intervention.
+
+### Phase 4 — Backup packaging (Python, optional)
+
+`pipeline/build_mbz.py` turns the finalized content into a single importable
+Moodle backup (`.mbz`). Restoring it stands up the whole course in one upload:
+one section per module, laid out as overview Page → (lesson Page → lesson Quiz)
+per lesson, with questions, base64-embedded images, and feedback wired in. Pure
+stdlib Python, targeting Moodle 5.2+ (`backup_version 2026042000`). The schema is
+documented in [mbz_format.md](mbz_format.md); the `pipeline/mbz/` package splits
+the work into ids, quiz conversion, activity builders, structural assembly, and
+packaging. The copy-paste outputs from Phase 3 remain as a fallback.
 
 ## Design Constraints Driving the Architecture
 

@@ -1,0 +1,722 @@
+<?xml version='1.0' encoding='utf-8'?>
+<quiz><question type="multichoice">
+    <name>
+      <text>L1-Q01 — Applying the Vicinity (VC) modifier</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        &lt;p&gt;A cell of heavy showers is tracked on radar exactly 7 statute miles from the center of the runway complex. It is not expected to move closer. How should this be indicated in the TAF?&lt;/p&gt;
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>
+        &lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; The Vicinity (VC) modifier specifically denotes the donut-shaped area between 5 and 10 SM from the center of the runway complex. It allows you to alert pilots to nearby weather (like VCSH) without imposing the restrictive alternate-fuel regulations that a TEMPO SH or SHRA (which implies the weather is within the 5 SM terminal area) would trigger.&lt;/p&gt;
+      </text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Use the VCSH modifier, as the weather is between 5 and 10 SM from the runway center.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Use a TEMPO SHRA group, as the showers may temporarily impact the approach path.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Use SHRA without a modifier, as 7 SM is considered part of the terminal area.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Omit it entirely, as weather outside of 5 SM is not relevant to the TAF.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L1-Q02 — Evaluating TAF conciseness</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        &lt;p&gt;A forecaster writes an 8-line TAF detailing minor fluctuations in VFR cloud cover (e.g., FEW to SCT) and slight wind shifts over a 24-hour period. What is the primary operational issue with this forecast?&lt;/p&gt;
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>
+        &lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; A user-friendly TAF should be concise (ideally no more than 5 lines). Over-forecasting minor, non-critical fluctuations in VFR conditions clutters the forecast and obscures the critical weather trends that pilots and dispatchers actually need to make fuel and alternate decisions.&lt;/p&gt;
+      </text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;It violates the principle of being concise and over-forecasts non-critical aviation weather, reducing its user-friendliness.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;It does not include enough PROB30 groups to cover all possible variations in the VFR cloud cover.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;It fails to use the BECMG group to transition between the minor wind shifts.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;It does not extend to the mandatory 30-hour forecast period required for all international flights.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L1-Q03 — Forecasting by flight category</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        &lt;p&gt;An airport is experiencing an ongoing fluctuation between 4000 ft and 5000 ft ceilings, with visibility remaining above 10 SM. The forecaster introduces multiple TEMPO groups to capture these ceiling changes. Why is this a poor practice?&lt;/p&gt;
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>
+        &lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; Both 4000 ft and 5000 ft ceilings fall well within the VFR flight category (ceiling &amp;gt; 3000 ft). TAFs should focus on changes that cross critical aviation thresholds (e.g., dropping from VFR to MVFR or IFR) rather than minor fluctuations within a single, safe flight category.&lt;/p&gt;
+      </text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Both conditions fall within the VFR flight category; TAFs should focus on changes crossing critical aviation thresholds rather than minor VFR fluctuations.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;TEMPO groups are strictly prohibited for ceilings above 3000 ft; only BECMG can be used.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;The changes should have been forecasted using a single PROB30 group to indicate uncertainty.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Ceilings above 3000 ft are not considered "weather" and must be omitted from the TAF entirely.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L1-Q04 — Allocating effort to the critical period</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        &lt;p&gt;A 24-hour TAF is being issued at 12Z. The forecaster is evaluating a fog event expected at 14Z and another expected at 04Z the next day. How should they allocate their forecasting effort according to TAF writing philosophy?&lt;/p&gt;
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>
+        &lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; The first 6 hours of the forecast (in this case, 12Z to 18Z) are the critical operational period for incoming flights, requiring the highest precision and detail. The later period (04Z) is the trend period, where broad trends should be established without excessive change groups or hedging.&lt;/p&gt;
+      </text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Focus maximum detail and precision on resolving the 14Z event, as the first 6 hours are critical for active flight operations, while establishing a broader trend for the 04Z event.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Detail both events with equal precision using multiple TEMPO and PROB groups to ensure full coverage over the 24 hours.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Use a PROB40 group for the 14Z event because it is soon, and a definitive BECMG group for the 04Z event because there is more time to prepare.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Leave both events out of the initial TAF and rely on short-notice amendments as they occur.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+<question type="multichoice">
+    <name>
+      <text>L2-Q01 — Choosing between TEMPO and BECMG</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        &lt;p&gt;A forecaster expects intermittent heavy snow showers between 10Z and 16Z. Each individual shower will last about 45 minutes, but they will occur frequently enough that it will be snowing for roughly 4 hours total during that 6-hour window. Which change group should be used?&lt;/p&gt;
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>
+        &lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; Even though each individual shower lasts less than an hour, the aggregate duration of the snow (4 hours) exceeds half of the 6-hour forecast period. When a condition dominates more than half the period, it is no longer temporary—it must be forecasted as the prevailing condition using a BECMG (or FM) group.&lt;/p&gt;
+      </text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;BECMG to establish the snow as the prevailing condition, because the aggregate duration exceeds half the period.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;TEMPO, because each individual shower lasts less than an hour.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;PROB40, because showers are intermittent and therefore not guaranteed to hit the exact center of the terminal.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;FM, because the onset of each shower is a rapid change in conditions.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L2-Q02 — Recognizing amendment criteria</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        &lt;p&gt;A TAF issued at 17Z forecasts VFR conditions with a 4000 ft ceiling through 00Z. At 19Z, an unforecasted boundary pushes through, dropping the ceiling to 800 ft (IFR). Upstream observations show this IFR ceiling will persist for several hours. What is the appropriate operational action?&lt;/p&gt;
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>
+        &lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; The weather has crossed a critical aviation flight category threshold (dropping from VFR to IFR) and is expected to persist. Proactive forecasters must issue an immediate amendment to correct the TAF and ensure flight safety, rather than waiting for the next scheduled issuance.&lt;/p&gt;
+      </text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Issue an immediate amendment establishing IFR as the prevailing condition, as a critical flight category threshold has been crossed.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Wait until the next scheduled TAF release at 23Z to update the forecast, keeping the current cycle clean.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Issue a SPECI observation to alert pilots, but leave the TAF alone since the boundary was unforecasted.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Append a short-duration TEMPO group to the existing TAF to account for the surprise IFR condition.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L2-Q03 — Proper use of PROB groups</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        &lt;p&gt;A forecaster is writing the first 6 hours of a TAF. They have a 30% confidence that a thunderstorm will impact the terminal during this critical window. How should they format the forecast?&lt;/p&gt;
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>
+        &lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; The first 6 hours of a TAF are the most critical for immediate flight operations. Using a PROB group in this window is considered hedging. Forecasters must make a definitive decision: if the threat is significant enough, use a TEMPO group; if not, omit it entirely or use VCSH/VCTS to indicate nearby activity.&lt;/p&gt;
+      </text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Make a definitive forecast without using PROB groups; either include the thunderstorm as a TEMPO group if confident, or use VCTS to indicate nearby activity.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Use a PROB30 TSRA group to alert pilots to the low probability without overly restricting operations.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Use a PROB40 group, because thunderstorms are a severe hazard and warrant a higher stated probability.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Use a BECMG TSRA group, but strictly limit its validity to a 1-hour window.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L2-Q04 — Operational implications of TEMPO</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        &lt;p&gt;A TAF includes a TEMPO group from 08Z to 12Z forecasting visibility reduced to 1 SM in fog. What does this practically imply for a flight dispatcher planning an arrival at 10Z?&lt;/p&gt;
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>
+        &lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; Dispatchers and pilots must plan for the worst-case scenario legally presented in the TAF. A TEMPO group indicating sub-minimum conditions forces them to assume those conditions will occur during their arrival, requiring them to carry extra fuel to reach an alternate airport. This is why TEMPO should not be overused.&lt;/p&gt;
+      </text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;They must assume the 1 SM visibility will occur and must carry sufficient alternate fuel to divert if necessary.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;They can ignore the TEMPO group for fuel calculations as long as the prevailing visibility is forecasted to be VFR.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;They only need to calculate alternate fuel if the fog is upgraded to a BECMG group in a later amendment.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;They must delay their flight departure entirely until the TEMPO group expires at 12Z.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+<question type="multichoice">
+    <name>
+      <text>L3-Q01 — Interpreting the Cone of Uncertainty</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        &lt;p&gt;An airport is located 50 miles outside the 48-hour edge of an official tropical cyclone Cone of Uncertainty. An airline dispatcher decides to leave aircraft parked on the apron, assuming they are safe from hurricane-force winds. Why is this a dangerous assumption?&lt;/p&gt;
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>
+        &lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; The Cone of Uncertainty only represents the probable track of the storm's &lt;em&gt;center&lt;/em&gt; based on historical forecast errors. It does not represent the size of the storm. Hazardous impacts, including severe wind gusts and outer rainbands, frequently extend tens or hundreds of miles beyond the edges of the cone.&lt;/p&gt;
+      </text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;The cone only represents the probable track of the storm's center; hazardous impacts frequently extend well beyond the cone's boundaries.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;The cone is only considered accurate for the first 24 hours of the forecast, rendering the 48-hour edge meaningless.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;The cone represents the area where the storm will be in 5 days, so the 48-hour impacts are actually located much closer to the center.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;The cone only tracks the storm's eyewall and ignores the calm eye, meaning the worst winds are actually inside the cone.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L3-Q02 — Tropical cyclone formation conditions</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        &lt;p&gt;A cluster of intense thunderstorms moves over the Atlantic Ocean. The sea surface temperature is 28&amp;nbsp;&amp;deg;C, and there is deep atmospheric moisture present. However, an upper-level trough is imparting 40 knots of vertical wind shear over the region. How will this affect the system's development?&lt;/p&gt;
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>
+        &lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; While warm SSTs (&amp;gt; 26.5 &amp;deg;C) and moisture are necessary, low vertical wind shear is also a strict requirement for tropical cyclogenesis. Strong wind shear tilts the system, displacing the latent heat release away from the center and preventing the thunderstorms from stacking vertically into an organized cyclone.&lt;/p&gt;
+      </text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;The high vertical wind shear will tear the thunderstorms apart, preventing the system from organizing into a tropical cyclone.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;The high shear will enhance the storm's rotation and cause it to rapidly intensify into a hurricane.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;The system will successfully form a tropical cyclone, but the shear will cause it to lack a defined eye.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;The shear will push the storm in a different direction but will have no impact on its overall intensity.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L3-Q03 — Applying the Saffir-Simpson Scale</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        &lt;p&gt;A tropical cyclone is approaching a coastal airport. An automated station reports sustained 1-minute winds of 90 knots, with peak wind gusts reaching 110 knots. According to the Saffir-Simpson Hurricane Wind Scale, how should this storm be classified based on this observation?&lt;/p&gt;
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>
+        &lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; The Saffir-Simpson scale categorizes storms strictly based on their 1-minute maximum sustained wind speed, not gusts. Sustained winds of 90 knots fall into the Category 2 range (83-95 kt). Using the gust speed (110 kt) would incorrectly classify it as a Category 3.&lt;/p&gt;
+      </text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Category 2, because the classification is based on the sustained wind speed (90 kt), not gusts.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Category 3, because the classification must account for the maximum peak gusts (110 kt) which cause the most damage.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Category 1, because 90 knots over land is equivalent to 70 knots over the open ocean.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Category 4, because the combination of 90-knot sustained winds and a coastal approach elevates the hazard level.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L3-Q04 — Strike Probability vs. Deterministic Track</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        &lt;p&gt;A deterministic forecast track shows a tropical cyclone passing 200 km south of an island airport in 72 hours. However, the ECMWF Strike Probability map shows a 45% chance of the storm passing within 120 km of the airport. What is the best way to interpret this for the airport's operations?&lt;/p&gt;
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>
+        &lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; Deterministic tracks represent a single "best guess" or single model run, which can be misleading days in advance. Ensemble-based strike probabilities account for atmospheric uncertainty, indicating that while the most likely single track is south, there is a very real, quantifiable (45%) risk of a direct or near-direct hit that must be incorporated into contingency planning.&lt;/p&gt;
+      </text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;While the single deterministic track keeps the storm south, the probabilities indicate a significant risk of a closer pass that must be factored into contingency planning.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;The Strike Probability map is a legacy product and should be ignored in favor of the newer deterministic track.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;A 45% probability is below the 50% threshold, meaning it is too low to warrant any operational changes or preparations.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;The Strike Probability map guarantees that the storm will deviate from its track and strike the airport directly.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+<question type="multichoice">
+    <name>
+      <text>L4-Q01 — Radar detection of volcanic ash</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        &lt;p&gt;A large volcano erupts during the night. A commercial jet is flying at FL350 directly toward the forecasted plume path. The flight crew reports that their onboard weather radar shows completely clear skies ahead. Why is this occurring?&lt;/p&gt;
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>
+        &lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; Aircraft weather radar is tuned specifically to detect large hydrometeors (water droplets and ice crystals). Volcanic ash consists of dry, silicate-based particles that are generally too small and lack the dielectric properties necessary to reflect the radar beam back to the aircraft, making the plume effectively invisible to onboard radar.&lt;/p&gt;
+      </text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Aircraft radar is designed to detect water and ice; it cannot detect dry, silicate-based volcanic ash particles.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Volcanic ash forms exclusively below FL200, so it is beneath the radar's sweep angle at cruising altitude.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;The radar beam is entirely absorbed by the toxic sulfur dioxide gas within the plume, masking the ash.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Ash particles hold a strong negative charge that cancels out the positive radar pulses.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L4-Q02 — VAAC Dispersion Modeling</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        &lt;p&gt;Following an eruption, a VAAC runs an atmospheric dispersion model (like the NAME model) to issue a Volcanic Ash Advisory (VAA). What is the primary meteorological input required for this model to accurately predict the ash plume's trajectory?&lt;/p&gt;
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>
+        &lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; Dispersion models calculate the 3D trajectory of ash particles. To do this, they heavily rely on accurate upper-level wind forecasts (speed, direction, and shear across multiple flight levels) to determine where the plume will drift and how it will diffuse over time.&lt;/p&gt;
+      </text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Detailed upper-level wind data to calculate the trajectory and diffusion of the particles.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Surface temperature measurements to calculate the initial explosive force of the eruption.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Sea surface temperatures to determine the latent heat available to the plume.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Incoming solar radiation data to model the photochemical breakdown of the ash.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L4-Q03 — Mechanism of engine failure</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        &lt;p&gt;An aircraft inadvertently flies through a thin volcanic ash cloud. Shortly after, the crew experiences a complete loss of thrust in all engines. What is the primary mechanical cause of this failure?&lt;/p&gt;
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>
+        &lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; Volcanic ash contains silicates with a melting point lower than the core operating temperature of a jet engine. As the ash passes through the combustion chamber, it melts. It then impacts the slightly cooler turbine blades, resolidifying into a glass-like coating that chokes off airflow and causes the engine to stall.&lt;/p&gt;
+      </text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Silicates in the ash melt in the combustion chamber and resolidify on the turbine blades, choking airflow.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;The abrasive nature of the ash completely shreds the titanium fan blades at the front of the engine.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;The ash particles carry a strong static charge that shorts out the engine's electronic control unit (FADEC).&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Toxic gases in the plume consume all available oxygen, starving the combustion process.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L4-Q04 — VAA and SIGMET relationship</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        &lt;p&gt;A VAAC issues a VAA containing an ash plume polygon that intersects the edge of your Flight Information Region (FIR) at FL300. You review the dispersion model output and believe the ash concentration will be very light and not pose a significant risk. What is the correct operational procedure?&lt;/p&gt;
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>
+        &lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; There is currently no globally agreed-upon "safe" concentration of volcanic ash for jet engines. Therefore, volcanic ash SIGMETs are not discretionary for the local MWO forecaster. If a VAA polygon indicates ash entering your FIR, you must issue a corresponding SIGMET to close or restrict that airspace.&lt;/p&gt;
+      </text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;You must issue a SIGMET for volcanic ash based on the VAA polygon, as ash SIGMETs are mandatory when a plume enters an FIR.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Downgrade the warning to an AIRMET since your independent analysis indicates the concentration is light.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Ignore the VAA since it only clips the edge of the FIR and will exit quickly.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Wait for pilot reports (PIREPs) to confirm the presence of actual ash before issuing any warnings.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+<question type="multichoice">
+    <name>
+      <text>L5-Q01 — Chart Altitude Overlap</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        &lt;p&gt;A flight is scheduled to cruise at FL360 over Europe. The dispatcher is reviewing the WAFC SIGWX charts. Which chart(s) should they consult?&lt;/p&gt;
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>
+        &lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; The High-Level (SWH) chart covers FL250 to FL630, while the Medium-Level (SWM) chart covers FL100 to FL450. A cruising altitude of FL360 falls directly into the overlap region. Dispatchers and pilots should consult both charts, as the SWM may contain finer details (like in-cloud icing) relevant to that altitude that the SWH omits.&lt;/p&gt;
+      </text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Both the SWH and the SWM charts, because FL360 falls into the overlap region where both charts provide valid, complementary information.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Only the SWH chart, because it is the primary global dataset for all high-altitude jet traffic.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Only the SWM chart, because it provides finer detail specifically tailored for European regional routes.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Neither chart; at that altitude, they should rely solely on the TAFs for the departure and destination airports.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L5-Q02 — Interpreting Jetstreams</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        &lt;p&gt;A WAFC SIGWX chart displays a solid line with wind barbs indicating a 120-knot wind speed and a text box labeled "FL340". What does this specific symbology represent?&lt;/p&gt;
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>
+        &lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; A solid line with wind barbs and flight level labels on a SIGWX chart indicates the axis of a jetstream. Jetstreams are only plotted when the core wind speed is 80 knots or greater. The label "FL340" indicates the altitude of the maximum wind speed core.&lt;/p&gt;
+      </text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;The core of a jetstream located at FL340 with a maximum wind speed of 120 knots.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;An area of severe clear air turbulence (CAT) extending from the surface up to FL340.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;The forecasted track of a mid-latitude frontal system moving at a speed of 120 knots.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;The upper limit of the tropopause in that specific region.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L5-Q03 — ICAO CB Coverage Definitions</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        &lt;p&gt;A SIGWX chart shows a scalloped area labeled "OCNL CB". A pilot asks the briefing forecaster what this means for their ability to navigate through the area using airborne weather radar.&lt;/p&gt;
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>
+        &lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; Under ICAO definitions, Occasional (OCNL) means well-separated cumulonimbus clouds covering between 50% and 75% of the forecast area. Because they are well-separated, an aircraft equipped with weather radar can usually deviate around individual cells safely. "FRQ" (Frequent, &amp;gt;75%) would imply little to no separation, requiring the area to be avoided entirely.&lt;/p&gt;
+      </text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;It means well-separated thunderstorms covering 50-75% of the area, implying the pilot can likely use radar to pick a safe path between the cells.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;It means the storms will only happen briefly, so the pilot can safely fly straight through the area without deviating.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;It means the coverage is less than 50% (Isolated), representing a very low risk to en-route navigation.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;It means the storms are embedded in other cloud layers and invisible to radar, requiring the area to be completely avoided.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L5-Q04 — SWM vs SWH Features</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        &lt;p&gt;A forecaster is preparing a localized briefing using WAFC BUFR data and wants to highlight areas of moderate in-cloud icing for a regional flight at FL220. Which WAFC dataset contains this specific parameter?&lt;/p&gt;
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>
+        &lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; The Medium-level (SWM) dataset includes finer meteorological details—specifically cloud types, amounts, and in-cloud icing—that are omitted from the High-level (SWH) charts to avoid cluttering the global high-altitude picture.&lt;/p&gt;
+      </text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;The Medium-level (SWM) dataset, which includes finer details like in-cloud icing not present on High-level charts.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;The High-level (SWH) dataset, because significant structural icing only occurs at high altitudes near the tropopause.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Both datasets include in-cloud icing information, as it is a critical hazard for all flight levels.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Neither dataset includes icing; icing forecasts are only available via localized AIRMETs.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+</quiz>

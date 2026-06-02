@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+  <question type="multichoice">
+    <name>
+      <text>L3-Q01 — Interpreting the Cone of Uncertainty</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>An airport is located 50 miles outside the 48-hour edge of an official tropical cyclone Cone of Uncertainty. An airline dispatcher decides to leave aircraft parked on the apron, assuming they are safe from hurricane-force winds. Why is this a dangerous assumption?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> The Cone of Uncertainty only represents the probable track of the storm's <em>center</em> based on historical forecast errors. It does not represent the size of the storm. Hazardous impacts, including severe wind gusts and outer rainbands, frequently extend tens or hundreds of miles beyond the edges of the cone.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>The cone only represents the probable track of the storm's center; hazardous impacts frequently extend well beyond the cone's boundaries.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>The cone is only considered accurate for the first 24 hours of the forecast, rendering the 48-hour edge meaningless.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>The cone represents the area where the storm will be in 5 days, so the 48-hour impacts are actually located much closer to the center.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>The cone only tracks the storm's eyewall and ignores the calm eye, meaning the worst winds are actually inside the cone.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L3-Q02 — Tropical cyclone formation conditions</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>A cluster of intense thunderstorms moves over the Atlantic Ocean. The sea surface temperature is 28&nbsp;&deg;C, and there is deep atmospheric moisture present. However, an upper-level trough is imparting 40 knots of vertical wind shear over the region. How will this affect the system's development?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> While warm SSTs (&gt; 26.5 &deg;C) and moisture are necessary, low vertical wind shear is also a strict requirement for tropical cyclogenesis. Strong wind shear tilts the system, displacing the latent heat release away from the center and preventing the thunderstorms from stacking vertically into an organized cyclone.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>The high vertical wind shear will tear the thunderstorms apart, preventing the system from organizing into a tropical cyclone.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>The high shear will enhance the storm's rotation and cause it to rapidly intensify into a hurricane.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>The system will successfully form a tropical cyclone, but the shear will cause it to lack a defined eye.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>The shear will push the storm in a different direction but will have no impact on its overall intensity.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L3-Q03 — Applying the Saffir-Simpson Scale</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>A tropical cyclone is approaching a coastal airport. An automated station reports sustained 1-minute winds of 90 knots, with peak wind gusts reaching 110 knots. According to the Saffir-Simpson Hurricane Wind Scale, how should this storm be classified based on this observation?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> The Saffir-Simpson scale categorizes storms strictly based on their 1-minute maximum sustained wind speed, not gusts. Sustained winds of 90 knots fall into the Category 2 range (83-95 kt). Using the gust speed (110 kt) would incorrectly classify it as a Category 3.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Category 2, because the classification is based on the sustained wind speed (90 kt), not gusts.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Category 3, because the classification must account for the maximum peak gusts (110 kt) which cause the most damage.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Category 1, because 90 knots over land is equivalent to 70 knots over the open ocean.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Category 4, because the combination of 90-knot sustained winds and a coastal approach elevates the hazard level.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L3-Q04 — Strike Probability vs. Deterministic Track</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>A deterministic forecast track shows a tropical cyclone passing 200 km south of an island airport in 72 hours. However, the ECMWF Strike Probability map shows a 45% chance of the storm passing within 120 km of the airport. What is the best way to interpret this for the airport's operations?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> Deterministic tracks represent a single "best guess" or single model run, which can be misleading days in advance. Ensemble-based strike probabilities account for atmospheric uncertainty, indicating that while the most likely single track is south, there is a very real, quantifiable (45%) risk of a direct or near-direct hit that must be incorporated into contingency planning.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>While the single deterministic track keeps the storm south, the probabilities indicate a significant risk of a closer pass that must be factored into contingency planning.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>The Strike Probability map is a legacy product and should be ignored in favor of the newer deterministic track.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A 45% probability is below the 50% threshold, meaning it is too low to warrant any operational changes or preparations.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>The Strike Probability map guarantees that the storm will deviate from its track and strike the airport directly.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+</quiz>

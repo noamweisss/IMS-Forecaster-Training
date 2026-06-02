@@ -1,0 +1,189 @@
+<style>
+.ims-lesson {
+  --bg: #ffffff;
+  --surface: #f6f5f0;
+  --border: #e2dfd6;
+  --text: #1a1917;
+  --muted: #6b6a65;
+  --accent: #185fa5;
+  --accent-light: #e6f1fb;
+  --note-bg: #e1f5ee;
+  --note-border: #0F6E56;
+  --warn-bg: #faeeda;
+  --warn-border: #BA7517;
+  --key-bg: #EEEDFE;
+  --key-border: #534AB7;
+  --danger-bg: #fcebeb;
+  --danger-border: #A32D2D;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+.ims-lesson h1 { font-size: 1.8rem; font-weight: 600; margin-bottom: 0.2rem; line-height: 1.2; color: var(--text); }
+.ims-lesson h2 { font-size: 1.25rem; font-weight: 600; margin-top: 2.5rem; padding-bottom: 0.4rem;
+  border-bottom: 1.5px solid var(--border); color: var(--text); }
+.ims-lesson h3 { font-size: 1.05rem; font-weight: 600; margin-top: 1.75rem; color: var(--text); }
+.ims-lesson p { margin: 0.7rem 0; max-width: 72ch; }
+.ims-lesson figure { margin: 2rem 0; }
+.ims-lesson figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 0.6rem;
+  font-style: italic; text-align: center; }
+.ims-lesson svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+.ims-lesson img { max-width: 100%; height: auto; }
+.ims-lesson table { border-collapse: collapse; width: 100%; margin: 1.5rem 0; font-size: 0.9rem; }
+.ims-lesson th { background: var(--accent); color: #fff; padding: 0.55rem 0.9rem; text-align: left; }
+.ims-lesson td { padding: 0.5rem 0.9rem; border-bottom: 1px solid var(--border); }
+.ims-lesson tr:nth-child(even) td { background: var(--surface); }
+.ims-lesson .callout { border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+.ims-lesson .callout-note    { background: var(--note-bg);   border-left: 4px solid var(--note-border); }
+.ims-lesson .callout-warning { background: var(--warn-bg);   border-left: 4px solid var(--warn-border); }
+.ims-lesson .callout-key     { background: var(--key-bg);    border-left: 4px solid var(--key-border); }
+.ims-lesson .callout-danger  { background: var(--danger-bg); border-left: 4px solid var(--danger-border); }
+.ims-lesson .callout-label { font-weight: 700; font-size: 0.78rem; text-transform: uppercase;
+  letter-spacing: 0.06em; margin-bottom: 0.35rem; }
+.ims-lesson .objectives { background: var(--surface); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+.ims-lesson .objectives ul { margin: 0.5rem 0 0; padding-left: 1.4rem; }
+.ims-lesson .lesson-summary { background: var(--accent-light); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 2.5rem 0 1rem; }
+.ims-lesson .lesson-summary h3 { margin-top: 0; color: var(--accent); font-size: 1rem; }
+.ims-lesson .image-needed { border: 2px dashed var(--border); border-radius: 8px;
+  padding: 1.5rem; margin: 1.5rem 0; text-align: center;
+  color: var(--muted); font-size: 0.9rem; background: var(--surface); }
+.ims-lesson .meta { color: var(--muted); font-size: 0.88rem; margin-bottom: 1.75rem; }
+.ims-lesson .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.5rem; }
+</style>
+<div class="ims-lesson">
+<p class="breadcrumb">Module 2 / Lesson 4</p>
+<h1>Visibility Restrictions: Fog and Haze</h1>
+
+<div class="objectives">
+  <strong>By the end of this lesson you will be able to:</strong>
+  <ul>
+    <li>Classify types of fog (radiation, advection, upslope) by formation mechanism</li>
+    <li>Identify the critical meteorological factors for fog onset and dissipation</li>
+    <li>Assess the impact of aerosol concentration and humidity on haze development</li>
+    <li>Interpret RVR (Runway Visual Range) trends in low-visibility conditions</li>
+  </ul>
+</div>
+
+<h2>Measuring Visibility</h2>
+<p>Visibility is defined as the greatest distance at which an object can be seen and recognized against a background. In aviation, we distinguish between general visibility (reported in METARs) and <strong>Runway Visual Range (RVR)</strong>, which is the distance a pilot can see runway markings or lights from the center line.</p>
+
+<div class="callout callout-note">
+  <div class="callout-label">Technical Standard</div>
+  Modern airports use <strong>transmissometers</strong> or <strong>forward-scatter meters</strong> to measure the Meteorological Optical Range (MOR). RVR is then calculated using Allard's Law, accounting for ambient light and runway lamp intensity.
+</div>
+
+<h2>Fog: Formation and Classification</h2>
+<p>Fog is technically a cloud that is in contact with the ground, reducing horizontal visibility to less than 1,000 meters. For a forecaster, identifying the cooling mechanism is key to predicting its onset.</p>
+
+<h3>Radiation Fog</h3>
+<p>Formed by the radiative cooling of the earth's surface at night. It is most common in inland valleys and low-lying areas during high-pressure conditions.</p>
+<ul>
+  <li><strong>Prerequisites:</strong> High surface humidity, clear skies, and light winds (3–5 knots).</li>
+  <li><strong>The "Goldilocks" Wind:</strong> If the wind is calm, only dew forms. If the wind exceeds 5–10 knots, the air mixes with drier air aloft, dissipating the fog or lifting it into a Stratus layer.</li>
+</ul>
+
+<figure>
+  <svg viewBox="0 0 680 180" role="img">
+    <title>Radiation Fog Formation</title>
+    <!-- Ground -->
+    <rect x="0" y="150" width="680" height="30" fill="#E2DFD6" />
+    <!-- Fog Layer -->
+    <rect x="0" y="80" width="680" height="70" fill="#F6F5F0" opacity="0.8" />
+    <!-- Radiative cooling arrows -->
+    <path d="M 100 150 L 100 120" fill="none" stroke="#993C1D" stroke-width="1.5" marker-end="url(#arrow-red)" />
+    <path d="M 300 150 L 300 120" fill="none" stroke="#993C1D" stroke-width="1.5" marker-end="url(#arrow-red)" />
+    <path d="M 500 150 L 500 120" fill="none" stroke="#993C1D" stroke-width="1.5" marker-end="url(#arrow-red)" />
+    <!-- Labels -->
+    <text x="250" y="115" font-family="sans-serif" font-size="14" font-weight="bold" fill="#6B6A65">RADIATION FOG LAYER</text>
+    <text x="250" y="170" font-family="sans-serif" font-size="12" fill="#1A1917">Ground cools rapidly at night</text>
+    <defs>
+      <marker id="arrow-red" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#993C1D" />
+      </marker>
+    </defs>
+  </svg>
+  <figcaption>Figure 4.1: Formation of radiation fog via surface cooling.</figcaption>
+</figure>
+
+<h3>Advection Fog</h3>
+<p>Occurs when warm, moist air moves over a colder surface (land or water). Unlike radiation fog, it can form with higher wind speeds (5–15 knots) and persist during the day.</p>
+<div class="callout callout-warning">
+  <div class="callout-label">Regional Context</div>
+  In Israel, advection fog is common along the Mediterranean coast when moist marine air moves over colder coastal land during late winter and spring.
+</div>
+
+<h3>Other Fog Types</h3>
+<ul>
+  <li><strong>Upslope Fog:</strong> Stable air forced up a mountain slope, cooling adiabatically to its dewpoint.</li>
+  <li><strong>Steam Fog (Sea Smoke):</strong> Cold air moving over warm water; evaporation from the water saturates the cold air above.</li>
+  <li><strong>Frontal Fog:</strong> Warm rain falling through cold air ahead of a warm front, saturating the air via evaporation.</li>
+</ul>
+
+<h2>Visibility vs. Relative Humidity</h2>
+<p>Visibility is not only limited by liquid water (fog/mist) but also by dry particles (haze). The relationship between visibility and Relative Humidity (RH) is non-linear due to <strong>hygroscopic nuclei</strong>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Condition</th>
+      <th>Relative Humidity</th>
+      <th>Aerosol Behavior</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Dry Haze</strong></td>
+      <td>< 70%</td>
+      <td>Particles remain small and dry.</td>
+    </tr>
+    <tr>
+      <td><strong>Wet Haze</strong></td>
+      <td>70% – 90%</td>
+      <td>Hygroscopic particles begin to swell (deliquescence).</td>
+    </tr>
+    <tr>
+      <td><strong>Mist</strong></td>
+      <td>90% – 100%</td>
+      <td>Droplets grow large enough to scatter visible light significantly.</td>
+    </tr>
+    <tr>
+      <td><strong>Fog</strong></td>
+      <td>~100%</td>
+      <td>Droplets grow into a dense suspension; visibility < 1,000m.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Haze and Dust in Israel</h2>
+<p>Forecasting visibility in Israel requires monitoring synoptic sources of mineral dust from the Sahara and Arabian deserts. Key setups include:</p>
+<ol>
+  <li><strong>Sharav Lows:</strong> Deep North African depressions that transport dust ahead of the cold front.</li>
+  <li><strong>Red Sea Troughs:</strong> Associated with easterly winds that bring dust from the Jordanian/Saudi deserts.</li>
+  <li><strong>Cold Frontal Passage:</strong> Strong post-frontal winds can lift local dust (haboobs) in the Negev.</li>
+</ol>
+
+<div class="callout callout-key">
+  <div class="callout-label">Operational Tool</div>
+  Use satellite <strong>Dust RGB</strong> imagery to track the progression of dust plumes across the Mediterranean. These plumes can significantly reduce RVR even in the absence of cloud or fog.
+</div>
+
+<div class="lesson-summary">
+  <h3>Key Takeaways</h3>
+  <ul>
+    <li>Fog is defined as visibility < 1,000m; Mist is 1,000m to 5,000m.</li>
+    <li>Radiation fog requires clear skies, high humidity, and light (3-5 kt) winds.</li>
+    <li>Advection fog is more persistent and can occur with stronger winds.</li>
+    <li>Hygroscopic particles cause visibility to drop sharply as RH exceeds 70-80%.</li>
+    <li>Dust and haze in Israel are synoptically driven by Sharav lows and Red Sea Troughs.</li>
+  </ul>
+</div>
+</div>

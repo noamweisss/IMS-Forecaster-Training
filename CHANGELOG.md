@@ -10,7 +10,47 @@ future course-to-mbz Claude skill) should read both.
 
 ## [Unreleased]
 
+### Course V2 iteration (roadmap.md)
+
+- **Rewrote the broken Figure 1** in Module 1 Lesson 2 (route planning & fuel).
+  Replaced the cramped, confusing diagram (and, in the legacy standalone copy,
+  a `var()`-in-SVG bug that rendered invisible) with a clean head-to-tail vector
+  diagram showing `Ground Speed = TAS ± along-track wind` for tailwind vs
+  headwind. Literal hex only, with `<title>`/`<desc>`. Updated in the
+  `_moodle.html` fragment, the combined page, and the standalone HTML.
+- **Completion-tracked, ungraded quizzes.** Lesson quizzes now use Moodle
+  automatic completion requiring one submitted attempt (`completion=2` +
+  `completionminattempts=1`), giving the instructor a "who finished the course"
+  report. The numeric grade is hidden from learners — review "marks" options
+  zeroed and the gradebook grade item set `hidden=1` — while correctness and
+  feedback stay visible. Grade is not part of the completion rule, so
+  completion means "did it", not "passed it" (`pipeline/mbz/activities.py`;
+  schema in `docs/mbz_format.md`). Pages remain untracked.
+- **Emoji prefixes on activity names.** The `.mbz` builder now prefixes Moodle
+  activity names with `📚` for pages (module overview + lessons) and `❓` for
+  quizzes, so they're easy to distinguish in Moodle's course-index sidebar
+  (`pipeline/build_mbz.py`).
+- **Removed dark mode from lessons.** Lessons carried a
+  `@media (prefers-color-scheme: dark)` block that flipped them to a dark
+  palette on dark-mode machines — but Moodle has no dark theme, so the lesson
+  body clashed with Moodle's light chrome. Lessons are now always light.
+  Removed from `config/design_system.css` (the source future modules copy
+  verbatim) and stripped in place from all 29 generated HTML files under
+  `courses/`. `docs/lesson_spec.md` gained a "no dark-mode override" note.
+
 ### Added
+- **`pipeline/build_mbz.py` — one-upload Moodle course backup:** New pipeline
+  step that turns finalized course content into a single importable `.mbz`.
+  Restoring it stands up the whole course in one upload: one section per module,
+  laid out as overview Page → (lesson Page → lesson Quiz) per lesson, with all
+  questions, base64-embedded images, and feedback wired in. Pure stdlib Python.
+  First full build of the Aviation Weather course: 1.4 MB, 5 sections, 40
+  activities, 82 questions; structural cross-references verified. Generated
+  `.mbz` files are gitignored (`courses/**/*.mbz`) — regenerate with
+  `python pipeline/build_mbz.py --course courses/<course>`.
+  - `--module <folder>` builds a single-module `.mbz`; `finalize_module.py --mbz`
+    builds it as part of finalizing.
+
 - **Hebrew translation pipeline (scaffolding).** Second, parallel
   pipeline that runs *after* the existing English pipeline finalizes a
   module. Designed specifically for Google Antigravity's multi-agent
@@ -38,6 +78,79 @@ future course-to-mbz Claude skill) should read both.
     CSS class preservation, CDATA integrity, RTL markers, no var() in
     SVG, file presence) before the Gemini editor runs. Augments
     `review.json` with `produced_by: "python"` entries.
+### Changed
+- **Docs** updated for the `.mbz` path: `docs/runbook.md` Phase 6 (restore as
+  Option A, copy-paste as fallback), `docs/architecture.md` (Phase 4),
+  `AGENTS.md` (pipeline diagram, structure, steps), and the per-module
+  `README.md` template.
+- **New `prompts/restore-mbz-to-moodle.md`** — step-by-step restore walkthrough
+  (build → Course → Restore → Merge), with spot-checks and troubleshooting.
+- **`courses/aviation-weather/course.json`** module statuses refreshed — all four
+  modules generated, finalized, and packaged into the course `.mbz` (the prior
+  "Pending generation" entries for modules 2 and 4 were stale).
+
+- **Verified end-to-end (2026-06-02):** Course `.mbz` restored successfully into
+  the production IMS Moodle 5.2 instance; the first version of the course is
+  live. The structural checks (XML well-formedness, resolved cross-references)
+  are now backed by a real restore.
+- **`.mbz` structural assembler:** `pipeline/mbz/structure.py` builds the
+  `moodle_backup.xml` manifest, section files (with cmid sequences), the course
+  record + boilerplate, the course `gradebook.xml`, and the full `questions.xml`
+  question bank — wiring each quiz to its questions through shared contextids.
+- **`.mbz` per-activity builders:** `pipeline/mbz/activities.py` builds a full
+  Page or Quiz activity directory (`module.xml`, `page.xml`/`quiz.xml`, grades,
+  inforef, and boilerplate). The quiz links to its questions via the modern
+  question-bank-entry model and carries its own grade item.
+- **`.mbz` boilerplate + ID allocator:** `pipeline/mbz/templates.py` holds the
+  ~20 constant backup XML files (per-activity, course, and top-level boilerplate)
+  as reviewable named constants, and `pipeline/mbz/ids.py` provides a
+  deterministic per-entity-type id allocator + question-stamp helper. (Boilerplate
+  consolidated into one module rather than 20 tiny `.xml` stubs — see journal.)
+- **Quiz import→backup converter:** New `pipeline/mbz/quiz_to_backup.py` —
+  converts our Moodle-import-format lesson quizzes into the nested backup
+  `<question>` format a `.mbz` restore expects (field remaps + escaped HTML).
+  Ships with a self-test that converts all 16 module-1 questions and checks
+  well-formedness. First building block of the `.mbz` generator.
+- **Moodle 5.2 `.mbz` reference + schema map:** Reviving the deferred Moodle
+  backup (`.mbz`) generator now that we have a real reference export. Added
+  `docs/mbz_reference/` (the raw reference `.mbz` and its extracted XML tree,
+  provenance) and `docs/mbz_format.md` (the canonical schema map the builder is
+  coded against — version stamps, archive layout, page/quiz/question-bank XML,
+  `.ARCHIVE_INDEX`, and the import→backup quiz-field mapping). Target: Moodle
+  5.2+ (build 20260501), `backup_version 2026042000`.
+- **Incremental-documentation working practice:** Made the repo's "commit small
+  logical steps" rule explicit about docs — every code commit carries its own
+  journal/CHANGELOG update. Recorded in `AGENTS.md` and the `generate-module`
+  skill (both `.claude/` and `.agents/` mirrors).
+
+### Added
+- **Course-Wide Preview Compiler:** Added `pipeline/build_course_preview.py` — a reusable, course-agnostic Python pipeline that compiles all generated modules, lessons, inlined SVG diagrams, base64-embedded images, and XML quizzes into a single highly-polished offline-first Single Page App (SPA) `index.html` file in under 2 seconds. Built with pure Python standard libraries (no third-party dependencies) for instant native execution in any CI environment.
+- **Git-Synced Netlify Continuous Deployment:** Added a root-level `netlify.toml` configuration to integrate the preview compiler directly with Netlify's continuous deployment. Every `git push` automatically rebuilds the entire course preview and publishes it to the same permanent live demonstration link, allowing seamless feedback-and-revision cycles.
+
+### Added
+- **Module 3 generated:** "Aviation Warnings: SIGMET, AIRMET &
+  Aerodrome" — 4 lessons (24-question end-of-module quiz) covering the
+  three statutory IMS warning products. Title changed from the
+  original "Terminal Area Hazards & Visibility" in `course.json`
+  because the source decks (13: Area Warnings, 14: Aerodrome Warnings)
+  are about warning products, not hazards-as-phenomena.
+- **Docs:** Git-LFS workaround for Claude Code on-the-web sandboxes
+  (set `lfs.url` to GitHub directly to bypass the local proxy's 502 on
+  the LFS batch API). Documented in `AGENTS.md` Setup,
+  `docs/runbook.md` Prerequisites + Troubleshooting, and
+  `docs/journal.md` with full root-cause analysis.
+
+- **Skill:** New `.claude/skills/generate-module/` (mirrored to
+  `.agents/skills/generate-module/`) — packages the
+  three-phase course-to-Moodle pipeline as a reusable Claude skill.
+  Contains `SKILL.md` (the agent entry point with workflow and
+  constraints), `references/lesson_template.html` (worked-example
+  lesson body fragment), and `references/quiz_template.xml`
+  (worked-example quiz with two application-level questions). The
+  skill references (does not duplicate) `docs/lesson_spec.md`,
+  `docs/runbook.md`, and `config/design_system.css` so it stays in
+  lockstep with the repo's single source of truth. Realizes the
+  "skill-ready" architecture goal noted in `docs/architecture.md`.
 - **Docs:** New `prompts/` folder containing copy-paste handoff prompts:
   three module-generation prompts (one each for Modules 2, 3, 4) and
   one Moodle upload walkthrough. Each is self-contained so a fresh

@@ -4,6 +4,11 @@
 It is important to remeber that the project owner is NOT a professional developer — they're new to programming and need things explained in simple, clear terms. you need to be patient and informative to make this a good experience for them.
 Also, it is crucial that you document everything, both in the journal [docs/journal.md](docs/journal.md) and in the changelog [CHANGELOG.md](CHANGELOG.md) (when relevant.) also, always be committing small logical steps to git. never do any change without comitting and explaining it in clear terms for future examination. 
 
+**Ship documentation incrementally.** Each code commit carries its own
+journal/CHANGELOG update for that step. Never batch all the documentation into one
+big writeup at the end — the journal should read as a running log, and every
+commit should leave the docs true. Small-and-followable beats tidy-on-paper.
+
 
 ## What This Project Is
 
@@ -23,6 +28,7 @@ subscription (Claude via Claude Code, Gemini via Antigravity, etc.).
 1. extract_sources.py        → _extraction.json     (Python, no LLM)
 2. you / another agent        → lesson HTML + quiz XML + overview
 3. finalize_module.py         → Moodle-ready module (Python, no LLM)
+4. build_mbz.py  (optional)   → <course>.mbz one-upload backup (Python, no LLM)
 ```
 
 ## If You're an Agent Reading This for the First Time
@@ -60,15 +66,33 @@ pipeline/           → Python scripts (no LLM in any of them)
   embed_images.py         Inlines images as base64 (with downscaling)
   build_combined_page.py  Concatenates lesson fragments into one Page
   retrofit_to_moodle.py   Upgrades legacy standalone HTML to fragments
+  build_mbz.py            Packages a course into one importable Moodle .mbz
+  mbz/                    Helper package for build_mbz.py (ids, quiz
+                          conversion, activity + structure builders, packaging)
 
 docs/                → Documentation, runbook, spec, journal
 courses/             → Course content (source files + generated output)
   aviation-weather/        The pilot course
 config/              → Shared CSS design system (.ims-lesson scoped)
 admin/               → Moodle setup notes, Docker config
-.ai/skills/          → AI agent skill files (future home of the
-                       course-conversion skill that this repo will seed)
+.claude/skills/      → Agent skill files (canonical home). Holds
+                       `generate-module/`, the course-conversion skill
+                       that packages this pipeline.
+.agents/skills/      → Synced mirror of `.claude/skills/` for
+                       Antigravity. Keep the two in lockstep.
 ```
+
+### Skill location convention
+
+The canonical home for agent skills is `.claude/skills/<name>/`, and an
+identical copy is kept at `.agents/skills/<name>/`. Both folders exist
+because the two tools we use look in different places: Claude Code reads
+`.claude/skills/`, while Antigravity reads `.agents/skills/`. The project
+owner uses both products roughly equally, so a skill that only lived in
+one location would silently fail to load in the other. When editing a
+skill, change `.claude/skills/<name>/` and then copy the result over to
+`.agents/skills/<name>/` (or vice versa) in the same commit so the mirror
+never drifts.
 
 ## Tech Stack
 
@@ -100,10 +124,22 @@ admin/               → Moodle setup notes, Docker config
 
 ```bash
 pip install -r requirements.txt
+git lfs install && git lfs pull
 ```
 
 That's it. No `.env`. No API key. Run `python pipeline/extract_sources.py --help`
 to confirm everything is wired up.
+
+> **Claude Code on-the-web sessions:** the sandbox's git proxy doesn't
+> serve LFS, so `git lfs pull` fails with `HTTP 502` until you bypass
+> it: `apt-get install -y git-lfs && git lfs install --skip-repo &&
+> git config lfs.url https://github.com/<owner>/<repo>.git/info/lfs &&
+> git lfs pull`. **Before pushing**, undo the override (`git config
+> --unset lfs.url && git config lfs.locksverify false`) so push uses
+> the proxy. If the source PPTX/PDFs in
+> `courses/<course>/source_files/` are ~130 bytes each, that's the
+> download-side symptom. See `docs/runbook.md` (Prerequisites) and
+> `docs/journal.md` (2026-05-20) for details.
 
 ## When the Owner Says "Generate Module N"
 
@@ -113,5 +149,7 @@ Follow the runbook. The condensed version:
 2. `python pipeline/extract_sources.py --input ... --output ...`
 3. Read `docs/lesson_spec.md`. Author the lessons + quizzes + overview.
 4. `python pipeline/finalize_module.py --module ...`
-5. Tell the user to follow the module's `README.md` for the 2-click
-   Moodle upload.
+5. (Optional) `python pipeline/build_mbz.py --course courses/<course>` to
+   produce a single `.mbz` the user restores in one upload (schema:
+   `docs/mbz_format.md`). Or tell the user to follow the module's `README.md`
+   for the copy-paste Moodle upload.

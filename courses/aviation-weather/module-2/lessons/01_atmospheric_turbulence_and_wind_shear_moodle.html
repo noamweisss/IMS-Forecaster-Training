@@ -1,0 +1,204 @@
+<style>
+.ims-lesson {
+  --bg: #ffffff;
+  --surface: #f6f5f0;
+  --border: #e2dfd6;
+  --text: #1a1917;
+  --muted: #6b6a65;
+  --accent: #185fa5;
+  --accent-light: #e6f1fb;
+  --note-bg: #e1f5ee;
+  --note-border: #0F6E56;
+  --warn-bg: #faeeda;
+  --warn-border: #BA7517;
+  --key-bg: #EEEDFE;
+  --key-border: #534AB7;
+  --danger-bg: #fcebeb;
+  --danger-border: #A32D2D;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+.ims-lesson h1 { font-size: 1.8rem; font-weight: 600; margin-bottom: 0.2rem; line-height: 1.2; color: var(--text); }
+.ims-lesson h2 { font-size: 1.25rem; font-weight: 600; margin-top: 2.5rem; padding-bottom: 0.4rem;
+  border-bottom: 1.5px solid var(--border); color: var(--text); }
+.ims-lesson h3 { font-size: 1.05rem; font-weight: 600; margin-top: 1.75rem; color: var(--text); }
+.ims-lesson p { margin: 0.7rem 0; max-width: 72ch; }
+.ims-lesson figure { margin: 2rem 0; }
+.ims-lesson figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 0.6rem;
+  font-style: italic; text-align: center; }
+.ims-lesson svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+.ims-lesson img { max-width: 100%; height: auto; }
+.ims-lesson table { border-collapse: collapse; width: 100%; margin: 1.5rem 0; font-size: 0.9rem; }
+.ims-lesson th { background: var(--accent); color: #fff; padding: 0.55rem 0.9rem; text-align: left; }
+.ims-lesson td { padding: 0.5rem 0.9rem; border-bottom: 1px solid var(--border); }
+.ims-lesson tr:nth-child(even) td { background: var(--surface); }
+.ims-lesson .callout { border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+.ims-lesson .callout-note    { background: var(--note-bg);   border-left: 4px solid var(--note-border); }
+.ims-lesson .callout-warning { background: var(--warn-bg);   border-left: 4px solid var(--warn-border); }
+.ims-lesson .callout-key     { background: var(--key-bg);    border-left: 4px solid var(--key-border); }
+.ims-lesson .callout-danger  { background: var(--danger-bg); border-left: 4px solid var(--danger-border); }
+.ims-lesson .callout-label { font-weight: 700; font-size: 0.78rem; text-transform: uppercase;
+  letter-spacing: 0.06em; margin-bottom: 0.35rem; }
+.ims-lesson .objectives { background: var(--surface); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+.ims-lesson .objectives ul { margin: 0.5rem 0 0; padding-left: 1.4rem; }
+.ims-lesson .lesson-summary { background: var(--accent-light); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 2.5rem 0 1rem; }
+.ims-lesson .lesson-summary h3 { margin-top: 0; color: var(--accent); font-size: 1rem; }
+.ims-lesson .image-needed { border: 2px dashed var(--border); border-radius: 8px;
+  padding: 1.5rem; margin: 1.5rem 0; text-align: center;
+  color: var(--muted); font-size: 0.9rem; background: var(--surface); }
+.ims-lesson .meta { color: var(--muted); font-size: 0.88rem; margin-bottom: 1.75rem; }
+.ims-lesson .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.5rem; }
+</style>
+<div class="ims-lesson">
+<p class="breadcrumb">Module 2 / Lesson 1</p>
+<h1>Atmospheric Turbulence and Wind Shear</h1>
+
+<div class="objectives">
+  <strong>By the end of this lesson you will be able to:</strong>
+  <ul>
+    <li>Distinguish between mechanical, convective, and clear-air turbulence (CAT)</li>
+    <li>Identify synoptic and mesoscale features associated with severe mountain waves</li>
+    <li>Explain the formation and hazards of wake vortices</li>
+    <li>Forecast low-level wind shear and microburst conditions during takeoff and landing</li>
+  </ul>
+</div>
+
+<h2>Introduction to Aviation Turbulence</h2>
+<p>Turbulence is one of the most significant weather-related hazards to aviation, accounting for thousands of minor injuries and substantial structural risk every year. For a forecaster, the challenge lies in identifying the specific atmospheric mechanisms—ranging from large-scale mountain waves to micro-scale wake vortices—that generate these chaotic air movements.</p>
+
+<div class="callout callout-note">
+  <div class="callout-label">Operational Impact</div>
+  While light turbulence is an inconvenience, <strong>severe turbulence</strong> involves large, abrupt changes in altitude and attitude, potentially leading to temporary loss of aircraft control and structural damage.
+</div>
+
+<h2>Types and Mechanisms</h2>
+<p>Aviation turbulence is generally classified by its underlying physical cause. Understanding these categories allows forecasters to look for specific triggers in synoptic charts and high-resolution models.</p>
+
+<h3>Mechanical Turbulence</h3>
+<p>Mechanical turbulence occurs when strong winds are disrupted by surface features such as mountains, hills, or even large buildings. The severity is determined by wind speed, terrain roughness, and atmospheric stability. When winds exceeding 15–25 knots interact with large obstacles, turbulent eddies can extend as high as 5,000–10,000 feet.</p>
+
+<figure>
+  <svg viewBox="0 0 680 200" role="img">
+    <title>Mechanical Turbulence over Obstacles</title>
+    <desc>Diagram showing wind flow hitting an obstacle and creating eddies on the leeward side.</desc>
+    <!-- Ground -->
+    <path d="M 0 180 L 300 180 L 350 100 L 400 180 L 680 180" fill="none" stroke="#E2DFD6" stroke-width="2" />
+    <!-- Wind vectors -->
+    <path d="M 20 50 L 100 50" fill="none" stroke="#185FA5" stroke-width="2" marker-end="url(#arrow)" />
+    <path d="M 20 80 L 120 80" fill="none" stroke="#185FA5" stroke-width="2" />
+    <path d="M 20 110 L 140 110" fill="none" stroke="#185FA5" stroke-width="2" />
+    <!-- Eddies -->
+    <circle cx="450" cy="130" r="20" fill="none" stroke="#BA7517" stroke-width="1.5" stroke-dasharray="4 2" />
+    <circle cx="500" cy="100" r="15" fill="none" stroke="#BA7517" stroke-width="1.5" stroke-dasharray="4 2" />
+    <circle cx="540" cy="140" r="25" fill="none" stroke="#BA7517" stroke-width="1.5" stroke-dasharray="4 2" />
+    <!-- Labels -->
+    <text x="50" y="40" font-family="sans-serif" font-size="14" fill="#1A1917">Prevailing Wind</text>
+    <text x="460" y="170" font-family="sans-serif" font-size="12" fill="#6B6A65">Leeward Eddies (Turbulence)</text>
+    <defs>
+      <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#185FA5" />
+      </marker>
+    </defs>
+  </svg>
+  <figcaption>Figure 1.1: Mechanical turbulence generated by topographic obstructions.</figcaption>
+</figure>
+
+<h3>Clear Air Turbulence (CAT)</h3>
+<p>CAT is high-level turbulence (usually above 15,000 ft) occurring in cloud-free regions, making it invisible to pilots and standard radar. It is predominantly associated with the <strong>jet stream</strong>, specifically in regions of intense horizontal and vertical wind shear near the jet core.</p>
+
+<div class="callout callout-warning">
+  <div class="callout-label">Forecasting Tip</div>
+  Approximately 60% of CAT reports are located near jet streams. Look for sharpening upper-level troughs and ridges, as well as regions with "transverse bands" in jet cirrus clouds on satellite imagery.
+</div>
+
+<h2>Mountain Waves and Rotors</h2>
+<p>When stable air is forced over a mountain range, it can trigger gravity waves that propagate both vertically and far downwind. These "mountain waves" are capable of producing extreme turbulence.</p>
+
+<ul>
+  <li><strong>Cap Clouds:</strong> Formed over the ridge as air is forced upward.</li>
+  <li><strong>Lenticular Clouds:</strong> Stationed at the crests of the downstream waves.</li>
+  <li><strong>Rotors:</strong> Violent roll eddies that form in the low levels beneath the wave crests, often marked by "roll clouds."</li>
+</ul>
+
+<figure>
+  <svg viewBox="0 0 680 250" role="img">
+    <title>Mountain Wave Structure</title>
+    <!-- Mountain -->
+    <path d="M 50 220 L 200 80 L 350 220" fill="#F6F5F0" stroke="#E2DFD6" stroke-width="2" />
+    <!-- Wave pattern -->
+    <path d="M 50 100 Q 200 -20 350 100 T 650 100" fill="none" stroke="#185FA5" stroke-width="2" stroke-dasharray="5 5" />
+    <!-- Lenticular Cloud -->
+    <ellipse cx="450" cy="60" rx="40" ry="10" fill="#EEEDFE" stroke="#534AB7" stroke-width="1" />
+    <!-- Rotor -->
+    <circle cx="450" cy="180" r="25" fill="none" stroke="#993C1D" stroke-width="2" />
+    <path d="M 440 165 L 460 165 L 450 155 Z" fill="#993C1D" /> <!-- Direction arrow -->
+    <!-- Labels -->
+    <text x="180" y="70" font-family="sans-serif" font-size="14" fill="#1A1917">Mountain Ridge</text>
+    <text x="410" y="40" font-family="sans-serif" font-size="12" fill="#534AB7">Lenticular Cloud</text>
+    <text x="440" y="215" font-family="sans-serif" font-size="12" fill="#993C1D">Rotor (Severe Turbulence)</text>
+  </svg>
+  <figcaption>Figure 1.2: Schematic of Mountain Waves and associated low-level rotors.</figcaption>
+</figure>
+
+<h2>Wake Turbulence</h2>
+<p>Every aircraft producing lift generates a pair of counter-rotating <strong>wake vortices</strong> trailing from its wingtips. These vortices sink and slowly decay, but can remain hazardous for several minutes, especially in calm conditions.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Factor</th>
+      <th>Effect on Wake Strength</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Aircraft Weight</td>
+      <td>Heavier aircraft produce stronger vortices.</td>
+    </tr>
+    <tr>
+      <td>Speed</td>
+      <td>Strength is greatest at slow speeds (takeoff/landing).</td>
+    </tr>
+    <tr>
+      <td>Configuration</td>
+      <td>"Clean" configurations (flaps up) produce more concentrated vortices.</td>
+    </tr>
+    <tr>
+      <td>Wind</td>
+      <td>Strong winds dissipate vortices; calm winds allow them to linger over the runway.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Low-Level Wind Shear (LLWS) and Microbursts</h2>
+<p>Wind shear is defined as a change in wind speed and/or direction over a short distance. While it can occur at any altitude, <strong>Low-Level Wind Shear</strong> (below 2,000 ft AGL) is particularly dangerous during the approach and departure phases of flight.</p>
+
+<h3>The Microburst Hazard</h3>
+<p>A microburst is a concentrated, intense downdraft from a convective cloud that hits the ground and spreads out horizontally. An aircraft flying through a microburst first encounters a strong headwind (increasing lift), followed by a severe downdraft, and finally a strong tailwind (drastic loss of lift), which can be fatal at low altitudes.</p>
+
+<div class="callout callout-danger">
+  <div class="callout-label">Safety Alert</div>
+  Aircraft are most vulnerable to microbursts when close to the ground and operating near stall speeds. Recognition of <strong>Virga</strong> (precipitation evaporating before reaching the ground) is a key visual indicator of potential dry microbursts.
+</div>
+
+<div class="lesson-summary">
+  <h3>Key Takeaways</h3>
+  <ul>
+    <li>Turbulence is categorized as mechanical, convective, CAT, or wake-induced.</li>
+    <li>CAT is invisible and jet-stream driven; look for high horizontal/vertical shear.</li>
+    <li>Mountain waves create vertical hazards, while rotors produce severe low-level turbulence.</li>
+    <li>Wake vortices are strongest from heavy, slow aircraft in clean configurations.</li>
+    <li>Microbursts present a unique threat by inducing a rapid transition from headwind to tailwind.</li>
+  </ul>
+</div>
+</div>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <question type="multichoice">
+    <name><text>L1-Q01 — CAT Identification</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A forecaster observes sharpening upper-level troughs and transverse bands in jet cirrus on satellite imagery. Which type of turbulence is MOST likely to be encountered in this region?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Rationale:</strong> Transverse bands in cirrus clouds and sharpening troughs are classic indicators of intense vertical and horizontal wind shear associated with Clear Air Turbulence (CAT) near the jet stream.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Clear Air Turbulence (CAT)</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Mechanical Boundary Layer Turbulence</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Wake Vortex Turbulence</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Thermal Convective Turbulence</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L1-Q02 — Mountain Wave Hazards</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>When analyzing a stable atmospheric profile with strong perpendicular winds over a mountain range, where is the MOST violent turbulence (associated with rotors) likely to be located?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Rationale:</strong> Rotors are violent roll eddies that form in the low levels immediately downwind of the mountain range, typically beneath the crests of the lee waves.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>In the low levels immediately downwind of the mountain ridge, beneath the wave crests.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>At the highest point of the lenticular clouds.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Exclusively on the windward slope of the mountain.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>In the stratospheric region above the cap cloud.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L1-Q03 — Wake Vortex Strength</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Which aircraft configuration and condition will produce the STRONGEST and most persistent wake vortices?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Rationale:</strong> Wake vortex strength is proportional to aircraft weight and inversely proportional to speed. Heavier, slower aircraft in a clean (flaps up) configuration produce the strongest vortices. Calm winds prevent them from dissipating or moving away from the runway.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>A heavy aircraft flying slowly in a clean configuration with calm surface winds.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A light aircraft at high speed with strong crosswinds.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A heavy aircraft at cruise speed in a dirty configuration.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A medium-weight aircraft during a steep descent with moderate turbulence.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L1-Q04 — Microburst Sequence</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>An aircraft on final approach encounters a microburst. What is the typical sequence of wind effects the pilot will experience?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Rationale:</strong> The classic microburst structure involves an initial strong headwind as the outflow reaches the aircraft, followed by a strong downdraft, and finally a strong tailwind as the aircraft passes the center of the downburst.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Strong headwind → Intense downdraft → Strong tailwind</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Strong tailwind → Intense updraft → Strong headwind</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Constant crosswind → Sudden calm → Severe updraft</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Intense downdraft → Strong headwind → Constant tailwind</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L1-Q05 — Gap Wind Mechanisms</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Why do 'Gap Winds' often reach their maximum velocity at the EXIT of a topographic gap rather than at the narrowest point, as predicted by the simple Venturi effect?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Rationale:</strong> In nature, the Venturi effect is often secondary to pressure gradient forcing. The expansion at the exit causes the flow to thin vertically, which along with the synoptic pressure gradient (high pressure at the entrance, low at the exit), accelerates the wind toward the exit.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Horizontal expansion at the exit causes vertical thinning and acceleration driven by the synoptic pressure gradient.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>The Venturi effect is only valid for supersonic flows.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Friction is zero at the exit of a valley.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>The Coriolis force reverses direction at the narrowest point of the gap.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+</quiz>

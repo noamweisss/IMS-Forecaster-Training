@@ -1,0 +1,606 @@
+<?xml version='1.0' encoding='utf-8'?>
+<quiz><question type="multichoice">
+    <name><text>L1-Q01 — CAT Identification</text></name>
+    <questiontext format="html">
+      <text>&lt;p&gt;A forecaster observes sharpening upper-level troughs and transverse bands in jet cirrus on satellite imagery. Which type of turbulence is MOST likely to be encountered in this region?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; Transverse bands in cirrus clouds and sharpening troughs are classic indicators of intense vertical and horizontal wind shear associated with Clear Air Turbulence (CAT) near the jet stream.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Clear Air Turbulence (CAT)&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Mechanical Boundary Layer Turbulence&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Wake Vortex Turbulence&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Thermal Convective Turbulence&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L1-Q02 — Mountain Wave Hazards</text></name>
+    <questiontext format="html">
+      <text>&lt;p&gt;When analyzing a stable atmospheric profile with strong perpendicular winds over a mountain range, where is the MOST violent turbulence (associated with rotors) likely to be located?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; Rotors are violent roll eddies that form in the low levels immediately downwind of the mountain range, typically beneath the crests of the lee waves.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;In the low levels immediately downwind of the mountain ridge, beneath the wave crests.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;At the highest point of the lenticular clouds.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Exclusively on the windward slope of the mountain.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;In the stratospheric region above the cap cloud.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L1-Q03 — Wake Vortex Strength</text></name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Which aircraft configuration and condition will produce the STRONGEST and most persistent wake vortices?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; Wake vortex strength is proportional to aircraft weight and inversely proportional to speed. Heavier, slower aircraft in a clean (flaps up) configuration produce the strongest vortices. Calm winds prevent them from dissipating or moving away from the runway.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;A heavy aircraft flying slowly in a clean configuration with calm surface winds.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;A light aircraft at high speed with strong crosswinds.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;A heavy aircraft at cruise speed in a dirty configuration.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;A medium-weight aircraft during a steep descent with moderate turbulence.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L1-Q04 — Microburst Sequence</text></name>
+    <questiontext format="html">
+      <text>&lt;p&gt;An aircraft on final approach encounters a microburst. What is the typical sequence of wind effects the pilot will experience?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; The classic microburst structure involves an initial strong headwind as the outflow reaches the aircraft, followed by a strong downdraft, and finally a strong tailwind as the aircraft passes the center of the downburst.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Strong headwind → Intense downdraft → Strong tailwind&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Strong tailwind → Intense updraft → Strong headwind&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Constant crosswind → Sudden calm → Severe updraft&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Intense downdraft → Strong headwind → Constant tailwind&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L1-Q05 — Gap Wind Mechanisms</text></name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Why do 'Gap Winds' often reach their maximum velocity at the EXIT of a topographic gap rather than at the narrowest point, as predicted by the simple Venturi effect?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; In nature, the Venturi effect is often secondary to pressure gradient forcing. The expansion at the exit causes the flow to thin vertically, which along with the synoptic pressure gradient (high pressure at the entrance, low at the exit), accelerates the wind toward the exit.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Horizontal expansion at the exit causes vertical thinning and acceleration driven by the synoptic pressure gradient.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;The Venturi effect is only valid for supersonic flows.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Friction is zero at the exit of a valley.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;The Coriolis force reverses direction at the narrowest point of the gap.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+<question type="multichoice">
+    <name><text>L2-Q01 — SLW Temperature Range</text></name>
+    <questiontext format="html">
+      <text>&lt;p&gt;In which temperature range is the occurrence of Supercooled Liquid Water (SLW) MOST frequent and significant for structural icing?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; SLW is most prevalent between 0°C and -15°C. Below -20°C, the probability of spontaneous freezing into ice crystals increases significantly, reducing the available liquid water for icing.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;0°C to -15°C&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;+10°C to 0°C&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;-25°C to -40°C&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Exclusively at exactly 0°C&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L2-Q02 — Glaze Ice Hazards</text></name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Why is Glaze (Clear) ice considered more hazardous than Rime ice for aircraft operations?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; Glaze ice is hard, transparent, and heavy. Because it forms from larger droplets or high liquid water content, it often "runs back" and freezes on surfaces behind the leading edge that are not protected by de-icing boots or heaters.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;It is heavier and can spread to unprotected areas aft of the leading edge.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;It is more brittle and breaks off into the engines.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;It only forms in clear air where it cannot be seen.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;It creates more drag than weight penalty.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L2-Q03 — Freezing Rain Formation</text></name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Which thermodynamic structure is required for the formation of Freezing Rain (FZRA) at the surface?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; FZRA requires a melting layer (T &gt; 0°C) above a sub-freezing layer (T &lt; 0°C) near the surface. Snow melts in the warm layer and becomes supercooled rain in the cold layer below.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;A warm layer above 0°C overlying a sub-freezing layer near the ground.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;A constant lapse rate of 6.5°C per km from the surface upward.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;An absolute instability from the surface to the tropopause.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;A deep isothermal layer at exactly -5°C.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L2-Q04 — Sounding Diagnosis</text></name>
+    <questiontext format="html">
+      <text>&lt;p&gt;When analyzing a sounding for icing potential, which combination of parameters indicates the HIGHEST risk?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; High icing risk is associated with saturated layers (dewpoint depression &amp;lt; 5°C) within the critical temperature range (0°C to -15°C), especially if the layer is unstable (convective), which implies higher liquid water content.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Temperature -8°C, Dewpoint Depression 2°C, and Unstable Lapse Rate.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Temperature -25°C, Dewpoint Depression 1°C, and Stable Lapse Rate.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Temperature +5°C, Dewpoint Depression 4°C, and Neutral Stability.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Temperature -10°C, Dewpoint Depression 12°C, and Inversion Layer.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+<question type="multichoice">
+    <name><text>L3-Q01 — CB Mature Stage Characteristics</text></name>
+    <questiontext format="html">
+      <text>&lt;p&gt;What defines the beginning of the &lt;strong&gt;Mature Stage&lt;/strong&gt; in a Cumulonimbus (CB) life cycle?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; The mature stage begins when precipitation starts to fall from the cloud base, which initiates the downdraft alongside the existing updraft.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;The onset of precipitation and the formation of downdrafts.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;The formation of an anvil top at the tropopause.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;The complete cessation of updrafts within the cell.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;The first appearance of a cumulus cloud on visible satellite.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L3-Q02 — Hail Formation Mechanism</text></name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Which atmospheric condition is essential for the formation of large hail within a convective cloud?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; Large hail requires intense updrafts that can suspend water droplets long enough for them to cycle through the freezing layer multiple times, accumulating layers of ice.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Intense updrafts capable of cycling droplets above the freezing level.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;A deep layer of warm air near the surface.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Low relative humidity throughout the cloud depth.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;A strong temperature inversion at the 500 hPa level.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L3-Q03 — Gust Front Hazards</text></name>
+    <questiontext format="html">
+      <text>&lt;p&gt;What is a primary aviation hazard associated with a &lt;strong&gt;Gust Front&lt;/strong&gt; spreading ahead of a thunderstorm?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; A gust front is the leading edge of a convective downdraft. It causes sudden wind shifts and rapid changes in wind speed, which can cause significant low-level wind shear during takeoff or landing.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Sudden wind shifts and severe low-level wind shear.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Severe icing at high altitudes.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;A rapid decrease in surface pressure and temperature.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;The formation of widespread radiation fog.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L3-Q04 — Stability Index (CAPE)</text></name>
+    <questiontext format="html">
+      <text>&lt;p&gt;What does a high &lt;strong&gt;CAPE&lt;/strong&gt; (Convective Available Potential Energy) value generally indicate to an aviation forecaster?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; CAPE is a measure of the cumulative buoyant energy available to a rising air parcel. High values indicate a large potential for intense updrafts and severe convection if a trigger is present.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;High potential for intense updrafts and severe convective development.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;A very stable atmosphere where cloud formation is unlikely.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;That a lifting mechanism (like a front) is currently active.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;That the atmosphere is saturated from the surface to the tropopause.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+<question type="multichoice">
+    <name><text>L4-Q01 — Radiation Fog Wind Condition</text></name>
+    <questiontext format="html">
+      <text>&lt;p&gt;What is the "ideal" wind speed for the formation and deepening of a &lt;strong&gt;Radiation Fog&lt;/strong&gt; layer?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; Radiation fog requires light winds (typically 3–5 knots). Calm winds result only in dew formation, while winds above 10 knots cause too much mixing with drier air aloft, either preventing fog or lifting it into Stratus.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;3 to 5 knots&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Exactly 0 knots (Dead calm)&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;15 to 20 knots&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Greater than 25 knots&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L4-Q02 — Advection vs. Radiation Fog</text></name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Which characteristic distinguishes &lt;strong&gt;Advection Fog&lt;/strong&gt; from Radiation Fog?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; Advection fog forms when warm, moist air moves over a colder surface. It is often more persistent than radiation fog, can form during the day, and typically occurs with stronger winds (5–15 knots).&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;It can persist during daylight hours and with higher wind speeds.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;It only forms in desert environments.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;It requires perfectly clear skies to form.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;It is always shallower than 50 feet.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L4-Q03 — Hygroscopic Nuclei Impact</text></name>
+    <questiontext format="html">
+      <text>&lt;p&gt;At what Relative Humidity (RH) threshold do &lt;strong&gt;hygroscopic nuclei&lt;/strong&gt; typically begin to swell, causing a sharp drop in visibility (Wet Haze)?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; Hygroscopic particles begin to absorb water and grow in size (deliquescence) once the Relative Humidity exceeds approximately 70–80%, leading to the transition from dry haze to wet haze.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Approximately 70% to 80%&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Exactly 100%&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Below 30%&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Only when RH reaches 99%&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L4-Q04 — Israel Dust Sources</text></name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Which synoptic situation is MOST likely to bring widespread mineral dust and significant visibility reduction to Central Israel from the east/southeast?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; An active Red Sea Trough (RST) with easterly or southeasterly winds is the primary mechanism for transporting mineral dust from the Jordanian and Saudi Arabian deserts into Israel.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;An active Red Sea Trough with easterly flow.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;A deep Siberian High during mid-summer.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;A weak Persian Trough with steady westerly winds.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;A stationary ridge over the Mediterranean Sea.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+<question type="multichoice">
+    <name><text>L5-Q01 — Convective Cloud Base Estimation</text></name>
+    <questiontext format="html">
+      <text>&lt;p&gt;At a coastal station, the surface temperature is 28°C and the dew point is 20°C. Using the standard adiabatic lapse rate approximation for the T-Td spread, what is the estimated base of the convective cumulus clouds?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; A common rule of thumb for convective cloud bases is (T - Td) / 2.5 * 1000. Here, (28 - 20) = 8. Then 8 / 2.5 = 3.2. Multiplied by 1000, the estimated base is 3,200 feet AGL.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;3,200 feet AGL&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;800 feet AGL&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;5,500 feet AGL&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;1,500 feet AGL&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L5-Q02 — Satellite IR Limitations</text></name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Why might a satellite's Infrared (IR) sensor &lt;strong&gt;underestimate&lt;/strong&gt; the actual height of a thin Cirrus cloud layer?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; Thin cirrus clouds are semi-transparent to infrared radiation. The sensor detects a mixture of the cold cloud top radiation and the warmer radiation coming from the surface or lower cloud layers, resulting in a "warmer" brightness temperature and a lower estimated altitude.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;The sensor detects warmer radiation from lower levels passing through the thin cloud.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Coriolis force distorts the IR signal at high latitudes.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Ice crystals in the cloud reflect all IR radiation back to the ground.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;The tropopause acts as a perfect blackbody, blocking the signal.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L5-Q03 — Marine Inversion and Stratus</text></name>
+    <questiontext format="html">
+      <text>&lt;p&gt;In the context of Israeli summer meteorology, what is the primary role of the &lt;strong&gt;Marine Inversion&lt;/strong&gt; in determining cloud bases along the coast?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; The marine inversion acts as a strong "lid" that traps moisture in the boundary layer. Stratus cloud bases and tops are typically constrained by the height of this inversion base.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;It traps moisture in a shallow layer, defining the upper limit and base of the Stratus deck.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;It causes air to sink rapidly, always resulting in perfectly clear skies.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;It creates intense surface heating that raises cloud bases to 10,000 feet.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;It only affects visibility at the 500 hPa level.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L5-Q04 — Orographic Lifting Effects</text></name>
+    <questiontext format="html">
+      <text>&lt;p&gt;If a stable layer of moist air is moving from the Mediterranean Sea toward the Judean Hills, what is the most likely effect on cloud bases as the air reaches the hills?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; As air is forced up the slope of the hills (orographic lifting), it cools adiabatically. This often brings the air to saturation at a lower altitude relative to the ground, resulting in lower cloud bases and potentially "mountain fog" where the cloud base hits the terrain.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Cloud bases will lower due to adiabatic cooling as the air is forced upward.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Cloud bases will rise as the air becomes drier over land.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;The clouds will immediately dissipate due to friction.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;No change will occur as long as the temperature remains above 10°C.&lt;/p&gt;</text>
+      <feedback format="html"><text /></feedback>
+    </answer>
+  </question>
+</quiz>

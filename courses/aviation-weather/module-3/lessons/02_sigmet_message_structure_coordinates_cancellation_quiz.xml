@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+  <question type="multichoice">
+    <name>
+      <text>L2-Q01 — Decoding T1T2 in an arriving bulletin</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>An AFTN bulletin arrives with the WMO heading <code>WAXY12 LLBD 080900</code>. Which two facts about this message can you state with certainty before parsing any further?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> The first two letters of the WMO header are the data-type designator <code>T1T2</code>. <code>WA</code> identifies the message as an AIRMET. The <code>CCCC</code> field (positions 8&ndash;11) is the disseminating communication centre &mdash; here <code>LLBD</code> &mdash; not the FIR. The FIR identifier appears on the first line of the message body, not in the WMO header. The sequential number <code>12</code> in <code>ii</code> is a bulletin number, not the SIGMET/AIRMET sequence number.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>It is an AIRMET (WA), and the disseminating communication centre is LLBD.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>It is a standard SIGMET (WS), and the FIR identifier is LLBD.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>It is a SIGMET for volcanic ash (WV), bulletin number 12.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>It is a tropical cyclone advisory (WC), valid on day 8 at 09:00 UTC.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L2-Q02 — Validity period limit</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>It is 09:00 UTC on day 14. The model strongly suggests that severe icing will affect a layer over the central FIR from approximately 10:00 UTC through 19:00 UTC the same day. Which is the correct issuance strategy?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> Two timing constraints apply. First, the maximum validity of a WS SIGMET is 4 hours. A single SIGMET cannot span 10:00&ndash;19:00 (that is 9 hours). Second, issuance must not precede the expected start of the phenomenon by more than 4 hours; 09:00 UTC is within 4 hours of the 10:00 expected start, so the first SIGMET can be issued now. The right operational approach is to issue the first SIGMET with a 4-hour window starting at 10:00, then re-issue with the next sequential number when that window ends and the phenomenon is still active &mdash; not "wait until later" and not "extend the validity".</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Issue SIGMET 1 valid 141000/141400 now; re-issue with the next sequential number as each 4-hour window expires while the phenomenon persists.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Issue a single SIGMET valid 141000/141900 now &mdash; one message covering the whole expected episode.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Wait until 06:00 UTC the next day before issuing &mdash; the lead-time rule forbids issuing this far ahead.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Issue two SIGMETs at the same time: one for 1000&ndash;1400 and one for 1400&ndash;1800, each with its own sequential number.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L2-Q03 — Coordinate format validity</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>Which of the following polygons is correctly formatted according to Annex 3 for use in a SIGMET meteorological part?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> Annex 3 requires lat/lon in whole degrees or degrees-and-minutes (no decimal degrees), each point starting with the hemisphere letter (N/S/E/W), and vertices separated by space-hyphen-space. The correct option uses <code>N3623 W04515</code>-style points (degrees+minutes, no separator) with the prescribed separator. Decimal degrees (<code>N36.4</code>) are not accepted. Commas as separators are not accepted. Missing the hemisphere letter at the start of a coordinate is also not accepted &mdash; the parser keys off the leading N/S or E/W.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p><code>N3623 W04515 - N3700 W04400 - N3645 W04300 - N3530 W04400</code></p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p><code>N36.4 E034.7, N37.0 E035.0, N36.7 E035.3, N35.5 E034.5</code></p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p><code>3623N 04515W - 3700N 04400W - 3645N 04300W - 3530N 04400W</code></p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p><code>N3623 W04515 / N3700 W04400 / N3645 W04300 / N3530 W04400 / N3623 W04515</code></p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L2-Q04 — Constructing a cancellation message</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>SIGMET number 4 was issued at 06:00 UTC on day 22 with validity <code>220600/221000</code> for EMBD TS over the LLBG FIR. By 08:15 UTC the convection has dissipated and is no longer forecast to redevelop within the original validity window. Which is the correct cancellation message body (after the WMO header)?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> A SIGMET cancellation is itself a SIGMET, with the <em>next</em> sequential number (5), a <em>new</em> validity period running from the issuance time to the end of the original window (220815/221000), and a second line that references the cancelled SIGMET by both its sequential number AND its original validity (<code>CNL SIGMET 4 220600/221000</code>). Re-using the original validity (220600/221000) on the cancellation's first line would imply the cancellation is retroactive to 06:00. Using the same sequential number (4) would not be a valid new bulletin. Omitting the original validity from the CNL line leaves the back-reference ambiguous.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p><code>LLBG SIGMET 5 VALID 220815/221000 LLBD- LLBG TEL-AVIV FIR CNL SIGMET 4 220600/221000=</code></p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p><code>LLBG SIGMET 4 VALID 220600/221000 LLBD- LLBG TEL-AVIV FIR CNL SIGMET 4=</code></p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p><code>LLBG SIGMET 5 VALID 220600/221000 LLBD- LLBG TEL-AVIV FIR CNL SIGMET 4=</code></p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p><code>LLBG SIGMET 5 VALID 220815/221000 LLBD- LLBG TEL-AVIV FIR CNL ALL SIGMETS=</code></p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L2-Q05 — One phenomenon per message</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>The afternoon analysis shows two distinct SIGMET-worthy phenomena over the same FIR: severe icing in stratiform cloud at 4,000&ndash;8,000 ft, and embedded thunderstorms expected to develop over the eastern boundary. Both are within the next 4 hours. What is the correct issuance pattern?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> Annex 3 prescribes one phenomenon per SIGMET. Two SIGMET-worthy phenomena means two SIGMETs &mdash; each with its own sequential number, its own polygon, and its own forecast movement. Combining them into a single message creates an ambiguous weather object that downstream parsers cannot interpret. Choosing only the "more severe" of the two leaves the other un-warned. Issuing a single SIGMET for "general adverse weather" is not a defined product.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Two SIGMETs &mdash; one for SEV ICE and one for EMBD TS, each with its own sequential number.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>One SIGMET listing both SEV ICE and EMBD TS in the meteorological part.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>One SIGMET for the more severe phenomenon; the other is captured in the routine forecast.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A single combined SIGMET with the literal phenomenon code <code>MULT</code> and a free-text description of both.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L2-Q06 — Cancellation vs re-issuance</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+        <p>SIGMET 7 for severe turbulence over the LLBG FIR is valid 1200/1600. At 15:45 UTC the turbulence is still being reported and is forecast to persist for another 2&ndash;3 hours. What action should the MWO take just before the SIGMET expires?</p>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <p><strong>Rationale:</strong> Cancellation is reserved for the case where the phenomenon has ended (or is no longer expected) within the original validity. If the phenomenon outlasts the SIGMET's validity, the correct action is to issue a new SIGMET &mdash; same phenomenon, next sequential number (8), new 4-hour validity window starting at 1600. Issuing a CNL while the phenomenon is still active would mislead consumers into thinking the hazard has passed. Extending the original SIGMET past its validity violates the 4-hour ceiling. Doing nothing leaves the hazard un-warned after 1600.</p>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Issue a new SIGMET 8 with a fresh 4-hour validity (e.g., 1600/2000); do not cancel SIGMET 7.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Issue a CNL SIGMET 7 message so consumers know the existing SIGMET is "rolling over".</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Amend SIGMET 7's validity in place to <code>1200/1900</code>.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Take no action &mdash; the validity will expire at 1600 and the hazard is then communicated through pilot reports.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+</quiz>

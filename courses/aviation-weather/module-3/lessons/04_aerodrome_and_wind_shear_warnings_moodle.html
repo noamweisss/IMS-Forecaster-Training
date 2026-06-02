@@ -1,0 +1,510 @@
+<style>
+/*
+ * IMS Course Factory — Lesson Design System
+ *
+ * All rules are scoped to `.ims-lesson` so the styles can be injected into
+ * a host page (Moodle, in particular) without leaking onto the host's chrome
+ * and without the host's theme overriding lesson typography.
+ *
+ * Standalone lesson HTML wraps the entire body in <div class="ims-lesson">.
+ * Moodle body-fragment HTML does the same. The single rule below keeps the
+ * standalone preview's <body> background consistent without leaking into
+ * Moodle pages.
+ */
+
+.ims-lesson {
+  --bg: #ffffff;
+  --surface: #f6f5f0;
+  --border: #e2dfd6;
+  --text: #1a1917;
+  --muted: #6b6a65;
+  --accent: #185fa5;
+  --accent-light: #e6f1fb;
+  --note-bg: #e1f5ee;
+  --note-border: #0F6E56;
+  --warn-bg: #faeeda;
+  --warn-border: #BA7517;
+  --key-bg: #EEEDFE;
+  --key-border: #534AB7;
+  --danger-bg: #fcebeb;
+  --danger-border: #A32D2D;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+.ims-lesson h1 { font-size: 1.8rem; font-weight: 600; margin-bottom: 0.2rem; line-height: 1.2; color: var(--text); }
+.ims-lesson h2 { font-size: 1.25rem; font-weight: 600; margin-top: 2.5rem; padding-bottom: 0.4rem;
+  border-bottom: 1.5px solid var(--border); color: var(--text); }
+.ims-lesson h3 { font-size: 1.05rem; font-weight: 600; margin-top: 1.75rem; color: var(--text); }
+.ims-lesson p { margin: 0.7rem 0; max-width: 72ch; }
+.ims-lesson figure { margin: 2rem 0; }
+.ims-lesson figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 0.6rem;
+  font-style: italic; text-align: center; }
+.ims-lesson svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+.ims-lesson img { max-width: 100%; height: auto; }
+.ims-lesson table { border-collapse: collapse; width: 100%; margin: 1.5rem 0; font-size: 0.9rem; }
+.ims-lesson th { background: var(--accent); color: #fff; padding: 0.55rem 0.9rem; text-align: left; }
+.ims-lesson td { padding: 0.5rem 0.9rem; border-bottom: 1px solid var(--border); }
+.ims-lesson tr:nth-child(even) td { background: var(--surface); }
+.ims-lesson .callout { border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+.ims-lesson .callout-note    { background: var(--note-bg);   border-left: 4px solid var(--note-border); }
+.ims-lesson .callout-warning { background: var(--warn-bg);   border-left: 4px solid var(--warn-border); }
+.ims-lesson .callout-key     { background: var(--key-bg);    border-left: 4px solid var(--key-border); }
+.ims-lesson .callout-danger  { background: var(--danger-bg); border-left: 4px solid var(--danger-border); }
+.ims-lesson .callout-label { font-weight: 700; font-size: 0.78rem; text-transform: uppercase;
+  letter-spacing: 0.06em; margin-bottom: 0.35rem; }
+.ims-lesson .objectives { background: var(--surface); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+.ims-lesson .objectives ul { margin: 0.5rem 0 0; padding-left: 1.4rem; }
+.ims-lesson .lesson-summary { background: var(--accent-light); border-radius: 8px;
+  padding: 1.25rem 1.5rem; margin: 2.5rem 0 1rem; }
+.ims-lesson .lesson-summary h3 { margin-top: 0; color: var(--accent); font-size: 1rem; }
+.ims-lesson .image-needed { border: 2px dashed var(--border); border-radius: 8px;
+  padding: 1.5rem; margin: 1.5rem 0; text-align: center;
+  color: var(--muted); font-size: 0.9rem; background: var(--surface); }
+.ims-lesson .meta { color: var(--muted); font-size: 0.88rem; margin-bottom: 1.75rem; }
+.ims-lesson .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.5rem; }
+</style>
+<div class="ims-lesson">
+<p class="breadcrumb">Module 3 / Lesson 4</p>
+<h1>Aerodrome (AD) &amp; Wind-Shear (WS) Warnings</h1>
+
+<div class="objectives">
+  <strong>By the end of this lesson you will be able to:</strong>
+  <ul>
+    <li>Apply the IMS AD WRNG thresholds for TS/CB, visibility, ceiling, surface wind, and severe hail.</li>
+    <li>Construct a valid AD WRNG message and the equivalent WS WRNG message.</li>
+    <li>Issue a WS WRNG based on forecaster judgement (FCST), observation (OBS), or pilot report (REP AT), including the low-level-jet criterion.</li>
+    <li>Coordinate AD WRNG issuance with SIGMET / AIRMET so that the FIR-wide and aerodrome-local products stay consistent.</li>
+  </ul>
+</div>
+
+<h2>What an AD WRNG is for</h2>
+
+<p>An aerodrome warning is issued when hazardous weather is occurring at, or is expected within the next 4 hours at, a specific aerodrome &mdash; not the FIR. It is the AFO's product, not the MWO's. It addresses three operational concerns: hazards to aircraft taking off or landing, hazards to aircraft on the ground (including parked aircraft), and disruptions to the normal flow of operations at the airport.</p>
+
+<p>The wind-shear warning (WS WRNG) is a sibling product, narrower in scope: it addresses wind shear on the approach or climb-out path of a specific runway. AD and WS warnings share a structure and a 4-hour validity window but have separate phenomenon lists, separate cancellation messages, and separate distribution patterns.</p>
+
+<div class="callout callout-note">
+  <div class="callout-label">Scope at a glance</div>
+  <strong>AD WRNG &mdash;</strong> hazards at the aerodrome that affect take-off, landing, ground operations, or parked aircraft. Issued by the AFO. Validity up to 4 hours.<br/>
+  <strong>WS WRNG &mdash;</strong> wind shear on approach or climb-out for a specific runway, including microburst and low-level jet. Issued by the AFO. Validity up to 4 hours.
+</div>
+
+<h2>IMS AD WRNG phenomena and thresholds</h2>
+
+<p>Annex 3 lists the categories of phenomenon that an AD WRNG can address. The numerical thresholds that decide when each category triggers are set nationally, by the IMS. The combinations below are the operative IMS thresholds for Ben Gurion and other Israeli aerodromes.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Phenomenon</th>
+      <th>IMS threshold</th>
+      <th>Code in message</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Thunderstorms / cumulonimbus</td>
+      <td>CB within <strong>16 km</strong> of the runway-pattern centre</td>
+      <td><code>TS</code> or <code>HVY TS</code></td>
+    </tr>
+    <tr>
+      <td>Severe hail</td>
+      <td>Hail diameter <strong>&ge; 2 cm</strong></td>
+      <td><code>GR</code></td>
+    </tr>
+    <tr>
+      <td>Visibility</td>
+      <td>Visibility <strong>&lt; 5000 m</strong> due to fog, mist, haze, dust, or sandstorm</td>
+      <td><code>FG</code> / <code>BR</code> / <code>HZ</code> / <code>DU</code> / <code>SA</code> / <code>SS</code> / <code>DS</code></td>
+    </tr>
+    <tr>
+      <td>Low cloud base</td>
+      <td>Coverage <strong>BKN/OVC</strong> (&ge; 5/8) at <strong>&le; 1500 ft AGL</strong></td>
+      <td>Free text describing cloud and base</td>
+    </tr>
+    <tr>
+      <td>Strong surface wind</td>
+      <td>10-min mean &gt; <strong>20 kt</strong> <em>and/or</em> gusts (3 sec / 10 min) &gt; <strong>30 kt</strong></td>
+      <td><code>SFC WSPD nnKT MAX nnKT</code></td>
+    </tr>
+    <tr>
+      <td>Freezing precipitation</td>
+      <td>Any freezing rain or freezing drizzle</td>
+      <td><code>FZRA</code> / <code>FZDZ</code> (with <code>HVY</code> if applicable)</td>
+    </tr>
+    <tr>
+      <td>Snow on the ground</td>
+      <td>Snow accumulating or expected to accumulate</td>
+      <td><code>SN [nnCM]</code> (with <code>HVY</code> if applicable)</td>
+    </tr>
+    <tr>
+      <td>Frost</td>
+      <td>Temperature &lt; <strong>0&nbsp;&deg;C</strong> at 2 m in the Stevenson screen</td>
+      <td><code>FROST</code></td>
+    </tr>
+    <tr>
+      <td>Volcanic ash deposition</td>
+      <td>Ash accumulating on the ground</td>
+      <td><code>VA</code></td>
+    </tr>
+    <tr>
+      <td>Radioactive / chemical cloud</td>
+      <td>Cloud base at surface level</td>
+      <td>Free text</td>
+    </tr>
+    <tr>
+      <td>Squall</td>
+      <td>Sudden, short-duration strong wind</td>
+      <td><code>SQ</code></td>
+    </tr>
+    <tr>
+      <td>Tsunami</td>
+      <td>Tsunami warning affecting the aerodrome</td>
+      <td><code>TSUNAMI</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Two of these thresholds deserve emphasis because they are routinely misremembered. The thunderstorm criterion is <strong>distance to the runway centre, not whether a TS exists</strong>: a CB at 25 km from LLBG does not trigger an AD WRNG even if it is severe. The wind criterion has <strong>two independent triggers</strong> joined by "and/or": either a sustained mean above 20 kt or gusts above 30 kt is sufficient.</p>
+
+<h2>AD WRNG message structure</h2>
+
+<p>The AD WRNG body has six elements in fixed order:</p>
+
+<ol>
+  <li>Location indicator of the aerodrome (e.g., <code>LLBG</code>).</li>
+  <li>Identification of the message type (<code>AD WRNG</code>).</li>
+  <li>Sequential number (resets daily).</li>
+  <li>Validity period in <code>YYGGgg/YYGGgg</code> format.</li>
+  <li>Phenomenon code(s) and any modifier (<code>HVY</code>, <code>TEMPO</code>, intensity, expected change).</li>
+  <li>Whether the phenomenon is observed (<code>FCST</code> / <code>OBS</code>) and any change in intensity over the validity period.</li>
+</ol>
+
+<figure>
+  <svg viewBox="0 0 680 240" role="img" xmlns="http://www.w3.org/2000/svg">
+    <title>Annotated AD WRNG example</title>
+    <desc>An AD WRNG message annotated field by field. LLBG is the aerodrome, AD WRNG is the message type, 1 is the sequential number, the validity period runs from day 11 at 0130 to day 11 at 0500, and the body says broken stratus clouds with a base of 1500 feet temporarily 1000 feet forecast over Ben Gurion airport.</desc>
+
+    <!-- Message body -->
+    <rect x="40" y="30" width="600" height="60" rx="6" fill="#F6F5F0" stroke="#185FA5" stroke-width="2"/>
+    <text x="60" y="60" font-family="monospace" font-size="14" fill="#1A1917">LLBG AD WRNG 1 VALID 110130/110500</text>
+    <text x="60" y="80" font-family="monospace" font-size="14" fill="#1A1917">BKN ST CLDS BASE 1500FT TEMPO 1000FT FCST OVER LLBG AP=</text>
+
+    <!-- Annotation pointers -->
+    <line x1="65" y1="90" x2="85" y2="125" stroke="#185FA5" stroke-width="1.5"/>
+    <text x="55" y="142" font-family="sans-serif" font-size="11" fill="#185FA5">Aerodrome</text>
+
+    <line x1="130" y1="90" x2="160" y2="125" stroke="#0F6E56" stroke-width="1.5"/>
+    <text x="125" y="142" font-family="sans-serif" font-size="11" fill="#0F6E56">Message type</text>
+
+    <line x1="220" y1="90" x2="240" y2="125" stroke="#BA7517" stroke-width="1.5"/>
+    <text x="218" y="142" font-family="sans-serif" font-size="11" fill="#BA7517">Seq. number</text>
+
+    <line x1="330" y1="90" x2="360" y2="125" stroke="#534AB7" stroke-width="1.5"/>
+    <text x="320" y="142" font-family="sans-serif" font-size="11" fill="#534AB7">Validity</text>
+
+    <line x1="200" y1="90" x2="160" y2="175" stroke="#993C1D" stroke-width="1.5"/>
+    <text x="80" y="190" font-family="sans-serif" font-size="11" fill="#993C1D">Phenomenon &amp; intensity</text>
+
+    <line x1="400" y1="90" x2="430" y2="175" stroke="#1A1917" stroke-width="1.5"/>
+    <text x="395" y="190" font-family="sans-serif" font-size="11" fill="#1A1917">Change descriptor (TEMPO)</text>
+
+    <line x1="540" y1="90" x2="560" y2="175" stroke="#6B6A65" stroke-width="1.5"/>
+    <text x="535" y="190" font-family="sans-serif" font-size="11" fill="#6B6A65">FCST or OBS</text>
+
+    <!-- Footer note -->
+    <text x="340" y="225" font-family="sans-serif" font-size="11" fill="#6B6A65" text-anchor="middle" font-style="italic">"Sequential number 1 issued for LLBG, valid 11 day from 01:30 to 05:00 UTC,</text>
+  </svg>
+  <figcaption>Figure 4.1 &mdash; AD WRNG message decoded. The Phenomenon &amp; intensity field accepts a fixed list of codes plus modifiers; free text up to 32 characters is permitted where no code captures the hazard.</figcaption>
+</figure>
+
+<h3>The standard AD WRNG phenomenon-code set</h3>
+
+<p>The phenomenon-code field follows a strict vocabulary. The acceptable values, with optional modifiers in brackets:</p>
+
+<div class="callout callout-key">
+  <div class="callout-label">AD WRNG phenomenon codes</div>
+  <ul>
+    <li><code>TS</code> or <code>[HVY] TS</code></li>
+    <li><code>GR</code> or <code>[HVY] SN [nnCM]</code></li>
+    <li><code>[HVY] FZRA</code> or <code>[HVY] FZDZ</code></li>
+    <li><code>[HVY] SS</code> or <code>[HVY] DS</code> or <code>SA</code> or <code>DU</code></li>
+    <li><code>SFC WSPD nn[n]KMH MAX nn[n]</code> &mdash; (or <code>SFC WSPD nn[n]KT MAX nn[n]</code>)</li>
+    <li><code>SQ</code> or <code>FROST</code></li>
+    <li><code>TSUNAMI</code> or <code>VA</code></li>
+    <li>Free text, up to 32 characters, for phenomena not covered above</li>
+  </ul>
+</div>
+
+<p>Free text exists precisely so that an exotic but operationally significant hazard can be communicated without inventing a non-standard code. Use it sparingly; downstream automation cannot parse arbitrary text.</p>
+
+<h2>Wind-shear warnings &mdash; FCST, OBS, or REP AT</h2>
+
+<p>A WS WRNG is issued whenever wind shear is detected or expected on the approach or climb-out of a specific runway. The Annex 3 wording allows three different bases for issuance, and the basis appears explicitly in the message body.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Basis</th>
+      <th>Indicator</th>
+      <th>Triggering evidence</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Forecaster's judgement</td>
+      <td><code>FCST</code></td>
+      <td>Synoptic situation, model output, or any indication that does not yet meet OBS thresholds</td>
+    </tr>
+    <tr>
+      <td>Observation</td>
+      <td><code>OBS</code></td>
+      <td>Clear identification in AMDAR, radiosonde, pilot balloon, or wind-profiler data</td>
+    </tr>
+    <tr>
+      <td>Pilot report</td>
+      <td><code>REP AT</code></td>
+      <td>A pilot has reported wind shear during approach or climb-out (followed by time)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The distinction matters operationally: a <code>FCST</code> WS WRNG places more responsibility on the forecaster to monitor and amend; an <code>OBS</code> or <code>REP AT</code> warning has external confirmation. Aircraft dispatchers and air traffic controllers treat the three slightly differently, so getting the indicator right is not cosmetic.</p>
+
+<h2>WS WRNG message structure</h2>
+
+<p>The WS WRNG body has the same skeleton as AD WRNG, with the message type changed and phenomenon codes drawn from a different vocabulary.</p>
+
+<figure>
+  <svg viewBox="0 0 680 220" role="img" xmlns="http://www.w3.org/2000/svg">
+    <title>Annotated WS WRNG example with low-level jet</title>
+    <desc>An example WS WRNG message annotated to highlight the runway specification, the forecaster-issuance indicator FCST, the surface wind, and the 900-foot jet wind.</desc>
+
+    <rect x="40" y="30" width="600" height="80" rx="6" fill="#F6F5F0" stroke="#534AB7" stroke-width="2"/>
+    <text x="60" y="60" font-family="monospace" font-size="14" fill="#1A1917">LLBG WS WRNG NO 1 021930Z VALID 022100/030400</text>
+    <text x="60" y="80" font-family="monospace" font-size="14" fill="#1A1917">WS ALL RWY FCST OVER LLBG SFC WIND 150/05KT</text>
+    <text x="60" y="100" font-family="monospace" font-size="14" fill="#1A1917">900FT-WIND: 160/30KT =</text>
+
+    <line x1="160" y1="110" x2="180" y2="145" stroke="#534AB7" stroke-width="1.5"/>
+    <text x="115" y="160" font-family="sans-serif" font-size="11" fill="#534AB7">Message type (WS WRNG NO)</text>
+
+    <line x1="160" y1="110" x2="160" y2="175" stroke="#0F6E56" stroke-width="1.5"/>
+    <text x="80" y="190" font-family="sans-serif" font-size="11" fill="#0F6E56">Issuance time (Z) and validity</text>
+
+    <line x1="220" y1="110" x2="290" y2="145" stroke="#185FA5" stroke-width="1.5"/>
+    <text x="245" y="160" font-family="sans-serif" font-size="11" fill="#185FA5">Runway (ALL RWY)</text>
+
+    <line x1="330" y1="110" x2="350" y2="175" stroke="#BA7517" stroke-width="1.5"/>
+    <text x="320" y="190" font-family="sans-serif" font-size="11" fill="#BA7517">FCST &mdash; forecaster's judgement</text>
+
+    <line x1="540" y1="110" x2="560" y2="160" stroke="#993C1D" stroke-width="1.5"/>
+    <text x="500" y="175" font-family="sans-serif" font-size="11" fill="#993C1D">Surface vs 900 ft wind contrast</text>
+  </svg>
+  <figcaption>Figure 4.2 &mdash; a WS WRNG describing a forecast low-level jet over LLBG. The 5 kt surface wind contrasts with a 30 kt wind at 900 ft AGL &mdash; a textbook shear signature.</figcaption>
+</figure>
+
+<h3>WS WRNG phenomenon codes</h3>
+
+<p>WS WRNG uses a specific vocabulary for the phenomenon field, distinguishing wind shear from microburst and specifying where on the runway the hazard occurs.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>[MOD] [SEV] WS IN APCH</code></td>
+      <td>Wind shear in the approach phase &mdash; runway unspecified</td>
+    </tr>
+    <tr>
+      <td><code>[MOD] [SEV] WS [APCH] RWYnnn</code></td>
+      <td>Wind shear on the approach to a specific runway (e.g., <code>RWY26</code>)</td>
+    </tr>
+    <tr>
+      <td><code>[MOD] [SEV] WS IN CLIMB-OUT</code></td>
+      <td>Wind shear in the climb-out phase &mdash; runway unspecified</td>
+    </tr>
+    <tr>
+      <td><code>[MOD] [SEV] WS CLIMB-OUT RWYnnn</code></td>
+      <td>Wind shear in the climb-out from a specific runway</td>
+    </tr>
+    <tr>
+      <td><code>MBST IN APCH</code></td>
+      <td>Microburst in the approach phase</td>
+    </tr>
+    <tr>
+      <td><code>MBST [APCH] RWYnnn</code></td>
+      <td>Microburst on the approach to a specific runway</td>
+    </tr>
+    <tr>
+      <td><code>MBST IN CLIMB-OUT</code></td>
+      <td>Microburst in the climb-out phase</td>
+    </tr>
+    <tr>
+      <td><code>MBST CLIMB-OUT RWYnnn</code></td>
+      <td>Microburst in the climb-out from a specific runway</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Low-level jet &mdash; when to issue a WS WRNG</h2>
+
+<p>A low-level jet (LLJ) over the aerodrome is one of the most common WS WRNG triggers in Israel, particularly during winter inversions and overnight under clear, calm conditions. The IMS criteria are explicit.</p>
+
+<div class="callout callout-key">
+  <div class="callout-label">IMS LLJ criteria for a WS WRNG</div>
+  <strong>Primary trigger.</strong> A low-level jet with peak wind &ge; 30 kt, with the jet axis below <strong>2000 ft AGL</strong>.<br/><br/>
+  <strong>Supporting indicators (issue when the synoptic situation supports):</strong>
+  <ul>
+    <li>Difference of &ge; 30 kt between the surface wind and the geostrophic wind.</li>
+    <li>Difference of &gt; 15 kt between the surface wind and the 500 m wind. Example: 5 kt at the surface, 20 kt at 500 m &mdash; sufficient to issue, given a matching synoptic pattern.</li>
+  </ul>
+  When surface wind is light, brief the tower on significant winds at 1000&ndash;2000 ft AGL <em>even if they do not yet reach 30 kt</em>.
+</div>
+
+<figure>
+  <svg viewBox="0 0 680 320" role="img" xmlns="http://www.w3.org/2000/svg">
+    <title>Cross-section of a low-level jet over a runway</title>
+    <desc>A vertical cross section showing the runway at ground level with a thin marker showing 5 knot surface wind blowing from the southeast, and a much stronger 30 knot wind blowing from a slightly different direction at 900 feet AGL. A dashed horizontal line marks the 2000 foot threshold above which the jet is no longer a WS WRNG trigger.</desc>
+
+    <!-- Ground / runway -->
+    <line x1="40" y1="280" x2="640" y2="280" stroke="#1A1917" stroke-width="2"/>
+    <rect x="200" y="276" width="280" height="6" fill="#534AB7"/>
+    <text x="340" y="305" font-family="sans-serif" font-size="12" fill="#1A1917" text-anchor="middle">Runway</text>
+
+    <!-- Altitude scale -->
+    <line x1="60" y1="40" x2="60" y2="280" stroke="#6B6A65" stroke-width="1.5"/>
+    <text x="50" y="285" font-family="sans-serif" font-size="11" fill="#6B6A65" text-anchor="end">0</text>
+    <text x="50" y="225" font-family="sans-serif" font-size="11" fill="#6B6A65" text-anchor="end">500 ft</text>
+    <text x="50" y="170" font-family="sans-serif" font-size="11" fill="#6B6A65" text-anchor="end">900 ft</text>
+    <text x="50" y="115" font-family="sans-serif" font-size="11" fill="#6B6A65" text-anchor="end">1500 ft</text>
+    <text x="50" y="60" font-family="sans-serif" font-size="11" fill="#6B6A65" text-anchor="end">2000 ft</text>
+
+    <!-- 2000 ft dashed limit -->
+    <line x1="60" y1="55" x2="640" y2="55" stroke="#993C1D" stroke-width="1.5" stroke-dasharray="6 4"/>
+    <text x="640" y="49" font-family="sans-serif" font-size="11" fill="#993C1D" text-anchor="end">WS WRNG ceiling: jet axis must be below this</text>
+
+    <!-- Surface wind arrow (5 kt, short, southeast) -->
+    <path d="M 250 270 L 290 268" stroke="#185FA5" stroke-width="2" fill="none" marker-end="url(#sfArrow)"/>
+    <text x="265" y="262" font-family="sans-serif" font-size="11" fill="#185FA5">5 kt @ sfc</text>
+
+    <!-- 900 ft jet (30 kt, long, slightly different direction) -->
+    <path d="M 150 170 L 410 168" stroke="#993C1D" stroke-width="3" fill="none" marker-end="url(#jtArrow)"/>
+    <text x="240" y="155" font-family="sans-serif" font-size="13" font-weight="600" fill="#993C1D">30 kt @ 900 ft &mdash; LLJ axis</text>
+
+    <!-- 500 m (~1640 ft) reference wind for the >15 kt rule -->
+    <path d="M 200 100 L 330 99" stroke="#BA7517" stroke-width="2" fill="none" marker-end="url(#midArrow)"/>
+    <text x="260" y="90" font-family="sans-serif" font-size="11" fill="#BA7517">500 m wind (cross-check &gt; 15 kt diff)</text>
+
+    <!-- Aircraft on approach -->
+    <text x="540" y="160" font-family="sans-serif" font-size="14" fill="#1A1917">&#9992;</text>
+    <text x="500" y="180" font-family="sans-serif" font-size="11" fill="#1A1917" font-style="italic">Aircraft on final</text>
+    <text x="500" y="194" font-family="sans-serif" font-size="11" fill="#1A1917" font-style="italic">descends through the jet</text>
+
+    <defs>
+      <marker id="sfArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#185FA5"/></marker>
+      <marker id="jtArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#993C1D"/></marker>
+      <marker id="midArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#BA7517"/></marker>
+    </defs>
+  </svg>
+  <figcaption>Figure 4.3 &mdash; a low-level jet over the aerodrome. Light surface wind beneath a strong jet at 900 ft is the textbook shear case &mdash; the aircraft loses headwind suddenly as it descends through the jet axis.</figcaption>
+</figure>
+
+<h2>Updates, amendments, and cancellation</h2>
+
+<p>An AD WRNG or WS WRNG that is in force must be updated if the forecaster judges that, for a stretch of 2 hours or more within the remaining validity, the weather will differ significantly from what the warning describes. The update can change intensity (up or down), add or remove hazardous elements, or shift the start or end times.</p>
+
+<p>If the phenomenon ends and is not expected to redevelop within the next 2 hours, the warning is cancelled. As with SIGMET, cancellation is itself a warning message, with the next sequential number and a new validity period running until the original end-time. The body contains <code>CNL AD WRNG &lt;n&gt; YYGGgg/YYGGgg</code> or <code>CNL WS WRNG &lt;n&gt; YYGGgg/YYGGgg</code> referring back to the original.</p>
+
+<div class="callout callout-key">
+  <div class="callout-label">Cancellation example</div>
+  <code>LLBG AD WRNG 2 VALID 110330/110500</code><br/>
+  <code>CNL AD WRNG 1 110130/110500=</code>
+</div>
+
+<h2>Coordinating AD WRNG with SIGMET and AIRMET</h2>
+
+<p>The same physical phenomenon often warrants multiple warning products because it affects both the FIR and the aerodrome. The IMS operational rules for that coordination &mdash; lifted from the bilingual "important to remember" slide that closes both source decks &mdash; are below.</p>
+
+<div class="callout callout-warning">
+  <div class="callout-label">IMS coordination rules (deck 13 slide 25 / deck 14 slide 12)</div>
+  <ol>
+    <li>When an AD WRNG is issued, you normally also issue a SIGMET or AIRMET. AD warnings go out whenever significant weather is expected at the aerodrome. In parallel, issue an AIRMET or SIGMET according to severity and area extent.</li>
+    <li>When a WS WRNG is issued for the aerodrome because of a low-level jet, you do <strong>not</strong> need to issue an AIRMET or SIGMET. The LLJ is an aerodrome-scale phenomenon.</li>
+    <li>When the hazardous weather is expected to affect the FIR airspace but not necessarily the aerodrome, issue a SIGMET or AIRMET (according to severity), but you may not need an AD WRNG. Examples: fog over the coastal plain that may not reach LLBG/SDV; convective cloud developed over the mountains.</li>
+    <li>SIGMET and AIRMET are distributed internationally via AFTN and broadcast in VOLMET. AD WRNG distribution is local only.</li>
+  </ol>
+</div>
+
+<p>The fourth rule has a quiet operational consequence: an aerodrome-only warning never reaches a flight planning office abroad. If the same hazard matters to a flight on en-route phase, the SIGMET or AIRMET is the only product that will be seen by an international dispatcher.</p>
+
+<h3>Coordination matrix in operations</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Scenario</th>
+      <th>Products to issue</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SEV TURB across the FIR, no specific aerodrome impact</td>
+      <td>SIGMET only</td>
+    </tr>
+    <tr>
+      <td>OCNL TS in the northern sub-area of the FIR, not over LLBG</td>
+      <td>AIRMET only</td>
+    </tr>
+    <tr>
+      <td>CB approaching to within 16 km of LLBG runway centre, FRQ over the FIR</td>
+      <td>AD WRNG (TS) + SIGMET (FRQ TS)</td>
+    </tr>
+    <tr>
+      <td>Visibility &lt; 5000 m at LLBG due to fog; FIR-wide vis &gt; 5 km elsewhere</td>
+      <td>AD WRNG only (no AIRMET threshold met across FIR)</td>
+    </tr>
+    <tr>
+      <td>Visibility &lt; 5000 m at LLBG and &lt; 5 km across the coastal sub-area of the FIR</td>
+      <td>AD WRNG + AIRMET (<code>VIS &lt;5KM</code>)</td>
+    </tr>
+    <tr>
+      <td>LLJ over LLBG at 900 ft, 30 kt; surface 5 kt</td>
+      <td>WS WRNG only (no AIRMET or SIGMET needed)</td>
+    </tr>
+    <tr>
+      <td>Sustained surface wind 32 kt sub-area, plus gusts &gt; 30 kt at LLBG</td>
+      <td>AD WRNG (<code>SFC WSPD</code>) + AIRMET (<code>SFC WSPD &ge;30KT</code>)</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="callout callout-danger">
+  <div class="callout-label">The most common mistake</div>
+  Issuing an AD WRNG without the matching SIGMET or AIRMET when the phenomenon is also affecting the FIR. The aerodrome warning is local-only distribution &mdash; airliners on approach from abroad never see it. If the hazard is FIR-wide, the SIGMET/AIRMET is what reaches them.
+</div>
+
+<div class="lesson-summary">
+  <h3>Key Takeaways</h3>
+  <ul>
+    <li>AD WRNG is the AFO's product for hazards at the aerodrome; WS WRNG is its sibling for wind shear on approach or climb-out of a specific runway. Both have 4-hour validity.</li>
+    <li>IMS thresholds: CB within 16 km of runway centre, hail &ge; 2 cm, vis &lt; 5000 m, ceiling BKN/OVC &le; 1500 ft, surface wind mean &gt; 20 kt or gusts &gt; 30 kt, frost &lt; 0 &deg;C at 2 m.</li>
+    <li>WS WRNG basis indicator is one of <code>FCST</code>, <code>OBS</code>, or <code>REP AT</code>. The basis appears explicitly in the message and informs how downstream consumers act on it.</li>
+    <li>Low-level jet WS WRNG: peak &ge; 30 kt with the axis below 2000 ft AGL. Supporting indicators are &gt; 30 kt sfc-vs-geostrophic difference, or &gt; 15 kt sfc-vs-500-m difference with matching synoptic.</li>
+    <li>Coordination rule of thumb: AD WRNG almost always pairs with a SIGMET or AIRMET unless the hazard is purely aerodrome-scale (LLJ-only WS WRNG, fog confined to the aerodrome). FIR-wide hazards always pair with the en-route product.</li>
+    <li>AD WRNG distribution is local only; SIGMET and AIRMET go out internationally via AFTN and VOLMET. If a foreign dispatcher needs to know, the SIGMET/AIRMET is the only product that will reach them.</li>
+  </ul>
+</div>
+</div>

@@ -24,6 +24,703 @@ later reversed, add a new entry rather than editing the old one.
 ---
 
 <!-- New entries appended below -->
+## 2026-06-02 — V2: rewrote the broken Figure 1 (Module 1, Lesson 2)
+
+**Context.** The owner flagged Figure 1 in Module 1 Lesson 2 (route planning
+& fuel) as broken. Looking at it: the Moodle/combined copies used literal hex
+but the diagram was cramped and confusing — a free-floating aircraft glyph
+and two loosely-related labelled boxes that never actually showed the
+TAS/wind/ground-speed *relationship*. Worse, the legacy standalone copy of
+the same figure used `fill="var(--text)"` etc. inside SVG attributes — the
+exact var-in-SVG anti-pattern `lesson_spec.md` warns about, which renders
+black/invisible once the CSS variables aren't in scope.
+
+**Decision.** Redrew Figure 1 as a proper head-to-tail vector diagram that
+shows `Ground Speed = TAS ± along-track wind`:
+- A tailwind band: TAS 450 kt (blue) + 50 kt (teal, same direction) = GS 500
+  kt, "shorter flight time → less fuel burn".
+- A headwind band: TAS 450 kt (blue) with a 50 kt vector pointing *back*
+  (amber) = GS 400 kt, "longer flight time → more fuel burn".
+Literal hex only, `role="img"` + `<title>`/`<desc>` for accessibility, no
+`var()`. Applied to all three copies: the `_moodle.html` fragment, the
+`module_combined_moodle.html`, and the legacy standalone `.html`.
+
+**Verified.** Parsed each new `<svg>` with ElementTree (well-formed, numeric
+entities valid), confirmed no `var(` leaked in, and rendered it to PNG with
+cairosvg to eyeball the layout — clean, no overlaps, the arithmetic reads
+left to right.
+
+**Out of scope (noted).** Figure 2 in the *legacy standalone* copy still has
+the `var()`-in-SVG bug. The roadmap only named Figure 1, and the standalone
+file isn't shipped to Moodle (the `_moodle.html`/combined copies of Figure 2
+already use literal hex), so I left it. Flagging here in case we later retire
+or fix the legacy standalones.
+
+---
+
+## 2026-06-02 — V2: completion-tracked, ungraded quizzes
+
+**Context.** The owner needs to verify that forecasters actually did the
+course — who finished and who didn't — but explicitly does *not* want the
+quizzes to feel graded ("we shouldn't grade them with a numerical value, or
+at least not show them the numerical value"). V1 quizzes had no completion
+tracking (`completion=0`) and showed marks, so neither requirement was met.
+
+**Decision.** Make every lesson quiz **completion-tracked but ungraded**, in
+`pipeline/mbz/activities.py`:
+
+- `module.xml` `completion=2` (automatic) + `quiz.xml`
+  `completionminattempts=1` → Moodle ticks the activity complete once the
+  learner submits one attempt. Grade is deliberately *not* part of the rule
+  (`completiongradeitemnumber` NULL, `completionpassgrade=0`), so completion
+  means "did it", not "passed it". This is exactly the reference
+  `quiz_9/module.xml` config, so it's known-good on restore.
+- `reviewmaxmarks=0` + `reviewmarks=0` → the learner never sees a score.
+  Correctness, per-answer feedback, general feedback, and the right answer
+  stay on, so the quiz is still a useful self-check.
+- quiz `grades.xml` grade_item `hidden=1` → the score stays in the gradebook
+  for the instructor but is hidden from the learner.
+
+Pages stay `completion=0` (untracked) — the roadmap asked for completion on
+quizzes specifically, and since every lesson has a quiz, "completed all
+quizzes" is the "did the course fully" signal. Course-level completion was
+already enabled (`enablecompletion=1` in `course.xml`).
+
+**Why hide rather than remove the grade.** Removing grading entirely (e.g.
+`grade=0`) would also strip the per-question scoring the review feedback
+relies on. Keeping the quiz graded internally but hidden from the learner
+preserves the feedback while honoring "don't show them the number", and lets
+the instructor still inspect scores if they want to. Easy to flip back: set
+`hidden=0` and restore the review-marks bitmasks to `4352`/`69888`.
+
+**Verified.** Rebuilt `module-1.mbz`; activities self-test green; confirmed
+`completion=2`, `completionminattempts=1`, zeroed review-marks, and
+`hidden=1` in the unpacked XML, with pages still at `completion=0`.
+
+---
+
+## 2026-06-02 — V2: emoji prefixes on activity names
+
+**Context.** In Moodle's course-index sidebar, every lesson Page and every
+Quiz showed up as a plain line of text. With ~9 activities per module they
+were hard to scan — you couldn't tell a lesson from its quiz at a glance.
+
+**Decision.** Prefix activity names in the `.mbz` builder: `📚` for pages
+(module overview + lessons), `❓` for quizzes. Added `LESSON_EMOJI` /
+`QUIZ_EMOJI` constants in `pipeline/build_mbz.py` and applied them where the
+page/quiz `name` (and the matching manifest `ActivityRef.title`) are built.
+The names now read e.g. `📚 Principles Of Aviation Altimetry` and
+`❓ Principles Of Aviation Altimetry — Quiz`. Verified by building
+`module-1.mbz` and reading the names back out of the activity XML.
+
+**Why only the `.mbz` path.** The `.mbz` one-upload restore is the primary
+(and production-verified) way the course reaches Moodle, so that's where the
+convention belongs. The per-module `README.md` copy-paste path is a fallback
+with a different shape (one combined Page + one Quiz per module), so the
+per-lesson emoji scheme doesn't map onto it.
+
+---
+
+## 2026-06-02 — Course V2 iteration: kickoff + drop dark mode
+
+**Context.** With V1 live in Moodle and a fast build→restore loop, we opened
+the V2 iteration. The plan lives in `courses/aviation-weather/roadmap.md`
+(now a standing part of the project's docs). V2's "Design/Technical" bucket
+has four bounded items; the "Meteorology" bucket (deepen every lesson, more
+examples) is a larger, separate content pass we'll do afterward using the
+source presentations first.
+
+**Decision (this commit).** Removed the dark-mode styling. Every lesson
+carried a `@media (prefers-color-scheme: dark)` block (lifted from
+`config/design_system.css`) that flipped `.ims-lesson` to a dark palette
+based on the reader's OS. Moodle has no dark theme, so on a dark-mode laptop
+the lesson body rendered dark inside Moodle's light chrome — an obvious
+visual clash the owner flagged. Lessons are now always light.
+
+Scope of the change:
+- `config/design_system.css` — removed the block (source of truth; future
+  modules generated via the skill copy this verbatim, so they inherit the fix).
+- All 29 already-generated HTML files under `courses/` — stripped the block
+  in place with a brace-counting script so we didn't have to re-finalize
+  (handled both the `.ims-lesson` Moodle-fragment form and the legacy
+  `:root` standalone form). No other CSS touched; `<style>` blocks still
+  balanced.
+- `docs/lesson_spec.md` — added an explicit "no dark-mode override" note so
+  a future author doesn't reintroduce it.
+
+**Why script-strip instead of re-finalize.** `finalize_module.py` doesn't
+inject the `<style>` block — the author bakes it into each fragment — so
+re-finalizing wouldn't have removed it. Editing in place is the surgical fix
+and keeps the diff readable.
+
+---
+
+## 2026-06-02 — `.mbz` restore verified in production Moodle
+
+**Context.** The remaining acceptance test for the `.mbz` builder: restore the
+generated course backup into the live IMS Moodle 5.2 instance and confirm it
+renders.
+
+**Result.** Owner restored the course `.mbz` into Moodle — the first version of
+the course is now up and running on the production server. The builder is no
+longer "structurally correct but unproven"; it's verified end-to-end. PR #4 is
+cleared for merge.
+
+**What this unlocks.** The pipeline now has a fast iteration loop:
+edit → `finalize_module.py` → `build_mbz.py` → restore. The owner can build the
+next iteration of the course on top of `main` without going back through manual
+copy-paste each time.
+
+---
+
+## 2026-05-28 — `.mbz` verification status + restore guide
+
+**Context.** Closing out the `.mbz` feature: a user-facing restore walkthrough,
+and recording what has and has not been verified.
+
+**Automated verification (done, green).** Unpacked the generated course `.mbz`
+and checked: all 390 XML files well-formed; `.ARCHIVE_INDEX` count matches the
+archive; every manifest activity/section directory exists; every section
+`<sequence>` references an existing cmid; the quiz↔questions contextid invariant
+holds for all 18 quizzes; all 82 question-bank-entry references resolve. The
+single-module build (`--module module-1`) passes the same checks (2 sections, 9
+activities).
+
+**NOT yet done — the decisive test.** A real restore into a live Moodle 5.2
+instance. I don't have access to the IMS Moodle, so this is the user's step (or
+mine if given a throwaway Moodle URL). `prompts/restore-mbz-to-moodle.md` is the
+walkthrough; it lists exactly what to spot-check (page rendering, image
+embedding, quiz grading + rationale). **Until a clean restore is confirmed, treat
+the builder as structurally-correct-but-unproven against a running Moodle.** This
+is why the PR is held until the user verifies.
+
+**Status.** Updated `courses/aviation-weather/course.json` — all four modules are
+generated, finalized, and packaged into the course `.mbz` (the prior "Pending
+generation" entries for modules 2 and 4 were stale).
+
+---
+
+## 2026-05-28 — `--module` flag, finalize integration, and docs
+
+**Context.** The course-wide build works; now the single-module option and the
+pipeline/doc integration.
+
+**Decision.**
+1. `build_mbz.py --module <folder>` builds a one-section `.mbz` for a single
+   module (reuses `assemble()` with a one-module list; reads course id from the
+   parent `course.json`). Verified on module 1: 2 sections (General + Module 1),
+   9 activities, all XML well-formed.
+2. `finalize_module.py --mbz` optionally builds the single-module `.mbz` right
+   after finalizing.
+3. Documentation threaded through: `docs/runbook.md` Phase 6 now leads with the
+   `.mbz` restore (Option A) and keeps copy-paste as Option B;
+   `docs/architecture.md` gains Phase 4; `AGENTS.md` updates the pipeline diagram,
+   project structure, and the "Generate Module N" steps; the per-module
+   `README.md` template (in `finalize_module.py`) leads with the restore path.
+
+**Why this shape.** Course-wide is the normal case (one upload); `--module` is for
+re-uploading a single updated module without touching the rest. Both go through
+the same builders, so there's no second code path to keep correct.
+
+---
+
+## 2026-05-28 — `build_mbz.py`: orchestrator + packaging (whole course builds)
+
+**Context.** Final assembly: read finalized course content, allocate ids, drive
+the activity + structure builders, and package a `.mbz`.
+
+**Decision.** `pipeline/build_mbz.py` reads `course.json` and each module's
+`00_module_overview_moodle.html`, `lessons/NN_*_moodle.html`, and matching
+`*_quiz.xml`, then `assemble()` lays out one section per module (overview Page →
+lesson Page → lesson Quiz …), building the question bank *before* the quiz
+activities so the question-bank-entry ids are available to wire each quiz's
+slots. `package()` writes everything to a temp dir, generates a correct
+`.ARCHIVE_INDEX` (dirs-before-files, byte sizes), and tars+gzips to
+`courses/<course>/<course_id>.mbz`.
+
+**Result — first full-course build.** Aviation Weather → a 1.4 MB `.mbz`: 5
+sections (General + 4 modules), 40 activities (22 pages + 18 quizzes), 82
+questions. Structural verification all green: every XML well-formed,
+`.ARCHIVE_INDEX` count matches, every section `<sequence>` references an existing
+cmid, the quiz↔questions contextid invariant holds, and all 82
+question-bank-entry references resolve.
+
+**Decision — don't commit the generated `.mbz`.** The plan said to commit it, but
+the output embeds a fresh timestamp and random ids (`backup_id`,
+`original_site_identifier_hash`) on every build, so committing would churn a large
+binary each run. Added `courses/**/*.mbz` to `.gitignore` and documented the
+one-line regeneration command instead. The tracked reference under
+`docs/mbz_reference/` is unaffected. (Still the decisive test — a real Moodle
+restore — before the PR.)
+
+---
+
+## 2026-05-28 — Structural assembler (manifest, sections, course, gradebook, question bank)
+
+**Context.** The layer that ties the activities together: the `moodle_backup.xml`
+manifest, the per-section `section.xml` (with the cmid `<sequence>`), the course
+record + course boilerplate, the course `gradebook.xml`, and the whole
+`questions.xml` question bank.
+
+**Decision.** `pipeline/mbz/structure.py` with pure builders + small description
+dataclasses (`ActivityRef`, `SectionRef`, `QuizSpec`). The trickiest part is
+`build_question_bank()`: it emits the `top` + `Default for <quiz>` category pair
+per quiz (scoped to that quiz's module contextid) and the nested
+`question_bank_entry → question_version → question_versions → questions`
+wrapping each converted `<question>` — and it *records back onto each QuizSpec*
+the category ids and question-bank-entry ids, so the orchestrator can wire the
+quiz's `question_instances`/`inforef` to the same contexts. That back-reference is
+how the contextid invariant is kept.
+
+**Notes.** `moodle_backup.xml` settings include the required per-section and
+per-activity `included`/`userinfo` pairs (without them the restore UI hides the
+content). `original_site_identifier_hash` and `backup_id` are random per build.
+Course total grade category uses `aggregation=13` (natural), matching the
+reference.
+
+**Verification.** Self-test builds a question bank, sections, course files,
+gradebook, and a manifest; parses all for well-formedness; and asserts the
+manifest contains the section/activity include flags and that QuizSpec got its ids
+back.
+
+---
+
+## 2026-05-28 — Per-activity builders (page + quiz)
+
+**Context.** With the converter, ids, and boilerplate in place, the next layer
+emits a full activity directory: `activities/page_<cmid>/` or
+`activities/quiz_<cmid>/`.
+
+**Decision.** `pipeline/mbz/activities.py` exposes `build_page_activity()` and
+`build_quiz_activity()`, each returning a `{archive_path: content}` dict.
+`build_module_xml()` is shared. The page puts the lesson body fragment into
+`<content>` (escaped). The quiz wires `question_instances` →
+`question_reference` → `questionbankentryid` (the 5.x model), emits its own
+activity-level grade item in `grades.xml`, and ties grade item + question
+categories together in `inforef.xml`. The quiz↔questions contextid invariant is
+asserted in the self-test.
+
+**Small choices.** `preferredbehaviour=deferredfeedback` (answer all, submit, then
+see rationale/feedback) rather than the reference's `interactive` — better fit for
+a certification quiz. No completion tracking (`completion=0`); pass grade left at
+0 and can be set per-quiz after restore. Review bitmasks copied verbatim from the
+reference so feedback/right-answer show on review.
+
+**Verification.** Self-test builds one page (9 files) and one quiz (9 files), parses
+every file for well-formedness, and confirms the quiz uses its own contextid in
+both `question_reference` and `inforef`. Works run-as-script and import-as-package.
+
+---
+
+## 2026-05-28 — `.mbz` boilerplate constants + deterministic ID allocator
+
+**Context.** A `.mbz` carries ~20 small, near-empty XML files (per-activity
+`roles/filters/calendar/competencies/grade_history`, course-level
+`enrolments/roles/filters/...`, top-level `badges/scales/groups/...`). They're
+constant for every backup. We also need ids that are unique within the backup.
+
+**Decision.**
+1. `pipeline/mbz/ids.py` — `IdAllocator` with one incrementing counter per entity
+   kind (context, cmid, section, question, answer, qbe, ...), plus `make_stamp()`
+   for unique question stamps. Deterministic, so output is byte-stable across
+   runs (clean diffs). Moodle remaps all ids on restore anyway; they only need
+   internal consistency.
+2. `pipeline/mbz/templates.py` — the constant boilerplate as named string
+   constants copied verbatim from the reference, bundled into
+   `ACTIVITY_COMMON_FILES` / `COURSE_COMMON_FILES` / `TOP_COMMON_FILES` dicts the
+   builder writes out.
+
+**Deviation worth noting.** The plan called for a `pipeline/mbz_templates/`
+directory of ~20 tiny `.xml` files. I consolidated them into one reviewable
+Python module instead — two dozen near-empty XML stubs are harder to review than
+a single annotated file, and it keeps the builder self-contained (no reading from
+`docs/` at build time). The raw reference files remain under
+`docs/mbz_reference/` for diffing.
+
+**Verification.** Every constant and bundle parses as well-formed XML; allocator
+and stamp helper exercised.
+
+---
+
+## 2026-05-28 — Quiz import-XML → backup questions.xml converter
+
+**Context.** Our per-lesson quizzes (`lessons/NN_<slug>_quiz.xml`) are in Moodle
+*import* format. A `.mbz` restore reads the *backup* format, which nests
+differently and renames several fields. The converter is the one genuinely fiddly
+piece of the builder, so it lands first and in isolation.
+
+**Decision.** Added `pipeline/mbz/quiz_to_backup.py`: `parse_quiz_file()` reads
+import-format multichoice questions into small dataclasses, and
+`build_question_element()` renders one as a backup-format `<question>` element.
+Key field remaps (full table in `docs/mbz_format.md`): `defaultgrade`→
+`defaultmark`, answer `<text>`→`<answertext>`, `fraction="100"`→
+`<fraction>1.0000000`, `format="html"`→format code `1`, and HTML stored escaped
+(not CDATA). Standard multichoice feedback strings copied verbatim from the
+reference.
+
+**Verification.** A built-in self-test converts all 16 module-1 questions and
+asserts 4 answers + exactly one correct answer each, then round-trips every
+generated element through serialise+parse to prove well-formedness. Passing.
+Spot-checked one question's XML against the reference — identical shape.
+
+---
+
+## 2026-05-28 — Reviving the `.mbz` builder; got a Moodle 5.2 reference
+
+**Context.** On 2026-05-19 we *deferred* the `.mbz` (Moodle backup) generator
+(see that entry) for one reason: the target Moodle version and backup schema were
+unknown, making it a blind 1–2 day effort with no way to test. That blocker is
+now gone — the owner exported a throwaway course from the real IMS Moodle as a
+reference backup.
+
+**Finding.** Reverse-engineered the reference: Moodle **5.2+ (build 20260501),
+`backup_version 2026042000`, format `moodle2`**. Critically, it contains exactly
+the two activity types we generate — a **Page** and a **Quiz** — so it pins down
+the whole schema: the `moodle_backup.xml` manifest, sections with cmid
+`<sequence>`, per-activity dirs, the modern question-bank model
+(`question_reference` → `questionbankentryid`), the new `.ARCHIVE_INDEX` index
+file, and all the near-empty boilerplate files.
+
+**Decision.** Revive the builder, targeting 5.2. Committed the raw reference and
+its extracted XML tree under `docs/mbz_reference/` (provenance, do not edit) and
+wrote `docs/mbz_format.md` as the canonical schema map the builder is coded
+against. Images stay base64-inline in the page HTML, so `files.xml` is empty and
+we skip Moodle's file pool entirely (the reference confirms an empty
+`files.xml`).
+
+**Why now and not in May.** The reference removes every unknown from the original
+deferral. The owner also confirmed production Moodle is the same 5.2, so the
+version stamp is safe. The decisive test is still a real restore (tracked later
+in this feature).
+
+---
+
+## 2026-05-28 — Adopt incremental-documentation working practice
+
+**Context.** Starting the `.mbz` (Moodle backup) generator feature — a
+multi-commit effort. The owner asked that documentation arrive in small steps
+alongside the code, not as one big writeup at the end (their stated preference,
+and a common failure mode where the journal/CHANGELOG drift behind the code).
+
+**Decision.** Made the existing "commit small logical steps" rule explicit about
+docs: every code commit carries its own journal + CHANGELOG update for that step.
+Added the rule to `AGENTS.md` (Agent Personality) and to the `generate-module`
+SKILL, mirrored across `.claude/skills/` and `.agents/skills/` in this same
+commit so the two never drift.
+
+**Why.** The journal is meant to read as a running log of *why*. Batching all of
+it at the end loses the per-step reasoning and leaves intermediate commits with
+stale docs. This entry is itself the first instance of the practice.
+
+---
+
+## 2026-05-26 — Module 4 image extraction and finalization for Moodle
+
+**Context.** The user requested auditing the pilot course modules for Moodle readiness. Module 1, 2, and 3 were fully ready, but Module 4 was drafted but not yet finalized (missing combined files, unified quiz XML, and containing 2 unresolved image-needed placeholders). The user approved running the newly added image extraction pipeline to harvest images from source decks and finalize the module.
+
+**Decision.**
+1. Run `python pipeline/extract_sources.py` on Module 4 source PowerPoint presentations. This extracted 19 images from the Tropical Storms deck and 17 images from the Volcanic Ash deck.
+2. Review extracted images against placeholders. Identified Slide 15 image (`slide15_img1.png`) as a perfect fit for the tropical cyclone eye in Lesson 3, and Slide 2 image (`slide02_img1.jpeg`) for the volcanic ash plume in Lesson 4.
+3. Replace the `image-needed` placeholders in `03_tropical_storms_moodle.html` and `04_volcanic_ash_moodle.html` with `<figure>` elements referencing these source-extracted images.
+4. Run `python pipeline/finalize_module.py --module courses/aviation-weather/module-4` to combine per-lesson quizzes into `module_quiz_all_questions.xml`, inline images as base64 data URIs, generate the unified lesson file `module_combined_moodle.html` (129 KB), and create the deployment `README.md`.
+5. Stage, commit, and push both the extracted images and finalized module files to GitHub main.
+
+**Result.** All four modules in the Aviation Weather course are now **100% Ready** for Moodle deployment. No unresolved image-needed placeholders remain in the entire course. The local repository is fully clean and in sync with GitHub remote main.
+
+---
+
+## 2026-05-26 — Git synchronization, local Module 4 securing, and skill sync
+
+**Context.** The user opened the project in Antigravity after working in Claude Code in the browser. There were uncommitted changes locally (Module 4 PowerPoint files moved, and Module 4 lessons and quizzes generated), and the remote repository on GitHub had 3 new commits introducing image extraction that were missing locally. Additionally, the `.agents/skills/` directory on GitHub was drifting behind `.claude/skills/` because the browser agent only updated the latter.
+
+**Decision.** Clean up the repository and synchronize with GitHub by executing a structured plan:
+1. Stage and commit the local Module 4 files to secure the generated work: `feat: organize source files and author lessons for module 4`.
+2. Run `git pull --rebase` to pull remote image extraction commits from GitHub and place local commits cleanly on top, keeping history linear.
+3. Sync `.agents/skills/generate-module/SKILL.md` by copying the updated `.claude/skills/generate-module/SKILL.md` over it to resolve the drift, and commit: `chore: sync .agents/skills/ with .claude/skills/ for image gate feature`.
+4. Push both commits to remote main.
+
+**Result.** The local and remote branches are now 100% in sync on `main`. The working tree is clean. The skill directories are fully identical, and all Module 4 work is securely committed and backed up.
+
+---
+
+## 2026-05-20 — Module 3: extracting source-deck images post-hoc
+
+**Context.** Module 3 was initially authored with zero external
+imagery &mdash; every visual was inline SVG. The user flagged that
+this broke the established Module 1 / Module 2 pattern of pairing
+agent-drawn diagrams with real photographs or source-deck images,
+and asked whether I should have asked them first. Answer: yes,
+absolutely &mdash; the lesson-spec phase 2b explicitly says
+"Show the blueprint to the user before writing any lessons" and
+the blueprint shape includes an `external_imagery_needed` field
+I should have populated and asked about.
+
+**Decision.** Rather than synthesise photo placeholders for the
+user to source later, extract the relevant images directly from
+the IMS source decks (13 &amp; 14) using `python-pptx`. The
+extraction script (`pipeline/extract_sources.py`) currently does
+NOT extract images &mdash; it only flags `has_images: true` on
+each slide. So I wrote a small inline `python-pptx` script in the
+shell, walking each slide's shapes and saving any
+`MSO_SHAPE_TYPE.PICTURE` shape to `lessons/Images/`.
+
+**What turned up.** Deck 13 had 9 picture shapes across slides
+8, 9, 11, 12 (with several being duplicates of the same large
+1.1 MB corkboard-of-examples image reused for layout). Deck 14
+had no embedded picture shapes &mdash; its content is text and
+hand-drawn arrows that python-pptx doesn't surface as PICTUREs.
+After de-duplication and pedagogy-driven filtering (skipped the
+1.1 MB corkboard image and the Hong Kong Observatory logo), four
+unique images were worth keeping:
+
+| File | Slide | Content |
+|------|-------|---------|
+| `annex3_first_line_spec.png` | 13/8 | Annex 3 §3.4.2 first-line field-definition table |
+| `annex3_first_line_examples.png` | 13/8 | Two concrete first-line examples |
+| `annex3_met_part_spec.png` | 13/9 | Annex 3 §3.4.3.1 met-part 8-element table |
+| `sigmet_parts_key.png` | 13/11 | Colour-coded key showing every SIGMET part |
+
+All four were inserted into Lesson 2 (SIGMET Message Structure)
+because that is the lesson the Annex 3 reference tables map onto.
+Figure numbering in L2 went from two figures (2.1, 2.2) to six
+(2.1&ndash;2.6), with the source images interleaved between the
+agent-drawn SVGs so each section has both a synthesised diagram
+and a canonical reference.
+
+**Considered: making image extraction a first-class pipeline
+feature.** `pipeline/extract_sources.py` could grow an
+`--extract-images` flag that walks PICTUREs and saves them under
+`<module>/_extracted_images/<deck>/slide_NN_shape_M.png`. Decided
+against doing it in this commit so the change stays scoped to
+"author module 3"; opened it as a follow-up for the next
+pipeline change.
+
+**Lesson.** Whenever the blueprint stage proposes "all visuals as
+inline SVG", flag that explicitly to the user. The default for
+this course is mixed media; an all-SVG module is a deviation that
+needs sign-off, not a default I get to make silently.
+
+---
+
+## 2026-05-20 — Module 3 title change &amp; 4-lesson split
+
+**Context.** Module 3 was scheduled in `course.json` as
+"Terminal Area Hazards &amp; Visibility", with sources 13&ndash;14
+(Area Warnings &amp; Aerodrome Warnings). On reading the extracted slide
+content, both decks turned out to be about issuing *warning products*
+(SIGMET, AIRMET, AD WRNG, WS WRNG) &mdash; not about hazards as
+phenomena. Module 2 already covered the hazards themselves (turbulence,
+icing, fog, etc.) at the phenomenological level.
+
+**Decision.** Renamed the module to
+"Aviation Warnings: SIGMET, AIRMET &amp; Aerodrome" in `course.json`
+and the overview, and split the content into four lessons:
+
+1. The aviation warning framework &amp; SIGMET phenomena (deck 13 slides
+   1&ndash;5, 10, 21) &mdash; sets up the MWO/AFO/FIR hierarchy and the
+   SIGMET severity gate.
+2. SIGMET message structure, coordinates &amp; cancellation (deck 13
+   slides 6&ndash;9, 13&ndash;15, 24) &mdash; the WMO header, first-line
+   syntax, polygon coordinates, and CNL messages.
+3. AIRMET &mdash; low-level warnings (deck 13 slides 16&ndash;23) &mdash;
+   the eight AIRMET phenomena, the ISOL/OCNL/FRQ coverage qualifiers,
+   and the AIRMET-vs-SIGMET decision.
+4. Aerodrome (AD) and wind-shear (WS) warnings (entire deck 14, plus
+   deck 13 slide 25 coordination notes) &mdash; the IMS-specific
+   thresholds, AD/WS message syntax, low-level-jet criteria, and the
+   coordination matrix between AD WRNG and SIGMET/AIRMET.
+
+**Why.** The original course-config title would have mis-set student
+expectations and risked re-covering ground from Module 2. The decks
+are operationally cohesive around warning products, which is also
+what the IMS certification examines on this material. The 4-lesson
+split was preferred over the natural 3-lesson SIGMET/AIRMET/AD split
+because the SIGMET message-syntax content (header decoding, lat/lon
+polygons, cancellation rules) is procedurally dense enough to deserve
+its own lesson &mdash; otherwise it dominates a combined "SIGMET"
+lesson and crowds out the phenomena/threshold material.
+
+**Hebrew slides.** Decks 13 and 14 each contain Hebrew slides covering
+IMS-specific operational rules (CB within 16 km of the runway centre,
+visibility &lt; 5000 m, ceiling &le; 1500 ft, the AD/SIGMET
+coordination policy). These were translated and integrated into the
+lesson prose, with the IMS-specific thresholds noted as such so they
+remain distinguishable from generic Annex 3 content. Skipping them was
+considered and rejected &mdash; these are exactly what the IMS
+certification tests.
+
+---
+
+## 2026-05-20 — Git LFS 502 inside Claude Code remote-execution sandboxes
+
+**Context.** Started generating Module 3 in a Claude Code on-the-web
+session. The source PPTX files (`13. Area Warnings.pptx`,
+`14. Aerodrome Warnings.pptx`) materialised as 130-byte git-LFS pointer
+stubs instead of the real binaries, so `pipeline/extract_sources.py`
+produced an empty extraction. Every `git lfs pull` attempt failed with
+`HTTP 502` against `http://local_proxy@127.0.0.1:42061/.../info/lfs`.
+
+**Finding.** The sandbox's git remote points at a Claude-managed local
+proxy (`local_proxy@127.0.0.1:42061`) that forwards normal git
+pack-protocol traffic but **does not implement the LFS batch API**. By
+default `lfs.url` resolves to `<remote>/info/lfs`, so every LFS request
+went to the proxy and was rejected. Plain HTTPS to `github.com` works
+fine from the same sandbox (verified with `curl`), so the breakage is
+specifically a proxy gap, not general network restriction.
+
+**Decision.** Point `lfs.url` at GitHub's real LFS endpoint for the
+download side, then undo it before pushing (the sandbox has no GitHub
+push credentials, so push must go back through the proxy &mdash; which
+works fine for the normal git pack protocol):
+
+```bash
+# Session start
+apt-get install -y git-lfs               # not preinstalled in the sandbox image
+git lfs install --skip-repo
+git config lfs.url https://github.com/<owner>/<repo>.git/info/lfs
+git lfs pull
+
+# Before pushing
+git config --unset lfs.url
+git config lfs.locksverify false
+git push -u origin <branch>
+```
+
+The `lfs.url` setting is repo-local (`.git/config`) and does **not**
+travel with commits &mdash; every fresh sandbox checkout will hit the
+same 502 until the workaround is re-applied. The push side only works
+without auth because per-module source files duplicated from
+`source_files/` share OIDs with already-pushed LFS objects, so nothing
+new needs uploading.
+
+**Why this and not something else.** Considered (a) committing the
+PPTX files un-LFS'd — rejected, they're 2 MB+ binaries and the repo's
+`.gitattributes` deliberately routes them through LFS; (b) re-pointing
+the entire git remote at github.com — rejected, breaks the proxy for
+normal fetch/push which DO work through it; (c) asking the user to
+upload the files manually each session — rejected, the workaround is
+trivial and one-shot. The right long-term fix is for Claude Code's
+remote-execution image to either (i) forward `/info/lfs/*` through the
+proxy or (ii) set a default `lfs.url` in the per-session git config so
+LFS-tracked repos Just Work. Until then, the runbook lists this as a
+session prerequisite.
+
+**Documented in:** `docs/runbook.md` (Prerequisites + Troubleshooting)
+and `AGENTS.md` (Setup section).
+
+---
+
+## 2026-05-20 — Skill-packaging the pipeline: `.claude/skills/generate-module/`
+
+**Context.** AGENTS.md has long promised that an in-repo skills folder would
+hold "the course-conversion skill that this repo will seed", and
+`docs/architecture.md` mapped the three-phase pipeline directly onto a
+skill's anatomy (tools → instructions → worked example). The
+agent-driven pivot from 2026-05-19 was made specifically to enable this
+packaging. With Module 1 stable and the spec doc settled, this is the
+moment.
+
+**Path correction.** The original AGENTS.md placeholder pointed at
+`.ai/skills/`, which is not what either tool we use actually reads —
+Claude Code looks in `.claude/skills/`, Antigravity looks in
+`.agents/skills/`. The placeholder was a guess made before the real
+conventions were verified, and the first version of this entry inherited
+the wrong path. Lesson worth recording: search for the real convention
+(or test it) before deferring to documented intent, especially when the
+documentation predates the tools it's trying to describe. The skill now
+lives at `.claude/skills/generate-module/` as the canonical home, with
+an identical mirror at `.agents/skills/generate-module/`.
+
+**Decision.** Created `.claude/skills/generate-module/`:
+.claude/skills/generate-module/
+├── SKILL.md                       entry point, ~188 lines
+└── references/
+├── lesson_template.html       worked-example lesson body fragment
+└── quiz_template.xml          worked-example Moodle XML quiz
+SKILL.md is the agent's entry point: it describes the three-phase
+workflow, points at the right reference files at the right moments,
+states the non-negotiable constraints with a one-sentence *why* each,
+and ends with five sanity-check commands the agent runs against its
+own output. The two reference files are copy-paste scaffolding the
+agent uses as a starting point per lesson and quiz.
+
+The skill **does not duplicate** `docs/lesson_spec.md`,
+`docs/runbook.md`, or `config/design_system.css`. SKILL.md points at
+them by path. This preserves single source of truth and means edits
+to the spec or design system flow into the skill automatically.
+
+**Why these specific choices.**
+
+*Bundling vs. linking to repo files.* The skill could have been
+self-contained — copying the Python scripts, the spec, the CSS into
+the skill folder so it could be lifted into other repos as-is.
+Rejected: this skill is only intended for use within this repo, and
+duplication creates exactly the sync-drift problem we built the
+single-extract / single-finalize architecture to avoid. The trade-off
+is that the skill is now repo-coupled; if it ever needs to live
+elsewhere the missing pieces are well-scoped and easy to copy in.
+
+*Design system CSS as a marker comment, not embedded text.* The
+lesson template carries a loud comment instructing the agent to paste
+`config/design_system.css` verbatim into the leading `<style>` block,
+rather than embedding the 70 lines of CSS directly. Same
+single-source argument. The trade-off is real — an agent could leave
+the marker in place by accident — but SKILL.md reinforces the step
+twice, and the sanity checks catch the most common downstream
+failure (CSS vars in SVG) which would also catch a missing style
+block.
+
+*Worked example uses generic meteorology, not aviation.* The lesson
+template teaches atmospheric stability. Reasoning: the skill is
+course-agnostic and should stay that way; tying the example to
+Aviation invites future Hebrew-language or non-aviation courses to
+copy aviation patterns inappropriately. The example is still
+deliberately rich enough to demonstrate every building block —
+callouts (all four classes), table, SVG with literal hex, image-needed
+placeholder, summary.
+
+*Two question patterns in the quiz template.* "Diagnose the
+classification" and "Forecast-decision from a multi-input scenario"
+are the two question shapes that consistently produce
+application-level questions in forecasting. Showing both — rather
+than one — discourages the model from defaulting to recall.
+
+**What this unlocks.** Future modules (Aviation 2, 3, 4 plus any new
+course) can be generated by an agent whose context contains nothing
+but the user's request, a pointer to the source files, and this
+skill. No prompt engineering per module, no copy-pasted handoff
+prompts in `prompts/`.
+
+**Open questions for the next iteration.**
+
+- Will the agent actually paste `design_system.css` into the leading
+  `<style>` block correctly, or will the marker comment fail in
+  practice? Module 2 generation will tell us.
+- The lesson template uses generic meteorology content. Does the
+  agent produce better lessons when the example is closer to the
+  target domain, or worse — because it's tempted to copy the
+  example's content? Empirical question.
+
+The next test is real: generate Aviation Module 2 using this skill in
+Antigravity or Claude Code and review the output. Iteration will be
+driven by what that review surfaces, not by speculation now.
+
+## 2026-05-19 — Module 2 Generation and PPTX Extraction Fixes
+
+**Context.** Generating "Module 2: In-flight Aviation Hazards" using the new agent-driven workflow. This was the first time the pipeline was used to process a bulk set of source PPTX files in a production capacity.
+
+**Finding.** The PPTX extraction script (`pipeline/extract_sources.py`) failed on several files with `ValueError` when encountering non-placeholder shapes (e.g., logos, custom graphics) or certain chart objects. Specifically, accessing `shape.placeholder_format` on a shape that isn't a placeholder raised an exception, as did checking for a `chart` attribute via `hasattr` on some modern PowerPoint objects.
+
+**Decision.** 
+1.  **PPTX Extraction Fix:** Refactored `extract_pptx` to use `getattr(shape, "is_placeholder", False)` and `getattr(shape, "has_chart", False)` for safer attribute access. This allows the script to gracefully skip decorative or complex objects without crashing the entire extraction.
+2.  **Module 2 Output:** Successfully generated 5 lessons with quizzes. Adhered to the new Moodle-ready fragment spec (scoped CSS, body fragments, literal SVG hex colors).
+3.  **Image Tracking:** Explicitly used `IMAGES_TO_SOURCE.md` to flag two visuals (Annotated Tephigram and Mature CB) that require real photography, while using robust SVG diagrams for all other conceptual illustrations (mountain waves, icing profiles, etc.).
+
+**Why.** 
+-   **Robustness:** The pipeline must be resilient to variations in source file formatting. Israel Meteorological Service presentations often contain legacy or inconsistently formatted slides; the extractor needs to be permissive.
+-   **Maintenance:** Consolidating the Image Sourcing requirements into a machine-parsable markdown file allows the human SME (Evgeny) to quickly see what is missing without reading every HTML file.
+
+---
 
 ## 2026-05-19 — Pilot phase findings: Moodle paste rendering is broken
 
@@ -397,6 +1094,22 @@ LESSON_SYSTEM prompts, the quiz XML shape, the SVG color palette and
 callout class conventions — will be reconstructed into the new
 `docs/lesson_spec.md` (next commit). The spec doc is what a future
 Claude Code agent or skill reads to know what to produce.
+
+---
+
+## 2026-05-26 — Course-Wide Preview Compiler & Netlify Git-Sync
+
+**Context.** As the Aviation Weather Forecasting course expanded and all four modules were fully generated, the need for a comprehensive en-route preview system outside of Moodle returned. Previously, a basic pre-Moodle developer script `build_preview.py` created a mock site just for Module 1, which was then hosted on Netlify. A reusable, course-agnostic pipeline was needed to compile any course's full syllabus, lessons, inlined SVG diagrams, base64-embedded downscaled images, and interactive quizzes into a single, high-impact demonstration link.
+
+**Decision.**
+1. Implement a new, highly portable build script `pipeline/build_course_preview.py`. To make it fully compatible with Netlify's serverless build runners, the script is designed using **pure standard library Python** with **zero third-party dependencies**.
+2. Have the compiler read the course-wide `course.json` and each module's `module_structure.json` to dynamically map out a complete Course Curriculum.
+3. Dynamically parse every module's `lessons/*_quiz.xml` (using standard `xml.etree.ElementTree`) to compile an interactive JSON-formatted question bank. To avoid any JSON formatting or string escaping bugs, all Moodle HTML fragments (overviews and lessons) are base64-encoded on build-time and decoded in the browser on-the-fly using `atob()`.
+4. Compile the output into a single-file `index.html` inside a `preview_dist/` folder. The frontend shell is a highly polished Single Page App (SPA) styled with custom HSL light/dark themes, an accordion-based collapsible curriculum sidebar, and a full interactive quiz engine that grades selections, colors options, and reveals rationales/feedback.
+5. Place a root-level `netlify.toml` in the repository, linking `preview_dist/` to the Netlify publishing directory.
+
+**Result.** A single command (`python pipeline/build_course_preview.py --course courses/aviation-weather --output preview_dist`) compiles all 4 modules, 18 lessons, and 18 interactive quizzes into a single 4.6 MB file (`index.html`) in under 2 seconds. Because Netlify is directly linked to the Git repository, pushing any changes automatically triggers this script and compiles the preview, providing a permanent, Git-synchronized demonstration link.
+
 
 Both deleted files remain in `git log` if anyone ever needs to
 reference the original prompt phrasing.

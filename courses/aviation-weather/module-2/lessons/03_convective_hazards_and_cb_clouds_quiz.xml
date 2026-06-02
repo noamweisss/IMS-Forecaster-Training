@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <question type="multichoice">
+    <name><text>L3-Q01 — CB Mature Stage Characteristics</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>What defines the beginning of the <strong>Mature Stage</strong> in a Cumulonimbus (CB) life cycle?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Rationale:</strong> The mature stage begins when precipitation starts to fall from the cloud base, which initiates the downdraft alongside the existing updraft.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>The onset of precipitation and the formation of downdrafts.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>The formation of an anvil top at the tropopause.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>The complete cessation of updrafts within the cell.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>The first appearance of a cumulus cloud on visible satellite.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L3-Q02 — Hail Formation Mechanism</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Which atmospheric condition is essential for the formation of large hail within a convective cloud?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Rationale:</strong> Large hail requires intense updrafts that can suspend water droplets long enough for them to cycle through the freezing layer multiple times, accumulating layers of ice.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Intense updrafts capable of cycling droplets above the freezing level.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A deep layer of warm air near the surface.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Low relative humidity throughout the cloud depth.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A strong temperature inversion at the 500 hPa level.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L3-Q03 — Gust Front Hazards</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>What is a primary aviation hazard associated with a <strong>Gust Front</strong> spreading ahead of a thunderstorm?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Rationale:</strong> A gust front is the leading edge of a convective downdraft. It causes sudden wind shifts and rapid changes in wind speed, which can cause significant low-level wind shear during takeoff or landing.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Sudden wind shifts and severe low-level wind shear.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Severe icing at high altitudes.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A rapid decrease in surface pressure and temperature.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>The formation of widespread radiation fog.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L3-Q04 — Stability Index (CAPE)</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>What does a high <strong>CAPE</strong> (Convective Available Potential Energy) value generally indicate to an aviation forecaster?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Rationale:</strong> CAPE is a measure of the cumulative buoyant energy available to a rising air parcel. High values indicate a large potential for intense updrafts and severe convection if a trigger is present.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>High potential for intense updrafts and severe convective development.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A very stable atmosphere where cloud formation is unlikely.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>That a lifting mechanism (like a front) is currently active.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>That the atmosphere is saturated from the surface to the tropopause.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+</quiz>

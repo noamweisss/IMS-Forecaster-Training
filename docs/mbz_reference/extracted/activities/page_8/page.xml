@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity id="6" moduleid="8" modulename="page" contextid="30">
+  <page id="6">
+    <name>throwaway Page</name>
+    <intro>&lt;p&gt;optional description&lt;/p&gt;</intro>
+    <introformat>1</introformat>
+    <content>&lt;p&gt;some HTML code&lt;/p&gt;</content>
+    <contentformat>1</contentformat>
+    <legacyfiles>0</legacyfiles>
+    <legacyfileslast>$@NULL@$</legacyfileslast>
+    <display>5</display>
+    <displayoptions>a:2:{s:10:"printintro";s:1:"0";s:17:"printlastmodified";s:1:"1";}</displayoptions>
+    <revision>1</revision>
+    <timemodified>1779792595</timemodified>
+  </page>
+</activity>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <question type="multichoice">
+    <name><text>L4-Q01 — Radiation Fog Wind Condition</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>What is the "ideal" wind speed for the formation and deepening of a <strong>Radiation Fog</strong> layer?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Rationale:</strong> Radiation fog requires light winds (typically 3–5 knots). Calm winds result only in dew formation, while winds above 10 knots cause too much mixing with drier air aloft, either preventing fog or lifting it into Stratus.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>3 to 5 knots</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Exactly 0 knots (Dead calm)</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>15 to 20 knots</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Greater than 25 knots</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L4-Q02 — Advection vs. Radiation Fog</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Which characteristic distinguishes <strong>Advection Fog</strong> from Radiation Fog?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Rationale:</strong> Advection fog forms when warm, moist air moves over a colder surface. It is often more persistent than radiation fog, can form during the day, and typically occurs with stronger winds (5–15 knots).</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>It can persist during daylight hours and with higher wind speeds.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>It only forms in desert environments.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>It requires perfectly clear skies to form.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>It is always shallower than 50 feet.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L4-Q03 — Hygroscopic Nuclei Impact</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>At what Relative Humidity (RH) threshold do <strong>hygroscopic nuclei</strong> typically begin to swell, causing a sharp drop in visibility (Wet Haze)?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Rationale:</strong> Hygroscopic particles begin to absorb water and grow in size (deliquescence) once the Relative Humidity exceeds approximately 70–80%, leading to the transition from dry haze to wet haze.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Approximately 70% to 80%</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Exactly 100%</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Below 30%</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Only when RH reaches 99%</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L4-Q04 — Israel Dust Sources</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Which synoptic situation is MOST likely to bring widespread mineral dust and significant visibility reduction to Central Israel from the east/southeast?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Rationale:</strong> An active Red Sea Trough (RST) with easterly or southeasterly winds is the primary mechanism for transporting mineral dust from the Jordanian and Saudi Arabian deserts into Israel.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>An active Red Sea Trough with easterly flow.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A deep Siberian High during mid-summer.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A weak Persian Trough with steady westerly winds.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A stationary ridge over the Mediterranean Sea.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+</quiz>

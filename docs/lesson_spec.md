@@ -119,6 +119,11 @@ Always include the `<style>` block at the top of every lesson fragment.
 `finalize_module.py` does not inject it; it's part of what makes the
 fragment self-contained when pasted into Moodle.
 
+**No dark-mode override.** Copy `config/design_system.css` verbatim — it
+deliberately has no `@media (prefers-color-scheme: dark)` block. Moodle has
+no dark theme, so a dark lesson clashed with Moodle's light chrome. Lessons
+are always light. Do not add a dark-mode media query back in.
+
 The shared CSS lives in [config/design_system.css](../config/design_system.css).
 Open it before you start — every class you use comes from there.
 
@@ -194,6 +199,42 @@ imagery, instrument close-ups), emit:
 human sources the image and drops it into `lessons/Images/`, they will edit
 the placeholder into a real `<img src="images/...">` tag and re-run
 `finalize_module.py` to embed it.
+
+### Source-extracted images
+
+`pipeline/extract_sources.py` writes every embedded image it finds in the
+source PPTX/PDF/DOCX into `<module>/extracted_images/<source-stem>/` and
+indexes them in `_extraction.json`. Per slide / per page:
+
+```json
+"images": [
+  {
+    "path":   "extracted_images/16_Tropical_Storms/slide07_img1.png",
+    "format": "png",
+    "width":  1920,
+    "height": 1080,
+    "hash":   "a1b2c3d4"
+  }
+]
+```
+
+`path` is relative to the module directory. From a lesson under
+`<module>/lessons/`, reference one with:
+
+```html
+<img src="../extracted_images/16_Tropical_Storms/slide07_img1.png"
+     alt="Specific description of what the figure shows">
+```
+
+Use these only when the source image is a real teaching figure — a
+labelled diagram, a satellite snapshot, a forecast chart, a recognisable
+instrument photo — and the slide is clearly built around it. Skip
+backgrounds, logos, slide chrome, and thumbnails. When unsure, fall back
+to an `image-needed` placeholder.
+
+`finalize_module.py` (`embed_images.py`) inlines extracted images as
+base64 data URIs at finalize time, the same way it handles
+`lessons/Images/` files.
 
 ## Quiz XML (`NN_<slug>_quiz.xml`)
 

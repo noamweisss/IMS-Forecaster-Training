@@ -21,6 +21,49 @@ API key is required at any point — the LLM stage runs inside your IDE.
 `anthropic` is also in `requirements.txt` for historical reasons; it
 isn't used by any current script.
 
+### Git LFS (required — source files are tracked through LFS)
+
+Every PPTX/PDF/DOCX/PNG in this repo is stored via Git LFS (see
+`.gitattributes`). A normal `git clone` will hand you 130-byte pointer
+stubs, not the real files. Install LFS and pull the binaries before
+running any pipeline command:
+
+```bash
+git lfs install
+git lfs pull
+```
+
+**Claude Code on-the-web (and other proxied sandboxes).** The sandbox's
+git remote routes through a local proxy that does not forward the LFS
+batch API — `git lfs pull` returns `HTTP 502`. Bypass the proxy for
+download only:
+
+```bash
+apt-get install -y git-lfs               # not preinstalled in the default image
+git lfs install --skip-repo
+git config lfs.url https://github.com/<owner>/<repo>.git/info/lfs
+git lfs pull
+```
+
+**Before pushing**, unset that override so the push uses the proxy
+again (the proxy handles normal git pack protocol fine, and pointing
+`lfs.url` at GitHub at push-time requires credentials the sandbox does
+not have):
+
+```bash
+git config --unset lfs.url
+git config lfs.locksverify false   # silences a one-off warning on the first push
+git push -u origin <branch-name>
+```
+
+Per-module source PPTXs duplicated from `courses/<course>/source_files/`
+into `courses/<course>/source_files/module-N/` share OIDs with the
+originals, so no new LFS objects need uploading on push.
+
+These settings live in `.git/config` and are per-checkout — re-apply
+them in every new sandbox session. See `docs/journal.md` (2026-05-20
+entry on the LFS 502) for the full root-cause analysis.
+
 ---
 
 ## Inputs you need before starting a module
@@ -160,17 +203,44 @@ regenerates a lesson.
 
 ---
 
-## Phase 6 — Upload to Moodle (manual, 2 clicks per module)
+## Phase 6 — Upload to Moodle
 
-Open the module's freshly-written `README.md` and follow it. The short
-version:
+You have two ways to get the content into Moodle. The `.mbz` path is one upload
+for the whole course; the copy-paste path is the version-agnostic fallback.
+
+### Option A (recommended) — restore a `.mbz` (one upload)
+
+Build the backup, then restore it:
+
+```bash
+# whole course in one file:
+python pipeline/build_mbz.py --course courses/<course>
+# -> courses/<course>/<course>.mbz
+
+# or just one module:
+python pipeline/build_mbz.py --module courses/<course>/module-N
+# -> courses/<course>/module-N/<course>-module-N.mbz
+```
+
+Then in Moodle: **Course → Restore → drag the `.mbz` → Restore → Merge into this
+course → Continue.** Every module restores as its own section laid out as
+overview Page → (lesson Page → lesson Quiz) per lesson, with all questions,
+base64-embedded images, and feedback already wired. No pasting, no question-bank
+import. Targets Moodle 5.2+ (see `docs/mbz_format.md`).
+
+Generated `.mbz` files are gitignored — rebuild any time; the build is fast and
+reads only the finalized HTML/XML (no source binaries / LFS needed).
+
+### Option B (fallback) — copy-paste (2 clicks per module)
+
+Open the module's freshly-written `README.md` and follow it. The short version:
 
 1. Create a Moodle Page activity; paste `module_combined_moodle.html`
    into the HTML editor.
 2. Question Bank → Import → upload `module_quiz_all_questions.xml`;
    create a Quiz activity drawing from that bank.
 
-Five minutes per module if your hands are warm.
+Use this if your Moodle blocks restores or runs an incompatible version.
 
 ---
 
@@ -183,6 +253,7 @@ Five minutes per module if your hands are warm.
 | Images broken after paste | Wrong file pasted | Paste `module_combined_moodle.html`, not `module_combined.html` (no such file) or the standalone lessons. |
 | Quiz import fails | Malformed XML | Open `module_quiz_all_questions.xml`, look for unbalanced CDATA or missing `<answer>` blocks. Most often caused by the agent emitting HTML that wasn't CDATA-wrapped. |
 | `finalize_module.py` errors with "no lesson fragments found" | Agent didn't write to the expected path | Check the `lessons/` subfolder. Files must end in `_moodle.html`. |
+| `extract_sources.py` reports "0 slides" / writes a tiny JSON | Source files are LFS pointer stubs, not real binaries | Run `git lfs pull`. In Claude Code's sandbox, first set `git config lfs.url https://github.com/<owner>/<repo>.git/info/lfs` to bypass the proxy (HTTP 502). See `docs/journal.md` 2026-05-20. |
 
 ---
 

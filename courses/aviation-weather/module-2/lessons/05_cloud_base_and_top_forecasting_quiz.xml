@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <question type="multichoice">
+    <name><text>L5-Q01 — Convective Cloud Base Estimation</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>At a coastal station, the surface temperature is 28°C and the dew point is 20°C. Using the standard adiabatic lapse rate approximation for the T-Td spread, what is the estimated base of the convective cumulus clouds?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Rationale:</strong> A common rule of thumb for convective cloud bases is (T - Td) / 2.5 * 1000. Here, (28 - 20) = 8. Then 8 / 2.5 = 3.2. Multiplied by 1000, the estimated base is 3,200 feet AGL.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>3,200 feet AGL</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>800 feet AGL</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>5,500 feet AGL</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>1,500 feet AGL</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L5-Q02 — Satellite IR Limitations</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Why might a satellite's Infrared (IR) sensor <strong>underestimate</strong> the actual height of a thin Cirrus cloud layer?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Rationale:</strong> Thin cirrus clouds are semi-transparent to infrared radiation. The sensor detects a mixture of the cold cloud top radiation and the warmer radiation coming from the surface or lower cloud layers, resulting in a "warmer" brightness temperature and a lower estimated altitude.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>The sensor detects warmer radiation from lower levels passing through the thin cloud.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Coriolis force distorts the IR signal at high latitudes.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ice crystals in the cloud reflect all IR radiation back to the ground.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>The tropopause acts as a perfect blackbody, blocking the signal.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L5-Q03 — Marine Inversion and Stratus</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>In the context of Israeli summer meteorology, what is the primary role of the <strong>Marine Inversion</strong> in determining cloud bases along the coast?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Rationale:</strong> The marine inversion acts as a strong "lid" that traps moisture in the boundary layer. Stratus cloud bases and tops are typically constrained by the height of this inversion base.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>It traps moisture in a shallow layer, defining the upper limit and base of the Stratus deck.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>It causes air to sink rapidly, always resulting in perfectly clear skies.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>It creates intense surface heating that raises cloud bases to 10,000 feet.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>It only affects visibility at the 500 hPa level.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L5-Q04 — Orographic Lifting Effects</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>If a stable layer of moist air is moving from the Mediterranean Sea toward the Judean Hills, what is the most likely effect on cloud bases as the air reaches the hills?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Rationale:</strong> As air is forced up the slope of the hills (orographic lifting), it cools adiabatically. This often brings the air to saturation at a lower altitude relative to the ground, resulting in lower cloud bases and potentially "mountain fog" where the cloud base hits the terrain.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Cloud bases will lower due to adiabatic cooling as the air is forced upward.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Cloud bases will rise as the air becomes drier over land.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>The clouds will immediately dissipate due to friction.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>No change will occur as long as the temperature remains above 10°C.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+</quiz>
