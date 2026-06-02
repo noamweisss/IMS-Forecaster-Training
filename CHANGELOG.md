@@ -12,6 +12,12 @@ future course-to-mbz Claude skill) should read both.
 
 ### Course V2 iteration (roadmap.md)
 
+- **Rewrote the broken Figure 1** in Module 1 Lesson 2 (route planning & fuel).
+  Replaced the cramped, confusing diagram (and, in the legacy standalone copy,
+  a `var()`-in-SVG bug that rendered invisible) with a clean head-to-tail vector
+  diagram showing `Ground Speed = TAS ± along-track wind` for tailwind vs
+  headwind. Literal hex only, with `<title>`/`<desc>`. Updated in the
+  `_moodle.html` fragment, the combined page, and the standalone HTML.
 - **Completion-tracked, ungraded quizzes.** Lesson quizzes now use Moodle
   automatic completion requiring one submitted attempt (`completion=2` +
   `completionminattempts=1`), giving the instructor a "who finished the course"

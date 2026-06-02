@@ -98,37 +98,50 @@
 <p>Headwinds decrease ground speed, extending flight time and increasing fuel burn. Conversely, tailwinds (such as jet streams) decrease flight time and conserve fuel. The core objective of upper-air forecasting is to accurately locate the position, altitude, and intensity of these wind fields.</p>
 
 <figure>
-  <svg viewBox="0 0 680 280" xmlns="http://www.w3.org/2000/svg">
-    <rect width="680" height="280" fill="#FFFFFF"/>
-    
-    <!-- Aircraft -->
-    <path d="M120,140 L160,130 L180,140 L160,150 Z" fill="#185FA5"/>
-    <text x="150" y="120" fill="#1A1917" font-family="sans-serif" font-size="12" text-anchor="middle">True Airspeed (TAS): 450kt</text>
-    
-    <!-- Tailwind Scenario -->
-    <rect x="220" y="50" width="380" height="80" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="2"/>
-    <text x="240" y="75" fill="#1A1917" font-family="sans-serif" font-weight="bold" font-size="14">Tailwind Scenario</text>
-    <line x1="240" y1="95" x2="320" y2="95" stroke="#185FA5" stroke-width="3" marker-end="url(#arrow-blue)"/>
-    <text x="330" y="100" fill="#1A1917" font-family="sans-serif" font-size="12">Wind: +50kt</text>
-    <text x="440" y="95" fill="#1A1917" font-family="sans-serif" font-weight="bold" font-size="14">Ground Speed: 500kt</text>
-    <text x="440" y="115" fill="#6B6A65" font-family="sans-serif" font-size="12">Lower flight time, less fuel burn</text>
-
-    <!-- Headwind Scenario -->
-    <rect x="220" y="150" width="380" height="80" rx="8" fill="#FAEEDA" stroke="#BA7517" stroke-width="2"/>
-    <text x="240" y="175" fill="#1A1917" font-family="sans-serif" font-weight="bold" font-size="14">Headwind Scenario</text>
-    <line x1="320" y1="195" x2="240" y2="195" stroke="#BA7517" stroke-width="3" marker-end="url(#arrow-orange)"/>
-    <text x="330" y="200" fill="#1A1917" font-family="sans-serif" font-size="12">Wind: -50kt</text>
-    <text x="440" y="195" fill="#1A1917" font-family="sans-serif" font-weight="bold" font-size="14">Ground Speed: 400kt</text>
-    <text x="440" y="215" fill="#6B6A65" font-family="sans-serif" font-size="12">Higher flight time, more fuel burn</text>
-
+  <svg viewBox="0 0 680 268" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig1t fig1d">
+    <title id="fig1t">Ground speed as true airspeed combined with the along-track wind</title>
+    <desc id="fig1d">At a true airspeed of 450 knots, a 50-knot tailwind raises ground speed to 500 knots, shortening flight time and reducing fuel burn; a 50-knot headwind lowers ground speed to 400 knots, lengthening flight time and increasing fuel burn.</desc>
     <defs>
-      <marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-        <polygon points="0 0, 10 3.5, 0 7" fill="#185FA5"/>
+      <marker id="ah-blue" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="#185FA5"/>
       </marker>
-      <marker id="arrow-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-        <polygon points="0 0, 10 3.5, 0 7" fill="#BA7517"/>
+      <marker id="ah-teal" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="#0F6E56"/>
+      </marker>
+      <marker id="ah-amber" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="#BA7517"/>
       </marker>
     </defs>
+
+    <!-- Tailwind scenario: TAS + tailwind = higher ground speed -->
+    <rect x="20" y="20" width="640" height="112" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1.5"/>
+    <text x="36" y="44" fill="#0F6E56" font-family="sans-serif" font-size="13" font-weight="bold">TAILWIND</text>
+    <path d="M34,80 L54,86 L34,92 Z" fill="#185FA5"/>
+    <line x1="72" y1="86" x2="252" y2="86" stroke="#185FA5" stroke-width="4" marker-end="url(#ah-blue)"/>
+    <text x="162" y="76" fill="#1A1917" font-family="sans-serif" font-size="12" text-anchor="middle">TAS 450 kt</text>
+    <line x1="256" y1="86" x2="292" y2="86" stroke="#0F6E56" stroke-width="4" marker-end="url(#ah-teal)"/>
+    <text x="276" y="76" fill="#0F6E56" font-family="sans-serif" font-size="11" text-anchor="middle">+50 kt</text>
+    <text x="312" y="93" fill="#1A1917" font-family="sans-serif" font-size="20" text-anchor="middle">=</text>
+    <rect x="332" y="68" width="130" height="36" rx="6" fill="#185FA5"/>
+    <text x="397" y="91" fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" text-anchor="middle">GS = 500 kt</text>
+    <line x1="486" y1="36" x2="486" y2="116" stroke="#6B6A65" stroke-width="1"/>
+    <text x="502" y="80" fill="#0F6E56" font-family="sans-serif" font-size="12" font-weight="bold">Shorter flight time</text>
+    <text x="502" y="100" fill="#1A1917" font-family="sans-serif" font-size="12">&#8594; less fuel burn</text>
+
+    <!-- Headwind scenario: TAS minus headwind = lower ground speed -->
+    <rect x="20" y="144" width="640" height="112" rx="8" fill="#FAEEDA" stroke="#BA7517" stroke-width="1.5"/>
+    <text x="36" y="168" fill="#BA7517" font-family="sans-serif" font-size="13" font-weight="bold">HEADWIND</text>
+    <path d="M34,204 L54,210 L34,216 Z" fill="#185FA5"/>
+    <line x1="72" y1="210" x2="252" y2="210" stroke="#185FA5" stroke-width="4" marker-end="url(#ah-blue)"/>
+    <text x="162" y="200" fill="#1A1917" font-family="sans-serif" font-size="12" text-anchor="middle">TAS 450 kt</text>
+    <line x1="252" y1="224" x2="216" y2="224" stroke="#BA7517" stroke-width="4" marker-end="url(#ah-amber)"/>
+    <text x="234" y="240" fill="#BA7517" font-family="sans-serif" font-size="11" text-anchor="middle">&#8722;50 kt</text>
+    <text x="312" y="217" fill="#1A1917" font-family="sans-serif" font-size="20" text-anchor="middle">=</text>
+    <rect x="332" y="192" width="130" height="36" rx="6" fill="#185FA5"/>
+    <text x="397" y="215" fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" text-anchor="middle">GS = 400 kt</text>
+    <line x1="486" y1="160" x2="486" y2="240" stroke="#6B6A65" stroke-width="1"/>
+    <text x="502" y="204" fill="#BA7517" font-family="sans-serif" font-size="12" font-weight="bold">Longer flight time</text>
+    <text x="502" y="224" fill="#1A1917" font-family="sans-serif" font-size="12">&#8594; more fuel burn</text>
   </svg>
   <figcaption>Figure 1: The relationship between True Airspeed (TAS), wind components, and Ground Speed.</figcaption>
 </figure>

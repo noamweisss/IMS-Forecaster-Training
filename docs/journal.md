@@ -24,6 +24,40 @@ later reversed, add a new entry rather than editing the old one.
 ---
 
 <!-- New entries appended below -->
+## 2026-06-02 — V2: rewrote the broken Figure 1 (Module 1, Lesson 2)
+
+**Context.** The owner flagged Figure 1 in Module 1 Lesson 2 (route planning
+& fuel) as broken. Looking at it: the Moodle/combined copies used literal hex
+but the diagram was cramped and confusing — a free-floating aircraft glyph
+and two loosely-related labelled boxes that never actually showed the
+TAS/wind/ground-speed *relationship*. Worse, the legacy standalone copy of
+the same figure used `fill="var(--text)"` etc. inside SVG attributes — the
+exact var-in-SVG anti-pattern `lesson_spec.md` warns about, which renders
+black/invisible once the CSS variables aren't in scope.
+
+**Decision.** Redrew Figure 1 as a proper head-to-tail vector diagram that
+shows `Ground Speed = TAS ± along-track wind`:
+- A tailwind band: TAS 450 kt (blue) + 50 kt (teal, same direction) = GS 500
+  kt, "shorter flight time → less fuel burn".
+- A headwind band: TAS 450 kt (blue) with a 50 kt vector pointing *back*
+  (amber) = GS 400 kt, "longer flight time → more fuel burn".
+Literal hex only, `role="img"` + `<title>`/`<desc>` for accessibility, no
+`var()`. Applied to all three copies: the `_moodle.html` fragment, the
+`module_combined_moodle.html`, and the legacy standalone `.html`.
+
+**Verified.** Parsed each new `<svg>` with ElementTree (well-formed, numeric
+entities valid), confirmed no `var(` leaked in, and rendered it to PNG with
+cairosvg to eyeball the layout — clean, no overlaps, the arithmetic reads
+left to right.
+
+**Out of scope (noted).** Figure 2 in the *legacy standalone* copy still has
+the `var()`-in-SVG bug. The roadmap only named Figure 1, and the standalone
+file isn't shipped to Moodle (the `_moodle.html`/combined copies of Figure 2
+already use literal hex), so I left it. Flagging here in case we later retire
+or fix the legacy standalones.
+
+---
+
 ## 2026-06-02 — V2: completion-tracked, ungraded quizzes
 
 **Context.** The owner needs to verify that forecasters actually did the
