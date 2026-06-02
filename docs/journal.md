@@ -24,6 +24,28 @@ later reversed, add a new entry rather than editing the old one.
 ---
 
 <!-- New entries appended below -->
+## 2026-06-02 — V2: emoji prefixes on activity names
+
+**Context.** In Moodle's course-index sidebar, every lesson Page and every
+Quiz showed up as a plain line of text. With ~9 activities per module they
+were hard to scan — you couldn't tell a lesson from its quiz at a glance.
+
+**Decision.** Prefix activity names in the `.mbz` builder: `📚` for pages
+(module overview + lessons), `❓` for quizzes. Added `LESSON_EMOJI` /
+`QUIZ_EMOJI` constants in `pipeline/build_mbz.py` and applied them where the
+page/quiz `name` (and the matching manifest `ActivityRef.title`) are built.
+The names now read e.g. `📚 Principles Of Aviation Altimetry` and
+`❓ Principles Of Aviation Altimetry — Quiz`. Verified by building
+`module-1.mbz` and reading the names back out of the activity XML.
+
+**Why only the `.mbz` path.** The `.mbz` one-upload restore is the primary
+(and production-verified) way the course reaches Moodle, so that's where the
+convention belongs. The per-module `README.md` copy-paste path is a fallback
+with a different shape (one combined Page + one Quiz per module), so the
+per-lesson emoji scheme doesn't map onto it.
+
+---
+
 ## 2026-06-02 — Course V2 iteration: kickoff + drop dark mode
 
 **Context.** With V1 live in Moodle and a fast build→restore loop, we opened

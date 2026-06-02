@@ -12,6 +12,10 @@ future course-to-mbz Claude skill) should read both.
 
 ### Course V2 iteration (roadmap.md)
 
+- **Emoji prefixes on activity names.** The `.mbz` builder now prefixes Moodle
+  activity names with `📚` for pages (module overview + lessons) and `❓` for
+  quizzes, so they're easy to distinguish in Moodle's course-index sidebar
+  (`pipeline/build_mbz.py`).
 - **Removed dark mode from lessons.** Lessons carried a
   `@media (prefers-color-scheme: dark)` block that flipped them to a dark
   palette on dark-mode machines — but Moodle has no dark theme, so the lesson
