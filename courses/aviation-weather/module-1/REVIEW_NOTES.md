@@ -107,3 +107,41 @@ references — please confirm:
 3. **Cold-temperature error ~4 ft per °C of ISA deviation per 1,000 ft** (ICAO
    rule of thumb), giving the 160 ft correction in the ISA−20 example.
    *Used in:* "Temperature Errors" section + the ISA−20 worked example + quiz Q06.
+
+---
+
+# Images to source (optional enrichment, Module 1)
+
+Every concept above is already carried by hand-drawn SVG diagrams, and each
+lesson has a hero photo embedded. The items below are **optional** real
+photographs / chart products that would enrich the lessons but are not required
+for finalize. None has a bare `image-needed` placeholder in the HTML yet — if you
+want one added, say the word and I will drop a placeholder in the relevant
+lesson so it appears in `IMAGES_TO_SOURCE.md` automatically. For each, a
+copy-pasteable Google Images query **and** a ChatGPT image-generation prompt:
+
+### L1 — a real WAFS SIGWX (significant-weather) chart
+- **Google Images:** `WAFS significant weather chart SIGWX high level aviation`
+- **ChatGPT prompt:** "Generate a realistic high-level significant-weather (SIGWX)
+  chart in the WAFC/ICAO style: a Mercator map section with jet-stream arrows
+  labelled with flight levels and speeds (e.g., 120 kt at FL340), scalloped
+  areas of CB and CAT, tropopause height boxes, and a legend. Clean, print-like,
+  monochrome-on-pale background, accurate symbology a meteorologist would
+  recognise. Landscape orientation."
+
+### L3 — a real airspace 'wedding-cake' / VFR classification chart
+- **Google Images:** `airspace classes wedding cake diagram ICAO VFR chart`
+- **ChatGPT prompt:** "Generate a clean 3-D 'wedding cake' diagram of controlled
+  airspace around a major airport: stacked cylindrical tiers labelled Class C/D
+  TMA stepping outward with altitude floors and ceilings in feet AMSL, a central
+  CTR column to the surface, and surrounding Class G. Label VFR vs IFR. Technical
+  illustration style, light background, legible labels. Perspective view."
+
+### L4 — a real cold-temperature correction table / approach-chart box
+- **Google Images:** `ICAO cold temperature altitude correction table approach chart`
+- **ChatGPT prompt:** "Generate a realistic aviation cold-temperature error
+  correction table in the ICAO/Jeppesen style: rows of reported aerodrome
+  temperature from 0 °C down to −50 °C, columns of height above the altimeter
+  source (200–5000 ft), and cells giving the altitude correction in feet to add.
+  Clean grid, monospace numerals, light background, print-like. Portrait
+  orientation."

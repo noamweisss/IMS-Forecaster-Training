@@ -7,9 +7,9 @@
     "Integrate meteorological factors into fuel consumption and route optimization strategies."
   ],
   "end_of_module_quiz_plan": {
-    "total_questions": 15,
+    "total_questions": 29,
     "pass_rate_requirement": "75%",
-    "format": "Multiple choice questions testing application, judgment, and interpretation, rather than simple recall."
+    "format": "Multiple choice questions testing application, judgment, and interpretation, rather than simple recall. (V2: question pool grown from 15 to 29 across the four lessons during the meteorology-depth expansion.)"
   },
   "lessons": [
     {
@@ -21,7 +21,10 @@
       "learning_objectives": [
         "Outline the roles and responsibilities of the WMO and ICAO in global aviation meteorology.",
         "Interpret key standards and recommended practices (SARPs) relevant to aviation weather forecasting.",
-        "Explain the flow of meteorological information between international bodies and local authorities."
+        "Explain the flow of meteorological information between international bodies and local authorities.",
+        "Map the core aviation MET products (METAR, TAF, SIGMET, AIRMET) to the Annex 3 chapter and office that govern them.",
+        "Distinguish the operational roles of the AMO, MWO, WAFC, VAAC and TCAC in the global service architecture.",
+        "Explain the Quality Management System (QMS) and competence requirements an aeronautical MET provider must satisfy."
       ],
       "key_concepts": [
         "WMO Structure and Aviation Integration",
@@ -43,7 +46,10 @@
       "learning_objectives": [
         "Evaluate the impact of meteorological conditions (e.g., headwinds, temperatures) on route selection.",
         "Calculate the meteorological effects on fuel consumption during various flight phases.",
-        "Recommend optimal flight levels based on upper-air forecasts."
+        "Recommend optimal flight levels based on upper-air forecasts.",
+        "Explain why the shortest track is a great circle, and how wind shifts the minimum-time track away from it.",
+        "Quantify the effect of ISA temperature deviation on true airspeed, cruise ceiling and fuel flow.",
+        "Break dispatch fuel into its components and trace how a forecast error propagates into payload or a diversion."
       ],
       "key_concepts": [
         "Flight Planning Considerations",
@@ -65,7 +71,10 @@
       "learning_objectives": [
         "Differentiate between various classes of airspace and their operational requirements.",
         "Relate airspace structures to the provision of meteorological services.",
-        "Identify controlled, uncontrolled, and special use airspaces."
+        "Identify controlled, uncontrolled, and special use airspaces.",
+        "Describe the nested control hierarchy (FIR/ACC, TMA/Approach, CTR) and the ATS and CVFR route structure.",
+        "Apply ICAO visual-meteorological-condition (VMC) minima to decide whether a VFR flight is legal in a given class.",
+        "Match each MET product (SIGMET, TAF, TREND, aerodrome and wind-shear warnings, low-level VFR guidance) to the airspace it serves."
       ],
       "key_concepts": [
         "Flight Information Regions (FIR)",
@@ -87,7 +96,10 @@
       "learning_objectives": [
         "Define and differentiate between QNH, QFE, and Standard Altimeter Settings.",
         "Determine the appropriate transition altitude and transition level for flight operations.",
-        "Calculate true altitude based on non-standard temperature and pressure variations."
+        "Calculate true altitude based on non-standard temperature and pressure variations.",
+        "Explain how the standard atmosphere converts pressure to indicated altitude, and define pressure altitude and density altitude.",
+        "Distinguish QNH from the synoptic QFF, and map each setting to its radio phraseology (Altitude, Height, Flight Level).",
+        "Apply the Israeli AIP ENR 1.7 transition procedures (QNE above 10,500 ft; regional QNH below FL115)."
       ],
       "key_concepts": [
         "Altimeter Settings (QNH, QFE, QNE)",
