@@ -50,6 +50,18 @@ from the source decks (internet additions, where needed, flagged for SME review)
   "Why Airspace Structure Drives Your Products" section mapping each product to
   its airspace. Objectives 3 → 6, takeaways 4 → 6, quiz 4 → 7.
 
+- **Module 1, Lesson 4 (Altimetry).** Expanded from the rich 44-slide source
+  (Evgeny's own deck). Added a "How Pressure Becomes Altitude" foundation
+  (standard atmosphere, hydrostatic basis, pressure & density altitude) with a
+  warm/cold air-column diagram and the deck's pressure-altitude and Masada
+  density-altitude worked examples; the QNE/QFE/QNH phraseology and caveats; the
+  QNH-vs-synoptic-QFF distinction; a quantified cold-temperature error treatment
+  with a terrain-clearance diagram and an ISA−20 worked example; and an
+  "Altimetry in Israel (AIP ENR 1.7)" section. Two new SVGs (now Figures 1–4).
+  Objectives 3 → 6, takeaways 5 → 6, quiz 3 → 7. Three standard constants
+  (27 ft/hPa, ~4 ft/°C/1,000 ft, the density-altitude answer) flagged in
+  `module-1/REVIEW_NOTES.md`; the rest is source-grounded.
+
 ### Course V2 iteration (roadmap.md)
 
 - **Rewrote the broken Figure 1** in Module 1 Lesson 2 (route planning & fuel).

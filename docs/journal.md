@@ -110,6 +110,30 @@ product-to-airspace mapping turns a structural taxonomy into a working checklist
 
 ---
 
+## 2026-06-02 — V2 meteorology expansion: Module 1 Lesson 4 (altimetry)
+
+**Context.** Lesson 4's source is the richest in the module — Evgeny's own
+44-slide altimetry deck — so this was the one lesson where "go deeper" mostly
+meant mining the source harder rather than reaching outside it.
+
+**Decision.** Added a foundational "How Pressure Becomes Altitude" section so the
+later error discussion has physical roots: standard atmosphere, hydrostatic
+balance, the warm/cold air-column behaviour (a new diagram), and the deck's own
+pressure-altitude and Masada density-altitude examples worked through. Pulled the
+phraseology (Altitude/Height/Flight Level), the QFE "even a flat field isn't
+flat" caveat, and — importantly for meteorologists — the QNH-vs-synoptic-QFF
+distinction straight from the deck. Quantified the cold-temperature error with a
+terrain-clearance diagram and an ISA−20 worked example, and added an "Altimetry
+in Israel (AIP ENR 1.7)" section (QNE above 10,500 ft, regional QNH below FL115).
+
+**Why.** The original lesson stated the temperature error as a warning; the deck
+supports explaining *why* it happens (puffed-up warm columns) and *how much*
+(~4 ft/°C/1,000 ft). Only three numeric constants needed flagging; everything
+else is Evgeny's own material, which keeps his verification load near zero for
+this lesson. This completes Module 1 — pausing here for owner/SME review.
+
+---
+
 ## 2026-06-02 — V2: rewrote the broken Figure 1 (Module 1, Lesson 2)
 
 **Context.** The owner flagged Figure 1 in Module 1 Lesson 2 (route planning

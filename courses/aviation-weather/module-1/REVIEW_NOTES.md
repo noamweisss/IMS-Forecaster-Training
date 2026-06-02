@@ -81,3 +81,29 @@ the VMC numbers below were added from standard references — please confirm:
 
 Note: the **semicircular rule** itself (odd eastbound / even westbound) IS from
 the source deck (slide 10); only the surrounding VMC/class material is flagged.
+
+---
+
+## Lesson 4 — Principles of Aviation Altimetry
+
+The source deck (`04. Altimetry.pdf`, 44 slides, by Evgeny) is rich and the
+expansion is almost entirely source-grounded — the standard atmosphere, the
+hydrostatic relation, the warm/cold air-column behaviour, QNE/QFE/QNH and their
+phraseology, QNH-vs-QFF, and the Israeli AIP ENR 1.7 procedures (QNE above
+10,500 ft; regional QNH below FL115; local QNH at the field) all come from the
+deck, including the pressure-altitude and Masada density-altitude example setups.
+Only the following **numeric constants/answers** were added from standard
+references — please confirm:
+
+1. **1 hPa ≈ 27 ft** near sea level (used to turn the pressure-altitude example
+   into ~1,270 ft, and the low-QNH example into ~270 ft).
+   *Used in:* pressure-altitude worked example + "low QNH lowers your flight
+   levels" worked example + quiz framing.
+
+2. **Density-altitude answer ~+2,300 ft** for the Masada case (derived from the
+   deck's stated density 1.14 kg/m³ via the ISA density profile).
+   *Used in:* the Masada density-altitude worked example.
+
+3. **Cold-temperature error ~4 ft per °C of ISA deviation per 1,000 ft** (ICAO
+   rule of thumb), giving the 160 ft correction in the ISA−20 example.
+   *Used in:* "Temperature Errors" section + the ISA−20 worked example + quiz Q06.
