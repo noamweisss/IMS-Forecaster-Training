@@ -28,6 +28,18 @@ from the source decks (internet additions, where needed, flagged for SME review)
   application questions. All new SVGs use literal hex; no internet sources
   needed for this lesson.
 
+- **Module 1, Lesson 2 (Route Planning & Fuel).** The source deck (29 Hebrew
+  slides) is thin on quantitative meteorology, so the lesson was expanded from
+  the source's great-circle geometry and fuel-vs-payload material plus standard
+  aviation values (flagged in `module-1/REVIEW_NOTES.md`). Added: a "Choosing
+  the Route" section with a great-circle / minimum-time-track diagram; an
+  ISA-deviation deep-dive with an optimum-flight-level diagram; the fuel
+  factor-chain; a numeric block-fuel breakdown; and Cost Index. Four worked
+  examples (50 kt headwind cost; ISA deviation; block-fuel build; embedded in
+  text), two new SVGs (now Figures 1–4). Objectives 3 → 6, takeaways 4 → 6,
+  quiz 4 → 7. Created `module-1/REVIEW_NOTES.md` listing the six standard-value
+  additions for Evgeny to confirm.
+
 ### Course V2 iteration (roadmap.md)
 
 - **Rewrote the broken Figure 1** in Module 1 Lesson 2 (route planning & fuel).

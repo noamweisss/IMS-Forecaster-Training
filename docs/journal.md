@@ -57,6 +57,33 @@ chapters as a product map is the operational lens the audience actually uses.
 
 ---
 
+## 2026-06-02 — V2 meteorology expansion: Module 1 Lesson 2 + REVIEW_NOTES
+
+**Context.** Lesson 2 (route planning & fuel) is where forecast error turns into
+money. The owner picked "substantial" depth and approved pulling standard values
+from general references where the source deck is thin, provided each is flagged.
+
+**Finding.** The source deck is genuinely thin: 29 Hebrew slides covering
+route philosophies, great-circle geometry, a wind-triangle example, the
+fuel-vs-payload trade-off, and a route→…→fuel factor chain — but none of the
+quantitative meteorology (ISA values, fuel-component sizes, cost index). So this
+lesson, unlike Lesson 1, required flagged additions.
+
+**Decision.** Expanded the great-circle material (from source) into a "Choosing
+the Route" section contrasting great circle vs minimum-time track; added an
+ISA-deviation treatment with an optimum-flight-level diagram; surfaced the
+source's factor chain explicitly; and added a numeric block-fuel breakdown plus
+the Cost Index. Standard values (ISA, ~5% contingency, 30-min final reserve,
+illustrative burn rate, NAT OTS) are logged in a new
+`courses/aviation-weather/module-1/REVIEW_NOTES.md` for Evgeny.
+
+**Why.** A forecaster who can say "a 50 kt wind error is ~1,400 kg, and at MTOW
+that comes off payload" understands why their grid matters operationally. The
+REVIEW_NOTES file keeps the SME's verification load small and explicit — he only
+needs to check the handful of borrowed numbers, not re-read the whole lesson.
+
+---
+
 ## 2026-06-02 — V2: rewrote the broken Figure 1 (Module 1, Lesson 2)
 
 **Context.** The owner flagged Figure 1 in Module 1 Lesson 2 (route planning
