@@ -24,6 +24,40 @@ later reversed, add a new entry rather than editing the old one.
 ---
 
 <!-- New entries appended below -->
+## 2026-06-02 — Course V2 iteration: kickoff + drop dark mode
+
+**Context.** With V1 live in Moodle and a fast build→restore loop, we opened
+the V2 iteration. The plan lives in `courses/aviation-weather/roadmap.md`
+(now a standing part of the project's docs). V2's "Design/Technical" bucket
+has four bounded items; the "Meteorology" bucket (deepen every lesson, more
+examples) is a larger, separate content pass we'll do afterward using the
+source presentations first.
+
+**Decision (this commit).** Removed the dark-mode styling. Every lesson
+carried a `@media (prefers-color-scheme: dark)` block (lifted from
+`config/design_system.css`) that flipped `.ims-lesson` to a dark palette
+based on the reader's OS. Moodle has no dark theme, so on a dark-mode laptop
+the lesson body rendered dark inside Moodle's light chrome — an obvious
+visual clash the owner flagged. Lessons are now always light.
+
+Scope of the change:
+- `config/design_system.css` — removed the block (source of truth; future
+  modules generated via the skill copy this verbatim, so they inherit the fix).
+- All 29 already-generated HTML files under `courses/` — stripped the block
+  in place with a brace-counting script so we didn't have to re-finalize
+  (handled both the `.ims-lesson` Moodle-fragment form and the legacy
+  `:root` standalone form). No other CSS touched; `<style>` blocks still
+  balanced.
+- `docs/lesson_spec.md` — added an explicit "no dark-mode override" note so
+  a future author doesn't reintroduce it.
+
+**Why script-strip instead of re-finalize.** `finalize_module.py` doesn't
+inject the `<style>` block — the author bakes it into each fragment — so
+re-finalizing wouldn't have removed it. Editing in place is the surgical fix
+and keeps the diff readable.
+
+---
+
 ## 2026-06-02 — `.mbz` restore verified in production Moodle
 
 **Context.** The remaining acceptance test for the `.mbz` builder: restore the

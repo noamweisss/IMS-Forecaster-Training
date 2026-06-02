@@ -10,6 +10,16 @@ future course-to-mbz Claude skill) should read both.
 
 ## [Unreleased]
 
+### Course V2 iteration (roadmap.md)
+
+- **Removed dark mode from lessons.** Lessons carried a
+  `@media (prefers-color-scheme: dark)` block that flipped them to a dark
+  palette on dark-mode machines — but Moodle has no dark theme, so the lesson
+  body clashed with Moodle's light chrome. Lessons are now always light.
+  Removed from `config/design_system.css` (the source future modules copy
+  verbatim) and stripped in place from all 29 generated HTML files under
+  `courses/`. `docs/lesson_spec.md` gained a "no dark-mode override" note.
+
 ### Added
 - **`pipeline/build_mbz.py` — one-upload Moodle course backup:** New pipeline
   step that turns finalized course content into a single importable `.mbz`.
