@@ -11,6 +11,64 @@ future course-to-mbz Claude skill) should read both.
 ## [Unreleased]
 
 ### Added
+- **`pipeline/build_mbz.py` — one-upload Moodle course backup:** New pipeline
+  step that turns finalized course content into a single importable `.mbz`.
+  Restoring it stands up the whole course in one upload: one section per module,
+  laid out as overview Page → (lesson Page → lesson Quiz) per lesson, with all
+  questions, base64-embedded images, and feedback wired in. Pure stdlib Python.
+  First full build of the Aviation Weather course: 1.4 MB, 5 sections, 40
+  activities, 82 questions; structural cross-references verified. Generated
+  `.mbz` files are gitignored (`courses/**/*.mbz`) — regenerate with
+  `python pipeline/build_mbz.py --course courses/<course>`.
+  - `--module <folder>` builds a single-module `.mbz`; `finalize_module.py --mbz`
+    builds it as part of finalizing.
+
+### Changed
+- **Docs** updated for the `.mbz` path: `docs/runbook.md` Phase 6 (restore as
+  Option A, copy-paste as fallback), `docs/architecture.md` (Phase 4),
+  `AGENTS.md` (pipeline diagram, structure, steps), and the per-module
+  `README.md` template.
+- **New `prompts/restore-mbz-to-moodle.md`** — step-by-step restore walkthrough
+  (build → Course → Restore → Merge), with spot-checks and troubleshooting.
+- **`courses/aviation-weather/course.json`** module statuses refreshed — all four
+  modules generated, finalized, and packaged into the course `.mbz` (the prior
+  "Pending generation" entries for modules 2 and 4 were stale).
+
+- **Verified end-to-end (2026-06-02):** Course `.mbz` restored successfully into
+  the production IMS Moodle 5.2 instance; the first version of the course is
+  live. The structural checks (XML well-formedness, resolved cross-references)
+  are now backed by a real restore.
+- **`.mbz` structural assembler:** `pipeline/mbz/structure.py` builds the
+  `moodle_backup.xml` manifest, section files (with cmid sequences), the course
+  record + boilerplate, the course `gradebook.xml`, and the full `questions.xml`
+  question bank — wiring each quiz to its questions through shared contextids.
+- **`.mbz` per-activity builders:** `pipeline/mbz/activities.py` builds a full
+  Page or Quiz activity directory (`module.xml`, `page.xml`/`quiz.xml`, grades,
+  inforef, and boilerplate). The quiz links to its questions via the modern
+  question-bank-entry model and carries its own grade item.
+- **`.mbz` boilerplate + ID allocator:** `pipeline/mbz/templates.py` holds the
+  ~20 constant backup XML files (per-activity, course, and top-level boilerplate)
+  as reviewable named constants, and `pipeline/mbz/ids.py` provides a
+  deterministic per-entity-type id allocator + question-stamp helper. (Boilerplate
+  consolidated into one module rather than 20 tiny `.xml` stubs — see journal.)
+- **Quiz import→backup converter:** New `pipeline/mbz/quiz_to_backup.py` —
+  converts our Moodle-import-format lesson quizzes into the nested backup
+  `<question>` format a `.mbz` restore expects (field remaps + escaped HTML).
+  Ships with a self-test that converts all 16 module-1 questions and checks
+  well-formedness. First building block of the `.mbz` generator.
+- **Moodle 5.2 `.mbz` reference + schema map:** Reviving the deferred Moodle
+  backup (`.mbz`) generator now that we have a real reference export. Added
+  `docs/mbz_reference/` (the raw reference `.mbz` and its extracted XML tree,
+  provenance) and `docs/mbz_format.md` (the canonical schema map the builder is
+  coded against — version stamps, archive layout, page/quiz/question-bank XML,
+  `.ARCHIVE_INDEX`, and the import→backup quiz-field mapping). Target: Moodle
+  5.2+ (build 20260501), `backup_version 2026042000`.
+- **Incremental-documentation working practice:** Made the repo's "commit small
+  logical steps" rule explicit about docs — every code commit carries its own
+  journal/CHANGELOG update. Recorded in `AGENTS.md` and the `generate-module`
+  skill (both `.claude/` and `.agents/` mirrors).
+
+### Added
 - **Course-Wide Preview Compiler:** Added `pipeline/build_course_preview.py` — a reusable, course-agnostic Python pipeline that compiles all generated modules, lessons, inlined SVG diagrams, base64-embedded images, and XML quizzes into a single highly-polished offline-first Single Page App (SPA) `index.html` file in under 2 seconds. Built with pure Python standard libraries (no third-party dependencies) for instant native execution in any CI environment.
 - **Git-Synced Netlify Continuous Deployment:** Added a root-level `netlify.toml` configuration to integrate the preview compiler directly with Netlify's continuous deployment. Every `git push` automatically rebuilds the entire course preview and publishes it to the same permanent live demonstration link, allowing seamless feedback-and-revision cycles.
 

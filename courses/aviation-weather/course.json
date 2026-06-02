@@ -9,28 +9,28 @@
       "title": "Aviation Weather Fundamentals & Regulations",
       "folder": "module-1",
       "source_files": ["01-04"],
-      "status": "Generated and uploaded to Moodle pilot"
+      "status": "Generated, finalized, packaged into course .mbz (pilot-uploaded via copy-paste)"
     },
     {
       "number": 2,
       "title": "In-flight Aviation Hazards",
       "folder": "module-2",
       "source_files": ["05-12"],
-      "status": "Pending generation"
+      "status": "Generated, finalized, packaged into course .mbz"
     },
     {
       "number": 3,
       "title": "Aviation Warnings: SIGMET, AIRMET & Aerodrome",
       "folder": "module-3",
       "source_files": ["13-14"],
-      "status": "Generated, pending upload to Moodle"
+      "status": "Generated, finalized, packaged into course .mbz"
     },
     {
       "number": 4,
       "title": "Aviation Forecast Products & Warnings",
       "folder": "module-4",
       "source_files": ["15-18"],
-      "status": "Pending generation"
+      "status": "Generated, finalized, packaged into course .mbz"
     }
   ]
 }

@@ -8,7 +8,8 @@ Each file in this folder is one self-contained prompt. Use them in order:
 1. [generate-module-2.md](generate-module-2.md) — In-flight Aviation Hazards (sources 05–12)
 2. [generate-module-3.md](generate-module-3.md) — Terminal Area Hazards & Visibility (sources 13–14)
 3. [generate-module-4.md](generate-module-4.md) — Aviation Forecast Products & Warnings (sources 15–18)
-4. [upload-to-moodle.md](upload-to-moodle.md) — End-to-end walkthrough for getting all 4 modules into Moodle
+4. [restore-mbz-to-moodle.md](restore-mbz-to-moodle.md) — Build one `.mbz` and restore the whole course in a single upload (recommended)
+5. [upload-to-moodle.md](upload-to-moodle.md) — Copy-paste fallback for getting all 4 modules into Moodle by hand
 
 These prompts are agent-agnostic — they work for Claude Code, Antigravity
 (Gemini), or any other IDE-bundled agent that can read repo files, write

@@ -24,6 +24,265 @@ later reversed, add a new entry rather than editing the old one.
 ---
 
 <!-- New entries appended below -->
+## 2026-06-02 — `.mbz` restore verified in production Moodle
+
+**Context.** The remaining acceptance test for the `.mbz` builder: restore the
+generated course backup into the live IMS Moodle 5.2 instance and confirm it
+renders.
+
+**Result.** Owner restored the course `.mbz` into Moodle — the first version of
+the course is now up and running on the production server. The builder is no
+longer "structurally correct but unproven"; it's verified end-to-end. PR #4 is
+cleared for merge.
+
+**What this unlocks.** The pipeline now has a fast iteration loop:
+edit → `finalize_module.py` → `build_mbz.py` → restore. The owner can build the
+next iteration of the course on top of `main` without going back through manual
+copy-paste each time.
+
+---
+
+## 2026-05-28 — `.mbz` verification status + restore guide
+
+**Context.** Closing out the `.mbz` feature: a user-facing restore walkthrough,
+and recording what has and has not been verified.
+
+**Automated verification (done, green).** Unpacked the generated course `.mbz`
+and checked: all 390 XML files well-formed; `.ARCHIVE_INDEX` count matches the
+archive; every manifest activity/section directory exists; every section
+`<sequence>` references an existing cmid; the quiz↔questions contextid invariant
+holds for all 18 quizzes; all 82 question-bank-entry references resolve. The
+single-module build (`--module module-1`) passes the same checks (2 sections, 9
+activities).
+
+**NOT yet done — the decisive test.** A real restore into a live Moodle 5.2
+instance. I don't have access to the IMS Moodle, so this is the user's step (or
+mine if given a throwaway Moodle URL). `prompts/restore-mbz-to-moodle.md` is the
+walkthrough; it lists exactly what to spot-check (page rendering, image
+embedding, quiz grading + rationale). **Until a clean restore is confirmed, treat
+the builder as structurally-correct-but-unproven against a running Moodle.** This
+is why the PR is held until the user verifies.
+
+**Status.** Updated `courses/aviation-weather/course.json` — all four modules are
+generated, finalized, and packaged into the course `.mbz` (the prior "Pending
+generation" entries for modules 2 and 4 were stale).
+
+---
+
+## 2026-05-28 — `--module` flag, finalize integration, and docs
+
+**Context.** The course-wide build works; now the single-module option and the
+pipeline/doc integration.
+
+**Decision.**
+1. `build_mbz.py --module <folder>` builds a one-section `.mbz` for a single
+   module (reuses `assemble()` with a one-module list; reads course id from the
+   parent `course.json`). Verified on module 1: 2 sections (General + Module 1),
+   9 activities, all XML well-formed.
+2. `finalize_module.py --mbz` optionally builds the single-module `.mbz` right
+   after finalizing.
+3. Documentation threaded through: `docs/runbook.md` Phase 6 now leads with the
+   `.mbz` restore (Option A) and keeps copy-paste as Option B;
+   `docs/architecture.md` gains Phase 4; `AGENTS.md` updates the pipeline diagram,
+   project structure, and the "Generate Module N" steps; the per-module
+   `README.md` template (in `finalize_module.py`) leads with the restore path.
+
+**Why this shape.** Course-wide is the normal case (one upload); `--module` is for
+re-uploading a single updated module without touching the rest. Both go through
+the same builders, so there's no second code path to keep correct.
+
+---
+
+## 2026-05-28 — `build_mbz.py`: orchestrator + packaging (whole course builds)
+
+**Context.** Final assembly: read finalized course content, allocate ids, drive
+the activity + structure builders, and package a `.mbz`.
+
+**Decision.** `pipeline/build_mbz.py` reads `course.json` and each module's
+`00_module_overview_moodle.html`, `lessons/NN_*_moodle.html`, and matching
+`*_quiz.xml`, then `assemble()` lays out one section per module (overview Page →
+lesson Page → lesson Quiz …), building the question bank *before* the quiz
+activities so the question-bank-entry ids are available to wire each quiz's
+slots. `package()` writes everything to a temp dir, generates a correct
+`.ARCHIVE_INDEX` (dirs-before-files, byte sizes), and tars+gzips to
+`courses/<course>/<course_id>.mbz`.
+
+**Result — first full-course build.** Aviation Weather → a 1.4 MB `.mbz`: 5
+sections (General + 4 modules), 40 activities (22 pages + 18 quizzes), 82
+questions. Structural verification all green: every XML well-formed,
+`.ARCHIVE_INDEX` count matches, every section `<sequence>` references an existing
+cmid, the quiz↔questions contextid invariant holds, and all 82
+question-bank-entry references resolve.
+
+**Decision — don't commit the generated `.mbz`.** The plan said to commit it, but
+the output embeds a fresh timestamp and random ids (`backup_id`,
+`original_site_identifier_hash`) on every build, so committing would churn a large
+binary each run. Added `courses/**/*.mbz` to `.gitignore` and documented the
+one-line regeneration command instead. The tracked reference under
+`docs/mbz_reference/` is unaffected. (Still the decisive test — a real Moodle
+restore — before the PR.)
+
+---
+
+## 2026-05-28 — Structural assembler (manifest, sections, course, gradebook, question bank)
+
+**Context.** The layer that ties the activities together: the `moodle_backup.xml`
+manifest, the per-section `section.xml` (with the cmid `<sequence>`), the course
+record + course boilerplate, the course `gradebook.xml`, and the whole
+`questions.xml` question bank.
+
+**Decision.** `pipeline/mbz/structure.py` with pure builders + small description
+dataclasses (`ActivityRef`, `SectionRef`, `QuizSpec`). The trickiest part is
+`build_question_bank()`: it emits the `top` + `Default for <quiz>` category pair
+per quiz (scoped to that quiz's module contextid) and the nested
+`question_bank_entry → question_version → question_versions → questions`
+wrapping each converted `<question>` — and it *records back onto each QuizSpec*
+the category ids and question-bank-entry ids, so the orchestrator can wire the
+quiz's `question_instances`/`inforef` to the same contexts. That back-reference is
+how the contextid invariant is kept.
+
+**Notes.** `moodle_backup.xml` settings include the required per-section and
+per-activity `included`/`userinfo` pairs (without them the restore UI hides the
+content). `original_site_identifier_hash` and `backup_id` are random per build.
+Course total grade category uses `aggregation=13` (natural), matching the
+reference.
+
+**Verification.** Self-test builds a question bank, sections, course files,
+gradebook, and a manifest; parses all for well-formedness; and asserts the
+manifest contains the section/activity include flags and that QuizSpec got its ids
+back.
+
+---
+
+## 2026-05-28 — Per-activity builders (page + quiz)
+
+**Context.** With the converter, ids, and boilerplate in place, the next layer
+emits a full activity directory: `activities/page_<cmid>/` or
+`activities/quiz_<cmid>/`.
+
+**Decision.** `pipeline/mbz/activities.py` exposes `build_page_activity()` and
+`build_quiz_activity()`, each returning a `{archive_path: content}` dict.
+`build_module_xml()` is shared. The page puts the lesson body fragment into
+`<content>` (escaped). The quiz wires `question_instances` →
+`question_reference` → `questionbankentryid` (the 5.x model), emits its own
+activity-level grade item in `grades.xml`, and ties grade item + question
+categories together in `inforef.xml`. The quiz↔questions contextid invariant is
+asserted in the self-test.
+
+**Small choices.** `preferredbehaviour=deferredfeedback` (answer all, submit, then
+see rationale/feedback) rather than the reference's `interactive` — better fit for
+a certification quiz. No completion tracking (`completion=0`); pass grade left at
+0 and can be set per-quiz after restore. Review bitmasks copied verbatim from the
+reference so feedback/right-answer show on review.
+
+**Verification.** Self-test builds one page (9 files) and one quiz (9 files), parses
+every file for well-formedness, and confirms the quiz uses its own contextid in
+both `question_reference` and `inforef`. Works run-as-script and import-as-package.
+
+---
+
+## 2026-05-28 — `.mbz` boilerplate constants + deterministic ID allocator
+
+**Context.** A `.mbz` carries ~20 small, near-empty XML files (per-activity
+`roles/filters/calendar/competencies/grade_history`, course-level
+`enrolments/roles/filters/...`, top-level `badges/scales/groups/...`). They're
+constant for every backup. We also need ids that are unique within the backup.
+
+**Decision.**
+1. `pipeline/mbz/ids.py` — `IdAllocator` with one incrementing counter per entity
+   kind (context, cmid, section, question, answer, qbe, ...), plus `make_stamp()`
+   for unique question stamps. Deterministic, so output is byte-stable across
+   runs (clean diffs). Moodle remaps all ids on restore anyway; they only need
+   internal consistency.
+2. `pipeline/mbz/templates.py` — the constant boilerplate as named string
+   constants copied verbatim from the reference, bundled into
+   `ACTIVITY_COMMON_FILES` / `COURSE_COMMON_FILES` / `TOP_COMMON_FILES` dicts the
+   builder writes out.
+
+**Deviation worth noting.** The plan called for a `pipeline/mbz_templates/`
+directory of ~20 tiny `.xml` files. I consolidated them into one reviewable
+Python module instead — two dozen near-empty XML stubs are harder to review than
+a single annotated file, and it keeps the builder self-contained (no reading from
+`docs/` at build time). The raw reference files remain under
+`docs/mbz_reference/` for diffing.
+
+**Verification.** Every constant and bundle parses as well-formed XML; allocator
+and stamp helper exercised.
+
+---
+
+## 2026-05-28 — Quiz import-XML → backup questions.xml converter
+
+**Context.** Our per-lesson quizzes (`lessons/NN_<slug>_quiz.xml`) are in Moodle
+*import* format. A `.mbz` restore reads the *backup* format, which nests
+differently and renames several fields. The converter is the one genuinely fiddly
+piece of the builder, so it lands first and in isolation.
+
+**Decision.** Added `pipeline/mbz/quiz_to_backup.py`: `parse_quiz_file()` reads
+import-format multichoice questions into small dataclasses, and
+`build_question_element()` renders one as a backup-format `<question>` element.
+Key field remaps (full table in `docs/mbz_format.md`): `defaultgrade`→
+`defaultmark`, answer `<text>`→`<answertext>`, `fraction="100"`→
+`<fraction>1.0000000`, `format="html"`→format code `1`, and HTML stored escaped
+(not CDATA). Standard multichoice feedback strings copied verbatim from the
+reference.
+
+**Verification.** A built-in self-test converts all 16 module-1 questions and
+asserts 4 answers + exactly one correct answer each, then round-trips every
+generated element through serialise+parse to prove well-formedness. Passing.
+Spot-checked one question's XML against the reference — identical shape.
+
+---
+
+## 2026-05-28 — Reviving the `.mbz` builder; got a Moodle 5.2 reference
+
+**Context.** On 2026-05-19 we *deferred* the `.mbz` (Moodle backup) generator
+(see that entry) for one reason: the target Moodle version and backup schema were
+unknown, making it a blind 1–2 day effort with no way to test. That blocker is
+now gone — the owner exported a throwaway course from the real IMS Moodle as a
+reference backup.
+
+**Finding.** Reverse-engineered the reference: Moodle **5.2+ (build 20260501),
+`backup_version 2026042000`, format `moodle2`**. Critically, it contains exactly
+the two activity types we generate — a **Page** and a **Quiz** — so it pins down
+the whole schema: the `moodle_backup.xml` manifest, sections with cmid
+`<sequence>`, per-activity dirs, the modern question-bank model
+(`question_reference` → `questionbankentryid`), the new `.ARCHIVE_INDEX` index
+file, and all the near-empty boilerplate files.
+
+**Decision.** Revive the builder, targeting 5.2. Committed the raw reference and
+its extracted XML tree under `docs/mbz_reference/` (provenance, do not edit) and
+wrote `docs/mbz_format.md` as the canonical schema map the builder is coded
+against. Images stay base64-inline in the page HTML, so `files.xml` is empty and
+we skip Moodle's file pool entirely (the reference confirms an empty
+`files.xml`).
+
+**Why now and not in May.** The reference removes every unknown from the original
+deferral. The owner also confirmed production Moodle is the same 5.2, so the
+version stamp is safe. The decisive test is still a real restore (tracked later
+in this feature).
+
+---
+
+## 2026-05-28 — Adopt incremental-documentation working practice
+
+**Context.** Starting the `.mbz` (Moodle backup) generator feature — a
+multi-commit effort. The owner asked that documentation arrive in small steps
+alongside the code, not as one big writeup at the end (their stated preference,
+and a common failure mode where the journal/CHANGELOG drift behind the code).
+
+**Decision.** Made the existing "commit small logical steps" rule explicit about
+docs: every code commit carries its own journal + CHANGELOG update for that step.
+Added the rule to `AGENTS.md` (Agent Personality) and to the `generate-module`
+SKILL, mirrored across `.claude/skills/` and `.agents/skills/` in this same
+commit so the two never drift.
+
+**Why.** The journal is meant to read as a running log of *why*. Batching all of
+it at the end loses the per-step reasoning and leaves intermediate commits with
+stale docs. This entry is itself the first instance of the practice.
+
+---
+
 ## 2026-05-26 — Module 4 image extraction and finalization for Moodle
 
 **Context.** The user requested auditing the pilot course modules for Moodle readiness. Module 1, 2, and 3 were fully ready, but Module 4 was drafted but not yet finalized (missing combined files, unified quiz XML, and containing 2 unresolved image-needed placeholders). The user approved running the newly added image extraction pipeline to harvest images from source decks and finalize the module.

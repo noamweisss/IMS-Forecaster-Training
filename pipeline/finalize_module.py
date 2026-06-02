@@ -108,12 +108,34 @@ def write_images_to_source(module_dir: Path, items: list[str]) -> Path | None:
 README_TEMPLATE = """\
 # {module_title} — Moodle Upload Instructions
 
-Two clicks per module. Five minutes. No image upload, no per-lesson pasting.
+## Fastest path — restore a `.mbz` (one upload)
+
+If you have built the backup (`python pipeline/build_mbz.py --course <course-dir>`
+for the whole course, or `--module <this-folder>` for just this module), upload
+that single `.mbz` instead of pasting anything:
+
+1. In Moodle: **Course → Restore**.
+2. Drag the `.mbz` into the upload box → **Restore**.
+3. **Merge into this course** (or restore as a new course) → confirm → **Continue**.
+
+The module(s) appear as their own section(s) — overview Page → lesson Page → Quiz
+→ … — with all questions, images, and feedback already wired. No question-bank
+import needed.
+
+The manual copy-paste workflow below still works as a fallback for hosts that
+block restores.
+
+---
+
+## Fallback — copy-paste (two clicks per module)
+
+No image upload, no per-lesson pasting.
 
 ## Files in this folder
 
 | File | What it is |
 |------|------------|
+| `*-{module_folder}.mbz` | **Restore this in Moodle for the one-upload path** (only present if you ran `build_mbz.py --module`). A Moodle backup of this module — overview Page → lesson Page → Quiz per lesson, fully wired. |
 | `module_combined_moodle.html` | **Paste this into one Moodle Page activity.** All lessons + overview + table of contents in one self-contained HTML file (images base64-embedded). |
 | `module_quiz_all_questions.xml` | **Import this into the Question Bank.** Moodle XML format; every quiz question for the module. |
 | `00_module_overview_moodle.html` and `lessons/*_moodle.html` | Per-lesson body fragments. Use these instead of the combined page if your Moodle's `post_max_size` is small. |
@@ -166,11 +188,14 @@ def infer_module_title(module_dir: Path) -> str:
 def write_readme(module_dir: Path) -> Path:
     out = module_dir / "README.md"
     title = infer_module_title(module_dir)
-    out.write_text(README_TEMPLATE.format(module_title=title), encoding="utf-8")
+    out.write_text(
+        README_TEMPLATE.format(module_title=title, module_folder=module_dir.name),
+        encoding="utf-8",
+    )
     return out
 
 
-def run(module_dir: Path) -> None:
+def run(module_dir: Path, build_mbz: bool = False) -> None:
     if not module_dir.is_dir():
         raise SystemExit(f"Module folder not found: {module_dir}")
 
@@ -196,6 +221,12 @@ def run(module_dir: Path) -> None:
     else:
         print("      no image-needed placeholders remain")
 
+    if build_mbz:
+        print("\n[+] Building single-module .mbz ...")
+        from build_mbz import build_module  # local import; same pipeline/ dir
+        out = build_module(module_dir)
+        print(f"      -> {out.name}")
+
     print("\nDone. Upload using the instructions in the module's README.md.")
 
 
@@ -204,8 +235,10 @@ def main() -> None:
                                 formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--module", required=True,
                    help="Path to the module folder the agent wrote into.")
+    p.add_argument("--mbz", action="store_true",
+                   help="Also build a single-module .mbz (Moodle backup) after finalizing.")
     args = p.parse_args()
-    run(Path(args.module))
+    run(Path(args.module), build_mbz=args.mbz)
 
 
 if __name__ == "__main__":
