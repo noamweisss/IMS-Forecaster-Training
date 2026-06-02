@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activity id="1" moduleid="10" modulename="qbank" contextid="32">
+  <qbank id="1">
+    <name>test</name>
+    <timecreated>1779966251</timecreated>
+    <timemodified>0</timemodified>
+    <intro>&lt;p&gt;test&lt;/p&gt;</intro>
+    <introformat>1</introformat>
+    <type></type>
+  </qbank>
+</activity>

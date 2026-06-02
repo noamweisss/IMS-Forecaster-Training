@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<course id="3" contextid="28">
+  <shortname>MBZtemp</shortname>
+  <fullname>MBZ template</fullname>
+  <idnumber></idnumber>
+  <summary></summary>
+  <summaryformat>1</summaryformat>
+  <format>topics</format>
+  <showgrades>1</showgrades>
+  <newsitems>5</newsitems>
+  <startdate>1779829200</startdate>
+  <enddate>1811365200</enddate>
+  <marker>0</marker>
+  <maxbytes>0</maxbytes>
+  <legacyfiles>0</legacyfiles>
+  <showreports>0</showreports>
+  <visible>1</visible>
+  <groupmode>0</groupmode>
+  <groupmodeforce>0</groupmodeforce>
+  <defaultgroupingid>0</defaultgroupingid>
+  <lang></lang>
+  <theme></theme>
+  <timecreated>1779792551</timecreated>
+  <timemodified>1779792551</timemodified>
+  <requested>0</requested>
+  <showactivitydates>1</showactivitydates>
+  <showcompletionconditions>1</showcompletionconditions>
+  <pdfexportfont>$@NULL@$</pdfexportfont>
+  <enablecompletion>1</enablecompletion>
+  <completionnotify>0</completionnotify>
+  <enableaitools>$@NULL@$</enableaitools>
+  <category id="1">
+    <name>Category 1</name>
+    <description>$@NULL@$</description>
+  </category>
+  <tags>
+  </tags>
+  <customfields>
+  </customfields>
+  <courseformatoptions>
+    <courseformatoption>
+      <format>topics</format>
+      <sectionid>0</sectionid>
+      <name>hiddensections</name>
+      <value>1</value>
+    </courseformatoption>
+    <courseformatoption>
+      <format>topics</format>
+      <sectionid>0</sectionid>
+      <name>coursedisplay</name>
+      <value>0</value>
+    </courseformatoption>
+  </courseformatoptions>
+</course>
