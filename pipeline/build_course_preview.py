@@ -891,6 +891,7 @@ body.dark-mode .quiz-option.incorrect {{
   <span class="topbar-course">{course_data['title']}</span>
   
   <div class="topbar-controls">
+    <button class="theme-toggle" id="lang-toggle-btn" onclick="toggleLanguage()" title="Toggle Hebrew/English">א</button>
     <button class="theme-toggle" onclick="toggleDarkMode()" title="Toggle Dark/Light Mode">🌓</button>
     <span class="preview-badge">PREVIEW</span>
   </div>
@@ -968,6 +969,41 @@ if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').match
   document.body.classList.add('dark-mode');
 }}
 
+function applyLanguage(lang) {{
+  if (typeof courseDataHe === 'undefined' || typeof courseDataEn === 'undefined') {{
+    console.warn("Bilingual data not found.");
+    return;
+  }}
+  const html = document.documentElement;
+  if (lang === 'he') {{
+    html.setAttribute('lang', 'he');
+    html.setAttribute('dir', 'rtl');
+    courseData = courseDataHe;
+    quizData = quizDataHe;
+  }} else {{
+    html.setAttribute('lang', 'en');
+    html.setAttribute('dir', 'ltr');
+    courseData = courseDataEn;
+    quizData = quizDataEn;
+  }}
+  const btn = document.getElementById('lang-toggle-btn');
+  if (btn) {{ btn.textContent = lang === 'he' ? 'A' : 'א'; }}
+  try {{ localStorage.setItem('preview-lang', lang); }} catch (e) {{}}
+}}
+
+function toggleLanguage() {{
+  const current = document.documentElement.getAttribute('dir') === 'rtl' ? 'he' : 'en';
+  const next = current === 'he' ? 'en' : 'he';
+  applyLanguage(next);
+
+  // Capture which view is active *before* re-rendering, then restore it.
+  const active = document.querySelector('.view-panel.active');
+  const activeId = active ? active.id : 'course-landing';
+
+  generateCourseHTML();
+  showView(activeId);
+}}
+
 function toggleDarkMode() {{
   document.body.classList.toggle('dark-mode');
 }}
@@ -1024,12 +1060,55 @@ function generateCourseHTML() {{
   const syllabusGrid = document.getElementById('landing-syllabus-grid');
   const viewsContainer = document.getElementById('dynamic-views-container');
   
+  const isRTL = document.documentElement.getAttribute('dir') === 'rtl';
+  
+  // Dynamic translations of landing pages static texts
+  const heroH1 = document.querySelector('.landing-hero h1');
+  const heroP = document.querySelector('.landing-hero p');
+  const smeLabel = document.querySelector('.landing-meta div:nth-child(1)');
+  const structLabel = document.querySelector('.landing-meta div:nth-child(2)');
+  const platLabel = document.querySelector('.landing-meta div:nth-child(3)');
+  const syllabusTitle = document.querySelector('.view-panel h2:nth-of-type(1)');
+  const competenciesTitle = document.querySelector('.view-panel h2:nth-of-type(2)');
+  const compGoalHeader = document.querySelector('.callout-key p');
+  const compGoals = document.querySelectorAll('.callout-key li');
+  const landingNavText = document.getElementById('nav-course-landing');
+  
+  if (heroH1) {{ heroH1.textContent = courseData.title; }}
+  if (heroP) {{ heroP.textContent = courseData.target_audience; }}
+  if (smeLabel) {{ smeLabel.innerHTML = isRTL ? `מומחה תוכן: <strong>${{courseData.subject_matter_expert}}</strong>` : `SME: <strong>${{courseData.subject_matter_expert}}</strong>`; }}
+  if (structLabel) {{ structLabel.innerHTML = isRTL ? `מבנה: <strong>4 מודולים</strong>` : `Structure: <strong>4 Modules</strong>`; }}
+  if (platLabel) {{ platLabel.innerHTML = isRTL ? `פלטפורמה: <strong>מאושר Moodle</strong>` : `Platform: <strong>Moodle Certified</strong>`; }}
+  if (syllabusTitle) {{ syllabusTitle.textContent = isRTL ? `סילבוס הקורס` : `Course Syllabus`; }}
+  if (competenciesTitle) {{ competenciesTitle.textContent = isRTL ? `כשרויות גלובליות` : `Global Competencies`; }}
+  if (compGoalHeader) {{ compGoalHeader.textContent = isRTL ? `יעדי הסמכת מזג אוויר תעופתי:` : `Aviation Weather Certification Goals:`; }}
+  if (landingNavText) {{ landingNavText.innerHTML = isRTL ? `<span class="icon">🏛️</span> סקירת קורס` : `<span class="icon">🏛️</span> Course Overview`; }}
+  
+  const hebrewGoals = [
+    "תקינה לפי תקנות ICAO Annex 3 ו-WMO-No. 49.",
+    "יישום מטאורולוגיה מבצעית להערכת סיכוני טיסה ותכנון נתיבים.",
+    "הערכה קריטית של מפגעי אטמוספירה (מערבולות, התפתחות ענני CB, התקרחות, ראות).",
+    "ניסוח הודעות אזהרה תעופתיות (TAF, SIGMET, AIRMET) במרכזי חיזוי לאומיים."
+  ];
+  const englishGoals = [
+    "Standardization according to ICAO Annex 3 and WMO-No. 49 regulations.",
+    "Operational meteorology application for flight risk assessment and route planning.",
+    "Critical evaluation of atmospheric hazards (turbulence, CB convection, icing, visibility).",
+    "Aviation warning message authoring (TAF, SIGMET, AIRMET) inside national forecast centers."
+  ];
+  
+  if (compGoals && compGoals.length === 4) {{
+    compGoals.forEach((li, idx) => {{
+      li.textContent = isRTL ? hebrewGoals[idx] : englishGoals[idx];
+    }});
+  }}
+  
   let sidebarHTML = "";
   let gridHTML = "";
   let panelsHTML = "";
   
   courseData.modules.forEach(mod => {{
-    const statusText = mod.is_available ? "Available" : "Soon";
+    const statusText = mod.is_available ? (isRTL ? "זמין" : "Available") : (isRTL ? "בקרוב" : "Soon");
     const badgeClass = mod.is_available ? "available" : "soon";
     const statusIcon = mod.is_available ? "✅" : "🚧";
     
@@ -1038,12 +1117,12 @@ function generateCourseHTML() {{
       <div class="module-group collapsed" id="mod-group-${{mod.number}}">
         <div class="sidebar-divider"></div>
         <div class="module-header" onclick="toggleModuleGroup(${{mod.number}})">
-          <span>M${{mod.number}}: ${{mod.title.split(":")[0] || mod.title}}</span>
+          <span>${{isRTL ? 'מ' : 'M'}}${{mod.number}}: ${{mod.title.split(":")[0] || mod.title}}</span>
           <span class="chevron">▼</span>
         </div>
         <div class="module-items">
           <div class="nav-subitem" id="nav-module-overview-${{mod.number}}" onclick="showView('module-overview-${{mod.number}}')">
-            <span class="icon">📋</span> Module Overview
+            <span class="icon">📋</span> ${{isRTL ? 'סקירת מודול' : 'Module Overview'}}
           </div>
     `;
     
@@ -1051,12 +1130,12 @@ function generateCourseHTML() {{
     gridHTML += `
       <div class="curriculum-card" onclick="${{mod.is_available ? `showView('module-overview-\${{mod.number}}')` : ""}}">
         <div class="card-header">
-          <h3>Module ${{mod.number}}: ${{mod.title}}</h3>
+          <h3>${{isRTL ? 'מודול' : 'Module'}} ${{mod.number}}: ${{mod.title}}</h3>
           <span class="card-badge ${{badgeClass}}">${{statusText}}</span>
         </div>
-        <p>${{mod.competencies[0] || "Syllabus pending generation."}}</p>
+        <p>${{mod.competencies[0] || (isRTL ? "סילבוס יופק בהמשך." : "Syllabus pending generation.")}}</p>
         <div class="card-syllabus-preview">
-          <strong>Lessons included:</strong>
+          <strong>${{isRTL ? 'שיעורים כלולים:' : 'Lessons included:'}}</strong>
           <ul>
     `;
     
@@ -1067,12 +1146,12 @@ function generateCourseHTML() {{
     }} else {{
       overviewBody = `
         <div class="landing-hero" style="background: linear-gradient(135deg, #d97706 0%, #78350f 100%);">
-          <h1>🚧 Module ${{mod.number}}: Under Construction</h1>
-          <p>This module is currently pending generation in the course pipeline.</p>
+          <h1>🚧 ${{isRTL ? 'מודול' : 'Module'}} ${{mod.number}}: ${{isRTL ? 'בבנייה' : 'Under Construction'}}</h1>
+          <p>${{isRTL ? 'מודול זה נמצא כעת בשלבי הפקה בצינור התוכן של הקורס.' : 'This module is currently pending generation in the course pipeline.'}}</p>
         </div>
-        <h2>Curriculum Preview</h2>
+        <h2>${{isRTL ? 'תצוגה מקדימה של תוכנית הלימודים' : 'Curriculum Preview'}}</h2>
         <ul>
-          ${{mod.lessons.map(les => `<li><strong>Lesson \${{les.number}}:</strong> \${{les.title}}</li>`).join("")}}
+          ${{mod.lessons.map(les => `<li><strong>${{isRTL ? 'שיעור' : 'Lesson'}} \${{les.number}}:</strong> \${{les.title}}</li>`).join("")}}
         </ul>
       `;
     }}
@@ -1088,7 +1167,7 @@ function generateCourseHTML() {{
       const lessonId = `lesson-${{mod.number}}-${{les.number}}`;
       const quizId = `quiz-${{mod.number}}-${{les.number}}`;
       
-      gridHTML += `<li>Lesson ${{les.number}}: ${{les.title}}</li>`;
+      gridHTML += `<li>${{isRTL ? 'שיעור' : 'Lesson'}} ${{les.number}}: ${{les.title}}</li>`;
       
       if (mod.is_available) {{
         // Sidebar lesson links
@@ -1108,7 +1187,7 @@ function generateCourseHTML() {{
         if (les.has_quiz) {{
           sidebarHTML += `
             <div class="nav-subitem" id="nav-${{quizId}}" onclick="showView('${{quizId}}')">
-              <span class="icon">✏️</span> Quiz: Lesson ${{les.number}}
+              <span class="icon">✏️</span> ${{isRTL ? 'בוחן' : 'Quiz'}}: ${{isRTL ? 'שיעור' : 'Lesson'}} ${{les.number}}
             </div>
           `;
           
@@ -1116,12 +1195,12 @@ function generateCourseHTML() {{
           panelsHTML += `
             <div class="view-panel" id="${{quizId}}">
               <div class="quiz-header">
-                <h1>Interactive Quiz: Lesson ${{les.number}}</h1>
-                <p style="color:var(--shell-muted); margin-top: 0.25rem;">Test your knowledge in real-time. Score 75% or higher to pass.</p>
+                <h1>${{isRTL ? 'בוחן אינטראקטיבי: שיעור' : 'Interactive Quiz: Lesson'}} ${{les.number}}</h1>
+                <p style="color:var(--shell-muted); margin-top: 0.25rem;">${{isRTL ? 'בחן את הידע שלך בזמן אמת. קבל ציון של 75% ומעלה כדי לעבור.' : 'Test your knowledge in real-time. Score 75% or higher to pass.'}}</p>
               </div>
               <div id="quiz-container-${{mod.number}}-${{les.number}}"></div>
               <div class="quiz-actions">
-                <button class="btn btn-primary" onclick="gradeQuiz(${{mod.number}}, ${{les.number}})">Check Answers</button>
+                <button class="btn btn-primary" onclick="gradeQuiz(${{mod.number}}, ${{les.number}})">${{isRTL ? 'בדוק תשובות' : 'Check Answers'}}</button>
               </div>
               <div class="quiz-score" id="score-box-${{mod.number}}-${{les.number}}">
                 <div class="score-num" id="score-num-${{mod.number}}-${{les.number}}">0 / 0</div>
@@ -1132,8 +1211,8 @@ function generateCourseHTML() {{
         }}
       }} else {{
         sidebarHTML += `
-          <div class="nav-subitem disabled" title="Under Construction">
-            <span class="icon">🔒</span> ${{les.number}}. ${{les.title}} <span class="status-indicator soon">Soon</span>
+          <div class="nav-subitem disabled" title="${{isRTL ? 'בבנייה' : 'Under Construction'}}">
+            <span class="icon">🔒</span> ${{les.number}}. ${{les.title}} <span class="status-indicator soon">${{isRTL ? 'בקרוב' : 'Soon'}}</span>
           </div>
         `;
       }}
@@ -1175,6 +1254,8 @@ function renderQuizQuestions(modNum, lesNum) {{
   const container = document.getElementById(`quiz-container-${{modNum}}-${{lesNum}}`);
   let html = "";
   
+  const isRTL = document.documentElement.getAttribute('dir') === 'rtl';
+  
   questions.forEach((q, qIdx) => {{
     html += `
       <div class="quiz-question" id="q-card-${{modNum}}-${{lesNum}}-${{qIdx}}">
@@ -1196,7 +1277,7 @@ function renderQuizQuestions(modNum, lesNum) {{
     html += `
         </div>
         <div class="quiz-feedback" id="feedback-${{modNum}}-${{lesNum}}-${{qIdx}}">
-          <strong>Review & Rationale:</strong>
+          <strong>${{isRTL ? 'משוב והסבר:' : 'Review & Rationale:'}}</strong>
           <div style="margin-top:0.4rem;">${{q.feedback}}</div>
         </div>
       </div>
@@ -1210,6 +1291,8 @@ function gradeQuiz(modNum, lesNum) {{
   const key = `quiz-${{modNum}}-${{lesNum}}`;
   const questions = quizData[key];
   let correctCount = 0;
+  
+  const isRTL = document.documentElement.getAttribute('dir') === 'rtl';
   
   questions.forEach((q, qIdx) => {{
     const radios = document.getElementsByName(`q-${{modNum}}-${{lesNum}}-${{qIdx}}`);
@@ -1261,10 +1344,10 @@ function gradeQuiz(modNum, lesNum) {{
   scoreNum.textContent = `${{correctCount}} / ${{questions.length}} (${{pct}}%)`;
   
   if (pct >= 75) {{
-    scoreText.innerHTML = "✅ Passed! Great job understanding the operational forecasting principles.";
+    scoreText.innerHTML = isRTL ? "✅ עברת! עבודה מצוינת בהבנת עקרונות החיזוי המבצעיים." : "✅ Passed! Great job understanding the operational forecasting principles.";
     scoreText.style.color = "#10b981";
   }} else {{
-    scoreText.innerHTML = "❌ Below 75% passing score. Review the rationale feedback and try again.";
+    scoreText.innerHTML = isRTL ? "❌ מתחת לציון עובר של 75%. עיין במשוב ונסה שוב." : "❌ Below 75% passing score. Review the rationale feedback and try again.";
     scoreText.style.color = "#ef4444";
   }}
   
@@ -1276,8 +1359,12 @@ function gradeQuiz(modNum, lesNum) {{
 
 // Bootstrap
 document.addEventListener('DOMContentLoaded', () => {{
+  let savedLang = 'en';
+  try {{ savedLang = localStorage.getItem('preview-lang') || 'en'; }} catch (e) {{}}
+  applyLanguage(savedLang);
+
   generateCourseHTML();
-  
+
   // Default landing view
   showView('course-landing');
 }});

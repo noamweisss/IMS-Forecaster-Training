@@ -2,8 +2,8 @@
 # This automatically triggers a new course build and preview update on every git push.
 
 [build]
-  # Build Command: Run our pure-Python course preview compiler
-  command = "python pipeline/build_course_preview.py --course courses/aviation-weather --output preview_dist"
+  # Build Command: Run our pure-Python course preview compiler and then inject Hebrew data
+  command = "python pipeline/build_course_preview.py --course courses/aviation-weather --output preview_dist && python scratch/compile_hebrew_data.py"
   
   # Publish Directory: The generated preview folder containing the standalone index.html
   publish = "preview_dist"
