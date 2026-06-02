@@ -54,4 +54,37 @@
     <answer fraction="0" format="html"><text><![CDATA[<p>The national aeronautical information publication (AIP) general section</p>]]></text></answer>
     <answer fraction="0" format="html"><text><![CDATA[<p>ICAO Global Air Navigation Plan (GANP)</p>]]></text></answer>
   </question>
+
+  <question type="multichoice">
+    <name><text>L1-Q06 — Office ownership of products</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Severe turbulence is reported in the upper levels of the FIR your unit watches over, well away from any single aerodrome. Under the Annex 3 service architecture, which office is responsible for issuing the SIGMET, and why?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><strong>Rationale:</strong> SIGMET and AIRMET are issued by the Meteorological Watch Office (MWO), which maintains watch over an entire FIR/CTA (Annex 3, Ch. 3 and Ch. 7). The Aerodrome Meteorological Office (AMO) owns aerodrome-scale products — METAR, TAF, TREND, and aerodrome and wind-shear warnings — not FIR-wide hazard messages. The WAFC produces global gridded forecasts, not SIGMET.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>The Meteorological Watch Office (MWO), because SIGMET covers hazards across the whole FIR/CTA it watches.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>The Aerodrome Meteorological Office (AMO), because it issues all in-flight hazard warnings for its region.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>The World Area Forecast Centre (WAFC), because upper-level turbulence is part of the SIGWX product.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>The Volcanic Ash Advisory Centre (VAAC), because it coordinates all en-route hazard advisories.</p>]]></text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L1-Q07 — WAFS distribution</text></name>
+    <questiontext format="html"><text><![CDATA[<p>An IMS dispatcher and an airline's flight-planning system both need consistent upper-wind and temperature forecasts for a route from Tel Aviv across the eastern Mediterranean. Which combination correctly identifies the source centre and the distribution system serving this region?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><strong>Rationale:</strong> WAFC London (Met Office, Exeter) is responsible for Europe, Africa, the Middle East and western Asia, and its products are broadcast over SADIS (the UK-operated Satellite Distribution System). WAFC Washington with ISCS serves the Americas, Atlantic, Pacific and eastern Asia. Using the same WAFS grids end-to-end is what guarantees the dispatcher and the airline compute consistent fuel and routing.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>WAFC London, distributed via SADIS.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>WAFC Washington, distributed via ISCS.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>WAFC London, distributed via ISCS.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>The regional MWO, distributed via the AIP.</p>]]></text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L1-Q08 — Quality system and competence</text></name>
+    <questiontext format="html"><text><![CDATA[<p>An ICAO/State audit asks an aviation MET provider to demonstrate Annex 3 compliance. Which pair of evidence most directly satisfies the Chapter 2 requirements on quality and personnel?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><strong>Rationale:</strong> Annex 3, Ch. 2 requires the Meteorological Authority to operate a Quality System conforming to ISO 9000 (with verification/validation and audit) and to meet WMO competency/training requirements (WMO-No. 49 and WMO-No. 258). Documented verification statistics plus competency-assessment records map directly onto those two requirements. Marketing material, equipment receipts, or aircraft maintenance logs do not evidence MET quality or competence.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>An ISO 9000-aligned quality system with forecast verification records, plus forecaster competency-assessment records.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>A signed service contract with the airlines and a list of installed observing equipment.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>A copy of the national AIP and the aircraft maintenance logs for the based fleet.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>A portfolio of public weather forecasts and media broadcasts produced by the service.</p>]]></text></answer>
+  </question>
 </quiz>

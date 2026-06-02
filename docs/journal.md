@@ -24,6 +24,39 @@ later reversed, add a new entry rather than editing the old one.
 ---
 
 <!-- New entries appended below -->
+## 2026-06-02 — V2 meteorology expansion: setup + Module 1 Lesson 1
+
+**Context.** The next V2 roadmap item is the "go deeper / more examples" pass
+Evgeny asked for across all 18 lessons. Working module by module, pausing for
+review after each. This entry covers the branch setup and the first lesson.
+
+**Finding (baseline).** The container's *local* `main` was stale (pre-PR #5).
+PR #5 (dark-mode removal, emoji prefixes, completion tracking, the Figure 1
+rewrite) was already merged into `origin/main`. I reset the new content branch
+`v2-meteorology-content-expansion` onto `origin/main` so the work builds on the
+real V2 baseline — lessons already light-only and literal-hex. The canonical
+file to edit is `lessons/NN_<slug>_moodle.html`; the standalone `NN_<slug>.html`
+files are legacy V1 migration inputs (`retrofit_to_moodle.py` is a one-time
+migration tool per AGENTS.md, not part of the current runbook), so they are left
+untouched and are now intentionally stale. Each `_moodle.html` also carries one
+real photo already embedded as a base64 JPEG; edits target the readable HTML
+around that line and leave the data URI alone (the embed step is idempotent).
+
+**Decision (Lesson 1).** The WMO/ICAO source deck is rich (52 pages), so the
+expansion is entirely source-grounded — no internet claims, so no
+`REVIEW_NOTES.md` needed for this lesson. Added the WMO constituent-bodies
+structure, an Annex 3 chapter-to-product map, the AMO/MWO/WAFC/VAAC/TCAC service
+architecture, the WAFS/SADIS distribution chain, and the ISO 9000 / WMO-No.
+49/258 quality-and-competence requirements, with two new literal-hex SVGs and
+two worked examples (SIGMET issuance; tracing a WAFS product to the cockpit).
+
+**Why.** The original lesson explained *that* WMO and ICAO cooperate; a working
+forecaster needs to know *which document and which office* owns each product
+they touch, and how a global forecast reaches their bench. Framing the Annex 3
+chapters as a product map is the operational lens the audience actually uses.
+
+---
+
 ## 2026-06-02 — V2: rewrote the broken Figure 1 (Module 1, Lesson 2)
 
 **Context.** The owner flagged Figure 1 in Module 1 Lesson 2 (route planning

@@ -10,6 +10,24 @@ future course-to-mbz Claude skill) should read both.
 
 ## [Unreleased]
 
+### Meteorology content expansion (V2, roadmap.md)
+
+The "go deeper / more examples" pass Evgeny asked for, done module by module
+from the source decks (internet additions, where needed, flagged for SME review).
+
+- **Module 1, Lesson 1 (Regulatory Frameworks).** Expanded from the 52-page
+  WMO/ICAO source deck (`_extraction.json`). Body roughly doubled (~1,440 →
+  ~2,360 words). Added: a WMO constituent-bodies subsection with a new
+  diagram (Congress / Executive Council / Regional Associations / Technical
+  Commissions, highlighting CAeM); an "What Annex 3 Actually Contains" section
+  with the Part I chapter list and a product → chapter → issuing-office matrix;
+  a worked SIGMET-issuance example; a "Service Architecture" section
+  (AMO/MWO/WAFC/VAAC/TCAC) with a new WAFS/SADIS distribution diagram and a
+  worked WAFS-to-cockpit trace; and a Quality Management & Competence section
+  (ISO 9000, WMO-No. 49/258). Objectives 3 → 6, takeaways 5 → 7, quiz 5 → 8
+  application questions. All new SVGs use literal hex; no internet sources
+  needed for this lesson.
+
 ### Course V2 iteration (roadmap.md)
 
 - **Rewrote the broken Figure 1** in Module 1 Lesson 2 (route planning & fuel).
