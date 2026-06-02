@@ -25,8 +25,8 @@ Thumbs.db
 # ── Netlify / Course Preview ──
 preview_dist/
 
-# ── Generated Moodle backups ──
+# ── Moodle Backups ──
 # build_mbz.py output. Regenerate with `python pipeline/build_mbz.py --course <dir>`.
 # Each build embeds a fresh timestamp + random ids, so committing churns a large
 # binary. The reference backup under docs/mbz_reference/ is tracked deliberately.
-courses/**/*.mbz
+/courses/**/*.mbz
