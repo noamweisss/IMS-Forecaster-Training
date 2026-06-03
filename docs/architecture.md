@@ -12,7 +12,7 @@ Source files (PPTX/PDF/DOCX)
 [1] extract_sources.py        ← Python only, no LLM
         │  _extraction.json
         ▼
-[2] Claude Code agent         ← LLM, runs inside the IDE
+[2] Agent                     ← LLM, runs inside the IDE
         │  lesson HTML fragments, quiz XMLs, module overview, blueprint
         ▼
 [3] finalize_module.py        ← Python only, no LLM
@@ -22,7 +22,10 @@ Source files (PPTX/PDF/DOCX)
 [4] build_mbz.py (optional)   ← Python only, no LLM
         │  <course>.mbz  (one importable Moodle backup)
         ▼
-Moodle (1 restore for the whole course, or 2 clicks per module)
+[5] build_course_preview.py (optional) ← Python only, no LLM
+        │  preview_dist/  (Netlify SPA)
+        ▼
+Moodle / Netlify deployment
 ```
 
 ## Pipeline Phases
@@ -79,6 +82,10 @@ documented in [mbz_format.md](mbz_format.md); the `pipeline/mbz/` package splits
 the work into ids, quiz conversion, activity builders, structural assembly, and
 packaging. The copy-paste outputs from Phase 3 remain as a fallback.
 
+### Phase 5 — Course Preview (Python, optional)
+
+`pipeline/build_course_preview.py` builds a standalone Single Page Application (SPA) into `preview_dist/` that allows the entire course to be previewed outside of Moodle. Pushing this to Git automatically triggers a Netlify CI deployment.
+
 ## Design Constraints Driving the Architecture
 
 - **No API key.** The owner uses IDE-bundled inference; the pipeline
@@ -92,8 +99,8 @@ packaging. The copy-paste outputs from Phase 3 remain as a fallback.
 - **Course-agnostic.** Nothing in the Python scripts knows about
   "Aviation"; per-course concerns live in `courses/<course>/`.
 - **Skill-ready.** The phase split — Python tools + spec doc + worked
-  example — maps directly onto a Claude skill's tools + instructions +
-  example. Repackaging later is mostly copy-paste.
+  example — maps directly onto an agent skill's tools + instructions +
+  example. This workflow is already packaged as a skill in the repository.
 
 ## Where to Look for Details
 
