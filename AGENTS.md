@@ -25,10 +25,11 @@ subscription (Claude via Claude Code, Gemini via Antigravity, etc.).
 **No Anthropic API key is required anywhere.**
 
 ```
-1. extract_sources.py        → _extraction.json     (Python, no LLM)
+1. extract_sources.py         → _extraction.json     (Python, no LLM)
 2. you / another agent        → lesson HTML + quiz XML + overview
 3. finalize_module.py         → Moodle-ready module (Python, no LLM)
 4. build_mbz.py  (optional)   → <course>.mbz one-upload backup (Python, no LLM)
+5. build_course_preview.py    → preview_dist/ SPA for Netlify (Python, no LLM)
 ```
 
 ## If You're an Agent Reading This for the First Time
@@ -38,6 +39,8 @@ Start here:
   generating a module end to end.
 - **[docs/lesson_spec.md](docs/lesson_spec.md)** — the exact files,
   shapes, and conventions you must produce when authoring lessons.
+- **[docs/architecture.md](docs/architecture.md)** — high-level pipeline architecture.
+- **[docs/mbz_format.md](docs/mbz_format.md)** — the Moodle backup format schema.
 - **[docs/journal.md](docs/journal.md)** — engineering log. Read this
   when something looks weird and you want the backstory.
 - **[CHANGELOG.md](CHANGELOG.md)** — what changed recently.
@@ -67,14 +70,19 @@ pipeline/           → Python scripts (no LLM in any of them)
   build_combined_page.py  Concatenates lesson fragments into one Page
   retrofit_to_moodle.py   Upgrades legacy standalone HTML to fragments
   build_mbz.py            Packages a course into one importable Moodle .mbz
+  build_course_preview.py Builds a standalone SPA for Netlify preview
   mbz/                    Helper package for build_mbz.py (ids, quiz
                           conversion, activity + structure builders, packaging)
 
-docs/                → Documentation, runbook, spec, journal
+docs/                → Documentation, runbook, spec, journal, architecture
 courses/             → Course content (source files + generated output)
   aviation-weather/        The pilot course
+preview_dist/        → Compiled SPA output for Netlify deployment
 config/              → Shared CSS design system (.ims-lesson scoped)
+prompts/             → Handoff prompts and manual upload walkthroughs
+scratch/             → Scratchpad for temporary files
 admin/               → Moodle setup notes, Docker config
+netlify.toml         → Netlify CI build configuration
 .claude/skills/      → Agent skill files (canonical home). Holds
                        `generate-module/`, the course-conversion skill
                        that packages this pipeline.
@@ -148,8 +156,11 @@ Follow the runbook. The condensed version:
 1. Subdivide `source_files/` into per-module subfolders if not already.
 2. `python pipeline/extract_sources.py --input ... --output ...`
 3. Read `docs/lesson_spec.md`. Author the lessons + quizzes + overview.
-4. `python pipeline/finalize_module.py --module ...`
+4. `python pipeline/finalize_module.py --module ... [--mbz]`
+   (The `--mbz` flag optionally builds the single-module backup immediately).
 5. (Optional) `python pipeline/build_mbz.py --course courses/<course>` to
    produce a single `.mbz` the user restores in one upload (schema:
    `docs/mbz_format.md`). Or tell the user to follow the module's `README.md`
    for the copy-paste Moodle upload.
+6. (Optional) `python pipeline/build_course_preview.py` to update the Netlify
+   preview SPA, or just commit and push (Netlify CI builds it automatically).

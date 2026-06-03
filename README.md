@@ -16,7 +16,7 @@ Source presentations  →  [Python: extract]  →  _extraction.json
                           [Python: finalize]  →  Moodle-ready module
 ```
 
-A Claude Code agent (using whatever model your IDE provides — no API key needed) reads the extracted source content, designs a lesson structure, and writes each lesson as an HTML body fragment plus its quiz questions. Python scripts handle the boring parts before and after: parsing binary PPTX/PDF/DOCX files, embedding sourced photos, building the combined Moodle page.
+An agent (using whatever model your IDE provides — no API key needed) reads the extracted source content, designs a lesson structure, and writes each lesson as an HTML body fragment plus its quiz questions. Python scripts handle the boring parts before and after: parsing binary PPTX/PDF/DOCX files, embedding sourced photos, building the combined Moodle page.
 
 See [docs/runbook.md](docs/runbook.md) for the step-by-step procedure when starting a new course or module.
 
@@ -61,7 +61,10 @@ This embeds local images as base64, builds the combined Moodle page, writes the 
 │   ├── finalize_module.py     Orchestrates the post-agent steps
 │   ├── embed_images.py        Inlines sourced photos as base64 data URIs
 │   ├── build_combined_page.py Concatenates lesson fragments into one Moodle Page
-│   └── retrofit_to_moodle.py  Converts legacy standalone HTML to fragments
+│   ├── retrofit_to_moodle.py  Converts legacy standalone HTML to fragments
+│   ├── build_course_preview.py Builds a standalone SPA for Netlify preview
+│   ├── build_mbz.py           Packages a course into one importable Moodle .mbz
+│   └── mbz/                   Helper package for mbz creation
 │
 ├── docs/
 │   ├── lesson_spec.md         What the agent should produce per lesson
@@ -73,17 +76,18 @@ This embeds local images as base64, builds the combined Moodle page, writes the 
 ├── config/                    Shared CSS design system (.ims-lesson scoped)
 ├── admin/                     Moodle setup notes, Docker config
 ├── CHANGELOG.md               Keep-a-changelog log of behavior changes
-└── .ai/skills/                AI agent skill files
+├── .claude/skills/            AI agent skill files (Claude Code)
+└── .agents/skills/            AI agent skill files (Antigravity)
 ```
 
 ## Course Status
 
 | Module | Topic | Status |
 |--------|-------|--------|
-| 1 | Aviation Weather Fundamentals & Regulations | ✅ Generated, retrofitted, uploaded |
-| 2 | In-flight Aviation Hazards | 🚧 Pending (sources 05–12) |
-| 3 | Terminal Area Hazards & Visibility | 🚧 Pending (sources 13–14) |
-| 4 | Aviation Forecast Products & Warnings | 🚧 Pending (sources 15–18) |
+| 1 | Aviation Weather Fundamentals & Regulations | ✅ Generated, finalized, packaged into course `.mbz` |
+| 2 | In-flight Aviation Hazards | ✅ Generated, finalized, packaged into course `.mbz` |
+| 3 | Aviation Warnings: SIGMET, AIRMET & Aerodrome | ✅ Generated, finalized, packaged into course `.mbz` |
+| 4 | Aviation Forecast Products & Warnings | ✅ Generated, finalized, packaged into course `.mbz` |
 
 ## Requirements
 
