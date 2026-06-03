@@ -29,7 +29,7 @@ python pipeline/finalize_module.py --module courses/aviation-weather/module-N
 
 ## Step 0 — Course setup in Moodle (skip if already done)
 
-If you have a course shell already (the one Module 1 was pilot-uploaded to), you can keep using it. **However**, the pilot upload of Module 1 used the *old* broken format. You'll want to delete those existing Module 1 Pages and re-upload the new combined page. Open the existing Module 1 section, delete the broken Page activity (and any image files you uploaded separately), then proceed to Step 1 below.
+If you have a course shell already, you can keep using it. If you need to re-upload a module, delete its existing activities first.
 
 If you're starting fresh:
 
@@ -43,7 +43,7 @@ If you're starting fresh:
 8. Rename the four sections in order to the module titles from `course.json`:
    - Section 1: *Module 1: Aviation Weather Fundamentals & Regulations*
    - Section 2: *Module 2: In-flight Aviation Hazards*
-   - Section 3: *Module 3: Terminal Area Hazards & Visibility*
+   - Section 3: *Module 3: Aviation Warnings: SIGMET, AIRMET & Aerodrome*
    - Section 4: *Module 4: Aviation Forecast Products & Warnings*
 
 ## Step 1 — Upload Module N (repeat for N = 1, 2, 3, 4)

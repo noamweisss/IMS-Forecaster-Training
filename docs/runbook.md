@@ -100,7 +100,7 @@ For the Aviation course, the groupings are fixed by Evgeny:
 |--------|--------------|-------|
 | 1 | 01–04 | Fundamentals & Regulations |
 | 2 | 05–12 | In-flight Aviation Hazards |
-| 3 | 13–14 | Terminal Area Hazards & Visibility |
+| 3 | 13–14 | Aviation Warnings: SIGMET, AIRMET & Aerodrome |
 | 4 | 15–18 | Aviation Forecast Products & Warnings |
 
 ---
