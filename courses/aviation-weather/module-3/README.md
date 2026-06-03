@@ -1,11 +1,33 @@
 # Aviation Warnings: SIGMET, AIRMET & Aerodrome — Moodle Upload Instructions
 
-Two clicks per module. Five minutes. No image upload, no per-lesson pasting.
+## Fastest path — restore a `.mbz` (one upload)
+
+If you have built the backup (`python pipeline/build_mbz.py --course <course-dir>`
+for the whole course, or `--module <this-folder>` for just this module), upload
+that single `.mbz` instead of pasting anything:
+
+1. In Moodle: **Course → Restore**.
+2. Drag the `.mbz` into the upload box → **Restore**.
+3. **Merge into this course** (or restore as a new course) → confirm → **Continue**.
+
+The module(s) appear as their own section(s) — overview Page → lesson Page → Quiz
+→ … — with all questions, images, and feedback already wired. No question-bank
+import needed.
+
+The manual copy-paste workflow below still works as a fallback for hosts that
+block restores.
+
+---
+
+## Fallback — copy-paste (two clicks per module)
+
+No image upload, no per-lesson pasting.
 
 ## Files in this folder
 
 | File | What it is |
 |------|------------|
+| `*-module-3.mbz` | **Restore this in Moodle for the one-upload path** (only present if you ran `build_mbz.py --module`). A Moodle backup of this module — overview Page → lesson Page → Quiz per lesson, fully wired. |
 | `module_combined_moodle.html` | **Paste this into one Moodle Page activity.** All lessons + overview + table of contents in one self-contained HTML file (images base64-embedded). |
 | `module_quiz_all_questions.xml` | **Import this into the Question Bank.** Moodle XML format; every quiz question for the module. |
 | `00_module_overview_moodle.html` and `lessons/*_moodle.html` | Per-lesson body fragments. Use these instead of the combined page if your Moodle's `post_max_size` is small. |
