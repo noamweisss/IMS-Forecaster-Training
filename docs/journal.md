@@ -24,6 +24,23 @@ later reversed, add a new entry rather than editing the old one.
 ---
 
 <!-- New entries appended below -->
+## 2026-06-03 — V2 meteorology expansion: Module 4 Lesson 5 (WAFC maps)
+
+**Context.** The lesson taught the SIGWX chart symbology well but stopped at the
+human-drawn charts, omitting the modern gridded WAFS products that flight-planning
+systems actually consume.
+
+**Decision.** Added a "Gridded WAFS Products" section (icing potential, CAT
+potential with the ≥4% MOD/SEV threshold, in-cloud turbulence, CB fields) with a
+CAT-grid diagram and a worked "read the number" example, plus the jetstream ≥120
+kt isotach-depth rule, the Amendment 74 simplification of the SWH, and the
+pressure-to-flight-level table. Source-grounded. This completes all 18 lessons.
+
+**Why.** "The chart draws an area; the grid gives you a number you can plan around"
+is the operational shift of the last decade, and the lesson had none of it.
+
+---
+
 ## 2026-06-03 — V2 meteorology expansion: Module 4 Lesson 4 (volcanic ash)
 
 **Context.** The lesson explained the hazard and the VAAC/NAME dispersion but
