@@ -113,6 +113,8 @@ python pipeline/extract_sources.py \
     --output courses/<course>/module-N/_extraction.json
 ```
 
+*(Optional flags: `--no-images` to skip image extraction, `--images-dir` to customize the output directory for extracted images).*
+
 This reads every PPTX/PDF/DOCX and writes a JSON dump containing slide
 titles, body bullets, speaker notes, page text, section headings. The
 agent uses this JSON instead of reading the binary files directly.
@@ -188,7 +190,7 @@ This step is skipped entirely if the agent didn't flag any images.
 ## Phase 5 — Finalize (Python, no LLM)
 
 ```bash
-python pipeline/finalize_module.py --module courses/<course>/module-N
+python pipeline/finalize_module.py --module courses/<course>/module-N [--mbz]
 ```
 
 This:
@@ -197,6 +199,7 @@ This:
 - Builds `module_combined_moodle.html` — the single-paste file.
 - Writes `IMAGES_TO_SOURCE.md` if any placeholders remain unfilled.
 - Writes the module's `README.md` with upload instructions.
+- (Optional) If `--mbz` is passed, builds a single-module `.mbz` backup immediately.
 
 Idempotent. Re-run any time you source more images or the agent
 regenerates a lesson.
@@ -244,6 +247,16 @@ Use this if your Moodle blocks restores or runs an incompatible version.
 
 ---
 
+## Phase 7 — Update Course Preview (optional)
+
+```bash
+python pipeline/build_course_preview.py
+```
+
+This compiles a standalone Single Page Application (SPA) into `preview_dist/` that lets you preview all modules and lessons outside of Moodle. Committing and pushing to Git automatically triggers a Netlify CI deployment using `netlify.toml`.
+
+---
+
 ## Troubleshooting
 
 | Symptom | Likely cause | Fix |
@@ -274,14 +287,10 @@ takes its cue from the course/module context in your opening prompt.
 
 ---
 
-## Future skill packaging
+## Skill packaging
 
-When this workflow is wrapped into a Claude skill, the skill's structure
-maps onto this runbook directly:
+This workflow is already wrapped into an agent skill located at `.claude/skills/generate-module/` and mirrored at `.agents/skills/generate-module/`.
 
-- `extract_sources.py` and `finalize_module.py` become **tools** the
-  skill exposes.
-- `lesson_spec.md` becomes the skill's **instructions**.
-- This runbook becomes the skill's **worked example** / quick start.
-
-Until then, the procedure above is the manual equivalent.
+- `extract_sources.py` and `finalize_module.py` are the tools the skill uses.
+- `lesson_spec.md` serves as the skill's reference.
+- This runbook serves as the skill's worked example and underlying procedure.
