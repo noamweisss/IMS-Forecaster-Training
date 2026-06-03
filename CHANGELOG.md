@@ -10,6 +10,16 @@ future course-to-mbz Claude skill) should read both.
 
 ## [Unreleased]
 
+### Preview shell alignment
+
+- **Removed dark mode from the course preview SPA.** The shell's cool-slate
+  palette and dark-mode toggle clashed with the lesson content, which is always
+  light (hardcoded for Moodle). Deleted all dark-mode CSS, the toggle button,
+  and the auto-detect JS. Re-skinned the shell (`:root` variables, sidebar, hero
+  gradient) to match the lesson design system's warm light palette. Switched from
+  Google Fonts (Inter/Outfit) to the same system font stack the lessons use.
+  (`pipeline/build_course_preview.py`)
+
 ### Meteorology content expansion (V2, roadmap.md)
 
 The "go deeper / more examples" pass Evgeny asked for, done module by module

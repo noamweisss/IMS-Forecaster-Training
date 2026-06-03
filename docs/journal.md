@@ -24,6 +24,39 @@ later reversed, add a new entry rather than editing the old one.
 ---
 
 <!-- New entries appended below -->
+## 2026-06-03 — Preview SPA: remove dark mode, align shell to lesson design system
+
+**Context.** The preview SPA (`build_course_preview.py`) used its own cool-slate
+color palette (`#f8fafc` bg, `#e2e8f0` borders, `#0f172a` text) and a dark-mode
+toggle, while the lesson content embedded inside it uses a warm light palette
+(`#ffffff` bg, `#e2dfd6` borders, `#1a1917` text) hardcoded for Moodle
+compatibility. When dark mode was toggled, lessons appeared as bright white
+rectangles inside a dark shell — a visual clash with no fix, since lessons
+intentionally have no dark-mode CSS (Moodle has no dark theme). Even in light
+mode, the temperature mismatch between cool-slate shell and warm-cream lessons
+was visible at the seam.
+
+**Decision.** Removed dark mode entirely and re-skinned the shell to match the
+lesson design system values from `config/design_system.css`:
+- Remapped all `--shell-*` and `--sidebar-*` CSS variables to the lesson's
+  `.ims-lesson` custom property values (warm white/cream/charcoal palette).
+- Made the sidebar fully bright (was always dark navy regardless of mode).
+- Switched from Google Fonts (Inter/Outfit) to the same system font stack the
+  lessons use (`-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif`).
+- Deleted: `body.dark-mode` CSS block, dark-mode quiz overrides, `.theme-toggle`
+  CSS, the 🌓 toggle button, the `prefers-color-scheme` auto-detect JS, and the
+  `toggleDarkMode()` function.
+- Adjusted the landing hero gradient to use the lesson accent blue (`#185fa5`).
+- Fixed sidebar hover states from `rgba(255,255,255,...)` (for dark bg) to
+  `rgba(0,0,0,...)` (for light bg).
+
+**Why.** The shell should be invisible — a frame that makes the lesson content
+feel native. A different color temperature or a dark mode the content can't
+follow breaks that. Since lessons are permanently light (Moodle constraint),
+the shell must be too.
+
+---
+
 ## 2026-06-03 — V2 meteorology expansion: Module 4 Lesson 5 (WAFC maps)
 
 **Context.** The lesson taught the SIGWX chart symbology well but stopped at the
