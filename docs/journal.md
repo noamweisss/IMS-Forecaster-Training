@@ -24,6 +24,26 @@ later reversed, add a new entry rather than editing the old one.
 ---
 
 <!-- New entries appended below -->
+## 2026-06-03 — V2 meteorology expansion: Module 4 Lessons 1–2 (TAF)
+
+**Context.** Module 4's lessons are thin (~1,000–1,200 words) like Modules 1–2,
+so this module returns to the fuller expansion. The two TAF lessons split one
+rich 44-slide deck.
+
+**Decision.** L1 was missing the most basic structural content — the change and
+probability groups themselves — so I added an FM/BECMG/TEMPO/PROB table, a
+temporal-behaviour diagram, the BECMG-ambiguity trap, and a line-by-line decode
+of a complete TAF. L2 had the decision flowchart but only a vague "amend on
+category change"; I added the precise ICAO Annex 3 amendment thresholds
+(visibility/cloud/wind/phenomena) and a worked amendment, flagging the numeric
+thresholds in module-4/REVIEW_NOTES for Evgeny to confirm against IMS practice.
+
+**Why.** A TAF lesson that names TEMPO and PROB but never defines FM or the
+amendment thresholds leaves the reader unable to actually write or maintain a
+TAF. These were the real gaps.
+
+---
+
 ## 2026-06-03 — V2 meteorology expansion: Module 3 (warnings) — a deliberately lighter pass
 
 **Context.** Opening Module 3, I found its four lessons already at the depth I had

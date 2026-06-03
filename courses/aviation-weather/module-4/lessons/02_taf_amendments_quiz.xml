@@ -145,4 +145,26 @@
     </answer>
   </question>
 
+
+  <question type="multichoice">
+    <name><text>L2-Q05 — Amendment threshold (visibility/ceiling)</text></name>
+    <questiontext format="html"><text><![CDATA[<p>An active VFR TAF is running when the field reports visibility 2,500 m in mist with BKN006. Must the TAF be amended, and why?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><strong>Rationale:</strong> Yes. Visibility has crossed the 5000 and 3000 m amendment thresholds, the ceiling has crossed 1000 and 500 ft, and the field has dropped from VFR to IFR — any one of these mandates a TAF AMD immediately, without waiting for the next scheduled issue.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>Yes — it crosses the visibility (5000/3000 m) and ceiling (1000/500 ft) thresholds and changes flight category.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>No — amendments are only issued at the scheduled TAF times.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>No — mist is not an amendable phenomenon.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Only if a thunderstorm is also present.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L2-Q06 — TEMPO that overstays</text></name>
+    <questiontext format="html"><text><![CDATA[<p>A TEMPO group of low visibility was forecast, but the low visibility now looks set to dominate more than half of the remaining period. What should the forecaster do?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><strong>Rationale:</strong> TEMPO requires each instance under an hour and aggregate under half the period. Once the condition will prevail for more than half the period it is no longer "temporary" — it must be promoted to the baseline with a BECMG (or FM), via an amendment. Leaving it as TEMPO would misrepresent the prevailing weather.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>Amend, promoting the condition to the baseline with BECMG/FM — it is now prevailing, not temporary.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Leave it as TEMPO; duration limits are only advisory.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Convert it to PROB30 to hedge.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Add a second TEMPO back-to-back to extend it.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+  </question>
 </quiz>

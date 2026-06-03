@@ -80,6 +80,7 @@
   <strong>By the end of this lesson you will be able to:</strong>
   <ul>
     <li>Formulate appropriate change groups (BECMG, TEMPO) for deteriorating or improving conditions.</li>
+    <li>Apply the ICAO amendment-criteria thresholds (visibility, cloud, wind, phenomena) that force a TAF AMD.</li>
     <li>Evaluate existing TAFs for ambiguity and propose operational amendments.</li>
     <li>Discriminate between scenarios requiring TEMPO versus PROB groups.</li>
   </ul>
@@ -182,6 +183,31 @@
   Amend immediately when conditions cross between VFR, MVFR, IFR, or LIFR. Additionally, amend if the timing of a major frontal passage or thunderstorm onset changes by more than 2 hours.
 </div>
 
+<p>The flight-category rule is the quick test, but ICAO Annex 3 also fixes the precise values at which an amendment is
+  mandatory. The criteria are the same change thresholds used to issue a SPECI, and they are worth memorising:</p>
+
+<table>
+  <thead>
+    <tr><th>Element</th><th>Amend when forecast/observed crosses…</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Visibility</td><td>150, 350, 600, 800, 1500, 3000 or 5000 m</td></tr>
+    <tr><td>Cloud base (BKN or OVC)</td><td>100, 200, 500, 1000 or 1500 ft</td></tr>
+    <tr><td>Mean surface wind</td><td>direction change &ge; 60° (mean &ge; 10 kt either side); or mean speed change &ge; 10 kt; or gusts change &ge; 10 kt (mean &ge; 15 kt)</td></tr>
+    <tr><td>Phenomena — onset or cessation</td><td>TS, FZRA, FZDZ, FZFG, moderate/heavy precipitation (incl. showers), duststorm/sandstorm, and similar specified weather</td></tr>
+  </tbody>
+</table>
+
+<div class="callout callout-key">
+  <div class="callout-label">Worked Example — deciding to amend</div>
+  Your active TAF reads <code>… 2412/2512 31010KT 9999 BKN030 …</code> (VFR). At 1340Z the aerodrome reports
+  visibility 2,500 m in mist with <code>BKN006</code>. Test the thresholds: visibility has crossed 5000 and 3000 m;
+  the ceiling has crossed 1000 and 500 ft; and the field has dropped from VFR to IFR. Any one of those forces an
+  amendment — issue a <code>TAF AMD</code> now rather than waiting for the next cycle, e.g.
+  <code>TAF AMD LLBG 241345Z 2413/2512 31010KT 2500 BR BKN006 BECMG 2415/2417 9999 NSW BKN025=</code>, showing the
+  expected recovery.
+</div>
+
 <p>A common mistake is leaving a TAF "as is" because a previously forecasted PROB30 didn't materialize, or because a TEMPO condition lasted too long. If the conditions become the prevailing weather, you must amend to establish the new baseline.</p>
 
 <div class="lesson-summary">
@@ -190,6 +216,7 @@
     <li>Use <strong>BECMG</strong> for permanent transitions and <strong>TEMPO</strong> for brief fluctuations lasting less than an hour per instance.</li>
     <li>If intermittent weather aggregates to more than half the forecast period, it must be promoted to the prevailing condition via BECMG.</li>
     <li>Amend proactively. If the forecast crosses a flight category threshold unexpectedly, issue an amendment immediately rather than waiting for the next cycle.</li>
+    <li>The ICAO amendment thresholds are specific: visibility at 150/350/600/800/1500/3000/5000 m, cloud at 100/200/500/1000/1500 ft, defined wind changes, and the onset/cessation of specified phenomena.</li>
     <li>Do not use PROB groups in the first 6 hours of the TAF. Make a definitive forecast for the critical period.</li>
   </ul>
 </div>

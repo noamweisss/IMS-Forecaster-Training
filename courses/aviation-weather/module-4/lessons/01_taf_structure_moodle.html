@@ -80,8 +80,10 @@
   <strong>By the end of this lesson you will be able to:</strong>
   <ul>
     <li>Define TAF structure and terminology, including the operational definition of Vicinity (VC).</li>
+    <li>Use the change and probability groups (FM, BECMG, TEMPO, PROB30/40) correctly, and avoid the ambiguous BECMG window.</li>
     <li>Apply TAF writing philosophy to generate concise and user-friendly forecasts.</li>
     <li>Categorize weather conditions into standard aviation flight categories (VFR, IFR).</li>
+    <li>Decode a complete operational TAF line by line.</li>
   </ul>
 </div>
 
@@ -150,6 +152,62 @@
   </tbody>
 </table>
 
+<h2>Change and Probability Groups</h2>
+
+<p>Conditions during the validity period are expressed with a small, fixed set of change groups. Choosing the right
+  one is half of writing a clean TAF:</p>
+
+<table>
+  <thead>
+    <tr><th>Group</th><th>Meaning</th><th>Typical use</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>FM</code> (FMyyGGgg)</td><td>A rapid, <strong>permanent</strong> change at a stated time; it supersedes everything before it.</td><td>Frontal passage, sharp wind shift.</td></tr>
+    <tr><td><code>BECMG</code> (yyGG/yyGG)</td><td>A <strong>gradual permanent</strong> change completing within the window; the new condition prevails by the end.</td><td>Slow onset or clearance.</td></tr>
+    <tr><td><code>TEMPO</code> (yyGG/yyGG)</td><td><strong>Temporary</strong> fluctuations, each lasting under an hour and less than half the period in total; conditions return between.</td><td>Showers, brief visibility drops.</td></tr>
+    <tr><td><code>PROB30</code> / <code>PROB40</code></td><td>A 30% / 40% <strong>probability</strong> of the stated conditions (PROB50+ is not used — make a decision instead).</td><td>Significant but uncertain weather.</td></tr>
+  </tbody>
+</table>
+
+<figure>
+  <svg viewBox="0 0 680 210" role="img" xmlns="http://www.w3.org/2000/svg">
+    <title>How TAF change groups behave over time</title>
+    <desc>Four rows. FM is a step to a new permanent level at a stated time. BECMG is a ramp to a new permanent level over a window. TEMPO is the base level with short humps that return to baseline. PROB is a dashed possibility above the baseline.</desc>
+    <text x="40" y="40" fill="#1A1917" font-family="sans-serif" font-size="13" font-weight="bold">FM</text>
+    <path d="M120,52 L220,52 L220,30 L320,30" fill="none" stroke="#185FA5" stroke-width="2.5" />
+    <text x="340" y="44" fill="#6B6A65" font-family="sans-serif" font-size="12">instant, permanent change at a stated time</text>
+    <text x="40" y="92" fill="#1A1917" font-family="sans-serif" font-size="13" font-weight="bold">BECMG</text>
+    <path d="M120,104 L200,104 L260,82 L320,82" fill="none" stroke="#0F6E56" stroke-width="2.5" />
+    <text x="340" y="96" fill="#6B6A65" font-family="sans-serif" font-size="12">gradual, permanent change over a window</text>
+    <text x="40" y="142" fill="#1A1917" font-family="sans-serif" font-size="13" font-weight="bold">TEMPO</text>
+    <path d="M120,154 L170,154 L185,136 L205,136 L220,154 L255,154 L270,136 L290,136 L305,154 L320,154" fill="none" stroke="#BA7517" stroke-width="2.5" />
+    <text x="340" y="146" fill="#6B6A65" font-family="sans-serif" font-size="12">temporary fluctuations, returning to baseline</text>
+    <text x="40" y="192" fill="#1A1917" font-family="sans-serif" font-size="13" font-weight="bold">PROB</text>
+    <path d="M120,186 L320,186" fill="none" stroke="#6B6A65" stroke-width="1.5" />
+    <path d="M150,186 L150,168 L290,168 L290,186" fill="none" stroke="#534AB7" stroke-width="2" stroke-dasharray="5 3" />
+    <text x="340" y="190" fill="#6B6A65" font-family="sans-serif" font-size="12">30% / 40% probability of the stated conditions</text>
+  </svg>
+  <figcaption>The change groups, by temporal behaviour — a step (FM), a ramp (BECMG), transient humps (TEMPO), or a dashed probability (PROB).</figcaption>
+</figure>
+
+<div class="callout callout-warning">
+  <div class="callout-label">The BECMG trap</div>
+  A <code>BECMG</code> window leaves the conditions <em>ambiguous while it is open</em>: a reader cannot tell exactly
+  when within <code>BECMG 2306/2310</code> the cloud actually lowers. Keep BECMG windows short, and when a change is
+  genuinely sharp (a front, a sea-breeze onset) prefer <code>FM</code> at a single time. This is the most common
+  source of an un-amendable, unhelpful TAF.
+</div>
+
+<div class="callout callout-key">
+  <div class="callout-label">Worked Example — decoding a TAF</div>
+  <code>TAF LLBG 231100Z 2312/2412 30012KT 9999 FEW040 BECMG 2316/2318 32018G28KT TEMPO 2318/2322 4000 SHRA BKN020CB PROB30 2319/2321 30025G40KT=</code><br>
+  Issued day 23 at 1100Z, valid 2312/2412 (24 h). Prevailing: wind 300°/12 kt, visibility &ge;10 km, few cloud at
+  4,000 ft. <code>BECMG 2316/2318</code>: the wind gradually backs/strengthens to 320°/18 gusting 28 between 16 and
+  18Z. <code>TEMPO 2318/2322</code>: temporary drops to 4 km in rain showers with broken CB at 2,000 ft. <code>PROB30
+  2319/2321</code>: a 30% chance of 300°/25 gusting 40. Read as flight categories: VFR throughout, with a TEMPO dip
+  toward MVFR/IFR in the showers — exactly the period a dispatcher will plan contingency fuel around.
+</div>
+
 <h2>Structuring the TAF</h2>
 
 <p>When drafting a TAF, establish the overarching trend and write to the aviation flight categories first. Ensure you add the most detail to the <strong>first 6 hours</strong> of the forecast, as this is the critical operational period for incoming flights.</p>
@@ -197,11 +255,11 @@
 <div class="lesson-summary">
   <h3>Key Takeaways</h3>
   <ul>
-    <li>A TAF covers the terminal area within 5 SM; the VC modifier covers the donut between 5 SM and 10 SM.</li>
-    <li>Use VC to alert users to nearby weather (TS, SH, FG) without triggering restrictive alternate-fuel regulations.</li>
-    <li>A user-friendly TAF is concise (ideally &le; 5 lines) and avoids hedging with excessive PROB or conditional groups.</li>
-    <li>Forecast by flight category (VFR, IFR) rather than exact values, ensuring the trend is always clear.</li>
-    <li>Concentrate the highest level of detail and accuracy in the first 6 hours of the forecast period.</li>
+    <li>A TAF covers the terminal area within 5 SM; the VC modifier covers the donut between 5 SM and 10 SM (used with TS, SH, FG).</li>
+    <li>Change groups: FM = instant permanent change; BECMG = gradual permanent change; TEMPO = temporary fluctuations that return; PROB30/40 = probability. Don't use PROB50+.</li>
+    <li>The BECMG window is ambiguous while open — keep it short, and use FM for sharp changes to keep the TAF amendable.</li>
+    <li>A user-friendly TAF is concise (ideally &le; 5 lines), forecasts by flight category, and avoids hedging with excessive PROB.</li>
+    <li>Concentrate the highest detail and accuracy in the first 6 hours, the critical operational window.</li>
   </ul>
 </div>
 </div>

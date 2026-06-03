@@ -57,6 +57,14 @@ from the source decks (internet additions, where needed, flagged for SME review)
   Objectives 4 → 6; takeaways 5 → 7; quiz 4 → 7; one new SVG (Figure 2.4). Only
   the carburettor-icing temperature envelope flagged in `module-2/REVIEW_NOTES.md`.
 
+- **Module 4, Lessons 1–2 (TAF).** Expanded from the 44-slide TAF Writing deck.
+  L1 (structure) gained the change/probability groups (FM/BECMG/TEMPO/PROB) with
+  a temporal-behaviour diagram, the BECMG-ambiguity trap, and a full worked TAF
+  decode (objectives 3→5, takeaways, quiz 4→7). L2 (amendments) gained the
+  specific ICAO Annex 3 amendment-criteria thresholds (visibility/cloud/wind/
+  phenomena) with a worked amendment example (objectives 3→4, quiz 4→6). The
+  amendment threshold values are flagged in `module-4/REVIEW_NOTES.md`.
+
 - **Module 3 (Aviation Warnings) — lighter targeted pass.** Module 3's four
   lessons were already at full depth (2,000–2,800 words, multiple diagrams/tables,
   real message examples, deck-slide citations), so this was a focused enhancement
