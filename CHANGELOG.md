@@ -12,6 +12,8 @@ future course-to-mbz Claude skill) should read both.
 
 ### Course V2 iteration (roadmap.md)
 
+- **Documentation Repair Audit:** Performed a full-system audit of core project documentation. Repaired documentation drift across 10+ files (README, AGENTS.md, runbook.md, lesson_spec.md, architecture.md). Updated schemas to match runtime behavior, standardized Module 3 naming, removed obsolete V1 references and prompt templates, and documented the preview SPA compilation pipeline.
+
 - **Rewrote the broken Figure 1** in Module 1 Lesson 2 (route planning & fuel).
   Replaced the cramped, confusing diagram (and, in the legacy standalone copy,
   a `var()`-in-SVG bug that rendered invisible) with a clean head-to-tail vector

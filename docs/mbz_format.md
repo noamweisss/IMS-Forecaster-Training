@@ -170,7 +170,7 @@ quiz; learners get full feedback but no grade. Pages keep `<completion>0</comple
 ### Quiz activity — `quiz.xml`
 
 Key fields (full example in the reference): `name`, `intro`,
-`preferredbehaviour=interactive`, `grademethod=1`, `grade=...`, `sumgrades=...`,
+`preferredbehaviour=deferredfeedback`, `grademethod=1`, `grade=...`, `sumgrades=...`,
 plus `<question_instances>` and `<sections>`. The modern (4.x/5.x) link from a
 quiz to its questions is by **question bank entry**, not question id:
 ```xml

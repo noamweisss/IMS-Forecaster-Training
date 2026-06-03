@@ -41,13 +41,13 @@ module page. The Python `finalize_module.py` step generates those.
   "module_title": "...",
   "module_description": "2–3 sentences. What this module covers and why it matters operationally.",
   "estimated_duration_minutes": 90,
-  "competencies": [
+  "module_competencies": [
     "Interpret METAR observations in degraded visibility conditions",
     "..."
   ],
   "lessons": [
     {
-      "lesson_id": "L1",
+      "lesson_number": 1,
       "lesson_title": "...",
       "learning_objectives": [
         "Verb-led, measurable. Use Bloom's-taxonomy action verbs.",
@@ -146,6 +146,7 @@ Available building blocks (all classes are scoped to `.ims-lesson`):
 | Warning callout | `<div class="callout callout-warning">...</div>` |
 | Key-formula callout | `<div class="callout callout-key">...</div>` |
 | Danger callout | `<div class="callout callout-danger">...</div>` |
+| Callout label | `<div class="callout-label">⚠️ Warning</div>` (used inside callouts) |
 
 ### SVG rules — critical
 
@@ -160,7 +161,7 @@ Use this palette:
 | accent blue   | `#185FA5` | primary lines, table headers, emphasis |
 | teal          | `#0F6E56` | secondary accent, "note" borders |
 | amber         | `#BA7517` | "warning" accents |
-| coral         | `#993C1D` | rare emphasis, danger states |
+| coral         | `#A32D2D` | rare emphasis, danger states |
 | key purple    | `#534AB7` | "key formula" accents |
 | text dark     | `#1A1917` | all SVG text (readable on any background) |
 | muted gray    | `#6B6A65` | secondary text, axis labels |
@@ -169,6 +170,8 @@ Use this palette:
 | note bg light | `#E1F5EE` | low-emphasis "note" backgrounds |
 | warn bg light | `#FAEEDA` | low-emphasis "warn" backgrounds |
 | key bg light  | `#EEEDFE` | low-emphasis "key" backgrounds |
+| danger bg light | `#FCEBEB` | low-emphasis "danger" backgrounds |
+| accent light  | `#E6F1FB` | summary backgrounds |
 
 SVG attributes:
 - `viewBox="0 0 680 H"` where H fits the content. 680 is the lesson's
@@ -180,8 +183,9 @@ SVG attributes:
   page backgrounds).
 
 If you slip a `var(--xxx)` reference into an SVG attribute,
-`pipeline/finalize_module.py` will *not* scrub it. The old API-based
-pipeline had a scrubber; the agent-driven flow expects you to be careful.
+`pipeline/finalize_module.py` will *not* scrub it (although a scrubber exists
+in the legacy `retrofit_to_moodle.py` script). The agent-driven flow expects
+you to be careful.
 Re-read your SVG output before saving.
 
 ### Image-needed placeholders
