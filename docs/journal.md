@@ -24,6 +24,27 @@ later reversed, add a new entry rather than editing the old one.
 ---
 
 <!-- New entries appended below -->
+## 2026-06-03 — V2 meteorology expansion: Module 2 Lesson 4 (fog & haze)
+
+**Context.** Lesson 4 was the lightest in Module 2 (~900 words) sitting on the
+two richest, most Israel-specific decks in the course (Fog 132 slides, Haze 69).
+The biggest missed opportunity was real data: the decks carry actual LLBG fog
+SPECIs and LLET dust METARs.
+
+**Decision.** Built out "Measuring Visibility" into a proper treatment (MOR,
+transmissometer vs forward-scatter with a diagram, RVR via Allard's law) and
+anchored it with a decoded real fog SPECI. Added the surface-vs-elevated
+inversion behaviour (with a diagram) because it changes the overnight trend a
+forecaster must call. Added the Ganor dust-synoptic classification and a decoded
+LLET dust METAR that contrasts with the fog SPECI purely on dewpoint depression —
+which is the operational punchline of the whole lesson. Fully source-grounded.
+
+**Why.** Two real observations side by side — 20/18 (fog) vs 25/01 (dust) — teach
+the fog-vs-dust discrimination faster than any amount of prose, and they come
+straight from Evgeny's decks.
+
+---
+
 ## 2026-06-03 — V2 meteorology expansion: Module 2 Lesson 3 (convection & CB)
 
 **Context.** Lesson 3 had the life cycle, hazards and stability indices but

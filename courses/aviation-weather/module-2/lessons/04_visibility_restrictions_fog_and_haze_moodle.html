@@ -66,10 +66,12 @@
 <div class="objectives">
   <strong>By the end of this lesson you will be able to:</strong>
   <ul>
+    <li>Distinguish visibility, MOR and RVR, and how transmissometers and forward-scatter meters measure them</li>
     <li>Classify types of fog (radiation, advection, upslope) by formation mechanism</li>
-    <li>Identify the critical meteorological factors for fog onset and dissipation</li>
+    <li>Identify the critical meteorological factors for fog onset and dissipation, including surface vs elevated inversions</li>
     <li>Assess the impact of aerosol concentration and humidity on haze development</li>
-    <li>Interpret RVR (Runway Visual Range) trends in low-visibility conditions</li>
+    <li>Classify the synoptic dust patterns affecting Israel (Red Sea Trough, Sharav low, winter low)</li>
+    <li>Interpret real low-visibility METAR/SPECI and RVR groups in operational decisions</li>
   </ul>
 </div>
 
@@ -79,6 +81,61 @@
 <div class="callout callout-note">
   <div class="callout-label">Technical Standard</div>
   Modern airports use <strong>transmissometers</strong> or <strong>forward-scatter meters</strong> to measure the Meteorological Optical Range (MOR). RVR is then calculated using Allard's Law, accounting for ambient light and runway lamp intensity.
+</div>
+
+<p>The two instruments work differently. A <strong>transmissometer</strong> sends a narrow beam (typically 550&nbsp;nm,
+  mid-visible) over a fixed baseline and measures how much is lost — the extinction coefficient — from which MOR follows
+  (MOR is the distance over which a beam falls to 5% of its original intensity). A <strong>forward-scatter meter</strong>
+  instead measures the light scattered from a small sample volume at an angle of 20–50°. Both are objective and
+  high-resolution, but both sample only about a metre of air, and neither can tell <em>why</em> visibility is low — so a
+  forward-scatter reading must be paired with humidity and precipitation sensors to separate fog from haze from rain.</p>
+
+<figure>
+  <svg viewBox="0 0 680 230" role="img" xmlns="http://www.w3.org/2000/svg">
+    <title>How airfield visibility is measured</title>
+    <desc>A transmissometer measures the loss of a light beam over a fixed baseline; a forward-scatter meter measures light scattered from a small sample volume at an angle of 20 to 50 degrees. Both sample only a small volume, so humidity and precipitation sensors are needed to tell fog from haze.</desc>
+    <defs><marker id="visArr" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0,9 3.5,0 7" fill="#185FA5" /></marker></defs>
+    <line x1="340" y1="18" x2="340" y2="212" stroke="#E2DFD6" stroke-width="1" />
+    <text x="170" y="34" fill="#185FA5" font-size="12" font-weight="bold" text-anchor="middle" font-family="sans-serif">Transmissometer</text>
+    <rect x="40" y="86" width="40" height="40" rx="4" fill="#185FA5" />
+    <text x="60" y="111" fill="#ffffff" font-size="13" text-anchor="middle" font-family="sans-serif">T</text>
+    <rect x="250" y="86" width="40" height="40" rx="4" fill="#F6F5F0" stroke="#185FA5" stroke-width="1.5" />
+    <text x="270" y="111" fill="#185FA5" font-size="13" text-anchor="middle" font-family="sans-serif">R</text>
+    <line x1="82" y1="106" x2="248" y2="106" stroke="#185FA5" stroke-width="2" marker-end="url(#visArr)" />
+    <text x="165" y="96" fill="#6B6A65" font-size="10" text-anchor="middle" font-family="sans-serif">beam (550 nm)</text>
+    <text x="170" y="156" fill="#1A1917" font-size="11" text-anchor="middle" font-family="sans-serif">beam loss over a fixed baseline</text>
+    <text x="170" y="172" fill="#1A1917" font-size="11" text-anchor="middle" font-family="sans-serif">→ extinction → MOR</text>
+    <text x="510" y="34" fill="#0F6E56" font-size="12" font-weight="bold" text-anchor="middle" font-family="sans-serif">Forward-scatter meter</text>
+    <circle cx="510" cy="72" r="12" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1.5" />
+    <text x="510" y="56" fill="#6B6A65" font-size="10" text-anchor="middle" font-family="sans-serif">sample volume</text>
+    <rect x="382" y="118" width="40" height="36" rx="4" fill="#0F6E56" />
+    <text x="402" y="141" fill="#ffffff" font-size="12" text-anchor="middle" font-family="sans-serif">T</text>
+    <rect x="598" y="118" width="40" height="36" rx="4" fill="#F6F5F0" stroke="#0F6E56" stroke-width="1.5" />
+    <text x="618" y="141" fill="#0F6E56" font-size="12" text-anchor="middle" font-family="sans-serif">R</text>
+    <line x1="418" y1="122" x2="500" y2="82" stroke="#0F6E56" stroke-width="2" />
+    <line x1="520" y1="82" x2="602" y2="122" stroke="#0F6E56" stroke-width="1.5" stroke-dasharray="3 3" />
+    <text x="510" y="176" fill="#1A1917" font-size="11" text-anchor="middle" font-family="sans-serif">scattered light at 20–50°</text>
+    <text x="340" y="204" fill="#993C1D" font-size="11" text-anchor="middle" font-family="sans-serif">Both sample ~1 m locally — add humidity &amp; precipitation sensors to tell fog from haze</text>
+  </svg>
+  <figcaption>Figure 4.2: The two visibility instruments. A transmissometer reads beam loss over a baseline; a forward-scatter meter reads scattered light — neither alone distinguishes the cause of the obscuration.</figcaption>
+</figure>
+
+<p><strong>Runway Visual Range (RVR)</strong> is the operational quantity: the distance along the centreline over which a
+  pilot can see the runway markings, edge lights or centreline lights. It was originally assessed by counting edge
+  lights (spaced 60&nbsp;m apart — a CAT I runway needs at least 14 lamps visible), and is now computed from the
+  instruments via Allard's law, which folds in the runway-light intensity and the background luminance (so the same fog
+  gives a higher RVR at night against the lit lamps than against a bright day sky). RVR is measured at the touchdown,
+  mid-point and rollout sections, reported in METARs and passed by ATC so the crew can judge whether an approach is
+  legal.</p>
+
+<div class="callout callout-key">
+  <div class="callout-label">Worked Example — decoding a fog SPECI</div>
+  <code>SPECI LLBG 152235Z VRB01KT 0050 R12/0175D R30/0125N FG VV001 20/18 Q1016 NOSIG=</code><br>
+  Ben Gurion, special report: wind variable at 1&nbsp;kt; prevailing visibility <strong>50&nbsp;m</strong>; RVR on
+  runway 12 <strong>175&nbsp;m and decreasing</strong> (D), on runway 30 <strong>125&nbsp;m, no change</strong> (N);
+  <strong>fog</strong>; sky obscured with a vertical visibility of <strong>100&nbsp;ft</strong> (VV001); temperature
+  and dew point <strong>20/18</strong> — only 2°C apart, i.e. nearly saturated; QNH 1016; no significant change
+  expected. This is a CAT-limited or below-minima situation, and the dewpoint depression of 2°C is exactly why.
 </div>
 
 <h2>Fog: Formation and Classification</h2>
@@ -128,6 +185,42 @@
   <li><strong>Frontal Fog:</strong> Warm rain falling through cold air ahead of a warm front, saturating the air via evaporation.</li>
 </ul>
 
+<h3>Reading the Inversion (Israeli Fog)</h3>
+<p>Most Israeli fogs are radiation fogs, favoured in weak marine flow under a marine inversion — and the
+  <em>height</em> of that inversion tells you where the fog forms and how its trend will read on the night's
+  observations:</p>
+<ul>
+  <li><strong>Surface inversion</strong> — saturation begins at the ground and the fog builds upward from there.</li>
+  <li><strong>Elevated inversion (~0.5 km)</strong> — saturation first occurs at the inversion base, forming stratus (St) that then sinks, lowering through the night until it reaches the surface as fog.</li>
+</ul>
+
+<figure>
+  <svg viewBox="0 0 680 240" role="img" xmlns="http://www.w3.org/2000/svg">
+    <title>Israeli radiation fog: surface versus elevated inversion</title>
+    <desc>With a surface inversion, condensation begins at the ground and the fog builds upward. With an elevated inversion near half a kilometre, stratus forms at the inversion base and spreads downward to the surface.</desc>
+    <defs>
+      <marker id="fgA" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0,9 3.5,0 7" fill="#185FA5" /></marker>
+      <marker id="fgB" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0,9 3.5,0 7" fill="#0F6E56" /></marker>
+    </defs>
+    <line x1="340" y1="18" x2="340" y2="222" stroke="#E2DFD6" stroke-width="1" />
+    <text x="175" y="34" fill="#185FA5" font-size="12" font-weight="bold" text-anchor="middle" font-family="sans-serif">Surface inversion</text>
+    <rect x="40" y="200" width="270" height="14" fill="#E2DFD6" />
+    <rect x="40" y="150" width="270" height="50" fill="#F6F5F0" />
+    <line x1="40" y1="200" x2="310" y2="200" stroke="#BA7517" stroke-width="2.5" />
+    <line x1="175" y1="196" x2="175" y2="152" stroke="#185FA5" stroke-width="2" marker-end="url(#fgA)" />
+    <text x="175" y="120" fill="#1A1917" font-size="11" text-anchor="middle" font-family="sans-serif">fog forms at the ground,</text>
+    <text x="175" y="136" fill="#1A1917" font-size="11" text-anchor="middle" font-family="sans-serif">builds upward</text>
+    <text x="510" y="34" fill="#0F6E56" font-size="12" font-weight="bold" text-anchor="middle" font-family="sans-serif">Elevated inversion (~0.5 km)</text>
+    <rect x="370" y="200" width="270" height="14" fill="#E2DFD6" />
+    <line x1="370" y1="108" x2="640" y2="108" stroke="#BA7517" stroke-width="2.5" stroke-dasharray="6 3" />
+    <rect x="370" y="108" width="270" height="26" fill="#F6F5F0" />
+    <text x="505" y="100" fill="#6B6A65" font-size="10" text-anchor="middle" font-family="sans-serif">St at inversion base</text>
+    <line x1="505" y1="138" x2="505" y2="196" stroke="#0F6E56" stroke-width="2" marker-end="url(#fgB)" />
+    <text x="505" y="170" fill="#1A1917" font-size="11" text-anchor="middle" font-family="sans-serif">spreads down to surface</text>
+  </svg>
+  <figcaption>Figure 4.3: The inversion height sets the fog's behaviour — ground-up with a surface inversion, top-down (lowering stratus) with an elevated one.</figcaption>
+</figure>
+
 <h2>Visibility vs. Relative Humidity</h2>
 <p>Visibility is not only limited by liquid water (fog/mist) but also by dry particles (haze). The relationship between visibility and Relative Humidity (RH) is non-linear due to <strong>hygroscopic nuclei</strong>.</p>
 
@@ -176,14 +269,47 @@
   Use satellite <strong>Dust RGB</strong> imagery to track the progression of dust plumes across the Mediterranean. These plumes can significantly reduce RVR even in the absence of cloud or fog.
 </div>
 
+<p>It helps to think in terms of <strong>source direction</strong> and a small set of recurring synoptic types. Dust
+  arrives from the <strong>west</strong> (Sinai and North Africa) ahead of a cold low/cold front or in a warm
+  (Sharav) low, and from the <strong>east</strong> with a Red Sea Trough or a Siberian ridge; strong frontal winds can
+  also raise dust locally. Eliezer Ganor's classification of Israeli dust-storm synoptics is the standard shorthand:</p>
+
+<table>
+  <thead>
+    <tr><th>Class</th><th>Synoptic type</th><th>Typical dust behaviour</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>D</strong></td><td>Red Sea Trough</td><td>Easterly transport from the Arabian/Jordanian deserts.</td></tr>
+    <tr><td><strong>A</strong></td><td>Sharav (warm) low</td><td>Pre-frontal dust ahead of a North African depression.</td></tr>
+    <tr><td><strong>G / G1</strong></td><td>Winter low (Cyprus / North African cyclone)</td><td>Frontal and post-frontal dust with strong winds.</td></tr>
+    <tr><td><strong>C</strong></td><td>High / ridge</td><td>Subsidence; slow clearance, lingering haze.</td></tr>
+  </tbody>
+</table>
+
+<p>Knowing how dust <em>clears</em> is just as operational: it leaves by <strong>sedimentation</strong> (gradual,
+  largest particles first), by <strong>advection</strong> (a wind shift flushing it out), or — fastest — by
+  <strong>rain</strong> washing it out. Dedicated dust models (IMS and regional centres) help, but they verify poorly,
+  so the satellite Dust RGB and surface reports remain the backbone of the nowcast.</p>
+
+<div class="callout callout-note">
+  <div class="callout-label">Worked Example — dust vs fog in the METAR</div>
+  <code>METAR LLET 270350Z 02006KT 8000 NSC 25/01 Q1008=</code> then
+  <code>...270450Z ... 6000 ...</code><br>
+  Eilat: visibility falling from 8,000&nbsp;m to 6,000&nbsp;m with no significant cloud, in a Red Sea Trough.
+  Temperature/dew point <strong>25/01</strong> — a dewpoint depression of 24°C, i.e. extremely dry. That alone tells
+  you the obscuration is <strong>dust, not fog</strong>: fog needs near-saturation (recall the LLBG SPECI at 20/18),
+  whereas dust drops visibility in bone-dry air. The humidity field is your fastest discriminator.
+</div>
+
 <div class="lesson-summary">
   <h3>Key Takeaways</h3>
   <ul>
-    <li>Fog is defined as visibility < 1,000m; Mist is 1,000m to 5,000m.</li>
-    <li>Radiation fog requires clear skies, high humidity, and light (3-5 kt) winds.</li>
-    <li>Advection fog is more persistent and can occur with stronger winds.</li>
-    <li>Hygroscopic particles cause visibility to drop sharply as RH exceeds 70-80%.</li>
-    <li>Dust and haze in Israel are synoptically driven by Sharav lows and Red Sea Troughs.</li>
+    <li>Fog is visibility < 1,000 m; mist/haze is 1,000–5,000 m. MOR is where a beam falls to 5% intensity; RVR (via Allard's law) is the operational centreline range.</li>
+    <li>Transmissometers (beam loss) and forward-scatter meters (scattered light) measure objectively but sample ~1 m and can't name the cause — pair them with humidity/precip sensors.</li>
+    <li>Radiation fog needs clear skies, high humidity and light (3–5 kt) winds; the inversion height sets whether it builds ground-up (surface) or sinks as lowering St (elevated).</li>
+    <li>Advection fog is more persistent and tolerates stronger winds; hygroscopic particles make visibility fall sharply once RH passes ~70–80%.</li>
+    <li>Israeli dust follows recurring synoptics (Ganor: Red Sea Trough D, Sharav low A, winter low G, high C) and clears by sedimentation, advection or — fastest — rain.</li>
+    <li>The dewpoint depression is your fastest discriminator: near-saturation = fog (LLBG 20/18); bone-dry with falling visibility = dust (LLET 25/01).</li>
   </ul>
 </div>
 </div>

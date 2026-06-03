@@ -15,6 +15,17 @@ future course-to-mbz Claude skill) should read both.
 The "go deeper / more examples" pass Evgeny asked for, done module by module
 from the source decks (internet additions, where needed, flagged for SME review).
 
+- **Module 2, Lesson 4 (Visibility: Fog & Haze).** Expanded from the rich,
+  Israel-specific Fog (132-slide) and Haze (69-slide) decks — fully
+  source-grounded. Deepened "Measuring Visibility" (MOR = 5%-intensity range,
+  transmissometer vs forward-scatter with a new instruments diagram, RVR
+  mechanics and Allard's law) with a decoded real LLBG fog SPECI; added the
+  surface-vs-elevated-inversion fog behaviour with a diagram; added the Ganor
+  synoptic dust classification (Red Sea Trough/Sharav/winter low/high), dust
+  removal mechanisms, and a decoded real LLET dust METAR contrasting fog vs dust
+  by dewpoint depression. Objectives 4 → 6; takeaways 5 → 6; quiz 4 → 7; two new
+  SVGs (Figures 4.2–4.3).
+
 - **Module 2, Lesson 3 (Convective Hazards & CB Clouds).** Expanded from the
   83-slide CB deck — fully source-grounded. Added a labelled CB hazard
   cross-section diagram, coverage descriptors (isolated/occasional/frequent/
