@@ -57,6 +57,15 @@ from the source decks (internet additions, where needed, flagged for SME review)
   Objectives 4 → 6; takeaways 5 → 7; quiz 4 → 7; one new SVG (Figure 2.4). Only
   the carburettor-icing temperature envelope flagged in `module-2/REVIEW_NOTES.md`.
 
+- **Module 3 (Aviation Warnings) — lighter targeted pass.** Module 3's four
+  lessons were already at full depth (2,000–2,800 words, multiple diagrams/tables,
+  real message examples, deck-slide citations), so this was a focused enhancement
+  rather than a doubling: added worked "compose/decode a message" examples
+  (severity-gate routing in L1, an AIRMET composition in L3, a WS-WRNG composition
+  for a low-level jet in L4) and grew every quiz to 8 questions (pool 25 → 32).
+  Fully source-grounded. (No bulk added — padding would dilute already-strong
+  lessons.)
+
 - **Module 2, Lesson 1 (Turbulence & Wind Shear).** Expanded from the Turbulence
   (52-slide) and Wind Shear (28-slide) decks — fully source-grounded, no internet
   additions. Added the standard turbulence-intensity scale table, a Convective

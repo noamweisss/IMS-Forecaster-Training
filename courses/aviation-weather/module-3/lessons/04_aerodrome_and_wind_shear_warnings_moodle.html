@@ -422,6 +422,19 @@
   <figcaption>Figure 4.3 &mdash; a low-level jet over the aerodrome. Light surface wind beneath a strong jet at 900 ft is the textbook shear case &mdash; the aircraft loses headwind suddenly as it descends through the jet axis.</figcaption>
 </figure>
 
+<div class="callout callout-key">
+  <div class="callout-label">Worked Example — composing the WS WRNG for this LLJ</div>
+  <em>Scenario:</em> overnight at Ben Gurion, surface wind 5 kt but a 35 kt jet at ~900 ft AGL on the approach to
+  runway 30; the synoptic pattern (winter inversion) supports it and the surface-to-geostrophic difference exceeds
+  30 kt. The primary trigger is met (peak &ge; 30 kt, axis below 2000 ft), so:<br/>
+  <code>LLBG WS WRNG 1 152150Z VALID 152200/160200</code><br/>
+  <code>WS APCH RWY30 FCST=</code><br/>
+  Reading it: aerodrome LLBG; wind-shear warning, sequence 1; issued 1521<em>50</em>Z; valid four hours; phenomenon
+  wind shear on the approach to runway 30; basis forecast (<code>FCST</code>). Had a pilot reported it, the basis
+  would be <code>REP AT</code>; had it been a microburst, the phenomenon would read <code>MBST APCH RWY30</code>.
+  Note this WS WRNG stands alongside any AD WRNG the same situation warrants — they are separate products.
+</div>
+
 <h2>Updates, amendments, and cancellation</h2>
 
 <p>An AD WRNG or WS WRNG that is in force must be updated if the forecaster judges that, for a stretch of 2 hours or more within the remaining validity, the weather will differ significantly from what the warning describes. The update can change intensity (up or down), add or remove hazardous elements, or shift the start or end times.</p>

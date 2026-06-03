@@ -217,4 +217,42 @@
     </answer>
   </question>
 
+
+  <question type="multichoice">
+    <name>
+      <text>L1-Q07 — Severity gate in practice</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A morning forecast expects moderate icing in stratiform cloud at FL080 over the FIR. Which product, if any, is warranted?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Rationale:</strong> SIGMET icing requires SEV. Moderate icing falls through the SIGMET gate to AIRMET, which is the product for moderate-intensity, lower-level phenomena. It is a real hazard, just not a SIGMET-level one.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>An AIRMET — moderate icing is below the SIGMET (SEV) threshold.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>A WS SIGMET — all in-cloud icing requires a SIGMET.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>An AD WRNG — icing is an aerodrome product.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Nothing — moderate icing is never warned.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L1-Q08 — SIGMET subtype designator</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A VAAC reports a volcanic ash cloud drifting into your FIR. Which SIGMET subtype and WMO data-type designator apply, and does a severity qualifier gate it?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Rationale:</strong> Volcanic ash uses the WV (volcanic-ash) SIGMET, carrying the data-type designator WV in the WMO header, and it has no severity threshold — any detection triggers it (unlike TS/TURB/ICE which need a qualifier). WS is the general SIGMET; WC is for tropical cyclones.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>WV SIGMET (designator WV); no severity threshold — any detection triggers.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>WS SIGMET (designator WS); only if the ash is "severe".</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>WC SIGMET (designator WC); gated by wind speed.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>No SIGMET; volcanic ash is only an aerodrome warning.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+  </question>
 </quiz>

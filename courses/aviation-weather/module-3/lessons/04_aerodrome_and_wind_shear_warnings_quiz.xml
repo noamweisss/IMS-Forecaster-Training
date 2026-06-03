@@ -253,4 +253,23 @@
     </answer>
   </question>
 
+
+  <question type="multichoice">
+    <name>
+      <text>L4-Q08 — Low-level jet WS WRNG trigger</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Overnight at Ben Gurion the surface wind is 5 kt, but a 35 kt jet sits at about 900 ft AGL on the approach, with a &gt;30 kt surface-to-geostrophic difference. Is a WS WRNG warranted, and on what basis?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Rationale:</strong> The IMS primary trigger is a low-level jet with peak &ge; 30 kt and its axis below 2000 ft AGL — both met here (35 kt at ~900 ft), with the surface-to-geostrophic difference as a supporting indicator. Issue a WS WRNG (e.g. <code>WS APCH RWYnn FCST</code>). The light surface wind does not exempt it; that vertical shear is exactly the hazard to an aircraft descending through the jet.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>Yes — peak &ge; 30 kt with the axis below 2000 ft AGL meets the WS WRNG trigger.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>No — the 5 kt surface wind is too light to warrant any warning.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>No — wind shear is only warned when a pilot reports it.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Yes, but only as a SIGMET, since it is an en-route jet.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+  </question>
 </quiz>

@@ -304,6 +304,20 @@
   Annex 3 obliges the MWO to "maintain watch" over the phenomenon and issue an updated AIRMET when necessary. In practice this means: if the forecast becomes meaningfully different from what the active AIRMET describes (intensity changes, area shifts, timing changes by &gt; 2 hours), issue an update. If the phenomenon ends earlier than expected, cancel.
 </div>
 
+<div class="callout callout-key">
+  <div class="callout-label">Worked Example — composing an AIRMET</div>
+  <em>Scenario:</em> moderate icing (not in convective cloud) is forecast between FL060 and FL090 over the northern
+  half of the FIR, from 0900 to 1300 UTC, stationary and not changing in intensity. Built on the SIGMET skeleton from
+  Lesson 2, with <code>WA</code> as the designator and the word <code>AIRMET</code>:<br>
+  <code>WAXX31 LLBG 050835</code><br>
+  <code>LLLL AIRMET 3 VALID 050900/051300 LLBG-</code><br>
+  <code>LLLL TEL AVIV FIR MOD ICE FCST N OF N3215 FL060/090 STNR NC=</code><br>
+  Reading it: WA = AIRMET; one phenomenon (<code>MOD ICE</code>); forecast (<code>FCST</code>); area "north of 32°15′N";
+  layer FL060–FL090; stationary (<code>STNR</code>); no change in intensity (<code>NC</code>); 4-hour validity.
+  (Location indicators here are illustrative.) Had the icing been SEV, the same skeleton would carry <code>WS</code> and
+  the word <code>SIGMET</code> instead — the structure is shared; only the designator, the word, and the qualifier change.
+</div>
+
 <h2>The decision in operations</h2>
 
 <p>The most common operational error in this space is over- or under-promotion: issuing a SIGMET for something that should be an AIRMET, or vice versa. The clean way to decide is sequential:</p>

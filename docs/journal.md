@@ -24,6 +24,28 @@ later reversed, add a new entry rather than editing the old one.
 ---
 
 <!-- New entries appended below -->
+## 2026-06-03 — V2 meteorology expansion: Module 3 (warnings) — a deliberately lighter pass
+
+**Context.** Opening Module 3, I found its four lessons already at the depth I had
+spent Modules 1–2 building toward: 2,000–2,800 words each, severity-gate and
+hierarchy diagrams, ISOL/OCNL/FRQ coverage panels, full IMS threshold tables,
+real SIGMET/AD-WRNG/WS-WRNG message examples, even deck-slide citations.
+
+**Decision.** Rather than inflate already-strong lessons (which the brief
+explicitly warns against — "don't pad with filler"), I made a targeted pass:
+one worked compose/decode example per lesson where it added genuine value
+(applying the 3-filter gate to three observations in L1; composing an AIRMET in
+L3; composing a WS WRNG for a low-level jet in L4), and grew every quiz from 6–7
+to 8 application questions (pool 25 → 32). No REVIEW_NOTES needed — everything is
+from the Area Warnings and Aerodrome Warnings decks.
+
+**Why.** Honesty about scope matters more than a uniform word-count target. The
+"substantial" instruction was about closing the gap to a good lesson; where the
+lesson is already good, the right move is more practice and worked application,
+not more prose. Flagged this judgement to the owner.
+
+---
+
 ## 2026-06-03 — V2 meteorology expansion: Module 2 Lesson 5 (cloud base & top)
 
 **Context.** The capstone lesson of Module 2 sat on a 96-slide deck and was only
