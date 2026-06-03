@@ -24,6 +24,29 @@ later reversed, add a new entry rather than editing the old one.
 ---
 
 <!-- New entries appended below -->
+## 2026-06-03 — V2 meteorology expansion: Module 2 Lesson 2 (icing)
+
+**Context.** Lesson 2 already covered SLW, rime/glaze, freezing rain, a
+tephigram and WAFS products. The gaps against the 61-slide deck were the
+non-structural threats and the explicit diagnostic logic.
+
+**Finding/Decision.** Turned the deck's slide-31 tephigram logic into an actual
+decision-tree diagram (saturation in the 0 to −15°C layer → convective vs deep
+NS → severity). Added an "effect on the aircraft" paragraph (lift/drag/stall plus
+air-data loss), a "Beyond the Airframe" section carrying the Air France 447 case
+and carburettor icing above 0°C, and a protection section built around the key
+limitation — leading-edge systems can't defeat runback ice. Also fixed a real
+bug: Figure 2.2's arrowhead marker used `fill="context-fill"`, which is poorly
+supported and would render the arrows colourless in Moodle; replaced with a
+literal hex. Only the carburettor-icing temperature envelope is standard-reference
+(flagged); the rest is from the deck.
+
+**Why.** "Icing above 0°C" and the AF447 pitot case are the counter-intuitive
+points a time-pressured forecaster most needs reinforced, and a decision tree is
+the form they'll actually use at the bench.
+
+---
+
 ## 2026-06-03 — V2 meteorology expansion: Module 2 Lesson 1 (turbulence & wind shear)
 
 **Context.** Starting Module 2 (In-flight Aviation Hazards) after the owner

@@ -15,6 +15,16 @@ future course-to-mbz Claude skill) should read both.
 The "go deeper / more examples" pass Evgeny asked for, done module by module
 from the source decks (internet additions, where needed, flagged for SME review).
 
+- **Module 2, Lesson 2 (Aircraft Icing Hazards).** Expanded from the 61-slide
+  Icing deck. Added an "effect on the aircraft" treatment (aerodynamic + air-data
+  loss), the deck's tephigram icing-severity decision tree as a new flowchart
+  diagram, a "Beyond the Airframe" section (engine/pitot icing with the Air
+  France 447 case, plus carburettor icing above 0°C), and a "Protection, and Why
+  It Can Fail" section (anti-ice vs de-ice, runback, ground de-icing/holdover).
+  Fixed a rendering bug in Figure 2.2 (`fill="context-fill"` → literal hex).
+  Objectives 4 → 6; takeaways 5 → 7; quiz 4 → 7; one new SVG (Figure 2.4). Only
+  the carburettor-icing temperature envelope flagged in `module-2/REVIEW_NOTES.md`.
+
 - **Module 2, Lesson 1 (Turbulence & Wind Shear).** Expanded from the Turbulence
   (52-slide) and Wind Shear (28-slide) decks — fully source-grounded, no internet
   additions. Added the standard turbulence-intensity scale table, a Convective
