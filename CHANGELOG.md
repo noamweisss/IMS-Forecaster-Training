@@ -15,6 +15,17 @@ future course-to-mbz Claude skill) should read both.
 The "go deeper / more examples" pass Evgeny asked for, done module by module
 from the source decks (internet additions, where needed, flagged for SME review).
 
+- **Module 2, Lesson 1 (Turbulence & Wind Shear).** Expanded from the Turbulence
+  (52-slide) and Wind Shear (28-slide) decks — fully source-grounded, no internet
+  additions. Added the standard turbulence-intensity scale table, a Convective
+  Turbulence subsection, deepened CAT (300 hPa diagnosis, scales) with a
+  jet-cross-section diagram, two real case studies (BOAC 707 over Mt Fuji 1966;
+  DC-8 severe CAT out of Denver 1992), a microburst wind-shear diagram, and a new
+  Gap (Channelled) Winds section with its own diagram (Venturi-myth vs exit-jet,
+  non-geostrophic low-level flow) directly relevant to Israel's wadis. Body
+  ~1,100 → ~2,250 words; objectives 4 → 6; takeaways 5 → 7; quiz 5 → 8; three new
+  SVGs (Figures 1.3–1.5).
+
 - **Module 1, Lesson 1 (Regulatory Frameworks).** Expanded from the 52-page
   WMO/ICAO source deck (`_extraction.json`). Body roughly doubled (~1,440 →
   ~2,360 words). Added: a WMO constituent-bodies subsection with a new

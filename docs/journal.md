@@ -24,6 +24,29 @@ later reversed, add a new entry rather than editing the old one.
 ---
 
 <!-- New entries appended below -->
+## 2026-06-03 — V2 meteorology expansion: Module 2 Lesson 1 (turbulence & wind shear)
+
+**Context.** Starting Module 2 (In-flight Aviation Hazards) after the owner
+approved the Module 1 work. Lesson 1 had solid bones but two real gaps against
+its rich source: it never had a convective-turbulence section, and it carried
+nothing from the Wind Shear deck — which is entirely about gap (channelled)
+winds, a topic that matters in a country full of wadis.
+
+**Decision.** Kept all existing content and added depth: the standard
+intensity scale (so forecast wording and PIREPs share a vocabulary), a
+convective-turbulence subsection, a CAT deepening with a jet-cross-section
+diagram and the 300 hPa diagnostic features, a microburst diagram, and a full
+Gap Winds section built around the deck's central insight — the Venturi/throat
+model is wrong; the strongest wind is at the exit because low-level flow is
+non-geostrophic. Added two case studies the deck supplies (Mt Fuji 1966, Denver
+1992). Entirely source-grounded, so no REVIEW_NOTES entry for this lesson.
+
+**Why.** The gap-winds material is the single highest-value add: it is local,
+operational, and was simply missing. Framing it as "the intuitive model is
+wrong, here's why" is how a technically literate audience remembers it.
+
+---
+
 ## 2026-06-02 — V2 meteorology expansion: setup + Module 1 Lesson 1
 
 **Context.** The next V2 roadmap item is the "go deeper / more examples" pass

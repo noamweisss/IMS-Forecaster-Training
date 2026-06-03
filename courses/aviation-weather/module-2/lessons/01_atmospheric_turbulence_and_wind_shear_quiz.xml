@@ -144,4 +144,91 @@
       <feedback format="html"><text></text></feedback>
     </answer>
   </question>
+
+  <question type="multichoice">
+    <name><text>L1-Q06 — Turbulence intensity scale</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A crew reports that their aircraft underwent large, abrupt changes in altitude and attitude with large airspeed variations and was momentarily out of control. Which intensity should this be recorded as, and why does the distinction matter operationally?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Rationale:</strong> "Momentarily out of control" with large abrupt excursions is the definition of <em>severe</em> turbulence; <em>extreme</em> would be "violently tossed, practically impossible to control, possible structural damage". Using the standard scale consistently means your forecast wording and the pilot report describe the same thing, which is what lets downstream users act on it.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Severe — large abrupt changes and momentary loss of control.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Moderate — the aircraft is still flyable so it cannot be more than moderate.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Light chop — rhythmic bumpiness without attitude change.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Extreme — any momentary loss of control is by definition extreme.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L1-Q07 — Convective turbulence near a CB</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>An aircraft is vectored to circumnavigate a mature cumulonimbus, staying well clear of the visible cloud. Why might the crew still encounter significant turbulence?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Rationale:</strong> Convective turbulence is not confined to the cloud — it is also found outside it, especially above and below the CB and in the spreading downdraughts beneath. Avoiding the visible cloud is necessary but not sufficient; the turbulent envelope extends beyond it. It is not primarily a wake or jet-stream effect.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Convective turbulence extends outside the cloud, especially above, below and in the downdraughts around a CB.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Turbulence only exists inside the cloud, so the report must be a wake-vortex encounter.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Clear-air turbulence from the jet stream always surrounds CB cloud at low levels.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Mechanical turbulence from the ground reaches CB cruising levels.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L1-Q08 — Diagnosing CAT on the 300 hPa chart</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>You are highlighting likely CAT for an en-route forecast. Which combination of 300 hPa features best flags the highest-risk zones?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Rationale:</strong> CAT concentrates in strong-shear regions: the flanks of the jet (notably the cold/poleward side and just below the core), sharp or sharpening troughs and ridges, and col areas with weak winds but marked directional change — all enhanced over mountains. Smooth, slack, barotropic flow away from the jet is low-risk.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Jet flanks, sharpening troughs/ridges and cols — regions of strong wind shear.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Broad, uniform flow far from the jet with weak gradients.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>The warm core of a surface high, where subsidence suppresses shear.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Anywhere cumulonimbus is present, since CAT and CB are the same phenomenon.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
 </quiz>
