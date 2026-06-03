@@ -167,8 +167,10 @@
   <strong>By the end of this lesson you will be able to:</strong>
   <ul>
     <li>Define TAF structure and terminology, including the operational definition of Vicinity (VC).</li>
+    <li>Use the change and probability groups (FM, BECMG, TEMPO, PROB30/40) correctly, and avoid the ambiguous BECMG window.</li>
     <li>Apply TAF writing philosophy to generate concise and user-friendly forecasts.</li>
     <li>Categorize weather conditions into standard aviation flight categories (VFR, IFR).</li>
+    <li>Decode a complete operational TAF line by line.</li>
   </ul>
 </div>
 
@@ -237,6 +239,62 @@
   </tbody>
 </table>
 
+<h2>Change and Probability Groups</h2>
+
+<p>Conditions during the validity period are expressed with a small, fixed set of change groups. Choosing the right
+  one is half of writing a clean TAF:</p>
+
+<table>
+  <thead>
+    <tr><th>Group</th><th>Meaning</th><th>Typical use</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>FM</code> (FMyyGGgg)</td><td>A rapid, <strong>permanent</strong> change at a stated time; it supersedes everything before it.</td><td>Frontal passage, sharp wind shift.</td></tr>
+    <tr><td><code>BECMG</code> (yyGG/yyGG)</td><td>A <strong>gradual permanent</strong> change completing within the window; the new condition prevails by the end.</td><td>Slow onset or clearance.</td></tr>
+    <tr><td><code>TEMPO</code> (yyGG/yyGG)</td><td><strong>Temporary</strong> fluctuations, each lasting under an hour and less than half the period in total; conditions return between.</td><td>Showers, brief visibility drops.</td></tr>
+    <tr><td><code>PROB30</code> / <code>PROB40</code></td><td>A 30% / 40% <strong>probability</strong> of the stated conditions (PROB50+ is not used — make a decision instead).</td><td>Significant but uncertain weather.</td></tr>
+  </tbody>
+</table>
+
+<figure>
+  <svg viewBox="0 0 680 210" role="img" xmlns="http://www.w3.org/2000/svg">
+    <title>How TAF change groups behave over time</title>
+    <desc>Four rows. FM is a step to a new permanent level at a stated time. BECMG is a ramp to a new permanent level over a window. TEMPO is the base level with short humps that return to baseline. PROB is a dashed possibility above the baseline.</desc>
+    <text x="40" y="40" fill="#1A1917" font-family="sans-serif" font-size="13" font-weight="bold">FM</text>
+    <path d="M120,52 L220,52 L220,30 L320,30" fill="none" stroke="#185FA5" stroke-width="2.5" />
+    <text x="340" y="44" fill="#6B6A65" font-family="sans-serif" font-size="12">instant, permanent change at a stated time</text>
+    <text x="40" y="92" fill="#1A1917" font-family="sans-serif" font-size="13" font-weight="bold">BECMG</text>
+    <path d="M120,104 L200,104 L260,82 L320,82" fill="none" stroke="#0F6E56" stroke-width="2.5" />
+    <text x="340" y="96" fill="#6B6A65" font-family="sans-serif" font-size="12">gradual, permanent change over a window</text>
+    <text x="40" y="142" fill="#1A1917" font-family="sans-serif" font-size="13" font-weight="bold">TEMPO</text>
+    <path d="M120,154 L170,154 L185,136 L205,136 L220,154 L255,154 L270,136 L290,136 L305,154 L320,154" fill="none" stroke="#BA7517" stroke-width="2.5" />
+    <text x="340" y="146" fill="#6B6A65" font-family="sans-serif" font-size="12">temporary fluctuations, returning to baseline</text>
+    <text x="40" y="192" fill="#1A1917" font-family="sans-serif" font-size="13" font-weight="bold">PROB</text>
+    <path d="M120,186 L320,186" fill="none" stroke="#6B6A65" stroke-width="1.5" />
+    <path d="M150,186 L150,168 L290,168 L290,186" fill="none" stroke="#534AB7" stroke-width="2" stroke-dasharray="5 3" />
+    <text x="340" y="190" fill="#6B6A65" font-family="sans-serif" font-size="12">30% / 40% probability of the stated conditions</text>
+  </svg>
+  <figcaption>The change groups, by temporal behaviour — a step (FM), a ramp (BECMG), transient humps (TEMPO), or a dashed probability (PROB).</figcaption>
+</figure>
+
+<div class="callout callout-warning">
+  <div class="callout-label">The BECMG trap</div>
+  A <code>BECMG</code> window leaves the conditions <em>ambiguous while it is open</em>: a reader cannot tell exactly
+  when within <code>BECMG 2306/2310</code> the cloud actually lowers. Keep BECMG windows short, and when a change is
+  genuinely sharp (a front, a sea-breeze onset) prefer <code>FM</code> at a single time. This is the most common
+  source of an un-amendable, unhelpful TAF.
+</div>
+
+<div class="callout callout-key">
+  <div class="callout-label">Worked Example — decoding a TAF</div>
+  <code>TAF LLBG 231100Z 2312/2412 30012KT 9999 FEW040 BECMG 2316/2318 32018G28KT TEMPO 2318/2322 4000 SHRA BKN020CB PROB30 2319/2321 30025G40KT=</code><br>
+  Issued day 23 at 1100Z, valid 2312/2412 (24 h). Prevailing: wind 300°/12 kt, visibility &ge;10 km, few cloud at
+  4,000 ft. <code>BECMG 2316/2318</code>: the wind gradually backs/strengthens to 320°/18 gusting 28 between 16 and
+  18Z. <code>TEMPO 2318/2322</code>: temporary drops to 4 km in rain showers with broken CB at 2,000 ft. <code>PROB30
+  2319/2321</code>: a 30% chance of 300°/25 gusting 40. Read as flight categories: VFR throughout, with a TEMPO dip
+  toward MVFR/IFR in the showers — exactly the period a dispatcher will plan contingency fuel around.
+</div>
+
 <h2>Structuring the TAF</h2>
 
 <p>When drafting a TAF, establish the overarching trend and write to the aviation flight categories first. Ensure you add the most detail to the <strong>first 6 hours</strong> of the forecast, as this is the critical operational period for incoming flights.</p>
@@ -284,11 +342,11 @@
 <div class="lesson-summary">
   <h3>Key Takeaways</h3>
   <ul>
-    <li>A TAF covers the terminal area within 5 SM; the VC modifier covers the donut between 5 SM and 10 SM.</li>
-    <li>Use VC to alert users to nearby weather (TS, SH, FG) without triggering restrictive alternate-fuel regulations.</li>
-    <li>A user-friendly TAF is concise (ideally &le; 5 lines) and avoids hedging with excessive PROB or conditional groups.</li>
-    <li>Forecast by flight category (VFR, IFR) rather than exact values, ensuring the trend is always clear.</li>
-    <li>Concentrate the highest level of detail and accuracy in the first 6 hours of the forecast period.</li>
+    <li>A TAF covers the terminal area within 5 SM; the VC modifier covers the donut between 5 SM and 10 SM (used with TS, SH, FG).</li>
+    <li>Change groups: FM = instant permanent change; BECMG = gradual permanent change; TEMPO = temporary fluctuations that return; PROB30/40 = probability. Don't use PROB50+.</li>
+    <li>The BECMG window is ambiguous while open — keep it short, and use FM for sharp changes to keep the TAF amendable.</li>
+    <li>A user-friendly TAF is concise (ideally &le; 5 lines), forecasts by flight category, and avoids hedging with excessive PROB.</li>
+    <li>Concentrate the highest detail and accuracy in the first 6 hours, the critical operational window.</li>
   </ul>
 </div>
 </section>
@@ -300,6 +358,7 @@
   <strong>By the end of this lesson you will be able to:</strong>
   <ul>
     <li>Formulate appropriate change groups (BECMG, TEMPO) for deteriorating or improving conditions.</li>
+    <li>Apply the ICAO amendment-criteria thresholds (visibility, cloud, wind, phenomena) that force a TAF AMD.</li>
     <li>Evaluate existing TAFs for ambiguity and propose operational amendments.</li>
     <li>Discriminate between scenarios requiring TEMPO versus PROB groups.</li>
   </ul>
@@ -402,6 +461,31 @@
   Amend immediately when conditions cross between VFR, MVFR, IFR, or LIFR. Additionally, amend if the timing of a major frontal passage or thunderstorm onset changes by more than 2 hours.
 </div>
 
+<p>The flight-category rule is the quick test, but ICAO Annex 3 also fixes the precise values at which an amendment is
+  mandatory. The criteria are the same change thresholds used to issue a SPECI, and they are worth memorising:</p>
+
+<table>
+  <thead>
+    <tr><th>Element</th><th>Amend when forecast/observed crosses…</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Visibility</td><td>150, 350, 600, 800, 1500, 3000 or 5000 m</td></tr>
+    <tr><td>Cloud base (BKN or OVC)</td><td>100, 200, 500, 1000 or 1500 ft</td></tr>
+    <tr><td>Mean surface wind</td><td>direction change &ge; 60° (mean &ge; 10 kt either side); or mean speed change &ge; 10 kt; or gusts change &ge; 10 kt (mean &ge; 15 kt)</td></tr>
+    <tr><td>Phenomena — onset or cessation</td><td>TS, FZRA, FZDZ, FZFG, moderate/heavy precipitation (incl. showers), duststorm/sandstorm, and similar specified weather</td></tr>
+  </tbody>
+</table>
+
+<div class="callout callout-key">
+  <div class="callout-label">Worked Example — deciding to amend</div>
+  Your active TAF reads <code>… 2412/2512 31010KT 9999 BKN030 …</code> (VFR). At 1340Z the aerodrome reports
+  visibility 2,500 m in mist with <code>BKN006</code>. Test the thresholds: visibility has crossed 5000 and 3000 m;
+  the ceiling has crossed 1000 and 500 ft; and the field has dropped from VFR to IFR. Any one of those forces an
+  amendment — issue a <code>TAF AMD</code> now rather than waiting for the next cycle, e.g.
+  <code>TAF AMD LLBG 241345Z 2413/2512 31010KT 2500 BR BKN006 BECMG 2415/2417 9999 NSW BKN025=</code>, showing the
+  expected recovery.
+</div>
+
 <p>A common mistake is leaving a TAF "as is" because a previously forecasted PROB30 didn't materialize, or because a TEMPO condition lasted too long. If the conditions become the prevailing weather, you must amend to establish the new baseline.</p>
 
 <div class="lesson-summary">
@@ -410,6 +494,7 @@
     <li>Use <strong>BECMG</strong> for permanent transitions and <strong>TEMPO</strong> for brief fluctuations lasting less than an hour per instance.</li>
     <li>If intermittent weather aggregates to more than half the forecast period, it must be promoted to the prevailing condition via BECMG.</li>
     <li>Amend proactively. If the forecast crosses a flight category threshold unexpectedly, issue an amendment immediately rather than waiting for the next cycle.</li>
+    <li>The ICAO amendment thresholds are specific: visibility at 150/350/600/800/1500/3000/5000 m, cloud at 100/200/500/1000/1500 ft, defined wind changes, and the onset/cessation of specified phenomena.</li>
     <li>Do not use PROB groups in the first 6 hours of the TAF. Make a definitive forecast for the critical period.</li>
   </ul>
 </div>
@@ -422,7 +507,9 @@
   <strong>By the end of this lesson you will be able to:</strong>
   <ul>
     <li>Describe the atmospheric conditions required for tropical storm formation.</li>
+    <li>Trace the development stages and the regional names (hurricane / typhoon / cyclone).</li>
     <li>Classify tropical cyclones using the Saffir-Simpson scale.</li>
+    <li>Identify the main basins, their seasons, and typical recurving motion.</li>
     <li>Interpret global warning center advisories and graphical track forecasts.</li>
   </ul>
 </div>
@@ -446,6 +533,23 @@
 </figure>
 
 <p>Once formed, a mature storm exhibits three distinct structural regions: the <strong>Eye</strong> (a region of mostly calm weather and sinking air at the center), the <strong>Eyewall</strong> (a ring of towering thunderstorms containing the storm's most severe weather and highest winds), and the <strong>Spiral Rainbands</strong> (bands of convection spiraling outward).</p>
+
+<h2>Development Stages and Regional Names</h2>
+
+<p>A tropical system intensifies through defined stages, set by the sustained wind speed, and the mature storm takes a
+  different name in each basin — the same phenomenon, three labels:</p>
+
+<table>
+  <thead>
+    <tr><th>Stage</th><th>Sustained wind</th><th>Notes</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Tropical depression</td><td>&lt; 34 kt</td><td>Closed low-level circulation has formed.</td></tr>
+    <tr><td>Tropical storm</td><td>34–63 kt</td><td>Receives a name.</td></tr>
+    <tr><td>Hurricane / Typhoon / Cyclone</td><td>&ge; 64 kt</td><td>"Hurricane" in the Atlantic and E Pacific; "typhoon" in the W Pacific; "cyclone" in the Indian Ocean and S Pacific.</td></tr>
+    <tr><td>Super typhoon / major hurricane</td><td>&ge; ~100 kt</td><td>Upper end of the Saffir-Simpson scale (Cat 4–5).</td></tr>
+  </tbody>
+</table>
 
 <h2>The Saffir-Simpson Hurricane Wind Scale (SSHS)</h2>
 
@@ -491,6 +595,37 @@
 <div class="callout callout-note">
   <div class="callout-label">Aviation Impact</div>
   While airports lock down and evacuate aircraft during landfalling Category 3+ storms, even a Category 1 storm or a strong Tropical Storm (34-63 kt) presents extreme hazards to aviation, including severe low-level wind shear, microbursts in the outer rainbands, and prolonged IFR/LIFR conditions.
+</div>
+
+<h2>Where and When: Basins, Season, and Motion</h2>
+
+<p>Tropical cyclones are confined to specific ocean basins and seasons. Knowing the climatology tells you when a
+  long-haul route is likely to be affected:</p>
+
+<table>
+  <thead>
+    <tr><th>Basin</th><th>Typical number per year</th><th>Main season</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>NW Pacific</td><td>20–30</td><td>May–November</td></tr>
+    <tr><td>NE Pacific</td><td>15–20</td><td>May–November</td></tr>
+    <tr><td>N Atlantic</td><td>8–15</td><td>June–November</td></tr>
+    <tr><td>N Indian</td><td>3–8</td><td>April–June &amp; September–November</td></tr>
+    <tr><td>Southern Hemisphere</td><td>(varies by sub-basin)</td><td>November–April</td></tr>
+  </tbody>
+</table>
+
+<p>Tracks tend to run westward in the deep tropics and then <strong>recur poleward</strong> in long, meandering
+  paths; the poleward motion helps the system conserve angular momentum and prolongs its life. The moment of
+  recurvature into the mid-latitude westerlies is one of the hardest parts of the track forecast — and the part most
+  relevant to flights routing around the storm.</p>
+
+<div class="callout callout-key">
+  <div class="callout-label">The aviation forecaster's role</div>
+  Tropical cyclones are essentially never a domestic Israeli phenomenon, and a WC (tropical-cyclone) SIGMET is not
+  required in the EUR region. But an aviation forecaster supporting long-haul operations still has to read the RSMC
+  advisories and the ECMWF strike-probability products to keep flights clear of the storm and its outflow — the
+  responsibility is routing, not issuing a TC warning.
 </div>
 
 <h2>Warning Centers and Track Forecasts</h2>
@@ -554,9 +689,11 @@
   <h3>Key Takeaways</h3>
   <ul>
     <li>Formation requires warm SSTs (&gt; 26.5 &deg;C), low wind shear, deep moisture, and sufficient Coriolis force.</li>
+    <li>Stages run depression (&lt;34 kt) → tropical storm (34–63 kt) → hurricane/typhoon/cyclone (&ge;64 kt); the name depends on the basin.</li>
     <li>The Saffir-Simpson scale classifies storms based on 1-minute sustained winds, with Category 3 and above considered Major Hurricanes.</li>
-    <li>RSMCs and TCWCs are the global authorities for tracking and issuing advisories on tropical cyclones.</li>
-    <li>The Cone of Uncertainty visualizes the probable track of the storm's center, but hazardous conditions routinely extend well beyond its boundaries.</li>
+    <li>Basins have distinct seasons (NW Pacific busiest, 20–30/yr; Atlantic 8–15, Jun–Nov); tracks recur poleward, and recurvature is the hardest part of the forecast.</li>
+    <li>RSMCs and TCWCs are the global authorities; the IMS forecaster's role is routing flights around the storm (and reading strike-probability products), not issuing a WC SIGMET (not required in EUR).</li>
+    <li>The Cone of Uncertainty shows the probable track of the storm's center, but hazardous conditions routinely extend well beyond its boundaries.</li>
   </ul>
 </div>
 </section>
@@ -568,8 +705,9 @@
   <strong>By the end of this lesson you will be able to:</strong>
   <ul>
     <li>Explain the specific hazards volcanic ash poses to jet aircraft operations.</li>
-    <li>Interpret Volcanic Ash Advisories (VAA) from VAACs.</li>
+    <li>Apply the split-window (10.8−12.0 μm) brightness-temperature method to distinguish ash from meteorological cloud.</li>
     <li>Outline the role of atmospheric dispersion modeling for predicting ash plume trajectories.</li>
+    <li>Interpret Volcanic Ash Advisories (VAA) and trace the VAA → WV SIGMET → ASHTAM/NOTAM chain.</li>
   </ul>
 </div>
 
@@ -602,6 +740,42 @@
 <p>When an eruption occurs, the VAAC immediately utilizes satellite imagery to detect and pinpoint the ash plume. They then input the eruption details (plume height, duration, and source geometry) into an <strong>Atmospheric Dispersion Model</strong>.</p>
 
 <p>For instance, the London VAAC uses the <strong>NAME (Numerical Atmospheric-dispersion Modelling Environment)</strong> model. The model calculates the 3D trajectory of the ash particles as they are carried by upper-level winds, factoring in particle settling and atmospheric diffusion over time.</p>
+
+<h3>Spotting Ash from Space: the Split-Window Method</h3>
+
+<p>The first detection comes from the satellite, using a trick of infrared physics. Compare the brightness temperature
+  in two thermal-infrared channels — around <strong>10.8 μm and 12.0 μm</strong>. A water or ice cloud absorbs slightly
+  <em>more</em> at 12.0 μm, so its 12.0 μm brightness temperature is the colder of the two and the difference
+  <code>BT(10.8) − BT(12.0)</code> is <strong>positive</strong>. Volcanic ash (silicate particles) shows
+  <strong>reverse absorption</strong>: it absorbs more at 10.8 μm, so the sign flips and <code>BT(10.8) − BT(12.0)</code>
+  goes <strong>negative</strong>. That sign change is the ash signature, and it lets a forecaster pick an ash plume out
+  of surrounding ice cloud where ordinary imagery shows them looking almost identical.</p>
+
+<figure>
+  <svg viewBox="0 0 680 240" role="img" xmlns="http://www.w3.org/2000/svg">
+    <title>Split-window detection of volcanic ash</title>
+    <desc>For water or ice cloud the 10.8 micron brightness temperature exceeds the 12.0 micron value, so the difference is positive. For volcanic ash the relationship reverses and the difference becomes negative, which is the ash signature.</desc>
+    <line x1="340" y1="20" x2="340" y2="210" stroke="#E2DFD6" stroke-width="1" />
+    <text x="175" y="34" fill="#185FA5" font-size="12" font-weight="bold" text-anchor="middle" font-family="sans-serif">Water / ice cloud</text>
+    <rect x="110" y="80" width="54" height="110" fill="#185FA5" /><text x="137" y="205" fill="#1A1917" font-size="11" text-anchor="middle" font-family="sans-serif">10.8 μm</text>
+    <rect x="200" y="116" width="54" height="74" fill="#6B6A65" /><text x="227" y="205" fill="#1A1917" font-size="11" text-anchor="middle" font-family="sans-serif">12.0 μm</text>
+    <text x="182" y="60" fill="#0F6E56" font-size="11" text-anchor="middle" font-family="sans-serif">BT(10.8) − BT(12.0) &gt; 0</text>
+    <text x="510" y="34" fill="#993C1D" font-size="12" font-weight="bold" text-anchor="middle" font-family="sans-serif">Volcanic ash</text>
+    <rect x="445" y="116" width="54" height="74" fill="#185FA5" /><text x="472" y="205" fill="#1A1917" font-size="11" text-anchor="middle" font-family="sans-serif">10.8 μm</text>
+    <rect x="535" y="80" width="54" height="110" fill="#993C1D" /><text x="562" y="205" fill="#1A1917" font-size="11" text-anchor="middle" font-family="sans-serif">12.0 μm</text>
+    <text x="517" y="60" fill="#993C1D" font-size="11" text-anchor="middle" font-family="sans-serif">BT(10.8) − BT(12.0) &lt; 0  → ash</text>
+  </svg>
+  <figcaption>The split-window (reverse-absorption) signature: meteorological cloud gives a positive 10.8−12.0 μm brightness-temperature difference; ash flips it negative.</figcaption>
+</figure>
+
+<div class="callout callout-note">
+  <div class="callout-label">Worked Example — reading the brightness-temperature difference</div>
+  Two adjacent cold cloud tops look identical in a single IR channel. Differencing the channels, one shows
+  <code>BT(10.8) − BT(12.0)</code> = +1.5 K and the other −2 K. The positive area is ordinary ice cloud; the
+  <strong>negative area is the ash plume</strong>. Other channel combinations (IR8.7−IR10.8, the solar IR3.9 vs
+  VIS0.6 reflectance) are used to confirm it, and a colour-composite product then renders the plume distinctly —
+  this is how the VAAC pinpoints the source and seeds the dispersion model.
+</div>
 
 <h2>Volcanic Ash Advisories (VAA)</h2>
 
@@ -645,13 +819,21 @@
 
 <p>Meteorological Watch Offices (MWOs) use the VAA polygons directly to issue SIGMETs for their respective Flight Information Regions (FIRs). Unlike thunderstorm SIGMETs, volcanic ash SIGMETs are not discretionary—if an ash plume is forecast to enter an FIR, the corresponding SIGMET must be issued.</p>
 
+<p>This all sits inside the <strong>International Airways Volcano Watch (IAVW)</strong>, and the message chain is worth
+  holding as a single picture: a state volcano observatory or satellite detection flags the eruption → the
+  <strong>VAAC</strong> runs the dispersion model and issues the <strong>VAA</strong> → the <strong>MWO</strong> turns
+  the relevant polygon into a <strong>WV SIGMET</strong> for its FIR (the WV subtype from Module 3) → ACC/NOTAM offices
+  issue a <strong>NOTAM/ASHTAM</strong> closing the airspace. Each link has a defined owner, which is why volcanic ash —
+  rare as it is over Israel — is drilled as a standing procedure rather than improvised.</p>
+
 <div class="lesson-summary">
   <h3>Key Takeaways</h3>
   <ul>
-    <li>Volcanic ash is invisible to standard aircraft weather radar because it lacks water content.</li>
-    <li>Ash melts in jet engines causing stalls, and its abrasive nature destroys outer structures and windshields.</li>
-    <li>Nine VAACs monitor global volcanism and run complex atmospheric dispersion models (like NAME) to track and forecast ash plumes.</li>
-    <li>VAAs provide the critical polygon coordinates that MWOs use to issue mandatory airspace-closing SIGMETs.</li>
+    <li>Volcanic ash is invisible to standard aircraft weather radar; it melts in jet engines (causing stalls), abrades the airframe, and clogs probes — the BA009 case in 1982 catalysed the modern system.</li>
+    <li>Satellites detect ash with the split-window method: meteorological cloud gives a positive 10.8−12.0 μm brightness-temperature difference, ash flips it negative (reverse absorption).</li>
+    <li>Nine VAACs run dispersion models (e.g. London's NAME) to forecast plume trajectories and issue VAAs with +6/+12/+18 h polygons.</li>
+    <li>The chain is fixed: detection → VAAC/VAA → MWO WV SIGMET → ACC NOTAM/ASHTAM, all under the International Airways Volcano Watch.</li>
+    <li>Volcanic-ash SIGMETs are mandatory, not discretionary — if a plume is forecast to enter the FIR, the WV SIGMET must be issued.</li>
   </ul>
 </div>
 </section>
@@ -662,9 +844,11 @@
 <div class="objectives">
   <strong>By the end of this lesson you will be able to:</strong>
   <ul>
-    <li>Distinguish between High-level (SWH) and Medium-level (SWM) SIGWX charts.</li>
+    <li>Distinguish between High-level (SWH) and Medium-level (SWM) SIGWX charts, and the Amendment 74 simplification.</li>
     <li>Decode standard aviation meteorological parameters (jetstreams, CAT, CBs) on WAFC maps.</li>
     <li>Differentiate between isolated, occasional, and frequent cumulonimbus coverage as defined by ICAO.</li>
+    <li>Interpret the gridded WAFS potential products (icing, CAT, in-cloud turbulence, CB) and their thresholds.</li>
+    <li>Map the standard pressure-level wind/temperature charts to their flight levels.</li>
   </ul>
 </div>
 
@@ -736,6 +920,28 @@
   <figcaption>Example WAFC symbology showing a 120-knot jetstream core at FL360 and an adjacent area of Moderate Clear Air Turbulence between FL280 and FL380.</figcaption>
 </figure>
 
+<p>Two refinements are worth knowing. A jetstream is drawn at core speeds <strong>&ge; 80 kt</strong>, but for a strong
+  jet (<strong>&ge; 120 kt</strong>) the chart also marks the <strong>depth of the 80-kt isotach</strong> at the point of
+  maximum core speed — a measure of how deep the fast flow, and its shear, extends. And since <strong>Amendment 74</strong>
+  to ICAO Annex 3, the high-level SIGWX chart has been <em>simplified</em>: fronts, occlusions and convergence zones
+  (including the ITCZ) and all non-CB cloud were removed from SWH, leaving the chart focused on the hazards that matter
+  at cruise — jets, CAT, CB and tropopause.</p>
+
+<p>Alongside the SIGWX charts, the WAFS issues <strong>wind and temperature charts</strong> at fixed pressure levels,
+  which map to flight levels as follows:</p>
+
+<table>
+  <thead>
+    <tr><th>Pressure level</th><th>Approx. flight level</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>900 hPa</td><td>FL030</td></tr>
+    <tr><td>850 hPa</td><td>FL050</td></tr>
+    <tr><td>700 hPa</td><td>FL100</td></tr>
+    <tr><td>500 hPa</td><td>FL180</td></tr>
+  </tbody>
+</table>
+
 <h2>Cumulonimbus (CB) Coverage Definitions</h2>
 
 <p>When forecasting thunderstorms (CBs) on a SIGWX chart, ICAO mandates specific terminology to describe the spatial coverage of the storm cells within the affected area. Scalloped lines denote the boundary of the convective area.</p>
@@ -752,13 +958,62 @@
 
 <p>These terms dictate how an aircraft can navigate the hazard. An <em>ISOL</em> or <em>OCNL</em> area suggests that a pilot equipped with airborne weather radar can safely pick their way between the storms. A <em>FRQ</em> area implies a solid wall of thunderstorms that must be avoided entirely.</p>
 
+<h2>Gridded WAFS Products</h2>
+
+<p>Beyond the human-drawn SIGWX charts, the modern WAFS issues <strong>gridded (GRIB) potential fields</strong> — the
+  UK Met Office maintains fifteen — delivered over SADIS/ISCS alongside the GRIB/BUFR/OPMET data. These let a
+  flight-planning system quantify the hazard automatically along a route, where the chart only draws an enclosing
+  area. The four to know:</p>
+
+<table>
+  <thead>
+    <tr><th>Product</th><th>What it measures</th><th>Reading it</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Icing potential (mean / max)</td><td>Fractional layer-cloud cover where temperature is −20 to 0°C, at 5 levels.</td><td>Higher fraction → more supercooled cloud → greater icing risk.</td></tr>
+    <tr><td>CAT potential (mean / max)</td><td>Probability (%) of mountain-wave or wind-shear turbulence per 100 km of flight.</td><td><strong>≥ 4% → moderate or severe</strong> CAT.</td></tr>
+    <tr><td>In-cloud turbulence</td><td>Likelihood of turbulence within layer cloud.</td><td>Typically 0–0.1; larger values → higher risk.</td></tr>
+    <tr><td>CB products</td><td>CB horizontal extent (%), and pressure/height of CB top and base (incl. embedded CB).</td><td>Quantifies coverage and vertical extent for routing/over-flight.</td></tr>
+  </tbody>
+</table>
+
+<figure>
+  <svg viewBox="0 0 680 170" role="img" xmlns="http://www.w3.org/2000/svg">
+    <title>CAT-potential grid along a route leg at FL340</title>
+    <desc>A route crosses a series of grid cells, each giving the percentage probability of clear-air turbulence per 100 km. Cells at or above 4% indicate moderate or severe turbulence and are highlighted.</desc>
+    <defs><marker id="rtArr" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0,9 3.5,0 7" fill="#1A1917" /></marker></defs>
+    <text x="340" y="26" fill="#1A1917" font-size="12" font-weight="bold" text-anchor="middle" font-family="sans-serif">CAT potential (% per 100 km) at FL340</text>
+    <rect x="46" y="46" width="84" height="50" fill="#F6F5F0" stroke="#E2DFD6" /><text x="88" y="77" fill="#1A1917" font-size="14" text-anchor="middle" font-family="sans-serif">1</text>
+    <rect x="130" y="46" width="84" height="50" fill="#F6F5F0" stroke="#E2DFD6" /><text x="172" y="77" fill="#1A1917" font-size="14" text-anchor="middle" font-family="sans-serif">2</text>
+    <rect x="214" y="46" width="84" height="50" fill="#FAEEDA" stroke="#BA7517" /><text x="256" y="77" fill="#1A1917" font-size="14" font-weight="bold" text-anchor="middle" font-family="sans-serif">4</text>
+    <rect x="298" y="46" width="84" height="50" fill="#FAEEDA" stroke="#BA7517" /><text x="340" y="77" fill="#1A1917" font-size="14" font-weight="bold" text-anchor="middle" font-family="sans-serif">6</text>
+    <rect x="382" y="46" width="84" height="50" fill="#FAEEDA" stroke="#BA7517" /><text x="424" y="77" fill="#1A1917" font-size="14" font-weight="bold" text-anchor="middle" font-family="sans-serif">5</text>
+    <rect x="466" y="46" width="84" height="50" fill="#F6F5F0" stroke="#E2DFD6" /><text x="508" y="77" fill="#1A1917" font-size="14" text-anchor="middle" font-family="sans-serif">2</text>
+    <rect x="550" y="46" width="84" height="50" fill="#F6F5F0" stroke="#E2DFD6" /><text x="592" y="77" fill="#1A1917" font-size="14" text-anchor="middle" font-family="sans-serif">1</text>
+    <line x1="46" y1="120" x2="634" y2="120" stroke="#1A1917" stroke-width="2" marker-end="url(#rtArr)" />
+    <text x="46" y="140" fill="#6B6A65" font-size="11" font-family="sans-serif">route leg</text>
+    <text x="634" y="140" fill="#993C1D" font-size="11" text-anchor="end" font-family="sans-serif">cells ≥ 4% → expect MOD/SEV CAT</text>
+  </svg>
+  <figcaption>A gridded CAT-potential field along a route — cells at or above 4% per 100 km flag moderate-or-severe turbulence the dispatcher can plan around.</figcaption>
+</figure>
+
+<div class="callout callout-key">
+  <div class="callout-label">Worked Example — reading the grids</div>
+  A CAT-potential grid shows <strong>5% at FL340</strong> across one leg — above the 4% threshold, so brief moderate-to-severe
+  CAT and consider a level change or a note to the dispatcher. Separately, a mean-icing-potential field reads
+  <strong>0.6 at FL100</strong>: a large fraction of the −20 to 0°C layer is cloud-filled, i.e. substantial
+  supercooled water and a real icing risk. The grids turn the chart's enclosed areas into a number you can act on.
+</div>
+
 <div class="lesson-summary">
   <h3>Key Takeaways</h3>
   <ul>
-    <li>WAFCs distribute high-quality en-route weather forecasts globally to support international aviation.</li>
-    <li>SWH (High-level) charts are global and cover FL250 to FL630. SWM (Medium-level) charts are regional, cover FL100 to FL450, and include more detail on in-cloud icing.</li>
-    <li>Jetstreams are plotted when the core wind is 80 knots or greater.</li>
-    <li>CB coverage is strictly defined: ISOL (&lt;50%), OCNL (50-75%), and FRQ (&gt;75%).</li>
+    <li>WAFCs (London &amp; Washington) distribute en-route forecasts globally as PNG charts and BUFR/GRIB data over SADIS/ISCS.</li>
+    <li>SWH (high-level) charts are global (FL250–630); SWM (medium-level) are regional (FL100–450) with more in-cloud icing/turbulence detail. Amendment 74 stripped fronts, the ITCZ and non-CB cloud from SWH.</li>
+    <li>Jetstreams are plotted at &ge;80 kt; for &ge;120 kt jets the depth of the 80-kt isotach at the core is marked.</li>
+    <li>CB coverage is strictly defined: ISOL (&lt;50%), OCNL (50–75%), FRQ (&gt;75%), plus EMBD.</li>
+    <li>Gridded WAFS products quantify hazard along a route: CAT potential ≥4% = MOD/SEV; icing potential = fraction of the −20 to 0°C layer that is cloud; plus in-cloud turbulence and CB fields.</li>
+    <li>Wind/temperature charts map pressure to flight level: 900 hPa≈FL030, 850≈FL050, 700≈FL100, 500≈FL180.</li>
   </ul>
 </div>
 </section>
