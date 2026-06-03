@@ -9,12 +9,14 @@ A skill for converting source presentations into a Moodle-ready training module.
 
 ## What you are doing
 
-Three phases. You run two commands and write the middle phase yourself.
+Three phases required, two optional. You run tools and write the middle phase yourself.
 
 ```
 1. pipeline/extract_sources.py   →  _extraction.json          (Python, no LLM)
 2. you, the agent                →  lesson HTML + quiz XML + overview
 3. pipeline/finalize_module.py   →  Moodle-ready module       (Python, no LLM)
+4. pipeline/build_mbz.py         →  <course>.mbz              (Python, no LLM, optional)
+5. pipeline/build_course_preview.py → preview_dist/ SPA       (Python, no LLM, optional)
 ```
 
 The audience for the lessons is **certified professional meteorologists** taking a certification refresh course. They are technically literate, time-pressured, and will be irritated by filler prose or condescending explanations. No "in this lesson we will learn…" openers. No basics that a working forecaster already has internalized.
@@ -51,7 +53,7 @@ Also check `courses/<course>/module-N/extracted_images/` — the script writes e
 
 ## Phase 2 — Design and author
 
-This is the bulk of your work. Five sub-steps.
+This is the bulk of your work. Six sub-steps.
 
 ### 2a. Read the source material carefully
 
@@ -146,6 +148,22 @@ This:
 - Writes `README.md` with the 2-click Moodle upload steps.
 
 Idempotent. If the user later sources photos for the `image-needed` placeholders and edits the lesson HTML to reference them, re-run finalize and the new images get embedded.
+
+## Phase 4 — Backup packaging (optional)
+
+```bash
+python pipeline/build_mbz.py --course courses/<course>
+```
+
+Packages the finalized HTML and XML into a single Moodle backup (`.mbz`) that can be restored in one upload, creating the course structure automatically.
+
+## Phase 5 — Course Preview (optional)
+
+```bash
+python pipeline/build_course_preview.py
+```
+
+Compiles a standalone Single Page Application (SPA) into `preview_dist/` that lets you preview all modules and lessons outside of Moodle. Pushing this to Git triggers a Netlify deployment.
 
 ## Sanity checks before declaring done
 
