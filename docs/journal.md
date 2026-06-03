@@ -24,6 +24,23 @@ later reversed, add a new entry rather than editing the old one.
 ---
 
 <!-- New entries appended below -->
+## 2026-06-03 — V2 meteorology expansion: Module 4 Lesson 4 (volcanic ash)
+
+**Context.** The lesson explained the hazard and the VAAC/NAME dispersion but
+skipped the deck's most distinctive content: how ash is actually spotted on
+satellite.
+
+**Decision.** Added the split-window / reverse-absorption method (the 10.8−12.0
+μm brightness-temperature difference flips sign for ash vs water/ice cloud) with
+a diagram and a worked "which area is the ash" example, and drew the full IAVW
+message chain (detection → VAAC/VAA → MWO WV SIGMET → NOTAM/ASHTAM), tying back to
+the WV subtype from Module 3. Source-grounded.
+
+**Why.** "Ash looks just like ice cloud until you difference the channels" is the
+single most useful operational fact in the deck, and it was missing.
+
+---
+
 ## 2026-06-03 — V2 meteorology expansion: Module 4 Lesson 3 (tropical storms)
 
 **Context.** L3 already had the genesis criteria, Saffir-Simpson, RSMC/TCWC and the

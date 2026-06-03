@@ -80,8 +80,9 @@
   <strong>By the end of this lesson you will be able to:</strong>
   <ul>
     <li>Explain the specific hazards volcanic ash poses to jet aircraft operations.</li>
-    <li>Interpret Volcanic Ash Advisories (VAA) from VAACs.</li>
+    <li>Apply the split-window (10.8−12.0 μm) brightness-temperature method to distinguish ash from meteorological cloud.</li>
     <li>Outline the role of atmospheric dispersion modeling for predicting ash plume trajectories.</li>
+    <li>Interpret Volcanic Ash Advisories (VAA) and trace the VAA → WV SIGMET → ASHTAM/NOTAM chain.</li>
   </ul>
 </div>
 
@@ -114,6 +115,42 @@
 <p>When an eruption occurs, the VAAC immediately utilizes satellite imagery to detect and pinpoint the ash plume. They then input the eruption details (plume height, duration, and source geometry) into an <strong>Atmospheric Dispersion Model</strong>.</p>
 
 <p>For instance, the London VAAC uses the <strong>NAME (Numerical Atmospheric-dispersion Modelling Environment)</strong> model. The model calculates the 3D trajectory of the ash particles as they are carried by upper-level winds, factoring in particle settling and atmospheric diffusion over time.</p>
+
+<h3>Spotting Ash from Space: the Split-Window Method</h3>
+
+<p>The first detection comes from the satellite, using a trick of infrared physics. Compare the brightness temperature
+  in two thermal-infrared channels — around <strong>10.8 μm and 12.0 μm</strong>. A water or ice cloud absorbs slightly
+  <em>more</em> at 12.0 μm, so its 12.0 μm brightness temperature is the colder of the two and the difference
+  <code>BT(10.8) − BT(12.0)</code> is <strong>positive</strong>. Volcanic ash (silicate particles) shows
+  <strong>reverse absorption</strong>: it absorbs more at 10.8 μm, so the sign flips and <code>BT(10.8) − BT(12.0)</code>
+  goes <strong>negative</strong>. That sign change is the ash signature, and it lets a forecaster pick an ash plume out
+  of surrounding ice cloud where ordinary imagery shows them looking almost identical.</p>
+
+<figure>
+  <svg viewBox="0 0 680 240" role="img" xmlns="http://www.w3.org/2000/svg">
+    <title>Split-window detection of volcanic ash</title>
+    <desc>For water or ice cloud the 10.8 micron brightness temperature exceeds the 12.0 micron value, so the difference is positive. For volcanic ash the relationship reverses and the difference becomes negative, which is the ash signature.</desc>
+    <line x1="340" y1="20" x2="340" y2="210" stroke="#E2DFD6" stroke-width="1" />
+    <text x="175" y="34" fill="#185FA5" font-size="12" font-weight="bold" text-anchor="middle" font-family="sans-serif">Water / ice cloud</text>
+    <rect x="110" y="80" width="54" height="110" fill="#185FA5" /><text x="137" y="205" fill="#1A1917" font-size="11" text-anchor="middle" font-family="sans-serif">10.8 μm</text>
+    <rect x="200" y="116" width="54" height="74" fill="#6B6A65" /><text x="227" y="205" fill="#1A1917" font-size="11" text-anchor="middle" font-family="sans-serif">12.0 μm</text>
+    <text x="182" y="60" fill="#0F6E56" font-size="11" text-anchor="middle" font-family="sans-serif">BT(10.8) − BT(12.0) &gt; 0</text>
+    <text x="510" y="34" fill="#993C1D" font-size="12" font-weight="bold" text-anchor="middle" font-family="sans-serif">Volcanic ash</text>
+    <rect x="445" y="116" width="54" height="74" fill="#185FA5" /><text x="472" y="205" fill="#1A1917" font-size="11" text-anchor="middle" font-family="sans-serif">10.8 μm</text>
+    <rect x="535" y="80" width="54" height="110" fill="#993C1D" /><text x="562" y="205" fill="#1A1917" font-size="11" text-anchor="middle" font-family="sans-serif">12.0 μm</text>
+    <text x="517" y="60" fill="#993C1D" font-size="11" text-anchor="middle" font-family="sans-serif">BT(10.8) − BT(12.0) &lt; 0  → ash</text>
+  </svg>
+  <figcaption>The split-window (reverse-absorption) signature: meteorological cloud gives a positive 10.8−12.0 μm brightness-temperature difference; ash flips it negative.</figcaption>
+</figure>
+
+<div class="callout callout-note">
+  <div class="callout-label">Worked Example — reading the brightness-temperature difference</div>
+  Two adjacent cold cloud tops look identical in a single IR channel. Differencing the channels, one shows
+  <code>BT(10.8) − BT(12.0)</code> = +1.5 K and the other −2 K. The positive area is ordinary ice cloud; the
+  <strong>negative area is the ash plume</strong>. Other channel combinations (IR8.7−IR10.8, the solar IR3.9 vs
+  VIS0.6 reflectance) are used to confirm it, and a colour-composite product then renders the plume distinctly —
+  this is how the VAAC pinpoints the source and seeds the dispersion model.
+</div>
 
 <h2>Volcanic Ash Advisories (VAA)</h2>
 
@@ -157,13 +194,21 @@
 
 <p>Meteorological Watch Offices (MWOs) use the VAA polygons directly to issue SIGMETs for their respective Flight Information Regions (FIRs). Unlike thunderstorm SIGMETs, volcanic ash SIGMETs are not discretionary—if an ash plume is forecast to enter an FIR, the corresponding SIGMET must be issued.</p>
 
+<p>This all sits inside the <strong>International Airways Volcano Watch (IAVW)</strong>, and the message chain is worth
+  holding as a single picture: a state volcano observatory or satellite detection flags the eruption → the
+  <strong>VAAC</strong> runs the dispersion model and issues the <strong>VAA</strong> → the <strong>MWO</strong> turns
+  the relevant polygon into a <strong>WV SIGMET</strong> for its FIR (the WV subtype from Module 3) → ACC/NOTAM offices
+  issue a <strong>NOTAM/ASHTAM</strong> closing the airspace. Each link has a defined owner, which is why volcanic ash —
+  rare as it is over Israel — is drilled as a standing procedure rather than improvised.</p>
+
 <div class="lesson-summary">
   <h3>Key Takeaways</h3>
   <ul>
-    <li>Volcanic ash is invisible to standard aircraft weather radar because it lacks water content.</li>
-    <li>Ash melts in jet engines causing stalls, and its abrasive nature destroys outer structures and windshields.</li>
-    <li>Nine VAACs monitor global volcanism and run complex atmospheric dispersion models (like NAME) to track and forecast ash plumes.</li>
-    <li>VAAs provide the critical polygon coordinates that MWOs use to issue mandatory airspace-closing SIGMETs.</li>
+    <li>Volcanic ash is invisible to standard aircraft weather radar; it melts in jet engines (causing stalls), abrades the airframe, and clogs probes — the BA009 case in 1982 catalysed the modern system.</li>
+    <li>Satellites detect ash with the split-window method: meteorological cloud gives a positive 10.8−12.0 μm brightness-temperature difference, ash flips it negative (reverse absorption).</li>
+    <li>Nine VAACs run dispersion models (e.g. London's NAME) to forecast plume trajectories and issue VAAs with +6/+12/+18 h polygons.</li>
+    <li>The chain is fixed: detection → VAAC/VAA → MWO WV SIGMET → ACC NOTAM/ASHTAM, all under the International Airways Volcano Watch.</li>
+    <li>Volcanic-ash SIGMETs are mandatory, not discretionary — if a plume is forecast to enter the FIR, the WV SIGMET must be issued.</li>
   </ul>
 </div>
 </div>

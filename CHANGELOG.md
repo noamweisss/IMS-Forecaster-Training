@@ -57,6 +57,8 @@ from the source decks (internet additions, where needed, flagged for SME review)
   Objectives 4 → 6; takeaways 5 → 7; quiz 4 → 7; one new SVG (Figure 2.4). Only
   the carburettor-icing temperature envelope flagged in `module-2/REVIEW_NOTES.md`.
 
+- **Module 4, Lesson 4 (Volcanic Ash).** Expanded from the UK Met Office deck. Added the split-window (10.8−12.0 μm) brightness-temperature detection method with a diagram and worked example (the deck's core technique, previously absent), and the full IAVW dissemination chain (detection → VAAC/VAA → MWO WV SIGMET → NOTAM/ASHTAM). Objectives 3→5; takeaways 4→5; quiz 4→6. Source-grounded.
+
 - **Module 4, Lesson 3 (Tropical Storms).** Expanded from the 38-slide deck: added the development-stages/regional-naming table (depression/storm/hurricane-typhoon-cyclone), a basins-season-frequency table, the recurving-motion note, and the aviation forecaster's routing role (WC SIGMET not required in EUR). Objectives 3->5; takeaways 4->6; quiz 4->6. Source-grounded.
 
 - **Module 4, Lessons 1–2 (TAF).** Expanded from the 44-slide TAF Writing deck.
