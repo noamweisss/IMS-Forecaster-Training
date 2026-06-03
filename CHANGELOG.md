@@ -15,6 +15,16 @@ future course-to-mbz Claude skill) should read both.
 The "go deeper / more examples" pass Evgeny asked for, done module by module
 from the source decks (internet additions, where needed, flagged for SME review).
 
+- **Module 2, Lesson 3 (Convective Hazards & CB Clouds).** Expanded from the
+  83-slide CB deck — fully source-grounded. Added a labelled CB hazard
+  cross-section diagram, coverage descriptors (isolated/occasional/frequent/
+  embedded), a dry-vs-wet microburst callout and altocumulus-castellanus
+  precursor, a new "Estimating the Cloud Top" section (IR brightness temperature
+  → sounding) with a diagram and worked example, and a "Convective Triggers in
+  Israel" section (sea-breeze convergence, pre-frontal gust fronts, orographic
+  lift, Red Sea Trough, and why convection resists nowcasting). Objectives 4 → 6;
+  takeaways 5 → 6; quiz 4 → 7; two new SVGs (Figures 3.3–3.4).
+
 - **Module 2, Lesson 2 (Aircraft Icing Hazards).** Expanded from the 61-slide
   Icing deck. Added an "effect on the aircraft" treatment (aerodynamic + air-data
   loss), the deck's tephigram icing-severity decision tree as a new flowchart

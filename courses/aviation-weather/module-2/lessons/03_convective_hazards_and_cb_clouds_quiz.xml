@@ -115,4 +115,91 @@
       <feedback format="html"><text></text></feedback>
     </answer>
   </question>
+
+  <question type="multichoice">
+    <name><text>L3-Q05 — Dry microburst recognition</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>On a hot afternoon a high-based convective cloud shows obvious virga but no rain reaching the ground, and reports mention ragged rings of blown dust below it. What hazard should you flag, and why is it easy to underestimate?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Rationale:</strong> Virga and dust rings beneath high-based convection are the signature of a dry microburst — a strong downdraft whose rain evaporates before reaching the surface. Because there is no heavy rain shaft, it looks benign, yet the surface outflow and low-level shear are as dangerous as a wet microburst. Doppler radar shows the low-level divergence couplet.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>A dry microburst — dangerous low-level shear despite no rain reaching the ground.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Nothing significant — without rain at the surface there is no microburst risk.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Clear-air turbulence from the jet stream descending to the surface.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Freezing rain, because virga is supercooled.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L3-Q06 — Cloud-top height from IR</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A CB anvil shows an infrared brightness temperature of about −58°C. How do you turn that into a useful cloud-top height, and what would a localised colder spot above the anvil indicate?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Rationale:</strong> Match the IR brightness temperature to the day's sounding (or model profile) to read off the height — −58°C lands near the tropopause for a typical profile, so the top is around FL380. A localised colder spot above the anvil is an overshooting top, marking the strongest updraft and a severe storm. IR temperature alone, without the sounding, does not give a height.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Match the IR temperature to the sounding to get the height; a colder spot above the anvil is an overshooting top (severe updraft).</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>The IR temperature in °C equals the height in thousands of feet directly.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A colder spot above the anvil means the storm is dissipating.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Brightness temperature cannot be related to height in any way.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L3-Q07 — Israeli convective trigger</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>It is a summer afternoon with an easterly background gradient over Israel. Which mechanism is the most likely trigger for coastal-plain convection, and what does it imply for nowcasting?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Rationale:</strong> The sea breeze penetrating inland against an easterly gradient sets up a low-level convergence line that focuses convection — a recurring Israeli trigger. Because such mesoscale convergence is poorly placed by models, the practical approach is to track the breeze front and cumulus field by nowcasting rather than trusting a single model run. It is not primarily orographic or frontal in this setup.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Sea-breeze convergence against the easterly gradient — track it by nowcasting, as models place it poorly.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Orographic lift over the central mountains, which governs coastal-plain storms.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A winter cold front, which is the only summer trigger in Israel.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>The semicircular rule, which forces convection to specific flight levels.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
 </quiz>

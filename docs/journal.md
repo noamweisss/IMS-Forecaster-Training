@@ -24,6 +24,26 @@ later reversed, add a new entry rather than editing the old one.
 ---
 
 <!-- New entries appended below -->
+## 2026-06-03 — V2 meteorology expansion: Module 2 Lesson 3 (convection & CB)
+
+**Context.** Lesson 3 had the life cycle, hazards and stability indices but
+under-used an 83-slide deck that is unusually rich on the operational and the
+local-to-Israel side.
+
+**Decision.** Added a labelled CB hazard cross-section, the warning coverage
+descriptors, the dry/wet microburst distinction (with the virga/dust cue) and
+altocumulus castellanus as a precursor, a cloud-top-from-IR section with a
+diagram and worked example, and — the highest-value add — a "Convective Triggers
+in Israel" section drawn straight from the deck (sea-breeze convergence, gust
+fronts, orographic foci, Red Sea Trough) plus the deck's candid point that
+convection resists model placement and timing. Fully source-grounded.
+
+**Why.** Two things a working IMS forecaster needs that the original lacked: a
+fast way to turn a satellite image into a top height, and the named local
+triggers that tell them where/when to look. Both came from the deck.
+
+---
+
 ## 2026-06-03 — V2 meteorology expansion: Module 2 Lesson 2 (icing)
 
 **Context.** Lesson 2 already covered SLW, rime/glaze, freezing rain, a
