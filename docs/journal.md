@@ -24,6 +24,23 @@ later reversed, add a new entry rather than editing the old one.
 ---
 
 <!-- New entries appended below -->
+## 2026-06-03 — V2 meteorology expansion: Module 4 Lesson 3 (tropical storms)
+
+**Context.** L3 already had the genesis criteria, Saffir-Simpson, RSMC/TCWC and the
+cone of uncertainty, but missed the deck's stage/naming progression and the
+basin/season climatology.
+
+**Decision.** Added a development-stages + regional-names table, a basins/season/
+frequency table, a short recurving-motion paragraph, and an explicit framing of the
+IMS forecaster's role (routing around the storm using RSMC advisories and ECMWF
+strike-probability products, not issuing a WC SIGMET). Source-grounded.
+
+**Why.** For an Israeli forecaster the operational truth is "you will never issue a
+TC warning, but you may route a long-haul flight around one" — worth stating
+plainly so the lesson lands as relevant rather than abstract.
+
+---
+
 ## 2026-06-03 — V2 meteorology expansion: Module 4 Lessons 1–2 (TAF)
 
 **Context.** Module 4's lessons are thin (~1,000–1,200 words) like Modules 1–2,
