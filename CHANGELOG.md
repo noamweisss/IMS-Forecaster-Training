@@ -15,6 +15,17 @@ future course-to-mbz Claude skill) should read both.
 The "go deeper / more examples" pass Evgeny asked for, done module by module
 from the source decks (internet additions, where needed, flagged for SME review).
 
+- **Module 2, Lesson 5 (Cloud Base & Top Forecasting).** Expanded from the
+  96-slide Nir Stav deck. Aligned the convective-base rule to the source's
+  **(T − Td)/3** (was /2.5) with a new diagram and worked example, plus the rule's
+  validity conditions and the CCL-from-morning-sounding method; deepened the
+  stratiform base (warm-front "factory", rain/scud lowering, marine inversion)
+  with a decoded real LLBG overnight sequence; added the IR top→height anchor
+  points (−35°C ≈ 30,000 ft) and a third IR limitation (regional lapse rates),
+  and a decoded real LLSD convective SPECI for reading bases/tops. Updated quiz
+  Q01 to the /3 rule; objectives 4 → 6; takeaways 5 → 6; quiz 4 → 7; one new SVG
+  (Figure 5.2). Source-grounded.
+
 - **Module 2, Lesson 4 (Visibility: Fog & Haze).** Expanded from the rich,
   Israel-specific Fog (132-slide) and Haze (69-slide) decks — fully
   source-grounded. Deepened "Measuring Visibility" (MOR = 5%-intensity range,

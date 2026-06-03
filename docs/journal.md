@@ -24,6 +24,28 @@ later reversed, add a new entry rather than editing the old one.
 ---
 
 <!-- New entries appended below -->
+## 2026-06-03 — V2 meteorology expansion: Module 2 Lesson 5 (cloud base & top)
+
+**Context.** The capstone lesson of Module 2 sat on a 96-slide deck and was only
+~800 words. It also carried a small discrepancy worth fixing.
+
+**Finding/Decision.** The lesson's convective-base rule used (T−Td)/2.5, but the
+source deck (and therefore what Evgeny teaches) uses **(T−Td)/3**. I made /3 the
+primary rule, kept the ~400 ft/°C variant as a noted alternative, and added the
+two validity conditions the deck stresses (ground-based convection; after the
+morning inversion is destroyed) plus the CCL method and the dry-air caveat. I
+also updated quiz Q01 to match. Deepened the stratiform side (warm-front
+factory, rain/scud, marine inversion) with a decoded real LLBG sequence, and the
+top side (IR anchor points −35°C≈30,000 ft, the regional-lapse-rate caveat, and a
+decoded LLSD convective SPECI). Source-grounded.
+
+**Why.** Leaving two different base formulas in the course (one in the lesson,
+/3 in the deck) is exactly the kind of inconsistency a sharp SME notices.
+Aligning to the deck removes it and the worked example makes the rule stick. This
+completes Module 2 — pausing for review before Module 3.
+
+---
+
 ## 2026-06-03 — V2 meteorology expansion: Module 2 Lesson 4 (fog & haze)
 
 **Context.** Lesson 4 was the lightest in Module 2 (~900 words) sitting on the
