@@ -258,48 +258,37 @@ def get_spa_template(course_data: dict, quiz_data: dict, merged_css: str) -> str
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{course_data['title']} — Course Preview</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+
 <style>
 /* ── Premium SPA Shell CSS ── */
 :root {{
-  --shell-bg: #f8fafc;
-  --shell-surface: #ffffff;
-  --shell-border: #e2e8f0;
-  --shell-text: #0f172a;
-  --shell-muted: #64748b;
+  --shell-bg: #ffffff;
+  --shell-surface: #f6f5f0;
+  --shell-border: #e2dfd6;
+  --shell-text: #1a1917;
+  --shell-muted: #6b6a65;
   --shell-accent: #185fa5;
   --shell-accent-hover: #12487e;
-  --shell-accent-light: #eff6ff;
+  --shell-accent-light: #e6f1fb;
   
-  --sidebar-bg: #0f172a;
-  --sidebar-text: #f8fafc;
-  --sidebar-border: #1e293b;
-  --sidebar-accent: #38bdf8;
-  --sidebar-accent-light: rgba(56, 189, 248, 0.1);
-  --sidebar-muted: #94a3b8;
+  --sidebar-bg: #f6f5f0;
+  --sidebar-text: #1a1917;
+  --sidebar-border: #e2dfd6;
+  --sidebar-accent: #185fa5;
+  --sidebar-accent-light: #e6f1fb;
+  --sidebar-muted: #6b6a65;
   
   --sidebar-w: 320px;
   --header-h: 56px;
   --transition-speed: 0.2s;
 }}
 
-body.dark-mode {{
-  --shell-bg: #0b0f19;
-  --shell-surface: #111827;
-  --shell-border: #1f2937;
-  --shell-text: #f1f5f9;
-  --shell-muted: #94a3b8;
-  --shell-accent: #3b82f6;
-  --shell-accent-hover: #60a5fa;
-  --shell-accent-light: #1e293b;
-}}
+
 
 *, *::before, *::after {{ box-sizing: border-box; }}
 body {{
   margin: 0;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background: var(--shell-bg);
   color: var(--shell-text);
   line-height: 1.7;
@@ -336,7 +325,7 @@ header.topbar {{
 }}
 
 .topbar-logo {{
-  font-family: 'Outfit', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-weight: 700;
   font-size: 1.25rem;
   color: var(--shell-accent);
@@ -365,25 +354,7 @@ header.topbar {{
   gap: 1rem;
 }}
 
-.theme-toggle {{
-  background: transparent;
-  border: 1px solid var(--shell-border);
-  border-radius: 8px;
-  width: 36px;
-  height: 36px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--shell-text);
-  transition: all var(--transition-speed);
-}}
 
-.theme-toggle:hover {{
-  background: var(--shell-accent-light);
-  border-color: var(--shell-accent);
-  color: var(--shell-accent);
-}}
 
 .preview-badge {{
   background: linear-gradient(135deg, #f59e0b, #d97706);
@@ -433,7 +404,7 @@ nav.sidebar {{
 }}
 
 .sidebar-header-item:hover {{
-  background: rgba(255,255,255,0.05);
+  background: rgba(0,0,0,0.04);
 }}
 
 .sidebar-header-item.active {{
@@ -467,7 +438,7 @@ nav.sidebar {{
 }}
 
 .module-header:hover {{
-  background: rgba(255,255,255,0.03);
+  background: rgba(0,0,0,0.03);
   color: var(--sidebar-text);
 }}
 
@@ -505,7 +476,7 @@ nav.sidebar {{
 }}
 
 .nav-subitem:hover {{
-  background: rgba(255,255,255,0.03);
+  background: rgba(0,0,0,0.03);
   color: var(--sidebar-text);
 }}
 
@@ -578,7 +549,7 @@ main.viewport {{
 
 /* ── Course Overview (Landing) ── */
 .landing-hero {{
-  background: linear-gradient(135deg, #1e40af 0%, #1e1b4b 100%);
+  background: linear-gradient(135deg, #185fa5 0%, #0f4a82 100%);
   color: #ffffff;
   padding: 3rem;
   border-radius: 16px;
@@ -587,7 +558,7 @@ main.viewport {{
 }}
 
 .landing-hero h1 {{
-  font-family: 'Outfit', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 2.25rem;
   margin: 0 0 0.75rem;
   line-height: 1.2;
@@ -648,7 +619,7 @@ main.viewport {{
 
 .card-header h3 {{
   margin: 0;
-  font-family: 'Outfit', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 1.15rem;
   color: var(--shell-accent);
 }}
@@ -699,7 +670,7 @@ main.viewport {{
 }}
 
 .quiz-header h1 {{
-  font-family: 'Outfit', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 1.8rem;
   margin: 0;
 }}
@@ -761,18 +732,10 @@ main.viewport {{
   color: #065f46;
 }}
 
-body.dark-mode .quiz-option.correct {{
-  color: #34d399;
-}}
-
 .quiz-option.incorrect {{
   border-color: #ef4444 !important;
   background: rgba(239, 68, 68, 0.08) !important;
   color: #991b1b;
-}}
-
-body.dark-mode .quiz-option.incorrect {{
-  color: #fca5a5;
 }}
 
 .quiz-feedback {{
@@ -891,7 +854,7 @@ body.dark-mode .quiz-option.incorrect {{
   <span class="topbar-course">{course_data['title']}</span>
   
   <div class="topbar-controls">
-    <button class="theme-toggle" onclick="toggleDarkMode()" title="Toggle Dark/Light Mode">🌓</button>
+
     <span class="preview-badge">PREVIEW</span>
   </div>
 </header>
@@ -963,14 +926,7 @@ function decodeHTML(b64Str) {{
   }}
 }}
 
-// Initialize theme
-if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {{
-  document.body.classList.add('dark-mode');
-}}
 
-function toggleDarkMode() {{
-  document.body.classList.toggle('dark-mode');
-}}
 
 function toggleSidebar() {{
   const sidebar = document.getElementById('sidebar');

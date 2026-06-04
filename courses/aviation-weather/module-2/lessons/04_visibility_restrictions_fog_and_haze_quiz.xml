@@ -115,4 +115,91 @@
       <feedback format="html"><text></text></feedback>
     </answer>
   </question>
+
+  <question type="multichoice">
+    <name><text>L4-Q05 — Decoding a fog SPECI</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Consider: <code>SPECI LLBG 152235Z VRB01KT 0050 R12/0175D R30/0125N FG VV001 20/18 Q1016 NOSIG=</code>. Which reading is correct?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Rationale:</strong> Prevailing visibility is 50 m; R12/0175D means RVR on runway 12 is 175 m and decreasing; VV001 is a vertical visibility of 100 ft (sky obscured); 20/18 is temperature/dew point, only 2°C apart — near saturation, consistent with fog. The 2°C dewpoint depression, not a wide spread, is the giveaway.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Visibility 50 m, RVR runway 12 175 m and decreasing, vertical visibility 100 ft, air near saturation (20/18).</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Visibility 50 km, RVR 175 km, cloud base 100 ft, air very dry.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Visibility 50 m, wind 12 kt gusting 30 kt, temperature 175°C.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Visibility 1,500 m in haze with a large dewpoint depression.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L4-Q06 — Fog vs dust from the METAR</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Eilat reports visibility falling from 8,000 m to 6,000 m with no significant cloud and temperature/dew point 25/01. Is this fog or dust, and what is the decisive clue?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Rationale:</strong> A dewpoint depression of 24°C means the air is extremely dry, which rules out fog (fog needs near-saturation). Falling visibility in bone-dry air under a Red Sea Trough is dust. The humidity (dewpoint depression) is the fastest discriminator between the two.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Dust — the 24°C dewpoint depression shows the air is far too dry for fog.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Fog — any falling visibility is by definition fog.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Fog — the warm 25°C temperature guarantees condensation.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Cannot tell without RVR; humidity is irrelevant to the cause.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L4-Q07 — Elevated-inversion fog trend</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Overnight, a stratus deck near a 0.5 km inversion base is observed lowering hour by hour at an Israeli inland field. What is happening, and how should the trend be forecast?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Rationale:</strong> With an elevated inversion, saturation begins at the inversion base as stratus, which then sinks and can reach the surface as fog by morning. The lowering deck is the signature, so the forecast should anticipate fog/low cloud reaching minima around dawn — not a clearing trend. A surface inversion, by contrast, builds fog upward from the ground.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Elevated-inversion fog: St forms at the inversion base and sinks, so expect it to reach the surface by dawn.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>The deck is lifting, so visibility will improve through the night.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>It is advection fog blowing in from the sea regardless of the inversion.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>It is dust subsiding under a ridge and unrelated to humidity.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
 </quiz>

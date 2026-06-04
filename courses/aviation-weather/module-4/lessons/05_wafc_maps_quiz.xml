@@ -145,4 +145,26 @@
     </answer>
   </question>
 
+
+  <question type="multichoice">
+    <name><text>L5-Q05 — Gridded CAT potential</text></name>
+    <questiontext format="html"><text><![CDATA[<p>A WAFS gridded CAT-potential field shows 5% along a leg at FL340. What does this mean and what should you do?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><strong>Rationale:</strong> The CAT-potential product is the probability of mountain-wave or wind-shear turbulence per 100 km; values at or above 4% indicate moderate or severe turbulence. At 5% you would brief MOD/SEV CAT and consider a level change or alert the dispatcher. It is not a guarantee-free or negligible value.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>≥4% means moderate-or-severe CAT — brief it and consider a level change.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>5% is negligible; no action is needed below 50%.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>It is the icing fraction, not turbulence.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>It is the CB horizontal extent in percent.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L5-Q06 — SWH vs SWM coverage</text></name>
+    <questiontext format="html"><text><![CDATA[<p>A flight will cruise at FL300 in a region needing detailed in-cloud icing information. Which SIGWX chart applies, and what is true about its coverage?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><strong>Rationale:</strong> FL300 lies in the SWH/SWM overlap (SWH FL250–630, SWM FL100–450). For detailed in-cloud icing you use the SWM, which is regional (not global) and carries the finer icing/turbulence detail the global SWH omits.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>The SWM (regional, FL100–450) — it carries the detailed in-cloud icing the global SWH omits.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>The SWH, which is regional and includes the most icing detail.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Neither; FL300 is below all SIGWX charts.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>The SWM, which is a global dataset like the SWH.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+  </question>
 </quiz>

@@ -145,4 +145,26 @@
     </answer>
   </question>
 
+
+  <question type="multichoice">
+    <name><text>L3-Q05 — Stage and regional name</text></name>
+    <questiontext format="html"><text><![CDATA[<p>A system in the western North Pacific has sustained winds of 80 kt. What is its stage and the correct regional name?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><strong>Rationale:</strong> At &ge; 64 kt the system is at hurricane strength; in the western North Pacific that intensity is called a typhoon. In the Atlantic/E Pacific it would be a hurricane, and in the Indian Ocean/S Pacific a cyclone. Below 34 kt it would be a depression; 34&ndash;63 kt a tropical storm.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>Hurricane-strength (&ge; 64 kt); in the W Pacific it is called a typhoon.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Tropical storm; called a hurricane in the W Pacific.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Tropical depression; called a cyclone everywhere.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Super typhoon; the term applies from 64 kt upward.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L3-Q06 — The IMS forecaster and tropical cyclones</text></name>
+    <questiontext format="html"><text><![CDATA[<p>A long-haul flight your office supports will route near an active typhoon in the NW Pacific. What is the aviation forecaster's correct role here?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><strong>Rationale:</strong> A WC (tropical-cyclone) SIGMET is not required in the EUR region and the storm is far outside Israeli airspace, so the IMS forecaster does not issue a TC warning. The role is to read the responsible RSMC's advisories and ECMWF strike-probability products and support routing the flight clear of the storm and its outflow.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>Read RSMC advisories and strike-probability products to support routing clear of the storm — not to issue a WC SIGMET.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Issue a WC SIGMET for the typhoon from the Israeli MWO.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Nothing — tropical cyclones never affect any flight the IMS supports.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Reclassify it on the Saffir-Simpson scale before the flight departs.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+  </question>
 </quiz>

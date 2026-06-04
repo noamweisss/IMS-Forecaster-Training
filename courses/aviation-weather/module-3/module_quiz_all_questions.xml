@@ -215,6 +215,44 @@
     </answer>
   </question>
 
+
+  <question type="multichoice">
+    <name>
+      <text>L1-Q07 — Severity gate in practice</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;A morning forecast expects moderate icing in stratiform cloud at FL080 over the FIR. Which product, if any, is warranted?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; SIGMET icing requires SEV. Moderate icing falls through the SIGMET gate to AIRMET, which is the product for moderate-intensity, lower-level phenomena. It is a real hazard, just not a SIGMET-level one.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;An AIRMET — moderate icing is below the SIGMET (SEV) threshold.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;A WS SIGMET — all in-cloud icing requires a SIGMET.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;An AD WRNG — icing is an aerodrome product.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Nothing — moderate icing is never warned.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L1-Q08 — SIGMET subtype designator</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;A VAAC reports a volcanic ash cloud drifting into your FIR. Which SIGMET subtype and WMO data-type designator apply, and does a severity qualifier gate it?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; Volcanic ash uses the WV (volcanic-ash) SIGMET, carrying the data-type designator WV in the WMO header, and it has no severity threshold — any detection triggers it (unlike TS/TURB/ICE which need a qualifier). WS is the general SIGMET; WC is for tropical cyclones.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;WV SIGMET (designator WV); no severity threshold — any detection triggers.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;WS SIGMET (designator WS); only if the ash is "severe".&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;WC SIGMET (designator WC); gated by wind speed.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;No SIGMET; volcanic ash is only an aerodrome warning.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+  </question>
 <question type="multichoice">
     <name>
       <text>L2-Q01 — Decoding T1T2 in an arriving bulletin</text>
@@ -431,6 +469,44 @@
     </answer>
   </question>
 
+
+  <question type="multichoice">
+    <name>
+      <text>L2-Q07 — Decoding SIGMET coordinates</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;A SIGMET polygon includes the point &lt;code&gt;N3623 E03515&lt;/code&gt;. How is this read?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; Coordinates are latitude then longitude in degrees and minutes: N3623 = 36°23′N, E03515 = 035°15′E. Latitude uses two digits of degrees, longitude three. It is not decimal degrees, and the order is always lat/long.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;36°23′N, 035°15′E (latitude then longitude, degrees and minutes).&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;36.23°N, 35.15°E (decimal degrees).&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;035°15′E, 36°23′N (longitude then latitude).&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;3623 m north, 3515 m east of the FIR centre.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L2-Q08 — Constructing the cancellation</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;The phenomenon in &lt;code&gt;YUDD SIGMET 5 VALID 101200/101600 YUSO-&lt;/code&gt; has ended early, at 1430. Which line correctly cancels it?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; The cancellation is a new SIGMET (next sequence number, 6) issued by the same MWO, valid from the cancellation time to the original end time, and it references the cancelled SIGMET's number AND its original validity: &lt;code&gt;YUDD SIGMET 6 VALID 101430/101600 YUSO- CNL SIGMET 5 101200/101600&lt;/code&gt;. Both the number and the original validity are required so there is no ambiguity about which message is being withdrawn.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;&lt;code&gt;YUDD SIGMET 6 VALID 101430/101600 YUSO- CNL SIGMET 5 101200/101600&lt;/code&gt;&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;&lt;code&gt;YUDD SIGMET 5 CNL&lt;/code&gt; (number only, no validity).&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Simply let SIGMET 5 expire at 1600; no cancellation is ever issued.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;&lt;code&gt;YUDD SIGMET 6 VALID 101430/101600 YUSO-&lt;/code&gt; with no reference to SIGMET 5.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+  </question>
 <question type="multichoice">
     <name>
       <text>L3-Q01 — Distinguishing OCNL from FRQ</text>
@@ -647,6 +723,44 @@
     </answer>
   </question>
 
+
+  <question type="multichoice">
+    <name>
+      <text>L3-Q07 — AIRMET vs SIGMET by coverage</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Thunderstorms are forecast over about 60% of a FIR sub-area with gaps between cells. Which product and qualifier apply?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; 60% coverage with gaps is OCNL (50&amp;ndash;75%), an AIRMET qualifier. FRQ (&amp;gt;75%, little or no separation) is what would promote it to a SIGMET. The choice is driven by coverage fraction, not by cell intensity or reflectivity.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;AIRMET, OCNL TS — 50&amp;ndash;75% coverage with gaps.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;SIGMET, FRQ TS — any thunderstorm coverage is a SIGMET.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;AIRMET, ISOL TS — coverage below 50%.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;No message — thunderstorms are only ever in the TAF.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L3-Q08 — AIRMET-only phenomenon</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Widespread visibility below 5 km in haze is forecast across a low-level FIR sub-area. Why is this an AIRMET phenomenon with no SIGMET equivalent?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; Visibility below 5 km (like ceiling below 1000 ft, surface wind &amp;ge;30 kt, and extensive mountain obscuration) is inherently a low-level, general-aviation/rotorcraft hazard, so it appears only on the AIRMET list. SIGMET phenomena are the higher-intensity en-route hazards to all aircraft. Cause (haze, fog, dust, precip) does not matter — the effect on visibility does.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;Low-level visibility is an AIRMET-only phenomenon affecting GA/rotorcraft; SIGMET has no equivalent.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;It should be a WS SIGMET because all visibility hazards are SIGMETs.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;It is only ever an aerodrome warning, never an AIRMET.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Haze is not a recognised obscuration, so no message is issued.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+  </question>
 <question type="multichoice">
     <name>
       <text>L4-Q01 — Thunderstorm AD WRNG distance threshold</text>
@@ -899,4 +1013,23 @@
     </answer>
   </question>
 
+
+  <question type="multichoice">
+    <name>
+      <text>L4-Q08 — Low-level jet WS WRNG trigger</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Overnight at Ben Gurion the surface wind is 5 kt, but a 35 kt jet sits at about 900 ft AGL on the approach, with a &amp;gt;30 kt surface-to-geostrophic difference. Is a WS WRNG warranted, and on what basis?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; The IMS primary trigger is a low-level jet with peak &amp;ge; 30 kt and its axis below 2000 ft AGL — both met here (35 kt at ~900 ft), with the surface-to-geostrophic difference as a supporting indicator. Issue a WS WRNG (e.g. &lt;code&gt;WS APCH RWYnn FCST&lt;/code&gt;). The light surface wind does not exempt it; that vertical shear is exactly the hazard to an aircraft descending through the jet.&lt;/p&gt;</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;Yes — peak &amp;ge; 30 kt with the axis below 2000 ft AGL meets the WS WRNG trigger.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;No — the 5 kt surface wind is too light to warrant any warning.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;No — wind shear is only warned when a pilot reports it.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Yes, but only as a SIGMET, since it is an en-route jet.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+  </question>
 </quiz>

@@ -44,4 +44,37 @@
     <answer fraction="0" format="html"><text><![CDATA[<p>Aircraft are legally required to fly through the thunderstorm rather than violate a Restricted Area under any circumstances.</p>]]></text></answer>
   </question>
 
+  <question type="multichoice">
+    <name><text>L3-Q05 — Product mapping to the control hierarchy</text></name>
+    <questiontext format="html"><text><![CDATA[<p>An inbound airliner is descending through the TMA and CTR for an approach. Which meteorological product is most directly decisive for this phase, given where the aircraft now is in the control hierarchy?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><strong>Rationale:</strong> The TMA and CTR are the terminal layers where aircraft are slow, low and configured to land, so the TAF/TREND and any aerodrome or wind-shear warning are decisive. SIGMET and AIRMET serve the whole FIR and matter more en-route; the WAFS SIGWX chart is a strategic en-route product, not an approach tool.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>The terminal aerodrome forecast (TAF/TREND) and any wind-shear warning for the CTR.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>The FIR-wide SIGMET, because it overrides terminal products on approach.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>The WAFS global SIGWX chart, because it covers all phases of flight equally.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>The area AIRMET, because terminal forecasts do not apply inside a CTR.</p>]]></text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L3-Q06 — VMC minima and class</text></name>
+    <questiontext format="html"><text><![CDATA[<p>A CVFR flight plans to cruise at 2,500 ft AMSL. Your forecast is visibility 6 km, scattered cloud base 2,800 ft, broken 3,500 ft. In which case is the flight legal under VMC minima?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><strong>Rationale:</strong> Visibility (6 km) meets the 5 km low-level requirement in both classes. The difference is cloud clearance: Class D (controlled) requires 1,000 ft vertical / 1,500 m horizontal from cloud — at 2,500 ft only 300 ft below a 2,800 ft base, that fails. Class G near the surface requires only "clear of cloud, in sight of the surface," which the same conditions satisfy. Same weather, different verdict by class.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>Legal in Class G but not in Class D, because of the cloud-clearance requirement.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Legal in both, because 6 km visibility satisfies all VMC minima regardless of cloud.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Legal in Class D but not in Class G, because controlled airspace has lower minima.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Illegal in both, because VFR is never permitted above 2,000 ft AMSL.</p>]]></text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L3-Q07 — Semicircular rule and level selection</text></name>
+    <questiontext format="html"><text><![CDATA[<p>A flight on a magnetic track of 090° (eastbound) wants the strongest available tailwind. Your upper-wind grid shows the best wind at FL300, with FL310 and FL290 slightly weaker. Which level can the dispatcher actually file, and why?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><strong>Rationale:</strong> Under the semicircular rule, eastbound tracks (000°–179°) use odd flight levels. FL300 is even (westbound) and is not available to this flight, so the dispatcher must choose among odd levels — FL290 or FL310 — picking whichever your grid shows as the better wind. This is why the upper-wind forecast is read in direction-constrained steps.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>Not FL300 — eastbound uses odd levels, so the choice is FL290 or FL310, whichever has the better wind.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>FL300, because the rule only applies above FL310.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>FL300, because the best forecast wind always overrides the semicircular rule.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Any even level, because eastbound flights are assigned even levels.</p>]]></text></answer>
+  </question>
+
 </quiz>

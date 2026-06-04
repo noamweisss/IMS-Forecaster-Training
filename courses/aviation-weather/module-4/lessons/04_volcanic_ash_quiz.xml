@@ -145,4 +145,26 @@
     </answer>
   </question>
 
+
+  <question type="multichoice">
+    <name><text>L4-Q05 — Split-window ash detection</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Two cold cloud tops look identical in a single IR channel. Differencing the channels, area A shows BT(10.8) − BT(12.0) = +1.5 K and area B shows −2 K. Which is the volcanic ash, and why?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><strong>Rationale:</strong> Meteorological (water/ice) cloud absorbs slightly more at 12.0 μm, giving a positive 10.8−12.0 μm difference. Volcanic ash shows reverse absorption, flipping the difference negative. So area B (−2 K) is the ash plume; area A (+1.5 K) is ordinary ice cloud.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>Area B — ash reverses the absorption, making BT(10.8) − BT(12.0) negative.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Area A — ash always gives the larger positive difference.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Neither — the split-window method cannot distinguish ash from cloud.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Both are ash; the sign of the difference is irrelevant.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L4-Q06 — The volcanic-ash message chain</text></name>
+    <questiontext format="html"><text><![CDATA[<p>An eruption is detected and its plume is forecast to drift into your FIR. Which sequence correctly routes the hazard to aircraft, and which step is the MWO's?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><strong>Rationale:</strong> Under the International Airways Volcano Watch the chain is: detection → VAAC issues the VAA (with dispersion-model polygons) → the MWO issues the WV SIGMET for its FIR → ACC/NOTAM offices issue the NOTAM/ASHTAM. The MWO's specific job is the WV SIGMET; it does not run the dispersion model or issue the NOTAM.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>Detection → VAAC/VAA → MWO WV SIGMET → ACC NOTAM/ASHTAM; the MWO issues the WV SIGMET.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>The MWO runs the NAME dispersion model and issues the VAA itself.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>The airline issues the SIGMET directly from the cockpit.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>No message is issued because ash SIGMETs are discretionary.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+  </question>
 </quiz>

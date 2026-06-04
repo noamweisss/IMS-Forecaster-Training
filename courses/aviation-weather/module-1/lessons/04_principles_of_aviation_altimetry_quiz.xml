@@ -33,4 +33,48 @@
     <answer fraction="0" format="html"><text><![CDATA[<p>Standard pressure altitude (density altitude)</p>]]></text></answer>
   </question>
 
+  <question type="multichoice">
+    <name><text>L4-Q04 — Pressure surfaces and temperature</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Two aircraft fly the same indicated flight level on the standard setting — one over a warm air mass, one over a cold air mass. How do their true altitudes compare, and why?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><strong>Rationale:</strong> Warm air is less dense and expands, so its pressure surfaces sit higher. A given pressure (hence a given flight level) corresponds to a higher true altitude over the warm mass and a lower true altitude over the cold mass. This is the physical root of cold-temperature altimeter error.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>The aircraft over the warm mass is truly higher; warm air expands, lifting the pressure surfaces.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>The aircraft over the cold mass is truly higher; cold air expands, lifting the pressure surfaces.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Their true altitudes are identical, because the flight level fixes true altitude regardless of temperature.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Temperature affects only ground speed, not true altitude, so there is no difference.</p>]]></text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L4-Q05 — QNH vs synoptic QFF</text></name>
+    <questiontext format="html"><text><![CDATA[<p>On a very hot day a forecaster is asked for the altimeter setting (QNH) for an aerodrome. Why is it incorrect to simply pass the mean-sea-level pressure plotted on the synoptic chart (QFF)?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><strong>Rationale:</strong> QFF reduces station pressure to sea level using the <em>actual</em> air-column temperature, whereas QNH reduces it assuming a <em>standard</em> atmosphere. On a hot (or cold) day the two values diverge, so handing over the synoptic QFF would set the pilot's altimeter to the wrong datum. Producing the correct QNH is a meteorologist's responsibility.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>QFF uses the actual column temperature while QNH assumes a standard atmosphere, so the two diverge on a hot day.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>QFF and QNH are identical, so either may be used interchangeably.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>QFF is referenced to the airfield elevation, not sea level, so it reads height not altitude.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>QFF is only valid above the transition altitude, where Flight Levels are used.</p>]]></text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L4-Q06 — Cold-temperature correction</text></name>
+    <questiontext format="html"><text><![CDATA[<p>An aircraft holds an indicated 2,000&nbsp;ft above the altimeter datum in air about 20&nbsp;&deg;C colder than ISA. Using ~4&nbsp;ft per &deg;C per 1,000&nbsp;ft, roughly what is its true altitude, and what is the operational point?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><strong>Rationale:</strong> Correction = 4 &times; 20 &times; 2 = 160&nbsp;ft, so true altitude is ~1,840&nbsp;ft — the altimeter over-reads in cold air. Because the error grows with cold and height, crews must <em>add</em> a cold-temperature correction to published minimums to preserve terrain/obstacle clearance, especially in mountainous terrain.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>~1,840&nbsp;ft — the altimeter over-reads in cold air, so a correction must be added to minimums.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>~2,160&nbsp;ft — the altimeter under-reads in cold air, giving extra clearance.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Exactly 2,000&nbsp;ft — temperature does not affect indicated altitude.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>~1,840&nbsp;ft, but the error is negligible and no correction is ever applied.</p>]]></text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L4-Q07 — Israeli transition procedures</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Under the Israeli AIP (ENR 1.7), an aircraft is climbing out of Ben Gurion through 9,000&nbsp;ft. Which altimeter setting should it be using, and when does it change to Standard?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><strong>Rationale:</strong> In Israel the Transition Altitude is 10,500&nbsp;ft, so below it the aircraft flies on QNH (reading altitude). Passing the Transition Altitude on climb it sets Standard (1013.2&nbsp;hPa) and reports Flight Levels; on descent it returns to QNH at the Transition Level (FL115). At 9,000&nbsp;ft it is still on QNH.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>QNH now, changing to Standard at the Transition Altitude of 10,500&nbsp;ft.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Standard now, changing to QNH at 10,500&nbsp;ft.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>QFE now, changing to QNH at FL115.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>QNH now, changing to Standard at 18,000&nbsp;ft.</p>]]></text></answer>
+  </question>
+
 </quiz>

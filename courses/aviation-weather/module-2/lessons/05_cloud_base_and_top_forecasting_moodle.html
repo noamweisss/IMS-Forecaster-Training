@@ -66,9 +66,11 @@
 <div class="objectives">
   <strong>By the end of this lesson you will be able to:</strong>
   <ul>
-    <li>Estimate cloud base heights using temperature and dew point depressions</li>
-    <li>Determine cloud top altitudes from satellite imagery and sounding data</li>
-    <li>Forecast cloud coverage and layer thickness for aviation planning</li>
+    <li>Estimate convective cloud base from the surface T−Td spread, and state when the rule is valid</li>
+    <li>Use the morning sounding (CCL) to anticipate the afternoon convective base</li>
+    <li>Explain how stratiform bases lower with approaching fronts, rain and the marine inversion</li>
+    <li>Determine cloud top altitudes from satellite IR and radar echo tops, with their limitations</li>
+    <li>Read cloud base and top out of real METAR/SPECI reports</li>
     <li>Apply local topographical knowledge to sub-grid cloud formation</li>
   </ul>
 </div>
@@ -77,13 +79,43 @@
 <p>Cloud base height is a critical parameter for terminal operations and flight planning. The mechanism for determining CBH differs between convective and stratiform (layered) clouds.</p>
 
 <h3>Convective Clouds (Cumulus/TCU/CB)</h3>
-<p>For clouds triggered by surface heating, the base is located at the <strong>Lifting Condensation Level (LCL)</strong>. A simple rule of thumb for estimation is based on the surface temperature (T) and dew point (Td) in Celsius:</p>
+<p>For clouds triggered by surface heating, the base sits at the <strong>convective condensation level</strong>. The
+  source course's working rule comes straight from the surface temperature (T) and dew point (Td):</p>
 
 <div class="callout callout-key">
-  <div class="callout-label">Formula</div>
-  <strong>Base (ft) ≈ (T - Td) / 2.5 * 1000</strong> <br>
-  <em>Note: Some models use 3°C per 1,000ft for dry adiabatic cooling of the T-Td spread.</em>
+  <div class="callout-label">Convective Base Rule</div>
+  <strong>Base (thousands of ft) ≈ (T − Td) / 3</strong>, with T and Td in °C — i.e. the spread closes at about
+  3&nbsp;°C per 1,000&nbsp;ft as the rising parcel cools dry-adiabatically while its dew point falls more slowly.
+  (A common international variant uses ~400&nbsp;ft per °C, i.e. ÷2.5; use whichever your office verifies against.)
 </div>
+
+<p>The rule is only reliable under two conditions, both from the source: <strong>(1)</strong> the convection starts
+  from the ground, and <strong>(2)</strong> it is late morning to afternoon, after the nocturnal inversion has been
+  destroyed by heating. To get ahead of the day, read the <strong>convective condensation level (CCL)</strong> off
+  the morning sounding: it projects the base the afternoon's heating will produce. One caution — if the rising
+  thermals punch into a very dry layer aloft, cloud may struggle to form at all despite a "favourable" surface
+  spread.</p>
+
+<figure>
+  <svg viewBox="0 0 680 240" role="img" xmlns="http://www.w3.org/2000/svg">
+    <title>Convective cloud base from the surface temperature–dewpoint spread</title>
+    <desc>A surface parcel rises along the dry adiabat; its temperature and dew point converge at the condensation level, the cloud base, estimated as the spread (T minus Td) divided by 3 in thousands of feet.</desc>
+    <defs><marker id="cb5" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0,9 3.5,0 7" fill="#185FA5" /></marker></defs>
+    <rect x="60" y="196" width="560" height="14" fill="#E2DFD6" />
+    <line x1="120" y1="196" x2="120" y2="30" stroke="#6B6A65" stroke-width="1.2" />
+    <line x1="120" y1="70" x2="560" y2="70" stroke="#0F6E56" stroke-width="1.5" stroke-dasharray="5 3" />
+    <text x="128" y="64" fill="#0F6E56" font-size="11" font-family="sans-serif">condensation level = cloud base</text>
+    <path d="M300,70 Q310,40 345,46 Q370,30 400,46 Q435,42 440,70 Z" fill="#F6F5F0" stroke="#6B6A65" stroke-width="1.5" />
+    <line x1="250" y1="194" x2="250" y2="74" stroke="#185FA5" stroke-width="2" marker-end="url(#cb5)" />
+    <text x="198" y="142" fill="#185FA5" font-size="11" font-family="sans-serif" transform="rotate(-90 198 142)">parcel rises (dry adiabat)</text>
+    <text x="320" y="186" fill="#993C1D" font-size="12" font-family="sans-serif">T = 30°C</text>
+    <text x="440" y="186" fill="#185FA5" font-size="12" font-family="sans-serif">Td = 12°C</text>
+    <rect x="470" y="92" width="180" height="56" rx="6" fill="#EEEDFE" stroke="#534AB7" stroke-width="1.2" />
+    <text x="560" y="114" fill="#1A1917" font-size="12" font-weight="bold" text-anchor="middle" font-family="sans-serif">(30 − 12)/3 = 6</text>
+    <text x="560" y="132" fill="#1A1917" font-size="11" text-anchor="middle" font-family="sans-serif">≈ 6,000 ft base</text>
+  </svg>
+  <figcaption>Figure 5.2: The convective base rule — a surface spread of 18°C gives a base near 6,000 ft, valid for ground-based afternoon convection.</figcaption>
+</figure>
 
 <h3>Stratiform Clouds (Stratus/Altostratus)</h3>
 <p>Layered clouds are typically driven by moisture advection or large-scale lifting (e.g., warm fronts). Their base is determined by the level at which a moist layer becomes saturated. In coastal regions like Israel, the base of the <strong>marine inversion</strong> often acts as a trap for moisture, defining the Stratus base.</p>
@@ -108,22 +140,53 @@
   <figcaption>Figure 5.1: Conceptual sounding showing cloud base at the level where T and Td converge.</figcaption>
 </figure>
 
+<p>A stratiform base is a moisture story, not a heating story, and three patterns recur. A warm front is a "factory"
+  for layered cloud: as it approaches with moisture aloft, the deck thickens and its base <strong>lowers</strong> —
+  the passage of an upper-level ridge often heralds more high cloud and a falling base. <strong>Rain lowers the
+  base</strong> too: precipitation saturates the sub-cloud air and ragged "scud" forms beneath the main deck. And a
+  low stratus deck sits at the base of the <strong>marine inversion</strong>, which caps the moist layer.</p>
+
+<div class="callout callout-note">
+  <div class="callout-label">Worked Example — an overnight base in the METARs (LLBG)</div>
+  <code>SPECI LLBG 120310Z 15007KT 5000 BR BKN018 23/20</code> →
+  <code>METAR 120350Z 16007KT 5000 BR SCT020 23/20</code> →
+  <code>METAR 120450Z 18007KT 7000 SCT020 25/21</code>.<br>
+  Read forward in time: the early-hours broken deck at 1,800&nbsp;ft with mist (BR) and a 3°C spread (23/20) lifts and
+  thins to scattered at 2,000&nbsp;ft, and by 0450Z visibility has recovered to 7,000&nbsp;m as morning heating widens
+  the spread to 25/21. This is the textbook post-sunrise improvement of a moisture-trapped coastal base.
+</div>
+
 <h2>Determining Cloud Top Height</h2>
 <p>Knowing the vertical extent of a cloud layer allows pilots to determine if they can fly "over the top" or if they will remain in IMC (Instrument Meteorological Conditions) throughout a climb or descent.</p>
 
 <h3>Satellite IR Estimation</h3>
 <p>Infrared (IR) satellite sensors measure the <strong>brightness temperature</strong> of the cloud top. Since temperature typically decreases with height in the troposphere, we can map this temperature back to a specific altitude using a recent sounding (tephigram).</p>
 
+<p>The conversion is a direct read-off the sounding. On a representative profile the source course gives anchor points
+  of about <strong>−35°C ≈ 30,000&nbsp;ft</strong> and <strong>+2°C ≈ 5,000&nbsp;ft</strong>, so a −50°C anvil is
+  higher still — but the exact mapping shifts with the local lapse rate, which is the third reason to use a recent,
+  regional sounding rather than a fixed table.</p>
+
 <div class="callout callout-warning">
   <div class="callout-label">IR Limitations</div>
   <ul>
-    <li><strong>Thin Cirrus:</strong> Higher-level thin clouds allow radiation from warmer layers below to pass through, causing the IR sensor to underestimate the cloud top height.</li>
-    <li><strong>Partial Coverage:</strong> If a pixel is only partially covered by cloud, the resulting temperature is an average of the cloud top and the ground.</li>
+    <li><strong>Thin Cirrus:</strong> Higher-level thin clouds let radiation from warmer layers below pass through, so the IR sensor reads a temperature that is too warm and underestimates the top height.</li>
+    <li><strong>Partial Coverage:</strong> A pixel only partly filled by cloud (not 8/8) returns a temperature averaged between the cloud top and the surface.</li>
+    <li><strong>Regional Lapse Rates:</strong> The temperature→height conversion differs from one air mass to another; a single fixed table will mislead.</li>
   </ul>
 </div>
 
 <h3>Radar Echo Tops</h3>
 <p>Weather radar provides a more direct measurement of the vertical extent of precipitation-bearing clouds. The "Echo Top" product indicates the highest altitude at which a specific reflectivity threshold (usually 18 dBZ) is detected.</p>
+
+<div class="callout callout-key">
+  <div class="callout-label">Worked Example — reading base and top from a convective SPECI (LLSD)</div>
+  <code>SPECI LLSD 161038Z 23020G30KT 8000 TS SHRA SCT015CB BKN030 17/15 Q1015=</code><br>
+  Sde Dov: wind 230° at 20 kt gusting 30 (gust-front signature), 8&nbsp;km visibility in a thunderstorm with rain
+  showers, <strong>scattered CB based at 1,500&nbsp;ft</strong> (SCT015CB) under a broken layer at 3,000&nbsp;ft, and a
+  near-saturated 17/15. The cloud groups give the base directly; the CB top itself is what you would then estimate
+  from radar echo tops or the satellite IR, since the report only states the bases.
+</div>
 
 <h2>Local Effects in Israel</h2>
 <p>Topography plays a major role in local cloud forecasting:</p>
@@ -135,11 +198,12 @@
 <div class="lesson-summary">
   <h3>Key Takeaways</h3>
   <ul>
-    <li>Convective cloud bases can be estimated using surface T and Td spreads.</li>
-    <li>Stratiform bases are often tied to inversion heights or moisture advection layers.</li>
-    <li>Cloud tops are estimated via satellite IR brightness temperature or radar echo tops.</li>
-    <li>Satellite IR can be misleading for thin cirrus or sub-pixel cloud features.</li>
-    <li>Local topography significantly modifies cloud bases via orographic lifting.</li>
+    <li>Convective base ≈ (T − Td)/3 in thousands of feet — valid only for ground-based, late-morning-to-afternoon convection; the morning sounding's CCL projects the afternoon base.</li>
+    <li>Stratiform bases follow moisture: they lower as a warm front/upper ridge approaches, lower further in rain (scud), and sit at the marine-inversion base in coastal stratus.</li>
+    <li>Cloud tops come from satellite IR brightness temperature mapped through a recent sounding, or from radar echo tops (≈18 dBZ).</li>
+    <li>IR top estimates fail on thin cirrus, partially filled pixels, and across differing regional lapse rates — always use a local sounding.</li>
+    <li>The cloud groups in a METAR/SPECI give the base directly (e.g., SCT015CB = 1,500 ft); read base and top out of real reports.</li>
+    <li>Local topography modifies bases via orographic lifting and the marine inversion height.</li>
   </ul>
 </div>
 </div>

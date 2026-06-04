@@ -217,4 +217,42 @@
     </answer>
   </question>
 
+
+  <question type="multichoice">
+    <name>
+      <text>L3-Q07 — AIRMET vs SIGMET by coverage</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Thunderstorms are forecast over about 60% of a FIR sub-area with gaps between cells. Which product and qualifier apply?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Rationale:</strong> 60% coverage with gaps is OCNL (50&ndash;75%), an AIRMET qualifier. FRQ (&gt;75%, little or no separation) is what would promote it to a SIGMET. The choice is driven by coverage fraction, not by cell intensity or reflectivity.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>AIRMET, OCNL TS — 50&ndash;75% coverage with gaps.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>SIGMET, FRQ TS — any thunderstorm coverage is a SIGMET.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>AIRMET, ISOL TS — coverage below 50%.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>No message — thunderstorms are only ever in the TAF.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L3-Q08 — AIRMET-only phenomenon</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Widespread visibility below 5 km in haze is forecast across a low-level FIR sub-area. Why is this an AIRMET phenomenon with no SIGMET equivalent?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Rationale:</strong> Visibility below 5 km (like ceiling below 1000 ft, surface wind &ge;30 kt, and extensive mountain obscuration) is inherently a low-level, general-aviation/rotorcraft hazard, so it appears only on the AIRMET list. SIGMET phenomena are the higher-intensity en-route hazards to all aircraft. Cause (haze, fog, dust, precip) does not matter — the effect on visibility does.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>Low-level visibility is an AIRMET-only phenomenon affecting GA/rotorcraft; SIGMET has no equivalent.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>It should be a WS SIGMET because all visibility hazards are SIGMETs.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>It is only ever an aerodrome warning, never an AIRMET.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Haze is not a recognised obscuration, so no message is issued.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+  </question>
 </quiz>

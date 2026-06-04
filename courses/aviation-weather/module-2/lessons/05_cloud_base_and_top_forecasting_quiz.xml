@@ -3,28 +3,28 @@
   <question type="multichoice">
     <name><text>L5-Q01 — Convective Cloud Base Estimation</text></name>
     <questiontext format="html">
-      <text><![CDATA[<p>At a coastal station, the surface temperature is 28°C and the dew point is 20°C. Using the standard adiabatic lapse rate approximation for the T-Td spread, what is the estimated base of the convective cumulus clouds?</p>]]></text>
+      <text><![CDATA[<p>On a summer afternoon the surface temperature is 30°C and the dew point is 12°C, with ground-based convection. Using the source course's convective-base rule, what is the estimated cumulus base?</p>]]></text>
     </questiontext>
     <generalfeedback format="html">
-      <text><![CDATA[<p><strong>Rationale:</strong> A common rule of thumb for convective cloud bases is (T - Td) / 2.5 * 1000. Here, (28 - 20) = 8. Then 8 / 2.5 = 3.2. Multiplied by 1000, the estimated base is 3,200 feet AGL.</p>]]></text>
+      <text><![CDATA[<p><strong>Rationale:</strong> The rule is base (thousands of ft) ≈ (T − Td)/3. Here (30 − 12)/3 = 6, i.e. about 6,000 ft. The rule assumes ground-based convection in the late-morning-to-afternoon window after the nocturnal inversion is destroyed; outside those conditions it should not be trusted.</p>]]></text>
     </generalfeedback>
     <defaultgrade>1</defaultgrade>
     <single>true</single>
     <shuffleanswers>true</shuffleanswers>
     <answer fraction="100" format="html">
-      <text><![CDATA[<p>3,200 feet AGL</p>]]></text>
+      <text><![CDATA[<p>≈ 6,000 ft</p>]]></text>
       <feedback format="html"><text></text></feedback>
     </answer>
     <answer fraction="0" format="html">
-      <text><![CDATA[<p>800 feet AGL</p>]]></text>
+      <text><![CDATA[<p>≈ 1,800 ft</p>]]></text>
       <feedback format="html"><text></text></feedback>
     </answer>
     <answer fraction="0" format="html">
-      <text><![CDATA[<p>5,500 feet AGL</p>]]></text>
+      <text><![CDATA[<p>≈ 14,000 ft</p>]]></text>
       <feedback format="html"><text></text></feedback>
     </answer>
     <answer fraction="0" format="html">
-      <text><![CDATA[<p>1,500 feet AGL</p>]]></text>
+      <text><![CDATA[<p>≈ 600 ft</p>]]></text>
       <feedback format="html"><text></text></feedback>
     </answer>
   </question>
@@ -112,6 +112,93 @@
     </answer>
     <answer fraction="0" format="html">
       <text><![CDATA[<p>No change will occur as long as the temperature remains above 10°C.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L5-Q05 — When the convective-base rule fails</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A forecaster applies base ≈ (T − Td)/3 at 07:00 local on a clear winter morning with a strong surface inversion still in place. Why is the estimate unreliable here?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Rationale:</strong> The rule assumes ground-based convection in the late-morning-to-afternoon window after the nocturnal inversion has been destroyed by heating. At 07:00 with the inversion intact, surface parcels are not freely rising from the ground, so the surface T−Td spread does not represent the lifting condensation level. Use the morning sounding's CCL to project the afternoon base instead.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>The inversion is still intact, so convection is not yet ground-based — a precondition of the rule.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>The rule only works at night, not in the morning.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>The formula requires temperatures in Fahrenheit before 09:00.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>It is always exact, so the result must simply be rounded.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L5-Q06 — Stratiform base trend in rain</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>An approaching warm front brings rain, and the reported stratiform cloud base begins to lower with ragged fragments beneath the main deck. What is the mechanism?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Rationale:</strong> Rain falling into the sub-cloud layer saturates it, so condensation occurs lower down — producing ragged "scud" and an apparent lowering of the base. With a warm front, the deck also thickens and lowers as moisture is supplied aloft. It is not heating, orographic lift, or the marine inversion driving this.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Falling rain saturates the sub-cloud air, lowering the condensation level (scud).</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Daytime heating is raising the base.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>The marine inversion is lifting the deck.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Orographic descent is warming and drying the air.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L5-Q07 — Cloud-top IR pitfall</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A satellite IR image suggests a cloud top of only ~12,000 ft over a region known to have an active storm, but a thin cirrus veil overlies the area. Why might the IR underestimate the true top, and what confirms it?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Rationale:</strong> Thin cirrus is semi-transparent in the thermal IR, so radiation from warmer cloud and surface below leaks through and the sensor reads a temperature that is too warm — hence a top that is too low. Radar echo tops (or a localised cold spot/overshooting top) give the true vertical extent. Partial-pixel filling and differing regional lapse rates are the other IR caveats.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Thin cirrus lets warmer radiation through, so the IR reads too warm (too low); radar echo tops confirm the real top.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>IR always over-reads cloud tops; the storm is actually shallow.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Cirrus is warmer than the surface, so the reading is correct.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Radar cannot detect convective tops, so nothing can confirm it.</p>]]></text>
       <feedback format="html"><text></text></feedback>
     </answer>
   </question>

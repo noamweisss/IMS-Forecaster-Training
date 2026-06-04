@@ -79,9 +79,11 @@
 <div class="objectives">
   <strong>By the end of this lesson you will be able to:</strong>
   <ul>
-    <li>Distinguish between High-level (SWH) and Medium-level (SWM) SIGWX charts.</li>
+    <li>Distinguish between High-level (SWH) and Medium-level (SWM) SIGWX charts, and the Amendment 74 simplification.</li>
     <li>Decode standard aviation meteorological parameters (jetstreams, CAT, CBs) on WAFC maps.</li>
     <li>Differentiate between isolated, occasional, and frequent cumulonimbus coverage as defined by ICAO.</li>
+    <li>Interpret the gridded WAFS potential products (icing, CAT, in-cloud turbulence, CB) and their thresholds.</li>
+    <li>Map the standard pressure-level wind/temperature charts to their flight levels.</li>
   </ul>
 </div>
 
@@ -153,6 +155,28 @@
   <figcaption>Example WAFC symbology showing a 120-knot jetstream core at FL360 and an adjacent area of Moderate Clear Air Turbulence between FL280 and FL380.</figcaption>
 </figure>
 
+<p>Two refinements are worth knowing. A jetstream is drawn at core speeds <strong>&ge; 80 kt</strong>, but for a strong
+  jet (<strong>&ge; 120 kt</strong>) the chart also marks the <strong>depth of the 80-kt isotach</strong> at the point of
+  maximum core speed — a measure of how deep the fast flow, and its shear, extends. And since <strong>Amendment 74</strong>
+  to ICAO Annex 3, the high-level SIGWX chart has been <em>simplified</em>: fronts, occlusions and convergence zones
+  (including the ITCZ) and all non-CB cloud were removed from SWH, leaving the chart focused on the hazards that matter
+  at cruise — jets, CAT, CB and tropopause.</p>
+
+<p>Alongside the SIGWX charts, the WAFS issues <strong>wind and temperature charts</strong> at fixed pressure levels,
+  which map to flight levels as follows:</p>
+
+<table>
+  <thead>
+    <tr><th>Pressure level</th><th>Approx. flight level</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>900 hPa</td><td>FL030</td></tr>
+    <tr><td>850 hPa</td><td>FL050</td></tr>
+    <tr><td>700 hPa</td><td>FL100</td></tr>
+    <tr><td>500 hPa</td><td>FL180</td></tr>
+  </tbody>
+</table>
+
 <h2>Cumulonimbus (CB) Coverage Definitions</h2>
 
 <p>When forecasting thunderstorms (CBs) on a SIGWX chart, ICAO mandates specific terminology to describe the spatial coverage of the storm cells within the affected area. Scalloped lines denote the boundary of the convective area.</p>
@@ -169,13 +193,62 @@
 
 <p>These terms dictate how an aircraft can navigate the hazard. An <em>ISOL</em> or <em>OCNL</em> area suggests that a pilot equipped with airborne weather radar can safely pick their way between the storms. A <em>FRQ</em> area implies a solid wall of thunderstorms that must be avoided entirely.</p>
 
+<h2>Gridded WAFS Products</h2>
+
+<p>Beyond the human-drawn SIGWX charts, the modern WAFS issues <strong>gridded (GRIB) potential fields</strong> — the
+  UK Met Office maintains fifteen — delivered over SADIS/ISCS alongside the GRIB/BUFR/OPMET data. These let a
+  flight-planning system quantify the hazard automatically along a route, where the chart only draws an enclosing
+  area. The four to know:</p>
+
+<table>
+  <thead>
+    <tr><th>Product</th><th>What it measures</th><th>Reading it</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Icing potential (mean / max)</td><td>Fractional layer-cloud cover where temperature is −20 to 0°C, at 5 levels.</td><td>Higher fraction → more supercooled cloud → greater icing risk.</td></tr>
+    <tr><td>CAT potential (mean / max)</td><td>Probability (%) of mountain-wave or wind-shear turbulence per 100 km of flight.</td><td><strong>≥ 4% → moderate or severe</strong> CAT.</td></tr>
+    <tr><td>In-cloud turbulence</td><td>Likelihood of turbulence within layer cloud.</td><td>Typically 0–0.1; larger values → higher risk.</td></tr>
+    <tr><td>CB products</td><td>CB horizontal extent (%), and pressure/height of CB top and base (incl. embedded CB).</td><td>Quantifies coverage and vertical extent for routing/over-flight.</td></tr>
+  </tbody>
+</table>
+
+<figure>
+  <svg viewBox="0 0 680 170" role="img" xmlns="http://www.w3.org/2000/svg">
+    <title>CAT-potential grid along a route leg at FL340</title>
+    <desc>A route crosses a series of grid cells, each giving the percentage probability of clear-air turbulence per 100 km. Cells at or above 4% indicate moderate or severe turbulence and are highlighted.</desc>
+    <defs><marker id="rtArr" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0,9 3.5,0 7" fill="#1A1917" /></marker></defs>
+    <text x="340" y="26" fill="#1A1917" font-size="12" font-weight="bold" text-anchor="middle" font-family="sans-serif">CAT potential (% per 100 km) at FL340</text>
+    <rect x="46" y="46" width="84" height="50" fill="#F6F5F0" stroke="#E2DFD6" /><text x="88" y="77" fill="#1A1917" font-size="14" text-anchor="middle" font-family="sans-serif">1</text>
+    <rect x="130" y="46" width="84" height="50" fill="#F6F5F0" stroke="#E2DFD6" /><text x="172" y="77" fill="#1A1917" font-size="14" text-anchor="middle" font-family="sans-serif">2</text>
+    <rect x="214" y="46" width="84" height="50" fill="#FAEEDA" stroke="#BA7517" /><text x="256" y="77" fill="#1A1917" font-size="14" font-weight="bold" text-anchor="middle" font-family="sans-serif">4</text>
+    <rect x="298" y="46" width="84" height="50" fill="#FAEEDA" stroke="#BA7517" /><text x="340" y="77" fill="#1A1917" font-size="14" font-weight="bold" text-anchor="middle" font-family="sans-serif">6</text>
+    <rect x="382" y="46" width="84" height="50" fill="#FAEEDA" stroke="#BA7517" /><text x="424" y="77" fill="#1A1917" font-size="14" font-weight="bold" text-anchor="middle" font-family="sans-serif">5</text>
+    <rect x="466" y="46" width="84" height="50" fill="#F6F5F0" stroke="#E2DFD6" /><text x="508" y="77" fill="#1A1917" font-size="14" text-anchor="middle" font-family="sans-serif">2</text>
+    <rect x="550" y="46" width="84" height="50" fill="#F6F5F0" stroke="#E2DFD6" /><text x="592" y="77" fill="#1A1917" font-size="14" text-anchor="middle" font-family="sans-serif">1</text>
+    <line x1="46" y1="120" x2="634" y2="120" stroke="#1A1917" stroke-width="2" marker-end="url(#rtArr)" />
+    <text x="46" y="140" fill="#6B6A65" font-size="11" font-family="sans-serif">route leg</text>
+    <text x="634" y="140" fill="#993C1D" font-size="11" text-anchor="end" font-family="sans-serif">cells ≥ 4% → expect MOD/SEV CAT</text>
+  </svg>
+  <figcaption>A gridded CAT-potential field along a route — cells at or above 4% per 100 km flag moderate-or-severe turbulence the dispatcher can plan around.</figcaption>
+</figure>
+
+<div class="callout callout-key">
+  <div class="callout-label">Worked Example — reading the grids</div>
+  A CAT-potential grid shows <strong>5% at FL340</strong> across one leg — above the 4% threshold, so brief moderate-to-severe
+  CAT and consider a level change or a note to the dispatcher. Separately, a mean-icing-potential field reads
+  <strong>0.6 at FL100</strong>: a large fraction of the −20 to 0°C layer is cloud-filled, i.e. substantial
+  supercooled water and a real icing risk. The grids turn the chart's enclosed areas into a number you can act on.
+</div>
+
 <div class="lesson-summary">
   <h3>Key Takeaways</h3>
   <ul>
-    <li>WAFCs distribute high-quality en-route weather forecasts globally to support international aviation.</li>
-    <li>SWH (High-level) charts are global and cover FL250 to FL630. SWM (Medium-level) charts are regional, cover FL100 to FL450, and include more detail on in-cloud icing.</li>
-    <li>Jetstreams are plotted when the core wind is 80 knots or greater.</li>
-    <li>CB coverage is strictly defined: ISOL (&lt;50%), OCNL (50-75%), and FRQ (&gt;75%).</li>
+    <li>WAFCs (London &amp; Washington) distribute en-route forecasts globally as PNG charts and BUFR/GRIB data over SADIS/ISCS.</li>
+    <li>SWH (high-level) charts are global (FL250–630); SWM (medium-level) are regional (FL100–450) with more in-cloud icing/turbulence detail. Amendment 74 stripped fronts, the ITCZ and non-CB cloud from SWH.</li>
+    <li>Jetstreams are plotted at &ge;80 kt; for &ge;120 kt jets the depth of the 80-kt isotach at the core is marked.</li>
+    <li>CB coverage is strictly defined: ISOL (&lt;50%), OCNL (50–75%), FRQ (&gt;75%), plus EMBD.</li>
+    <li>Gridded WAFS products quantify hazard along a route: CAT potential ≥4% = MOD/SEV; icing potential = fraction of the −20 to 0°C layer that is cloud; plus in-cloud turbulence and CB fields.</li>
+    <li>Wind/temperature charts map pressure to flight level: 900 hPa≈FL030, 850≈FL050, 700≈FL100, 500≈FL180.</li>
   </ul>
 </div>
 </div>

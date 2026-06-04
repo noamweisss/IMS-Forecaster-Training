@@ -24,6 +24,351 @@ later reversed, add a new entry rather than editing the old one.
 ---
 
 <!-- New entries appended below -->
+## 2026-06-03 — Preview SPA: remove dark mode, align shell to lesson design system
+
+**Context.** The preview SPA (`build_course_preview.py`) used its own cool-slate
+color palette (`#f8fafc` bg, `#e2e8f0` borders, `#0f172a` text) and a dark-mode
+toggle, while the lesson content embedded inside it uses a warm light palette
+(`#ffffff` bg, `#e2dfd6` borders, `#1a1917` text) hardcoded for Moodle
+compatibility. When dark mode was toggled, lessons appeared as bright white
+rectangles inside a dark shell — a visual clash with no fix, since lessons
+intentionally have no dark-mode CSS (Moodle has no dark theme). Even in light
+mode, the temperature mismatch between cool-slate shell and warm-cream lessons
+was visible at the seam.
+
+**Decision.** Removed dark mode entirely and re-skinned the shell to match the
+lesson design system values from `config/design_system.css`:
+- Remapped all `--shell-*` and `--sidebar-*` CSS variables to the lesson's
+  `.ims-lesson` custom property values (warm white/cream/charcoal palette).
+- Made the sidebar fully bright (was always dark navy regardless of mode).
+- Switched from Google Fonts (Inter/Outfit) to the same system font stack the
+  lessons use (`-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif`).
+- Deleted: `body.dark-mode` CSS block, dark-mode quiz overrides, `.theme-toggle`
+  CSS, the 🌓 toggle button, the `prefers-color-scheme` auto-detect JS, and the
+  `toggleDarkMode()` function.
+- Adjusted the landing hero gradient to use the lesson accent blue (`#185fa5`).
+- Fixed sidebar hover states from `rgba(255,255,255,...)` (for dark bg) to
+  `rgba(0,0,0,...)` (for light bg).
+
+**Why.** The shell should be invisible — a frame that makes the lesson content
+feel native. A different color temperature or a dark mode the content can't
+follow breaks that. Since lessons are permanently light (Moodle constraint),
+the shell must be too.
+
+---
+
+## 2026-06-03 — V2 meteorology expansion: Module 4 Lesson 5 (WAFC maps)
+
+**Context.** The lesson taught the SIGWX chart symbology well but stopped at the
+human-drawn charts, omitting the modern gridded WAFS products that flight-planning
+systems actually consume.
+
+**Decision.** Added a "Gridded WAFS Products" section (icing potential, CAT
+potential with the ≥4% MOD/SEV threshold, in-cloud turbulence, CB fields) with a
+CAT-grid diagram and a worked "read the number" example, plus the jetstream ≥120
+kt isotach-depth rule, the Amendment 74 simplification of the SWH, and the
+pressure-to-flight-level table. Source-grounded. This completes all 18 lessons.
+
+**Why.** "The chart draws an area; the grid gives you a number you can plan around"
+is the operational shift of the last decade, and the lesson had none of it.
+
+---
+
+## 2026-06-03 — V2 meteorology expansion: Module 4 Lesson 4 (volcanic ash)
+
+**Context.** The lesson explained the hazard and the VAAC/NAME dispersion but
+skipped the deck's most distinctive content: how ash is actually spotted on
+satellite.
+
+**Decision.** Added the split-window / reverse-absorption method (the 10.8−12.0
+μm brightness-temperature difference flips sign for ash vs water/ice cloud) with
+a diagram and a worked "which area is the ash" example, and drew the full IAVW
+message chain (detection → VAAC/VAA → MWO WV SIGMET → NOTAM/ASHTAM), tying back to
+the WV subtype from Module 3. Source-grounded.
+
+**Why.** "Ash looks just like ice cloud until you difference the channels" is the
+single most useful operational fact in the deck, and it was missing.
+
+---
+
+## 2026-06-03 — V2 meteorology expansion: Module 4 Lesson 3 (tropical storms)
+
+**Context.** L3 already had the genesis criteria, Saffir-Simpson, RSMC/TCWC and the
+cone of uncertainty, but missed the deck's stage/naming progression and the
+basin/season climatology.
+
+**Decision.** Added a development-stages + regional-names table, a basins/season/
+frequency table, a short recurving-motion paragraph, and an explicit framing of the
+IMS forecaster's role (routing around the storm using RSMC advisories and ECMWF
+strike-probability products, not issuing a WC SIGMET). Source-grounded.
+
+**Why.** For an Israeli forecaster the operational truth is "you will never issue a
+TC warning, but you may route a long-haul flight around one" — worth stating
+plainly so the lesson lands as relevant rather than abstract.
+
+---
+
+## 2026-06-03 — V2 meteorology expansion: Module 4 Lessons 1–2 (TAF)
+
+**Context.** Module 4's lessons are thin (~1,000–1,200 words) like Modules 1–2,
+so this module returns to the fuller expansion. The two TAF lessons split one
+rich 44-slide deck.
+
+**Decision.** L1 was missing the most basic structural content — the change and
+probability groups themselves — so I added an FM/BECMG/TEMPO/PROB table, a
+temporal-behaviour diagram, the BECMG-ambiguity trap, and a line-by-line decode
+of a complete TAF. L2 had the decision flowchart but only a vague "amend on
+category change"; I added the precise ICAO Annex 3 amendment thresholds
+(visibility/cloud/wind/phenomena) and a worked amendment, flagging the numeric
+thresholds in module-4/REVIEW_NOTES for Evgeny to confirm against IMS practice.
+
+**Why.** A TAF lesson that names TEMPO and PROB but never defines FM or the
+amendment thresholds leaves the reader unable to actually write or maintain a
+TAF. These were the real gaps.
+
+---
+
+## 2026-06-03 — V2 meteorology expansion: Module 3 (warnings) — a deliberately lighter pass
+
+**Context.** Opening Module 3, I found its four lessons already at the depth I had
+spent Modules 1–2 building toward: 2,000–2,800 words each, severity-gate and
+hierarchy diagrams, ISOL/OCNL/FRQ coverage panels, full IMS threshold tables,
+real SIGMET/AD-WRNG/WS-WRNG message examples, even deck-slide citations.
+
+**Decision.** Rather than inflate already-strong lessons (which the brief
+explicitly warns against — "don't pad with filler"), I made a targeted pass:
+one worked compose/decode example per lesson where it added genuine value
+(applying the 3-filter gate to three observations in L1; composing an AIRMET in
+L3; composing a WS WRNG for a low-level jet in L4), and grew every quiz from 6–7
+to 8 application questions (pool 25 → 32). No REVIEW_NOTES needed — everything is
+from the Area Warnings and Aerodrome Warnings decks.
+
+**Why.** Honesty about scope matters more than a uniform word-count target. The
+"substantial" instruction was about closing the gap to a good lesson; where the
+lesson is already good, the right move is more practice and worked application,
+not more prose. Flagged this judgement to the owner.
+
+---
+
+## 2026-06-03 — V2 meteorology expansion: Module 2 Lesson 5 (cloud base & top)
+
+**Context.** The capstone lesson of Module 2 sat on a 96-slide deck and was only
+~800 words. It also carried a small discrepancy worth fixing.
+
+**Finding/Decision.** The lesson's convective-base rule used (T−Td)/2.5, but the
+source deck (and therefore what Evgeny teaches) uses **(T−Td)/3**. I made /3 the
+primary rule, kept the ~400 ft/°C variant as a noted alternative, and added the
+two validity conditions the deck stresses (ground-based convection; after the
+morning inversion is destroyed) plus the CCL method and the dry-air caveat. I
+also updated quiz Q01 to match. Deepened the stratiform side (warm-front
+factory, rain/scud, marine inversion) with a decoded real LLBG sequence, and the
+top side (IR anchor points −35°C≈30,000 ft, the regional-lapse-rate caveat, and a
+decoded LLSD convective SPECI). Source-grounded.
+
+**Why.** Leaving two different base formulas in the course (one in the lesson,
+/3 in the deck) is exactly the kind of inconsistency a sharp SME notices.
+Aligning to the deck removes it and the worked example makes the rule stick. This
+completes Module 2 — pausing for review before Module 3.
+
+---
+
+## 2026-06-03 — V2 meteorology expansion: Module 2 Lesson 4 (fog & haze)
+
+**Context.** Lesson 4 was the lightest in Module 2 (~900 words) sitting on the
+two richest, most Israel-specific decks in the course (Fog 132 slides, Haze 69).
+The biggest missed opportunity was real data: the decks carry actual LLBG fog
+SPECIs and LLET dust METARs.
+
+**Decision.** Built out "Measuring Visibility" into a proper treatment (MOR,
+transmissometer vs forward-scatter with a diagram, RVR via Allard's law) and
+anchored it with a decoded real fog SPECI. Added the surface-vs-elevated
+inversion behaviour (with a diagram) because it changes the overnight trend a
+forecaster must call. Added the Ganor dust-synoptic classification and a decoded
+LLET dust METAR that contrasts with the fog SPECI purely on dewpoint depression —
+which is the operational punchline of the whole lesson. Fully source-grounded.
+
+**Why.** Two real observations side by side — 20/18 (fog) vs 25/01 (dust) — teach
+the fog-vs-dust discrimination faster than any amount of prose, and they come
+straight from Evgeny's decks.
+
+---
+
+## 2026-06-03 — V2 meteorology expansion: Module 2 Lesson 3 (convection & CB)
+
+**Context.** Lesson 3 had the life cycle, hazards and stability indices but
+under-used an 83-slide deck that is unusually rich on the operational and the
+local-to-Israel side.
+
+**Decision.** Added a labelled CB hazard cross-section, the warning coverage
+descriptors, the dry/wet microburst distinction (with the virga/dust cue) and
+altocumulus castellanus as a precursor, a cloud-top-from-IR section with a
+diagram and worked example, and — the highest-value add — a "Convective Triggers
+in Israel" section drawn straight from the deck (sea-breeze convergence, gust
+fronts, orographic foci, Red Sea Trough) plus the deck's candid point that
+convection resists model placement and timing. Fully source-grounded.
+
+**Why.** Two things a working IMS forecaster needs that the original lacked: a
+fast way to turn a satellite image into a top height, and the named local
+triggers that tell them where/when to look. Both came from the deck.
+
+---
+
+## 2026-06-03 — V2 meteorology expansion: Module 2 Lesson 2 (icing)
+
+**Context.** Lesson 2 already covered SLW, rime/glaze, freezing rain, a
+tephigram and WAFS products. The gaps against the 61-slide deck were the
+non-structural threats and the explicit diagnostic logic.
+
+**Finding/Decision.** Turned the deck's slide-31 tephigram logic into an actual
+decision-tree diagram (saturation in the 0 to −15°C layer → convective vs deep
+NS → severity). Added an "effect on the aircraft" paragraph (lift/drag/stall plus
+air-data loss), a "Beyond the Airframe" section carrying the Air France 447 case
+and carburettor icing above 0°C, and a protection section built around the key
+limitation — leading-edge systems can't defeat runback ice. Also fixed a real
+bug: Figure 2.2's arrowhead marker used `fill="context-fill"`, which is poorly
+supported and would render the arrows colourless in Moodle; replaced with a
+literal hex. Only the carburettor-icing temperature envelope is standard-reference
+(flagged); the rest is from the deck.
+
+**Why.** "Icing above 0°C" and the AF447 pitot case are the counter-intuitive
+points a time-pressured forecaster most needs reinforced, and a decision tree is
+the form they'll actually use at the bench.
+
+---
+
+## 2026-06-03 — V2 meteorology expansion: Module 2 Lesson 1 (turbulence & wind shear)
+
+**Context.** Starting Module 2 (In-flight Aviation Hazards) after the owner
+approved the Module 1 work. Lesson 1 had solid bones but two real gaps against
+its rich source: it never had a convective-turbulence section, and it carried
+nothing from the Wind Shear deck — which is entirely about gap (channelled)
+winds, a topic that matters in a country full of wadis.
+
+**Decision.** Kept all existing content and added depth: the standard
+intensity scale (so forecast wording and PIREPs share a vocabulary), a
+convective-turbulence subsection, a CAT deepening with a jet-cross-section
+diagram and the 300 hPa diagnostic features, a microburst diagram, and a full
+Gap Winds section built around the deck's central insight — the Venturi/throat
+model is wrong; the strongest wind is at the exit because low-level flow is
+non-geostrophic. Added two case studies the deck supplies (Mt Fuji 1966, Denver
+1992). Entirely source-grounded, so no REVIEW_NOTES entry for this lesson.
+
+**Why.** The gap-winds material is the single highest-value add: it is local,
+operational, and was simply missing. Framing it as "the intuitive model is
+wrong, here's why" is how a technically literate audience remembers it.
+
+---
+
+## 2026-06-02 — V2 meteorology expansion: setup + Module 1 Lesson 1
+
+**Context.** The next V2 roadmap item is the "go deeper / more examples" pass
+Evgeny asked for across all 18 lessons. Working module by module, pausing for
+review after each. This entry covers the branch setup and the first lesson.
+
+**Finding (baseline).** The container's *local* `main` was stale (pre-PR #5).
+PR #5 (dark-mode removal, emoji prefixes, completion tracking, the Figure 1
+rewrite) was already merged into `origin/main`. I reset the new content branch
+`v2-meteorology-content-expansion` onto `origin/main` so the work builds on the
+real V2 baseline — lessons already light-only and literal-hex. The canonical
+file to edit is `lessons/NN_<slug>_moodle.html`; the standalone `NN_<slug>.html`
+files are legacy V1 migration inputs (`retrofit_to_moodle.py` is a one-time
+migration tool per AGENTS.md, not part of the current runbook), so they are left
+untouched and are now intentionally stale. Each `_moodle.html` also carries one
+real photo already embedded as a base64 JPEG; edits target the readable HTML
+around that line and leave the data URI alone (the embed step is idempotent).
+
+**Decision (Lesson 1).** The WMO/ICAO source deck is rich (52 pages), so the
+expansion is entirely source-grounded — no internet claims, so no
+`REVIEW_NOTES.md` needed for this lesson. Added the WMO constituent-bodies
+structure, an Annex 3 chapter-to-product map, the AMO/MWO/WAFC/VAAC/TCAC service
+architecture, the WAFS/SADIS distribution chain, and the ISO 9000 / WMO-No.
+49/258 quality-and-competence requirements, with two new literal-hex SVGs and
+two worked examples (SIGMET issuance; tracing a WAFS product to the cockpit).
+
+**Why.** The original lesson explained *that* WMO and ICAO cooperate; a working
+forecaster needs to know *which document and which office* owns each product
+they touch, and how a global forecast reaches their bench. Framing the Annex 3
+chapters as a product map is the operational lens the audience actually uses.
+
+---
+
+## 2026-06-02 — V2 meteorology expansion: Module 1 Lesson 2 + REVIEW_NOTES
+
+**Context.** Lesson 2 (route planning & fuel) is where forecast error turns into
+money. The owner picked "substantial" depth and approved pulling standard values
+from general references where the source deck is thin, provided each is flagged.
+
+**Finding.** The source deck is genuinely thin: 29 Hebrew slides covering
+route philosophies, great-circle geometry, a wind-triangle example, the
+fuel-vs-payload trade-off, and a route→…→fuel factor chain — but none of the
+quantitative meteorology (ISA values, fuel-component sizes, cost index). So this
+lesson, unlike Lesson 1, required flagged additions.
+
+**Decision.** Expanded the great-circle material (from source) into a "Choosing
+the Route" section contrasting great circle vs minimum-time track; added an
+ISA-deviation treatment with an optimum-flight-level diagram; surfaced the
+source's factor chain explicitly; and added a numeric block-fuel breakdown plus
+the Cost Index. Standard values (ISA, ~5% contingency, 30-min final reserve,
+illustrative burn rate, NAT OTS) are logged in a new
+`courses/aviation-weather/module-1/REVIEW_NOTES.md` for Evgeny.
+
+**Why.** A forecaster who can say "a 50 kt wind error is ~1,400 kg, and at MTOW
+that comes off payload" understands why their grid matters operationally. The
+REVIEW_NOTES file keeps the SME's verification load small and explicit — he only
+needs to check the handful of borrowed numbers, not re-read the whole lesson.
+
+---
+
+## 2026-06-02 — V2 meteorology expansion: Module 1 Lesson 3 (airspace)
+
+**Context.** Lesson 3 had the thinnest source in the module (11 Hebrew slides)
+and was the weakest lesson. The owner approved pulling standard airspace material
+from references, flagged for Evgeny.
+
+**Finding.** The deck does carry real structure — the FIR/ACC → TMA → CTR
+hierarchy, CVFR/IFR routes, transition level, and the semicircular cruising-level
+ladder — but it never presents the ICAO A–G class system or VMC minima, which a
+forecaster needs to judge VFR legality. So the expansion is part source
+(hierarchy, semicircular rule) and part flagged reference (A–G, VMC numbers).
+
+**Decision.** Built a "Control Hierarchy" section with a nested FIR/TMA/CTR
+diagram and a "Why Airspace Structure Drives Your Products" section with the
+semicircular-level diagram, both from the deck. Added an ICAO VMC-minima table
+and a Class D vs Class G worked example showing identical weather producing
+opposite legality. All flagged items recorded in REVIEW_NOTES.md, with an
+explicit note that the semicircular rule is source-grounded.
+
+**Why.** The lesson's whole point for a forecaster is that the *same* ceiling and
+visibility forecast means different things in different airspace. A concrete
+"two verdicts" example makes that operational rather than abstract, and the
+product-to-airspace mapping turns a structural taxonomy into a working checklist.
+
+---
+
+## 2026-06-02 — V2 meteorology expansion: Module 1 Lesson 4 (altimetry)
+
+**Context.** Lesson 4's source is the richest in the module — Evgeny's own
+44-slide altimetry deck — so this was the one lesson where "go deeper" mostly
+meant mining the source harder rather than reaching outside it.
+
+**Decision.** Added a foundational "How Pressure Becomes Altitude" section so the
+later error discussion has physical roots: standard atmosphere, hydrostatic
+balance, the warm/cold air-column behaviour (a new diagram), and the deck's own
+pressure-altitude and Masada density-altitude examples worked through. Pulled the
+phraseology (Altitude/Height/Flight Level), the QFE "even a flat field isn't
+flat" caveat, and — importantly for meteorologists — the QNH-vs-synoptic-QFF
+distinction straight from the deck. Quantified the cold-temperature error with a
+terrain-clearance diagram and an ISA−20 worked example, and added an "Altimetry
+in Israel (AIP ENR 1.7)" section (QNE above 10,500 ft, regional QNH below FL115).
+
+**Why.** The original lesson stated the temperature error as a warning; the deck
+supports explaining *why* it happens (puffed-up warm columns) and *how much*
+(~4 ft/°C/1,000 ft). Only three numeric constants needed flagging; everything
+else is Evgeny's own material, which keeps his verification load near zero for
+this lesson. This completes Module 1 — pausing here for owner/SME review.
+
+---
+
 ## 2026-06-02 — V2: rewrote the broken Figure 1 (Module 1, Lesson 2)
 
 **Context.** The owner flagged Figure 1 in Module 1 Lesson 2 (route planning

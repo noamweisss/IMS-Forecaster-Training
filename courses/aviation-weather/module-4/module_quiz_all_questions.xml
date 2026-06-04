@@ -143,6 +143,39 @@
     </answer>
   </question>
 
+
+  <question type="multichoice">
+    <name><text>L1-Q05 — FM vs BECMG vs TEMPO</text></name>
+    <questiontext format="html"><text>&lt;p&gt;A cold front will cross the aerodrome at about 1500Z, producing a sharp, permanent wind shift. Which change group best expresses this, and why not the others?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; A rapid, permanent change at a specific time is exactly what FM (e.g. FM151500) is for. BECMG implies a gradual change over a window and would leave the timing ambiguous; TEMPO implies the change is temporary and returns to baseline, which a frontal wind shift does not.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;FM at 1500Z — a rapid, permanent change at a stated time.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;TEMPO 1500/1700 — the wind shift is temporary.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;PROB30 — a 30% chance of the front.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;VCFG — vicinity fog.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L1-Q06 — The BECMG ambiguity</text></name>
+    <questiontext format="html"><text>&lt;p&gt;A TAF contains &lt;code&gt;BECMG 0306/0312 BKN008&lt;/code&gt;. Why is this poor practice, and what is the better construction if the cloud lowers sharply at 0900Z?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; A six-hour BECMG window leaves the user unable to tell when the ceiling actually drops to 800 ft — the conditions are ambiguous for the whole window. If the change is sharp, use FM at the time it happens (e.g. FM030900 BKN008) or a much shorter BECMG window. This keeps the TAF clear and amendable.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;The long BECMG window is ambiguous; use FM030900 BKN008 (or a short BECMG) for a sharp change.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;BECMG can never be used for cloud; only TEMPO is valid.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Nothing is wrong; a long BECMG is preferred for precision.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Replace it with PROB30 to hedge the uncertainty.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L1-Q07 — VC vs PROB/TEMPO</text></name>
+    <questiontext format="html"><text>&lt;p&gt;Thunderstorms are likely 8–14 km from the field but not over it. Which is the most appropriate, least operationally restrictive way to flag them?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; Vicinity (VCTS) covers the 5–10 SM donut around the field and alerts users to nearby thunderstorms without triggering the alternate-fuel/operational impact of a TEMPO or PROB30 group at the field itself. Using TEMPO or PROB TS implies the storm is over the aerodrome.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;VCTS — vicinity thunderstorms, for weather near but not over the field.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;TEMPO TS — implying the storm is over the field.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;PROB40 TS at the aerodrome.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Omit it entirely; nearby weather is never reported.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+  </question>
 <question type="multichoice">
     <name>
       <text>L2-Q01 — Choosing between TEMPO and BECMG</text>
@@ -287,6 +320,28 @@
     </answer>
   </question>
 
+
+  <question type="multichoice">
+    <name><text>L2-Q05 — Amendment threshold (visibility/ceiling)</text></name>
+    <questiontext format="html"><text>&lt;p&gt;An active VFR TAF is running when the field reports visibility 2,500 m in mist with BKN006. Must the TAF be amended, and why?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; Yes. Visibility has crossed the 5000 and 3000 m amendment thresholds, the ceiling has crossed 1000 and 500 ft, and the field has dropped from VFR to IFR — any one of these mandates a TAF AMD immediately, without waiting for the next scheduled issue.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;Yes — it crosses the visibility (5000/3000 m) and ceiling (1000/500 ft) thresholds and changes flight category.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;No — amendments are only issued at the scheduled TAF times.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;No — mist is not an amendable phenomenon.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Only if a thunderstorm is also present.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L2-Q06 — TEMPO that overstays</text></name>
+    <questiontext format="html"><text>&lt;p&gt;A TEMPO group of low visibility was forecast, but the low visibility now looks set to dominate more than half of the remaining period. What should the forecaster do?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; TEMPO requires each instance under an hour and aggregate under half the period. Once the condition will prevail for more than half the period it is no longer "temporary" — it must be promoted to the baseline with a BECMG (or FM), via an amendment. Leaving it as TEMPO would misrepresent the prevailing weather.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;Amend, promoting the condition to the baseline with BECMG/FM — it is now prevailing, not temporary.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Leave it as TEMPO; duration limits are only advisory.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Convert it to PROB30 to hedge.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Add a second TEMPO back-to-back to extend it.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+  </question>
 <question type="multichoice">
     <name>
       <text>L3-Q01 — Interpreting the Cone of Uncertainty</text>
@@ -431,6 +486,28 @@
     </answer>
   </question>
 
+
+  <question type="multichoice">
+    <name><text>L3-Q05 — Stage and regional name</text></name>
+    <questiontext format="html"><text>&lt;p&gt;A system in the western North Pacific has sustained winds of 80 kt. What is its stage and the correct regional name?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; At &amp;ge; 64 kt the system is at hurricane strength; in the western North Pacific that intensity is called a typhoon. In the Atlantic/E Pacific it would be a hurricane, and in the Indian Ocean/S Pacific a cyclone. Below 34 kt it would be a depression; 34&amp;ndash;63 kt a tropical storm.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;Hurricane-strength (&amp;ge; 64 kt); in the W Pacific it is called a typhoon.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Tropical storm; called a hurricane in the W Pacific.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Tropical depression; called a cyclone everywhere.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Super typhoon; the term applies from 64 kt upward.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L3-Q06 — The IMS forecaster and tropical cyclones</text></name>
+    <questiontext format="html"><text>&lt;p&gt;A long-haul flight your office supports will route near an active typhoon in the NW Pacific. What is the aviation forecaster's correct role here?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; A WC (tropical-cyclone) SIGMET is not required in the EUR region and the storm is far outside Israeli airspace, so the IMS forecaster does not issue a TC warning. The role is to read the responsible RSMC's advisories and ECMWF strike-probability products and support routing the flight clear of the storm and its outflow.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;Read RSMC advisories and strike-probability products to support routing clear of the storm — not to issue a WC SIGMET.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Issue a WC SIGMET for the typhoon from the Israeli MWO.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Nothing — tropical cyclones never affect any flight the IMS supports.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Reclassify it on the Saffir-Simpson scale before the flight departs.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+  </question>
 <question type="multichoice">
     <name>
       <text>L4-Q01 — Radar detection of volcanic ash</text>
@@ -575,6 +652,28 @@
     </answer>
   </question>
 
+
+  <question type="multichoice">
+    <name><text>L4-Q05 — Split-window ash detection</text></name>
+    <questiontext format="html"><text>&lt;p&gt;Two cold cloud tops look identical in a single IR channel. Differencing the channels, area A shows BT(10.8) − BT(12.0) = +1.5 K and area B shows −2 K. Which is the volcanic ash, and why?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; Meteorological (water/ice) cloud absorbs slightly more at 12.0 μm, giving a positive 10.8−12.0 μm difference. Volcanic ash shows reverse absorption, flipping the difference negative. So area B (−2 K) is the ash plume; area A (+1.5 K) is ordinary ice cloud.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;Area B — ash reverses the absorption, making BT(10.8) − BT(12.0) negative.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Area A — ash always gives the larger positive difference.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Neither — the split-window method cannot distinguish ash from cloud.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Both are ash; the sign of the difference is irrelevant.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L4-Q06 — The volcanic-ash message chain</text></name>
+    <questiontext format="html"><text>&lt;p&gt;An eruption is detected and its plume is forecast to drift into your FIR. Which sequence correctly routes the hazard to aircraft, and which step is the MWO's?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; Under the International Airways Volcano Watch the chain is: detection → VAAC issues the VAA (with dispersion-model polygons) → the MWO issues the WV SIGMET for its FIR → ACC/NOTAM offices issue the NOTAM/ASHTAM. The MWO's specific job is the WV SIGMET; it does not run the dispersion model or issue the NOTAM.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;Detection → VAAC/VAA → MWO WV SIGMET → ACC NOTAM/ASHTAM; the MWO issues the WV SIGMET.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;The MWO runs the NAME dispersion model and issues the VAA itself.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;The airline issues the SIGMET directly from the cockpit.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;No message is issued because ash SIGMETs are discretionary.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+  </question>
 <question type="multichoice">
     <name>
       <text>L5-Q01 — Chart Altitude Overlap</text>
@@ -719,4 +818,26 @@
     </answer>
   </question>
 
+
+  <question type="multichoice">
+    <name><text>L5-Q05 — Gridded CAT potential</text></name>
+    <questiontext format="html"><text>&lt;p&gt;A WAFS gridded CAT-potential field shows 5% along a leg at FL340. What does this mean and what should you do?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; The CAT-potential product is the probability of mountain-wave or wind-shear turbulence per 100 km; values at or above 4% indicate moderate or severe turbulence. At 5% you would brief MOD/SEV CAT and consider a level change or alert the dispatcher. It is not a guarantee-free or negligible value.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;≥4% means moderate-or-severe CAT — brief it and consider a level change.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;5% is negligible; no action is needed below 50%.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;It is the icing fraction, not turbulence.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;It is the CB horizontal extent in percent.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L5-Q06 — SWH vs SWM coverage</text></name>
+    <questiontext format="html"><text>&lt;p&gt;A flight will cruise at FL300 in a region needing detailed in-cloud icing information. Which SIGWX chart applies, and what is true about its coverage?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; FL300 lies in the SWH/SWM overlap (SWH FL250–630, SWM FL100–450). For detailed in-cloud icing you use the SWM, which is regional (not global) and carries the finer icing/turbulence detail the global SWH omits.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;The SWM (regional, FL100–450) — it carries the detailed in-cloud icing the global SWH omits.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;The SWH, which is regional and includes the most icing detail.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Neither; FL300 is below all SIGWX charts.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;The SWM, which is a global dataset like the SWH.&lt;/p&gt;</text><feedback format="html"><text /></feedback></answer>
+  </question>
 </quiz>

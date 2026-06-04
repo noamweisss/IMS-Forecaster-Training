@@ -145,4 +145,37 @@
     </answer>
   </question>
 
+
+  <question type="multichoice">
+    <name><text>L1-Q05 — FM vs BECMG vs TEMPO</text></name>
+    <questiontext format="html"><text><![CDATA[<p>A cold front will cross the aerodrome at about 1500Z, producing a sharp, permanent wind shift. Which change group best expresses this, and why not the others?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><strong>Rationale:</strong> A rapid, permanent change at a specific time is exactly what FM (e.g. FM151500) is for. BECMG implies a gradual change over a window and would leave the timing ambiguous; TEMPO implies the change is temporary and returns to baseline, which a frontal wind shift does not.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>FM at 1500Z — a rapid, permanent change at a stated time.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>TEMPO 1500/1700 — the wind shift is temporary.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>PROB30 — a 30% chance of the front.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>VCFG — vicinity fog.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L1-Q06 — The BECMG ambiguity</text></name>
+    <questiontext format="html"><text><![CDATA[<p>A TAF contains <code>BECMG 0306/0312 BKN008</code>. Why is this poor practice, and what is the better construction if the cloud lowers sharply at 0900Z?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><strong>Rationale:</strong> A six-hour BECMG window leaves the user unable to tell when the ceiling actually drops to 800 ft — the conditions are ambiguous for the whole window. If the change is sharp, use FM at the time it happens (e.g. FM030900 BKN008) or a much shorter BECMG window. This keeps the TAF clear and amendable.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>The long BECMG window is ambiguous; use FM030900 BKN008 (or a short BECMG) for a sharp change.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>BECMG can never be used for cloud; only TEMPO is valid.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Nothing is wrong; a long BECMG is preferred for precision.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Replace it with PROB30 to hedge the uncertainty.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L1-Q07 — VC vs PROB/TEMPO</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Thunderstorms are likely 8–14 km from the field but not over it. Which is the most appropriate, least operationally restrictive way to flag them?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><strong>Rationale:</strong> Vicinity (VCTS) covers the 5–10 SM donut around the field and alerts users to nearby thunderstorms without triggering the alternate-fuel/operational impact of a TEMPO or PROB30 group at the field itself. Using TEMPO or PROB TS implies the storm is over the aerodrome.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>VCTS — vicinity thunderstorms, for weather near but not over the field.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>TEMPO TS — implying the storm is over the field.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>PROB40 TS at the aerodrome.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Omit it entirely; nearby weather is never reported.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+  </question>
 </quiz>

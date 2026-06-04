@@ -115,4 +115,91 @@
       <feedback format="html"><text></text></feedback>
     </answer>
   </question>
+
+  <question type="multichoice">
+    <name><text>L2-Q05 — Icing and air data</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Beyond degrading the wing, why is in-flight icing also a flight-instrument hazard, and what real accident illustrates it?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Rationale:</strong> Ice can block the pitot and static ports, so the crew and the autoflight system lose reliable airspeed and altitude. Air France 447 (2009) iced its pitot probes in cruise-level convection; inconsistent airspeeds disengaged the autopilot and the aircraft was mishandled into a stall. It is an air-data failure, not a structural-overload or fuel-contamination failure.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Ice can block the pitot/static system, giving unreliable airspeed and altitude — as in Air France 447.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ice adds so much weight that the wing spar fails — as in Air France 447.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ice contaminates the fuel, starving the engines — as in Air France 447.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ice only affects instruments on the ground, not in cruise.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L2-Q06 — Carburettor icing above 0°C</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A piston-engine flight reports a gradual loss of engine power in humid air with an outside air temperature of about +15°C. Why is carburettor icing a plausible cause despite the above-freezing temperature?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Rationale:</strong> Inside the carburettor, the pressure drop and fuel evaporation cool the induction air sharply (on the order of 20°C), so ice can form even when the outside air is around +10°C to +25°C and humid. Carburettor heat is the remedy. Structural airframe icing, by contrast, requires sub-freezing air.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Evaporative and pressure-drop cooling inside the carburettor lets ice form despite the warm outside air.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>It cannot be icing; any ice is impossible above 0°C outside air.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>The wing leading edge is accreting glaze ice and shedding it into the intake.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Freezing rain is entering the carburettor from a warm-frontal layer above.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L2-Q07 — Runback and the limits of protection</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>An aircraft with functioning leading-edge de-ice boots encounters freezing rain (SLD) and still accretes dangerous ice. What best explains the failure of protection?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Rationale:</strong> Supercooled large droplets run back beyond the protected leading edge before freezing, so the ice forms aft of where boots and heaters can reach it — runback icing. The boots are not necessarily faulty; they simply cannot protect surfaces behind the leading edge. It is not a sign that the air is too cold for icing.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>SLD run back and freeze aft of the protected leading edge, where de-ice systems cannot reach.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>De-ice boots only work below −40°C, so they were inactive.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Freezing rain cannot adhere to a moving aircraft, so the report must be mistaken.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Boots protect the whole wing, so the ice must be on the tail only.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
 </quiz>

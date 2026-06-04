@@ -410,6 +410,16 @@
   </ol>
 </div>
 
+<div class="callout callout-key">
+  <div class="callout-label">Worked Example — run the gate on three observations</div>
+  <ol>
+    <li><strong>Frequent, embedded thunderstorms forecast across the FIR ahead of a cold front.</strong> Phenomenon on the list (TS) — yes; qualifier met (FRQ/EMBD) — yes; en-route — yes. &rarr; <strong>Issue a WS SIGMET.</strong></li>
+    <li><strong>Moderate icing reported in stratiform cloud at FL080.</strong> Phenomenon on the list (ICE) — yes; qualifier met — <em>no</em>, SIGMET icing requires SEV. &rarr; <strong>This is an AIRMET, not a SIGMET.</strong></li>
+    <li><strong>BKN stratus with a 600 ft base forming over Ben Gurion only.</strong> En-route hazard across the FIR — no, it is an aerodrome-scale ceiling. &rarr; <strong>Issue an AD WRNG, not a SIGMET</strong> (Lesson 4). A low ceiling is not even on the SIGMET phenomenon list.</li>
+  </ol>
+  Same three filters, three different products — which is exactly the routing decision the rest of this module builds on.
+</div>
+
 <h2>Where this lesson ends and the next begins</h2>
 
 <p>You can now decide <em>whether</em> a SIGMET is warranted. Lesson 2 covers <em>how to write it</em>: the WMO header, the first-line fields (FIR indicator, sequential number, validity period), the meteorological part, geographic coordinates, and the cancellation message. Lesson 3 then drops the threshold to AIRMET, which captures the moderate-intensity and low-altitude cases that fall through this lesson's filter.</p>
@@ -950,6 +960,20 @@
   Annex 3 obliges the MWO to "maintain watch" over the phenomenon and issue an updated AIRMET when necessary. In practice this means: if the forecast becomes meaningfully different from what the active AIRMET describes (intensity changes, area shifts, timing changes by &gt; 2 hours), issue an update. If the phenomenon ends earlier than expected, cancel.
 </div>
 
+<div class="callout callout-key">
+  <div class="callout-label">Worked Example — composing an AIRMET</div>
+  <em>Scenario:</em> moderate icing (not in convective cloud) is forecast between FL060 and FL090 over the northern
+  half of the FIR, from 0900 to 1300 UTC, stationary and not changing in intensity. Built on the SIGMET skeleton from
+  Lesson 2, with <code>WA</code> as the designator and the word <code>AIRMET</code>:<br>
+  <code>WAXX31 LLBG 050835</code><br>
+  <code>LLLL AIRMET 3 VALID 050900/051300 LLBG-</code><br>
+  <code>LLLL TEL AVIV FIR MOD ICE FCST N OF N3215 FL060/090 STNR NC=</code><br>
+  Reading it: WA = AIRMET; one phenomenon (<code>MOD ICE</code>); forecast (<code>FCST</code>); area "north of 32°15′N";
+  layer FL060–FL090; stationary (<code>STNR</code>); no change in intensity (<code>NC</code>); 4-hour validity.
+  (Location indicators here are illustrative.) Had the icing been SEV, the same skeleton would carry <code>WS</code> and
+  the word <code>SIGMET</code> instead — the structure is shared; only the designator, the word, and the qualifier change.
+</div>
+
 <h2>The decision in operations</h2>
 
 <p>The most common operational error in this space is over- or under-promotion: issuing a SIGMET for something that should be an AIRMET, or vice versa. The clean way to decide is sequential:</p>
@@ -1327,6 +1351,19 @@
   </svg>
   <figcaption>Figure 4.3 &mdash; a low-level jet over the aerodrome. Light surface wind beneath a strong jet at 900 ft is the textbook shear case &mdash; the aircraft loses headwind suddenly as it descends through the jet axis.</figcaption>
 </figure>
+
+<div class="callout callout-key">
+  <div class="callout-label">Worked Example — composing the WS WRNG for this LLJ</div>
+  <em>Scenario:</em> overnight at Ben Gurion, surface wind 5 kt but a 35 kt jet at ~900 ft AGL on the approach to
+  runway 30; the synoptic pattern (winter inversion) supports it and the surface-to-geostrophic difference exceeds
+  30 kt. The primary trigger is met (peak &ge; 30 kt, axis below 2000 ft), so:<br/>
+  <code>LLBG WS WRNG 1 152150Z VALID 152200/160200</code><br/>
+  <code>WS APCH RWY30 FCST=</code><br/>
+  Reading it: aerodrome LLBG; wind-shear warning, sequence 1; issued 1521<em>50</em>Z; valid four hours; phenomenon
+  wind shear on the approach to runway 30; basis forecast (<code>FCST</code>). Had a pilot reported it, the basis
+  would be <code>REP AT</code>; had it been a microburst, the phenomenon would read <code>MBST APCH RWY30</code>.
+  Note this WS WRNG stands alongside any AD WRNG the same situation warrants — they are separate products.
+</div>
 
 <h2>Updates, amendments, and cancellation</h2>
 

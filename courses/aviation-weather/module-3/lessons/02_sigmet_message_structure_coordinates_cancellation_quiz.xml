@@ -217,4 +217,42 @@
     </answer>
   </question>
 
+
+  <question type="multichoice">
+    <name>
+      <text>L2-Q07 — Decoding SIGMET coordinates</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A SIGMET polygon includes the point <code>N3623 E03515</code>. How is this read?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Rationale:</strong> Coordinates are latitude then longitude in degrees and minutes: N3623 = 36°23′N, E03515 = 035°15′E. Latitude uses two digits of degrees, longitude three. It is not decimal degrees, and the order is always lat/long.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>36°23′N, 035°15′E (latitude then longitude, degrees and minutes).</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>36.23°N, 35.15°E (decimal degrees).</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>035°15′E, 36°23′N (longitude then latitude).</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>3623 m north, 3515 m east of the FIR centre.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+  </question>
+
+  <question type="multichoice">
+    <name>
+      <text>L2-Q08 — Constructing the cancellation</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>The phenomenon in <code>YUDD SIGMET 5 VALID 101200/101600 YUSO-</code> has ended early, at 1430. Which line correctly cancels it?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Rationale:</strong> The cancellation is a new SIGMET (next sequence number, 6) issued by the same MWO, valid from the cancellation time to the original end time, and it references the cancelled SIGMET's number AND its original validity: <code>YUDD SIGMET 6 VALID 101430/101600 YUSO- CNL SIGMET 5 101200/101600</code>. Both the number and the original validity are required so there is no ambiguity about which message is being withdrawn.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p><code>YUDD SIGMET 6 VALID 101430/101600 YUSO- CNL SIGMET 5 101200/101600</code></p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p><code>YUDD SIGMET 5 CNL</code> (number only, no validity).</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Simply let SIGMET 5 expire at 1600; no cancellation is ever issued.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p><code>YUDD SIGMET 6 VALID 101430/101600 YUSO-</code> with no reference to SIGMET 5.</p>]]></text><feedback format="html"><text></text></feedback></answer>
+  </question>
 </quiz>

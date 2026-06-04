@@ -53,6 +53,39 @@
     <answer fraction="0" format="html"><text>&lt;p&gt;The national aeronautical information publication (AIP) general section&lt;/p&gt;</text></answer>
     <answer fraction="0" format="html"><text>&lt;p&gt;ICAO Global Air Navigation Plan (GANP)&lt;/p&gt;</text></answer>
   </question>
+
+  <question type="multichoice">
+    <name><text>L1-Q06 — Office ownership of products</text></name>
+    <questiontext format="html"><text>&lt;p&gt;Severe turbulence is reported in the upper levels of the FIR your unit watches over, well away from any single aerodrome. Under the Annex 3 service architecture, which office is responsible for issuing the SIGMET, and why?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; SIGMET and AIRMET are issued by the Meteorological Watch Office (MWO), which maintains watch over an entire FIR/CTA (Annex 3, Ch. 3 and Ch. 7). The Aerodrome Meteorological Office (AMO) owns aerodrome-scale products — METAR, TAF, TREND, and aerodrome and wind-shear warnings — not FIR-wide hazard messages. The WAFC produces global gridded forecasts, not SIGMET.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;The Meteorological Watch Office (MWO), because SIGMET covers hazards across the whole FIR/CTA it watches.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;The Aerodrome Meteorological Office (AMO), because it issues all in-flight hazard warnings for its region.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;The World Area Forecast Centre (WAFC), because upper-level turbulence is part of the SIGWX product.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;The Volcanic Ash Advisory Centre (VAAC), because it coordinates all en-route hazard advisories.&lt;/p&gt;</text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L1-Q07 — WAFS distribution</text></name>
+    <questiontext format="html"><text>&lt;p&gt;An IMS dispatcher and an airline's flight-planning system both need consistent upper-wind and temperature forecasts for a route from Tel Aviv across the eastern Mediterranean. Which combination correctly identifies the source centre and the distribution system serving this region?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; WAFC London (Met Office, Exeter) is responsible for Europe, Africa, the Middle East and western Asia, and its products are broadcast over SADIS (the UK-operated Satellite Distribution System). WAFC Washington with ISCS serves the Americas, Atlantic, Pacific and eastern Asia. Using the same WAFS grids end-to-end is what guarantees the dispatcher and the airline compute consistent fuel and routing.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;WAFC London, distributed via SADIS.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;WAFC Washington, distributed via ISCS.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;WAFC London, distributed via ISCS.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;The regional MWO, distributed via the AIP.&lt;/p&gt;</text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L1-Q08 — Quality system and competence</text></name>
+    <questiontext format="html"><text>&lt;p&gt;An ICAO/State audit asks an aviation MET provider to demonstrate Annex 3 compliance. Which pair of evidence most directly satisfies the Chapter 2 requirements on quality and personnel?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; Annex 3, Ch. 2 requires the Meteorological Authority to operate a Quality System conforming to ISO 9000 (with verification/validation and audit) and to meet WMO competency/training requirements (WMO-No. 49 and WMO-No. 258). Documented verification statistics plus competency-assessment records map directly onto those two requirements. Marketing material, equipment receipts, or aircraft maintenance logs do not evidence MET quality or competence.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;An ISO 9000-aligned quality system with forecast verification records, plus forecaster competency-assessment records.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;A signed service contract with the airlines and a list of installed observing equipment.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;A copy of the national AIP and the aircraft maintenance logs for the based fleet.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;A portfolio of public weather forecasts and media broadcasts produced by the service.&lt;/p&gt;</text></answer>
+  </question>
 <question type="multichoice">
     <name><text>L2-Q01 — Impact of Headwinds</text></name>
     <questiontext format="html"><text>&lt;p&gt;A long-haul flight is planned with a true airspeed (TAS) of 480 knots. The en-route forecast indicates an unexpected 60-knot headwind component across a significant portion of the route. As a forecaster, how should you expect this to impact the dispatcher's fuel planning?&lt;/p&gt;</text></questiontext>
@@ -95,6 +128,39 @@
     <answer fraction="0" format="html"><text>&lt;p&gt;Warmer temperatures inside a jet stream always indicate severe clear air turbulence (CAT), which must be avoided.&lt;/p&gt;</text></answer>
     <answer fraction="0" format="html"><text>&lt;p&gt;A tailwind combined with warm temperatures will cause the aircraft to exceed its maximum Mach number over the ground.&lt;/p&gt;</text></answer>
     <answer fraction="0" format="html"><text>&lt;p&gt;Eastbound flights are restricted by ICAO rules from flying above FL330 when temperatures exceed ISA+10.&lt;/p&gt;</text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L2-Q05 — Great circle vs minimum-time track</text></name>
+    <questiontext format="html"><text>&lt;p&gt;A dispatcher's flight-planning system files a track that visibly bows away from the great circle between origin and destination, adding a few nautical miles of distance. The upper-wind grid shows a strong jet to one side of the great circle. What is the most likely reason, and what does it imply for fuel?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; The great circle is the shortest &lt;em&gt;distance&lt;/em&gt;, but the minimum-time (minimum-cost) track deliberately deviates to ride tailwinds or avoid headwinds. Accepting slightly more air distance to gain ground speed reduces flight time and usually total fuel — the basis of systems like the North Atlantic Organized Track System. It is not a navigation error, nor is it about avoiding turbulence per se.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;The system chose the minimum-time track, trading a little extra distance for a stronger tailwind to cut time and fuel.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;The great circle is never flyable in practice, so the system always defaults to a rhumb line.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;The deviation is a navigation database error and should be removed to save fuel.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Bowing the track increases distance and therefore always increases total fuel burned.&lt;/p&gt;</text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L2-Q06 — Reading an ISA deviation</text></name>
+    <questiontext format="html"><text>&lt;p&gt;Your FL350 temperature forecast is &amp;minus;40&amp;nbsp;&amp;deg;C. Using the standard atmosphere (15&amp;nbsp;&amp;deg;C at sea level, ~2&amp;nbsp;&amp;deg;C per 1,000&amp;nbsp;ft), what ISA deviation is this, and what is the main operational implication for a heavy departure?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; ISA at FL350 is about 15 &amp;minus; (2 &amp;times; 35) = &amp;minus;55&amp;nbsp;&amp;deg;C, so &amp;minus;40&amp;nbsp;&amp;deg;C is ISA+15 (warmer than standard). Warmer, less-dense air lowers the maximum and optimum cruise altitude, so a heavy aircraft may be unable to reach FL350 initially and must step-climb later — costing a few percent fuel. It does not make the air colder or improve climb performance.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;ISA+15; warmer air lowers the cruise ceiling, so a heavy aircraft may need to start lower and step-climb.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;ISA&amp;minus;15; colder air raises the ceiling, so the aircraft can climb higher than planned.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;ISA+15; warmer air is denser, improving climb performance and payload.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Exactly ISA; there is no operational implication for the departure.&lt;/p&gt;</text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L2-Q07 — Fuel components and a forecast change</text></name>
+    <questiontext format="html"><text>&lt;p&gt;A flight is planned at maximum take-off weight with: taxi 300&amp;nbsp;kg, trip 10,000&amp;nbsp;kg, contingency (5% of trip) 500&amp;nbsp;kg, alternate 1,800&amp;nbsp;kg, final reserve 1,200&amp;nbsp;kg. A revised forecast adds ~1,500&amp;nbsp;kg to the trip fuel through a stronger headwind. What is the most accurate consequence?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; Because the aircraft is already at maximum take-off weight, extra trip (and the contingency computed on it) cannot simply be added — the additional ~1,500&amp;nbsp;kg must be offset by reducing payload (cargo or passengers). Final reserve and alternate are set by the holding/alternate requirement, not by en-route wind, so they are not the first lever. The flight is not automatically cancelled.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;Because the aircraft is at MTOW, the added fuel must be offset by reducing payload.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;The extra fuel is simply added on top with no effect on payload or weight limits.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;The final reserve fuel is reduced to make room for the extra trip fuel.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;The flight must be cancelled because trip fuel cannot legally change after planning.&lt;/p&gt;</text></answer>
   </question>
 
 <question type="multichoice">
@@ -141,6 +207,39 @@
     <answer fraction="0" format="html"><text>&lt;p&gt;Aircraft are legally required to fly through the thunderstorm rather than violate a Restricted Area under any circumstances.&lt;/p&gt;</text></answer>
   </question>
 
+  <question type="multichoice">
+    <name><text>L3-Q05 — Product mapping to the control hierarchy</text></name>
+    <questiontext format="html"><text>&lt;p&gt;An inbound airliner is descending through the TMA and CTR for an approach. Which meteorological product is most directly decisive for this phase, given where the aircraft now is in the control hierarchy?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; The TMA and CTR are the terminal layers where aircraft are slow, low and configured to land, so the TAF/TREND and any aerodrome or wind-shear warning are decisive. SIGMET and AIRMET serve the whole FIR and matter more en-route; the WAFS SIGWX chart is a strategic en-route product, not an approach tool.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;The terminal aerodrome forecast (TAF/TREND) and any wind-shear warning for the CTR.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;The FIR-wide SIGMET, because it overrides terminal products on approach.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;The WAFS global SIGWX chart, because it covers all phases of flight equally.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;The area AIRMET, because terminal forecasts do not apply inside a CTR.&lt;/p&gt;</text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L3-Q06 — VMC minima and class</text></name>
+    <questiontext format="html"><text>&lt;p&gt;A CVFR flight plans to cruise at 2,500 ft AMSL. Your forecast is visibility 6 km, scattered cloud base 2,800 ft, broken 3,500 ft. In which case is the flight legal under VMC minima?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; Visibility (6 km) meets the 5 km low-level requirement in both classes. The difference is cloud clearance: Class D (controlled) requires 1,000 ft vertical / 1,500 m horizontal from cloud — at 2,500 ft only 300 ft below a 2,800 ft base, that fails. Class G near the surface requires only "clear of cloud, in sight of the surface," which the same conditions satisfy. Same weather, different verdict by class.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;Legal in Class G but not in Class D, because of the cloud-clearance requirement.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Legal in both, because 6 km visibility satisfies all VMC minima regardless of cloud.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Legal in Class D but not in Class G, because controlled airspace has lower minima.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Illegal in both, because VFR is never permitted above 2,000 ft AMSL.&lt;/p&gt;</text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L3-Q07 — Semicircular rule and level selection</text></name>
+    <questiontext format="html"><text>&lt;p&gt;A flight on a magnetic track of 090° (eastbound) wants the strongest available tailwind. Your upper-wind grid shows the best wind at FL300, with FL310 and FL290 slightly weaker. Which level can the dispatcher actually file, and why?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; Under the semicircular rule, eastbound tracks (000°–179°) use odd flight levels. FL300 is even (westbound) and is not available to this flight, so the dispatcher must choose among odd levels — FL290 or FL310 — picking whichever your grid shows as the better wind. This is why the upper-wind forecast is read in direction-constrained steps.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;Not FL300 — eastbound uses odd levels, so the choice is FL290 or FL310, whichever has the better wind.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;FL300, because the rule only applies above FL310.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;FL300, because the best forecast wind always overrides the semicircular rule.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Any even level, because eastbound flights are assigned even levels.&lt;/p&gt;</text></answer>
+  </question>
+
 <question type="multichoice">
     <name><text>L4-Q01 — Cold Weather Altimetry Error</text></name>
     <questiontext format="html"><text>&lt;p&gt;An aircraft is conducting an instrument approach in extreme cold weather conditions (ISA -30°C). The pilot's altimeter, set to the correct local QNH, indicates they are exactly at the published minimum descent altitude (MDA) of 1,500 feet. What is the actual physical state of the aircraft relative to the terrain?&lt;/p&gt;</text></questiontext>
@@ -172,6 +271,50 @@
     <answer fraction="0" format="html"><text>&lt;p&gt;The airfield's elevation above Mean Sea Level (MSL)&lt;/p&gt;</text></answer>
     <answer fraction="0" format="html"><text>&lt;p&gt;The transition altitude of the aerodrome&lt;/p&gt;</text></answer>
     <answer fraction="0" format="html"><text>&lt;p&gt;Standard pressure altitude (density altitude)&lt;/p&gt;</text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L4-Q04 — Pressure surfaces and temperature</text></name>
+    <questiontext format="html"><text>&lt;p&gt;Two aircraft fly the same indicated flight level on the standard setting — one over a warm air mass, one over a cold air mass. How do their true altitudes compare, and why?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; Warm air is less dense and expands, so its pressure surfaces sit higher. A given pressure (hence a given flight level) corresponds to a higher true altitude over the warm mass and a lower true altitude over the cold mass. This is the physical root of cold-temperature altimeter error.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;The aircraft over the warm mass is truly higher; warm air expands, lifting the pressure surfaces.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;The aircraft over the cold mass is truly higher; cold air expands, lifting the pressure surfaces.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Their true altitudes are identical, because the flight level fixes true altitude regardless of temperature.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Temperature affects only ground speed, not true altitude, so there is no difference.&lt;/p&gt;</text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L4-Q05 — QNH vs synoptic QFF</text></name>
+    <questiontext format="html"><text>&lt;p&gt;On a very hot day a forecaster is asked for the altimeter setting (QNH) for an aerodrome. Why is it incorrect to simply pass the mean-sea-level pressure plotted on the synoptic chart (QFF)?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; QFF reduces station pressure to sea level using the &lt;em&gt;actual&lt;/em&gt; air-column temperature, whereas QNH reduces it assuming a &lt;em&gt;standard&lt;/em&gt; atmosphere. On a hot (or cold) day the two values diverge, so handing over the synoptic QFF would set the pilot's altimeter to the wrong datum. Producing the correct QNH is a meteorologist's responsibility.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;QFF uses the actual column temperature while QNH assumes a standard atmosphere, so the two diverge on a hot day.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;QFF and QNH are identical, so either may be used interchangeably.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;QFF is referenced to the airfield elevation, not sea level, so it reads height not altitude.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;QFF is only valid above the transition altitude, where Flight Levels are used.&lt;/p&gt;</text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L4-Q06 — Cold-temperature correction</text></name>
+    <questiontext format="html"><text>&lt;p&gt;An aircraft holds an indicated 2,000&amp;nbsp;ft above the altimeter datum in air about 20&amp;nbsp;&amp;deg;C colder than ISA. Using ~4&amp;nbsp;ft per &amp;deg;C per 1,000&amp;nbsp;ft, roughly what is its true altitude, and what is the operational point?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; Correction = 4 &amp;times; 20 &amp;times; 2 = 160&amp;nbsp;ft, so true altitude is ~1,840&amp;nbsp;ft — the altimeter over-reads in cold air. Because the error grows with cold and height, crews must &lt;em&gt;add&lt;/em&gt; a cold-temperature correction to published minimums to preserve terrain/obstacle clearance, especially in mountainous terrain.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;~1,840&amp;nbsp;ft — the altimeter over-reads in cold air, so a correction must be added to minimums.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;~2,160&amp;nbsp;ft — the altimeter under-reads in cold air, giving extra clearance.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Exactly 2,000&amp;nbsp;ft — temperature does not affect indicated altitude.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;~1,840&amp;nbsp;ft, but the error is negligible and no correction is ever applied.&lt;/p&gt;</text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L4-Q07 — Israeli transition procedures</text></name>
+    <questiontext format="html"><text>&lt;p&gt;Under the Israeli AIP (ENR 1.7), an aircraft is climbing out of Ben Gurion through 9,000&amp;nbsp;ft. Which altimeter setting should it be using, and when does it change to Standard?&lt;/p&gt;</text></questiontext>
+    <generalfeedback format="html"><text>&lt;p&gt;&lt;strong&gt;Rationale:&lt;/strong&gt; In Israel the Transition Altitude is 10,500&amp;nbsp;ft, so below it the aircraft flies on QNH (reading altitude). Passing the Transition Altitude on climb it sets Standard (1013.2&amp;nbsp;hPa) and reports Flight Levels; on descent it returns to QNH at the Transition Level (FL115). At 9,000&amp;nbsp;ft it is still on QNH.&lt;/p&gt;</text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text>&lt;p&gt;QNH now, changing to Standard at the Transition Altitude of 10,500&amp;nbsp;ft.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;Standard now, changing to QNH at 10,500&amp;nbsp;ft.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;QFE now, changing to QNH at FL115.&lt;/p&gt;</text></answer>
+    <answer fraction="0" format="html"><text>&lt;p&gt;QNH now, changing to Standard at 18,000&amp;nbsp;ft.&lt;/p&gt;</text></answer>
   </question>
 
 </quiz>

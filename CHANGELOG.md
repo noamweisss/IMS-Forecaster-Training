@@ -10,6 +10,144 @@ future course-to-mbz Claude skill) should read both.
 
 ## [Unreleased]
 
+### Preview shell alignment
+
+- **Removed dark mode from the course preview SPA.** The shell's cool-slate
+  palette and dark-mode toggle clashed with the lesson content, which is always
+  light (hardcoded for Moodle). Deleted all dark-mode CSS, the toggle button,
+  and the auto-detect JS. Re-skinned the shell (`:root` variables, sidebar, hero
+  gradient) to match the lesson design system's warm light palette. Switched from
+  Google Fonts (Inter/Outfit) to the same system font stack the lessons use.
+  (`pipeline/build_course_preview.py`)
+
+### Meteorology content expansion (V2, roadmap.md)
+
+The "go deeper / more examples" pass Evgeny asked for, done module by module
+from the source decks (internet additions, where needed, flagged for SME review).
+
+- **Module 2, Lesson 5 (Cloud Base & Top Forecasting).** Expanded from the
+  96-slide Nir Stav deck. Aligned the convective-base rule to the source's
+  **(T − Td)/3** (was /2.5) with a new diagram and worked example, plus the rule's
+  validity conditions and the CCL-from-morning-sounding method; deepened the
+  stratiform base (warm-front "factory", rain/scud lowering, marine inversion)
+  with a decoded real LLBG overnight sequence; added the IR top→height anchor
+  points (−35°C ≈ 30,000 ft) and a third IR limitation (regional lapse rates),
+  and a decoded real LLSD convective SPECI for reading bases/tops. Updated quiz
+  Q01 to the /3 rule; objectives 4 → 6; takeaways 5 → 6; quiz 4 → 7; one new SVG
+  (Figure 5.2). Source-grounded.
+
+- **Module 2, Lesson 4 (Visibility: Fog & Haze).** Expanded from the rich,
+  Israel-specific Fog (132-slide) and Haze (69-slide) decks — fully
+  source-grounded. Deepened "Measuring Visibility" (MOR = 5%-intensity range,
+  transmissometer vs forward-scatter with a new instruments diagram, RVR
+  mechanics and Allard's law) with a decoded real LLBG fog SPECI; added the
+  surface-vs-elevated-inversion fog behaviour with a diagram; added the Ganor
+  synoptic dust classification (Red Sea Trough/Sharav/winter low/high), dust
+  removal mechanisms, and a decoded real LLET dust METAR contrasting fog vs dust
+  by dewpoint depression. Objectives 4 → 6; takeaways 5 → 6; quiz 4 → 7; two new
+  SVGs (Figures 4.2–4.3).
+
+- **Module 2, Lesson 3 (Convective Hazards & CB Clouds).** Expanded from the
+  83-slide CB deck — fully source-grounded. Added a labelled CB hazard
+  cross-section diagram, coverage descriptors (isolated/occasional/frequent/
+  embedded), a dry-vs-wet microburst callout and altocumulus-castellanus
+  precursor, a new "Estimating the Cloud Top" section (IR brightness temperature
+  → sounding) with a diagram and worked example, and a "Convective Triggers in
+  Israel" section (sea-breeze convergence, pre-frontal gust fronts, orographic
+  lift, Red Sea Trough, and why convection resists nowcasting). Objectives 4 → 6;
+  takeaways 5 → 6; quiz 4 → 7; two new SVGs (Figures 3.3–3.4).
+
+- **Module 2, Lesson 2 (Aircraft Icing Hazards).** Expanded from the 61-slide
+  Icing deck. Added an "effect on the aircraft" treatment (aerodynamic + air-data
+  loss), the deck's tephigram icing-severity decision tree as a new flowchart
+  diagram, a "Beyond the Airframe" section (engine/pitot icing with the Air
+  France 447 case, plus carburettor icing above 0°C), and a "Protection, and Why
+  It Can Fail" section (anti-ice vs de-ice, runback, ground de-icing/holdover).
+  Fixed a rendering bug in Figure 2.2 (`fill="context-fill"` → literal hex).
+  Objectives 4 → 6; takeaways 5 → 7; quiz 4 → 7; one new SVG (Figure 2.4). Only
+  the carburettor-icing temperature envelope flagged in `module-2/REVIEW_NOTES.md`.
+
+- **Module 4, Lesson 5 (WAFC Maps).** Expanded from the 48-slide deck. Added the gridded WAFS potential products (icing, CAT ≥4%=MOD/SEV, in-cloud turbulence, CB) with a CAT-grid diagram and worked example — the modern data products were entirely absent — plus the jetstream ≥120 kt isotach-depth rule, the Amendment 74 SWH simplification, and the pressure-level→flight-level wind/temp table. Objectives 3→5; takeaways 4→6; quiz 4→6. Source-grounded.
+
+- **Module 4, Lesson 4 (Volcanic Ash).** Expanded from the UK Met Office deck. Added the split-window (10.8−12.0 μm) brightness-temperature detection method with a diagram and worked example (the deck's core technique, previously absent), and the full IAVW dissemination chain (detection → VAAC/VAA → MWO WV SIGMET → NOTAM/ASHTAM). Objectives 3→5; takeaways 4→5; quiz 4→6. Source-grounded.
+
+- **Module 4, Lesson 3 (Tropical Storms).** Expanded from the 38-slide deck: added the development-stages/regional-naming table (depression/storm/hurricane-typhoon-cyclone), a basins-season-frequency table, the recurving-motion note, and the aviation forecaster's routing role (WC SIGMET not required in EUR). Objectives 3->5; takeaways 4->6; quiz 4->6. Source-grounded.
+
+- **Module 4, Lessons 1–2 (TAF).** Expanded from the 44-slide TAF Writing deck.
+  L1 (structure) gained the change/probability groups (FM/BECMG/TEMPO/PROB) with
+  a temporal-behaviour diagram, the BECMG-ambiguity trap, and a full worked TAF
+  decode (objectives 3→5, takeaways, quiz 4→7). L2 (amendments) gained the
+  specific ICAO Annex 3 amendment-criteria thresholds (visibility/cloud/wind/
+  phenomena) with a worked amendment example (objectives 3→4, quiz 4→6). The
+  amendment threshold values are flagged in `module-4/REVIEW_NOTES.md`.
+
+- **Module 3 (Aviation Warnings) — lighter targeted pass.** Module 3's four
+  lessons were already at full depth (2,000–2,800 words, multiple diagrams/tables,
+  real message examples, deck-slide citations), so this was a focused enhancement
+  rather than a doubling: added worked "compose/decode a message" examples
+  (severity-gate routing in L1, an AIRMET composition in L3, a WS-WRNG composition
+  for a low-level jet in L4) and grew every quiz to 8 questions (pool 25 → 32).
+  Fully source-grounded. (No bulk added — padding would dilute already-strong
+  lessons.)
+
+- **Module 2, Lesson 1 (Turbulence & Wind Shear).** Expanded from the Turbulence
+  (52-slide) and Wind Shear (28-slide) decks — fully source-grounded, no internet
+  additions. Added the standard turbulence-intensity scale table, a Convective
+  Turbulence subsection, deepened CAT (300 hPa diagnosis, scales) with a
+  jet-cross-section diagram, two real case studies (BOAC 707 over Mt Fuji 1966;
+  DC-8 severe CAT out of Denver 1992), a microburst wind-shear diagram, and a new
+  Gap (Channelled) Winds section with its own diagram (Venturi-myth vs exit-jet,
+  non-geostrophic low-level flow) directly relevant to Israel's wadis. Body
+  ~1,100 → ~2,250 words; objectives 4 → 6; takeaways 5 → 7; quiz 5 → 8; three new
+  SVGs (Figures 1.3–1.5).
+
+- **Module 1, Lesson 1 (Regulatory Frameworks).** Expanded from the 52-page
+  WMO/ICAO source deck (`_extraction.json`). Body roughly doubled (~1,440 →
+  ~2,360 words). Added: a WMO constituent-bodies subsection with a new
+  diagram (Congress / Executive Council / Regional Associations / Technical
+  Commissions, highlighting CAeM); an "What Annex 3 Actually Contains" section
+  with the Part I chapter list and a product → chapter → issuing-office matrix;
+  a worked SIGMET-issuance example; a "Service Architecture" section
+  (AMO/MWO/WAFC/VAAC/TCAC) with a new WAFS/SADIS distribution diagram and a
+  worked WAFS-to-cockpit trace; and a Quality Management & Competence section
+  (ISO 9000, WMO-No. 49/258). Objectives 3 → 6, takeaways 5 → 7, quiz 5 → 8
+  application questions. All new SVGs use literal hex; no internet sources
+  needed for this lesson.
+
+- **Module 1, Lesson 2 (Route Planning & Fuel).** The source deck (29 Hebrew
+  slides) is thin on quantitative meteorology, so the lesson was expanded from
+  the source's great-circle geometry and fuel-vs-payload material plus standard
+  aviation values (flagged in `module-1/REVIEW_NOTES.md`). Added: a "Choosing
+  the Route" section with a great-circle / minimum-time-track diagram; an
+  ISA-deviation deep-dive with an optimum-flight-level diagram; the fuel
+  factor-chain; a numeric block-fuel breakdown; and Cost Index. Four worked
+  examples (50 kt headwind cost; ISA deviation; block-fuel build; embedded in
+  text), two new SVGs (now Figures 1–4). Objectives 3 → 6, takeaways 4 → 6,
+  quiz 4 → 7. Created `module-1/REVIEW_NOTES.md` listing the six standard-value
+  additions for Evgeny to confirm.
+
+- **Module 1, Lesson 3 (Airspace Structure).** The thinnest source (11 Hebrew
+  slides). Expanded the source's control hierarchy (FIR/ACC, TMA, CTR, CVFR/IFR
+  routes) and semicircular cruising-level rule into full sections, and added the
+  ICAO A–G classification depth and VMC minima from standard references (flagged
+  in `module-1/REVIEW_NOTES.md`). New: a nested-hierarchy diagram and a
+  semicircular-level diagram (now Figures 1–4); a VMC-minima table; a
+  "same weather, two verdicts" Class D vs G worked example; and a
+  "Why Airspace Structure Drives Your Products" section mapping each product to
+  its airspace. Objectives 3 → 6, takeaways 4 → 6, quiz 4 → 7.
+
+- **Module 1, Lesson 4 (Altimetry).** Expanded from the rich 44-slide source
+  (Evgeny's own deck). Added a "How Pressure Becomes Altitude" foundation
+  (standard atmosphere, hydrostatic basis, pressure & density altitude) with a
+  warm/cold air-column diagram and the deck's pressure-altitude and Masada
+  density-altitude worked examples; the QNE/QFE/QNH phraseology and caveats; the
+  QNH-vs-synoptic-QFF distinction; a quantified cold-temperature error treatment
+  with a terrain-clearance diagram and an ISA−20 worked example; and an
+  "Altimetry in Israel (AIP ENR 1.7)" section. Two new SVGs (now Figures 1–4).
+  Objectives 3 → 6, takeaways 5 → 6, quiz 3 → 7. Three standard constants
+  (27 ft/hPa, ~4 ft/°C/1,000 ft, the density-altitude answer) flagged in
+  `module-1/REVIEW_NOTES.md`; the rest is source-grounded.
+
 ### Course V2 iteration (roadmap.md)
 
 - **Documentation Repair Audit:** Performed a full-system audit of core project documentation. Repaired documentation drift across 10+ files (README, AGENTS.md, runbook.md, lesson_spec.md, architecture.md). Updated schemas to match runtime behavior, standardized Module 3 naming, removed obsolete V1 references and prompt templates, and documented the preview SPA compilation pipeline.

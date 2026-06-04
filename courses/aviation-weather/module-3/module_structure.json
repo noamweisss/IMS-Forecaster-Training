@@ -20,8 +20,17 @@
         "Distinguish the three SIGMET subtypes (WS, WV, WC) and the data-type designator that identifies each",
         "Decide whether a given observation/forecast triggers a SIGMET or stays below threshold"
       ],
-      "source_files": ["13. Area Warnings.pptx"],
-      "key_concepts": ["MWO", "AFO", "SIGMET", "WS/WV/WC subtypes", "OBSC/EMBD/FRQ/SQL", "SEV intensity threshold"],
+      "source_files": [
+        "13. Area Warnings.pptx"
+      ],
+      "key_concepts": [
+        "MWO",
+        "AFO",
+        "SIGMET",
+        "WS/WV/WC subtypes",
+        "OBSC/EMBD/FRQ/SQL",
+        "SEV intensity threshold"
+      ],
       "visual_elements_needed": [
         "Hierarchy diagram: WAFC → MWO (SIGMET/AIRMET) → AFO (TAF/AD WRNG), with the product issued at each tier",
         "Decision-tree-style diagram mapping each SIGMET phenomenon to the qualifier required to trigger the message"
@@ -38,8 +47,16 @@
         "Issue a SIGMET cancellation message with the correct sequential numbering and validity reference",
         "Apply the 4-hour validity ceiling, the 4-hour pre-occurrence lead-time limit, and the one-phenomenon-per-message rule"
       ],
-      "source_files": ["13. Area Warnings.pptx"],
-      "key_concepts": ["WMO header", "Validity period YYGGgg/YYGGgg", "CNL SIGMET", "Polygon lat/lon syntax", "Sequential number"],
+      "source_files": [
+        "13. Area Warnings.pptx"
+      ],
+      "key_concepts": [
+        "WMO header",
+        "Validity period YYGGgg/YYGGgg",
+        "CNL SIGMET",
+        "Polygon lat/lon syntax",
+        "Sequential number"
+      ],
       "visual_elements_needed": [
         "Annotated SIGMET message with each field of the WMO header and first line called out by colour",
         "Worked example showing an original SIGMET and its cancellation message side-by-side"
@@ -55,8 +72,16 @@
         "Differentiate the spatial-coverage qualifiers ISOL (<50%), OCNL (50–75%), and FRQ (>75%)",
         "Choose between issuing a SIGMET, an AIRMET, or no message at all given a forecast scenario near threshold"
       ],
-      "source_files": ["13. Area Warnings.pptx"],
-      "key_concepts": ["AIRMET", "Below FL100", "ISOL/OCNL/FRQ spatial coverage", "MOD intensity threshold", "Already-in-forecast exemption"],
+      "source_files": [
+        "13. Area Warnings.pptx"
+      ],
+      "key_concepts": [
+        "AIRMET",
+        "Below FL100",
+        "ISOL/OCNL/FRQ spatial coverage",
+        "MOD intensity threshold",
+        "Already-in-forecast exemption"
+      ],
       "visual_elements_needed": [
         "Side-by-side table of AIRMET vs SIGMET thresholds for each shared phenomenon",
         "Spatial-coverage diagram showing the ISOL/OCNL/FRQ percentage bands over a FIR outline"
@@ -72,8 +97,18 @@
         "Issue a WS WRNG based on forecaster judgement (FCST), observation (OBS — AMDAR/sonde/pilot), or aircraft report (REP AT), including the low-level-jet criterion (peak ≥30 kt below 2000 ft AGL)",
         "Coordinate AD WRNG issuance with SIGMET / AIRMET so the FIR-wide and aerodrome-local products stay consistent — and recognise the cases where coordination is not required (e.g. WS WRNG for LLJ)"
       ],
-      "source_files": ["14. Aerodrome Warnings.pptx"],
-      "key_concepts": ["AD WRNG", "WS WRNG", "MBST", "LLJ", "REP AT", "AD/AIRMET coordination", "IMS thresholds"],
+      "source_files": [
+        "14. Aerodrome Warnings.pptx"
+      ],
+      "key_concepts": [
+        "AD WRNG",
+        "WS WRNG",
+        "MBST",
+        "LLJ",
+        "REP AT",
+        "AD/AIRMET coordination",
+        "IMS thresholds"
+      ],
       "visual_elements_needed": [
         "Annotated AD WRNG and WS WRNG messages with each field called out",
         "Coordination decision matrix: phenomenon at aerodrome vs FIR-wide → which products to issue",
@@ -84,7 +119,8 @@
   ],
   "module_quiz": {
     "description": "End-of-module summative assessment covering SIGMET, AIRMET, and aerodrome/wind-shear warning issuance against ICAO Annex 3 and IMS operational criteria.",
-    "question_count": 24,
-    "passing_score_percent": 75
+    "question_count": 32,
+    "passing_score_percent": 75,
+    "note": "V2 meteorology expansion grew the per-lesson question pool to 32 (8 per lesson)."
   }
 }

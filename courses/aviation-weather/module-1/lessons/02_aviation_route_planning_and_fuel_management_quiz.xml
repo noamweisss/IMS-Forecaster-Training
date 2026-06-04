@@ -44,4 +44,37 @@
     <answer fraction="0" format="html"><text><![CDATA[<p>Eastbound flights are restricted by ICAO rules from flying above FL330 when temperatures exceed ISA+10.</p>]]></text></answer>
   </question>
 
+  <question type="multichoice">
+    <name><text>L2-Q05 — Great circle vs minimum-time track</text></name>
+    <questiontext format="html"><text><![CDATA[<p>A dispatcher's flight-planning system files a track that visibly bows away from the great circle between origin and destination, adding a few nautical miles of distance. The upper-wind grid shows a strong jet to one side of the great circle. What is the most likely reason, and what does it imply for fuel?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><strong>Rationale:</strong> The great circle is the shortest <em>distance</em>, but the minimum-time (minimum-cost) track deliberately deviates to ride tailwinds or avoid headwinds. Accepting slightly more air distance to gain ground speed reduces flight time and usually total fuel — the basis of systems like the North Atlantic Organized Track System. It is not a navigation error, nor is it about avoiding turbulence per se.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>The system chose the minimum-time track, trading a little extra distance for a stronger tailwind to cut time and fuel.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>The great circle is never flyable in practice, so the system always defaults to a rhumb line.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>The deviation is a navigation database error and should be removed to save fuel.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Bowing the track increases distance and therefore always increases total fuel burned.</p>]]></text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L2-Q06 — Reading an ISA deviation</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Your FL350 temperature forecast is &minus;40&nbsp;&deg;C. Using the standard atmosphere (15&nbsp;&deg;C at sea level, ~2&nbsp;&deg;C per 1,000&nbsp;ft), what ISA deviation is this, and what is the main operational implication for a heavy departure?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><strong>Rationale:</strong> ISA at FL350 is about 15 &minus; (2 &times; 35) = &minus;55&nbsp;&deg;C, so &minus;40&nbsp;&deg;C is ISA+15 (warmer than standard). Warmer, less-dense air lowers the maximum and optimum cruise altitude, so a heavy aircraft may be unable to reach FL350 initially and must step-climb later — costing a few percent fuel. It does not make the air colder or improve climb performance.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>ISA+15; warmer air lowers the cruise ceiling, so a heavy aircraft may need to start lower and step-climb.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>ISA&minus;15; colder air raises the ceiling, so the aircraft can climb higher than planned.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>ISA+15; warmer air is denser, improving climb performance and payload.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>Exactly ISA; there is no operational implication for the departure.</p>]]></text></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>L2-Q07 — Fuel components and a forecast change</text></name>
+    <questiontext format="html"><text><![CDATA[<p>A flight is planned at maximum take-off weight with: taxi 300&nbsp;kg, trip 10,000&nbsp;kg, contingency (5% of trip) 500&nbsp;kg, alternate 1,800&nbsp;kg, final reserve 1,200&nbsp;kg. A revised forecast adds ~1,500&nbsp;kg to the trip fuel through a stronger headwind. What is the most accurate consequence?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><strong>Rationale:</strong> Because the aircraft is already at maximum take-off weight, extra trip (and the contingency computed on it) cannot simply be added — the additional ~1,500&nbsp;kg must be offset by reducing payload (cargo or passengers). Final reserve and alternate are set by the holding/alternate requirement, not by en-route wind, so they are not the first lever. The flight is not automatically cancelled.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade><single>true</single><shuffleanswers>true</shuffleanswers>
+    <answer fraction="100" format="html"><text><![CDATA[<p>Because the aircraft is at MTOW, the added fuel must be offset by reducing payload.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>The extra fuel is simply added on top with no effect on payload or weight limits.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>The final reserve fuel is reduced to make room for the extra trip fuel.</p>]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[<p>The flight must be cancelled because trip fuel cannot legally change after planning.</p>]]></text></answer>
+  </question>
+
 </quiz>
